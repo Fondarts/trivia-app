@@ -1,0 +1,134 @@
+[
+  {
+    "q": "¿En qué año se estrenó En tierra peligrosa 2?",
+    "options": [
+      "1999",
+      "1997",
+      "1998",
+      "1996"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Hora punta",
+      "キル",
+      "Men in Black",
+      "Batman y Robin"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó キル?",
+    "options": [
+      "1999",
+      "1998",
+      "1997",
+      "1996"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Heat?",
+    "options": [
+      "1997",
+      "1995",
+      "1996",
+      "1994"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Hora punta?",
+    "options": [
+      "1998",
+      "1999",
+      "2000",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó El profesional (Léon)?",
+    "options": [
+      "1994",
+      "1993",
+      "1996",
+      "1995"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Misión imposible?",
+    "options": [
+      "1998",
+      "1995",
+      "1997",
+      "1996"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Terminator 2: El juicio final?",
+    "options": [
+      "1990",
+      "1991",
+      "1993",
+      "1992"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Desafío total?",
+    "options": [
+      "1991",
+      "1989",
+      "1992",
+      "1990"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó La momia?",
+    "options": [
+      "2001",
+      "1998",
+      "2000",
+      "1999"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Matrix?",
+    "options": [
+      "2000",
+      "1999",
+      "2001",
+      "1998"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  }
+]

@@ -1,0 +1,374 @@
+[
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Independence Day",
+      "Men in Black",
+      "Alien: Resurrección",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/18.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Speed",
+      "Die Hard",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/19.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: El juicio final",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Batman y Robin",
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Hora punta?",
+    "options": [
+      "1997",
+      "1998",
+      "1999",
+      "2000"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Speed",
+      "Die Hard",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/14.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó El profesional (Léon)?",
+    "options": [
+      "1993",
+      "1994",
+      "1995",
+      "1996"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Speed",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/17.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿Quién dirigió Terminator 2: El juicio final?",
+    "options": [
+      "James Cameron",
+      "Michael Bay",
+      "Quentin Tarantino",
+      "Peter Jackson"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió Stargate: Puerta a las estrellas?",
+    "options": [
+      "Roger Zelazny",
+      "Stuart Gillard",
+      "John Woo",
+      "Peter Jackson"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Batman y Robin",
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/16.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Speed",
+      "Die Hard",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/13.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: El juicio final",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/09.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/20.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó La momia?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Tom Cruise",
+      "Leonardo DiCaprio",
+      "Brendan Fraser"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Batman vuelve?",
+    "options": [
+      "1992",
+      "1993",
+      "1994",
+      "1995"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Speed",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Stargate: Puerta a las estrellas?",
+    "options": [
+      "1993",
+      "1994",
+      "1995",
+      "1996"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Speed",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Independence Day",
+      "Men in Black",
+      "Alien: Resurrección",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/12.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: El juicio final",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/15.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó La profesional (Léon)?",
+    "options": [
+      "Nicolas Cage",
+      "Al Pacino",
+      "Robert De Niro",
+      "Denzel Washington"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Braveheart?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Terminator 2: El juicio final?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Robert De Niro",
+      "Tom Cruise",
+      "Denzel Washington"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/10.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Independence Day",
+      "Men in Black",
+      "Alien: Resurrección",
+      "Batman y Robin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿Quién dirigió En tierra peligrosa 2?",
+    "options": [
+      "Roger Zelazny",
+      "Stuart Gillard",
+      "John Woo",
+      "Peter Jackson"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Speed",
+      "Terminator 2: El juicio final",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/11.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Batman y Robin",
+      "Men in Black",
+      "Alien: Resurrección",
+      "Independence Day"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/08.jpg"
+  }
+]

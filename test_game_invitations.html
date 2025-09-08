@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Invitaciones VS - Trivia</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .section {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h2 { color: #4CAF50; }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #45a049; }
+        input {
+            padding: 8px;
+            margin: 5px;
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .log {
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .info { color: #2196F3; }
+    </style>
+</head>
+<body>
+    <h1>🎮 Test de Invitaciones VS</h1>
+    
+    <div class="section">
+        <h2>Estado del Sistema</h2>
+        <button onclick="checkSystem()">Verificar Sistema</button>
+        <div id="systemStatus" class="log"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Enviar Invitación de Juego</h2>
+        <input type="text" id="friendId" placeholder="ID del amigo">
+        <input type="text" id="roomCode" placeholder="Código de sala (ej: TEST1)">
+        <br>
+        <button onclick="sendGameInvite()">Enviar Invitación</button>
+        <div id="inviteResult" class="log"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Ver Invitaciones</h2>
+        <button onclick="checkInvitations()">Ver Mis Invitaciones</button>
+        <button onclick="checkSentInvitations()">Ver Invitaciones Enviadas</button>
+        <div id="invitationsResult" class="log"></div>
+    </div>
+
+    <script>
+        let supabase = null;
+        let currentUser = null;
+        
+        async function init() {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
+            document.head.appendChild(script);
+            
+            await new Promise(resolve => script.onload = resolve);
+            
+            supabase = window.supabase.createClient(
+                'https://fpjkdibubjdbskthofdp.supabase.co',
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwamtkaWJ1YmpkYnNrdGhvZmRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ3MzI5NzIsImV4cCI6MjA3MDMwODk3Mn0.oYN5p3Mh_8omCGlCfVApRY_YCG-fFW5MWdeuYsNLgHc'
+            );
+            
+            const { data: { user } } = await supabase.auth.getUser();
+            if (user) {
+                currentUser = user;
+                console.log('Usuario actual:', user.id);
+                checkSystem();
+            } else {
+                document.getElementById('systemStatus').innerHTML = 
+                    '<span class="error">No estás autenticado</span>';
+            }
+        }
+        
+        async function checkSystem() {
+            const status = document.getElementById('systemStatus');
+            let html = '';
+            
+            // Verificar usuario
+            if (currentUser) {
+                html += `<span class="success">✅ Usuario: ${currentUser.id}</span>\n`;
+                
+                // Obtener perfil
+                const { data: profile } = await supabase
+                    .from('user_profiles')
+                    .select('nickname')
+                    .eq('user_id', currentUser.id)
+                    .single();
+                
+                if (profile) {
+                    html += `<span class="success">✅ Nickname: ${profile.nickname}</span>\n`;
+                }
+            }
+            
+            // Verificar permisos en game_invitations
+            try {
+                const { data, error } = await supabase
+                    .from('game_invitations')
+                    .select('count')
+                    .limit(1);
+                
+                if (error) {
+                    html += `<span class="error">❌ Acceso a game_invitations: ${error.message}</span>\n`;
+                } else {
+                    html += `<span class="success">✅ Acceso a game_invitations OK</span>\n`;
+                }
+            } catch (e) {
+                html += `<span class="error">❌ Error verificando permisos: ${e.message}</span>\n`;
+            }
+            
+            status.innerHTML = html;
+        }
+        
+        async function sendGameInvite() {
+            const friendId = document.getElementById('friendId').value.trim();
+            const roomCode = document.getElementById('roomCode').value.trim() || 'TEST' + Math.floor(Math.random() * 1000);
+            const resultDiv = document.getElementById('inviteResult');
+            
+            if (!friendId) {
+                resultDiv.innerHTML = '<span class="error">Ingresa un ID de amigo</span>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<span class="info">Enviando invitación...</span>\n';
+            
+            try {
+                // Verificar que el amigo existe
+                const { data: friend, error: friendError } = await supabase
+                    .from('user_profiles')
+                    .select('nickname')
+                    .eq('user_id', friendId)
+                    .single();
+                
+                if (friendError || !friend) {
+                    resultDiv.innerHTML += `<span class="error">Amigo no encontrado: ${friendError?.message}</span>\n`;
+                    return;
+                }
+                
+                resultDiv.innerHTML += `<span class="info">Amigo encontrado: ${friend.nickname}</span>\n`;
+                
+                // Crear datos de invitación
+                const invitationData = {
+                    from_user_id: currentUser.id,
+                    to_user_id: friendId,
+                    room_code: roomCode,
+                    game_type: 'sync',
+                    status: 'pending',
+                    expires_at: new Date(Date.now() + 5 * 60 * 1000).toISOString()
+                };
+                
+                resultDiv.innerHTML += `<span class="info">Datos a enviar:\n${JSON.stringify(invitationData, null, 2)}</span>\n`;
+                
+                // Intentar insertar
+                const { data, error } = await supabase
+                    .from('game_invitations')
+                    .insert(invitationData)
+                    .select();
+                
+                if (error) {
+                    resultDiv.innerHTML += `<span class="error">❌ Error al insertar: ${error.message}</span>\n`;
+                    resultDiv.innerHTML += `<span class="error">Detalles: ${JSON.stringify(error, null, 2)}</span>\n`;
+                } else {
+                    resultDiv.innerHTML += `<span class="success">✅ Invitación creada exitosamente!</span>\n`;
+                    resultDiv.innerHTML += `<span class="success">Datos insertados:\n${JSON.stringify(data, null, 2)}</span>\n`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML += `<span class="error">Error general: ${error.message}</span>\n`;
+            }
+        }
+        
+        async function checkInvitations() {
+            const resultDiv = document.getElementById('invitationsResult');
+            resultDiv.innerHTML = '<span class="info">Cargando invitaciones recibidas...</span>\n';
+            
+            try {
+                const { data, error } = await supabase
+                    .from('game_invitations')
+                    .select('*')
+                    .eq('to_user_id', currentUser.id)
+                    .eq('status', 'pending')
+                    .gte('expires_at', new Date().toISOString())
+                    .order('created_at', { ascending: false });
+                
+                if (error) {
+                    resultDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+                    return;
+                }
+                
+                if (!data || data.length === 0) {
+                    resultDiv.innerHTML = '<span class="info">No hay invitaciones pendientes</span>';
+                    return;
+                }
+                
+                resultDiv.innerHTML = `<span class="success">Invitaciones recibidas (${data.length}):</span>\n`;
+                for (const inv of data) {
+                    const { data: sender } = await supabase
+                        .from('user_profiles')
+                        .select('nickname')
+                        .eq('user_id', inv.from_user_id)
+                        .single();
+                    
+                    resultDiv.innerHTML += `\n- De: ${sender?.nickname || 'Usuario'}`;
+                    resultDiv.innerHTML += `\n  Sala: ${inv.room_code}`;
+                    resultDiv.innerHTML += `\n  Tipo: ${inv.game_type}`;
+                    resultDiv.innerHTML += `\n  Expira: ${new Date(inv.expires_at).toLocaleString()}\n`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+            }
+        }
+        
+        async function checkSentInvitations() {
+            const resultDiv = document.getElementById('invitationsResult');
+            resultDiv.innerHTML = '<span class="info">Cargando invitaciones enviadas...</span>\n';
+            
+            try {
+                const { data, error } = await supabase
+                    .from('game_invitations')
+                    .select('*')
+                    .eq('from_user_id', currentUser.id)
+                    .order('created_at', { ascending: false })
+                    .limit(10);
+                
+                if (error) {
+                    resultDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+                    return;
+                }
+                
+                if (!data || data.length === 0) {
+                    resultDiv.innerHTML = '<span class="info">No has enviado invitaciones</span>';
+                    return;
+                }
+                
+                resultDiv.innerHTML = `<span class="success">Últimas invitaciones enviadas (${data.length}):</span>\n`;
+                for (const inv of data) {
+                    const { data: receiver } = await supabase
+                        .from('user_profiles')
+                        .select('nickname')
+                        .eq('user_id', inv.to_user_id)
+                        .single();
+                    
+                    resultDiv.innerHTML += `\n- Para: ${receiver?.nickname || 'Usuario'}`;
+                    resultDiv.innerHTML += `\n  Sala: ${inv.room_code}`;
+                    resultDiv.innerHTML += `\n  Estado: ${inv.status}`;
+                    resultDiv.innerHTML += `\n  Creada: ${new Date(inv.created_at).toLocaleString()}\n`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+            }
+        }
+        
+        // Inicializar
+        init();
+    </script>
+</body>
+</html>

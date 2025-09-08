@@ -1,0 +1,302 @@
+[
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "F1 la película",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "F1 la película",
+      "Terminator 2",
+      "Face/Off",
+      "Con Air"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "Total Recall",
+      "RoboCop",
+      "F1 la película",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "Superman",
+      "The Matrix",
+      "Blade",
+      "Spawn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/10.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "La conductora",
+      "Terminator 2",
+      "Face/Off",
+      "Con Air"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/12.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Superman",
+      "Terminator 2",
+      "Face/Off",
+      "Con Air"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "Total Recall",
+      "RoboCop",
+      "Superman",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/08.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "Total Recall",
+      "RoboCop",
+      "La conductora",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/13.jpg"
+  },
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "Men in Black",
+      "Independence Day",
+      "The Fifth Element",
+      "F1 la película"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "Men in Black",
+      "Independence Day",
+      "The Fifth Element",
+      "Superman"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/09.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "La conductora",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "11.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Jurassic World: El renacer",
+      "Terminator 2",
+      "Face/Off",
+      "Con Air"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "22.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "Total Recall",
+      "RoboCop",
+      "Misión: Imposible - Sentencia final",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/18.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "Misión: Imposible - Sentencia final",
+      "The Matrix",
+      "Blade",
+      "Spawn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/20.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "F1 la película",
+      "The Matrix",
+      "Blade",
+      "Spawn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "Jurassic World: El renacer",
+      "The Matrix",
+      "Blade",
+      "Spawn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "25.jpg"
+  },
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "Men in Black",
+      "Independence Day",
+      "The Fifth Element",
+      "Misión: Imposible - Sentencia final"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/19.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Misión: Imposible - Sentencia final",
+      "Terminator 2",
+      "Face/Off",
+      "Con Air"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/17.jpg"
+  },
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "Men in Black",
+      "Independence Day",
+      "The Fifth Element",
+      "Jurassic World: El renacer"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "24.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "La conductora",
+      "The Matrix",
+      "Blade",
+      "Spawn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "15.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "Total Recall",
+      "RoboCop",
+      "Jurassic World: El renacer",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "23.jpg"
+  },
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "Men in Black",
+      "Independence Day",
+      "The Fifth Element",
+      "La conductora"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "14.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Jurassic World: El renacer",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "21.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Misión: Imposible - Sentencia final",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/16.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Superman",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/06.jpg"
+  }
+]

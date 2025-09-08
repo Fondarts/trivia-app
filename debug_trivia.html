@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug de Trivia</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .section {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            background: #1b5e20;
+            color: #a5d6a7;
+        }
+        .error {
+            background: #b71c1c;
+            color: #ef9a9a;
+        }
+        .warning {
+            background: #f57c00;
+            color: #ffccbc;
+        }
+        .info {
+            background: #0277bd;
+            color: #81d4fa;
+        }
+        pre {
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Debug de Trivia</h1>
+    
+    <div class="section">
+        <h2>1. Estado del Banco de Preguntas</h2>
+        <div id="bankStatus"></div>
+        <button onclick="testBank()">Probar Banco</button>
+    </div>
+    
+    <div class="section">
+        <h2>2. Estado de Supabase</h2>
+        <div id="supabaseStatus"></div>
+        <button onclick="testSupabase()">Probar Supabase</button>
+    </div>
+    
+    <div class="section">
+        <h2>3. Estado de Autenticación</h2>
+        <div id="authStatus"></div>
+        <button onclick="testAuth()">Probar Auth</button>
+    </div>
+    
+    <div class="section">
+        <h2>4. Sistema de Amigos</h2>
+        <div id="friendsStatus"></div>
+        <button onclick="testFriends()">Probar Amigos</button>
+        <button onclick="testFriendRankings()">Probar Rankings</button>
+        <button onclick="testFriendshipsTables()">Verificar Tablas</button>
+        <button onclick="initFriendsManually()">Inicializar Amigos Manual</button>
+    </div>
+    
+    <div class="section">
+        <h2>5. Logs de Consola</h2>
+        <div id="consoleLogs" style="max-height: 300px; overflow-y: auto;"></div>
+        <button onclick="clearLogs()">Limpiar Logs</button>
+    </div>
+
+    <script>
+        // Capturar logs de consola
+        const logs = [];
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addLog('log', args);
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addLog('error', args);
+        };
+        
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addLog('warning', args);
+        };
+        
+        function addLog(type, args) {
+            const message = args.map(arg => {
+                if (typeof arg === 'object') {
+                    try {
+                        return JSON.stringify(arg, null, 2);
+                    } catch {
+                        return String(arg);
+                    }
+                }
+                return String(arg);
+            }).join(' ');
+            
+            logs.push({ type, message, time: new Date().toLocaleTimeString() });
+            updateLogsDisplay();
+        }
+        
+        function updateLogsDisplay() {
+            const container = document.getElementById('consoleLogs');
+            container.innerHTML = logs.slice(-50).reverse().map(log => 
+                `<div class="test-result ${log.type}">
+                    <small>${log.time}</small> - ${log.message}
+                </div>`
+            ).join('');
+        }
+        
+        function clearLogs() {
+            logs.length = 0;
+            updateLogsDisplay();
+        }
+        
+        // Tests
+        async function testBank() {
+            const status = document.getElementById('bankStatus');
+            status.innerHTML = '<div class="info">Probando banco de preguntas...</div>';
+            
+            try {
+                // Verificar si las funciones están disponibles
+                if (typeof window.getBank === 'function') {
+                    const bank = window.getBank();
+                    const count = window.getBankCount ? window.getBankCount() : 0;
+                    
+                    let html = `<div class="success">✅ Banco disponible - Total: ${count} preguntas</div>`;
+                    
+                    // Mostrar detalles por categoría
+                    Object.entries(bank).forEach(([cat, questions]) => {
+                        const catCount = questions ? questions.length : 0;
+                        html += `<div class="test-result">${cat}: ${catCount} preguntas</div>`;
+                    });
+                    
+                    status.innerHTML = html;
+                } else {
+                    status.innerHTML = '<div class="error">❌ Funciones del banco no disponibles</div>';
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testSupabase() {
+            const status = document.getElementById('supabaseStatus');
+            status.innerHTML = '<div class="info">Probando conexión con Supabase...</div>';
+            
+            try {
+                if (!window.supabaseClient) {
+                    // Intentar crear el cliente
+                    if (window.supabase && window.SUPABASE_URL && window.SUPABASE_ANON_KEY) {
+                        window.supabaseClient = window.supabase.createClient(
+                            window.SUPABASE_URL,
+                            window.SUPABASE_ANON_KEY
+                        );
+                    } else {
+                        throw new Error('Supabase no está configurado');
+                    }
+                }
+                
+                // Probar una consulta simple
+                const { data, error } = await window.supabaseClient
+                    .from('user_profiles')
+                    .select('count')
+                    .limit(1);
+                
+                if (error) {
+                    status.innerHTML = `<div class="warning">⚠️ Supabase conectado pero con error: ${error.message}</div>`;
+                } else {
+                    status.innerHTML = '<div class="success">✅ Supabase funcionando correctamente</div>';
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testAuth() {
+            const status = document.getElementById('authStatus');
+            status.innerHTML = '<div class="info">Verificando autenticación...</div>';
+            
+            try {
+                if (!window.supabaseClient) {
+                    throw new Error('Supabase no disponible');
+                }
+                
+                const { data: { user }, error } = await window.supabaseClient.auth.getUser();
+                
+                if (error) {
+                    status.innerHTML = `<div class="warning">⚠️ No autenticado: ${error.message}</div>`;
+                } else if (user) {
+                    status.innerHTML = `<div class="success">✅ Usuario autenticado: ${user.email || user.id}</div>`;
+                    
+                    // Verificar perfil
+                    const { data: profile } = await window.supabaseClient
+                        .from('user_profiles')
+                        .select('*')
+                        .eq('user_id', user.id)
+                        .single();
+                    
+                    if (profile) {
+                        status.innerHTML += `<div class="test-result">Nickname: ${profile.nickname || 'Sin nickname'}</div>`;
+                        status.innerHTML += `<div class="test-result">Nivel: ${profile.level || 1}</div>`;
+                    }
+                } else {
+                    status.innerHTML = '<div class="warning">⚠️ No hay usuario autenticado</div>';
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testFriends() {
+            const status = document.getElementById('friendsStatus');
+            status.innerHTML = '<div class="info">Probando sistema de amigos...</div>';
+            
+            try {
+                if (!window.socialManager) {
+                    throw new Error('Sistema de amigos no inicializado');
+                }
+                
+                const result = await window.socialManager.getFriends();
+                
+                if (result.success) {
+                    status.innerHTML = `<div class="success">✅ Sistema de amigos funcionando - ${result.data.length} amigos</div>`;
+                    
+                    result.data.forEach(friend => {
+                        status.innerHTML += `<div class="test-result">${friend.nickname} (Nivel ${friend.level})</div>`;
+                    });
+                } else {
+                    status.innerHTML = `<div class="warning">⚠️ Error obteniendo amigos: ${result.error?.message || 'Error desconocido'}</div>`;
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testFriendRankings() {
+            const status = document.getElementById('friendsStatus');
+            status.innerHTML = '<div class="info">Probando rankings de amigos...</div>';
+            
+            try {
+                if (!window.socialManager) {
+                    throw new Error('Sistema de amigos no inicializado');
+                }
+                
+                const result = await window.socialManager.getFriendRankings();
+                
+                if (result.success) {
+                    status.innerHTML = `<div class="success">✅ Rankings funcionando - ${result.data.length} registros</div>`;
+                    
+                    result.data.forEach(rank => {
+                        const winRate = rank.games_played > 0 ? 
+                            Math.round((rank.wins / rank.games_played) * 100) : 0;
+                        status.innerHTML += `<div class="test-result">
+                            ${rank.friend?.nickname || 'Usuario'}: 
+                            ${rank.wins}V/${rank.losses}D (${winRate}%)
+                        </div>`;
+                    });
+                } else {
+                    status.innerHTML = `<div class="warning">⚠️ Error obteniendo rankings: ${result.error?.message || 'Error desconocido'}</div>`;
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        // Cargar scripts necesarios
+        async function loadScripts() {
+            console.log('Cargando scripts necesarios...');
+            
+            // Cargar Supabase
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
+            document.head.appendChild(script);
+            
+            await new Promise(resolve => script.onload = resolve);
+            
+            // Configurar Supabase
+            window.SUPABASE_URL = 'https://fpjkdibubjdbskthofdp.supabase.co';
+            window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwamtkaWJ1YmpkYnNrdGhvZmRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ3MzI5NzIsImV4cCI6MjA3MDMwODk3Mn0.oYN5p3Mh_8omCGlCfVApRY_YCG-fFW5MWdeuYsNLgHc';
+            
+            console.log('Scripts cargados');
+        }
+        
+        async function testFriendshipsTables() {
+            const status = document.getElementById('friendsStatus');
+            status.innerHTML = '<div class="info">Verificando tablas de amigos...</div>';
+            
+            try {
+                if (!window.supabaseClient) {
+                    throw new Error('Supabase no disponible');
+                }
+                
+                let html = '';
+                
+                // Verificar tabla friendships
+                const { data: f1, error: e1 } = await window.supabaseClient
+                    .from('friendships')
+                    .select('count')
+                    .limit(1);
+                
+                if (e1) {
+                    html += `<div class="error">❌ Tabla 'friendships': ${e1.message}</div>`;
+                } else {
+                    html += `<div class="success">✅ Tabla 'friendships' accesible</div>`;
+                }
+                
+                // Verificar tabla friend_rankings
+                const { data: f2, error: e2 } = await window.supabaseClient
+                    .from('friend_rankings')
+                    .select('count')
+                    .limit(1);
+                
+                if (e2) {
+                    html += `<div class="error">❌ Tabla 'friend_rankings': ${e2.message}</div>`;
+                } else {
+                    html += `<div class="success">✅ Tabla 'friend_rankings' accesible</div>`;
+                }
+                
+                // Verificar tabla game_invitations
+                const { data: f3, error: e3 } = await window.supabaseClient
+                    .from('game_invitations')
+                    .select('count')
+                    .limit(1);
+                
+                if (e3) {
+                    html += `<div class="error">❌ Tabla 'game_invitations': ${e3.message}</div>`;
+                } else {
+                    html += `<div class="success">✅ Tabla 'game_invitations' accesible</div>`;
+                }
+                
+                status.innerHTML = html;
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        async function initFriendsManually() {
+            const status = document.getElementById('friendsStatus');
+            status.innerHTML = '<div class="info">Inicializando sistema de amigos manualmente...</div>';
+            
+            try {
+                if (!window.supabaseClient) {
+                    throw new Error('Supabase no disponible');
+                }
+                
+                // Obtener usuario actual
+                const { data: { user } } = await window.supabaseClient.auth.getUser();
+                if (!user) {
+                    throw new Error('No hay usuario autenticado');
+                }
+                
+                // Obtener perfil
+                const { data: profile } = await window.supabaseClient
+                    .from('user_profiles')
+                    .select('nickname')
+                    .eq('user_id', user.id)
+                    .single();
+                
+                if (!profile || !profile.nickname) {
+                    throw new Error('Usuario sin nickname');
+                }
+                
+                // Cargar script de social.js
+                const response = await fetch('./js/player/social.js');
+                const code = await response.text();
+                
+                // Ejecutar el código (esto es un hack, pero funciona para debug)
+                eval(code.replace('export ', 'window.'));
+                
+                // Inicializar sistema
+                if (window.initFriendsSystem) {
+                    window.initFriendsSystem(window.supabaseClient, user.id, profile.nickname);
+                    status.innerHTML = '<div class="success">✅ Sistema de amigos inicializado manualmente</div>';
+                } else {
+                    throw new Error('No se pudo cargar la función initFriendsSystem');
+                }
+            } catch (error) {
+                status.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        // Inicializar
+        loadScripts().then(() => {
+            console.log('Debug listo');
+            testBank();
+        });
+    </script>
+</body>
+</html>

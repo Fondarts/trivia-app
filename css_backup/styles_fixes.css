@@ -1,0 +1,270 @@
+/* === CORRECCIONES PARA PROBLEMAS ESPECÍFICOS === */
+
+/* 1. FIX: Trofeo y posición superpuestos en rankings */
+.ranking-item {
+  position: relative;
+  padding-left: 40px; /* Espacio para el número de posición */
+}
+
+.ranking-position {
+  position: absolute;
+  left: 8px; /* Ajustado para no superponerse */
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--accent);
+  width: 24px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Emoji de trofeo para los top 3 - posicionado correctamente */
+.ranking-item.top-rank {
+  padding-left: 60px; /* Más espacio cuando hay trofeo */
+}
+
+.ranking-item.top-rank::before {
+  content: '🏆';
+  position: absolute;
+  left: 8px; /* Mismo lugar que ranking-position */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  z-index: 2;
+}
+
+/* El número se mueve a la derecha cuando hay trofeo */
+.ranking-item.top-rank .ranking-position {
+  left: 32px; /* Se mueve para dar espacio al trofeo */
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* 2. FIX: Imágenes en modo VS */
+.vs-question-media,
+#vsQuestionMedia {
+  display: none;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  margin-bottom: 16px;
+}
+
+.vs-question-media.show,
+#vsQuestionMedia.show {
+  display: block;
+}
+
+.vs-question-media img,
+#vsQuestionMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 3. REDISEÑO: Sistema de logros con iconos */
+.achievements-grid-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
+  padding: 12px;
+  background: var(--card);
+  border-radius: 12px;
+  /* Sin restricciones de altura ni scroll */
+  max-height: none;
+  overflow: visible;
+  border: 1px solid var(--cardBorder);
+}
+
+.achievement-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 8px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.achievement-icon-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: rgba(139,92,246,0.1);
+}
+
+.achievement-icon-item.locked {
+  /* Sin opacidad en el contenedor completo */
+  filter: none;
+}
+
+.achievement-icon-item.unlocked {
+  background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(34,211,238,0.15));
+  border: 2px solid var(--accent);
+}
+
+.achievement-icon-item.unlocked::after {
+  content: '✓';
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--good);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.achievement-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.achievement-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.achievement-icon-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.achievement-icon-item.locked .achievement-icon-wrapper {
+  /* Solo la imagen con filtro */
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.achievement-icon-item.locked .achievement-icon-name {
+  /* Texto completamente visible */
+  color: var(--text);
+  opacity: 1 !important;
+}
+
+/* Tooltip para mostrar descripción al hover */
+.achievement-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg2);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  max-width: 200px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1px solid var(--cardBorder);
+}
+
+.achievement-icon-item:hover .achievement-tooltip {
+  opacity: 1;
+}
+
+/* Sin scrollbar ya que no hay scroll */
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+  .achievements-grid-icons {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .achievement-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .achievement-icon-name {
+    font-size: 9px;
+  }
+  
+  .ranking-item {
+    padding-left: 32px;
+  }
+  
+  .ranking-item.top-rank {
+    padding-left: 48px;
+  }
+}
+
+/* Hover states para elementos clickeables */
+.clickable-friend:hover,
+.clickable-ranking:hover {
+  background: rgba(139, 92, 246, 0.1) !important;
+  transform: translateX(4px);
+  transition: all 0.2s ease;
+}
+
+.clickable-friend:active,
+.clickable-ranking:active {
+  transform: translateX(2px);
+}
+
+/* Evitar que los botones dentro se muevan con el hover del contenedor */
+.clickable-friend button,
+.clickable-ranking button {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animación de desbloqueo de logro */
+@keyframes achievement-unlock {
+  0% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.achievement-icon-item.just-unlocked {
+  animation: achievement-unlock 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Fix adicional para las imágenes en el contenedor de pregunta VS */
+.vs-game-content .qMedia,
+#vsGameArea .qMedia {
+  margin-bottom: 16px;
+}
+
+/* Asegurar que las imágenes se vean correctamente en VS */
+.vs-game-content img,
+#vsGameArea img {
+  max-width: 100%;
+  height: auto;
+}

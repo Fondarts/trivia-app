@@ -1,0 +1,50 @@
+[
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Toy Story",
+      "Terminator 2",
+      "Die Hard",
+      "Speed"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Toy Story?",
+    "options": [
+      "1995",
+      "1991",
+      "1988",
+      "1995"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Cuál es la voz del personaje Woody en la película Toy Story?",
+    "options": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Tom Cruise",
+      "Arnold Schwarzenegger"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Quién es el protagonista principal de la película Toy Story?",
+    "options": [
+      "Woody",
+      "Buzz Lightyear",
+      "Andy",
+      "Mr. Potato Head"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  }
+]

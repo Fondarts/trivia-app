@@ -1,0 +1,266 @@
+[
+  {
+    "q": "¿En qué año se estrenó El quinto elemento?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Batman vuelve?",
+    "options": [
+      "Val Kilmer",
+      "George Clooney",
+      "Christian Bale",
+      "Michael Keaton"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Reservoir Dogs?",
+    "options": [
+      "1992",
+      "1993",
+      "1994",
+      "1995"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó The Matrix?",
+    "options": [
+      "1999",
+      "1998",
+      "2000",
+      "1997"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Alien: Resurrección?",
+    "options": [
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Batman y Robin?",
+    "options": [
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Die Hard?",
+    "options": [
+      "1988",
+      "1989",
+      "1990",
+      "1991"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Heat",
+      "Pulp Fiction",
+      "Reservoir Dogs",
+      "The Matrix"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/08.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Misión Imposible",
+      "James Bond",
+      "Pulp Fiction",
+      "Die Hard"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Desafío total",
+      "Pulp Fiction",
+      "Reservoir Dogs",
+      "The Matrix"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Men in Black?",
+    "options": [
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Braveheart?",
+    "options": [
+      "Mel Gibson",
+      "Tom Cruise",
+      "Leonardo DiCaprio",
+      "Brad Pitt"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Terminator 2: El juicio final?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Tom Cruise",
+      "Leonardo DiCaprio",
+      "Bruce Willis"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Stargate: Puerta a las estrellas",
+      "Independence Day",
+      "Terminator 2: Judgment Day",
+      "Men in Black"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Terminator 2: Judgment Day",
+      "Alien",
+      "Predator",
+      "Total Recall"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Kill Bill",
+      "Pulp Fiction",
+      "Reservoir Dogs",
+      "The Matrix"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Sangre por sangre",
+      "Pulp Fiction",
+      "Reservoir Dogs",
+      "The Matrix"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/09.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Independence Day",
+      "Die Hard",
+      "Twister",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó El profesional (Léon)?",
+    "options": [
+      "Jean Reno",
+      "Gary Oldman",
+      "Danny DeVito",
+      "Harrison Ford"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: Judgment Day",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó Dos policías rebeldes?",
+    "options": [
+      "Will Smith",
+      "Tom Cruise",
+      "Leonardo DiCaprio",
+      "Brad Pitt"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Hora punta?",
+    "options": [
+      "Tom Cruise",
+      "Johnny Depp",
+      "Leonardo DiCaprio",
+      "Brad Pitt"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": null
+  }
+]

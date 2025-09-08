@@ -1,0 +1,74 @@
+[
+  {
+    "q": "¿Quién dirigió Pulp Fiction (1994)?",
+    "options": [
+      "Guy Ritchie",
+      "Quentin Tarantino",
+      "Steven Soderbergh",
+      "David Fincher"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "cine/01.png"
+  },
+  {
+    "q": "¿En qué año se estrenó Matrix?",
+    "options": [
+      "1997",
+      "1998",
+      "1999",
+      "2000"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": "cine/02.png"
+  },
+  {
+    "q": "Protagonista de Forrest Gump",
+    "options": [
+      "Tom Hanks",
+      "Brad Pitt",
+      "Tom Cruise",
+      "Keanu Reeves"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "cine/03.png"
+  },
+  {
+    "q": "¿A que pelicula pertenece está escena?",
+    "options": [
+      "Shakespeare in Love",
+      "Salvar al soldado Ryan",
+      "La delgada línea roja",
+      "Elizabeth"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "cine/04.webp"
+  },
+  {
+    "q": "Quien dirigio está pelicula?",
+    "options": [
+      "David Fincher",
+      "Joel Coen",
+      "Michael Mann",
+      "Tony Scott"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "cine/07.webp"
+  },
+  {
+    "q": "¿Qué actor hace de Neo?",
+    "options": [
+      "Keanu Reeves",
+      "Hugo Weaving",
+      "Laurence Fishburne",
+      "Matt Damon"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "cine/08.webp"
+  }
+]

@@ -1,0 +1,320 @@
+/* === SISTEMA DE LOGROS MEJORADO === */
+
+/* Contenedor principal con scroll completo */
+#fsStats {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 900;
+  background-color: var(--bg1);
+  overflow-y: auto; /* Permitir scroll vertical */
+  overflow-x: hidden;
+}
+
+/* El wrap interno sin restricciones de altura */
+#fsStats .wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-top: calc(36px + env(safe-area-inset-top, 0px));
+  padding-bottom: 40px;
+  /* Sin restricciones de altura */
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+}
+
+/* Mostrar scrollbar con estilo personalizado */
+#fsStats::-webkit-scrollbar {
+  width: 8px;
+}
+
+#fsStats::-webkit-scrollbar-track {
+  background: var(--cardBorder);
+}
+
+#fsStats::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+#fsStats::-webkit-scrollbar-thumb:hover {
+  background: var(--accent2);
+}
+
+#fsStats .titlebar {
+  background: transparent;
+  border: none;
+  padding: 0 0 16px;
+  margin-bottom: 0;
+}
+
+#fsStats .fs-titlebar-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+#fsStats .back {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#fsStats .back:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+/* Card sin bordes ni fondos extraños */
+#fsStats .card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+#fsStats h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 20px 0 12px;
+  color: var(--text);
+}
+
+#fsStats h3:first-child {
+  margin-top: 0;
+}
+
+/* Contenedor de estadísticas */
+#statsContainer {
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(6px);
+}
+
+#statsContainer p {
+  margin: 0 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text);
+}
+
+#statsContainer p:last-child {
+  margin-bottom: 0;
+}
+
+#statsContainer strong {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Ocultar el HR */
+#fsStats hr {
+  display: none;
+}
+
+/* Contenedor de logros sin padding extra */
+#achievementsContainer {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  /* Sin restricciones de altura */
+  max-height: none;
+}
+
+/* Grid de logros SIN CONTENEDOR - Página completa */
+.achievements-grid-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  /* Sin altura máxima ni scroll */
+  max-height: none;
+  overflow: visible;
+}
+
+@media (max-width: 450px) {
+  .achievements-grid-icons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .achievements-grid-icons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Items de logros SIN BORDES NI FONDOS */
+.achievement-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 70px;
+  max-height: 85px;
+  overflow: visible; /* Permitir que el tooltip se vea */
+}
+
+.achievement-icon-item:hover {
+  transform: translateY(-2px) scale(1.05);
+  z-index: 10;
+}
+
+/* Sin estilos especiales para desbloqueados */
+.achievement-icon-item.unlocked {
+  background: transparent;
+  border: none;
+}
+
+/* Wrapper del icono */
+.achievement-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.achievement-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.2s ease;
+}
+
+/* Iconos en escala de grises cuando están bloqueados */
+.achievement-icon-item.locked .achievement-icon-wrapper img {
+  filter: grayscale(100%);
+  opacity: 0.85;
+}
+
+/* Iconos a color cuando están desbloqueados */
+.achievement-icon-item.unlocked .achievement-icon-wrapper img {
+  filter: none;
+  opacity: 1;
+}
+
+.achievement-icon-item:hover .achievement-icon-wrapper img {
+  transform: scale(1.15);
+}
+
+/* Nombre del logro - MISMO COLOR PARA TODOS */
+.achievement-icon-name {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 100%;
+  word-wrap: break-word;
+  padding: 0 2px;
+  color: #e5e7eb; /* Mismo color para todos */
+  opacity: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Texto COMPLETAMENTE VISIBLE para bloqueados */
+.achievement-icon-item.locked .achievement-icon-name {
+  color: var(--text);
+  opacity: 1 !important; /* Forzar opacidad completa */
+  font-weight: 600;
+}
+
+.achievement-icon-item.unlocked .achievement-icon-name {
+  color: var(--accent); /* Color destacado para desbloqueados */
+  opacity: 1;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Tooltip con descripción - SIEMPRE VISIBLE */
+.achievement-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: normal;
+  width: 160px;
+  text-align: center;
+  line-height: 1.3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  z-index: 10000; /* Z-index muy alto para siempre estar visible */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+/* Mostrar tooltip solo en hover */
+.achievement-icon-item:hover .achievement-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Para pantallas táctiles, no mostrar tooltips */
+@media (hover: none) {
+  .achievement-tooltip {
+    display: none !important;
+  }
+  
+  .achievement-icon-item {
+    min-height: 70px;
+    max-height: 80px;
+  }
+  
+  .achievement-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .achievement-icon-name {
+    font-size: 10px;
+  }
+}
+
+/* Fix para el tema claro - mismo color para todos */
+:root[data-theme="light"] .achievement-icon-item.locked .achievement-icon-name,
+:root[data-theme="light"] .achievement-icon-item.unlocked .achievement-icon-name {
+  color: #1f2937; /* Color oscuro para tema claro */
+  opacity: 1;
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .achievement-tooltip {
+  background: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.1);
+}

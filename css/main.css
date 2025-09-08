@@ -1,0 +1,1133 @@
+/* =============================================
+   QUIZLE! - SISTEMA DE ESTILOS PRINCIPAL
+   v3.0 - Consolidado y Optimizado
+   ============================================= */
+
+/* ===========================================
+   1. VARIABLES GLOBALES Y TEMAS
+   =========================================== */
+:root {
+  /* Colores principales - Tema Oscuro (default) */
+  --bg1: #0f172a;
+  --bg2: #111827;
+  --accent: #8b5cf6;
+  --accent2: #22d3ee;
+  --text: #e5e7eb;
+  --card: rgba(15, 23, 42, 0.4);
+  --cardBorder: rgba(139, 92, 246, 0.25);
+  --muted: rgba(229,231,235,.75);
+  --good: #22c55e;
+  --bad: #ef4444;
+  --warning: #f59e0b;
+  
+  /* Sombras mejoradas */
+  --shadow-sm: 0 2px 8px rgba(139, 92, 246, 0.1);
+  --shadow-md: 0 8px 24px rgba(139, 92, 246, 0.15);
+  --shadow-lg: 0 16px 48px rgba(139, 92, 246, 0.2);
+  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
+  
+  /* Transiciones */
+  --transition-fast: 0.2s cubic-bezier(0.4,0,0.2,1);
+  --transition-base: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: 0.5s cubic-bezier(0.4,0,0.2,1);
+  
+  /* Imagen de fondo */
+  --bg-image: url('../assets/backgrounds/bgdark.webp');
+  --bg-overlay: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%);
+}
+
+/* Tema Claro */
+:root[data-theme="light"] {
+  --bg1: #f0f9ff;
+  --bg2: #e0f2fe;
+  --accent: #3b82f6;
+  --accent2: #06b6d4;
+  --text: #1e293b;
+  --card: rgba(255, 255, 255, 0.4);
+  --cardBorder: rgba(59, 130, 246, 0.25);
+  --muted: rgba(30, 41, 59, 0.6);
+  --good: #16a34a;
+  --bad: #dc2626;
+  
+  /* Sombras para tema claro */
+  --shadow-sm: 0 2px 8px rgba(59, 130, 246, 0.08);
+  --shadow-md: 0 8px 24px rgba(59, 130, 246, 0.12);
+  --shadow-lg: 0 16px 48px rgba(59, 130, 246, 0.16);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.2);
+  
+  /* Imagen de fondo */
+  --bg-image: url('../assets/backgrounds/bglight.webp');
+  --bg-overlay: linear-gradient(180deg, rgba(240, 249, 255, 0.2) 0%, rgba(240, 249, 255, 0.5) 100%);
+}
+
+/* ===========================================
+   2. RESET Y ESTILOS BASE
+   =========================================== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background-color: var(--bg1);
+  background-image: 
+    var(--bg-overlay),
+    var(--bg-image);
+  background-size: cover, cover;
+  background-position: center center, center center;
+  background-attachment: fixed, fixed;
+  background-repeat: no-repeat, no-repeat;
+  transition: all var(--transition-slow);
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  /* Optimización para fondos */
+  will-change: background-image;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Efecto de partículas flotantes estático (sin animación) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(34, 211, 238, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: calc(36px + env(safe-area-inset-top, 0px)) 16px 28px;
+  min-height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuste para Capacitor */
+body.capacitor-app .container {
+  padding-top: calc(44px + env(safe-area-inset-top, 0px));
+}
+
+/* ===========================================
+   3. COMPONENTES BASE
+   =========================================== */
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 20px rgba(139, 92, 246, 0.3);
+  letter-spacing: -0.5px;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* Cards con mejor integración con fondos */
+.card {
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  border-radius: 24px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo en cards */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg) translateY(-100%);
+  transition: transform 0.6s;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  transform: rotate(45deg) translateY(100%);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+/* Secciones */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Labels */
+label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Filas */
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ===========================================
+   4. FORMULARIOS
+   =========================================== */
+
+/* Inputs */
+.input, select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--cardBorder);
+  background: rgba(255,255,255,.9);
+  color: #111;
+  font-size: 16px;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+:root[data-theme="dark"] .input,
+:root[data-theme="dark"] select {
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15), 0 0 20px rgba(139, 92, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ===========================================
+   5. BOTONES
+   =========================================== */
+
+/* Botón base */
+.btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 16px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  color: #fff;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(139, 92, 246, 0.2);
+  transition: all var(--transition-fast);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.2), 0 12px 32px rgba(139, 92, 246, 0.3);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2), 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Variantes de botón */
+.btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--cardBorder);
+  box-shadow: none;
+}
+
+.btn.secondary:hover {
+  background: rgba(0,0,0,.05);
+  border-color: #bdc3c7;
+  transform: translateY(-1px);
+}
+
+.btn.danger {
+  background: #e74c3c;
+  box-shadow: 0 4px 0 0 #c0392b;
+}
+
+.btn.danger:hover {
+  box-shadow: 0 6px 0 0 #c0392b;
+}
+
+.btn.accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(139, 92, 246, 0.3);
+}
+
+.btn.small {
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+/* Botones de icono */
+.iconbtn {
+  border: none;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: all var(--transition-fast);
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconbtn:hover {
+  transform: scale(1.1) translateY(-2px);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.iconbtn svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  color: var(--accent);
+  transition: all var(--transition-fast);
+}
+
+.iconbtn:hover svg {
+  color: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Botón de tienda con color especial */
+#btnDLC {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+#btnDLC svg {
+  color: #fff;
+}
+
+#btnDLC:hover {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+}
+
+/* Botón de amigos con color especial */
+#btnFriends {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+#btnFriends svg {
+  color: #fff;
+}
+
+#btnFriends:hover {
+  background: linear-gradient(135deg, #0891b2, #0e7490);
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
+}
+
+/* Botón avatar */
+.avatar-btn {
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+  transition: all var(--transition-fast);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+.avatar-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+  border-color: var(--accent2);
+}
+
+.avatar-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all var(--transition-fast);
+}
+
+.avatar-btn:hover img {
+  transform: scale(1.1);
+}
+
+/* ===========================================
+   6. COMPONENTES DE SELECCIÓN
+   =========================================== */
+
+/* Segmentos */
+.segment {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 400px) {
+  .segment {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.segment.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Segmento de modos especial */
+.mode-segment {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .mode-segment {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Botones de modo con solo iconos */
+.mode-btn {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  border-radius: 12px;
+  border: 2px solid var(--cardBorder);
+  background: rgba(30, 41, 59, 0.9);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* Colores específicos para cada modo */
+.mode-btn[data-val="rounds"] {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
+}
+
+.mode-btn[data-val="timed"] {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-color: #f59e0b;
+}
+
+.mode-btn[data-val="vs"] {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border-color: #ef4444;
+}
+
+.mode-btn[data-val="adventure"] {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: #10b981;
+}
+
+/* Tooltip para el texto del modo */
+.mode-tooltip {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* Flecha del tooltip */
+.mode-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.mode-btn:hover .mode-tooltip {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  top: -32px;
+}
+
+/* Iconos de modo siempre a color */
+.mode-btn .mode-icon {
+  width: 26px;
+  height: 26px;
+  transition: all var(--transition-fast);
+  display: block;
+  object-fit: contain;
+  /* Filtro para mejorar contraste con fondo blanco de los iconos */
+  filter: brightness(1.1) contrast(1.1) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+  opacity: 1;
+}
+
+.mode-btn:hover .mode-icon {
+  filter: brightness(1.2) contrast(1.1) drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  transform: scale(1.15);
+}
+
+.mode-btn.active .mode-icon {
+  filter: brightness(1.3) contrast(1.2) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.6));
+  transform: scale(1.2);
+}
+
+.mode-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1);
+}
+
+.mode-btn.active {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Hover específico para cada modo */
+.mode-btn[data-val="rounds"]:hover {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.mode-btn[data-val="timed"]:hover {
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.mode-btn[data-val="vs"]:hover {
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.mode-btn[data-val="adventure"]:hover {
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Active específico con brillo interior */
+.mode-btn[data-val="rounds"].active {
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.mode-btn[data-val="timed"].active {
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.mode-btn[data-val="vs"].active {
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.mode-btn[data-val="adventure"].active {
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Segmentos normales (no modos) */
+.segment:not(.mode-segment) .seg {
+  padding: 10px 8px;
+  border-radius: 12px;
+  border: 2px solid var(--cardBorder);
+  text-align: center;
+  background: rgba(30, 41, 59, 0.9);
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: .4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 11px;
+  min-height: 60px;
+}
+
+:root[data-theme="light"] .segment:not(.mode-segment) .seg {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--muted);
+}
+
+.segment:not(.mode-segment) .seg:hover {
+  transform: scale(1.03);
+  border-color: var(--accent);
+}
+
+.segment:not(.mode-segment) .seg.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  transform: scale(1.05);
+}
+
+/* Pills */
+.pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.pill {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--cardBorder);
+  background: rgba(30, 41, 59, 0.9);
+  white-space: nowrap;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-fast);
+  color: var(--text);
+}
+
+:root[data-theme="light"] .pill {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+}
+
+.pill:hover {
+  transform: scale(1.03);
+  border-color: var(--accent);
+}
+
+.pill.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  transform: scale(1.05);
+}
+
+/* ===========================================
+   7. COMPONENTES DE JUEGO
+   =========================================== */
+
+/* Opciones de pregunta */
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.option {
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid var(--cardBorder);
+  background: rgba(30, 41, 59, 0.9);
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+  transition: all var(--transition-fast);
+}
+
+:root[data-theme="light"] .option {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+}
+
+.option:hover:not(.disabled) {
+  transform: scale(1.03);
+  background: rgba(139,92,246,0.1);
+  border-color: var(--accent);
+}
+
+.option.correct {
+  background: linear-gradient(135deg, var(--good), #10b981);
+  color: #fff;
+  border-color: var(--good);
+  animation: correctPulse 0.6s ease;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.4);
+}
+
+.option.wrong {
+  background: linear-gradient(135deg, var(--bad), #dc2626);
+  color: #fff;
+  border-color: var(--bad);
+  animation: shake-horizontal 0.4s cubic-bezier(.455,.03,.515,.955) both;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+.option.disabled {
+  opacity: .75;
+  pointer-events: none;
+}
+
+/* Barra de progreso */
+.progress {
+  height: 12px;
+  background: rgba(0,0,0,.2);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress > div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  width: 0%;
+  transition: width var(--transition-base);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  position: relative;
+}
+
+.progress > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--cardBorder);
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+  color: var(--text);
+}
+
+/* Badge de notificación */
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+  border: 2px solid var(--bg2);
+  animation: pulse-notification 2s ease-in-out infinite;
+}
+
+@keyframes pulse-notification {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.1);
+  }
+}
+
+:root[data-theme="light"] .badge {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.badge.urgent {
+  animation: pulse-urgent 1s ease-in-out infinite;
+  background: rgba(239,68,68,0.15);
+  border-color: var(--bad);
+  color: var(--bad);
+}
+
+.badge.code {
+  font-size: 16px;
+  padding: 10px 14px;
+  letter-spacing: .5px;
+  background: rgba(0,0,0,.1);
+}
+
+/* Media de pregunta */
+.qMedia {
+  display: none;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+}
+
+.qMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===========================================
+   8. PANTALLAS COMPLETAS
+   =========================================== */
+
+.fs {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 900;
+  background-color: var(--bg1);
+  overflow: auto;
+}
+
+.fs .wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-top: calc(36px + env(safe-area-inset-top, 0px));
+}
+
+body.capacitor-app .fs .wrap {
+  padding-top: calc(44px + env(safe-area-inset-top, 0px));
+}
+
+.fs .titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.fs .fs-titlebar-title {
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--text);
+}
+
+.fs .back {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 22px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all var(--transition-fast);
+}
+
+.fs .back:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* ===========================================
+   9. MODALES
+   =========================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  padding: 16px;
+  pointer-events: none;
+}
+
+.modal.open {
+  display: flex;
+  pointer-events: auto;
+}
+
+.modal .panel {
+  width: min(520px, 92vw);
+  max-height: 86vh;
+  overflow: auto;
+  background: var(--bg2);
+  border: 1px solid var(--cardBorder);
+  border-radius: 16px;
+  padding: 14px;
+  margin: 0;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10000;
+  animation: fadeInScale var(--transition-base);
+  backdrop-filter: blur(12px);
+}
+
+:root[data-theme="light"] .modal .panel {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Todos los elementos dentro del modal son interactivos */
+.modal .panel button,
+.modal .panel input,
+.modal .panel label,
+.modal .panel select {
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+/* ===========================================
+   10. COMPONENTES HERO
+   =========================================== */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 10px;
+}
+
+.hero .big-title {
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.hero .subtitle {
+  opacity: .95;
+  text-align: center;
+  font-size: 18px;
+}
+
+.bigscore {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: var(--accent2);
+}
+
+:root[data-theme="dark"] .bigscore {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero .actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+/* ===========================================
+   11. ANIMACIONES
+   =========================================== */
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake-horizontal {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+  20%, 40%, 60%, 80% { transform: translateX(8px); }
+}
+
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-urgent {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: scale(1.05); 
+    opacity: 0.9; 
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Spinner */
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(0,0,0,.15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+/* ===========================================
+   12. UTILIDADES
+   =========================================== */
+
+.empty-state {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  padding: 24px;
+  font-style: italic;
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 12px;
+  border: 1px dashed var(--cardBorder);
+}
+
+:root[data-theme="light"] .empty-state {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cardBorder);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent2);
+}
+
+/* ===========================================
+   13. RESPONSIVE
+   =========================================== */
+
+@media (max-width: 480px) {
+  .hero .actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-title {
+    font-size: 22px;
+  }
+}

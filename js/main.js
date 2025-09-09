@@ -72,6 +72,14 @@ function showConfigUI(){
   if (cfg)  cfg.style.display    = 'block';
 }
 
+function resetVsCodeBadge(){
+  const badge = document.getElementById('vsCodeBadge');
+  if (badge){
+    badge.textContent = 'Sala: —';
+    badge.style.color = '';
+  }
+}
+
 let vsQNo = 0;
 let vsQTotal = null;
 let vsActive = false;
@@ -203,11 +211,7 @@ async function showResults({scores, mePid}){
   }
   
   // Limpiar el badge de espera
-  const badge = document.getElementById('vsCodeBadge');
-  if (badge) {
-    badge.textContent = 'Sala: —';
-    badge.style.color = '';
-  }
+  resetVsCodeBadge();
 
   const fs = document.getElementById('fsVSResult');
   if (!fs) { showConfigUI(); return; }
@@ -299,11 +303,7 @@ async function backToHome(){
   }
   
   // Limpiar el badge
-  const badge = document.getElementById('vsCodeBadge');
-  if (badge) {
-    badge.textContent = 'Sala: —';
-    badge.style.color = '';
-  }
+  resetVsCodeBadge();
 }
 
 // Esperar a que el banco esté listo
@@ -760,12 +760,8 @@ window.addEventListener('load', async ()=>{
             vsActive = false;
             showConfigUI();
             setStatus('Listo', false);
-            // Limpiar badge de espera
-            const badge = document.getElementById('vsCodeBadge');
-            if (badge) {
-              badge.textContent = 'Sala: —';
-              badge.style.color = '';
-            }
+              // Limpiar badge de espera
+              resetVsCodeBadge();
           } else if (s.status === 'waiting' && s.players && s.players.length > 1) {
             // Si alguien se unió, limpiar mensaje de espera
             const badge = document.getElementById('vsCodeBadge');
@@ -893,11 +889,7 @@ window.addEventListener('load', async ()=>{
             btnHost.textContent = 'Crear Sala';
             btnHost.classList.remove('friend-vs');
           }
-          const badge = document.getElementById('vsCodeBadge');
-          if (badge) {
-            badge.textContent = 'Sala: —';
-            badge.style.color = '';
-          }
+            resetVsCodeBadge();
         }
       }
     });

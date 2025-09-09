@@ -364,3 +364,61 @@ export const ACHIEVEMENTS_LIST = [
     },
   }
 ];
+const ACHIEVEMENT_TEXT_EN = {
+  ACCURACY_STREAK_10: { title: 'Sharpshooter', description: 'Get 10 correct answers in a row.' },
+  ACCURACY_STREAK_25: { title: 'Eagle Eye', description: 'Get 25 correct answers in a row.' },
+  PERFECT_GAME: { title: 'Perfectionist', description: 'Finish a game of 15+ questions without a mistake.' },
+  KNOWLEDGE_MOVIES: { title: 'Movie Buff', description: '50 correct answers in Movies.' },
+  KNOWLEDGE_GEOGRAPHY: { title: 'Geographer', description: '50 correct answers in Geography.' },
+  KNOWLEDGE_HISTORY: { title: 'Historian', description: '50 correct answers in History.' },
+  KNOWLEDGE_SCIENCE: { title: 'Scientist', description: '50 correct answers in Science.' },
+  KNOWLEDGE_SPORTS: { title: 'Sports Fan', description: '50 correct answers in Sports.' },
+  KNOWLEDGE_SAGE: { title: 'Sage', description: '100 correct answers in EACH category.' },
+  DEDICATION_FIRST_GAME: { title: 'Beginner', description: 'Play your first game.' },
+  DEDICATION_7_DAYS: { title: 'Regular', description: 'Play 7 days in a row.' },
+  DEDICATION_30_DAYS: { title: 'Veteran', description: 'Play 30 days in a row.' },
+  DEDICATION_100_GAMES: { title: 'Legend', description: 'Play 100 games.' },
+  DEDICATION_500_GAMES: { title: 'Mythic', description: 'Play 500 games.' },
+  SPECIAL_EARLY_BIRD: { title: 'Early Bird', description: 'Play a game between 5 and 7 AM.' },
+  SPECIAL_NIGHT_OWL: { title: 'Night Owl', description: 'Play a game between 12 and 3 AM.' },
+  PRECISION_100_TOTAL: { title: 'Bright Mind', description: 'Answer 100 questions correctly in total.' },
+  PRECISION_95_PERCENT: { title: 'Master of Knowledge', description: 'Reach 95% accuracy with at least 50 questions.' },
+  PERFECT_GAMES_3: { title: 'Flawless', description: 'Complete 3 perfect games.' },
+  STREAK_50: { title: 'Unstoppable', description: 'Get a streak of 50 correct answers.' },
+  STREAK_100: { title: 'Living Legend', description: 'Get a streak of 100 correct answers.' },
+  COMEBACK_STREAK: { title: 'Comeback Kid', description: 'Get 10 correct answers in a row after 3 mistakes.' },
+  SPEED_DEMON: { title: 'Speed Demon', description: 'Answer correctly in under 3 seconds (10 times).' },
+  TIMED_HIGH_SCORE: { title: 'Ninja Reflexes', description: 'Finish a timed game with 30+ points.' },
+  TIMED_WINS_5: { title: 'Time Machine', description: 'Win 5 timed games.' },
+  VS_FIRST_WIN: { title: 'First Victory', description: 'Win your first VS match.' },
+  VS_WINS_10: { title: 'Champion', description: 'Win 10 VS matches.' },
+  VS_STREAK_5: { title: 'Invincible', description: 'Win 5 VS matches in a row.' },
+  LEVEL_5: { title: 'Promising Rookie', description: 'Reach level 5.' },
+  LEVEL_25: { title: 'Veteran', description: 'Reach level 25.' },
+  LEVEL_50: { title: 'Elite', description: 'Reach level 50.' },
+  LEVEL_100: { title: 'Legend', description: 'Reach level 100.' },
+  POLYGLOT: { title: 'Polyglot', description: 'Play in 2 different languages.' },
+  COLLECTOR_5_PACKS: { title: 'Collector', description: 'Unlock 5 question packs.' },
+  EXPLORER_ALL_CATEGORIES: { title: 'Explorer', description: 'Play all base categories.' },
+  FIRST_FRIEND: { title: 'Sociable', description: 'Add your first friend.' },
+  FRIENDS_10: { title: 'Popular', description: 'Have 10 friends in your list.' },
+  NIGHT_PLAYER: { title: 'Wise Owl', description: 'Play 10 games between 10 PM and 2 AM.' },
+  WEEKEND_WARRIOR: { title: 'Weekend Warrior', description: 'Play 20 games on weekends.' },
+  DAILY_PLAYER_14: { title: 'Healthy Addict', description: 'Play at least once a day for 14 days.' },
+  MONTHLY_MASTER: { title: 'Monthly Master', description: 'Play every day of a month.' },
+  QUESTIONS_1000: { title: 'Millennial', description: 'Answer 1000 questions in total.' },
+  CORRECT_500: { title: 'Living Encyclopedia', description: 'Answer 500 questions correctly.' },
+  ALL_ACHIEVEMENTS: { title: 'God of Knowledge', description: 'Unlock all other achievements.' }
+};
+
+export function translateAchievement(ach, lang = 'es') {
+  if (lang === 'en' && ACHIEVEMENT_TEXT_EN[ach.id]) {
+    return ACHIEVEMENT_TEXT_EN[ach.id];
+  }
+  return { title: ach.title, description: ach.description };
+}
+
+if (typeof window !== 'undefined') {
+  window.translateAchievement = translateAchievement;
+}
+

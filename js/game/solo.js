@@ -3,10 +3,18 @@ import { SETTINGS, STATE } from '../deprecated/store.js';
 import { buildDeckSingle, ensureInitial60 } from './bank.js';
 import { trackEvent } from '../player/stats.js';
 import { toast, updatePlayerXPBar } from './ui.js';
-import { t } from '../core/i18n.js';
+import { t, getLanguage } from '../core/i18n.js';
+import { translateAchievement } from '../player/achievements.js';
 
 let audioCtx = null;
 let audioInitialized = false;
+
+function showAchievementToast(ach) {
+  const lang = getLanguage();
+  const { title } = translateAchievement(ach, lang);
+  const msg = lang === 'en' ? 'Achievement unlocked' : '¡Logro desbloqueado';
+  toast(`🏆 ${msg}: ${title}!`);
+}
 
 function ensureAC() {
   if (!SETTINGS.sounds) return null;
@@ -246,7 +254,7 @@ function renderQuestion(q){
       updatePlayerXPBar();
       if(results.leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
       if(results.bonusToast) toast(results.bonusToast);
-      results.newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+      results.newAchievements.forEach(ach => showAchievementToast(ach));
 
       if (STATE.mode==='timed' || SETTINGS.autoNextRounds) {
         setTimeout(()=> nextQuestion(), 800);
@@ -336,7 +344,7 @@ export async function endGame(){
   updatePlayerXPBar();
   if(results.leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
   if(results.bonusToast) toast(results.bonusToast);
-  results.newAchievements.forEach(ach => setTimeout(() => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`), 500));
+results.newAchievements.forEach(ach => setTimeout(() => showAchievementToast(ach), 500));
 
   showGame(false);
 }
@@ -365,7 +373,7 @@ export async function startSolo(){
   const { newAchievements, leveledUp } = await trackEvent('game_start');
   updatePlayerXPBar();
   if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
-  newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+newAchievements.forEach(ach => showAchievementToast(ach));
   
   STATE.score = 0;
   STATE.index = 0;

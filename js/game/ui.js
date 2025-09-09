@@ -2,7 +2,7 @@ import { SETTINGS } from '../deprecated/store.js';
 import { getBank, getBankCount, warmLocalBank, BASE_LABELS } from './bank.js';
 import { getStats, getUnlockedAchievements } from '../player/stats.js';
 import { getLevelProgress } from '../player/experience.js';
-import { ACHIEVEMENTS_LIST } from '../player/achievements.js';
+import { ACHIEVEMENTS_LIST, translateAchievement } from '../player/achievements.js';
 import { t, setLanguage, getLanguage, initI18n, updateUI as updateI18nUI } from '../core/i18n.js';
 
 export function updateBankCount(){
@@ -514,18 +514,19 @@ export function renderStatsPage() {
     achievementsContainer.innerHTML = `
         <div class="achievements-grid-icons">
             ${ACHIEVEMENTS_LIST.map(ach => {
+                const { title, description } = translateAchievement(ach, getLanguage());
                 const isUnlocked = unlocked.has(ach.id);
                 const iconPath = ach.icon ? `Icons/${ach.icon}` : '';
                 return `
-                    <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" title="${ach.description}">
+                    <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" title="${description}">
                         <div class="achievement-icon-wrapper">
-                            ${iconPath ? 
-                                `<img src="${iconPath}" alt="${ach.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='${isUnlocked ? '🏆' : '🔒'}';" />` : 
+                            ${iconPath ?
+                                `<img src="${iconPath}" alt="${title}" onerror="this.style.display='none'; this.parentElement.innerHTML='${isUnlocked ? '🏆' : '🔒'}';" />` :
                                 (isUnlocked ? '🏆' : '🔒')
                             }
                         </div>
-                        <div class="achievement-icon-name">${ach.title}</div>
-                        <div class="achievement-tooltip">${ach.description}</div>
+                        <div class="achievement-icon-name">${title}</div>
+                        <div class="achievement-tooltip">${description}</div>
                     </div>
                 `;
             }).join('')}

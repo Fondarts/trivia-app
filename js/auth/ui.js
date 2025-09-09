@@ -1,14 +1,15 @@
 // js/auth_ui.js - UI para el sistema de autenticación
 
-import { 
-  signIn, 
-  signUp, 
-  signInAsGuest, 
+import {
+  signIn,
+  signUp,
+  signInAsGuest,
   getCurrentUser,
   convertGuestAccount,
-  checkUsernameAvailability 
+  checkUsernameAvailability
 } from './auth.js';
 import { toast } from './ui.js';
+import { updateUI, t } from '../core/i18n.js';
 
 let authModal = null;
 let isGuest = false;
@@ -21,78 +22,79 @@ export function createAuthModal() {
   modal.innerHTML = `
     <div class="panel auth-panel">
       <button class="iconbtn close-auth" id="btnCloseAuth">✖</button>
-      
+
       <div class="auth-header">
-        <h2 id="authTitle">Iniciar Sesión</h2>
-        <p id="authSubtitle">Guarda tu progreso y compite con amigos</p>
+        <h2 id="authTitle" data-i18n="authTitle">Iniciar Sesión</h2>
+        <p id="authSubtitle" data-i18n="authSubtitle">Guarda tu progreso y compite con amigos</p>
       </div>
-      
+
       <div class="auth-tabs">
-        <button class="auth-tab active" data-tab="login">Iniciar Sesión</button>
-        <button class="auth-tab" data-tab="register">Crear Cuenta</button>
+        <button class="auth-tab active" data-tab="login" data-i18n="authTabLogin">Iniciar Sesión</button>
+        <button class="auth-tab" data-tab="register" data-i18n="authTabRegister">Crear Cuenta</button>
       </div>
-      
+
       <!-- Login Form -->
       <form id="loginForm" class="auth-form">
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="loginEmail" class="input" placeholder="tu@email.com" required>
+          <label data-i18n="email">Email</label>
+          <input type="email" id="loginEmail" class="input" data-i18n-placeholder="emailPlaceholder" placeholder="tu@email.com" required>
         </div>
         <div class="form-group">
-          <label>Contraseña</label>
+          <label data-i18n="password">Contraseña</label>
           <input type="password" id="loginPassword" class="input" placeholder="••••••••" required>
         </div>
-        <button type="submit" class="btn" id="btnLogin">Iniciar Sesión</button>
+        <button type="submit" class="btn" id="btnLogin" data-i18n="authLogin">Iniciar Sesión</button>
         <div class="auth-divider">
-          <span>o</span>
+          <span data-i18n="or">o</span>
         </div>
-        <button type="button" class="btn secondary" id="btnGuestLogin">Jugar como Invitado</button>
+        <button type="button" class="btn secondary" id="btnGuestLogin" data-i18n="authGuestLogin">Jugar como Invitado</button>
       </form>
-      
+
       <!-- Register Form -->
       <form id="registerForm" class="auth-form" style="display:none">
         <div class="form-group">
-          <label>Nombre de Usuario</label>
-          <input type="text" id="registerUsername" class="input" placeholder="Tu nombre de jugador" required>
+          <label data-i18n="username">Nombre de Usuario</label>
+          <input type="text" id="registerUsername" class="input" data-i18n-placeholder="usernamePlaceholder" placeholder="Tu nombre de jugador" required>
           <span class="form-hint" id="usernameHint"></span>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="registerEmail" class="input" placeholder="tu@email.com" required>
+          <label data-i18n="email">Email</label>
+          <input type="email" id="registerEmail" class="input" data-i18n-placeholder="emailPlaceholder" placeholder="tu@email.com" required>
         </div>
         <div class="form-group">
-          <label>Contraseña</label>
-          <input type="password" id="registerPassword" class="input" placeholder="Mínimo 6 caracteres" required minlength="6">
+          <label data-i18n="password">Contraseña</label>
+          <input type="password" id="registerPassword" class="input" data-i18n-placeholder="passwordPlaceholder" placeholder="Mínimo 6 caracteres" required minlength="6">
         </div>
-        <button type="submit" class="btn" id="btnRegister">Crear Cuenta</button>
+        <button type="submit" class="btn" id="btnRegister" data-i18n="createAccount">Crear Cuenta</button>
       </form>
-      
+
       <!-- Convert Guest Form -->
       <form id="convertGuestForm" class="auth-form" style="display:none">
         <div class="guest-notice">
-          <p>🎮 Estás jugando como invitado</p>
-          <p>Crea una cuenta para guardar tu progreso permanentemente</p>
+          <p data-i18n="guestPlaying">🎮 Estás jugando como invitado</p>
+          <p data-i18n="guestPrompt">Crea una cuenta para guardar tu progreso permanentemente</p>
         </div>
         <div class="form-group">
-          <label>Nombre de Usuario</label>
-          <input type="text" id="convertUsername" class="input" placeholder="Elige tu nombre" required>
+          <label data-i18n="username">Nombre de Usuario</label>
+          <input type="text" id="convertUsername" class="input" data-i18n-placeholder="usernamePlaceholder" placeholder="Elige tu nombre" required>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="convertEmail" class="input" placeholder="tu@email.com" required>
+          <label data-i18n="email">Email</label>
+          <input type="email" id="convertEmail" class="input" data-i18n-placeholder="emailPlaceholder" placeholder="tu@email.com" required>
         </div>
         <div class="form-group">
-          <label>Contraseña</label>
-          <input type="password" id="convertPassword" class="input" placeholder="Mínimo 6 caracteres" required minlength="6">
+          <label data-i18n="password">Contraseña</label>
+          <input type="password" id="convertPassword" class="input" data-i18n-placeholder="passwordPlaceholder" placeholder="Mínimo 6 caracteres" required minlength="6">
         </div>
-        <button type="submit" class="btn" id="btnConvert">Crear Cuenta</button>
-        <button type="button" class="btn secondary" id="btnContinueGuest">Seguir como Invitado</button>
+        <button type="submit" class="btn" id="btnConvert" data-i18n="createAccount">Crear Cuenta</button>
+        <button type="button" class="btn secondary" id="btnContinueGuest" data-i18n="continueGuest">Seguir como Invitado</button>
       </form>
     </div>
   `;
   
   document.body.appendChild(modal);
   authModal = modal;
+  updateUI();
   bindAuthEvents();
   return modal;
 }
@@ -123,20 +125,20 @@ function bindAuthEvents() {
     
     const btn = document.getElementById('btnLogin');
     btn.disabled = true;
-    btn.textContent = 'Iniciando...';
-    
+    btn.textContent = t('authLoggingIn');
+
     const result = await signIn(email, password);
-    
+
     if (result.success) {
-      toast('¡Bienvenido de vuelta!');
+      toast(t('welcomeBack'));
       closeAuthModal();
       updateUIForUser();
     } else {
-      toast(result.error || 'Error al iniciar sesión');
+      toast(result.error || t('errorSignIn'));
     }
-    
+
     btn.disabled = false;
-    btn.textContent = 'Iniciar Sesión';
+    btn.textContent = t('authLogin');
   });
   
   // Register form
@@ -148,54 +150,54 @@ function bindAuthEvents() {
     
     const btn = document.getElementById('btnRegister');
     btn.disabled = true;
-    btn.textContent = 'Creando cuenta...';
-    
+    btn.textContent = t('authCreatingAccount');
+
     // Verificar disponibilidad del username
     const availability = await checkUsernameAvailability(username);
     if (!availability.available) {
-      toast('Ese nombre de usuario ya está en uso');
+      toast(t('usernameTaken'));
       btn.disabled = false;
-      btn.textContent = 'Crear Cuenta';
+      btn.textContent = t('createAccount');
       return;
     }
-    
+
     const result = await signUp(email, password, username);
-    
+
     if (result.success) {
-      toast('¡Cuenta creada! Revisa tu email para confirmar.');
+      toast(t('accountCreated'));
       switchAuthTab('login');
     } else {
-      toast(result.error || 'Error al crear la cuenta');
+      toast(result.error || t('errorCreateAccount'));
     }
-    
+
     btn.disabled = false;
-    btn.textContent = 'Crear Cuenta';
+    btn.textContent = t('createAccount');
   });
   
   // Guest login
   document.getElementById('btnGuestLogin')?.addEventListener('click', async () => {
     const btn = document.getElementById('btnGuestLogin');
     btn.disabled = true;
-    btn.textContent = 'Entrando...';
-    
+    btn.textContent = t('authEntering');
+
     const result = await signInAsGuest();
-    
+
     if (result.success) {
       isGuest = true;
-      toast('¡Bienvenido! Estás jugando como invitado');
+      toast(t('guestWelcome'));
       closeAuthModal();
       updateUIForUser();
-      
+
       // Mostrar opción de convertir cuenta después de un tiempo
       setTimeout(() => {
         showConvertGuestPrompt();
       }, 60000); // 1 minuto
     } else {
-      toast(result.error || 'Error al entrar como invitado');
+      toast(result.error || t('errorGuest'));
     }
-    
+
     btn.disabled = false;
-    btn.textContent = 'Jugar como Invitado';
+    btn.textContent = t('authGuestLogin');
   });
   
   // Convert guest form
@@ -207,21 +209,21 @@ function bindAuthEvents() {
     
     const btn = document.getElementById('btnConvert');
     btn.disabled = true;
-    btn.textContent = 'Convirtiendo...';
-    
+    btn.textContent = t('authConverting');
+
     const result = await convertGuestAccount(email, password, username);
-    
+
     if (result.success) {
       isGuest = false;
-      toast('¡Cuenta creada exitosamente!');
+      toast(t('convertSuccess'));
       closeAuthModal();
       updateUIForUser();
     } else {
-      toast(result.error || 'Error al convertir la cuenta');
+      toast(result.error || t('errorConvertAccount'));
     }
-    
+
     btn.disabled = false;
-    btn.textContent = 'Crear Cuenta';
+    btn.textContent = t('createAccount');
   });
   
   // Continue as guest
@@ -237,21 +239,21 @@ function bindAuthEvents() {
     const hint = document.getElementById('usernameHint');
     
     if (username.length < 3) {
-      hint.textContent = 'Mínimo 3 caracteres';
+      hint.textContent = t('usernameTooShort');
       hint.className = 'form-hint';
       return;
     }
-    
-    hint.textContent = 'Verificando...';
+
+    hint.textContent = t('checking');
     hint.className = 'form-hint checking';
     
     usernameTimeout = setTimeout(async () => {
       const availability = await checkUsernameAvailability(username);
       if (availability.available) {
-        hint.textContent = '✓ Disponible';
+        hint.textContent = t('available');
         hint.className = 'form-hint available';
       } else {
-        hint.textContent = '✗ No disponible';
+        hint.textContent = t('unavailable');
         hint.className = 'form-hint unavailable';
       }
     }, 500);
@@ -270,8 +272,9 @@ function switchAuthTab(tabName) {
   document.getElementById('registerForm').style.display = tabName === 'register' ? 'block' : 'none';
   
   // Update title
-  document.getElementById('authTitle').textContent = 
-    tabName === 'login' ? 'Iniciar Sesión' : 'Crear Cuenta';
+  const title = document.getElementById('authTitle');
+  title.setAttribute('data-i18n', tabName === 'login' ? 'authTitle' : 'createAccount');
+  updateUI();
 }
 
 // Mostrar modal de autenticación
@@ -284,7 +287,9 @@ export function showAuthModal(tab = 'login') {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'none';
     document.getElementById('convertGuestForm').style.display = 'block';
-    document.getElementById('authTitle').textContent = 'Crear Cuenta Permanente';
+    const title = document.getElementById('authTitle');
+    title.setAttribute('data-i18n', 'createPermanentAccount');
+    updateUI();
     document.querySelector('.auth-tabs').style.display = 'none';
   } else {
     // Mostrar formulario normal
@@ -313,7 +318,7 @@ export function updateUIForUser() {
     // Actualizar nombre en el input
     const nameInput = document.getElementById('playerName');
     if (nameInput) {
-      nameInput.value = user.display_name || user.username || 'Jugador';
+      nameInput.value = user.display_name || user.username || t('player');
       nameInput.disabled = true; // Deshabilitar edición si está logueado
     }
     
@@ -344,9 +349,10 @@ function addGuestIndicator() {
   indicator.id = 'guestIndicator';
   indicator.className = 'guest-indicator';
   indicator.innerHTML = `
-    <span>👤 Jugando como invitado</span>
-    <button class="btn-link" id="btnUpgradeAccount">Crear cuenta</button>
+    <span data-i18n="playingAsGuest">👤 Jugando como invitado</span>
+    <button class="btn-link" id="btnUpgradeAccount" data-i18n="createAccount">Crear cuenta</button>
   `;
+  updateUI();
   
   const header = document.querySelector('.header');
   if (header) {
@@ -366,14 +372,15 @@ export function showConvertGuestPrompt() {
   prompt.className = 'convert-prompt';
   prompt.innerHTML = `
     <div class="convert-prompt-content">
-      <h3>💾 ¿Quieres guardar tu progreso?</h3>
-      <p>Crea una cuenta gratuita para no perder tus estadísticas y logros</p>
+      <h3 data-i18n="saveProgressQuestion">💾 ¿Quieres guardar tu progreso?</h3>
+      <p data-i18n="saveProgressDescription">Crea una cuenta gratuita para no perder tus estadísticas y logros</p>
       <div class="convert-prompt-actions">
-        <button class="btn small" id="btnPromptConvert">Crear Cuenta</button>
-        <button class="btn secondary small" id="btnPromptLater">Más tarde</button>
+        <button class="btn small" id="btnPromptConvert" data-i18n="createAccount">Crear Cuenta</button>
+        <button class="btn secondary small" id="btnPromptLater" data-i18n="later">Más tarde</button>
       </div>
     </div>
   `;
+  updateUI();
   
   document.body.appendChild(prompt);
   

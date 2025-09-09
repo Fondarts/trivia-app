@@ -939,8 +939,8 @@ body.capacitor-app .fs .wrap {
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,.6);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: none;
   z-index: 9999;
   padding: 16px;
   pointer-events: none;
@@ -964,11 +964,11 @@ body.capacitor-app .fs .wrap {
   position: relative;
   z-index: 10000;
   animation: fadeInScale var(--transition-base);
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
 }
 
 :root[data-theme="light"] .modal .panel {
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff;
 }
 
 /* Todos los elementos dentro del modal son interactivos */

@@ -1,5 +1,8 @@
 // js/friends_ui.js - Interfaz de usuario para el sistema de amigos
 
+import { getLanguage } from '../core/i18n.js';
+import { translateAchievement } from './achievements.js';
+
 let socialManager = null;
 let currentUserNickname = '';
 
@@ -1317,18 +1320,19 @@ async function showFriendProfile(friendId) {
     const achievementsContainer = document.getElementById('friendAchievements');
     if (achievementsContainer) {
       achievementsContainer.innerHTML = ACHIEVEMENTS_LIST.map(ach => {
+        const { title, description } = translateAchievement(ach, getLanguage());
         const isUnlocked = unlockedAchievements.has(ach.id);
         const iconPath = ach.icon ? `Icons/${ach.icon}` : '';
         return `
           <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}">
-            <div class="achievement-tooltip">${ach.description}</div>
+            <div class="achievement-tooltip">${description}</div>
             <div class="achievement-icon-wrapper">
-              ${iconPath ? 
-                `<img src="${iconPath}" alt="${ach.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='${isUnlocked ? '🏆' : '🔒'}';" />` : 
+              ${iconPath ?
+                `<img src="${iconPath}" alt="${title}" onerror="this.style.display='none'; this.parentElement.innerHTML='${isUnlocked ? '🏆' : '🔒'}';" />` :
                 (isUnlocked ? '🏆' : '🔒')
               }
             </div>
-            <div class="achievement-icon-name">${ach.title}</div>
+            <div class="achievement-icon-name">${title}</div>
           </div>
         `;
       }).join('');

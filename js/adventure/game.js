@@ -284,7 +284,10 @@
     if (result.bonusToast) showToast(result.bonusToast);
     if (result.newAchievements) {
       result.newAchievements.forEach(ach => {
-        showToast(`🏆 ¡Logro desbloqueado: ${ach.title}!`);
+        const lang = window.getLanguage ? window.getLanguage() : 'es';
+        const translated = window.translateAchievement ? window.translateAchievement(ach, lang) : ach;
+        const msg = lang === 'en' ? 'Achievement unlocked' : '¡Logro desbloqueado';
+        showToast(`🏆 ${msg}: ${translated.title}!`);
       });
     }
     

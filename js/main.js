@@ -22,6 +22,18 @@ import { injectSimpleAuthStyles, showSimpleAuthModal } from './auth/modal.js';
 import { injectNicknameModalStyles, checkAndShowNicknameModal } from './auth/nickname_modal.js';
 import { initFriendsSystem } from './player/social.js';
 import { initFriendsSystem as initFriendsUI } from './player/friends_ui.js';
+import { getLanguage } from './core/i18n.js';
+import { translateAchievement } from './player/achievements.js';
+
+window.getLanguage = getLanguage;
+window.translateAchievement = translateAchievement;
+
+function showAchievementToast(ach) {
+  const lang = getLanguage();
+  const { title } = translateAchievement(ach, lang);
+  const msg = lang === 'en' ? 'Achievement unlocked' : '¡Logro desbloqueado';
+  toast(`🏆 ${msg}: ${title}!`);
+}
 
 /* ===== Supabase UMD ===== */
 async function getSupabaseClient(){
@@ -151,7 +163,7 @@ function renderVSQuestion(q){
       playSound('levelUp');
     }
     if(results.bonusToast) toast(results.bonusToast);
-    results.newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+    results.newAchievements.forEach(ach => showAchievementToast(ach));
 
     document.querySelectorAll('#options .option').forEach(el=>el.classList.add('disabled'));
     try{ answer(i); }catch(e){ console.error(e); }
@@ -248,7 +260,7 @@ async function showResults({scores, mePid}){
     showConfetti();
   }
   if(results.bonusToast) toast(results.bonusToast);
-  results.newAchievements.forEach(ach => setTimeout(() => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`), 500));
+results.newAchievements.forEach(ach => setTimeout(() => showAchievementToast(ach), 500));
 
   const heroTitle = fs.querySelector('.hero .big-title');
   const subtitle  = fs.querySelector('.hero .subtitle');
@@ -790,7 +802,7 @@ window.addEventListener('load', async ()=>{
     const { newAchievements, leveledUp } = await trackEvent('game_start');
     updatePlayerXPBar();
     if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
-    newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+    newAchievements.forEach(ach => showAchievementToast(ach));
     
     vsQNo = 0; vsQTotal = null; vsActive = true;
     setVSName(getPlayerNameForGame());
@@ -865,7 +877,7 @@ window.addEventListener('load', async ()=>{
     const { newAchievements, leveledUp } = await trackEvent('game_start');
     updatePlayerXPBar();
     if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
-    newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+    newAchievements.forEach(ach => showAchievementToast(ach));
 
     vsQNo = 0; vsQTotal = null; vsActive = true;
     setVSName(getPlayerNameForGame());

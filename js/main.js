@@ -423,6 +423,20 @@ window.addEventListener('load', async ()=>{
   window.initFriendsSystem = initFriendsSystem;
   window.toast = toast;
   
+  // Función de debug para avatar
+  window.debugAvatar = function() {
+    const user = getCurrentUser();
+    const profileAvatar = document.getElementById('profileAvatar');
+    console.log('🔍 DEBUG AVATAR MANUAL:');
+    console.log('Usuario:', user);
+    console.log('Avatar URL:', user?.avatar);
+    console.log('Elemento avatar:', profileAvatar);
+    if (user?.avatar && user.avatar !== 'img/avatarman.webp') {
+      console.log('🔄 Forzando recarga de avatar...');
+      profileAvatar.src = user.avatar + '?t=' + Date.now();
+    }
+  };
+  
   // Exponer funciones de juego globalmente
   window.startSolo = startSolo;
   window.nextQuestion = nextQuestion;
@@ -559,27 +573,29 @@ window.addEventListener('load', async ()=>{
       
       // Actualizar avatar
       if (profileAvatar) {
-        console.log('🖼️ Datos del usuario para avatar:', {
-          hasAvatar: !!user.avatar,
-          avatarUrl: user.avatar,
-          metadata: user.metadata
-        });
+        console.log('🖼️ ===== DEBUG AVATAR =====');
+        console.log('🖼️ Usuario completo:', user);
+        console.log('🖼️ Avatar URL:', user.avatar);
+        console.log('🖼️ Metadata completa:', user.metadata);
+        console.log('🖼️ Elemento avatar encontrado:', !!profileAvatar);
+        console.log('🖼️ ========================');
         
-        if (user.avatar && user.avatar !== 'img/avatar_placeholder.svg') {
+        if (user.avatar && user.avatar !== 'img/avatar_placeholder.svg' && user.avatar !== 'img/avatarman.webp') {
+          console.log('🖼️ Intentando cargar avatar de Google:', user.avatar);
           // Intentar cargar el avatar del usuario
           const avatarImg = new Image();
           avatarImg.onload = () => {
-            console.log('✅ Avatar cargado correctamente:', user.avatar);
+            console.log('✅ Avatar de Google cargado correctamente:', user.avatar);
             profileAvatar.src = user.avatar;
           };
           avatarImg.onerror = () => {
-            console.log('⚠️ Avatar del usuario no disponible, usando placeholder');
+            console.log('⚠️ Avatar de Google falló, usando placeholder');
             profileAvatar.src = 'img/avatarman.webp';
           };
           avatarImg.src = user.avatar;
         } else {
           // Usar placeholder por defecto
-          console.log('🖼️ Usando avatar placeholder por defecto');
+          console.log('🖼️ No hay avatar de Google, usando placeholder por defecto');
           profileAvatar.src = 'img/avatarman.webp';
         }
       }

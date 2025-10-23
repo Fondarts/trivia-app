@@ -10,8 +10,10 @@ import { t, initI18n, updateUI as updateI18nUI } from './core/i18n.js';
 
 // Game modules  
 import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, bindLeaderboardsOpen } from './game/ui.js';
-import { startSolo, nextQuestion, endGame } from './game/solo.js';
-import { initVS, createMatch, joinMatch, answer, setVSName, leaveMatch } from './game/vs.js';
+import { startSolo, nextQuestion, endGame, renderQuestion } from './game/solo.js';
+import { initVS, createMatch, joinMatch, answer, setVSName, leaveMatch, startRandomMatch, cancelRandomSearch, isRandomSearching } from './game/vs.js';
+import { initAsyncVS, startAsyncRandomSearch } from './game/async_vs.js';
+import { STATE } from './core/store.js';
 
 // Player modules
 import { renderLB } from './player/leaderboard.js';
@@ -19,11 +21,17 @@ import { trackEvent } from './player/stats.js';
 import { getLevelProgress } from './player/experience.js';
 import { initProfileSync } from './player/profile_sync.js';
 import AuthSystem from './auth/auth_v2.js';
+
+// Ad modules
+import { UnifiedBanner } from './ads/unified-banner.js';
 // Detectar si es Android nativo (Capacitor)
 let isNativeAndroid = false;
 if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.getPlatform && window.Capacitor.getPlatform() === 'android') {
   isNativeAndroid = true;
 }
+
+// Inicializar sistema de anuncios
+let unifiedBanner = null;
 
 // Login nativo con Google Auth
 async function loginWithGoogleNative() {
@@ -369,6 +377,15 @@ function waitForBank() {
 window.addEventListener('load', async ()=>{
   // Inicializar sistema de traducciones
   initI18n();
+  
+  // Inicializar sistema de anuncios (Android + Web)
+  try {
+    unifiedBanner = new UnifiedBanner();
+    await unifiedBanner.initialize();
+    console.log('✅ Sistema de anuncios unificado inicializado');
+  } catch (error) {
+    console.error('❌ Error inicializando anuncios:', error);
+  }
   updateI18nUI();
   
   // Inicializar efectos visuales
@@ -405,6 +422,15 @@ window.addEventListener('load', async ()=>{
   window.AuthSystem = AuthSystem;
   window.initFriendsSystem = initFriendsSystem;
   window.toast = toast;
+  
+  // Exponer funciones de juego globalmente
+  window.startSolo = startSolo;
+  window.nextQuestion = nextQuestion;
+  window.endGame = endGame;
+  window.startRandomMatch = startRandomMatch;
+  window.STATE = STATE;
+  window.renderQuestion = renderQuestion;
+  window.answer = answer;
   
   // Hacer disponibles funciones necesarias para el sistema de amigos
   window.getLevelProgress = getLevelProgress;
@@ -472,19 +498,37 @@ window.addEventListener('load', async ()=>{
             .single();
           
           if (profile && profile.nickname) {
-            savedNickname = profile.nickname;
-            // Guardar localmente para acceso offline
-            localStorage.setItem('user_nickname_' + user.id, savedNickname);
-            localStorage.setItem('user_has_nickname_' + user.id, 'true');
-            
-            // Actualizar nivel y XP si existen
-            if (profile.level && profileLevelBadge) {
-              profileLevelBadge.innerHTML = `<span data-i18n="level">Nivel</span> ${profile.level}`;
+            // Solo usar el nickname del servidor si no hay uno local más reciente
+            const localNickname = localStorage.getItem('user_nickname_' + user.id);
+            if (!localNickname) {
+              savedNickname = profile.nickname;
+              // Guardar localmente para acceso offline
+              localStorage.setItem('user_nickname_' + user.id, savedNickname);
+              localStorage.setItem('user_has_nickname_' + user.id, 'true');
+            } else {
+              // Usar el nickname local (más reciente)
+              savedNickname = localNickname;
             }
-            if (profile.total_xp !== undefined) {
-              const { currentLevelXP, xpForNextLevel, progressPercent } = getLevelProgress(profile.total_xp);
-              if (profileXpBar) profileXpBar.style.width = `${progressPercent}%`;
-              if (profileXpText) profileXpText.textContent = `${currentLevelXP} / ${xpForNextLevel} XP`;
+            
+            // Actualizar nivel y XP si existen (solo si no hay datos locales más recientes)
+            const localStats = JSON.parse(localStorage.getItem('trivia_stats') || '{}');
+            const hasLocalData = localStats.totalXP && localStats.totalXP > 0;
+            
+            if (!hasLocalData) {
+              if (profile.level && profileLevelBadge) {
+                profileLevelBadge.innerHTML = `<span data-i18n="level">Nivel</span> ${profile.level}`;
+              }
+              if (profile.total_xp !== undefined) {
+                const { currentLevelXP, xpForNextLevel, progressPercent } = getLevelProgress(profile.total_xp);
+                if (profileXpBar) profileXpBar.style.width = `${progressPercent}%`;
+                if (profileXpText) profileXpText.textContent = `${currentLevelXP} / ${xpForNextLevel} XP`;
+              }
+            } else {
+              console.log('📊 Usando datos locales en lugar de servidor');
+              // Usar la función de actualización que lee de localStorage
+              if (typeof window.updatePlayerXPBar === 'function') {
+                window.updatePlayerXPBar();
+              }
             }
           }
         } catch (error) {
@@ -514,7 +558,31 @@ window.addEventListener('load', async ()=>{
       }
       
       // Actualizar avatar
-      if (profileAvatar && user.avatar) profileAvatar.src = user.avatar;
+      if (profileAvatar) {
+        console.log('🖼️ Datos del usuario para avatar:', {
+          hasAvatar: !!user.avatar,
+          avatarUrl: user.avatar,
+          metadata: user.metadata
+        });
+        
+        if (user.avatar && user.avatar !== 'img/avatar_placeholder.svg') {
+          // Intentar cargar el avatar del usuario
+          const avatarImg = new Image();
+          avatarImg.onload = () => {
+            console.log('✅ Avatar cargado correctamente:', user.avatar);
+            profileAvatar.src = user.avatar;
+          };
+          avatarImg.onerror = () => {
+            console.log('⚠️ Avatar del usuario no disponible, usando placeholder');
+            profileAvatar.src = 'img/avatarman.webp';
+          };
+          avatarImg.src = user.avatar;
+        } else {
+          // Usar placeholder por defecto
+          console.log('🖼️ Usando avatar placeholder por defecto');
+          profileAvatar.src = 'img/avatarman.webp';
+        }
+      }
       if (profileAuthSection) profileAuthSection.style.display = 'none';
       if (profileActionsSection) profileActionsSection.style.display = 'block';
       
@@ -543,9 +611,24 @@ window.addEventListener('load', async ()=>{
       // Inicializar sincronización de perfil
       if (supabase && user.id) {
         try {
+          console.log('🔄 Inicializando sincronización de perfil para:', user.id);
           initProfileSync(supabase, user.id);
+          
+          // En Android, usar sincronización forzada después de un delay mayor
+          const isAndroid = window.Capacitor && window.Capacitor.getPlatform() === 'android';
+          const delay = isAndroid ? 3000 : 2000;
+          
+          setTimeout(() => {
+            if (isAndroid && window.forceFullSync) {
+              console.log('🔄 Forzando sincronización completa en Android...');
+              window.forceFullSync().catch(e => console.error('Error en sync completa:', e));
+            } else if (window.forceSyncProfile) {
+              console.log('🔄 Forzando sincronización inmediata...');
+              window.forceSyncProfile().catch(e => console.error('Error en sync forzada:', e));
+            }
+          }, delay);
         } catch (error) {
-          console.log('Error iniciando sincronización de perfil:', error);
+          console.error('❌ Error iniciando sincronización de perfil:', error);
         }
       }
       
@@ -556,6 +639,20 @@ window.addEventListener('load', async ()=>{
       // Actualizar el input oculto de playerName con el nickname
       if (playerNameInput) {
         playerNameInput.value = savedNickname || user.name?.split(' ')[0] || 'Jugador';
+      }
+      
+      // Mostrar banner en menú principal (Android + Web)
+      if (unifiedBanner) {
+        // Delay para asegurar que la UI esté lista
+        setTimeout(async () => {
+          console.log('🔄 Intentando mostrar banner en menú principal...');
+          const success = await unifiedBanner.showBanner();
+          if (success) {
+            console.log('✅ Banner mostrado en menú principal');
+          } else {
+            console.log('❌ Fallo al mostrar banner en menú principal');
+          }
+        }, 1000);
       }
       
     } else if (user && user.isGuest) {
@@ -647,6 +744,9 @@ window.addEventListener('load', async ()=>{
   // Hacer getCurrentUser disponible globalmente para nickname_modal.js
   window.getCurrentUser = AuthSystem.getCurrentUser;
   
+  // Hacer unifiedBanner disponible globalmente
+  window.unifiedBanner = unifiedBanner;
+  
   // Cargar nivel y XP del perfil si hay usuario
   async function loadUserProfile(userId) {
     if (!supabase || !userId) return null;
@@ -695,6 +795,37 @@ window.addEventListener('load', async ()=>{
     console.log('Supabase no disponible, modo offline activado');
     // El juego funciona sin autenticación
   }
+
+  // Helper global para enviar invitaciones incluso si socialManager aún no está listo
+  window.sendGameInvite = async function(friendId, roomCode) {
+    try {
+      if (!supabase || !friendId || !roomCode) return { success: false, error: new Error('Missing data') };
+      const typesToTry = ['vs', 'sync', 'async'];
+      let lastError = null;
+      for (const gtype of typesToTry) {
+        const { data, error } = await supabase
+          .from('game_invitations')
+          .insert({
+            from_user_id: (window.socialManager?.userId) || JSON.parse(localStorage.getItem('current_user')||'{}').id,
+            to_user_id: friendId,
+            room_code: roomCode,
+            game_type: gtype,
+            status: 'pending',
+            expires_at: new Date(Date.now() + 5 * 60 * 1000).toISOString()
+          })
+          .select();
+        if (!error) return { success: true, data };
+        lastError = error;
+        const msg = String(error?.message || '');
+        if (!(msg.includes('check constraint') || error?.code === '23514')) break;
+      }
+      if (lastError) throw lastError;
+      return { success: false, error: new Error('Invite insert failed') };
+    } catch (e) {
+      console.error('[sendGameInvite] error:', e);
+      return { success: false, error: e };
+    }
+  };
 
   // Sistema de amigos simplificado - funciona para todos los usuarios
   function createSimpleFriendsPanel() {
@@ -990,11 +1121,17 @@ window.addEventListener('load', async ()=>{
       callbacks: {
         onStatus: s => {
           // Limpiar textos de espera cuando no estamos esperando/ jugando
-          if (s.status !== 'waiting' && s.status !== 'playing'){
+          if (s.status !== 'waiting' && s.status !== 'playing' && s.status !== 'searching'){
             const btnHost = document.getElementById('btnVsHost');
             if (btnHost){ btnHost.textContent = 'Crear Sala'; btnHost.classList.remove('friend-vs'); }
             const badge = document.getElementById('vsCodeBadge');
             if (badge){ badge.textContent = 'Sala: —'; badge.style.color = ''; }
+          }
+          if (s.status === 'searching'){
+            const btn = document.getElementById('btnVsHost');
+            const badge = document.getElementById('vsCodeBadge');
+            if (btn) btn.textContent = 'Buscando rival...';
+            if (badge) { badge.textContent = 'Emparejando...'; badge.style.color = 'var(--muted)'; }
           }
           if (s.status === 'peer-left' || s.status === 'abandoned'){
             alert('Tu rival abandonó la partida.');
@@ -1032,6 +1169,103 @@ window.addEventListener('load', async ()=>{
         onEnd: payload => showResults(payload || {})
       }
     });
+
+    // Inicializar VS Asíncrono
+      const currentUser = window.getCurrentUser ? window.getCurrentUser() : null;
+      let userId = currentUser?.id || localStorage.getItem('vs_uid');
+      
+      // Limpiar userId si es "null" string
+      if (userId === 'null' || userId === 'undefined') {
+        userId = null;
+        console.log('🔍 Limpiando userId inválido:', userId);
+      }
+      
+      console.log('🔍 Debug initAsyncVS:', {
+        currentUser: currentUser,
+        userId: userId,
+        localStorage_vs_uid: localStorage.getItem('vs_uid'),
+        isSameUser: currentUser?.id === localStorage.getItem('vs_uid'),
+        supabaseUser: supabase?.auth?.getUser ? 'available' : 'not available'
+      });
+      
+      // Debug adicional: verificar si hay sesión de Supabase
+      if (supabase?.auth) {
+        supabase.auth.getUser().then(({ data: { user }, error }) => {
+          console.log('🔍 Supabase User:', { user, error });
+          if (user) {
+            console.log('🔍 Supabase User ID:', user.id);
+            console.log('🔍 Usando Supabase User ID en lugar de localStorage');
+            // Usar el ID de Supabase si está disponible
+            userId = user.id;
+          }
+        });
+      }
+      
+      // Obtener el nombre del usuario de diferentes fuentes
+      let username = document.getElementById('playerName')?.value;
+      if (!username) {
+        username = localStorage.getItem('savedNickname');
+      }
+      if (!username) {
+        username = currentUser?.user_metadata?.full_name;
+      }
+      if (!username) {
+        username = 'Jugador';
+      }
+      
+      console.log('🔍 Username para async VS:', { 
+        playerName: document.getElementById('playerName')?.value,
+        savedNickname: localStorage.getItem('savedNickname'),
+        fullName: currentUser?.user_metadata?.full_name,
+        finalUsername: username
+      });
+      
+      initAsyncVS({
+        supabase,
+        userId: userId,
+        username: username,
+        callbacks: {
+          onStatus: (data) => {
+            console.log('Async VS Status:', data);
+            if (data.status === 'waiting_for_opponent') {
+              const badge = document.getElementById('vsCodeBadge');
+              if (badge) badge.textContent = 'Esperando rival...';
+              toast(data.message || 'Esperando que alguien acepte tu solicitud...');
+            } else if (data.status === 'match_created') {
+              const badge = document.getElementById('vsCodeBadge');
+              if (badge) badge.textContent = `Partida: ${data.matchId}`;
+              toast(`¡${data.opponent} aceptó tu desafío! Ve a "Partidas Abiertas" para jugar.`);
+              
+              // Actualizar la pestaña de partidas abiertas si está abierta
+              const matchesTab = document.querySelector('.tab-btn[data-tab="matches"]');
+              const matchesContent = document.getElementById('tabMatches');
+              if (matchesTab && matchesContent && matchesContent.classList.contains('active')) {
+                // Recargar partidas si el tab está activo
+                if (window.loadOpenMatches) {
+                  window.loadOpenMatches();
+                }
+              }
+              
+              // NO iniciar automáticamente el juego - el creador debe ir al menú de amigos
+            }
+          },
+          onQuestion: (data) => {
+            console.log('Async VS Question:', data);
+          },
+          onTimerTick: (data) => {
+            console.log('Async VS Timer:', data);
+          },
+          onEnd: (data) => {
+            console.log('Async VS End:', data);
+          },
+          onInvitation: (data) => {
+            console.log('Async VS Invitation:', data);
+          },
+          onMatchUpdate: (data) => {
+            console.log('Async VS Match Update:', data);
+          }
+        }
+      });
   }
 
   const onHost = async ()=>{
@@ -1039,6 +1273,7 @@ window.addEventListener('load', async ()=>{
       alert('El modo VS no está disponible sin conexión'); 
       return; 
     }
+    const opponentType = document.querySelector('#opponentPills .pill.active')?.dataset?.val || 'random';
     const cat = document.getElementById('categorySel')?.value;
     if(!cat || cat === '') { alert('Elegí una categoría'); return; }
     const { newAchievements, leveledUp } = await trackEvent('game_start');
@@ -1050,44 +1285,76 @@ window.addEventListener('load', async ()=>{
     setVSName(getPlayerNameForGame());
     const rounds = parseInt(document.getElementById('vsRounds')?.value, 10);
     const diff = document.querySelector('#diffPills .pill.active')?.dataset.val;
+    const pendingFriendId = localStorage.getItem('pending_friend_invite');
+    const pendingFriendName = localStorage.getItem('pending_friend_name');
+
+         if (opponentType === 'random' && !pendingFriendId){
+           // Buscar rival aleatorio
+           try {
+             await startRandomMatch({ rounds, category: cat, difficulty: diff });
+             const badge = document.getElementById('vsCodeBadge');
+             if (badge) badge.textContent = 'Emparejando...';
+             document.getElementById('btnVsHost').style.display = 'none';
+             document.getElementById('btnVsCancel').style.display = 'block';
+             return; // el flujo continúa cuando se encuentre rival
+           } catch (e){
+             console.error('Error iniciando matchmaking:', e);
+             toast('No se pudo iniciar el emparejamiento');
+             return;
+           }
+         }
+
+         if (opponentType === 'random_async' && !pendingFriendId){
+           // Buscar rival aleatorio asíncrono
+           try {
+             const result = await startAsyncRandomSearch({ rounds, category: cat, difficulty: diff });
+             const badge = document.getElementById('vsCodeBadge');
+             if (result.status === 'match_created') {
+               if (badge) badge.textContent = `Partida: ${result.matchId}`;
+               toast(`¡Partida asíncrona creada contra ${result.opponent}!`);
+            } else {
+              if (badge) badge.textContent = 'Esperando rival...';
+              toast('Solicitud enviada. Esperando que alguien acepte...');
+              // El botón btnViewRequests ya no existe, no intentar mostrarlo
+            }
+             return;
+           } catch (e){
+             console.error('Error iniciando matchmaking asíncrono:', e);
+             toast('No se pudo iniciar el emparejamiento asíncrono');
+             return;
+           }
+         }
+
     const code = await createMatch({ rounds, category: cat, difficulty: diff });
     console.log('Sala VS creada con código:', code);
     
     // Verificar si hay una invitación pendiente a un amigo
-    const pendingFriendId = localStorage.getItem('pending_friend_invite');
-    const pendingFriendName = localStorage.getItem('pending_friend_name');
     
     console.log('Verificando invitación pendiente:');
     console.log('  - pendingFriendId:', pendingFriendId);
     console.log('  - pendingFriendName:', pendingFriendName);
     console.log('  - window.socialManager existe?', !!window.socialManager);
     
-    if (pendingFriendId && window.socialManager) {
+    if (pendingFriendId && (window.socialManager || supabase)) {
       console.log('Enviando invitación a amigo:');
       console.log('  - Friend ID:', pendingFriendId);
       console.log('  - Friend Name:', pendingFriendName);
       console.log('  - Room Code:', code);
-      console.log('  - socialManager.inviteToSyncGame existe?', typeof window.socialManager.inviteToSyncGame);
-      
-      if (typeof window.socialManager.inviteToSyncGame !== 'function') {
-        console.error('ERROR: inviteToSyncGame no es una función!');
-        console.log('Métodos disponibles en socialManager:', Object.keys(window.socialManager));
-        toast('Error: Sistema de invitaciones no disponible');
+      const useMgr = window.socialManager && typeof window.socialManager.inviteToSyncGame === 'function';
+      const result = useMgr
+        ? await window.socialManager.inviteToSyncGame(pendingFriendId, code)
+        : await window.sendGameInvite(pendingFriendId, code);
+      console.log('Resultado de envío de invitación:', result);
+      if (result.success) {
+        toast(`Invitación enviada a ${pendingFriendName}`);
+        const badge = document.getElementById('vsCodeBadge');
+        if (badge) badge.textContent = `Esperando a ${pendingFriendName}...`;
+        localStorage.setItem('last_vs_friend_id', pendingFriendId);
       } else {
-        // Enviar invitación al amigo
-        const result = await window.socialManager.inviteToSyncGame(pendingFriendId, code);
-        console.log('Resultado de inviteToSyncGame:', result);
-        
-        if (result.success) {
-          toast(`Invitación enviada a ${pendingFriendName}`);
-          document.getElementById('vsCodeBadge').textContent = `Esperando a ${pendingFriendName}...`;
-          // Guardar el ID del amigo para los rankings
-          localStorage.setItem('last_vs_friend_id', pendingFriendId);
-        } else {
-          console.error('Error al enviar invitación:', result.error);
-          toast('Error al enviar invitación');
-          document.getElementById('vsCodeBadge').textContent = `Sala: ${code}`;
-        }
+        console.error('Error al enviar invitación:', result.error);
+        toast('Error al enviar invitación');
+        const badge = document.getElementById('vsCodeBadge');
+        if (badge) badge.textContent = `Sala: ${code}`;
       }
     
     // Limpiar la invitación pendiente
@@ -1105,28 +1372,48 @@ window.addEventListener('load', async ()=>{
         badge.style.color = '';
       }
     } else {
-      document.getElementById('vsCodeBadge').textContent = `Sala: ${code}`;
+      const badge = document.getElementById('vsCodeBadge');
+      if (badge) badge.textContent = `Sala: ${code}`;
     }
     
     vsQTotal = rounds;
   };
   
+
+  const onCancelSearch = async ()=>{
+    if (window.cancelRandomSearch) {
+      await window.cancelRandomSearch();
+      document.getElementById('btnVsHost').style.display = 'block';
+      document.getElementById('btnVsCancel').style.display = 'none';
+      const badge = document.getElementById('vsCodeBadge');
+      if (badge) badge.textContent = 'Sala: —';
+    }
+  };
+
   const onJoin = async ()=>{
     if (!supabase) { 
       alert('El modo VS no está disponible sin conexión'); 
       return; 
     }
-    const { newAchievements, leveledUp } = await trackEvent('game_start');
-    updatePlayerXPBar();
-    if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
-    newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
-
-    vsQNo = 0; vsQTotal = null; vsActive = true;
-    setVSName(getPlayerNameForGame());
+    
     const code = document.getElementById('inputVsCode')?.value?.trim();
-    if (!code){ alert('Ingresá un código'); return; }
-    await joinMatch(code);
+    if (!code) { 
+      alert('Ingresá un código de sala'); 
+      return; 
+    }
+    
+    try {
+      await joinMatch(code);
+      vsActive = true;
+      document.getElementById('vsSection').style.display = 'none';
+      document.getElementById('gameSection').style.display = 'block';
+    } catch (error) {
+      console.error('Error uniéndose a la sala:', error);
+      alert('Error al unirse a la sala. Verificá el código.');
+    }
   };
+
+
 
   // Limpiar estado de invitación pendiente si se cambia de modo manualmente
   document.querySelectorAll('#modeSeg .seg').forEach(seg => {
@@ -1154,7 +1441,41 @@ window.addEventListener('load', async ()=>{
   });
   
   document.getElementById('btnVsHost')?.addEventListener('click', onHost);
+  document.getElementById('btnVsCancel')?.addEventListener('click', onCancelSearch);
   document.getElementById('btnVsJoin')?.addEventListener('click', onJoin);
+  
+
+  // Toggle de oponente (Random / Amigo)
+  document.querySelectorAll('#opponentPills .pill').forEach(p=>{
+    p.addEventListener('click', ()=>{
+      document.querySelectorAll('#opponentPills .pill').forEach(x=> x.classList.remove('active'));
+      p.classList.add('active');
+      // Si se cambia a amigo y estamos buscando, cancelar matchmaking
+      if (p.dataset.val === 'friend' && isRandomSearching()){
+        cancelRandomSearch();
+      }
+      
+      // Si se selecciona "Amigos", abrir la lista de amigos
+      if (p.dataset.val === 'friend') {
+        // Importar y ejecutar la función para abrir la lista de amigos
+        import('./player/friends_ui.js').then(module => {
+          if (module.toggleFriendsPanel) {
+            module.toggleFriendsPanel();
+          }
+        }).catch(err => {
+          console.error('Error al abrir lista de amigos:', err);
+        });
+      }
+      
+      // UI: si es amigo, pintar pista en botón
+      const btnHost = document.getElementById('btnVsHost');
+      if (p.dataset.val === 'friend'){
+        btnHost.textContent = 'Crear sala';
+      } else if (p.dataset.val === 'random'){
+        btnHost.textContent = 'Buscar partida';
+      }
+    });
+  });
   
   // SOLUCION OAUTH: Detectar token en la URL al cargar la página
   const urlHash = window.location.hash;

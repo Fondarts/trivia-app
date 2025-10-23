@@ -3,19 +3,33 @@
 // Versión 2.0 - Reescrito desde cero
 // ============================================
 
+// Configuración OAuth simple integrada
+const OAUTH_CONFIG = {
+  WEB_CLIENT_ID: '339736953753-h9oekqkii28804iv84r5mqad61p7m4es.apps.googleusercontent.com',
+  ANDROID_CLIENT_ID: '339736953753-shffn13ho0g92064uh7ooj95pcgebpoj.apps.googleusercontent.com',
+  SUPABASE_CALLBACK_URL: 'https://fpjkdibubjdbskthofdp.supabase.co/auth/v1/callback'
+};
+
+function getOAuthConfig() {
+  const isAndroid = window.Capacitor && window.Capacitor.getPlatform() === 'android';
+  const redirectTo = isAndroid
+    ? 'com.quizle.app://oauth/callback'
+    : (window.location.origin + window.location.pathname);
+  return {
+    clientId: isAndroid ? OAUTH_CONFIG.ANDROID_CLIENT_ID : OAUTH_CONFIG.WEB_CLIENT_ID,
+    redirectTo,
+    options: {
+      access_type: 'offline',
+      prompt: 'consent'
+    }
+  };
+}
+
 // Estado global de autenticación
 let authState = {
   user: null,
   session: null,
   isInitialized: false
-};
-
-// Configuración
-const AUTH_CONFIG = {
-  // Estos valores se actualizarán con tus credenciales reales
-  GOOGLE_CLIENT_ID: '339736953753-h9oekqkii28804iv84r5mqad61p7m4es.apps.googleusercontent.com',
-  REDIRECT_URL_WEB: window.location.origin + '/index.html',
-  REDIRECT_URL_ANDROID: 'com.quizle.app://oauth/callback'
 };
 
 // ============================================
@@ -35,6 +49,16 @@ export async function initAuth() {
   }
   
   try {
+    // Primero verificar si hay callback OAuth en la URL
+    const hashFragment = window.location.hash;
+    if (hashFragment && hashFragment.includes('access_token')) {
+      console.log('🔄 Detectado callback OAuth, procesando...');
+      const user = await handleOAuthCallback();
+      if (user) {
+        return user;
+      }
+    }
+    
     // Verificar sesión existente
     const { data: { session }, error } = await window.supabaseClient.auth.getSession();
     
@@ -177,106 +201,49 @@ export async function signInWithGoogle() {
     throw new Error('Supabase no está disponible');
   }
 
-  // Verificar que tengamos las credenciales correctas
-  console.log('🔑 Google Client ID:', AUTH_CONFIG.GOOGLE_CLIENT_ID);
-
-  // Verificar meta tag de Google
-  const metaClientId = document.querySelector('meta[name="google-signin-client_id"]')?.content;
-  console.log('🔑 Meta Client ID:', metaClientId);
-
-  if (metaClientId && metaClientId !== AUTH_CONFIG.GOOGLE_CLIENT_ID) {
-    console.warn('⚠️ Inconsistencia en Client IDs:', { meta: metaClientId, config: AUTH_CONFIG.GOOGLE_CLIENT_ID });
-  }
-
-  // Detectar plataforma
+  // Obtener configuración OAuth
+  const oauthConfig = getOAuthConfig();
   const isAndroid = window.Capacitor && window.Capacitor.getPlatform() === 'android';
-  const isIOS = window.Capacitor && window.Capacitor.getPlatform() === 'ios';
-  const isMobile = isAndroid || isIOS;
-  const isWeb = !window.Capacitor || window.Capacitor.getPlatform() === 'web';
-
-  console.log('📱 Plataforma detectada:', { isAndroid, isIOS, isWeb });
+  
+  console.log('📱 Plataforma detectada:', { 
+    isAndroid, 
+    platform: window.Capacitor?.getPlatform() || 'web' 
+  });
   
   try {
-    // Determinar URL de redirección basada en el entorno
-    let redirectTo = window.location.origin + '/index.html';
-
-    // En desarrollo local, usar localhost si está disponible
-    if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
-      redirectTo = window.location.origin + '/index.html';
-    }
-    // En producción (HTTPS), usar la URL real
-    else if (window.location.protocol === 'https:') {
-      redirectTo = window.location.origin + '/index.html';
-    }
-    // Para IPs locales en desarrollo, intentar con localhost
-    else if (window.location.hostname.includes('192.168') || window.location.hostname.includes('10.0')) {
-      // Intentar redirigir a localhost si es posible
-      redirectTo = window.location.origin.replace(window.location.hostname, 'localhost') + '/index.html';
-      console.log('🔄 Cambiando IP local por localhost para OAuth:', redirectTo);
-    }
-
-    console.log('🔄 Redirect URL que se usará:', redirectTo);
-    console.log('🌍 Entorno detectado:', {
-      hostname: window.location.hostname,
-      protocol: window.location.protocol,
-      isHTTPS: window.location.protocol === 'https:',
-      isLocalhost: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    });
-
-    // En Android, usar el flujo web estándar
+    // En Android, guardar flag para detectar cuando regrese
     if (isAndroid) {
-      // Guardar un flag para saber que estamos esperando login
       localStorage.setItem('pending_oauth', 'true');
-
-      // Usar el flujo web normal con redirección correcta
-      const { data, error } = await window.supabaseClient.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: redirectTo,
-          queryParams: {
-            access_type: 'offline',
-            prompt: 'consent'
-          }
-        }
-      });
-
-      if (error) {
-        localStorage.removeItem('pending_oauth');
-        throw error;
-      }
-
-      // El navegador se abrirá automáticamente
-      return data;
     }
 
-    // Flujo OAuth web estándar
+    // Usar el flujo OAuth de Supabase
     const { data, error } = await window.supabaseClient.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: redirectTo,
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent'
-        }
+        redirectTo: oauthConfig.redirectTo,
+        queryParams: oauthConfig.options
       }
     });
     
     if (error) {
+      if (isAndroid) {
+        localStorage.removeItem('pending_oauth');
+      }
+      
       console.error('❌ Error en OAuth:', error);
 
       // Si es error 500, significa que el redirect URL no está configurado
       if (error.message && (error.message.includes('500') || error.message.includes('unexpected_failure'))) {
-        const currentUrl = window.location.origin + '/index.html';
         throw new Error(`
 Error de configuración en Supabase.
 
 SOLUCIÓN:
 1. Ve a https://supabase.com/dashboard/project/fpjkdibubjdbskthofdp/auth/url-configuration
 2. En "Redirect URLs", agrega esta URL:
-   ${currentUrl}
+   ${oauthConfig.redirectTo}
 3. Guarda los cambios y vuelve a intentar
 
-URL que necesitas agregar: ${currentUrl}
+URL que necesitas agregar: ${oauthConfig.redirectTo}
         `);
       }
 
@@ -421,7 +388,8 @@ function transformSupabaseUser(supabaseUser) {
           'Usuario',
     avatar: supabaseUser.user_metadata?.avatar_url || 
             supabaseUser.user_metadata?.picture ||
-            'img/avatar_placeholder.svg',
+            supabaseUser.user_metadata?.avatar ||
+            'img/avatarman.webp',
     isGuest: false,
     provider: 'google',
     metadata: supabaseUser.user_metadata
@@ -462,20 +430,35 @@ export async function handleOAuthCallback() {
   // Verificar si hay fragmento en la URL (tokens)
   const hashParams = new URLSearchParams(window.location.hash.substring(1));
   const accessToken = hashParams.get('access_token');
+  const refreshToken = hashParams.get('refresh_token');
   
-  if (accessToken) {
-    console.log('✅ Token encontrado en URL');
+  if (accessToken && refreshToken) {
+    console.log('✅ Tokens encontrados en URL, estableciendo sesión manualmente...');
     
-    // Supabase debería manejar esto automáticamente
-    // pero podemos forzar una verificación
     try {
-      const { data: { session } } = await window.supabaseClient.auth.getSession();
-      if (session) {
-        const user = transformSupabaseUser(session.user);
-        setAuthState(user, session);
+      // Establecer la sesión manualmente con los tokens
+      const { data, error } = await window.supabaseClient.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken
+      });
+      
+      if (error) {
+        console.error('❌ Error estableciendo sesión:', error);
+        return null;
+      }
+      
+      if (data.session && data.user) {
+        console.log('✅ Sesión establecida correctamente');
+        const user = transformSupabaseUser(data.user);
+        setAuthState(user, data.session);
         
         // Limpiar URL
         window.history.replaceState({}, document.title, window.location.pathname);
+        
+        // Notificar a la UI
+        if (window.onAuthStateChanged) {
+          window.onAuthStateChanged(user);
+        }
         
         return user;
       }

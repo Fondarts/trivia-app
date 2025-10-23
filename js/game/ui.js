@@ -297,6 +297,10 @@ export function bindModeSegment(){
       show(vsRoundsWrap, true);
       show(vsHostActions, true);
       show(vsHostExtras, true);
+      // Asegurar que se vean dificultad y categoría en CREAR
+      const isHostNow = (document.querySelector('#vsModeToggle .seg.active')?.dataset?.val || 'host') === 'host';
+      show(diffSection,  isHostNow);
+      show(catSection,   isHostNow);
     } else if (val === 'rounds') {
       // Modo rondas
       show(wrapRounds, true);
@@ -335,8 +339,7 @@ export function bindVsToggle(){
   const show = (el,on)=>{ if (el) el.style.display = on ? (el===vsHostExtras?'flex':'block') : 'none'; };
 
   function apply(val){
-    const vsVisible = vsSection && vsSection.style.display !== 'none';
-    if (!vsVisible) return;
+    // Aplicar siempre, aunque la sección VS aún no esté visible
     const isHost = (val==='host');
     show(vsRoundsWrap, isHost);
     show(diffSection,  isHost);
@@ -427,6 +430,13 @@ export async function applyInitialUI(){
 }
 
 export function renderStatsPage() {
+    // Si existe la versión traducida, usarla
+    if (window.renderStatsPageTranslated) {
+        window.renderStatsPageTranslated();
+        return;
+    }
+    
+    // Código original como fallback
     const stats = getStats();
     const unlocked = getUnlockedAchievements();
     const statsContainer = document.getElementById('statsContainer');

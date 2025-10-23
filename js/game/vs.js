@@ -1,7 +1,7 @@
 // js/vs.js — VS con auto‑avance al responder ambos y resultados
 import { buildDeckSingle } from './bank.js';
 
-const TIMER_PER_QUESTION = 20;              // segundos
+const TIMER_PER_QUESTION = 15;              // segundos
 const CHANNEL_PREFIX = 'room:';
 
 let sb = null;
@@ -93,6 +93,7 @@ function handlePresenceSync(){
     const last = metas[metas.length - 1] || {};
     players.push({ id:key, pid:key, name:last.name, role:last.role || 'player' });
   });
+  const prevCount = (match.players || []).length;
   match.players = players;
 
   // bootstrap de scores + expectedAnswers (MVP: 2)
@@ -105,6 +106,21 @@ function handlePresenceSync(){
 
   if (match.isHost && match.status === 'waiting' && players.length >= 2){
     startMatchHost();
+  }
+
+  // Si alguien se va durante la partida, cerrar para ambos
+  if (match.status === 'playing' && players.length < 2){
+    clearTimer();
+    if (match.isHost){
+      // El invitado se fue; host gana por abandono
+      setStatus('abandoned');
+      broadcast({ type:'abandoned', scores: match.scores, ts: isoNow(), winnerPid: me.pid });
+      cb.onEnd({ scores: match.scores, mePid: me.pid, reason: 'opponent_left', winnerPid: me.pid });
+    } else {
+      // Invitado detecta que el host o rival se fue; el que queda (yo) gana
+      setStatus('peer-left');
+      cb.onEnd({ scores: match.scores, mePid: me.pid, reason: 'opponent_left', winnerPid: me.pid });
+    }
   }
 }
 
@@ -305,5 +321,11 @@ function handlePacket(p){
     clearTimer();
     setStatus('finished');
     cb.onEnd({ scores: p.scores || null, mePid: me.pid });
+  }
+
+  if (p.type === 'abandoned'){
+    clearTimer();
+    setStatus('abandoned');
+    cb.onEnd({ scores: p.scores || null, mePid: me.pid, reason: 'opponent_left', winnerPid: p.winnerPid });
   }
 }

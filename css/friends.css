@@ -208,6 +208,10 @@
   border-radius: 8px;
 }
 
+/* Asegurar layout correcto: info a la izquierda, botón a la derecha */
+.search-result-item .friend-info { flex: 1; min-width: 0; }
+.search-result-item .btn { width: auto; flex-shrink: 0; padding: 10px 16px; }
+
 .request-item {
   display: flex;
   align-items: center;

@@ -87,80 +87,94 @@
       mapStyle = `background-image: url('${region.mapImage}'); background-size: cover; background-position: center;`;
     }
     
+    // Obtener las vidas actuales del estado
+    const currentLives = window.AdventureMode?.ADVENTURE_STATE?.lives || 5;
+    
     container.innerHTML = `
-      <div class="region-header">
-        <button class="btn-back" onclick="window.exitAdventureMode()">← Volver</button>
-        <h2>${region.icon} ${region.name}</h2>
-        <div class="header-actions">
-          <button class="btn secondary danger small" onclick="window.resetAdventureProgress()" title="Reiniciar progreso">🔄</button>
-          <button class="btn secondary warning small" onclick="window.toggleGodMode()" title="God Mode" id="godModeBtn">🔓 God</button>
+      <div class="region-wrapper">
+        <!-- Info arriba del mapa con nombre y vidas -->
+        <div class="map-info">
+          <div class="map-title">${region.icon} ${region.name}</div>
+          <div class="lives">
+            ${Array(5).fill(0).map((_, i) => 
+              `<span class="heart ${i < currentLives ? 'active' : 'lost'}">❤️</span>`
+            ).join('')}
+          </div>
         </div>
-      </div>
-      
-      <div class="region-map" style="${mapStyle}">
-        <svg class="path-svg" viewBox="0 0 100 100">
-          <!-- Camino completo de fondo -->
-          <path d="M ${pathPositions.map((pos, i) => 
-            `${i === 0 ? 'M' : 'L'} ${pos.x} ${pos.y}`
-          ).join(' ')}" 
-            stroke="rgba(255,255,255,0.1)" 
-            stroke-width="8" 
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-          
-          <!-- Camino progreso -->
-          ${pathPositions.map((pos, i) => {
-            if (i === 0) return '';
-            const prev = pathPositions[i-1];
-            const isCompleted = region.nodes[i-1].completed;
-            return `
-              <line 
-                x1="${prev.x}" y1="${prev.y}" 
-                x2="${pos.x}" y2="${pos.y}"
-                stroke="${isCompleted ? '#4CAF50' : 'rgba(255,255,255,0.2)'}"
-                stroke-width="${isCompleted ? '4' : '3'}"
-                stroke-dasharray="${isCompleted ? '0' : '8,4'}"
-                stroke-linecap="round"
-              />
-            `;
-          }).join('')}
-        </svg>
         
-        <div class="nodes-container">
-          ${region.nodes.map((node, index) => {
-            const pos = pathPositions[index];
-            const isGodMode = window.godModeActive || false;
-            const canPlay = isGodMode || index === 0 || region.nodes[index - 1].completed;
-            const isCurrent = !node.completed && canPlay && !isGodMode;
+        <div class="region-map" style="${mapStyle}">
+          <svg class="path-svg" viewBox="0 0 100 100">
+            <!-- Camino completo de fondo -->
+            <path d="${pathPositions.map((pos, i) => 
+              `${i === 0 ? 'M' : 'L'} ${pos.x} ${pos.y}`
+            ).join(' ')}" 
+              stroke="rgba(255,255,255,0.1)" 
+              stroke-width="8" 
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
             
-            return `
-              <div class="adventure-node ${node.completed ? 'completed' : ''} 
-                          ${isCurrent ? 'current' : ''} 
-                          ${!canPlay ? 'locked' : ''}
-                          ${isGodMode && !node.completed ? 'god-mode' : ''}
-                          ${node.type}"
-                   style="left: ${pos.x}%; top: ${pos.y}%;"
-                   onclick="window.handleNodeClick('${regionKey}', ${index})"
-                   data-node-index="${index}">
-                
-                <div class="node-icon">
-                  ${node.type === 'boss' ? '👺' : 
-                    node.type === 'timed' ? '⏱️' : 
-                    node.completed ? '✅' : `${index + 1}`}
-                </div>
-                
-                ${node.completed ? `
-                  <div class="node-stars">
-                    ${'⭐'.repeat(node.stars)}${'☆'.repeat(3 - node.stars)}
+            <!-- Camino progreso -->
+            ${pathPositions.map((pos, i) => {
+              if (i === 0) return '';
+              const prev = pathPositions[i-1];
+              const isCompleted = region.nodes[i-1].completed;
+              return `
+                <line 
+                  x1="${prev.x}" y1="${prev.y}" 
+                  x2="${pos.x}" y2="${pos.y}"
+                  stroke="${isCompleted ? '#4CAF50' : 'rgba(255,255,255,0.2)'}"
+                  stroke-width="${isCompleted ? '4' : '3'}"
+                  stroke-dasharray="${isCompleted ? '0' : '8,4'}"
+                  stroke-linecap="round"
+                />
+              `;
+            }).join('')}
+          </svg>
+          
+          <div class="nodes-container">
+            ${region.nodes.map((node, index) => {
+              const pos = pathPositions[index];
+              const isGodMode = window.godModeActive || false;
+              const canPlay = isGodMode || index === 0 || region.nodes[index - 1].completed;
+              const isCurrent = !node.completed && canPlay && !isGodMode;
+              
+              return `
+                <div class="adventure-node ${node.completed ? 'completed' : ''} 
+                            ${isCurrent ? 'current' : ''} 
+                            ${!canPlay ? 'locked' : ''}
+                            ${isGodMode && !node.completed ? 'god-mode' : ''}
+                            ${node.type}"
+                     style="left: ${pos.x}%; top: ${pos.y}%;"
+                     onclick="window.handleNodeClick('${regionKey}', ${index})"
+                     data-node-index="${index}">
+                  
+                  <div class="node-icon">
+                    ${node.type === 'timed' && !node.completed ? '<span class="node-timer-icon">⏱</span>' : ''}
+                    ${node.type === 'boss' ? '👺' : 
+                      node.completed ? '✅' : 
+                      `<span class="node-number">${index + 1}</span>`}
                   </div>
-                ` : ''}
-                
-                ${isCurrent ? '<div class="current-indicator">▼</div>' : ''}
-                ${isGodMode && !node.completed ? '<div class="god-indicator">👁️</div>' : ''}
-              </div>
-            `;
-          }).join('')}
+                  
+                  ${node.completed ? `
+                    <div class="node-stars">
+                      ${'⭐'.repeat(node.stars)}${'☆'.repeat(3 - node.stars)}
+                    </div>
+                  ` : ''}
+                  
+                  ${isCurrent ? '<div class="current-indicator">▼</div>' : ''}
+                  ${isGodMode && !node.completed ? '<div class="god-indicator">👁️</div>' : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+        
+        <!-- Botones debajo del mapa -->
+        <div class="map-controls">
+          <button class="btn-control" onclick="window.exitAdventureMode()">← Volver</button>
+          <button class="btn-control" onclick="window.resetAdventureProgress()" title="Reset">🔄 Reset</button>
+          <button class="btn-control" onclick="window.toggleGodMode()" id="godModeBtn" title="God Mode">🔓 God</button>
         </div>
       </div>
     `;
@@ -203,8 +217,13 @@
     window.godModeActive = !window.godModeActive;
     const btn = document.getElementById('godModeBtn');
     if (btn) {
-      btn.textContent = window.godModeActive ? '🔓 God ON' : '🔓 God';
-      btn.classList.toggle('active', window.godModeActive);
+      if (window.godModeActive) {
+        btn.textContent = '✅ God ON';
+        btn.classList.add('active');
+      } else {
+        btn.textContent = '🔓 God';
+        btn.classList.remove('active');
+      }
     }
     
     // Re-renderizar para actualizar los nodos

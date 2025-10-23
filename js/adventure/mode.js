@@ -11,7 +11,7 @@
         unlocked: true, 
         nodes: [], 
         boss: 'arkanoid',
-        mapImage: 'assets/bosses/castle_map.webp',
+        mapImage: 'assets/maps/tv set.png',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Lord Spoiler',
         bossDialog: '¡Te felicito! Has llegado más lejos de lo que pensaba... ¡Pero hasta aquí llega tu conocimiento y tu suerte!'
@@ -22,20 +22,60 @@
         unlocked: false, 
         nodes: [], 
         boss: 'pokemon',
-        mapImage: 'assets/bosses/anime.webp',
+        mapImage: 'assets/maps/tokyo.png',
         bossImage: 'assets/bosses/demon_anime.webp',
         bossName: 'Otaku Supremo',
         bossDialog: '¡Al fin un rival digno! ¡Nuestra batalla será legendaria!'
       },
-      history: { name: 'Tierra Antigua', icon: '📜', unlocked: false, nodes: [], boss: 'rpg' },
-      geography: { name: 'Atlas Mundial', icon: '🌍', unlocked: false, nodes: [], boss: 'pacman' },
-      science: { name: 'Reino de la Ciencia', icon: '🧪', unlocked: false, nodes: [], boss: 'tetris' },
-      sports: { name: 'Olimpo Deportivo', icon: '⚽', unlocked: false, nodes: [], boss: 'donkey' }
+      history: { 
+        name: 'Tierra Antigua', 
+        icon: '📜', 
+        unlocked: false, 
+        nodes: [], 
+        boss: 'rpg',
+        mapImage: 'assets/maps/desert03.png',
+        bossImage: 'assets/bosses/demon_boss.webp',
+        bossName: 'Faraón Eterno',
+        bossDialog: '¡Mil años de historia me respaldan! No podrás vencerme.'
+      },
+      geography: { 
+        name: 'Atlas Mundial', 
+        icon: '🌍', 
+        unlocked: false, 
+        nodes: [], 
+        boss: 'pacman',
+        mapImage: 'assets/maps/map02.png',
+        bossImage: 'assets/bosses/demon_boss.webp',
+        bossName: 'Conquistador Global',
+        bossDialog: 'He recorrido cada rincón del mundo. ¿Crees conocerlo mejor que yo?'
+      },
+      science: { 
+        name: 'Reino de la Ciencia', 
+        icon: '🧪', 
+        unlocked: false, 
+        nodes: [], 
+        boss: 'tetris',
+        mapImage: 'assets/maps/forest02.png',
+        bossImage: 'assets/bosses/demon_boss.webp',
+        bossName: 'Dr. Quantum',
+        bossDialog: 'La ciencia es mi dominio. Tus conocimientos son insignificantes.'
+      },
+      sports: { 
+        name: 'Olimpo Deportivo', 
+        icon: '⚽', 
+        unlocked: false, 
+        nodes: [], 
+        boss: 'donkey',
+        mapImage: 'assets/maps/stadium.png',
+        bossImage: 'assets/bosses/demon_boss.webp',
+        bossName: 'Campeón Supremo',
+        bossDialog: '¡Soy el mejor atleta de todos los tiempos! Prepárate para perder.'
+      }
     },
     currentRegion: 'movies',
     currentNode: 0,
     progress: {},
-    lives: 3,
+    lives: 5, // 5 vidas iniciales
     powerUps: []
   };
 
@@ -58,7 +98,41 @@
           return;
         }
         
-        Object.assign(ADVENTURE_STATE, data);
+        // Mezclar datos: preservar metadatos nuevos (mapImage, bossImage, icon, etc.)
+        try {
+          // Regiones
+          if (data.regions && typeof data.regions === 'object') {
+            Object.keys(ADVENTURE_STATE.regions).forEach((key) => {
+              const defReg = ADVENTURE_STATE.regions[key];
+              const savedReg = data.regions[key] || {};
+              // Merge shallow: defaults primero, luego datos guardados
+              ADVENTURE_STATE.regions[key] = Object.assign({}, defReg, savedReg);
+              // Asegurar nodos (8)
+              if (!Array.isArray(ADVENTURE_STATE.regions[key].nodes) || ADVENTURE_STATE.regions[key].nodes.length === 0) {
+                ADVENTURE_STATE.regions[key].nodes = Array(8).fill(null).map((_, i) => ({
+                  id: i,
+                  type: i === 7 ? 'boss' : (i % 2 === 0 ? 'normal' : 'timed'),
+                  completed: false,
+                  stars: 0,
+                  questions: i === 7 ? 10 : (i % 2 === 0 ? 25 : 999),
+                  requiredCorrect: i === 7 ? 0 : (i % 2 === 0 ? 18 : 10),
+                  timeLimit: i % 2 === 1 && i !== 7 ? 60 : null
+                }));
+              }
+            });
+          }
+
+          // Propiedades escalares del estado
+          if (typeof data.currentRegion === 'string') ADVENTURE_STATE.currentRegion = data.currentRegion;
+          if (typeof data.currentNode === 'number') ADVENTURE_STATE.currentNode = data.currentNode;
+          if (data.progress && typeof data.progress === 'object') ADVENTURE_STATE.progress = data.progress;
+          if (typeof data.lives === 'number') ADVENTURE_STATE.lives = data.lives;
+          if (Array.isArray(data.powerUps)) ADVENTURE_STATE.powerUps = data.powerUps;
+        } catch (mergeErr) {
+          console.warn('Fallo al mezclar progreso de aventura, usando defaults:', mergeErr);
+          // En caso de problema, caer a Object.assign clásico
+          Object.assign(ADVENTURE_STATE, data);
+        }
       } else {
         // Si no hay datos guardados, asegurar que currentRegion esté configurado
         ADVENTURE_STATE.currentRegion = 'movies';
@@ -254,10 +328,47 @@
     return result;
   }
 
+  // Función para perder una vida
+  function loseLife() {
+    if (ADVENTURE_STATE.lives > 0) {
+      ADVENTURE_STATE.lives--;
+      saveAdventureProgress();
+      
+      if (ADVENTURE_STATE.lives === 0) {
+        // Reiniciar el mapa actual
+        const currentRegion = ADVENTURE_STATE.currentRegion;
+        ADVENTURE_STATE.regions[currentRegion].nodes.forEach(node => {
+          node.completed = false;
+          node.stars = 0;
+        });
+        ADVENTURE_STATE.lives = 5; // Restaurar vidas
+        ADVENTURE_STATE.currentNode = 0;
+        saveAdventureProgress();
+        
+        if (window.toast) window.toast('💔 Te quedaste sin vidas. El mapa se ha reiniciado.');
+        return true; // Indica que se reinició el mapa
+      }
+      
+      if (window.toast) window.toast(`❤️ Perdiste una vida. Te quedan ${ADVENTURE_STATE.lives} vidas.`);
+    }
+    return false; // No se reinició el mapa
+  }
+  
   // Completar un nodo
-  async function completeAdventureNode(nodeIndex, score, total) {
+  async function completeAdventureNode(nodeIndex, score, total, failed = false) {
     const region = ADVENTURE_STATE.regions[ADVENTURE_STATE.currentRegion];
     const node = region.nodes[nodeIndex];
+    
+    // Si el jugador falló el nivel
+    if (failed) {
+      const mapReset = loseLife();
+      return {
+        stars: 0,
+        failed: true,
+        mapReset,
+        livesRemaining: ADVENTURE_STATE.lives
+      };
+    }
     
     // Calcular estrellas basado en respuestas correctas
     let stars = 0;
@@ -422,7 +533,7 @@
     ADVENTURE_STATE.currentRegion = 'movies'; // Empezar en movies
     ADVENTURE_STATE.currentNode = 0;
     ADVENTURE_STATE.progress = {};
-    ADVENTURE_STATE.lives = 3;
+    ADVENTURE_STATE.lives = 5; // Reiniciar con 5 vidas
     ADVENTURE_STATE.powerUps = [];
     
     // Limpiar localStorage
@@ -467,6 +578,7 @@
     getBossHandicap,
     getAdventureStats,
     resetAdventureProgress,
+    loseLife, // Exportar función de perder vida
     // Agregar una función directa para God Mode
     startNodeDirectly: async function(regionKey, nodeIndex) {
       console.log('startNodeDirectly - God Mode override');

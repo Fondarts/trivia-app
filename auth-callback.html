@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticando - Quizle!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .status {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./assets/logo/logo.png" alt="Quizle!" class="logo">
+        <h1>¡Casi listo!</h1>
+        <p class="status" id="status">Completando tu autenticación...</p>
+        <div class="spinner" id="spinner"></div>
+        <div class="error" id="error"></div>
+    </div>
+
+    <script>
+        // Configuración de Supabase
+        const SUPABASE_URL = 'https://fpjkdibubjdbskthofdp.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwamtkaWJ1YmpkYnNrdGhvZmRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ3MzI5NzIsImV4cCI6MjA3MDMwODk3Mn0.oYN5p3Mh_8omCGlCfVApRY_YCG-fFW5MWdeuYsNLgHc';
+        
+        async function processCallback() {
+            const statusEl = document.getElementById('status');
+            const errorEl = document.getElementById('error');
+            const spinnerEl = document.getElementById('spinner');
+            
+            try {
+                // Cargar Supabase
+                statusEl.textContent = 'Cargando sistema de autenticación...';
+                
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
+                
+                await new Promise((resolve, reject) => {
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    document.head.appendChild(script);
+                });
+                
+                if (!window.supabase) {
+                    throw new Error('No se pudo cargar Supabase');
+                }
+                
+                // Crear cliente de Supabase
+                const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                
+                statusEl.textContent = 'Verificando credenciales...';
+                
+                // Esperar un momento para que Supabase procese los tokens
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Obtener sesión
+                const { data: { session }, error } = await supabaseClient.auth.getSession();
+                
+                if (error) {
+                    throw error;
+                }
+                
+                if (!session) {
+                    throw new Error('No se pudo obtener la sesión. Por favor, intenta de nuevo.');
+                }
+                
+                statusEl.textContent = '¡Autenticación exitosa! Redirigiendo...';
+                
+                // Guardar datos del usuario
+                const userData = {
+                    id: session.user.id,
+                    email: session.user.email,
+                    name: session.user.user_metadata?.full_name || session.user.email?.split('@')[0],
+                    avatar: session.user.user_metadata?.avatar_url || 'img/avatar_placeholder.svg',
+                    isGuest: false
+                };
+                
+                localStorage.setItem('current_user', JSON.stringify(userData));
+                localStorage.setItem('auth_success', 'true');
+                
+                // Redirigir a la app principal
+                setTimeout(() => {
+                    window.location.href = './index.html';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error procesando callback:', error);
+                spinnerEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                errorEl.innerHTML = `
+                    <strong>Error de autenticación</strong><br>
+                    ${error.message || 'Ocurrió un error inesperado'}<br><br>
+                    <a href="./index.html" class="btn">Volver al inicio</a>
+                `;
+                statusEl.textContent = 'Error al completar la autenticación';
+            }
+        }
+        
+        // Iniciar procesamiento
+        processCallback();
+    </script>
+</body>
+</html>

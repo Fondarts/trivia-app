@@ -450,7 +450,7 @@
       <div class="boss-dialog-container">
         <div class="boss-dialog-box">
           ${bossImage ? 
-            `<div class="boss-avatar"><img src="${bossImage}" alt="${bossName}" style="width: 120px; height: 120px; object-fit: contain;"/></div>` :
+            `<div class=\"boss-avatar\"><img src=\"${bossImage}\" alt=\"${bossName}\" style=\"width: 120px; height: 120px; object-fit: contain;\" onerror=\"this.onerror=null; if(this.src.endsWith('.png')){this.src=this.src.replace('.png','.webp')}else{this.src=this.src.replace('.webp','.png')}\"/></div>` :
             `<div class="boss-avatar">👺</div>`
           }
           <div class="boss-name">${bossName}</div>

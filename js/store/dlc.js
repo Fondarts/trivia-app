@@ -2,6 +2,7 @@
 // dlc_store.js — v5b (hard bind, no HTML changes needed)
 import { getBank, setBank } from '../game/bank.js';
 import { updateBankCount, refreshCategorySelect, toast } from '../game/ui.js';
+import { t } from '../core/i18n.js';
 
 const K = { owned: 'trivia_owned_packs', ownedMeta: 'trivia_owned_packs_meta', lang: 'trivia_lang' };
 
@@ -96,12 +97,12 @@ function ensureModal(){
   ov = document.createElement('div');
   ov.id='dlcModal'; ov.className='dlc-overlay';
   ov.innerHTML = `
-    <div class="dlc-panel" role="dialog" aria-label="Tienda de Packs">
+    <div class="dlc-panel" role="dialog" aria-label="${t('packStore')}">
       <button class="dlc-close" id="dlcClose" aria-label="Cerrar">×</button>
       <div class="dlc-sec">
         <div class="dlc-row">
-          <div class="dlc-title">Disponibles</div>
-          <div class="dlc-small">Los packs instalados se suman al banco.</div>
+          <div class="dlc-title">${t('available')}</div>
+          <div class="dlc-small">${t('packsHint')}</div>
         </div>
       </div>
       <div id="dlcList"></div>
@@ -121,7 +122,7 @@ function ensureButton(){
     const hdr = document.querySelector('.header .row') || document.querySelector('.header');
     if (!hdr) return;
     btn = document.createElement('button');
-    btn.id = 'btnDLC'; btn.className = 'iconbtn'; btn.title='Tienda de packs';
+    btn.id = 'btnDLC'; btn.className = 'iconbtn'; btn.title = t('packStore');
     btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 7V6a5 5 0 0 1 10 0v1h3a1 1 0 0 1 .98 1.197l-2 10A2 2 0 0 1 17 20H7a2 2 0 0 1-1.98-1.803l-2-10A1 1 0 0 1 4 7h3Zm2 0h6V6a3 3 0 0 0-6 0v1Z"/></svg>';
     hdr.insertBefore(btn, hdr.firstChild);
   }
@@ -160,10 +161,10 @@ async function render(){
       </div>
       <div class="dlc-row" style="margin:6px 0">
         <div class="dlc-small">${p.description||''}</div>
-        <div class="dlc-small dlc-price" data-id="${p.id}">${isOwned?'Instalado':'Gratis (dev)'}</div>
+        <div class="dlc-small dlc-price" data-id="${p.id}">${isOwned?t('installed'):t('free')}</div>
       </div>
       <div class="dlc-row">
-        <button class="dlc-btn ${isOwned?'installed':'get'}" data-id="${p.id}">${isOwned?'Instalado':'Obtener'}</button>
+        <button class="dlc-btn ${isOwned?'installed':'get'}" data-id="${p.id}">${isOwned?t('installed'):t('get')}</button>
         <div class="dlc-small">v${p.version||1}</div>
       </div>`;
     list.appendChild(sec);
@@ -181,23 +182,23 @@ async function onAcquire(pack, btn){
     const owned = new Set(getOwned()); owned.add(pack.id); setOwned(Array.from(owned));
     try{ updateBankCount && updateBankCount(); }catch{}
     try{ refreshCategorySelect && refreshCategorySelect(); }catch{}
-    toast && toast('Pack instalado');
+    toast && toast(t('packInstalled'));
   }catch(e){
     console.error('[dlc] install', e);
     toGetUI(pack.id, btn);
-    toast && toast('Error instalando pack');
+    toast && toast(t('errorInstalling'));
   }
 }
 
 function toInstalledUI(id, btn){
-  if (btn){ btn.classList.remove('get'); btn.classList.add('installed'); btn.textContent='Instalado'; btn.disabled=true; }
+  if (btn){ btn.classList.remove('get'); btn.classList.add('installed'); btn.textContent = t('installed'); btn.disabled=true; }
   const price = document.querySelector(`.dlc-price[data-id="${CSS.escape(id)}"]`);
-  if (price) price.textContent='Instalado';
+  if (price) price.textContent = t('installed');
 }
 function toGetUI(id, btn){
-  if (btn){ btn.classList.remove('installed'); btn.classList.add('get'); btn.textContent='Obtener'; btn.disabled=false; }
+  if (btn){ btn.classList.remove('installed'); btn.classList.add('get'); btn.textContent = t('get'); btn.disabled=false; }
   const price = document.querySelector(`.dlc-price[data-id="${CSS.escape(id)}"]`);
-  if (price) price.textContent='Gratis (dev)';
+  if (price) price.textContent = t('free');
 }
 
 async function installPack(p){

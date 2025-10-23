@@ -32,10 +32,84 @@
   // Renderizar el mapa principal con las 6 regiones
   function renderAdventureMap() {
     const container = document.getElementById('adventureMapContainer');
+    const fsAdventure = document.getElementById('fsAdventure');
     if (!container || !window.AdventureMode) return;
     
     const ADVENTURE_STATE = window.AdventureMode.ADVENTURE_STATE;
     const stats = window.AdventureMode.getAdventureStats();
+    
+    // Agregar header fijo si no existe
+    if (!fsAdventure.querySelector('.adventure-fixed-header')) {
+      const header = document.createElement('div');
+      header.className = 'adventure-fixed-header';
+      header.innerHTML = `
+        <div class="adventure-header-inner">
+          <div class="app-title">
+            <img src="assets/logo/logo.png" alt="Quizle!" class="app-logo"/>
+            <span>Quizle!</span>
+          </div>
+          <div class="adventure-header-buttons">
+            <button class="iconbtn" id="btnDLCAdventure" title="Tienda de packs">
+              <svg viewBox="0 0 512 512" width="22" height="22">
+                <path fill="currentColor" d="M345.6 38.4v102.4h128V38.4h-128zm-102.4-25.6v76.8h51.2v51.2h51.2V12.8h-102.4zm-51.2 89.6v51.2h102.4v-25.6h-76.8v-25.6h-25.6zm307.2 51.2H171.5l25.6 179.2h238.1l51.2-179.2zM153.6 486.4c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4zm256 0c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4z"/>
+              </svg>
+            </button>
+            <button class="iconbtn" id="btnFriendsAdventure" title="Amigos" style="position: relative;">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <span class="notification-badge" id="friendsBadgeAdventure" style="display: none;">0</span>
+            </button>
+            <button class="iconbtn avatar-btn" id="btnProfileAdventure" aria-label="Perfil de Usuario">
+              <img src="img/avatar_placeholder.svg" alt="Avatar"/>
+            </button>
+          </div>
+        </div>
+      `;
+      fsAdventure.insertBefore(header, fsAdventure.firstChild);
+      
+      // Vincular eventos de los botones del header de aventura
+      setTimeout(() => {
+        // Botón de tienda
+        const btnDLC = document.getElementById('btnDLCAdventure');
+        if (btnDLC) {
+          btnDLC.addEventListener('click', () => {
+            // Cerrar modo aventura y abrir tienda
+            document.getElementById('fsAdventure').style.display = 'none';
+            document.getElementById('configCard').style.display = 'block';
+            // Disparar evento de tienda si existe
+            const mainDLCBtn = document.getElementById('btnDLC');
+            if (mainDLCBtn) mainDLCBtn.click();
+          });
+        }
+        
+        // Botón de amigos
+        const btnFriends = document.getElementById('btnFriendsAdventure');
+        if (btnFriends) {
+          btnFriends.addEventListener('click', () => {
+            // Cerrar modo aventura y abrir amigos
+            document.getElementById('fsAdventure').style.display = 'none';
+            document.getElementById('configCard').style.display = 'block';
+            // Disparar evento de amigos si existe
+            const mainFriendsBtn = document.getElementById('btnFriends');
+            if (mainFriendsBtn) mainFriendsBtn.click();
+          });
+        }
+        
+        // Botón de perfil
+        const btnProfile = document.getElementById('btnProfileAdventure');
+        if (btnProfile) {
+          btnProfile.addEventListener('click', () => {
+            // Cerrar modo aventura y abrir perfil
+            document.getElementById('fsAdventure').style.display = 'none';
+            document.getElementById('configCard').style.display = 'block';
+            // Disparar evento de perfil si existe
+            const mainProfileBtn = document.getElementById('btnProfile');
+            if (mainProfileBtn) mainProfileBtn.click();
+          });
+        }
+      }, 100);
+    }
     
     container.innerHTML = `
       <div class="adventure-header">
@@ -83,9 +157,52 @@
     `;
   }
 
+  // Función para vincular los botones del header de aventura
+  function bindAdventureHeaderButtons() {
+    // Botón de tienda
+    const btnDLC = document.getElementById('btnDLCAdventure');
+    if (btnDLC) {
+      btnDLC.addEventListener('click', () => {
+        // Cerrar modo aventura y abrir tienda
+        document.getElementById('fsAdventure').style.display = 'none';
+        document.getElementById('configCard').style.display = 'block';
+        // Disparar evento de tienda si existe
+        const mainDLCBtn = document.getElementById('btnDLC');
+        if (mainDLCBtn) mainDLCBtn.click();
+      });
+    }
+    
+    // Botón de amigos
+    const btnFriends = document.getElementById('btnFriendsAdventure');
+    if (btnFriends) {
+      btnFriends.addEventListener('click', () => {
+        // Cerrar modo aventura y abrir amigos
+        document.getElementById('fsAdventure').style.display = 'none';
+        document.getElementById('configCard').style.display = 'block';
+        // Disparar evento de amigos si existe
+        const mainFriendsBtn = document.getElementById('btnFriends');
+        if (mainFriendsBtn) mainFriendsBtn.click();
+      });
+    }
+    
+    // Botón de perfil
+    const btnProfile = document.getElementById('btnProfileAdventure');
+    if (btnProfile) {
+      btnProfile.addEventListener('click', () => {
+        // Cerrar modo aventura y abrir perfil
+        document.getElementById('fsAdventure').style.display = 'none';
+        document.getElementById('configCard').style.display = 'block';
+        // Disparar evento de perfil si existe
+        const mainProfileBtn = document.getElementById('btnProfile');
+        if (mainProfileBtn) mainProfileBtn.click();
+      });
+    }
+  }
+
   // Renderizar los nodos de una región
   function renderRegionNodes(regionKey) {
     const container = document.getElementById('adventureMapContainer');
+    const fsAdventure = document.getElementById('fsAdventure');
     if (!container || !window.AdventureMode) return;
     
     const ADVENTURE_STATE = window.AdventureMode.ADVENTURE_STATE;
@@ -96,6 +213,42 @@
     }
     
     console.log('Renderizando región:', regionKey, region);
+    
+    // Agregar header fijo si no existe
+    if (!fsAdventure.querySelector('.adventure-fixed-header')) {
+      const header = document.createElement('div');
+      header.className = 'adventure-fixed-header';
+      header.innerHTML = `
+        <div class="adventure-header-inner">
+          <div class="app-title">
+            <img src="assets/logo/logo.png" alt="Quizle!" class="app-logo"/>
+            <span>Quizle!</span>
+          </div>
+          <div class="adventure-header-buttons">
+            <button class="iconbtn" id="btnDLCAdventure" title="Tienda de packs">
+              <svg viewBox="0 0 512 512" width="22" height="22">
+                <path fill="currentColor" d="M345.6 38.4v102.4h128V38.4h-128zm-102.4-25.6v76.8h51.2v51.2h51.2V12.8h-102.4zm-51.2 89.6v51.2h102.4v-25.6h-76.8v-25.6h-25.6zm307.2 51.2H171.5l25.6 179.2h238.1l51.2-179.2zM153.6 486.4c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4zm256 0c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4z"/>
+              </svg>
+            </button>
+            <button class="iconbtn" id="btnFriendsAdventure" title="Amigos" style="position: relative;">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <span class="notification-badge" id="friendsBadgeAdventure" style="display: none;">0</span>
+            </button>
+            <button class="iconbtn avatar-btn" id="btnProfileAdventure" aria-label="Perfil de Usuario">
+              <img src="img/avatar_placeholder.svg" alt="Avatar"/>
+            </button>
+          </div>
+        </div>
+      `;
+      fsAdventure.insertBefore(header, fsAdventure.firstChild);
+      
+      // Vincular eventos de los botones del header de aventura
+      setTimeout(() => {
+        bindAdventureHeaderButtons();
+      }, 100);
+    }
     
     // Posiciones del camino optimizadas para formato vertical 9:16
     const pathPositions = [
@@ -111,9 +264,7 @@
     
     // Crear HTML con template strings correctos
     let mapStyle = '';
-    if (region.mapImage) {
-      mapStyle = `background-image: url('${region.mapImage}'); background-size: cover; background-position: center;`;
-    }
+    // No aplicar el estilo inline aquí, lo haremos después
     
     container.innerHTML = `
       <div class="region-header">
@@ -125,10 +276,11 @@
         </div>
       </div>
       
-      <div class="region-map" style="${mapStyle}">
+      <div class="region-map" id="regionMapDiv" style="${mapStyle}">
+        <img id="regionBg" class="region-bg" alt="map" src="${region.mapImage || ''}"/>
         <svg class="path-svg" viewBox="0 0 100 100">
           <!-- Camino completo de fondo -->
-          <path d="M ${pathPositions.map((pos, i) => 
+          <path d="${pathPositions.map((pos, i) => 
             `${i === 0 ? 'M' : 'L'} ${pos.x} ${pos.y}`
           ).join(' ')}" 
             stroke="rgba(255,255,255,0.1)" 
@@ -194,6 +346,86 @@
         </div>
       </div>
     `;
+    
+    // Aplicar imagen de fondo después de renderizar
+    setTimeout(() => {
+      const mapDiv = document.getElementById('regionMapDiv');
+      if (mapDiv && region.mapImage) {
+        // Intentar diferentes formas de la ruta
+        const imagePath = region.mapImage.replace('./', '');
+        
+        // Aplicar directamente al elemento
+        mapDiv.style.cssText += `background-image: url('${imagePath}') !important; background-size: cover !important; background-position: center !important;`;
+        
+        // Log para debug
+        console.log('Imagen aplicada al mapa:', imagePath);
+        console.log('Estilo actual del mapa:', mapDiv.style.cssText);
+        
+        // Verificar que la imagen existe
+        const testImg = new Image();
+        testImg.src = imagePath;
+        testImg.onload = () => {
+          console.log('✅ Imagen cargada correctamente:', imagePath);
+        };
+        testImg.onerror = () => {
+          console.error('❌ Error cargando imagen:', imagePath);
+          // Intentar con ruta alternativa
+          const altPath = './' + imagePath;
+          console.log('Intentando ruta alternativa:', altPath);
+          mapDiv.style.backgroundImage = `url('${altPath}')`;
+        };
+      }
+    }, 100);
+
+    // Cargar imagen de fondo como <img> (nuevo approach, evita conflictos con CSS background)
+    setTimeout(() => {
+      const bg = document.getElementById('regionBg');
+      if (!bg || !region.mapImage) return;
+
+      const base = region.mapImage.replace(/^\.\//, '');
+      const candidates = [base, `./${base}`];
+      console.log('Cargando fondo región', regionKey, 'mapImage:', region.mapImage, 'candidatos:', candidates);
+      let i = 0;
+      const next = () => {
+        if (i >= candidates.length) return;
+        const url = candidates[i++];
+        const probe = new Image();
+        probe.onload = () => { 
+          bg.src = url; 
+          try { bg.style.opacity = '1'; } catch {}
+          console.log('Mapa cargado:', regionKey, url); 
+        };
+        probe.onerror = next;
+        probe.src = url;
+      };
+      next();
+    }, 120);
+
+    // Parche: reintentar fondo con verificación real y !important
+    setTimeout(() => {
+      const mapDiv = document.getElementById('regionMapDiv');
+      if (!mapDiv || !region.mapImage) return;
+
+      const base = region.mapImage.replace(/^\.\//, '');
+      const candidates = [base, `./${base}`];
+
+      const tryLoad = (idx = 0) => {
+        if (idx >= candidates.length) return;
+        const url = candidates[idx];
+        const img = new Image();
+        img.onload = () => {
+          mapDiv.style.setProperty('background-image', `url('${url}')`, 'important');
+          mapDiv.style.setProperty('background-size', 'cover', 'important');
+          mapDiv.style.setProperty('background-position', 'center', 'important');
+          mapDiv.style.setProperty('background-repeat', 'no-repeat', 'important');
+          console.log('Fondo (parche) aplicado:', regionKey, url);
+        };
+        img.onerror = () => tryLoad(idx + 1);
+        img.src = url;
+      };
+
+      tryLoad(0);
+    }, 250);
   }
 
   // Funciones globales
@@ -491,3 +723,4 @@
   };
 
 })(window);
+

@@ -6,6 +6,7 @@
 // Core utilities
 import { toast } from './game/ui.js';
 import { initVisualEffects, showConfetti, showLevelUpEffect, addAnswerEffect, playSound } from './effects.js';
+import { t, initI18n, updateUI as updateI18nUI } from './core/i18n.js';
 
 // Game modules  
 import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, bindLeaderboardsOpen } from './game/ui.js';
@@ -17,8 +18,38 @@ import { renderLB } from './player/leaderboard.js';
 import { trackEvent } from './player/stats.js';
 import { getLevelProgress } from './player/experience.js';
 import { initProfileSync } from './player/profile_sync.js';
-import { getCurrentUser, signOut, initGoogleAuth } from './auth/google.js';
-import { injectSimpleAuthStyles, showSimpleAuthModal } from './auth/modal.js';
+import AuthSystem from './auth/auth_v2.js';
+// Detectar si es Android nativo (Capacitor)
+let isNativeAndroid = false;
+if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.getPlatform && window.Capacitor.getPlatform() === 'android') {
+  isNativeAndroid = true;
+}
+
+// Login nativo con Google Auth
+async function loginWithGoogleNative() {
+  try {
+    // Usar el nuevo sistema de autenticación
+    await AuthSystem.signInWithGoogle();
+  } catch (err) {
+    console.error('Error en login:', err);
+
+    // Mostrar mensaje específico para error de configuración
+    if (err.message && err.message.includes('Error de configuración en Supabase')) {
+      // Mostrar el mensaje completo con instrucciones
+      alert(`Error de Configuración:\n\n${err.message}`);
+    } else {
+      toast('Error al iniciar sesión con Google. Revisa la consola para más detalles.');
+    }
+  }
+}
+// Vincular botón de Google login (modal y perfil)
+document.getElementById('btnGoogleLogin')?.addEventListener('click', async () => {
+  showSimpleAuthModal();
+});
+document.getElementById('profileBtnAuth')?.addEventListener('click', async () => {
+  showSimpleAuthModal();
+});
+import { injectSimpleAuthStyles, showSimpleAuthModal } from './auth/modal_v2.js';
 import { injectNicknameModalStyles, checkAndShowNicknameModal } from './auth/nickname_modal.js';
 import { initFriendsSystem } from './player/social.js';
 import { initFriendsSystem as initFriendsUI } from './player/friends_ui.js';
@@ -160,7 +191,7 @@ function renderVSQuestion(q){
 }
 
 let lastResultShareText = '';
-async function showResults({scores, mePid}){
+async function showResults({scores, mePid, reason, winnerPid}){
   vsActive = false;
   vsQNo = 0; vsQTotal = null;
   
@@ -222,9 +253,10 @@ async function showResults({scores, mePid}){
   const rivalName = arr[rivalIdx]?.name || 'rival';
   const meScore = arr[meIdx]?.correct ?? 0;
   const rivalScore = arr[rivalIdx]?.correct ?? 0;
-  const won = meScore > rivalScore;
-  
-  // Actualizar rankings si es una partida entre amigos
+  // prioridad: victoria por abandono
+  let won = meScore > rivalScore;
+  const wonByForfeit = (reason === 'opponent_left' && (!winnerPid || winnerPid === mePid));
+  if (wonByForfeit) won = true;
   if (friendId && window.socialManager) {
     console.log('Actualizando ranking con amigo:', friendId, 'Ganó:', won);
     await window.socialManager.updateFriendRanking(friendId, won);
@@ -260,9 +292,26 @@ async function showResults({scores, mePid}){
     heroTitle.textContent = 'Perdiste';
     subtitle.innerHTML    = `Contra ${rivalName}. Te irá mejor la próxima. <span class="maybe">(quizás)</span>`;
   }
-  scoreEl.textContent = `${meScore} vs ${rivalScore}`;
+  // Mostrar/ocultar marcador según motivo
+  if (typeof wonByForfeit !== 'undefined' && wonByForfeit) {
+    if (scoreEl) scoreEl.style.display = 'none';
+  } else {
+    if (scoreEl) { scoreEl.style.display = ''; scoreEl.textContent = `${meScore} vs ${rivalScore}`; }
+  }
 
-  lastResultShareText = won ? `Te gané ${rivalName}: ${meScore}–${rivalScore} en Trivia. ¿Revancha?` : `Perdí contra ${rivalName}: ${meScore}–${rivalScore} en Trivia. ¡La próxima te gano!`;
+  // Ajustar mensaje de compartir
+  if (typeof wonByForfeit !== 'undefined' && wonByForfeit) {
+    lastResultShareText = 'Victoria por abandono vs ' + rivalName + '.';
+  } else {
+    lastResultShareText = won
+      ? ('Te gane ' + rivalName + ': ' + meScore + '-' + rivalScore + ' en Trivia. Revancha?')
+      : ('Perdi contra ' + rivalName + ': ' + meScore + '-' + rivalScore + ' en Trivia. La proxima te gano!');
+  }
+  // Override mensajes si fue abandono del rival
+  if (typeof wonByForfeit !== 'undefined' && wonByForfeit) {
+    heroTitle.textContent = 'Victoria por abandono';
+    subtitle.textContent  = `${rivalName} abandono la partida.`;
+  }
 
   fs.style.display = 'block';
   window.scrollTo(0,0);
@@ -318,6 +367,10 @@ function waitForBank() {
 }
 
 window.addEventListener('load', async ()=>{
+  // Inicializar sistema de traducciones
+  initI18n();
+  updateI18nUI();
+  
   // Inicializar efectos visuales
   initVisualEffects();
   
@@ -344,11 +397,12 @@ window.addEventListener('load', async ()=>{
   applyInitialUI();
   
   // Importar funciones de auth al scope global
-  window.getCurrentUser = getCurrentUser;
-  window.signOut = signOut;
-  window.initGoogleAuth = initGoogleAuth;
+  window.getCurrentUser = AuthSystem.getCurrentUser;
+  window.signOut = AuthSystem.signOut;
+  window.initGoogleAuth = AuthSystem.initAuth;
   window.showSimpleAuthModal = showSimpleAuthModal;
   window.checkAndShowNicknameModal = checkAndShowNicknameModal;
+  window.AuthSystem = AuthSystem;
   window.initFriendsSystem = initFriendsSystem;
   window.toast = toast;
   
@@ -371,7 +425,7 @@ window.addEventListener('load', async ()=>{
   
   // Función para obtener el nombre para jugar
   function getPlayerNameForGame() {
-    const user = getCurrentUser();
+    const user = AuthSystem.getCurrentUser();
     if (user && !user.isGuest) {
       // Si está logueado, usar el nickname guardado
       const savedNickname = localStorage.getItem('user_nickname_' + user.id);
@@ -572,7 +626,7 @@ window.addEventListener('load', async ()=>{
   // Vincular botón de logout en el perfil
   document.getElementById('profileBtnLogout')?.addEventListener('click', async () => {
     if (confirm('¿Seguro que quieres cerrar sesión?')) {
-      await signOut();
+      await AuthSystem.signOut();
       updateAuthUI(null);
       // Limpiar datos del perfil
       document.getElementById('profileNicknameText').textContent = '—';
@@ -591,7 +645,7 @@ window.addEventListener('load', async ()=>{
   window.updateAuthUI = updateAuthUI;
   
   // Hacer getCurrentUser disponible globalmente para nickname_modal.js
-  window.getCurrentUser = getCurrentUser;
+  window.getCurrentUser = AuthSystem.getCurrentUser;
   
   // Cargar nivel y XP del perfil si hay usuario
   async function loadUserProfile(userId) {
@@ -615,54 +669,234 @@ window.addEventListener('load', async ()=>{
   let supabase = null;
   try {
     supabase = await getSupabaseClient();
-    const user = await initGoogleAuth(supabase);
+    const user = await AuthSystem.initAuth();
+    
+    // Configurar callback para cambios de auth
+    window.onAuthStateChanged = (user) => {
+      updateAuthUI(user);
+      if (user) {
+        setTimeout(() => {
+          checkAndShowNicknameModal();
+        }, 1000);
+      }
+    };
+    
+    // Verificar si venimos de un callback OAuth
+    if (localStorage.getItem('auth_success') === 'true') {
+      localStorage.removeItem('auth_success');
+      toast('¡Login exitoso con Google!');
+      setTimeout(() => {
+        checkAndShowNicknameModal();
+      }, 1000);
+    }
+    
     updateAuthUI(user);
   } catch (error) {
     console.log('Supabase no disponible, modo offline activado');
     // El juego funciona sin autenticación
   }
 
-  // Manejador simple para el botón de amigos cuando no está logueado
-  document.getElementById('btnFriends')?.addEventListener('click', () => {
-    // Si no hay usuario logueado, mostrar mensaje
+  // Sistema de amigos simplificado - funciona para todos los usuarios
+  function createSimpleFriendsPanel() {
+    if (document.getElementById('simpleFriendsPanel')) return;
+    
+    const panel = document.createElement('div');
+    panel.id = 'simpleFriendsPanel';
+    panel.style.cssText = `
+      position: fixed;
+      top: 70px;
+      right: 10px;
+      width: 340px;
+      max-height: 500px;
+      background: var(--card);
+      border: 2px solid var(--cardBorder);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      z-index: 9999;
+      display: none;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    `;
+    
     const user = getCurrentUser();
-    if (!user || user.isGuest) {
-      toast('Inicia sesión para acceder al sistema de amigos');
-      showSimpleAuthModal();
-    } else {
-      // Si el panel no existe, crearlo
-      if (!document.getElementById('friendsPanel')) {
-        console.log('Panel de amigos no existe, intentando crear...');
-        // Intentar inicializar el sistema de amigos si no está inicializado
-        if (window.socialManager && !document.getElementById('friendsPanel')) {
-          // Crear el panel manualmente
-          const panel = document.createElement('div');
-          panel.id = 'friendsPanel';
-          panel.className = 'friends-panel';
-          panel.innerHTML = `
-            <div class="friends-header">
-              <h3>Amigos</h3>
-              <button class="iconbtn" id="btnCloseFriends">✖</button>
-            </div>
-            <div class="friends-tab-content active">
-              <div class="empty-state">Sistema de amigos no disponible. Por favor recarga la página.</div>
-            </div>
-          `;
-          document.body.appendChild(panel);
-          
-          document.getElementById('btnCloseFriends')?.addEventListener('click', () => {
-            panel.classList.remove('open');
-          });
-        }
-      }
+    const isLoggedIn = user && !user.isGuest;
+    
+    panel.innerHTML = `
+      <div style="padding: 16px; border-bottom: 1px solid var(--cardBorder); background: rgba(139, 92, 246, 0.1);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="margin: 0; font-size: 18px; font-weight: 800;">Sistema de Amigos</h3>
+          <button id="closeFriendsPanel" style="
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text);
+            padding: 0;
+            transition: all 0.2s;
+          ">✖</button>
+        </div>
+      </div>
       
-      // Intentar abrir el panel
-      const panel = document.getElementById('friendsPanel');
-      if (panel) {
-        panel.classList.toggle('open');
+      <div id="friendsPanelContent" style="
+        padding: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+      ">
+        ${isLoggedIn ? `
+          <div style="text-align: center; padding: 20px;">
+            <div style="font-size: 48px; margin-bottom: 16px;">🚀</div>
+            <p style="color: var(--text); font-weight: 600; margin-bottom: 8px;">¡Próximamente!</p>
+            <p style="color: var(--muted); font-size: 14px; line-height: 1.6;">
+              El sistema de amigos está en desarrollo.<br>
+              Pronto podrás:
+            </p>
+            <ul style="text-align: left; display: inline-block; color: var(--muted); font-size: 14px; margin-top: 12px; list-style: none; padding: 0;">
+              <li style="margin: 6px 0;">✨ Agregar amigos por nickname</li>
+              <li style="margin: 6px 0;">⚔️ Desafiar a partidas en vivo</li>
+              <li style="margin: 6px 0;">🏆 Ver rankings entre amigos</li>
+              <li style="margin: 6px 0;">📊 Comparar estadísticas</li>
+              <li style="margin: 6px 0;">🎯 Enviar desafíos de 24 horas</li>
+            </ul>
+          </div>
+        ` : `
+          <div style="text-align: center; padding: 20px;">
+            <div style="font-size: 48px; margin-bottom: 16px;">👥</div>
+            <p style="color: var(--text); font-weight: 600; margin-bottom: 12px;">¡Únete a la comunidad!</p>
+            <p style="color: var(--muted); font-size: 14px; margin-bottom: 16px;">
+              Inicia sesión para desbloquear el sistema de amigos y competir con otros jugadores.
+            </p>
+            <button class="btn accent" id="btnLoginFromFriends" style="width: 100%;">
+              Iniciar Sesión / Registrarse
+            </button>
+          </div>
+        `}
+      </div>
+    `;
+    
+    document.body.appendChild(panel);
+    
+    // Eventos - SIN listener global de click
+    setTimeout(() => {
+      document.getElementById('closeFriendsPanel')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        panel.style.display = 'none';
+      });
+      
+      document.getElementById('btnLoginFromFriends')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        panel.style.display = 'none';
+        showSimpleAuthModal();
+      });
+    }, 100);
+  }
+  
+  // Crear el panel al inicio
+  createSimpleFriendsPanel();
+  
+  // Variable para controlar el estado del panel
+  let friendsPanelOpen = false;
+  
+  // Manejador del botón de amigos - Simplificado
+  document.getElementById('btnFriends')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    
+    console.log('Click en botón de amigos');
+    
+    // Si hay panel del sistema completo y está activo, usarlo
+    const fullPanel = document.getElementById('friendsPanel');
+    if (fullPanel && window.socialManager) {
+      console.log('Usando panel completo');
+      fullPanel.classList.toggle('open');
+      return;
+    }
+    
+    // Si no, usar el panel simple
+    let panel = document.getElementById('simpleFriendsPanel');
+    if (!panel) {
+      createSimpleFriendsPanel();
+      panel = document.getElementById('simpleFriendsPanel');
+    }
+    
+    if (panel) {
+      // Toggle simple del panel
+      friendsPanelOpen = !friendsPanelOpen;
+      panel.style.display = friendsPanelOpen ? 'block' : 'none';
+      console.log('Panel ahora está:', friendsPanelOpen ? 'abierto' : 'cerrado');
+    }
+  });
+  
+  // Cerrar panel al hacer click fuera (con delay para evitar conflictos)
+  document.addEventListener('click', (e) => {
+    const panel = document.getElementById('simpleFriendsPanel');
+    const btn = document.getElementById('btnFriends');
+    
+    if (panel && friendsPanelOpen) {
+      // Si el click no fue en el panel ni en el botón
+      if (!panel.contains(e.target) && !btn.contains(e.target)) {
+        setTimeout(() => {
+          panel.style.display = 'none';
+          friendsPanelOpen = false;
+          console.log('Panel cerrado por click externo');
+        }, 50);
       }
     }
   });
+  
+  // Indicador del modo seleccionado
+  function updateModeIndicator() {
+    const activeMode = document.querySelector('#modeSeg .seg.active');
+    if (!activeMode) return;
+    
+    const modeName = activeMode.dataset.val;
+    const modeKeys = {
+      'rounds': 'modeSoloFull',
+      'timed': 'modeTimedFull',
+      'vs': 'modeVSFull',
+      'adventure': 'modeAdventureFull'
+    };
+    
+    // Buscar o crear el indicador
+    let indicator = document.getElementById('selectedModeIndicator');
+    if (!indicator) {
+      // Crear el indicador si no existe
+      indicator = document.createElement('div');
+      indicator.id = 'selectedModeIndicator';
+      indicator.style.cssText = `
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--accent);
+        margin: 12px 0 8px;
+        padding: 8px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(34, 211, 238, 0.1));
+        border-radius: 8px;
+        border: 1px solid var(--cardBorder);
+      `;
+      
+      // Insertar después de los botones de modo
+      const modeSection = document.querySelector('#modeSeg').parentElement;
+      if (modeSection) {
+        modeSection.appendChild(indicator);
+      }
+    }
+    
+    indicator.textContent = t(modeKeys[modeName]) || t('selectMode');
+    
+    // Animar el cambio
+    indicator.style.animation = 'fadeInScale 0.3s ease';
+  }
+  
+  // Actualizar indicador cuando se cambie el modo
+  document.querySelectorAll('#modeSeg .seg').forEach(seg => {
+    seg.addEventListener('click', () => {
+      setTimeout(updateModeIndicator, 50);
+    });
+  });
+  
+  // Actualizar indicador inicial
+  updateModeIndicator();
   
   document.getElementById('btnStart')?.addEventListener('click', () => {
     const activeMode = document.querySelector('#modeSeg .seg.active')?.dataset?.val;
@@ -755,6 +989,13 @@ window.addEventListener('load', async ()=>{
       username: document.getElementById('playerName')?.value || 'Anon',
       callbacks: {
         onStatus: s => {
+          // Limpiar textos de espera cuando no estamos esperando/ jugando
+          if (s.status !== 'waiting' && s.status !== 'playing'){
+            const btnHost = document.getElementById('btnVsHost');
+            if (btnHost){ btnHost.textContent = 'Crear Sala'; btnHost.classList.remove('friend-vs'); }
+            const badge = document.getElementById('vsCodeBadge');
+            if (badge){ badge.textContent = 'Sala: —'; badge.style.color = ''; }
+          }
           if (s.status === 'peer-left' || s.status === 'abandoned'){
             alert('Tu rival abandonó la partida.');
             vsActive = false;
@@ -779,6 +1020,15 @@ window.addEventListener('load', async ()=>{
           }
         },
         onQuestion: q => renderVSQuestion(q),
+        onTimerTick: ({ remaining }) => {
+          setVsHUD(typeof remaining === 'number' ? remaining : undefined);
+          // Opcional: sonidos últimos 3s
+          try {
+            if (typeof remaining === 'number' && remaining <= 3 && remaining > 0) {
+              playSound('wrong'); // usar sonido existente como beep suave
+            }
+          } catch {}
+        },
         onEnd: payload => showResults(payload || {})
       }
     });
@@ -905,4 +1155,48 @@ window.addEventListener('load', async ()=>{
   
   document.getElementById('btnVsHost')?.addEventListener('click', onHost);
   document.getElementById('btnVsJoin')?.addEventListener('click', onJoin);
+  
+  // SOLUCION OAUTH: Detectar token en la URL al cargar la página
+  const urlHash = window.location.hash;
+  if (urlHash && urlHash.includes('access_token') && supabase) {
+    console.log('Token OAuth detectado en la URL');
+    
+    // Esperar un momento para que Supabase procese el hash automáticamente
+    setTimeout(async () => {
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        
+        if (session?.user) {
+          console.log('Usuario autenticado exitosamente:', session.user);
+          
+          const userData = {
+            id: session.user.id,
+            email: session.user.email,
+            name: session.user.user_metadata?.full_name || session.user.email?.split('@')[0],
+            avatar: session.user.user_metadata?.avatar_url || 'img/avatar_placeholder.svg',
+            isGuest: false
+          };
+          
+          // Guardar y actualizar UI
+          localStorage.setItem('current_user', JSON.stringify(userData));
+          updateAuthUI(userData);
+          
+          // Limpiar URL
+          window.history.replaceState({}, document.title, window.location.pathname);
+          
+          toast('¡Login exitoso con Google!');
+          
+          // Verificar si necesita configurar nickname
+          setTimeout(() => {
+            checkAndShowNicknameModal();
+          }, 1000);
+          
+        } else {
+          console.log('No se pudo obtener la sesión');
+        }
+      } catch (error) {
+        console.error('Error procesando OAuth callback:', error);
+      }
+    }, 2000);
+  }
 });

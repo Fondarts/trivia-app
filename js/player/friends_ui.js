@@ -21,6 +21,14 @@ export function initFriendsSystem(supabase, userId, nickname) {
   
   // Iniciar sistema de presencia
   socialManager.initPresence();
+  // Refrescar lista al sincronizar presencia
+  window.addEventListener('friends:presence-updated', () => {
+    const panel = document.getElementById('friendsPanel');
+    const friendsTab = document.querySelector('.tab-btn[data-tab="friends"]');
+    if (panel?.classList.contains('open') && friendsTab?.classList.contains('active')) {
+      loadFriends();
+    }
+  });
   
   // Crear botón de amigos en el header
   createFriendsButton();
@@ -97,14 +105,20 @@ function createFriendsPanel() {
   panel.innerHTML = `
     <div class="friends-header">
       <h3>Amigos</h3>
-      <button class="iconbtn" id="btnCloseFriends">✖</button>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn small" id="btnDebugProfiles" style="font-size: 12px; padding: 4px 8px;">🐛</button>
+        <button class="btn small" id="btnCreateProfiles" style="font-size: 12px; padding: 4px 8px;">👤</button>
+        <button class="btn small" id="btnRepairFriends" style="font-size: 12px; padding: 4px 8px;">🔧</button>
+        <button class="iconbtn" id="btnCloseFriends">✖</button>
+      </div>
     </div>
     
     <div class="friends-tabs">
       <button class="tab-btn active" data-tab="friends">Amigos</button>
       <button class="tab-btn" data-tab="search">Buscar</button>
       <button class="tab-btn" data-tab="requests">Solicitudes</button>
-      <button class="tab-btn" data-tab="rankings">Rankings</button>
+      <button class="tab-btn" data-tab="rankings">Historial</button>
+      <button class="tab-btn" data-tab="matches">Partidas Abiertas</button>
     </div>
     
     <!-- Tab: Lista de amigos -->
@@ -133,7 +147,14 @@ function createFriendsPanel() {
     <!-- Tab: Rankings entre amigos -->
     <div class="friends-tab-content" id="tabRankings">
       <div class="rankings-list" id="rankingsList">
-        <div class="loading">Cargando rankings...</div>
+        <div class="loading">Cargando historial...</div>
+      </div>
+    </div>
+    
+    <!-- Tab: Partidas Abiertas -->
+    <div class="friends-tab-content" id="tabMatches">
+      <div class="matches-list" id="matchesList">
+        <div class="loading">Cargando partidas...</div>
       </div>
     </div>
   `;
@@ -148,6 +169,107 @@ function bindFriendsPanelEvents() {
   // Cerrar panel
   document.getElementById('btnCloseFriends')?.addEventListener('click', () => {
     document.getElementById('friendsPanel')?.classList.remove('open');
+  });
+  
+  // Botón de debug de perfiles
+  document.getElementById('btnDebugProfiles')?.addEventListener('click', async () => {
+    if (!socialManager) {
+      showToast('Error: Sistema de amigos no inicializado');
+      return;
+    }
+    
+    showToast('Ejecutando debug de perfiles...');
+    
+    // Obtener los IDs de amigos actuales
+    const result = await socialManager.getFriends();
+    if (result.success && result.data.length > 0) {
+      const friendIds = result.data.map(f => f.user_id);
+      await socialManager.debugFriendProfiles(friendIds);
+      showToast('Debug completado. Revisa la consola.');
+    } else {
+      // Si no hay amigos, intentar obtener las relaciones directamente
+      const { data: friendships } = await socialManager.supabase
+        .from('friendships')
+        .select('*')
+        .or(`user_id.eq.${socialManager.userId},friend_id.eq.${socialManager.userId}`)
+        .eq('status', 'accepted');
+      
+      if (friendships && friendships.length > 0) {
+        const friendIds = friendships.map(f => 
+          f.user_id === socialManager.userId ? f.friend_id : f.user_id
+        );
+        const uniqueIds = [...new Set(friendIds)];
+        await socialManager.debugFriendProfiles(uniqueIds);
+        showToast('Debug completado. Revisa la consola.');
+      } else {
+        showToast('No hay relaciones de amistad para debuggear');
+      }
+    }
+  });
+  
+  // Botón de crear perfiles faltantes
+  document.getElementById('btnCreateProfiles')?.addEventListener('click', async () => {
+    if (!socialManager) {
+      showToast('Error: Sistema de amigos no inicializado');
+      return;
+    }
+    
+    showToast('Creando perfiles faltantes...');
+    
+    // Obtener las relaciones de amistad directamente
+    const { data: friendships } = await socialManager.supabase
+      .from('friendships')
+      .select('*')
+      .or(`user_id.eq.${socialManager.userId},friend_id.eq.${socialManager.userId}`)
+      .eq('status', 'accepted');
+    
+    if (friendships && friendships.length > 0) {
+      const friendIds = friendships.map(f => 
+        f.user_id === socialManager.userId ? f.friend_id : f.user_id
+      );
+      const uniqueIds = [...new Set(friendIds)];
+      
+      const result = await socialManager.createMissingProfiles(uniqueIds);
+      
+      if (result.success) {
+        if (result.data && result.data.length > 0) {
+          showToast(`${result.data.length} perfiles creados. Recargando lista...`);
+        } else {
+          showToast('No había perfiles faltantes.');
+        }
+        
+        // Recargar la lista de amigos
+        setTimeout(() => {
+          loadFriends();
+        }, 1000);
+      } else {
+        showToast('Error al crear perfiles');
+        console.error('Error creando perfiles:', result.error);
+      }
+    } else {
+      showToast('No hay relaciones de amistad para procesar');
+    }
+  });
+  
+  // Botón de reparación de relaciones
+  document.getElementById('btnRepairFriends')?.addEventListener('click', async () => {
+    if (!socialManager) {
+      showToast('Error: Sistema de amigos no inicializado');
+      return;
+    }
+    
+    showToast('Reparando relaciones de amistad...');
+    const result = await socialManager.repairFriendshipRelationships();
+    
+    if (result.success) {
+      showToast('Relaciones reparadas. Recargando lista...');
+      setTimeout(() => {
+        loadFriends();
+      }, 1000);
+    } else {
+      showToast('Error al reparar relaciones');
+      console.error('Error reparando relaciones:', result.error);
+    }
   });
   
   // Tabs
@@ -167,6 +289,7 @@ function bindFriendsPanelEvents() {
       // Cargar datos si es necesario
       if (tabName === 'rankings') loadRankings();
       if (tabName === 'requests') loadRequests();
+      if (tabName === 'matches') loadOpenMatches();
     });
   });
   
@@ -177,7 +300,7 @@ function bindFriendsPanelEvents() {
   });
 }
 
-function toggleFriendsPanel() {
+export function toggleFriendsPanel() {
   console.log('toggleFriendsPanel ejecutado');
   const panel = document.getElementById('friendsPanel');
   if (panel) {
@@ -217,6 +340,10 @@ async function loadFriends() {
   }
   
   try {
+    // Primero intentar reparar relaciones rotas
+    console.log('Verificando y reparando relaciones de amistad...');
+    await socialManager.repairFriendshipRelationships();
+    
     const result = await socialManager.getFriends();
     
     if (!result || !result.success) {
@@ -261,6 +388,11 @@ async function loadFriends() {
 function createFriendItem(friend, isOnline) {
   // Por ahora, siempre mostrar "Desafiar" ya que el sistema de presencia no está detectando bien
   // TODO: Arreglar detección de presencia online/offline
+  
+  // Indicador visual si el amigo necesita perfil
+  const needsProfileIndicator = friend.needsProfile ? 
+    '<div class="friend-status-text" style="color: #f59e0b; font-size: 10px; margin-top: 2px;">⚠️ Sin perfil</div>' : '';
+  
   return `
     <div class="friend-item clickable-friend" data-friend-id="${friend.user_id}" style="cursor: pointer;">
       <div class="friend-status ${isOnline ? 'online' : 'offline'}"></div>
@@ -268,6 +400,7 @@ function createFriendItem(friend, isOnline) {
       <div class="friend-info">
         <div class="friend-name">${friend.nickname}</div>
         <div class="friend-level">Nivel ${friend.level || 1}</div>
+        ${needsProfileIndicator}
       </div>
       <div class="friend-actions">
         <button class="btn small accent" data-action="invite-sync" data-friend="${friend.user_id}">Desafiar</button>
@@ -455,14 +588,29 @@ async function loadRequests() {
     }
     
     // Cargar invitaciones a juegos (solo pendientes y no expiradas)
-    const { data: gameInvites, error: gameError } = await socialManager.supabase
-      .from('game_invitations')
-      .select('*')
-      .eq('to_user_id', socialManager.userId)
-      .eq('status', 'pending')
-      .in('game_type', ['sync', 'vs', 'async']) // Aceptar sync, vs y async
-      .gte('expires_at', new Date().toISOString())
-      .order('created_at', { ascending: false });
+    let gameInvites = [];
+    let gameError = null;
+    
+    try {
+      if (navigator.onLine) {
+        const result = await socialManager.supabase
+          .from('game_invitations')
+          .select('*')
+          .eq('to_user_id', socialManager.userId)
+          .eq('status', 'pending')
+          .in('game_type', ['sync', 'vs', 'async']) // Aceptar sync, vs y async
+          .gte('expires_at', new Date().toISOString())
+          .order('created_at', { ascending: false });
+        
+        gameInvites = result.data || [];
+        gameError = result.error;
+      } else {
+        console.log('⚠️ Sin conexión - no se pueden cargar invitaciones');
+      }
+    } catch (error) {
+      console.log('⚠️ Error de conexión cargando invitaciones:', error.message);
+      gameError = error;
+    }
     
     if (gameError) {
       console.error('Error cargando invitaciones de juego:', gameError);
@@ -1269,7 +1417,7 @@ async function showFriendProfile(friendId) {
     // Obtener estadísticas globales del amigo desde la tabla correcta
     const { data: stats, error: statsError } = await socialManager.supabase
       .from('user_stats')
-      .select('*')
+      .select('total_games_played, questions_correct, questions_answered, best_win_streak')
       .eq('user_id', friendId)
       .single();
     
@@ -1277,12 +1425,12 @@ async function showFriendProfile(friendId) {
     if (statsError) console.error('Error obteniendo stats:', statsError);
     
     if (stats) {
-      document.getElementById('friendTotalGames').textContent = stats.games_played || 0;
-      const correctRate = stats.total_questions > 0 
-        ? Math.round((stats.correct_answers / stats.total_questions) * 100) 
+      document.getElementById('friendTotalGames').textContent = stats.total_games_played || 0;
+      const correctRate = (stats.questions_answered > 0)
+        ? Math.round((stats.questions_correct / stats.questions_answered) * 100)
         : 0;
       document.getElementById('friendCorrectRate').textContent = correctRate + '%';
-      document.getElementById('friendBestStreak').textContent = stats.best_streak || 0;
+      document.getElementById('friendBestStreak').textContent = stats.best_win_streak || 0;
     } else {
       document.getElementById('friendTotalGames').textContent = '0';
       document.getElementById('friendCorrectRate').textContent = '0%';
@@ -1369,7 +1517,258 @@ async function showFriendProfile(friendId) {
   }
 }
 
+// Función para cargar partidas abiertas
+async function loadOpenMatches() {
+  console.log('Cargando partidas abiertas...');
+  
+  const container = document.getElementById('matchesList');
+  if (!container) {
+    console.error('No se encontró el contenedor matchesList');
+    return;
+  }
+  
+  if (!socialManager) {
+    console.error('socialManager no está disponible');
+    container.innerHTML = '<div class="error">Sistema de amigos no inicializado</div>';
+    return;
+  }
+  
+  try {
+    // Obtener partidas asíncronas del usuario actual
+    console.log('🔍 Buscando partidas para usuario:', socialManager.userId);
+    
+    // Primero verificar que la tabla existe y tiene datos
+    const { data: testData, error: testError } = await socialManager.supabase
+      .from('async_matches')
+      .select('id')
+      .limit(1);
+    
+    console.log('🔍 Test de tabla async_matches:', { testData, testError });
+    
+    if (testError) {
+      console.error('Error accediendo a la tabla async_matches:', testError);
+      container.innerHTML = '<div class="error">Error: Tabla async_matches no disponible</div>';
+      return;
+    }
+    
+    // Obtener partidas donde el usuario es player1
+    const { data: player1Matches, error: player1Error } = await socialManager.supabase
+      .from('async_matches')
+      .select('*')
+      .eq('player1_id', socialManager.userId)
+      .order('created_at', { ascending: false });
+    
+    console.log('🔍 Partidas como player1:', { player1Matches, player1Error });
+    
+    // Obtener partidas donde el usuario es player2
+    const { data: player2Matches, error: player2Error } = await socialManager.supabase
+      .from('async_matches')
+      .select('*')
+      .eq('player2_id', socialManager.userId)
+      .order('created_at', { ascending: false });
+    
+    console.log('🔍 Partidas como player2:', { player2Matches, player2Error });
+    
+    // Combinar ambas listas y ordenar por fecha (más recientes primero)
+    const allMatches = [...(player1Matches || []), ...(player2Matches || [])]
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    const hasError = player1Error || player2Error;
+    
+    console.log('📊 Todas las partidas del usuario:', { allMatches, hasError });
+    
+    // Obtener perfiles de los jugadores para mostrar nombres y avatares reales
+    if (allMatches.length > 0) {
+      const allPlayerIds = [...new Set([
+        ...allMatches.map(m => m.player1_id),
+        ...allMatches.map(m => m.player2_id)
+      ])];
+      
+      console.log('👥 IDs de jugadores únicos:', allPlayerIds);
+      
+      const { data: profiles, error: profilesError } = await socialManager.supabase
+        .from('user_profiles')
+        .select('user_id, nickname, avatar_url')
+        .in('user_id', allPlayerIds);
+      
+      console.log('👥 Perfiles obtenidos:', { profiles, profilesError });
+      
+      // Crear mapa de perfiles para búsqueda rápida
+      const profileMap = {};
+      if (profiles) {
+        profiles.forEach(profile => {
+          profileMap[profile.user_id] = {
+            nickname: profile.nickname || 'Usuario',
+            avatar_url: profile.avatar_url
+          };
+        });
+      }
+      
+      // Actualizar partidas con datos de perfiles
+      allMatches.forEach(match => {
+        const player1Profile = profileMap[match.player1_id];
+        const player2Profile = profileMap[match.player2_id];
+        
+        if (player1Profile) {
+          match.player1_name = player1Profile.nickname;
+          match.player1_avatar = player1Profile.avatar_url;
+        }
+        if (player2Profile) {
+          match.player2_name = player2Profile.nickname;
+          match.player2_avatar = player2Profile.avatar_url;
+        }
+      });
+      
+      console.log('📊 Partidas actualizadas con perfiles:', allMatches);
+    }
+    
+    if (hasError) {
+      console.error('Error obteniendo partidas:', { player1Error, player2Error });
+      
+      // Mostrar error más específico
+      let errorMessage = 'Error al cargar partidas';
+      if (player1Error?.code === 'PGRST301' || player2Error?.code === 'PGRST301') {
+        errorMessage = 'Error: Políticas de seguridad bloquean el acceso';
+      } else if (player1Error?.code === 'PGRST116' || player2Error?.code === 'PGRST116') {
+        errorMessage = 'Error: Tabla no encontrada o sin permisos';
+      } else if (player1Error?.status === 400 || player2Error?.status === 400) {
+        errorMessage = 'Error 400: Consulta inválida - Verificar políticas RLS';
+      }
+      
+      container.innerHTML = `
+        <div class="error">
+          ${errorMessage}
+          <br><small>Revisar políticas de Supabase</small>
+        </div>
+      `;
+      return;
+    }
+    
+    // Filtrar por estado activo
+    const activeMatches = allMatches ? allMatches.filter(match => 
+      match.status === 'active'
+    ) : [];
+    console.log('🎯 Partidas activas:', activeMatches);
+    
+    if (activeMatches.length === 0) {
+      container.innerHTML = '<div class="empty-state">No tienes partidas abiertas</div>';
+      return;
+    }
+    
+    // Renderizar partidas
+    container.innerHTML = activeMatches.map(match => createMatchItem(match)).join('');
+    
+    // Bind events para los botones de partidas
+    bindMatchItemEvents();
+    
+  } catch (error) {
+    console.error('Error en loadOpenMatches:', error);
+    container.innerHTML = '<div class="error">Error al cargar partidas</div>';
+  }
+}
+
+// Función para crear un item de partida
+function createMatchItem(match) {
+  console.log('🎮 Creando item para partida:', match);
+  
+  const isPlayer1 = match.player1_id === socialManager.userId;
+  const opponentId = isPlayer1 ? match.player2_id : match.player1_id;
+  let opponentName = isPlayer1 ? match.player2_name : match.player1_name;
+  
+  console.log('👤 Datos originales:', { 
+    isPlayer1, 
+    opponentId, 
+    originalName: opponentName,
+    player1_name: match.player1_name,
+    player2_name: match.player2_name
+  });
+  
+  // Si el nombre está vacío o es "Anon", usar un nombre genérico mejor
+  if (!opponentName || opponentName === 'Anon' || opponentName.trim() === '') {
+    opponentName = `Jugador ${opponentId.substring(0, 4)}`;
+    console.log('🔄 Usando nombre genérico:', opponentName);
+  }
+  
+  // Usar avatar real si está disponible, sino generar uno
+  let opponentAvatar;
+  if (isPlayer1 && match.player2_avatar) {
+    opponentAvatar = match.player2_avatar;
+  } else if (!isPlayer1 && match.player1_avatar) {
+    opponentAvatar = match.player1_avatar;
+  } else {
+    // Generar avatar con iniciales
+    opponentAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(opponentName)}&background=random&color=fff&size=40`;
+  }
+  
+  // Calcular tiempo transcurrido
+  const now = new Date();
+  const matchTime = new Date(match.created_at);
+  const diffMs = now - matchTime;
+  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  
+  let timeAgo;
+  if (diffHours > 0) {
+    timeAgo = `hace ${diffHours}h ${diffMinutes}m`;
+  } else if (diffMinutes > 0) {
+    timeAgo = `hace ${diffMinutes}m`;
+  } else {
+    timeAgo = 'ahora';
+  }
+  
+  return `
+    <div class="match-item" data-match-id="${match.id}" data-opponent-id="${opponentId}">
+      <div class="match-status ${isPlayer1 ? 'player1' : 'player2'}"></div>
+      <img src="${opponentAvatar}" class="match-avatar" alt="${opponentName}" onerror="this.src='img/avatar_placeholder.svg'"/>
+      <div class="match-info">
+        <div class="match-opponent">vs ${opponentName}</div>
+        <div class="match-details">
+          ${match.rounds} preguntas • ${match.category} • ${match.difficulty}
+        </div>
+        <div class="match-time">${timeAgo}</div>
+      </div>
+      <div class="match-actions">
+        <button class="btn small accent" onclick="window.startAsyncGame('${match.id}')">
+          Entrar
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+// Función para bindear eventos de los items de partida
+function bindMatchItemEvents() {
+  document.querySelectorAll('[data-action="join-match"]').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const matchId = e.target.dataset.match;
+      console.log('Entrando a partida:', matchId);
+      
+      try {
+        // Cerrar panel de amigos
+        const panel = document.getElementById('friendsPanel');
+        if (panel) panel.classList.remove('open');
+        
+        // Iniciar el juego asíncrono
+        if (window.startAsyncGame) {
+          await window.startAsyncGame(matchId);
+        } else {
+          showToast('Error: Función de juego no disponible');
+        }
+      } catch (error) {
+        console.error('Error entrando a partida:', error);
+        showToast('Error al entrar a la partida');
+      }
+    });
+  });
+}
+
+// Exponer funciones globalmente
+window.loadOpenMatches = loadOpenMatches;
+
 export default {
   initFriendsSystem,
-  showFriendProfile
+  showFriendProfile,
+  toggleFriendsPanel
 };

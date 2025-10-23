@@ -140,6 +140,9 @@ body.capacitor-app .container {
 }
 
 .app-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 28px;
   font-weight: 800;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -149,6 +152,29 @@ body.capacitor-app .container {
   text-shadow: 0 2px 20px rgba(139, 92, 246, 0.3);
   letter-spacing: -0.5px;
   animation: titleGlow 3s ease-in-out infinite;
+}
+
+/* Logo en el header */
+.app-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); */ /* Eliminado el recuadro */
+  transition: all var(--transition-base);
+  object-fit: cover;
+}
+
+.app-logo:hover {
+  /* Sin efecto de escala, solo cambio de sombra */
+  /* box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5); */ /* Eliminado el efecto hover */
+}
+
+.app-title span {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes titleGlow {
@@ -1119,7 +1145,99 @@ body.capacitor-app .fs .wrap {
 }
 
 /* ===========================================
-   13. RESPONSIVE
+   13. LOGO EN RESULTADOS
+   =========================================== */
+
+/* Header en pantallas de resultados - idéntico al header principal */
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--cardBorder);
+}
+
+/* Reutilizar todos los estilos del header principal */
+.results-header .app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 20px rgba(139, 92, 246, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.results-header .app-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); */ /* Eliminado el recuadro */
+  transition: all var(--transition-base);
+  object-fit: cover;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.results-header .row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Los botones heredan los estilos de .iconbtn ya definidos */
+
+/* Mejorar centrado del logo principal con la Q */
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reducido de 10px a 8px */
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 20px rgba(139, 92, 246, 0.3);
+  letter-spacing: -0.5px;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+/* Ajuste para alinear mejor el logo con el texto */
+.app-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); */ /* Eliminado el recuadro */
+  transition: all var(--transition-base);
+  object-fit: cover;
+  vertical-align: middle; /* Añadido para mejor alineación */
+  display: inline-block;
+}
+
+/* Sin efectos en hover para el logo */
+.app-logo:hover {
+  /* Sin efectos */
+}
+
+.app-title span {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  vertical-align: middle; /* Añadido para mejor alineación */
+  line-height: 36px; /* Igual a la altura del logo */
+}
+
+/* ===========================================
+   14. RESPONSIVE
    =========================================== */
 
 @media (max-width: 480px) {
@@ -1129,5 +1247,26 @@ body.capacitor-app .fs .wrap {
   
   .app-title {
     font-size: 22px;
+    gap: 6px; /* Reducir gap en móviles */
+  }
+  
+  .app-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .app-title span {
+    font-size: 20px;
+    line-height: 28px; /* Ajustar al tamaño del logo en móvil */
+  }
+  
+  .app-title-results {
+    font-size: 24px;
+    gap: 8px;
+  }
+  
+  .app-logo-results {
+    width: 32px;
+    height: 32px;
   }
 }

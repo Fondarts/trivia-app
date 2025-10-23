@@ -18,7 +18,10 @@ export function setCurrentUser(user) {
 
 // Función para cerrar sesión
 export async function signOut() {
-  if (window.supabaseClient) {
+  // Usar el handler OAuth unificado
+  if (window.handleGoogleLogout) {
+    await window.handleGoogleLogout();
+  } else if (window.supabaseClient) {
     try {
       await window.supabaseClient.auth.signOut();
     } catch (error) {
@@ -34,8 +37,15 @@ export async function initGoogleAuth(supabase) {
   if (!supabase) return null;
   
   try {
-    // Verificar sesión existente
-    const { data: { user } } = await supabase.auth.getUser();
+    // Verificar sesión existente usando el handler unificado
+    let user = null;
+    
+    if (window.checkExistingSession) {
+      user = await window.checkExistingSession();
+    } else {
+      const { data } = await supabase.auth.getUser();
+      user = data?.user;
+    }
     
     if (user) {
       // Usuario autenticado con Google
@@ -50,25 +60,25 @@ export async function initGoogleAuth(supabase) {
       currentUser = userData;
       localStorage.setItem('current_user', JSON.stringify(userData));
       
-      // Suscribirse a cambios de auth
-      supabase.auth.onAuthStateChange((event, session) => {
-        if (event === 'SIGNED_OUT') {
-          currentUser = null;
-          localStorage.removeItem('current_user');
-          if (window.updateAuthUI) window.updateAuthUI(null);
-        } else if (event === 'SIGNED_IN' && session?.user) {
-          const userData = {
-            id: session.user.id,
-            email: session.user.email,
-            name: session.user.user_metadata?.full_name || session.user.email?.split('@')[0],
-            avatar: session.user.user_metadata?.avatar_url || 'img/avatar_placeholder.svg',
-            isGuest: false
-          };
-          currentUser = userData;
-          localStorage.setItem('current_user', JSON.stringify(userData));
-          if (window.updateAuthUI) window.updateAuthUI(userData);
-        }
-      });
+      // Configurar callbacks para cambios de auth
+      window.handleAuthSuccess = (user) => {
+        const userData = {
+          id: user.id,
+          email: user.email,
+          name: user.user_metadata?.full_name || user.email?.split('@')[0],
+          avatar: user.user_metadata?.avatar_url || 'img/avatar_placeholder.svg',
+          isGuest: false
+        };
+        currentUser = userData;
+        localStorage.setItem('current_user', JSON.stringify(userData));
+        if (window.updateAuthUI) window.updateAuthUI(userData);
+      };
+      
+      window.handleAuthLogout = () => {
+        currentUser = null;
+        localStorage.removeItem('current_user');
+        if (window.updateAuthUI) window.updateAuthUI(null);
+      };
       
       return userData;
     }

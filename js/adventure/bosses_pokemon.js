@@ -20,11 +20,13 @@
     // Cargar imágenes
     const bossImage = new Image();
     bossImage.src = 'assets/bosses/demon_anime.webp';
+    bossImage.onerror = () => { try { bossImage.src = 'assets/bosses/demon_anime.png'; } catch {} };
     let bossImageLoaded = false;
     bossImage.onload = () => { bossImageLoaded = true; };
     
     const battleAvatar = new Image();
     battleAvatar.src = 'img/avatarman.webp';
+    battleAvatar.onerror = () => { try { battleAvatar.src = 'img/avatarman.png'; } catch {} };
     let battleAvatarLoaded = false;
     battleAvatar.onload = () => { battleAvatarLoaded = true; };
     
@@ -816,7 +818,7 @@
       ctx.lineWidth = 2;
       ctx.strokeRect(enemyHudX + 2, enemyHudY + 2, hudWidth - 4, 66);
       
-      ctx.fillStyle = '#000';
+      ctx.fillStyle = '#fff';
       ctx.font = `bold ${16 * game.scale}px monospace`;
       ctx.fillText(game.boss.species + '♂', enemyHudX + 15, enemyHudY + 25);
       ctx.textAlign = 'right';
@@ -828,7 +830,7 @@
       // Fondo de la barra
       ctx.fillStyle = '#2F4F4F';
       ctx.fillRect(enemyHudX + 48, enemyHudY + 33, hpBarWidth + 4, 20);
-      ctx.fillStyle = '#000';
+      ctx.fillStyle = '#fff';
       ctx.fillRect(enemyHudX + 50, enemyHudY + 35, hpBarWidth, 16);
       
       const hpRatio = game.boss.hp / game.boss.maxHp;

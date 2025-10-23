@@ -1025,7 +1025,7 @@
         ctx.fillRect(enemyX - 40, enemyY - 40, 80, 80);
         ctx.fillStyle = '#D2691E';
         ctx.fillRect(enemyX - 30, enemyY - 30, 60, 60);
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#ffffff';
         ctx.fillRect(enemyX - 20, enemyY - 20, 10, 10);
         ctx.fillRect(enemyX + 10, enemyY - 20, 10, 10);
         // Cuernos
@@ -1099,7 +1099,7 @@
         // Si no hay imagen, usar fondo blanco con emoji
         ctx.fillStyle = '#fff';
         ctx.fillRect(headHoleX - headHoleSize, headHoleY - headHoleSize, headHoleSize * 2, headHoleSize * 2);
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#ffffff';
         ctx.font = `${headHoleSize}px Arial`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -1241,7 +1241,7 @@
       ctx.fillRect(hudX + hudWidth, hudY, 2, 80);
       
       // Texto pixelado con MEJOR CONTRASTE
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = '#ffffff';
       ctx.font = isMobile ? 'bold 18px "Courier New", monospace' : 'bold 24px "Courier New", monospace';
       ctx.fillText(game.boss.species.toUpperCase() + '♂', hudX + 20, hudY + 25);
       ctx.fillText('Lv' + game.boss.level, hudX + hudWidth - 60, hudY + 25);
@@ -1265,7 +1265,7 @@
       }
       
       // Texto HP pixelado
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 14px "Courier New", monospace';
       ctx.fillText('HP', hudX + 20, hudY + 45);
       
@@ -1354,7 +1354,7 @@
       
       if (game.state === 'statUpgrade' && game.expPoints > 0) {
         // Menú de mejora de stats con estilo pixel art
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 18px "Courier New", monospace';
         ctx.fillText(`⭐ PUNTOS EXP: ${game.expPoints} ⭐`, 50, menuY + 40);
         ctx.font = 'bold 16px "Courier New", monospace';
@@ -1375,7 +1375,7 @@
             ctx.fillStyle = '#FFA07A';
             ctx.fillRect(47, optY - 18, gameWidth - 94, 26);
           }
-          ctx.fillStyle = '#000000';
+          ctx.fillStyle = '#ffffff';
           ctx.shadowBlur = 0;
           ctx.font = 'bold 18px "Courier New", monospace';
           ctx.fillText('▶ ' + opt, 50, optY);
@@ -1397,7 +1397,7 @@
         ctx.strokeStyle = '#000';
         ctx.lineWidth = 2;
         ctx.strokeRect(550, 620, 200, 40);
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 16px monospace';
         ctx.fillText('CONTINUAR →', 620, 645);
       } else if (game.state === 'showingItems') {
@@ -1413,7 +1413,7 @@
         ctx.fillRect(gameWidth - 13, menuY, 3, menuHeight);
         
         // Título
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 20px "Courier New", monospace';
         ctx.fillText('Tu Bolsa de Otaku:', 50, menuY + 35);
         
@@ -1429,14 +1429,14 @@
           }
           
           // Texto negro para máxima legibilidad
-          ctx.fillStyle = '#000000';
+          ctx.fillStyle = '#ffffff';
           ctx.font = '16px "Courier New", monospace';
           ctx.fillText(game.player.items[i].name, 55, itemY);
         }
         
         // Flechas de navegación simples al lado
         if (game.player.items.length > maxItems) {
-          ctx.fillStyle = '#000000';
+          ctx.fillStyle = '#ffffff';
           ctx.font = 'bold 20px "Courier New", monospace';
           
           // Flecha arriba
@@ -1469,7 +1469,7 @@
           ctx.fillStyle = '#F0FFF0';
           ctx.fillRect(52, descY + 2, gameWidth - 104, 46);
           
-          ctx.fillStyle = '#000000';
+          ctx.fillStyle = '#ffffff';
           ctx.font = '14px "Courier New", monospace';
           ctx.textAlign = 'center';
           ctx.fillText(game.player.items[game.selectedItem].description, gameWidth/2, descY + 28);
@@ -1477,7 +1477,7 @@
         }
       } else if (game.state === 'menu') {
         // Menú principal con estilo pixel art
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 22px "Courier New", monospace';
         ctx.fillText('¿QUÉ DEBERÍA', 50, menuY + 40);
         ctx.fillText(game.player.name.toUpperCase() + ' HACER?', 50, menuY + 65);
@@ -1572,7 +1572,7 @@
         }
       } else {
         // Mostrar mensaje con estilo pixel art
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 18px "Courier New", monospace';
         
         // Añadir indicador de acción si hay animación
@@ -1595,7 +1595,7 @@
             ctx.fillStyle = 'rgba(240, 248, 255, 0.9)';
             ctx.fillRect(45, textY - 20, textWidth + 30, 25);
             
-            ctx.fillStyle = '#000000';
+            ctx.fillStyle = '#ffffff';
             ctx.fillText(line + (i < lines.length - 1 ? '!' : ''), 50, textY);
           }
         });

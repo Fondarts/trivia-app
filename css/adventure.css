@@ -21,9 +21,111 @@
 }
 
 .adventure-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
+  padding-top: 96px; /* Más espacio para header fijo (mobile first) */
+}
+
+/* En móviles, ajustar el padding */
+@media (max-width: 480px) {
+  .adventure-container {
+    padding: 10px;
+    padding-top: 84px; /* asegurar que nada quede debajo del header */
+  }
+}
+
+@media (min-width: 768px) {
+  .adventure-container {
+    max-width: 1200px;
+    padding: 20px;
+    padding-top: 80px;
+  }
+}
+
+/* Header fijo con logo para modo aventura */
+.adventure-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg1);
+  backdrop-filter: blur(10px);
+  z-index: 1010;
+  padding: 12px 0; /* sin padding lateral, lo pone el inner */
+  border-bottom: 1px solid var(--cardBorder);
+}
+
+/* Contenedor centrado como el resto de pantallas (.fs .wrap = 520px) */
+.adventure-header-inner {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* En móviles, ajustar el header */
+@media (max-width: 480px) {
+  .adventure-fixed-header { padding: 10px 0; }
+  .adventure-header-inner { max-width: 520px; padding: 0 12px; }
+  
+  .adventure-fixed-header .app-title {
+    font-size: 20px;
+    gap: 6px;
+  }
+  
+  .adventure-fixed-header .app-logo {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .adventure-header-buttons {
+    gap: 5px;
+  }
+  
+  .adventure-header-buttons .iconbtn {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+}
+
+.adventure-fixed-header .app-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.adventure-fixed-header .app-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.adventure-header-buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0; /* Evitar que se comprima */
+}
+
+/* Ajustar el título para que no desborde */
+.adventure-fixed-header .app-title span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px; /* Limitar ancho del texto */
+}
+
+@media (max-width: 480px) {
+  .adventure-fixed-header .app-title span {
+    max-width: 80px;
+  }
 }
 
 /* Área de juego de aventura */
@@ -49,6 +151,70 @@
 /* ===========================================
    2. HEADER Y HUD
    =========================================== */
+
+/* Wrapper principal */
+.region-wrapper {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Controles debajo del mapa */
+.map-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+.btn-control {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--cardBorder);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-control:hover {
+  background: var(--cardBorder);
+  transform: translateY(-2px);
+}
+
+.btn-control:active {
+  transform: translateY(0);
+}
+
+#godModeBtn.active {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+/* Área del mapa de región */
+.region-map {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  aspect-ratio: 9/16;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d1224;
+  box-shadow: 0 8px 32px rgba(0,0,0,.35);
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+
+.region-map .path-svg { position: absolute; z-index: 2; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+.region-map .nodes-container { position: absolute; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; }
 
 /* Header de aventura */
 .adventure-header {
@@ -225,72 +391,45 @@
 }
 
 /* ===========================================
-   4. MAPA DE REGIÓN
+   4. MAPA DE REGIÓN - NUEVO DISEÑO
    =========================================== */
 
-.region-header {
+/* Info del mapa (nombre y vidas) */
+.map-info {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
-  background: var(--card);
-  border-radius: 10px;
   justify-content: space-between;
-}
-
-.region-title {
-  font-size: 16px;
-  font-weight: 800;
-  flex: 1;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.btn-back {
-  background: var(--cardBorder);
-  color: var(--text);
-  border: none;
+  align-items: center;
   padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-base);
+  margin-top: 70px; /* Espacio para el header principal */
+  margin-bottom: 10px;
 }
 
-.btn-back:hover {
-  background: var(--muted);
-  transform: translateX(-3px);
+.map-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
 }
 
-/* Mapa con nodos - Mobile First */
-.region-map {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9/16;
-  max-width: 450px;
-  margin: 0 auto 30px;
-  background: linear-gradient(180deg, #1a1a2e 0%, #2c3e50 50%, #34495e 100%);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.lives {
+  display: flex;
+  gap: 4px;
 }
 
-.region-map::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+.heart {
+  font-size: 20px;
+  transition: all 0.3s;
 }
+
+.heart.active {
+  color: #e74c3c;
+}
+
+.heart.lost {
+  opacity: 0.3;
+  filter: grayscale(1);
+}
+
+
 
 .path-svg {
   position: absolute;
@@ -308,14 +447,23 @@
   z-index: 3;
 }
 
+
+
 /* ===========================================
    5. NODOS DE AVENTURA
    =========================================== */
+/* Fix: Forzar visibilidad de nodos y contenedor */
+.region-map .nodes-container, .adventure-node {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10;
+}
 
 .adventure-node {
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   background: rgba(28, 40, 51, 0.95);
   border-radius: 50%;
   display: flex;
@@ -324,10 +472,11 @@
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-base);
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
   backdrop-filter: blur(5px);
+  z-index: 4; /* por encima del path */
 }
 
 .adventure-node.completed {
@@ -383,11 +532,11 @@
 }
 
 .adventure-node.boss {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
   border-color: #ff6b6b;
-  border-width: 5px;
+  border-width: 4px;
   box-shadow: 0 10px 30px rgba(220, 20, 60, 0.6);
 }
 
@@ -401,10 +550,45 @@
 }
 
 .node-icon {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+}
+
+/* Icono de reloj pequeño para nodos con tiempo */
+.node-timer-icon {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  font-size: 10px;
+  color: #fff;
+  background: #3498db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Número del nivel */
+.node-number {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .node-stars {
@@ -718,36 +902,23 @@
   }
   
   .adventure-node {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
   
   .adventure-node.boss {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
   }
   
   .node-icon {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
-@media (min-width: 768px) {
-  .region-map {
-    max-height: 80vh;
-  }
-  
-  .adventure-container {
-    max-width: 1200px;
-    padding: 20px;
-  }
-}
 
-/* Ajustes para móviles */
-.adventure-container {
-  max-width: 100%;
-  padding: 10px;
-}
+
+
 
 .adventure-actions {
   text-align: center;

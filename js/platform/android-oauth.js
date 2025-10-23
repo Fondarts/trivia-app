@@ -382,7 +382,8 @@ window.handleOAuthReturn = function() {
   setTimeout(checkAndReloadSession, 500);
 };
 
-// Botón de debug mejorado
+// Botón de debug comentado - no se debe mostrar en producción
+/*
 if (window.Capacitor && window.Capacitor.isNativePlatform) {
   setTimeout(() => {
     const debugBtn = document.createElement('button');
@@ -449,6 +450,7 @@ if (window.Capacitor && window.Capacitor.isNativePlatform) {
     document.body.appendChild(debugBtn);
   }, 5000);
 }
+*/
 
 // Log para debug
 console.log('✅ Android OAuth Handler v5 configurado correctamente');

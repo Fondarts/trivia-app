@@ -1,4 +1,5 @@
 // Sistema simplificado de amigos - Se agrega al main.js existente
+import { t } from './core/i18n.js';
 
 // Función para agregar el botón de amigos al header
 function addFriendsButton() {
@@ -11,7 +12,7 @@ function addFriendsButton() {
   const friendsBtn = document.createElement('button');
   friendsBtn.id = 'btnFriends';
   friendsBtn.className = 'iconbtn';
-  friendsBtn.title = 'Amigos y Notificaciones';
+  friendsBtn.title = t('friendsSystem');
   friendsBtn.style.position = 'relative';
   friendsBtn.innerHTML = `
     <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">

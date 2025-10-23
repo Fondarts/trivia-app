@@ -49,7 +49,7 @@ export class WebBanner {
       };
       
       script.onerror = () => {
-        console.log('⚠️ AdSense bloqueado por cliente (bloqueador de anuncios)');
+        console.log('ℹ️ AdSense bloqueado por cliente (normal con bloqueadores de anuncios)');
         resolve(false);
       };
 

@@ -541,7 +541,10 @@ export async function getPendingRequests(){
 
 // ===== Cargar partidas asíncronas disponibles
 export async function loadAsyncMatches(){
-  if (!sb) throw new Error('Supabase no inicializado');
+  if (!sb) {
+    console.log('⚠️ Supabase no inicializado - retornando array vacío');
+    return [];
+  }
   
   console.log('🔍 Cargando partidas asíncronas disponibles...');
   console.log('🔍 Mi ID:', me.id);

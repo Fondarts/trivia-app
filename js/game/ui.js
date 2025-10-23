@@ -1,4 +1,4 @@
-import { SETTINGS } from '../deprecated/store.js';
+import { SETTINGS, persistSettings } from '../core/store.js';
 import { getBank, getBankCount, warmLocalBank, BASE_LABELS } from './bank.js';
 import { getStats, getUnlockedAchievements } from '../player/stats.js';
 import { getLevelProgress } from '../player/experience.js';
@@ -196,7 +196,7 @@ export function bindProfileModal(){
         e.stopPropagation();
         const theme = e.target.value;
         SETTINGS.theme = theme;
-        localStorage.setItem('trivia_settings', JSON.stringify(SETTINGS));
+        persistSettings();
         document.documentElement.setAttribute('data-theme', theme);
       });
     });
@@ -212,7 +212,7 @@ export function bindProfileModal(){
       chkSounds.addEventListener('change', (e) => {
         e.stopPropagation();
         SETTINGS.sounds = e.target.checked;
-        localStorage.setItem('trivia_settings', JSON.stringify(SETTINGS));
+        persistSettings();
       });
     }
 
@@ -227,7 +227,7 @@ export function bindProfileModal(){
       chkAuto.addEventListener('change', (e) => {
         e.stopPropagation();
         SETTINGS.autoNextRounds = e.target.checked;
-        localStorage.setItem('trivia_settings', JSON.stringify(SETTINGS));
+        persistSettings();
       });
     }
 
@@ -266,6 +266,7 @@ export function bindModeSegment(){
   const vsHostExtras = document.getElementById('vsHostExtras');
   const diffSection  = document.getElementById('diffSection');
   const catSection   = document.getElementById('catSection');
+  const opponentSection = document.getElementById('opponentSection');
   const spStartWrap  = document.getElementById('spStartWrap');
 
   const show = (el,on)=>{ if (el) el.style.display = on ? (el===vsHostExtras?'flex':'block') : 'none'; };
@@ -285,6 +286,7 @@ export function bindModeSegment(){
     show(vsHostExtras, false);
     show(diffSection, false);
     show(catSection, false);
+    show(opponentSection, false);
     show(spStartWrap, false);
     
     if (isAdventure) {
@@ -294,13 +296,34 @@ export function bindModeSegment(){
       // Modo VS
       show(vsSection, true);
       show(vsActionArea, true);
-      show(vsRoundsWrap, true);
-      show(vsHostActions, true);
-      show(vsHostExtras, true);
+      show(vsRoundsWrap, false); // Ocultar por defecto (solo se muestra en modo CREAR)
+      show(vsHostActions, false); // Ocultar por defecto (solo se muestra en modo CREAR)
+      show(vsHostExtras, false); // Ocultar por defecto (solo se muestra en modo CREAR)
       // Asegurar que se vean dificultad y categoría en CREAR
-      const isHostNow = (document.querySelector('#vsModeToggle .seg.active')?.dataset?.val || 'host') === 'host';
+      const isHostNow = (document.querySelector('#vsModeToggle .seg.active')?.dataset?.val || 'join') === 'host';
       show(diffSection,  isHostNow);
       show(catSection,   isHostNow);
+      show(opponentSection, isHostNow);
+      
+      // Aplicar configuración por defecto del modo VS (UNIRSE)
+      const vsToggle = document.getElementById('vsModeToggle');
+      if (vsToggle) {
+        const joinSeg = vsToggle.querySelector('.seg[data-val="join"]');
+        if (joinSeg && joinSeg.classList.contains('active')) {
+          // Simular click para activar el modo UNIRSE
+          setTimeout(() => joinSeg.click(), 100);
+        }
+      }
+      
+      // Asegurar que se ejecute la función apply para mostrar los elementos correctos
+      setTimeout(() => {
+        if (window.applyVsMode) {
+          const activeSeg = document.querySelector('#vsModeToggle .seg.active');
+          const val = activeSeg?.dataset?.val || 'join';
+          window.applyVsMode(val);
+        }
+      }, 300);
+      
     } else if (val === 'rounds') {
       // Modo rondas
       show(wrapRounds, true);
@@ -341,12 +364,62 @@ export function bindVsToggle(){
   function apply(val){
     // Aplicar siempre, aunque la sección VS aún no esté visible
     const isHost = (val==='host');
+    const isJoin = (val==='join');
+    
+    // Elementos que solo se muestran en modo CREAR
     show(vsRoundsWrap, isHost);
     show(diffSection,  isHost);
     show(catSection,   isHost);
     show(vsHostActions,isHost);
     show(vsHostExtras, isHost);
-    show(vsJoinActions,!isHost);
+    
+    // Elementos que solo se muestran en modo UNIRSE
+    show(vsJoinActions, false); // Siempre ocultar input manual
+    
+    // Mostrar lista de partidas asíncronas en modo UNIRSE
+    const asyncMatchesList = document.getElementById('asyncMatchesList');
+    if (asyncMatchesList) {
+      asyncMatchesList.style.display = isJoin ? 'block' : 'none';
+    }
+    
+    // Ocultar sección de oponente en modo UNIRSE
+    const opponentSection = document.getElementById('opponentSection');
+    if (opponentSection) {
+      opponentSection.style.display = isJoin ? 'none' : 'block';
+    }
+    
+    if (isHost) {
+      // Modo CREAR - ocultar lista de partidas
+      const asyncMatchesList = document.getElementById('asyncMatchesList');
+      if (asyncMatchesList) asyncMatchesList.style.display = 'none';
+    } else if (isJoin) {
+      // Modo UNIRSE - cargar partidas asíncronas
+      console.log('🔍 Modo UNIRSE activado');
+      const asyncMatchesList = document.getElementById('asyncMatchesList');
+      console.log('🔍 Lista de partidas encontrada:', !!asyncMatchesList);
+      
+      if (asyncMatchesList) {
+        asyncMatchesList.style.display = 'block';
+        console.log('✅ Lista de partidas mostrada');
+        
+        // Cargar partidas asíncronas
+        if (window.loadAsyncMatches && window.displayAsyncMatches) {
+          console.log('🔍 Cargando partidas asíncronas...');
+          window.loadAsyncMatches().then(matches => {
+            console.log('📋 Partidas cargadas:', matches);
+            window.displayAsyncMatches(matches);
+          }).catch(error => {
+            console.log('⚠️ Error cargando partidas (normal si no hay conexión):', error.message);
+            // Mostrar mensaje de que no hay partidas disponibles
+            window.displayAsyncMatches([]);
+          });
+        } else {
+          console.log('⚠️ Funciones de partidas asíncronas no disponibles aún');
+        }
+      } else {
+        console.error('❌ Lista de partidas no encontrada');
+      }
+    }
   }
 
   toggle.querySelectorAll('.seg').forEach(s=>{
@@ -356,7 +429,10 @@ export function bindVsToggle(){
       apply(s.dataset.val || 'host');
     });
   });
-  apply(toggle.querySelector('.seg.active')?.dataset?.val || 'host');
+  apply(toggle.querySelector('.seg.active')?.dataset?.val || 'join');
+  
+  // Hacer la función apply accesible globalmente
+  window.applyVsMode = apply;
 }
 
 export function refreshCategorySelect(){
@@ -365,37 +441,53 @@ export function refreshCategorySelect(){
   const prev = sel.value;
   sel.innerHTML = '';
 
-  const optAll = document.createElement('option');
-  optAll.value = 'all'; 
-  optAll.textContent = t('categoryAll');
-  sel.appendChild(optAll);
-
-  const groupBase = document.createElement('optgroup');
-  groupBase.label = t('base');
-  Object.keys(BASE_LABELS).forEach(k=>{
-    const o = document.createElement('option');
-    o.value = k; 
-    o.textContent = t(k); // Usar traducción para la categoría
-    groupBase.appendChild(o);
-  });
-  sel.appendChild(groupBase);
   try {
-    const meta = JSON.parse(localStorage.getItem('trivia_owned_packs_meta') || '{}');
-    const bankObj = getBank();
-    const ids = new Set();
-    Object.values(bankObj).forEach(arr => (arr||[]).forEach(q => { if (q && q.packId) ids.add(q.packId); }));
-    const packs = Array.from(ids).map(id => ({ id, title: (meta[id] && meta[id].title) ? meta[id].title : id }));
-    if (packs.length){
-      const g = document.createElement('optgroup'); g.label = 'Packs instalados';
-      packs.forEach(p=>{
-        const o = document.createElement('option');
-        o.value = `pack:${p.id}`;
-        o.textContent = p.title;
-        g.appendChild(o);
-      });
-      sel.appendChild(g);
+    // Opción "todas"
+    const optAll = document.createElement('option');
+    optAll.value = 'all';
+    optAll.textContent = (typeof t === 'function' ? t('categoryAll') : 'Todas las categorías');
+    sel.appendChild(optAll);
+
+    // Grupo base
+    const groupBase = document.createElement('optgroup');
+    groupBase.label = (typeof t === 'function' ? t('base') : 'Base');
+    const labels = BASE_LABELS || { movies:'Películas y series', geography:'Geografía', history:'Historia', science:'Ciencia', sports:'Deporte', anime:'Anime y Manga' };
+    Object.keys(labels).forEach(k => {
+      const o = document.createElement('option');
+      o.value = k;
+      o.textContent = (typeof t === 'function' ? t(k) : labels[k]);
+      groupBase.appendChild(o);
+    });
+    sel.appendChild(groupBase);
+
+    // Grupo packs instalados (si hay)
+    try {
+      const meta = JSON.parse(localStorage.getItem('trivia_owned_packs_meta') || '{}');
+      const bankObj = getBank();
+      const ids = new Set();
+      Object.values(bankObj).forEach(arr => (arr||[]).forEach(q => { if (q && q.packId) ids.add(q.packId); }));
+      const packs = Array.from(ids).map(id => ({ id, title: (meta[id] && meta[id].title) ? meta[id].title : id }));
+      if (packs.length){
+        const g = document.createElement('optgroup'); g.label = 'Packs instalados';
+        packs.forEach(p=>{
+          const o = document.createElement('option');
+          o.value = `pack:${p.id}`;
+          o.textContent = p.title;
+          g.appendChild(o);
+        });
+        sel.appendChild(g);
+      }
+    } catch(e) {
+      console.warn('[ui] refreshCategorySelect packs', e);
     }
-  } catch(e) { console.warn('[ui] refreshCategorySelect packs', e); }
+  } catch (e) {
+    console.error('[ui] refreshCategorySelect error', e);
+    // Fallback absoluto si algo explota
+    const optAll = document.createElement('option'); optAll.value = 'all'; optAll.textContent = 'Todas las categorías'; sel.appendChild(optAll);
+    ;['movies','geography','history','science','sports','anime'].forEach(k => {
+      const o = document.createElement('option'); o.value = k; o.textContent = k; sel.appendChild(o);
+    });
+  }
 
   if (prev && [...sel.options].some(o=>o.value===prev)) sel.value = prev;
   else sel.value = 'all';
@@ -411,8 +503,11 @@ export async function applyInitialUI(){
   document.documentElement.setAttribute('data-theme', SETTINGS.theme);
   bindProfileModal();
   bindDifficultyPills();
-  bindModeSegment();
-  bindVsToggle();
+  // Cargar categorías ASAP para evitar UI vacía si algo falla después
+  try { refreshCategorySelect(); } catch(e){ console.warn('[ui] refreshCategorySelect temprana falló', e); }
+  // Enlazar segmentos con tolerancia a errores
+  try { bindModeSegment(); } catch(e){ console.error('[ui] bindModeSegment error', e); }
+  try { bindVsToggle(); } catch(e){ console.error('[ui] bindVsToggle error', e); }
   refreshCategorySelect();
   updateBankCount();
   updatePlayerXPBar();

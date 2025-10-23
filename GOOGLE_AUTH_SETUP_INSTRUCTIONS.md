@@ -38,12 +38,12 @@ com.quizle.app://oauth/callback
 
 **Client IDs:**
 ```
-339736953753-h9oekqkii28804iv84r5mqad61p7m4es.apps.googleusercontent.com
+[TU_CLIENT_ID_AQUI]
 ```
 
 **Client Secret (for OAuth):**
 ```
-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
+[TU_CLIENT_SECRET_AQUI]
 ```
 
 **Skip nonce checks:** ✅ **ON** (importante para Android)

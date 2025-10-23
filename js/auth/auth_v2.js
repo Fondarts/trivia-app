@@ -221,7 +221,10 @@ export async function signInWithGoogle() {
       provider: 'google',
       options: {
         redirectTo: oauthConfig.redirectTo,
-        queryParams: oauthConfig.options
+        queryParams: {
+          ...oauthConfig.options,
+          scope: 'openid email profile'
+        }
       }
     });
     
@@ -379,17 +382,29 @@ export function isAuthenticated() {
 function transformSupabaseUser(supabaseUser) {
   if (!supabaseUser) return null;
   
+  // Debug: mostrar todos los metadatos disponibles
+  console.log('🔍 Metadatos del usuario de Supabase:', supabaseUser.user_metadata);
+  
+  // Buscar avatar en múltiples campos posibles
+  const avatarUrl = supabaseUser.user_metadata?.avatar_url || 
+                   supabaseUser.user_metadata?.picture ||
+                   supabaseUser.user_metadata?.avatar ||
+                   supabaseUser.user_metadata?.photo_url ||
+                   supabaseUser.user_metadata?.profile_picture ||
+                   supabaseUser.user_metadata?.image ||
+                   'img/avatarman.webp';
+  
+  console.log('🖼️ Avatar URL encontrada:', avatarUrl);
+  
   return {
     id: supabaseUser.id,
     email: supabaseUser.email,
     name: supabaseUser.user_metadata?.full_name || 
           supabaseUser.user_metadata?.name ||
+          supabaseUser.user_metadata?.display_name ||
           supabaseUser.email?.split('@')[0] || 
           'Usuario',
-    avatar: supabaseUser.user_metadata?.avatar_url || 
-            supabaseUser.user_metadata?.picture ||
-            supabaseUser.user_metadata?.avatar ||
-            'img/avatarman.webp',
+    avatar: avatarUrl,
     isGuest: false,
     provider: 'google',
     metadata: supabaseUser.user_metadata
@@ -402,6 +417,17 @@ function transformSupabaseUser(supabaseUser) {
 function setAuthState(user, session) {
   authState.user = user;
   authState.session = session;
+  
+  // Forzar recarga del avatar si está disponible
+  if (user && user.avatar && user.avatar !== 'img/avatarman.webp') {
+    console.log('🔄 Forzando recarga de avatar:', user.avatar);
+    setTimeout(() => {
+      const profileAvatar = document.getElementById('profileAvatar');
+      if (profileAvatar) {
+        profileAvatar.src = user.avatar + '?t=' + Date.now(); // Cache busting
+      }
+    }, 1000);
+  }
   
   // Guardar en localStorage para persistencia
   if (user) {

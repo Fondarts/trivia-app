@@ -1,0 +1,23 @@
+{
+  "name": "quizle-app",
+  "version": "1.0.0",
+  "description": "Quizle! - Trivia Game",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "serve": "npx http-server www -p 8100",
+    "cap:sync": "npx cap sync",
+    "cap:android": "npx cap open android",
+    "cap:build": "npx cap sync && npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor-community/admob": "^7.0.3",
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

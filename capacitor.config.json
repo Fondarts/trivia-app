@@ -1,0 +1,14 @@
+{
+  "appId": "com.quizle.app",
+  "appName": "Quizle!",
+  "webDir": "www",
+  "plugins": {
+    "App": {
+      "launchShowDuration": 0
+    },
+    "AdMob": {
+      "appId": "ca-app-pub-3940256099942544~3347511713",
+      "isTesting": true
+    }
+  }
+}

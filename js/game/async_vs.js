@@ -557,32 +557,39 @@ export async function cleanupOldMatches(){
   console.log('🧹 Fecha límite:', new Date(twentyFourHoursAgo).toISOString());
   
   try {
-    // Obtener TODAS las partidas pendientes
-    const { data: allPendingMatches, error: allError } = await sb
+    // USAR LA MISMA LÓGICA QUE LA UI PARA OBTENER PARTIDAS
+    console.log('🔍 Usando la misma lógica que la UI...');
+    
+    // Obtener todas las partidas (sin filtros)
+    const { data: allMatches, error: allError } = await sb
       .from('async_match_requests')
-      .select('id, created_at, requester_name, status')
-      .eq('status', 'pending');
+      .select('*');
     
     if (allError) {
       console.error('❌ Error obteniendo todas las partidas:', allError);
       return;
     }
     
-    console.log('🧹 Todas las partidas pendientes:', allPendingMatches);
+    console.log('🧹 Todas las partidas (raw):', allMatches?.length || 0);
     
-    // ELIMINAR TODAS LAS PARTIDAS PENDIENTES (por problemas con fechas)
+    // Filtrar solo las pendientes
+    const pendingMatches = allMatches?.filter(match => match.status === 'pending') || [];
+    console.log('🧹 Partidas pendientes encontradas:', pendingMatches.length);
+    
+    // ELIMINAR TODAS LAS PARTIDAS PENDIENTES
     console.log('🚨 MODO AGRESIVO: Eliminando TODAS las partidas pendientes...');
     
-    if (allPendingMatches && allPendingMatches.length > 0) {
+    if (pendingMatches.length > 0) {
       let deletedCount = 0;
-      for (const match of allPendingMatches) {
+      for (const match of pendingMatches) {
         const matchTimestamp = new Date(match.created_at).getTime();
         const hoursOld = Math.floor((now - matchTimestamp) / (1000 * 60 * 60));
         
         console.log(`🧹 Eliminando partida ${match.id}:`, {
           created_at: match.created_at,
           hoursOld: hoursOld,
-          requester_name: match.requester_name
+          requester_name: match.requester_name,
+          status: match.status
         });
         
         const { error: deleteError } = await sb
@@ -598,7 +605,7 @@ export async function cleanupOldMatches(){
         }
       }
       
-      console.log(`✅ ELIMINADAS ${deletedCount} de ${allPendingMatches.length} partidas pendientes`);
+      console.log(`✅ ELIMINADAS ${deletedCount} de ${pendingMatches.length} partidas pendientes`);
     } else {
       console.log('✅ No hay partidas pendientes para limpiar');
     }

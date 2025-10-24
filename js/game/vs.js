@@ -7,6 +7,15 @@ const CHANNEL_PREFIX = 'room:';
 let sb = null;
 let me = { id: null, name: 'Anon', pid: null };
 let channel = null;
+let mmChannel = null; // canal de matchmaking global
+
+const randomSearch = {
+  active: false,
+  matched: false,
+  filters: null,
+  timeout: null,
+  startTime: null
+};
 
 const match = {
   code: null,
@@ -84,6 +93,90 @@ function broadcast(payload){
   channel.send({ type:'broadcast', event:'vs', payload });
 }
 
+// ===== Matchmaking (Random)
+async function ensureMMChannel(){
+  if (!sb) throw new Error('Supabase no inicializado');
+  if (mmChannel) return mmChannel;
+
+  mmChannel = sb.channel('mm:vs');
+  mmChannel.on('broadcast', { event: 'mm' }, ({ payload }) => handleMM(payload));
+  await new Promise((resolve)=>{
+    mmChannel.subscribe((status)=>{ if (status==='SUBSCRIBED') resolve(); });
+  });
+  return mmChannel;
+}
+
+function mmSend(payload){
+  if (!mmChannel) return;
+  mmChannel.send({ type:'broadcast', event:'mm', payload });
+}
+
+function filtersEqual(a,b){
+  if (!a || !b) return false;
+  return a.rounds===b.rounds && a.category===b.category && a.difficulty===b.difficulty;
+}
+
+async function handleMM(p){
+  if (!p || typeof p!== 'object') return;
+  // Ignorar si ya estamos en partida
+  if (match.status === 'playing' || match.status === 'waiting') return;
+
+  if (p.type === 'looking'){
+    console.log('🔍 Jugador buscando encontrado:', p);
+    // Solo considerar mientras yo busco también
+    if (!randomSearch.active || randomSearch.matched) {
+      console.log('❌ No estoy buscando o ya estoy emparejado');
+      return;
+    }
+    if (!p.pid || p.pid === me.pid) {
+      console.log('❌ Es mi propio PID o no tiene PID');
+      return;
+    }
+    if (!filtersEqual(p.filters, randomSearch.filters)) {
+      console.log('❌ Filtros no coinciden:', { misFiltros: randomSearch.filters, susFiltros: p.filters });
+      return;
+    }
+
+    console.log('✅ Jugador compatible encontrado!');
+    // desempate determinista: el de PID menor hostea
+    const iAmHost = (String(me.pid) < String(p.pid));
+    console.log('🏠 ¿Soy host?', iAmHost, { miPID: me.pid, suPID: p.pid });
+    
+    if (iAmHost && !match.code){
+      try{
+        console.log('🎮 Creando partida...');
+        // Crear partida y anunciar
+        const code = await createMatch({
+          rounds: randomSearch.filters.rounds,
+          category: randomSearch.filters.category,
+          difficulty: randomSearch.filters.difficulty
+        });
+        randomSearch.matched = true;
+        console.log('✅ Partida creada, notificando al oponente...');
+        mmSend({ type:'match_found', code, hostPid: me.pid, guestPid: p.pid, filters: randomSearch.filters, ts: isoNow() });
+      } catch(e){
+        console.error('❌ Error creando partida:', e);
+        // Si falla, cancelar búsqueda
+        randomSearch.active = false;
+        randomSearch.matched = false;
+      }
+    }
+  }
+
+  if (p.type === 'match_found'){
+    if (!p.code) return;
+    const isForMe = (p.guestPid === me.pid || p.hostPid === me.pid);
+    if (!isForMe) return;
+    if (p.hostPid !== me.pid){
+      // Soy el invitado, unirme
+      try{
+        await joinMatch(p.code);
+        randomSearch.matched = true;
+      }catch{}
+    }
+  }
+}
+
 function handlePresenceSync(){
   if (!channel) return;
   const st = channel.presenceState();
@@ -156,6 +249,12 @@ export function initVS({ supabase, userId, username, callbacks = {} }){
   me.pid = getOrMakePID();
   cb = { ...cb, ...callbacks };
   setStatus('idle');
+  
+  // Hacer disponible globalmente para debugging
+  window.mmChannel = mmChannel;
+  window.randomSearch = randomSearch;
+  window.isRandomSearching = isRandomSearching;
+  window.cancelRandomSearch = cancelRandomSearch;
 }
 
 // permitir actualizar el nombre justo antes de crear/unirse
@@ -208,10 +307,48 @@ export async function leaveMatch(){
   channel = null;
   match.code=null; match.isHost=false; match.status='idle'; match.qIndex=-1; match.deck=[];
   match.scores={}; match.answeredSet=new Set(); match.expectedAnswers=2;
+  // Reset de búsqueda random
+  randomSearch.active = false;
+  randomSearch.matched = false;
+  randomSearch.filters = null;
   setStatus('idle');
 }
 
 export function answer(choiceIdx){
+  // Verificar si estamos en modo asíncrono
+  const currentState = window.STATE || STATE;
+  if (currentState && currentState.mode === 'async') {
+    console.log('🎯 Modo asíncrono detectado en answer()');
+    // Usar el sistema de tracking local para async mode
+    if (window.asyncAnsweredSet && window.asyncExpectedAnswers) {
+      const playerId = window.currentAsyncMatch?.player1_id === window.currentUser?.id ? 
+        window.currentAsyncMatch?.player1_id : 
+        window.currentAsyncMatch?.player2_id;
+      
+      if (playerId) {
+        window.asyncAnsweredSet.add(playerId);
+        console.log('📊 Respuestas registradas en async mode:', {
+          answeredSet: Array.from(window.asyncAnsweredSet),
+          expected: window.asyncExpectedAnswers,
+          bothAnswered: window.asyncAnsweredSet.size >= window.asyncExpectedAnswers
+        });
+        
+        // Si ambos respondieron, avanzar automáticamente
+        if (window.asyncAnsweredSet.size >= window.asyncExpectedAnswers) {
+          console.log('🎉 ¡Ambos jugadores respondieron en async mode! Avanzando automáticamente...');
+          window.asyncAnsweredSet.clear();
+          setTimeout(() => {
+            if (window.nextAsyncQuestion) {
+              window.nextAsyncQuestion();
+            }
+          }, 600);
+        }
+      }
+    }
+    return;
+  }
+  
+  // Modo VS normal
   if (match.status!=='playing') return;
   // 1) Broadcast normal
   broadcast({ type:'answer', q:match.qIndex, choice:(typeof choiceIdx==='number'?choiceIdx:null), from: me.pid, ts: isoNow() });
@@ -328,4 +465,55 @@ function handlePacket(p){
     setStatus('abandoned');
     cb.onEnd({ scores: p.scores || null, mePid: me.pid, reason: 'opponent_left', winnerPid: p.winnerPid });
   }
+}
+
+// ===== API Matchmaking Random
+export async function startRandomMatch({ rounds=10, category='all', difficulty='easy' } = {}){
+  randomSearch.active = true;
+  randomSearch.matched = false;
+  randomSearch.filters = { rounds, category, difficulty };
+  randomSearch.startTime = Date.now();
+  
+  // Notificar estado a la UI
+  cb.onStatus({ status:'searching', code:null, isHost:false, qIndex:-1 });
+  
+  // Timeout de 30 segundos
+  randomSearch.timeout = setTimeout(() => {
+    if (randomSearch.active && !randomSearch.matched) {
+      console.log('⏰ Timeout de búsqueda random - no se encontró rival');
+      cancelRandomSearch();
+      cb.onStatus({ status:'timeout', message:'No se encontró rival. Intenta de nuevo.' });
+    }
+  }, 30000);
+  
+  await ensureMMChannel();
+  console.log('📡 Enviando búsqueda inicial...', { pid: me.pid, filters: randomSearch.filters });
+  mmSend({ type:'looking', pid: me.pid, filters: randomSearch.filters, ts: isoNow() });
+  
+  // Reenviar cada 5 segundos para mantener la búsqueda activa
+  const keepAlive = setInterval(() => {
+    if (!randomSearch.active || randomSearch.matched) {
+      clearInterval(keepAlive);
+      return;
+    }
+    console.log('📡 Reenviando búsqueda...', { pid: me.pid, filters: randomSearch.filters });
+    mmSend({ type:'looking', pid: me.pid, filters: randomSearch.filters, ts: isoNow() });
+  }, 5000);
+}
+
+export function cancelRandomSearch(){
+  randomSearch.active = false;
+  randomSearch.matched = false;
+  
+  // Limpiar timeout
+  if (randomSearch.timeout) {
+    clearTimeout(randomSearch.timeout);
+    randomSearch.timeout = null;
+  }
+  
+  cb.onStatus({ status:'idle', code:null, isHost:false, qIndex:-1 });
+}
+
+export function isRandomSearching(){
+  return !!randomSearch.active && !randomSearch.matched;
 }

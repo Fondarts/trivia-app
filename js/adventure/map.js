@@ -155,6 +155,19 @@
         <button class="btn secondary" onclick="window.exitAdventureMode()">Volver al Menú</button>
       </div>
     `;
+    
+    // Mostrar banner en el mapa de aventura (solo si no está ya visible)
+    if (window.unifiedBanner && !window.unifiedBanner.isBannerVisible()) {
+      setTimeout(async () => {
+        console.log('🔄 Intentando mostrar banner en mapa de aventura...');
+        const success = await window.unifiedBanner.showBanner();
+        if (success) {
+          console.log('✅ Banner mostrado en mapa de aventura');
+        } else {
+          console.log('❌ Fallo al mostrar banner en mapa de aventura');
+        }
+      }, 2000); // Aumentar delay para evitar conflictos
+    }
   }
 
   // Función para vincular los botones del header de aventura
@@ -266,48 +279,23 @@
     let mapStyle = '';
     // No aplicar el estilo inline aquí, lo haremos después
     
+    const currentLives = window.AdventureMode?.ADVENTURE_STATE?.lives || 5;
     container.innerHTML = `
-      <div class="region-header">
-        <button class="btn-back" onclick="window.exitAdventureMode()">← Volver</button>
-        <span class="region-title">${region.name}</span>
-        <div class="header-actions">
-          <button class="btn secondary danger small" onclick="window.resetAdventureProgress()" title="Reiniciar progreso">🔄</button>
-          <button class="btn secondary warning small" onclick="window.toggleGodMode()" title="God Mode" id="godModeBtn">🔓 God</button>
+      <div class="region-wrapper">
+        <div class="map-info">
+          <div class="map-title" style="padding-left:15px">${region.name}</div>
+          <div class="lives" style="padding-right:15px">
+            ${Array(5).fill(0).map((_, i) => 
+              `<span class="heart ${i < currentLives ? 'active' : 'lost'}">❤️</span>`
+            ).join('')}
+          </div>
         </div>
-      </div>
-      
-      <div class="region-map" id="regionMapDiv" style="${mapStyle}">
-        <img id="regionBg" class="region-bg" alt="map" src="${region.mapImage || ''}"/>
-        <svg class="path-svg" viewBox="0 0 100 100">
-          <!-- Camino completo de fondo -->
-          <path d="${pathPositions.map((pos, i) => 
-            `${i === 0 ? 'M' : 'L'} ${pos.x} ${pos.y}`
-          ).join(' ')}" 
-            stroke="rgba(255,255,255,0.1)" 
-            stroke-width="8" 
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-          
-          <!-- Camino progreso -->
-          ${pathPositions.map((pos, i) => {
-            if (i === 0) return '';
-            const prev = pathPositions[i-1];
-            const isCompleted = region.nodes[i-1].completed;
-            return `
-              <line 
-                x1="${prev.x}" y1="${prev.y}" 
-                x2="${pos.x}" y2="${pos.y}"
-                stroke="${isCompleted ? '#4CAF50' : 'rgba(255,255,255,0.2)'}"
-                stroke-width="${isCompleted ? '4' : '3'}"
-                stroke-dasharray="${isCompleted ? '0' : '8,4'}"
-                stroke-linecap="round"
-              />
-            `;
-          }).join('')}
-        </svg>
         
-        <div class="nodes-container">
+        <div class="map-container">
+          <div class="region-map" id="regionMapDiv" style="${mapStyle}">
+            <img id="regionBg" class="region-bg" alt="map" src="${region.mapImage || ''}"/>
+            <div class="nodes-container">
+              <div id="playerMarker" class="player-marker" style="display:none" onclick="window.handlePlayerMarkerClick('${regionKey}')"><img id="playerMarkerImg" src="img/avatar_placeholder.svg" alt="avatar"/></div>
           ${region.nodes.map((node, index) => {
             const pos = pathPositions[index];
             const isGodMode = window.godModeActive || false;
@@ -328,7 +316,6 @@
                 
                 <div class="node-icon">
                   ${node.type === 'boss' ? '👺' : 
-                    node.type === 'timed' ? '⏱️' : 
                     node.completed ? '✅' : `${index + 1}`}
                 </div>
                 
@@ -343,6 +330,16 @@
               </div>
             `;
           }).join('')}
+              <!-- SVG para animaciones de progreso -->
+              <svg class="progress-links" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+            </div>
+          </div>
+        </div>
+        
+        <div class="map-controls">
+          <button class="btn-control" onclick="window.exitAdventureMode()">← Volver</button>
+          <button class="btn-control" onclick="window.resetAdventureProgress()" title="Reset">🔄 Reset</button>
+          <button class="btn-control" onclick="window.toggleGodMode()" id="godModeBtn" title="God Mode">🔓 God</button>
         </div>
       </div>
     `;
@@ -355,7 +352,7 @@
         const imagePath = region.mapImage.replace('./', '');
         
         // Aplicar directamente al elemento
-        mapDiv.style.cssText += `background-image: url('${imagePath}') !important; background-size: cover !important; background-position: center !important;`;
+        mapDiv.style.cssText += `background-image: url('${imagePath}') !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important;`;
         
         // Log para debug
         console.log('Imagen aplicada al mapa:', imagePath);
@@ -376,6 +373,44 @@
         };
       }
     }, 100);
+
+    // Helpers para posicionar marcador con offset lateral
+    function getNodePercentPosition(index) {
+      const positions = [
+        { x: 50, y: 90 },{ x: 70, y: 78 },{ x: 30, y: 66 },{ x: 65, y: 54 },
+        { x: 35, y: 42 },{ x: 70, y: 30 },{ x: 30, y: 18 },{ x: 50, y: 8 }
+      ];
+      return positions[index];
+    }
+
+    function placeMarkerAt(index, opts = {}) {
+      const pos = getNodePercentPosition(index);
+      const marker = document.getElementById('playerMarker');
+      if (!pos || !marker) return;
+
+      // Offset lateral: avatar a la derecha y un poco abajo para pisar el círculo
+      const offsetXPct = opts.offsetXPct ?? 5; // 5% del ancho del contenedor
+      const offsetYPct = opts.offsetYPct ?? 2; // 2% del alto del contenedor
+      marker.style.left = (pos.x + offsetXPct) + '%';
+      marker.style.top = (pos.y + offsetYPct) + '%';
+      marker.style.display = 'block';
+    }
+
+    // Posicionar el marcador del jugador en el nodo actual
+    try {
+      const marker = document.getElementById('playerMarker');
+      const markerImg = document.getElementById('playerMarkerImg');
+      if (marker) {
+        // intentar usar avatar real si está disponible
+        if (window.getCurrentUser) {
+          const u = window.getCurrentUser();
+          if (u && u.avatar) markerImg.src = u.avatar;
+        }
+        const currentIndex = region.nodes.findIndex(n => !n.completed);
+        const idx = currentIndex === -1 ? region.nodes.length - 1 : currentIndex; // último si completó todos
+        placeMarkerAt(idx);
+      }
+    } catch {}
 
     // Cargar imagen de fondo como <img> (nuevo approach, evita conflictos con CSS background)
     setTimeout(() => {
@@ -415,7 +450,7 @@
         const img = new Image();
         img.onload = () => {
           mapDiv.style.setProperty('background-image', `url('${url}')`, 'important');
-          mapDiv.style.setProperty('background-size', 'cover', 'important');
+          mapDiv.style.setProperty('background-size', 'contain', 'important');
           mapDiv.style.setProperty('background-position', 'center', 'important');
           mapDiv.style.setProperty('background-repeat', 'no-repeat', 'important');
           console.log('Fondo (parche) aplicado:', regionKey, url);
@@ -720,6 +755,74 @@
       console.error('Error en startNodeLevel:', error);
       showToast('Error: ' + error.message);
     }
+  };
+
+  // Dibuja una línea punteada animada entre dos nodos completados consecutivamente
+  function drawProgressLink(regionKey, fromIndex, toIndex) {
+    try {
+      const container = document.getElementById('regionMapDiv');
+      if (!container) return;
+      const svg = container.querySelector('.progress-links');
+      if (!svg) return;
+
+      const positions = [
+        { x: 50, y: 90 },
+        { x: 70, y: 78 },
+        { x: 30, y: 66 },
+        { x: 65, y: 54 },
+        { x: 35, y: 42 },
+        { x: 70, y: 30 },
+        { x: 30, y: 18 },
+        { x: 50, y: 8 }
+      ];
+      const a = positions[fromIndex];
+      const b = positions[toIndex];
+      if (!a || !b) return;
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d', `M ${a.x} ${a.y} L ${b.x} ${b.y}`);
+      svg.appendChild(path);
+      setTimeout(() => { try { svg.removeChild(path); } catch {} }, 2000);
+    } catch {}
+  }
+
+  window.drawProgressLink = drawProgressLink;
+
+  // Animar el marcador del jugador hacia el índice objetivo
+  window.animatePlayerMarkerTo = function(targetIndex) {
+    try {
+      const marker = document.getElementById('playerMarker');
+      if (!marker) return;
+      // misma lógica de offset que placeMarkerAt
+      const positions = [
+        { x: 50, y: 90 },{ x: 70, y: 78 },{ x: 30, y: 66 },{ x: 65, y: 54 },
+        { x: 35, y: 42 },{ x: 70, y: 30 },{ x: 30, y: 18 },{ x: 50, y: 8 }
+      ];
+      const pos = positions[targetIndex];
+      if (!pos) return;
+      marker.style.transition = 'left 450ms ease, top 450ms ease';
+      marker.style.left = (pos.x + 5) + '%';
+      marker.style.top = (pos.y + 2) + '%';
+      // restaurar transición por defecto luego
+      setTimeout(() => {
+        marker.style.transition = 'left 300ms ease, top 300ms ease';
+      }, 500);
+    } catch {}
+  };
+
+  // Manejar click en el marcador del jugador
+  window.handlePlayerMarkerClick = function(regionKey) {
+    if (!window.AdventureMode) return;
+    
+    const ADVENTURE_STATE = window.AdventureMode.ADVENTURE_STATE;
+    const region = ADVENTURE_STATE.regions[regionKey];
+    if (!region) return;
+    
+    // Encontrar el nodo actual (primer no completado)
+    const currentIndex = region.nodes.findIndex(n => !n.completed);
+    const nodeIndex = currentIndex === -1 ? region.nodes.length - 1 : currentIndex;
+    
+    // Llamar a la misma función que maneja el click en nodos
+    window.handleNodeClick(regionKey, nodeIndex);
   };
 
 })(window);

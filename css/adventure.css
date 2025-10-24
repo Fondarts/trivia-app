@@ -16,8 +16,16 @@
   bottom: 0;
   background: var(--bg1);
   z-index: 1000;
-  overflow-y: auto;
   display: none;
+  overflow: hidden; /* Sin scroll */
+}
+
+/* Contenedor del mapa de aventura */
+#adventureMapContainer {
+  height: 100%;
+  overflow-y: auto; /* Solo scroll vertical si es necesario */
+  overflow-x: hidden; /* Sin scroll horizontal */
+  padding-bottom: 20px;
 }
 
 .adventure-container {
@@ -152,11 +160,34 @@
    2. HEADER Y HUD
    =========================================== */
 
-/* Wrapper principal */
+/* Wrapper principal - Pantalla completa */
 .region-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg1);
+  z-index: 1005;
+  overflow-y: auto;
+  width: 100%;
+  height: 100vh;
+  padding-top: 96px; /* despejar header fijo */
+}
+
+/* Contenedor del mapa con position relative */
+.map-container {
+  flex: 1;
   position: relative;
+  width: 100%;
   max-width: 520px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* Controles debajo del mapa */
@@ -164,17 +195,22 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-top: 15px;
-  padding: 0 10px;
+  padding: 10px;
+  background: var(--bg1);
+  border-top: 1px solid var(--cardBorder);
+  flex-shrink: 0;
+  z-index: 10;
+  /* Ajustar para el banner en la parte inferior */
+  margin-bottom: 100px; /* Espacio para el banner */
 }
 
 .btn-control {
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--cardBorder);
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
@@ -195,26 +231,136 @@
   border-color: #27ae60;
 }
 
-/* Área del mapa de región */
+/* Área del mapa de región - Ocupar todo el espacio disponible */
 .region-map {
   position: relative;
-  max-width: 520px;
   width: 100%;
-  aspect-ratio: 9/16;
-  margin: 0 auto 12px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #0d1224;
-  box-shadow: 0 8px 32px rgba(0,0,0,.35);
-  background-size: cover !important;
-  background-position: center !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0d1224;
+  background-size: auto 100% !important; /* Fit vertical */
+  background-position: center center !important;
   background-repeat: no-repeat !important;
+  border-radius: 12px;
+}
+
+/* Imagen de fondo embebida: ajustarla al contenedor */
+.region-map .region-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: contain; /* Fit vertical */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Info del mapa (nombre y vidas) */
+.region-wrapper .map-info {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* izquierda título, derecha vidas */
+  align-items: center;
+  background: var(--bg1);
+  border-bottom: 1px solid var(--cardBorder);
+  flex-shrink: 0; /* No permitir que se comprima */
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 12px 0; /* padding vertical, laterales exactos por elementos */
+}
+
+.region-wrapper .map-info .map-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  text-align: left;
+  padding-left: 15px !important; /* 15px desde el borde izquierdo */
+  justify-self: start;
+}
+
+.region-wrapper .map-info .lives {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  padding-right: 15px !important; /* 15px desde el borde derecho */
+  justify-self: end;
+}
+
+.heart {
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.heart.active {
+  color: #e74c3c;
+}
+
+.heart.lost {
+  opacity: 0.3;
+  filter: grayscale(1);
 }
 
 
 
-.region-map .path-svg { position: absolute; z-index: 2; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-.region-map .nodes-container { position: absolute; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; }
+.region-map .path-svg { 
+  display: none;
+}
+.progress-links {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.progress-links path {
+  stroke: #4CAF50;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 6 6;
+  animation: dashMove 1.2s linear infinite;
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: -24; }
+}
+
+.region-map .nodes-container { 
+  position: absolute; 
+  z-index: 10; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: auto; 
+}
+
+/* Marcador del jugador (avatar en el mapa) */
+.player-marker {
+  position: absolute;
+  z-index: 12;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: left 300ms ease, top 300ms ease;
+  background: #111;
+  cursor: pointer;
+}
+
+.player-marker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* Header de aventura */
 .adventure-header {
@@ -390,63 +536,6 @@
   font-weight: 600;
 }
 
-/* ===========================================
-   4. MAPA DE REGIÓN - NUEVO DISEÑO
-   =========================================== */
-
-/* Info del mapa (nombre y vidas) */
-.map-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  margin-top: 70px; /* Espacio para el header principal */
-  margin-bottom: 10px;
-}
-
-.map-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--text);
-}
-
-.lives {
-  display: flex;
-  gap: 4px;
-}
-
-.heart {
-  font-size: 20px;
-  transition: all 0.3s;
-}
-
-.heart.active {
-  color: #e74c3c;
-}
-
-.heart.lost {
-  opacity: 0.3;
-  filter: grayscale(1);
-}
-
-
-
-.path-svg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.nodes-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-}
-
 
 
 /* ===========================================
@@ -462,8 +551,8 @@
 
 .adventure-node {
   position: absolute;
-  width: 55px;
-  height: 55px;
+  width: 70px;
+  height: 70px;
   background: rgba(28, 40, 51, 0.95);
   border-radius: 50%;
   display: flex;
@@ -474,7 +563,7 @@
   transition: all var(--transition-base);
   border: 3px solid rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
   backdrop-filter: blur(5px);
   z-index: 4; /* por encima del path */
 }
@@ -532,12 +621,12 @@
 }
 
 .adventure-node.boss {
-  width: 75px;
-  height: 75px;
+  width: 95px;
+  height: 95px;
   background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
   border-color: #ff6b6b;
   border-width: 4px;
-  box-shadow: 0 10px 30px rgba(220, 20, 60, 0.6);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.5);
 }
 
 .adventure-node.timed {
@@ -550,7 +639,7 @@
 }
 
 .node-icon {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
@@ -584,7 +673,7 @@
 
 /* Número del nivel */
 .node-number {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 900;
   line-height: 1;
   color: white;
@@ -902,17 +991,66 @@
   }
   
   .adventure-node {
-    width: 45px;
-    height: 45px;
+    width: 58px;
+    height: 58px;
   }
   
   .adventure-node.boss {
-    width: 60px;
-    height: 60px;
+    width: 78px;
+    height: 78px;
   }
   
   .node-icon {
+    font-size: 20px;
+  }
+  
+  .node-number {
     font-size: 18px;
+  }
+  
+  /* Ajustes para el mapa en móviles */
+  .map-info {
+    padding: 10px 15px;
+  }
+  
+  .map-title {
+    font-size: 18px;
+  }
+  
+  .heart {
+    font-size: 16px;
+  }
+  
+  .map-controls {
+    padding: 8px 5px;
+    gap: 5px;
+  }
+  
+  .btn-control {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .region-wrapper {
+    padding-top: 84px; /* header móvil */
+  }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-height: 600px) {
+  .map-info {
+    padding: 8px 15px;
+  }
+  
+  .map-controls {
+    padding: 8px 10px;
+  }
+  
+  .btn-control {
+    padding: 6px 10px;
+    font-size: 11px;
   }
 }
 
@@ -923,4 +1061,35 @@
 .adventure-actions {
   text-align: center;
   margin-top: 30px;
+}
+
+/* Presentación de jefes */
+.boss-dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7,10,18,0.9);
+  z-index: 11000;
+}
+
+.boss-dialog-box {
+  max-width: 800px;
+  width: 90%;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--cardBorder);
+}
+
+.boss-dialog-box .boss-name {
+  font-weight: 800;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }

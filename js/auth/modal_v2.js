@@ -325,10 +325,11 @@ async function handleGoogleLogin() {
   errorDiv.classList.remove('active');
   
   try {
-    // Usar el nuevo sistema de autenticación
-    if (window.AuthSystem && window.AuthSystem.signInWithGoogle) {
-      await window.AuthSystem.signInWithGoogle();
-      // El redireccionamiento lo maneja signInWithGoogle
+    // Usar la función simple de OAuth
+    if (window.simpleGoogleLogin) {
+      await window.simpleGoogleLogin();
+      console.log('✅ OAuth iniciado desde modal con función simple');
+      // El redireccionamiento lo maneja la función simple
     } else {
       throw new Error('Sistema de autenticación no disponible');
     }

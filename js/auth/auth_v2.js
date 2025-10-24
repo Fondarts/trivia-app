@@ -12,9 +12,22 @@ const OAUTH_CONFIG = {
 
 function getOAuthConfig() {
   const isAndroid = window.Capacitor && window.Capacitor.getPlatform() === 'android';
-  const redirectTo = isAndroid
-    ? 'com.quizle.app://oauth/callback'
-    : (window.location.origin + window.location.pathname);
+  
+  // Determinar la URL de redirección basada en el entorno
+  let redirectTo;
+  if (isAndroid) {
+    redirectTo = 'com.quizle.app://oauth/callback';
+  } else {
+    // Para web, usar la URL actual (funciona tanto en localhost como en producción)
+    redirectTo = window.location.origin + '/auth-callback.html';
+  }
+  
+  console.log('🔐 Configuración OAuth:', {
+    isAndroid,
+    redirectTo,
+    origin: window.location.origin
+  });
+  
   return {
     clientId: isAndroid ? OAUTH_CONFIG.ANDROID_CLIENT_ID : OAUTH_CONFIG.WEB_CLIENT_ID,
     redirectTo,

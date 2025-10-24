@@ -1,9 +1,14 @@
 // js/game_solo.js
-import { SETTINGS, STATE } from '../deprecated/store.js';
+import { SETTINGS, STATE } from '../core/store.js';
 import { buildDeckSingle, ensureInitial60 } from './bank.js';
 import { trackEvent } from '../player/stats.js';
 import { toast, updatePlayerXPBar } from './ui.js';
 import { t } from '../core/i18n.js';
+// Usar el cliente de Supabase desde window (inicializado en config.js)
+const supabase = window.supabaseClient;
+
+// Obtener socialManager desde window
+const socialManager = window.socialManager;
 
 let audioCtx = null;
 let audioInitialized = false;
@@ -182,10 +187,14 @@ let currentTimeLeft = 0; // Variable para mantener el tiempo restante
 function hud(){
   const el = document.getElementById('kHUD');
   if (!el) return;
-  if (STATE.mode === 'timed') {
+  
+  // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
+  const currentState = window.STATE || STATE;
+  
+  if (currentState.mode === 'timed') {
     // Mostrar puntos y tiempo restante
     const timeDisplay = currentTimeLeft > 0 ? ` · ${currentTimeLeft}s` : '';
-    el.textContent = `${STATE.score} pts${timeDisplay}`;
+    el.textContent = `${currentState.score} pts${timeDisplay}`;
     
     // Cambiar color cuando quedan 5 segundos o menos
     if (currentTimeLeft <= 5 && currentTimeLeft > 0) {
@@ -193,8 +202,19 @@ function hud(){
     } else {
       el.classList.remove('urgent');
     }
+  } else if (currentState.mode === 'async') {
+    // Modo asíncrono - mostrar timer de pregunta
+    const timerDisplay = asyncQuestionTimer && asyncQuestionTimeLeft > 0 ? ` · ${asyncQuestionTimeLeft}s` : '';
+    el.textContent = `${currentState.index}/${currentState.total} · ${currentState.score} pts${timerDisplay}`;
+    
+    // Cambiar color cuando quedan 5 segundos o menos
+    if (asyncQuestionTimeLeft <= 5 && asyncQuestionTimeLeft > 0) {
+      el.classList.add('urgent');
+    } else {
+      el.classList.remove('urgent');
+    }
   } else {
-    el.textContent = `${STATE.index}/${STATE.total} · ${STATE.score} pts`;
+    el.textContent = `${currentState.index}/${currentState.total} · ${currentState.score} pts`;
     el.classList.remove('urgent');
   }
 }
@@ -211,13 +231,26 @@ function showGame(show){
 
 function setQuestionMedia(u){ const w=document.getElementById('qMedia'); if(!w) return; const img=w.querySelector('img'); if(!u){ w.style.display='none'; return;} img.onload=()=>w.style.display='block'; img.onerror=()=>w.style.display='none'; img.src=u; }
 
-function renderQuestion(q){ 
+export function renderQuestion(q){ 
   const qEl=document.getElementById('qText'); if(qEl) qEl.textContent=q.q; 
   try{ setQuestionMedia(q.img || (q.media && q.media.src) || null); }catch{}
+  
+  // Mostrar banner durante preguntas (Android + Web)
+  if (window.unifiedBanner) {
+    window.unifiedBanner.showBanner();
+  }
 
   const optionsEl = document.getElementById('options');
   optionsEl.innerHTML = '';
   let locked = false;
+  
+  // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
+  const currentState = window.STATE || STATE;
+  
+  // Si estamos en modo asíncrono, iniciar timer de 15 segundos
+  if (currentState.mode === 'async') {
+    startAsyncQuestionTimer(q, currentState);
+  }
 
   q.options.forEach((opt,i)=>{
     const div = document.createElement('button');
@@ -228,13 +261,16 @@ function renderQuestion(q){
     const handler = async ()=>{
       if (locked) return; locked = true;
 
-      const question = STATE.deck[STATE.index - 1];
+      // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
+      const currentState = window.STATE || STATE;
+
+      const question = currentState.deck[currentState.index - 1];
       if (!question) return;
 
       let results = {};
       if(i===q.answer){
         div.classList.add('correct');
-        STATE.score++;
+        currentState.score++;
         results = await trackEvent('answer_correct', { category: question.category, difficulty: question.difficulty });
       } else {
         div.classList.add('wrong');
@@ -252,12 +288,26 @@ function renderQuestion(q){
         option.style.pointerEvents = 'none';
       });
 
+      // Si estamos en modo asíncrono, guardar respuesta y verificar avance
+      if (currentState.mode === 'async') {
+        // Limpiar timer ya que respondimos
+        clearAsyncQuestionTimer();
+        
+        // Guardar respuesta y verificar si ambos respondieron
+        await saveAsyncAnswerAndCheck(currentState, question, i === q.answer, i);
+      }
+
       updatePlayerXPBar();
       if(results.leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
       if(results.bonusToast) toast(results.bonusToast);
       results.newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
 
-      if (STATE.mode==='timed' || SETTINGS.autoNextRounds) {
+      if (currentState.mode === 'async') {
+        // En modo asíncrono, no avanzar automáticamente
+        // Esperar a que ambos respondan
+        console.log('⏳ Esperando a que el rival responda...');
+        toast('⏳ Esperando a que el rival responda...');
+      } else if (currentState.mode==='timed' || SETTINGS.autoNextRounds) {
         setTimeout(()=> nextQuestion(), 800);
       } else {
         const btnNext = document.getElementById('btnNext');
@@ -273,12 +323,15 @@ function renderQuestion(q){
 }
 
 export function nextQuestion(){
+  // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
+  const currentState = window.STATE || STATE;
+  
   let q=null;
-  if(STATE.mode==='rounds'){
-    if(STATE.index>=STATE.deck.length){ endGame(); return; }
-    q = STATE.deck[STATE.index];
+  if(currentState.mode==='rounds'){
+    if(currentState.index>=currentState.deck.length){ endGame(); return; }
+    q = currentState.deck[currentState.index];
   } else {
-    q = STATE.deck[STATE.index % STATE.deck.length];
+    q = currentState.deck[currentState.index % currentState.deck.length];
   }
 
   const btnNext = document.getElementById('btnNext');
@@ -286,15 +339,16 @@ export function nextQuestion(){
 
   const bCat = document.getElementById('bCat');
   const bDiff= document.getElementById('bDiff');
-  if (bCat)  bCat.textContent  = (STATE.mode==='timed') ? 'Contrarreloj' : (q.category || 'Solo');
+  
+  if (bCat)  bCat.textContent  = (currentState.mode==='timed') ? 'Contrarreloj' : (q.category || 'Solo');
   if (bDiff) bDiff.textContent = q.difficulty || '—';
 
   renderQuestion(q);
-  STATE.index++;
+  currentState.index++;
 
-  if(STATE.mode==='rounds'){
+  if(currentState.mode==='rounds'){
     hud();
-    setProgress((STATE.index)/STATE.total);
+    setProgress((currentState.index)/currentState.total);
   } else {
     hud();
   }
@@ -392,20 +446,23 @@ export async function endGame(){
   if (timerInt) { clearInterval(timerInt); timerInt = null; }
   let results = {};
 
-  if (STATE.mode==='rounds'){
-    const isPerfect = (STATE.score === STATE.total && STATE.total >= 15);
-    const won = STATE.score >= STATE.total / 2;
-    results = await trackEvent('game_finish', { mode: 'solo', won, isPerfect });
+  // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
+  const currentState = window.STATE || STATE;
+
+  if (currentState.mode==='rounds' || currentState.mode==='async'){
+    const isPerfect = (currentState.score === currentState.total && currentState.total >= 15);
+    const won = currentState.score >= currentState.total / 2;
+    results = await trackEvent('game_finish', { mode: currentState.mode === 'async' ? 'async' : 'solo', won, isPerfect });
     
     let title, sub;
     if (isPerfect) { title='¡Perfecto!'; sub='¡Ningún error!'; }
     else if (won){ title='¡Muy bien!'; sub='¡Gran partida!'; }
     else { title='¡No te rindas!'; sub='La próxima será mejor.'; }
-    openSingleResult({ title, subtitle: sub, scoreText: `${STATE.score} / ${STATE.total}` });
+    openSingleResult({ title, subtitle: sub, scoreText: `${currentState.score} / ${currentState.total}` });
 
   } else { // Timed mode
     results = await trackEvent('game_finish', { mode: 'timed', won: true });
-    openSingleResult({ title: '¡Se acabó el tiempo!', subtitle: '¡Buen intento!', scoreText: `${STATE.score} pts` });
+    openSingleResult({ title: '¡Se acabó el tiempo!', subtitle: '¡Buen intento!', scoreText: `${currentState.score} pts` });
   }
   
   updatePlayerXPBar();
@@ -430,39 +487,274 @@ function getActiveDifficulty(){
 
 
 export async function startSolo(){
-  const selEl = document.getElementById('categorySel');
-  if(!selEl?.value || selEl.value === ''){ alert(t('selectCategory')); return; }
-
-  const segActive = getActiveMode();
-  const diff = getActiveDifficulty();
-  const selectedCat = selEl.value;
-
-  const { newAchievements, leveledUp } = await trackEvent('game_start');
-  updatePlayerXPBar();
-  if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
-  newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+  // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
+  const currentState = window.STATE || STATE;
   
-  STATE.score = 0;
-  STATE.index = 0;
-  STATE.mode  = segActive;
+  // Si estamos en modo asíncrono, usar los datos de la partida
+  if (currentState.mode === 'async') {
+    console.log('🎮 Iniciando juego asíncrono con datos:', {
+      mode: currentState.mode,
+      category: currentState.category,
+      difficulty: currentState.difficulty,
+      rounds: currentState.rounds
+    });
+    
+    // Configurar el estado para el juego asíncrono
+    currentState.score = 0;
+    currentState.index = 0;
+    currentState.total = currentState.rounds;
+    
+    await ensureInitial60();
+    
+    // Usar el deck de la base de datos si existe
+    if (window.currentAsyncMatch && window.currentAsyncMatch.deck && window.currentAsyncMatch.deck.length > 0) {
+      currentState.deck = window.currentAsyncMatch.deck;
+      console.log('🎮 Deck cargado desde BD:', currentState.deck.length, 'preguntas');
+    } else {
+      currentState.deck = buildDeckSingle(currentState.category, currentState.rounds, currentState.difficulty);
+      console.log('🎮 Deck generado localmente:', currentState.deck.length, 'preguntas');
+    }
+  } else {
+    // Modo normal (solo, timed, etc.)
+    const selEl = document.getElementById('categorySel');
+    if(!selEl?.value || selEl.value === ''){ alert(t('selectCategory')); return; }
 
-  await ensureInitial60();
+    const segActive = getActiveMode();
+    const diff = getActiveDifficulty();
+    const selectedCat = selEl.value;
 
-  if(segActive==='rounds'){
-    const total = parseInt(document.getElementById('rounds').value, 10);
-    STATE.total = total;
-    STATE.deck  = buildDeckSingle(selectedCat, total, diff);
-  } else if (segActive==='timed'){
-    const seconds = parseInt(document.getElementById('timer').value, 10);
-    TIMED_SECONDS = seconds;
-    currentTimeLeft = seconds; // Establecer tiempo inicial
-    STATE.total = 999;
-    STATE.deck  = buildDeckSingle(selectedCat, 50, diff);
-    startTimer(seconds);
+    const { newAchievements, leveledUp } = await trackEvent('game_start');
+    updatePlayerXPBar();
+    if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
+    newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+    
+    currentState.score = 0;
+    currentState.index = 0;
+    currentState.mode  = segActive;
+
+    await ensureInitial60();
+
+    if(segActive==='rounds'){
+      const total = parseInt(document.getElementById('rounds').value, 10);
+      currentState.total = total;
+      currentState.deck  = buildDeckSingle(selectedCat, total, diff);
+    } else if (segActive==='timed'){
+      const seconds = parseInt(document.getElementById('timer').value, 10);
+      TIMED_SECONDS = seconds;
+      currentTimeLeft = seconds; // Establecer tiempo inicial
+      currentState.total = 999;
+      currentState.deck  = buildDeckSingle(selectedCat, 50, diff);
+      startTimer(seconds);
+    }
   }
 
   showGame(true);
   nextQuestion();
+}
+
+// ===== Funciones para modo asíncrono
+// ===== Sistema de tracking local para async mode (como VS mode)
+let asyncAnsweredSet = new Set();
+let asyncExpectedAnswers = 2;
+
+// Exponer globalmente
+window.asyncAnsweredSet = asyncAnsweredSet;
+window.asyncExpectedAnswers = asyncExpectedAnswers;
+
+async function saveAsyncAnswerAndCheck(currentState, question, isCorrect, selectedAnswer) {
+  console.log('💾 saveAsyncAnswerAndCheck llamado:', {
+    hasMatchId: !!window.currentAsyncMatchId,
+    matchId: window.currentAsyncMatchId,
+    questionIndex: currentState.index - 1,
+    isCorrect,
+    selectedAnswer
+  });
+  
+  if (!window.currentAsyncMatchId) {
+    console.error('❌ No hay matchId para guardar respuesta');
+    return;
+  }
+  
+  const supabaseClient = window.supabaseClient;
+  if (!supabaseClient) {
+    console.error('❌ Supabase client no disponible');
+    return;
+  }
+  
+  // Obtener player_id del estado actual
+  // Intentar múltiples fuentes para el ID del usuario
+  const userId = window.currentUser?.id || 
+                 window.socialManager?.userId || 
+                 localStorage.getItem('vs_uid') ||
+                 localStorage.getItem('savedUserId');
+  
+  console.log('🔍 Fuentes de ID del usuario:', {
+    currentUser_id: window.currentUser?.id,
+    socialManager_userId: window.socialManager?.userId,
+    localStorage_vs_uid: localStorage.getItem('vs_uid'),
+    localStorage_savedUserId: localStorage.getItem('savedUserId'),
+    determined_userId: userId
+  });
+  
+  const playerId = window.currentAsyncMatch?.player1_id === userId ? 
+    window.currentAsyncMatch?.player1_id : 
+    window.currentAsyncMatch?.player2_id;
+  
+  console.log('🔍 Debugging player_id:', {
+    userId: userId,
+    player1_id: window.currentAsyncMatch?.player1_id,
+    player2_id: window.currentAsyncMatch?.player2_id,
+    determined_playerId: playerId,
+    isPlayer1: window.currentAsyncMatch?.player1_id === userId,
+    isPlayer2: window.currentAsyncMatch?.player2_id === userId
+  });
+  
+  console.log('🔍 Debugging currentUser object:', {
+    currentUser: window.currentUser,
+    currentUser_id: window.currentUser?.id,
+    currentUser_type: typeof window.currentUser?.id,
+    currentUser_undefined: window.currentUser?.id === undefined,
+    currentUser_null: window.currentUser?.id === null
+  });
+  
+  if (!playerId) {
+    console.error('❌ No se pudo determinar player_id');
+    return;
+  }
+  
+  try {
+    // Guardar respuesta en base de datos
+    const answerData = {
+      match_id: window.currentAsyncMatchId,
+      player_id: playerId,
+      question_index: currentState.index - 1,
+      answer: selectedAnswer.toString(),
+      time_spent: 0
+    };
+    
+    console.log('💾 Guardando respuesta:', answerData);
+    
+    const { data: insertData, error } = await supabaseClient
+      .from('async_answers')
+      .insert([answerData])
+      .select();
+    
+    console.log('💾 Resultado del insert:', { insertData, error });
+    
+    if (error) {
+      console.error('❌ Error guardando respuesta:', error);
+      return;
+    }
+    
+    console.log('✅ Respuesta guardada correctamente');
+    
+    // Verificar si ambos jugadores respondieron (consulta simple a BD)
+    console.log('🔍 Consultando respuestas en BD:', {
+      match_id: window.currentAsyncMatchId,
+      question_index: currentState.index - 1
+    });
+    
+    const { data: answers, error: queryError } = await supabaseClient
+      .from('async_answers')
+      .select('player_id, id, answer, answered_at')
+      .eq('match_id', window.currentAsyncMatchId)
+      .eq('question_index', currentState.index - 1);
+    
+    console.log('🔍 Resultado de la consulta:', {
+      answers,
+      queryError,
+      answersLength: answers?.length
+    });
+    
+    // Expandir el array de respuestas para ver cada registro
+    if (answers && answers.length > 0) {
+      console.log('🔍 Detalle de cada respuesta:');
+      answers.forEach((answer, index) => {
+        console.log(`  Respuesta ${index + 1}:`, {
+          id: answer.id,
+          player_id: answer.player_id,
+          answer: answer.answer,
+          answered_at: answer.answered_at
+        });
+      });
+    }
+    
+    const answeredPlayers = answers?.map(a => a.player_id) || [];
+    const allPlayers = [window.currentAsyncMatch.player1_id, window.currentAsyncMatch.player2_id];
+    
+    console.log('🔍 IDs detallados:', {
+      answeredPlayers: answeredPlayers.map(id => `"${id}"`),
+      allPlayers: allPlayers.map(id => `"${id}"`),
+      answeredPlayersLength: answeredPlayers.length,
+      allPlayersLength: allPlayers.length
+    });
+    
+    // Verificar cada ID individualmente
+    const player1Answered = answeredPlayers.includes(window.currentAsyncMatch.player1_id);
+    const player2Answered = answeredPlayers.includes(window.currentAsyncMatch.player2_id);
+    
+    console.log('🔍 Verificación individual:', {
+      player1_id: window.currentAsyncMatch.player1_id,
+      player2_id: window.currentAsyncMatch.player2_id,
+      player1Answered,
+      player2Answered
+    });
+    
+    const bothAnswered = allPlayers.every(id => answeredPlayers.includes(id));
+    
+    console.log('🔍 Verificación de respuestas:', {
+      answeredPlayers,
+      allPlayers,
+      bothAnswered
+    });
+    
+             if (bothAnswered) {
+               console.log('🎉 ¡Ambos jugadores respondieron! Avanzando automáticamente...');
+               
+               // Notificar al otro jugador que ambos respondieron
+               await notifyBothAnswered(window.currentAsyncMatchId, currentState.index - 1);
+               
+               // Pequeño delay para que ambos vean los colores (como VS mode)
+               setTimeout(() => {
+                 console.log('🔄 Avanzando a siguiente pregunta...');
+                 if (window.nextAsyncQuestion) {
+                   window.nextAsyncQuestion();
+                 }
+               }, 600);
+             } else {
+               console.log('⏳ Esperando a que el rival responda...');
+             }
+    
+  } catch (error) {
+    console.error('Error en saveAsyncAnswerAndCheck:', error);
+  }
+}
+
+async function notifyAnswerSubmitted(matchId, questionIndex, isCorrect) {
+  try {
+    const supabaseClient = window.supabaseClient;
+    if (!supabaseClient) {
+      console.error('❌ Supabase client no disponible para notificación');
+      return;
+    }
+    
+    await supabaseClient
+      .channel('async_match_notifications')
+      .send({
+        type: 'broadcast',
+        event: 'answer_submitted',
+        payload: {
+          matchId: matchId,
+          questionIndex: questionIndex,
+          isCorrect: isCorrect,
+          playerName: window.currentUser?.name || 'Anon'
+        }
+      });
+    
+    console.log('📡 Notificación de respuesta enviada');
+  } catch (error) {
+    console.error('Error enviando notificación de respuesta:', error);
+  }
 }
 
 function startTimer(seconds){
@@ -503,4 +795,112 @@ function startTimer(seconds){
       lastSec = sec;
     }
   }, 100); // Cambiado a 100ms para mejor precisión
+}
+
+// Timer para preguntas asíncronas (15 segundos)
+let asyncQuestionTimer = null;
+let asyncQuestionTimeLeft = 15;
+
+function startAsyncQuestionTimer(q, currentState) {
+  // Limpiar timer anterior si existe
+  if (asyncQuestionTimer) {
+    clearInterval(asyncQuestionTimer);
+  }
+  
+  asyncQuestionTimeLeft = 15;
+  console.log('⏰ Iniciando timer de 15 segundos para pregunta asíncrona');
+  
+  // Actualizar UI del timer inmediatamente
+  updateAsyncTimerDisplay();
+  
+  asyncQuestionTimer = setInterval(() => {
+    asyncQuestionTimeLeft--;
+    console.log('⏰ Timer:', asyncQuestionTimeLeft, 'segundos restantes');
+    updateAsyncTimerDisplay();
+    
+    if (asyncQuestionTimeLeft <= 0) {
+      console.log('⏰ Tiempo agotado - marcando como incorrecta');
+      handleAsyncTimeout(q, currentState);
+    }
+  }, 1000);
+}
+
+function updateAsyncTimerDisplay() {
+  // Actualizar el HUD directamente
+  const currentState = window.STATE || STATE;
+  if (currentState.mode === 'async') {
+    hud(); // Esto actualizará el HUD con el timer
+  }
+}
+
+async function handleAsyncTimeout(q, currentState) {
+  if (asyncQuestionTimer) {
+    clearInterval(asyncQuestionTimer);
+    asyncQuestionTimer = null;
+  }
+  
+  // Marcar como incorrecta automáticamente
+  const question = currentState.deck[currentState.index - 1];
+  if (question) {
+    console.log('⏰ Tiempo agotado - guardando respuesta incorrecta');
+    await saveAsyncAnswerAndCheck(currentState, question, false, -1); // -1 indica timeout
+  }
+  
+  // Deshabilitar opciones y mostrar respuesta correcta
+  const optionsEl = document.getElementById('options');
+  if (optionsEl) {
+    Array.from(optionsEl.children).forEach((option, index) => {
+      option.classList.add('disabled');
+      option.style.pointerEvents = 'none';
+      
+      // Marcar la respuesta correcta en verde
+      if (index === q.answer) {
+        option.classList.add('correct');
+      }
+    });
+  }
+  
+  // Mostrar mensaje de tiempo agotado
+  toast('⏰ Tiempo agotado - Respuesta incorrecta');
+}
+
+// Limpiar timer cuando se responde
+function clearAsyncQuestionTimer() {
+  if (asyncQuestionTimer) {
+    clearInterval(asyncQuestionTimer);
+    asyncQuestionTimer = null;
+  }
+}
+
+// Función para notificar que ambos jugadores respondieron
+async function notifyBothAnswered(matchId, questionIndex) {
+  console.log('📢 Notificando que ambos jugadores respondieron:', { matchId, questionIndex });
+  
+  const supabaseClient = window.supabaseClient;
+  if (!supabaseClient) {
+    console.error('❌ Supabase client no disponible para notificación');
+    return;
+  }
+  
+  try {
+    const { error } = await supabaseClient
+      .channel('async_match_notifications')
+      .send({
+        type: 'broadcast',
+        event: 'both_answered',
+        payload: {
+          match_id: matchId,
+          question_index: questionIndex,
+          timestamp: new Date().toISOString()
+        }
+      });
+    
+    if (error) {
+      console.error('❌ Error enviando notificación:', error);
+    } else {
+      console.log('✅ Notificación enviada correctamente');
+    }
+  } catch (error) {
+    console.error('❌ Error en notifyBothAnswered:', error);
+  }
 }

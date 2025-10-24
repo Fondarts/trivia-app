@@ -269,14 +269,32 @@
       return;
     }
     
-    // Si no pasó el mínimo, no completar el nodo
+    // Si no pasó el mínimo, perder una vida y no completar el nodo
     if (!passed) {
+      try {
+        if (window.AdventureMode && window.AdventureMode.loseLife) {
+          const reset = window.AdventureMode.loseLife();
+          // Si se reseteó el mapa por quedarse sin vidas, actualizar vista
+          if (reset) {
+            const stateAfter = window.AdventureMode.ADVENTURE_STATE;
+            if (window.renderRegionNodes) window.renderRegionNodes(stateAfter.currentRegion);
+          }
+        }
+      } catch (e) { console.error('Error al perder vida:', e); }
       showAdventureResults(false, null);
       return;
     }
     
     // Completar nodo normal
     const result = await window.AdventureMode.completeAdventureNode(state.nodeIndex, state.score, state.total);
+    try {
+      if (window.drawProgressLink) {
+        window.drawProgressLink(state.regionKey, state.nodeIndex, Math.min(7, state.nodeIndex + 1));
+      }
+    } catch {}
+    
+    // Marcar para animar avatar hacia el próximo casillero al volver al mapa
+    try { window.__adventureAnimateToIndex__ = Math.min(7, state.nodeIndex + 1); } catch {}
     
     // Actualizar XP si está disponible
     if (window.updatePlayerXPBar) window.updatePlayerXPBar();
@@ -392,6 +410,15 @@
     if (adventureGameState.timer) {
       clearInterval(adventureGameState.timer);
     }
+    try {
+      if (window.AdventureMode && window.AdventureMode.loseLife) {
+        const reset = window.AdventureMode.loseLife();
+        if (reset) {
+          const s = window.AdventureMode.ADVENTURE_STATE;
+          if (window.renderRegionNodes) window.renderRegionNodes(s.currentRegion);
+        }
+      }
+    } catch (e) { console.error('Error al perder vida al abandonar nivel:', e); }
     
     window.backToRegionMap();
   };
@@ -410,6 +437,17 @@
     if (window.renderRegionNodes) {
       window.renderRegionNodes(adventureGameState.regionKey);
     }
+    
+    // Ejecutar animación de avatar si corresponde
+    setTimeout(() => {
+      try {
+        if (typeof window.__adventureAnimateToIndex__ === 'number' && window.animatePlayerMarkerTo) {
+          const target = window.__adventureAnimateToIndex__;
+          delete window.__adventureAnimateToIndex__;
+          window.animatePlayerMarkerTo(target);
+        }
+      } catch {}
+    }, 250);
   };
   
   // Nueva función para ir directamente a una nueva región desbloqueada
@@ -450,14 +488,14 @@
       <div class="boss-dialog-container">
         <div class="boss-dialog-box">
           ${bossImage ? 
-            `<div class=\"boss-avatar\"><img src=\"${bossImage}\" alt=\"${bossName}\" style=\"width: 120px; height: 120px; object-fit: contain;\" onerror=\"this.onerror=null; if(this.src.endsWith('.png')){this.src=this.src.replace('.png','.webp')}else{this.src=this.src.replace('.webp','.png')}\"/></div>` :
+            `<div class=\"boss-avatar\"><img src=\"${bossImage}\" alt=\"${bossName}\" style=\"width: 200px; height: 200px; object-fit: contain;\" onerror=\"this.onerror=null; if(this.src.endsWith('.png')){this.src=this.src.replace('.png','.webp')}else{this.src=this.src.replace('.webp','.png')}\"/></div>` :
             `<div class="boss-avatar">👺</div>`
           }
           <div class="boss-name">${bossName}</div>
           <div class="boss-dialog-text">
             ${dialog}
           </div>
-          <div class="dialog-continue" style="text-align: center;">Preparando batalla...</div>
+          <div class="dialog-continue" style="text-align: center; margin-top: 8px; color: var(--muted);">Preparando batalla...</div>
         </div>
       </div>
     `;

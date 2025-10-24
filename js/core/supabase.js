@@ -1,7 +1,8 @@
 // js/supabase.js
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
+// Este archivo se mantiene para compatibilidad, pero la configuración real está en config.js
 
-export const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-  auth: { persistSession: true, autoRefreshToken: true }
-});
+// Exportar configuración para uso en módulos ES6
+export const SUPABASE_URL = window.SUPABASE_URL;
+export const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+
+// El cliente se inicializa en config.js como window.supabaseClient

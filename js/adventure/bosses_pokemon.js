@@ -412,6 +412,15 @@
     
     function forfeitBattle() {
       game.gameOver = true;
+      try {
+        if (window.AdventureMode && window.AdventureMode.loseLife) {
+          const reset = window.AdventureMode.loseLife();
+          if (reset && window.renderRegionNodes) {
+            const s = window.AdventureMode.ADVENTURE_STATE;
+            window.renderRegionNodes(s.currentRegion);
+          }
+        }
+      } catch (e) { console.error('Error al perder vida (RPG) al rendirse:', e); }
       endBossGame(false);
     }
     
@@ -945,40 +954,21 @@
       
       // === ÁREA DE MENÚ (35% inferior) - ESTILO PIXEL ART ===
       
-      // Fondo del menú con gradiente y patrón
-      const menuGradient = ctx.createLinearGradient(0, game.battleHeight, 0, game.height);
-      menuGradient.addColorStop(0, '#2C3E50');
-      menuGradient.addColorStop(0.5, '#34495E');
-      menuGradient.addColorStop(1, '#2C3E50');
-      ctx.fillStyle = menuGradient;
+      // Fondo del menú: blanco sólido para legibilidad
+      ctx.fillStyle = '#FFFFFF';
       ctx.fillRect(0, game.battleHeight, game.width, game.menuHeight);
       
-      // Patrón de píxeles
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
-      for (let x = 0; x < game.width; x += 15) {
-        for (let y = game.battleHeight; y < game.height; y += 15) {
-          if ((x + y) % 30 === 0) {
-            ctx.fillRect(x, y, 8, 8);
-          }
-        }
-      }
+      // Sin patrón, fondo plano
       
-      // Borde superior del menú
-      ctx.fillStyle = '#FF6347';
-      ctx.fillRect(0, game.battleHeight, game.width, 4);
-      ctx.fillStyle = '#FF7F50';
-      ctx.fillRect(0, game.battleHeight + 4, game.width, 2);
+      // Borde superior fino
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, game.battleHeight, game.width, 2);
       
       const menuStartY = game.battleHeight;
       
       if (game.state === 'menu') {
-        // Texto de pregunta con sombra
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-        ctx.font = `bold ${22 * game.scale}px monospace`;
-        ctx.fillText('¿Qué debería', 22, menuStartY + 37);
-        ctx.fillText(`${game.player.name} hacer?`, 22, menuStartY + 62);
-        
-        ctx.fillStyle = '#FFFFFF';
+        // Texto de pregunta negro
+        ctx.fillStyle = '#000000';
         ctx.fillText('¿Qué debería', 20, menuStartY + 35);
         ctx.fillText(`${game.player.name} hacer?`, 20, menuStartY + 60);
         
@@ -995,18 +985,18 @@
         ];
         
         buttons.forEach((btn, i) => {
-          // Sombra del botón
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+          // Sombra suave del botón
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
           ctx.fillRect(btn.x + 3, btn.y + 3, buttonWidth, buttonHeight);
           
           // Fondo del botón con gradiente
           const btnGradient = ctx.createLinearGradient(btn.x, btn.y, btn.x, btn.y + buttonHeight);
           if (i === game.selectedOption) {
-            btnGradient.addColorStop(0, '#FF69B4');
-            btnGradient.addColorStop(1, '#FF1493');
+            btnGradient.addColorStop(0, '#FFFFFF');
+            btnGradient.addColorStop(1, '#FFF0F0');
           } else {
-            btnGradient.addColorStop(0, '#4169E1');
-            btnGradient.addColorStop(1, '#1E90FF');
+            btnGradient.addColorStop(0, '#FFFFFF');
+            btnGradient.addColorStop(1, '#F6F6F6');
           }
           ctx.fillStyle = btnGradient;
           ctx.fillRect(btn.x, btn.y, buttonWidth, buttonHeight);
@@ -1023,14 +1013,11 @@
           ctx.fillRect(btn.x + 2, btn.y + buttonHeight - 6, 4, 4);
           ctx.fillRect(btn.x + buttonWidth - 6, btn.y + buttonHeight - 6, 4, 4);
           
-          // Texto del botón con sombra
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+          // Texto del botón negro
+          ctx.fillStyle = '#000000';
           ctx.font = `bold ${20 * game.scale}px monospace`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText(btn.text, btn.x + buttonWidth / 2 + 2, btn.y + buttonHeight / 2 + 2);
-          
-          ctx.fillStyle = '#FFFFFF';
           ctx.fillText(btn.text, btn.x + buttonWidth / 2, btn.y + buttonHeight / 2);
         });
         
@@ -1296,7 +1283,7 @@
         }
         
         container.innerHTML = `
-          <div class="boss-game-container" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10000; background: #000;">
+          <div class="boss-game-container" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10000; background: #fff; color: #000;">
             <canvas id="bossGameCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
           </div>
         `;
@@ -1310,6 +1297,11 @@
         window.bossGameState.canvas.width = window.innerWidth;
         window.bossGameState.canvas.height = window.innerHeight;
         window.bossGameState.ctx = window.bossGameState.canvas.getContext('2d');
+        // Pintar fondo blanco para asegurar legibilidad (por encima de cualquier tema)
+        try {
+          const c = window.bossGameState.canvas; const ctx = window.bossGameState.ctx;
+          ctx.save(); ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,c.width,c.height); ctx.restore();
+        } catch {}
         
         // Usar la nueva función optimizada
         initAnimePokemonMobile(handicap);

@@ -75,9 +75,15 @@ const translations = {
     roomCode: 'Código de sala',
     room: 'Sala',
     share: 'Compartir',
+    cancelSearch: 'Cancelar Búsqueda',
+    availableMatches: 'Partidas Disponibles',
+    backToManual: 'Código Manual',
     waitingFor: 'Esperando a',
     configureGameAgainst: 'Configura la partida contra',
     createGameAgainst: 'Crear partida contra',
+    opponentRandom: 'Random',
+    opponentRandomAsync: 'Random Offline',
+    opponentFriend: 'Amigo',
     
     // Leaderboards
     global: 'Global',
@@ -375,9 +381,15 @@ const translations = {
     roomCode: 'Room code',
     room: 'Room',
     share: 'Share',
+    cancelSearch: 'Cancel Search',
+    availableMatches: 'Available Matches',
+    backToManual: 'Manual Code',
     waitingFor: 'Waiting for',
     configureGameAgainst: 'Configure game against',
     createGameAgainst: 'Create game against',
+    opponentRandom: 'Random',
+    opponentRandomAsync: 'Random Offline',
+    opponentFriend: 'Friend',
     
     // Leaderboards
     global: 'Global',

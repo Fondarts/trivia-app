@@ -11,7 +11,7 @@
         unlocked: true, 
         nodes: [], 
         boss: 'arkanoid',
-        mapImage: 'assets/maps/tv set.png',
+        mapImage: 'assets/maps/cine.webp',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Lord Spoiler',
         bossDialog: '¡Te felicito! Has llegado más lejos de lo que pensaba... ¡Pero hasta aquí llega tu conocimiento y tu suerte!'
@@ -22,7 +22,7 @@
         unlocked: false, 
         nodes: [], 
         boss: 'pokemon',
-        mapImage: 'assets/maps/tokyo.png',
+        mapImage: 'assets/maps/anime.webp',
         bossImage: 'assets/bosses/demon_anime.webp',
         bossName: 'Otaku Supremo',
         bossDialog: '¡Al fin un rival digno! ¡Nuestra batalla será legendaria!'
@@ -32,8 +32,8 @@
         icon: '📜', 
         unlocked: false, 
         nodes: [], 
-        boss: 'rpg',
-        mapImage: 'assets/maps/desert03.png',
+        boss: 'tetris',
+        mapImage: 'assets/maps/historia.webp',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Faraón Eterno',
         bossDialog: '¡Mil años de historia me respaldan! No podrás vencerme.'
@@ -44,7 +44,7 @@
         unlocked: false, 
         nodes: [], 
         boss: 'pacman',
-        mapImage: 'assets/maps/map02.png',
+        mapImage: 'assets/maps/geografia.webp',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Conquistador Global',
         bossDialog: 'He recorrido cada rincón del mundo. ¿Crees conocerlo mejor que yo?'
@@ -54,8 +54,8 @@
         icon: '🧪', 
         unlocked: false, 
         nodes: [], 
-        boss: 'tetris',
-        mapImage: 'assets/maps/forest02.png',
+        boss: 'snake',
+        mapImage: 'assets/maps/ciencia.webp',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Dr. Quantum',
         bossDialog: 'La ciencia es mi dominio. Tus conocimientos son insignificantes.'
@@ -65,8 +65,8 @@
         icon: '⚽', 
         unlocked: false, 
         nodes: [], 
-        boss: 'donkey',
-        mapImage: 'assets/maps/stadium.png',
+        boss: 'frogger',
+        mapImage: 'assets/maps/sports02.webp',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Campeón Supremo',
         bossDialog: '¡Soy el mejor atleta de todos los tiempos! Prepárate para perder.'
@@ -107,6 +107,10 @@
               const savedReg = data.regions[key] || {};
               // Merge shallow: defaults primero, luego datos guardados
               ADVENTURE_STATE.regions[key] = Object.assign({}, defReg, savedReg);
+              // Forzar nueva imagen de deportes
+              if (key === 'sports') {
+                ADVENTURE_STATE.regions[key].mapImage = 'assets/maps/sports02.webp';
+              }
               // Asegurar nodos (8)
               if (!Array.isArray(ADVENTURE_STATE.regions[key].nodes) || ADVENTURE_STATE.regions[key].nodes.length === 0) {
                 ADVENTURE_STATE.regions[key].nodes = Array(8).fill(null).map((_, i) => ({

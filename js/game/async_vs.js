@@ -1517,40 +1517,62 @@ export async function cleanupAllPendingMatches(){
     return;
   }
   
-  console.log('🚨 LIMPIEZA DE EMERGENCIA: Eliminando TODAS las partidas pendientes...');
+  console.log('🚨 LIMPIEZA DE EMERGENCIA: Eliminando TODAS las partidas...');
   
   try {
-    const { data: allPendingMatches, error: allError } = await sb
+    // Obtener TODAS las partidas (sin filtros)
+    const { data: allMatches, error: allError } = await sb
       .from('async_match_requests')
-      .select('id, created_at, requester_name, status')
-      .eq('status', 'pending');
+      .select('*');
     
     if (allError) {
       console.error('❌ Error obteniendo todas las partidas:', allError);
       return;
     }
     
-    console.log(`🚨 Encontradas ${allPendingMatches?.length || 0} partidas pendientes para eliminar:`, allPendingMatches);
+    console.log(`🚨 Encontradas ${allMatches?.length || 0} partidas totales:`, allMatches);
     
-    if (allPendingMatches && allPendingMatches.length > 0) {
+    if (allMatches && allMatches.length > 0) {
       let deletedCount = 0;
-      for (const match of allPendingMatches) {
+      let errorCount = 0;
+      
+      for (const match of allMatches) {
+        console.log(`🧹 Intentando eliminar partida ${match.id}:`, {
+          created_at: match.created_at,
+          status: match.status,
+          requester_name: match.requester_name
+        });
+        
         const { error: deleteError } = await sb
           .from('async_match_requests')
           .delete()
           .eq('id', match.id);
         
         if (deleteError) {
+          errorCount++;
           console.error(`❌ Error eliminando partida ${match.id}:`, deleteError);
+          console.error(`❌ Detalles del error:`, {
+            message: deleteError.message,
+            details: deleteError.details,
+            hint: deleteError.hint,
+            code: deleteError.code
+          });
         } else {
           deletedCount++;
           console.log(`✅ Eliminada partida ${match.id} (${match.requester_name})`);
         }
       }
       
-      console.log(`🚨 ELIMINADAS ${deletedCount} de ${allPendingMatches.length} partidas pendientes`);
+      console.log(`🚨 RESULTADO FINAL:`);
+      console.log(`✅ Eliminadas: ${deletedCount}`);
+      console.log(`❌ Errores: ${errorCount}`);
+      console.log(`📊 Total procesadas: ${allMatches.length}`);
+      
+      if (errorCount > 0) {
+        console.log('🚨 HAY ERRORES DE PERMISOS - Revisar RLS en Supabase');
+      }
     } else {
-      console.log('✅ No hay partidas pendientes para limpiar');
+      console.log('✅ No hay partidas para limpiar');
     }
   } catch (error) {
     console.error('❌ Error en limpieza de emergencia:', error);

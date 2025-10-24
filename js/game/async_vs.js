@@ -548,12 +548,16 @@ export async function cleanupOldMatches(){
   
   console.log('🧹 Limpiando partidas antiguas (más de 24 horas)...');
   
-  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
-  console.log('🧹 Fecha límite (24h atrás):', twentyFourHoursAgo);
-  console.log('🧹 Fecha actual:', new Date().toISOString());
+  const now = Date.now();
+  const twentyFourHoursAgo = now - (24 * 60 * 60 * 1000);
+  
+  console.log('🧹 Timestamp actual:', now);
+  console.log('🧹 Timestamp límite (24h atrás):', twentyFourHoursAgo);
+  console.log('🧹 Fecha actual:', new Date(now).toISOString());
+  console.log('🧹 Fecha límite:', new Date(twentyFourHoursAgo).toISOString());
   
   try {
-    // Primero, obtener TODAS las partidas pendientes para debug
+    // Obtener TODAS las partidas pendientes
     const { data: allPendingMatches, error: allError } = await sb
       .from('async_match_requests')
       .select('id, created_at, requester_name, status')
@@ -566,24 +570,28 @@ export async function cleanupOldMatches(){
     
     console.log('🧹 Todas las partidas pendientes:', allPendingMatches);
     
-    // Filtrar manualmente las partidas antiguas
+    // Filtrar partidas antiguas usando timestamp
     const oldMatches = allPendingMatches?.filter(match => {
-      const matchDate = new Date(match.created_at);
-      const isOld = matchDate < new Date(twentyFourHoursAgo);
+      const matchTimestamp = new Date(match.created_at).getTime();
+      const isOld = matchTimestamp < twentyFourHoursAgo;
+      const hoursOld = Math.floor((now - matchTimestamp) / (1000 * 60 * 60));
+      
       console.log(`🧹 Partida ${match.id}:`, {
         created_at: match.created_at,
-        matchDate: matchDate.toISOString(),
+        matchTimestamp: matchTimestamp,
         twentyFourHoursAgo: twentyFourHoursAgo,
         isOld: isOld,
-        hoursOld: Math.floor((Date.now() - matchDate.getTime()) / (1000 * 60 * 60))
+        hoursOld: hoursOld,
+        requester_name: match.requester_name
       });
+      
       return isOld;
     }) || [];
     
     console.log(`🧹 Encontradas ${oldMatches.length} partidas antiguas para eliminar:`, oldMatches);
     
     if (oldMatches.length > 0) {
-      // Eliminar cada partida individualmente para mejor control
+      // Eliminar cada partida individualmente
       let deletedCount = 0;
       for (const match of oldMatches) {
         const { error: deleteError } = await sb
@@ -1496,8 +1504,56 @@ export async function startAsyncMatch(matchId){
   });
 }
 
+// ===== Limpiar TODAS las partidas pendientes (función de emergencia)
+export async function cleanupAllPendingMatches(){
+  if (!sb) {
+    console.log('⚠️ Supabase no inicializado - no se puede limpiar');
+    return;
+  }
+  
+  console.log('🚨 LIMPIEZA DE EMERGENCIA: Eliminando TODAS las partidas pendientes...');
+  
+  try {
+    const { data: allPendingMatches, error: allError } = await sb
+      .from('async_match_requests')
+      .select('id, created_at, requester_name, status')
+      .eq('status', 'pending');
+    
+    if (allError) {
+      console.error('❌ Error obteniendo todas las partidas:', allError);
+      return;
+    }
+    
+    console.log(`🚨 Encontradas ${allPendingMatches?.length || 0} partidas pendientes para eliminar:`, allPendingMatches);
+    
+    if (allPendingMatches && allPendingMatches.length > 0) {
+      let deletedCount = 0;
+      for (const match of allPendingMatches) {
+        const { error: deleteError } = await sb
+          .from('async_match_requests')
+          .delete()
+          .eq('id', match.id);
+        
+        if (deleteError) {
+          console.error(`❌ Error eliminando partida ${match.id}:`, deleteError);
+        } else {
+          deletedCount++;
+          console.log(`✅ Eliminada partida ${match.id} (${match.requester_name})`);
+        }
+      }
+      
+      console.log(`🚨 ELIMINADAS ${deletedCount} de ${allPendingMatches.length} partidas pendientes`);
+    } else {
+      console.log('✅ No hay partidas pendientes para limpiar');
+    }
+  } catch (error) {
+    console.error('❌ Error en limpieza de emergencia:', error);
+  }
+}
+
 // Hacer disponible globalmente
 window.initAsyncVS = initAsyncVS;
 window.loadAsyncMatches = loadAsyncMatches;
 window.displayAsyncMatches = displayAsyncMatches;
 window.cleanupOldMatches = cleanupOldMatches;
+window.cleanupAllPendingMatches = cleanupAllPendingMatches;

@@ -549,33 +549,57 @@ export async function cleanupOldMatches(){
   console.log('🧹 Limpiando partidas antiguas (más de 24 horas)...');
   
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+  console.log('🧹 Fecha límite (24h atrás):', twentyFourHoursAgo);
+  console.log('🧹 Fecha actual:', new Date().toISOString());
   
   try {
-    const { data: oldMatches, error: selectError } = await sb
+    // Primero, obtener TODAS las partidas pendientes para debug
+    const { data: allPendingMatches, error: allError } = await sb
       .from('async_match_requests')
-      .select('id, created_at, requester_name')
-      .eq('status', 'pending')
-      .lt('created_at', twentyFourHoursAgo);
+      .select('id, created_at, requester_name, status')
+      .eq('status', 'pending');
     
-    if (selectError) {
-      console.error('❌ Error seleccionando partidas antiguas:', selectError);
+    if (allError) {
+      console.error('❌ Error obteniendo todas las partidas:', allError);
       return;
     }
     
-    if (oldMatches && oldMatches.length > 0) {
-      console.log(`🧹 Encontradas ${oldMatches.length} partidas antiguas para eliminar:`, oldMatches);
-      
-      const { error: deleteError } = await sb
-        .from('async_match_requests')
-        .delete()
-        .eq('status', 'pending')
-        .lt('created_at', twentyFourHoursAgo);
-      
-      if (deleteError) {
-        console.error('❌ Error eliminando partidas antiguas:', deleteError);
-      } else {
-        console.log(`✅ Eliminadas ${oldMatches.length} partidas antiguas`);
+    console.log('🧹 Todas las partidas pendientes:', allPendingMatches);
+    
+    // Filtrar manualmente las partidas antiguas
+    const oldMatches = allPendingMatches?.filter(match => {
+      const matchDate = new Date(match.created_at);
+      const isOld = matchDate < new Date(twentyFourHoursAgo);
+      console.log(`🧹 Partida ${match.id}:`, {
+        created_at: match.created_at,
+        matchDate: matchDate.toISOString(),
+        twentyFourHoursAgo: twentyFourHoursAgo,
+        isOld: isOld,
+        hoursOld: Math.floor((Date.now() - matchDate.getTime()) / (1000 * 60 * 60))
+      });
+      return isOld;
+    }) || [];
+    
+    console.log(`🧹 Encontradas ${oldMatches.length} partidas antiguas para eliminar:`, oldMatches);
+    
+    if (oldMatches.length > 0) {
+      // Eliminar cada partida individualmente para mejor control
+      let deletedCount = 0;
+      for (const match of oldMatches) {
+        const { error: deleteError } = await sb
+          .from('async_match_requests')
+          .delete()
+          .eq('id', match.id);
+        
+        if (deleteError) {
+          console.error(`❌ Error eliminando partida ${match.id}:`, deleteError);
+        } else {
+          deletedCount++;
+          console.log(`✅ Eliminada partida ${match.id} (${match.requester_name})`);
+        }
       }
+      
+      console.log(`✅ Eliminadas ${deletedCount} de ${oldMatches.length} partidas antiguas`);
     } else {
       console.log('✅ No hay partidas antiguas para limpiar');
     }

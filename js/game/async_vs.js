@@ -539,12 +539,60 @@ export async function getPendingRequests(){
 }
 
 
+// ===== Limpiar partidas antiguas (más de 24 horas)
+export async function cleanupOldMatches(){
+  if (!sb) {
+    console.log('⚠️ Supabase no inicializado - no se puede limpiar');
+    return;
+  }
+  
+  console.log('🧹 Limpiando partidas antiguas (más de 24 horas)...');
+  
+  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+  
+  try {
+    const { data: oldMatches, error: selectError } = await sb
+      .from('async_match_requests')
+      .select('id, created_at, requester_name')
+      .eq('status', 'pending')
+      .lt('created_at', twentyFourHoursAgo);
+    
+    if (selectError) {
+      console.error('❌ Error seleccionando partidas antiguas:', selectError);
+      return;
+    }
+    
+    if (oldMatches && oldMatches.length > 0) {
+      console.log(`🧹 Encontradas ${oldMatches.length} partidas antiguas para eliminar:`, oldMatches);
+      
+      const { error: deleteError } = await sb
+        .from('async_match_requests')
+        .delete()
+        .eq('status', 'pending')
+        .lt('created_at', twentyFourHoursAgo);
+      
+      if (deleteError) {
+        console.error('❌ Error eliminando partidas antiguas:', deleteError);
+      } else {
+        console.log(`✅ Eliminadas ${oldMatches.length} partidas antiguas`);
+      }
+    } else {
+      console.log('✅ No hay partidas antiguas para limpiar');
+    }
+  } catch (error) {
+    console.error('❌ Error en limpieza de partidas:', error);
+  }
+}
+
 // ===== Cargar partidas asíncronas disponibles
 export async function loadAsyncMatches(){
   if (!sb) {
     console.log('⚠️ Supabase no inicializado - retornando array vacío');
     return [];
   }
+  
+  // Limpiar partidas antiguas antes de cargar
+  await cleanupOldMatches();
   
   console.log('🔍 Cargando partidas asíncronas disponibles...');
   console.log('🔍 Mi ID:', me.id);
@@ -696,10 +744,27 @@ export function displayAsyncMatches(matches){
     
     const categoryName = categoryNames[match.category] || match.category;
     
+    // Calcular tiempo restante
+    const createdAt = new Date(match.created_at);
+    const now = new Date();
+    const timeDiff = now - createdAt;
+    const hoursRemaining = Math.max(0, 24 - Math.floor(timeDiff / (1000 * 60 * 60)));
+    const minutesRemaining = Math.max(0, 60 - Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)));
+    
+    let timeRemainingText = '';
+    if (hoursRemaining > 0) {
+      timeRemainingText = `Cierra en ${hoursRemaining}h ${minutesRemaining}m`;
+    } else if (minutesRemaining > 0) {
+      timeRemainingText = `Cierra en ${minutesRemaining}m`;
+    } else {
+      timeRemainingText = 'Cierra pronto';
+    }
+    
     matchElement.innerHTML = `
       <div class="match-info">
         <div class="match-category">${categoryName}</div>
         <div class="match-details">${match.rounds} preguntas • ${match.difficulty}</div>
+        <div class="match-time" style="font-size: 0.8em; color: #888; margin-top: 2px;">${timeRemainingText}</div>
       </div>
       <button class="match-join" data-match-id="${match.id}">Unirse</button>
     `;
@@ -1411,3 +1476,4 @@ export async function startAsyncMatch(matchId){
 window.initAsyncVS = initAsyncVS;
 window.loadAsyncMatches = loadAsyncMatches;
 window.displayAsyncMatches = displayAsyncMatches;
+window.cleanupOldMatches = cleanupOldMatches;

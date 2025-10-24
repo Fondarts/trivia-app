@@ -395,6 +395,16 @@ window.addEventListener('load', async ()=>{
   await waitForBank();
   console.log('Banco listo, inicializando aplicación...');
   
+  // Limpiar partidas antiguas automáticamente
+  try {
+    if (window.cleanupOldMatches) {
+      await window.cleanupOldMatches();
+      console.log('✅ Limpieza automática de partidas completada');
+    }
+  } catch (error) {
+    console.error('❌ Error en limpieza automática:', error);
+  }
+  
   // Ocultar loader inicial con animación
   setTimeout(() => {
     const loader = document.getElementById('initial-loader');

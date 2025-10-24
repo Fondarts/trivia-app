@@ -572,16 +572,24 @@ export async function cleanupOldMatches(){
     
     console.log('🧹 Todas las partidas (raw):', allMatches?.length || 0);
     
-    // Filtrar solo las pendientes
-    const pendingMatches = allMatches?.filter(match => match.status === 'pending') || [];
-    console.log('🧹 Partidas pendientes encontradas:', pendingMatches.length);
+    // Filtrar partidas que NO están completadas (eliminar todas las activas/abiertas)
+    const activeMatches = allMatches?.filter(match => 
+      match.status !== 'completed' && 
+      match.status !== 'finished' && 
+      match.status !== 'cancelled'
+    ) || [];
+    console.log('🧹 Partidas activas/abiertas encontradas:', activeMatches.length);
     
-    // ELIMINAR TODAS LAS PARTIDAS PENDIENTES
-    console.log('🚨 MODO AGRESIVO: Eliminando TODAS las partidas pendientes...');
+    // Mostrar todos los status únicos para debug
+    const uniqueStatuses = [...new Set(allMatches?.map(match => match.status) || [])];
+    console.log('🧹 Status únicos encontrados:', uniqueStatuses);
     
-    if (pendingMatches.length > 0) {
+    // ELIMINAR TODAS LAS PARTIDAS ACTIVAS/ABIERTAS
+    console.log('🚨 MODO AGRESIVO: Eliminando TODAS las partidas activas/abiertas...');
+    
+    if (activeMatches.length > 0) {
       let deletedCount = 0;
-      for (const match of pendingMatches) {
+      for (const match of activeMatches) {
         const matchTimestamp = new Date(match.created_at).getTime();
         const hoursOld = Math.floor((now - matchTimestamp) / (1000 * 60 * 60));
         
@@ -605,9 +613,9 @@ export async function cleanupOldMatches(){
         }
       }
       
-      console.log(`✅ ELIMINADAS ${deletedCount} de ${pendingMatches.length} partidas pendientes`);
+      console.log(`✅ ELIMINADAS ${deletedCount} de ${activeMatches.length} partidas activas/abiertas`);
     } else {
-      console.log('✅ No hay partidas pendientes para limpiar');
+      console.log('✅ No hay partidas activas/abiertas para limpiar');
     }
   } catch (error) {
     console.error('❌ Error en limpieza de partidas:', error);

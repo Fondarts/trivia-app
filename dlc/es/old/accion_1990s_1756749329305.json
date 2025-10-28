@@ -1,0 +1,62 @@
+[
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Alien: Resurrección",
+      "Desafío total",
+      "Batman vuelve",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: El juicio final",
+      "El profesional (Léon)",
+      "Misión imposible",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "Men in Black",
+      "Con Air",
+      "Speed",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "El quinto elemento",
+      "En tierra peligrosa 2",
+      "Heat",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "La momia",
+      "Independence Day",
+      "The Rock",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/04.jpg"
+  }
+]

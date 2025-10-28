@@ -1,0 +1,662 @@
+[
+  {
+    "q": "¿Cuál es la capital de Francia?",
+    "options": [
+      "Marsella",
+      "París",
+      "Niza",
+      "Lyon"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué río atraviesa Egipto?",
+    "options": [
+      "Congo",
+      "Éufrates",
+      "Tigris",
+      "Nilo"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el desierto más grande del mundo?",
+    "options": [
+      "Sahara",
+      "Kalahari",
+      "Gobi",
+      "Atacama"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué océano es el más grande?",
+    "options": [
+      "Ártico",
+      "Índico",
+      "Pacífico",
+      "Atlántico"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué continente está Brasil?",
+    "options": [
+      "Europa",
+      "Asia",
+      "América del Sur",
+      "África"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la capital de Japón?",
+    "options": [
+      "Tokio",
+      "Kioto",
+      "Nagoya",
+      "Osaka"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué cordillera incluye el Everest?",
+    "options": [
+      "Alpes",
+      "Himalaya",
+      "Rocosas",
+      "Andes"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué país tiene forma de bota?",
+    "options": [
+      "Italia",
+      "Grecia",
+      "Portugal",
+      "Turquía"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la capital de España?",
+    "options": [
+      "Sevilla",
+      "Madrid",
+      "Valencia",
+      "Barcelona"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué mar separa África de Europa al oeste?",
+    "options": [
+      "Negro",
+      "Mediterráneo",
+      "Rojo",
+      "Báltico"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué país es una isla y continente?",
+    "options": [
+      "Islandia",
+      "Groenlandia",
+      "Australia",
+      "Nueva Zelanda"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la capital de México?",
+    "options": [
+      "Puebla",
+      "Ciudad de México",
+      "Monterrey",
+      "Guadalajara"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué río pasa por Londres?",
+    "options": [
+      "Danubio",
+      "Támesis",
+      "Sena",
+      "Rin"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué lago es el más grande por superficie?",
+    "options": [
+      "Victoria",
+      "Superior",
+      "Caspio",
+      "Baikal"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la capital de Argentina?",
+    "options": [
+      "Buenos Aires",
+      "Córdoba",
+      "Mendoza",
+      "Rosario"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué país tiene el Monte Fuji?",
+    "options": [
+      "China",
+      "Corea del Sur",
+      "Taiwán",
+      "Japón"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué estrecho separa España y Marruecos?",
+    "options": [
+      "Gibraltar",
+      "Dardanelos",
+      "Bosforo",
+      "Malaca"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué continente es el más poblado?",
+    "options": [
+      "África",
+      "Europa",
+      "América",
+      "Asia"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué país tiene el Amazonas?",
+    "options": [
+      "Colombia",
+      "Venezuela",
+      "Brasil",
+      "Perú"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué capital está a orillas del Sena?",
+    "options": [
+      "Praga",
+      "Berlín",
+      "Roma",
+      "París"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la capital de Canadá?",
+    "options": [
+      "Vancouver",
+      "Montreal",
+      "Ottawa",
+      "Toronto"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país no tiene salida al mar?",
+    "options": [
+      "Perú",
+      "Chile",
+      "Bolivia",
+      "Ecuador"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿En qué país está la ciudad de Dubrovnik?",
+    "options": [
+      "Montenegro",
+      "Eslovenia",
+      "Croacia",
+      "Serbia"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué río es el más largo del mundo (discutido)?",
+    "options": [
+      "Nilo",
+      "Misisipi",
+      "Yangtsé",
+      "Amazonas"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué desierto está en China y Mongolia?",
+    "options": [
+      "Sahara",
+      "Gobi",
+      "Taklamakán",
+      "Karahari"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país tiene capital en Addis Abeba?",
+    "options": [
+      "Eritrea",
+      "Sudán",
+      "Somalia",
+      "Etiopía"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué océano baña la costa este de África?",
+    "options": [
+      "Índico",
+      "Ártico",
+      "Pacífico",
+      "Atlántico"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿En qué cordillera está el Aconcagua?",
+    "options": [
+      "Alpes",
+      "Cáucaso",
+      "Rocosas",
+      "Andes"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país tiene más islas del mundo?",
+    "options": [
+      "Canadá",
+      "Finlandia",
+      "Noruega",
+      "Suecia"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué capital está a orillas del Danubio?",
+    "options": [
+      "Budapest",
+      "Viena",
+      "Belgrado",
+      "Bratislava"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país africano fue llamado Zaire?",
+    "options": [
+      "Nigeria",
+      "Ghana",
+      "Congo",
+      "R. D. del Congo"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cuál es la capital de Marruecos?",
+    "options": [
+      "Casablanca",
+      "Rabat",
+      "Fez",
+      "Marrakech"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué isla es compartida por Haití y R. Dominicana?",
+    "options": [
+      "Cuba",
+      "La Española",
+      "Jamaica",
+      "Puerto Rico"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué mar rodea Arabia Saudita al oeste?",
+    "options": [
+      "Golfo Pérsico",
+      "Mar Arábigo",
+      "Mar Rojo",
+      "Mediterráneo"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país europeo usa el zloty?",
+    "options": [
+      "Eslovaquia",
+      "Chequia",
+      "Hungría",
+      "Polonia"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cuál es la capital de Nueva Zelanda?",
+    "options": [
+      "Wellington",
+      "Hamilton",
+      "Christchurch",
+      "Auckland"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país es conocido como Países Bajos?",
+    "options": [
+      "Dinamarca",
+      "Bélgica",
+      "Luxemburgo",
+      "Holanda (Países Bajos)"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué península comparten España y Portugal?",
+    "options": [
+      "Escandinava",
+      "Ibérica",
+      "Itálica",
+      "Balcánica"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país tiene capital en Ankara?",
+    "options": [
+      "Armenia",
+      "Turquía",
+      "Georgia",
+      "Grecia"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cuál es la capital de Nigeria?",
+    "options": [
+      "Ibadan",
+      "Lagos",
+      "Abuya",
+      "Kano"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué país tiene capital en Nursultán (Astana)?",
+    "options": [
+      "Kirguistán",
+      "Kazajistán",
+      "Uzbekistán",
+      "Turkmenistán"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué río forma gran parte de la frontera entre EEUU y México?",
+    "options": [
+      "Río Bravo (Grande)",
+      "Colorado",
+      "Arkansas",
+      "Gila"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué mar interior se está secando dramáticamente?",
+    "options": [
+      "Muerto",
+      "Aral",
+      "Balaton",
+      "Caspio"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué enclave español está en el norte de África junto a Marruecos?",
+    "options": [
+      "Ceuta",
+      "Peñón de Vélez",
+      "Ifni",
+      "Melilla"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué país tiene la región de Transnistria no reconocida?",
+    "options": [
+      "Bulgaria",
+      "Moldavia",
+      "Ucrania",
+      "Rumanía"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué montaña es la más alta fuera de Asia?",
+    "options": [
+      "Elbrus",
+      "Denali",
+      "Aconcagua",
+      "Kilimanjaro"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué corriente oceánica calienta Europa occidental?",
+    "options": [
+      "Humboldt",
+      "Benguela",
+      "Kuroshio",
+      "Corriente del Golfo"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué capital está a mayor altitud del mundo?",
+    "options": [
+      "Thimbu",
+      "Quito",
+      "La Paz (sede)",
+      "Addis Abeba"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué país posee Kaliningrado?",
+    "options": [
+      "Lituania",
+      "Polonia",
+      "Rusia",
+      "Alemania"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué lago es el más profundo del mundo?",
+    "options": [
+      "Baikal",
+      "Tanganica",
+      "Superior",
+      "Caspio"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué estrecho conecta Atlántico y Mediterráneo?",
+    "options": [
+      "Gibraltar",
+      "Skagerrak",
+      "Bósforo",
+      "Dardanelos"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué mar está entre Europa y Asia con salida al Negro?",
+    "options": [
+      "Norte",
+      "Mar de Mármara",
+      "Egeo",
+      "Báltico"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué país africano no fue colonizado formalmente?",
+    "options": [
+      "Botsuana",
+      "Marruecos",
+      "Etiopía",
+      "Liberia"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué desierto frío se encuentra en Mongolia y China?",
+    "options": [
+      "Gobi",
+      "Atacama",
+      "Taklamakán",
+      "Patagonia"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué río atraviesa París y Le Havre?",
+    "options": [
+      "Loira",
+      "Garona",
+      "Ródano",
+      "Sena"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué capital está en el delta del Mekong?",
+    "options": [
+      "Hanoi",
+      "Phnom Penh",
+      "Vientián",
+      "Ninguna (Ho Chi Minh no es capital)"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué país tiene la meseta del Deccán?",
+    "options": [
+      "Bangladés",
+      "India",
+      "Pakistán",
+      "Nepal"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué pico es el más alto de África?",
+    "options": [
+      "Kenya",
+      "Stanley",
+      "Kilimanjaro",
+      "Meru"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué región es conocida como el Cuerno de África?",
+    "options": [
+      "Uganda, Ruanda",
+      "Kenia, Tanzania",
+      "Somalia, Etiopía, Eritrea, Yibuti",
+      "Sudán, Sudán del Sur"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué mar separa Arabia de Irán?",
+    "options": [
+      "Golfo Pérsico",
+      "Mar Arábigo",
+      "Mar Rojo",
+      "Golfo de Omán"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "packs": [
+    { "category": "movies",    "files": ["movies_pack1.json"] },
+    { "category": "geography", "files": ["geography_pack1.json"] },
+    { "category": "history",   "files": ["history_pack1.json"] },
+    { "category": "science",   "files": ["science_pack1.json"] },
+    { "category": "sports",    "files": ["sports_pack1.json"] },
+    { "category": "anime",     "files": ["anime_pack1.json"] }
+  ]
+}

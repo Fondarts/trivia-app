@@ -1,0 +1,26 @@
+[
+  {
+    "q": "¿Quién dirigió la película 'キル' de 1997?",
+    "options": [
+      "Takashi Miike",
+      "Hideo Nakata",
+      "Shinya Tsukamoto",
+      "Kazuo Kiriya"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "キル",
+      "Otra película 1",
+      "Otra película 2",
+      "Otra película 3"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  }
+]

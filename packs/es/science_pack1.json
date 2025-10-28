@@ -1,0 +1,662 @@
+[
+  {
+    "q": "¿Cuál es el planeta más cercano al Sol?",
+    "options": [
+      "Mercurio",
+      "Venus",
+      "Tierra",
+      "Marte"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué gas respiramos principalmente?",
+    "options": [
+      "Oxígeno",
+      "Dióxido de carbono",
+      "Nitrógeno",
+      "Argón"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la molécula del agua?",
+    "options": [
+      "NaCl",
+      "CO2",
+      "O2",
+      "H2O"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué órgano bombea la sangre?",
+    "options": [
+      "Hígado",
+      "Riñón",
+      "Corazón",
+      "Pulmones"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué fuerza nos mantiene en el suelo?",
+    "options": [
+      "Magnetismo",
+      "Tensión",
+      "Fricción",
+      "Gravedad"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué partícula tiene carga negativa?",
+    "options": [
+      "Electrón",
+      "Protón",
+      "Positrón",
+      "Neutrón"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el satélite natural de la Tierra?",
+    "options": [
+      "Europa",
+      "La Luna",
+      "Titán",
+      "Phobos"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué ciencia estudia los seres vivos?",
+    "options": [
+      "Física",
+      "Geología",
+      "Química",
+      "Biología"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué vitamina produce la piel con el sol?",
+    "options": [
+      "Vitamina B12",
+      "Vitamina A",
+      "Vitamina D",
+      "Vitamina C"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el metal líquido a temperatura ambiente?",
+    "options": [
+      "Plomo",
+      "Galio",
+      "Mercurio",
+      "Aluminio"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué órgano principal se encarga de la respiración?",
+    "options": [
+      "Estómago",
+      "Pulmones",
+      "Páncreas",
+      "Bazo"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la velocidad de la luz aprox. en km/s?",
+    "options": [
+      "150,000",
+      "300,000",
+      "30,000",
+      "3,000"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cómo se llama la célula sexual masculina?",
+    "options": [
+      "Embrión",
+      "Espermatozoide",
+      "Óvulo",
+      "Cigoto"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué unidad mide la fuerza?",
+    "options": [
+      "Watt",
+      "Newton",
+      "Pascal",
+      "Joule"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué planeta es conocido como el rojo?",
+    "options": [
+      "Marte",
+      "Venus",
+      "Saturno",
+      "Júpiter"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué órgano filtra la sangre para producir orina?",
+    "options": [
+      "Bazo",
+      "Páncreas",
+      "Hígado",
+      "Riñón"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el estado del agua a 100°C a nivel del mar?",
+    "options": [
+      "Plasma",
+      "Vapor",
+      "Líquido",
+      "Sólido"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué científico propuso la teoría de la relatividad?",
+    "options": [
+      "Isaac Newton",
+      "Galileo Galilei",
+      "Albert Einstein",
+      "Niels Bohr"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué gas necesitan las plantas para la fotosíntesis?",
+    "options": [
+      "Nitrógeno",
+      "Dióxido de carbono",
+      "Hidrógeno",
+      "Oxígeno"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es la unidad de energía?",
+    "options": [
+      "Volt",
+      "Watt",
+      "Joule",
+      "Ampere"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué órgano humano produce insulina?",
+    "options": [
+      "Páncreas",
+      "Riñón",
+      "Hígado",
+      "Bazo"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué enlace une aminoácidos en proteínas?",
+    "options": [
+      "Peptídico",
+      "Puente de hidrógeno",
+      "Metálico",
+      "Iónico"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cuál es el número atómico del oxígeno?",
+    "options": [
+      "8",
+      "6",
+      "7",
+      "10"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué ley relaciona presión y volumen de un gas a T constante?",
+    "options": [
+      "Boyle-Mariotte",
+      "Gay-Lussac",
+      "Avogadro",
+      "Charles"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué planeta tiene el gran punto rojo?",
+    "options": [
+      "Urano",
+      "Neptuno",
+      "Júpiter",
+      "Saturno"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué científico formuló las leyes del movimiento?",
+    "options": [
+      "Galileo",
+      "Isaac Newton",
+      "Descartes",
+      "Kepler"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cómo se llama la reacción que libera energía en el Sol?",
+    "options": [
+      "Oxidación",
+      "Fisión nuclear",
+      "Fusión nuclear",
+      "Radiactividad"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué estructura celular contiene el ADN en eucariotas?",
+    "options": [
+      "Mitocondria",
+      "Núcleo",
+      "Ribosoma",
+      "Lisosoma"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué escala mide la acidez de una solución?",
+    "options": [
+      "Mohs",
+      "Richter",
+      "Beaufort",
+      "pH"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué partícula media la fuerza electromagnética?",
+    "options": [
+      "Gravitón (hipotético)",
+      "Fotón",
+      "Bosón W",
+      "Gluón"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué científico descubrió la penicilina?",
+    "options": [
+      "Jenner",
+      "Alexander Fleming",
+      "Pasteur",
+      "Koch"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué unidad mide la frecuencia?",
+    "options": [
+      "Tesla",
+      "Pascal",
+      "Newton",
+      "Hertz"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué estructura celular produce ATP?",
+    "options": [
+      "Aparato de Golgi",
+      "Mitocondria",
+      "Cloroplasto",
+      "Centrosoma"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué ley relaciona corriente, voltaje y resistencia?",
+    "options": [
+      "Ley de Gauss",
+      "Ley de Ohm",
+      "Ley de Ampère",
+      "Ley de Faraday"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué nombre recibe la sangre con bajo oxígeno?",
+    "options": [
+      "Sangre arterial",
+      "Plasma",
+      "Suero",
+      "Sangre venosa"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué tipo de enlace comparten electrones?",
+    "options": [
+      "Iónico",
+      "Puente H",
+      "Metálico",
+      "Covalente"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué científico propuso la evolución por selección natural?",
+    "options": [
+      "Huxley",
+      "Charles Darwin",
+      "Jean-Baptiste Lamarck",
+      "Wallace"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué órgano regula el equilibrio y la coordinación?",
+    "options": [
+      "Cerebelo",
+      "Corteza",
+      "Bulbo raquídeo",
+      "Hipotálamo"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cuál es el gas más abundante del Sol?",
+    "options": [
+      "Helio",
+      "Carbono",
+      "Oxígeno",
+      "Hidrógeno"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué unidad mide el trabajo eléctrico?",
+    "options": [
+      "Coulomb",
+      "Volt",
+      "Watt",
+      "Joule"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué número de Avogadro aproxima partículas por mol?",
+    "options": [
+      "3.00×10^8",
+      "6.022×10^23",
+      "1.60×10^-19",
+      "9.81"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué teorema relaciona entropía con microestados?",
+    "options": [
+      "Stokes",
+      "Noether",
+      "Boltzmann",
+      "Green"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué principio limita precisión de posición-momento?",
+    "options": [
+      "Exclusión",
+      "Superposición",
+      "Heisenberg",
+      "Pauli"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué experimento demostró la expansión del universo?",
+    "options": [
+      "Michelson-Morley",
+      "Ley de Hubble (corrimiento al rojo)",
+      "Doble rendija",
+      "Cavendish"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué partícula es su propia antipartícula (hipotética en neutrinos)?",
+    "options": [
+      "Majorana",
+      "Higgs",
+      "Dirac",
+      "Taón"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué nombre tiene el ciclo oscuro de la fotosíntesis?",
+    "options": [
+      "Ciclo de Calvin",
+      "Ciclo de Cori",
+      "Ciclo de urea",
+      "Ciclo de Krebs"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué ecuación gobierna ondas electromagnéticas?",
+    "options": [
+      "Schrödinger",
+      "Navier-Stokes",
+      "Ecuaciones de Maxwell",
+      "Poisson"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué fenómeno explica superconductividad convencional?",
+    "options": [
+      "Josephson",
+      "Efecto Meissner",
+      "BCS",
+      "Hall cuántico"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué isotopo-uranio se fisiona comúnmente en reactores?",
+    "options": [
+      "U-238",
+      "U-235",
+      "U-233",
+      "Pu-239"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué técnica separa ADN por tamaño?",
+    "options": [
+      "Cromatografía",
+      "PCR",
+      "Espectrometría",
+      "Electroforesis en gel"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué proteína corta ADN en CRISPR?",
+    "options": [
+      "Dicer",
+      "Cas13",
+      "Cas12a",
+      "Cas9"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué ley describe la difusión molecular?",
+    "options": [
+      "Ley de Fick",
+      "Ley de Henry",
+      "Ley de Raoult",
+      "Ley de Graham"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué escala mide magnitud sísmica moderna?",
+    "options": [
+      "Mercalli",
+      "Rossi–Forel",
+      "Richter",
+      "Magnitud momento (Mw)"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué fase mineral del carbono es más dura?",
+    "options": [
+      "Grafeno",
+      "Grafito",
+      "Diamante",
+      "Fullereno"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué reacción produce ATP en la fosforilación oxidativa?",
+    "options": [
+      "ATP sintasa por gradiente de protones",
+      "Sustrato a nivel de fosfato",
+      "Fermentación alcohólica",
+      "Glicólisis directa"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué constante relaciona energía y frecuencia?",
+    "options": [
+      "Constante de Planck",
+      "Constante de Avogadro",
+      "Constante de Faraday",
+      "Constante de Boltzmann"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué parámetro describe la curvatura del espacio-tiempo?",
+    "options": [
+      "Tensor de Riemann",
+      "Divergencia",
+      "Rotacional",
+      "Laplaciano"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué tipo de galaxia es la Vía Láctea?",
+    "options": [
+      "Anular",
+      "Espiral barrada",
+      "Elíptica",
+      "Irregular"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué reacción convierte nitrógeno a amoníaco industrialmente?",
+    "options": [
+      "Proceso Ostwald",
+      "Proceso Haber-Bosch",
+      "Claus",
+      "Solvay"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué hormona regula la tasa metabólica basal?",
+    "options": [
+      "Tiroxina (T4)",
+      "Cortisol",
+      "Adrenalina",
+      "Insulina"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  }
+]

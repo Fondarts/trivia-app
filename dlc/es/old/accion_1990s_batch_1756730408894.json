@@ -1,0 +1,324 @@
+[
+  {
+    "q": "¿Quién dirigió la película Stargate: Puerta a las estrellas?",
+    "options": [
+      "Roland Emmerich",
+      "Jonathan Liebesman",
+      "Dean Devlin"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Desafío total?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Sylvester Stallone",
+      "Bruce Willis"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Sangre por sangre?",
+    "options": [
+      "John Travolta",
+      "Robert De Niro",
+      "Al Pacino"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Misión imposible?",
+    "options": [
+      "Tom Cruise",
+      "Ewan McGregor",
+      "Johnny Depp"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó La momia?",
+    "options": [
+      "1999",
+      "1998",
+      "1997",
+      "1996"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Dos policías rebeldes?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Desafío total?",
+    "options": [
+      "1990",
+      "1991",
+      "1992",
+      "1993"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Heat?",
+    "options": [
+      "Robert De Niro",
+      "Al Pacino",
+      "Val Kilmer"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Braveheart?",
+    "options": [
+      "Mel Gibson",
+      "Tom Cruise",
+      "Leonardo DiCaprio"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Titanic",
+      "Independence Day",
+      "The Matrix",
+      "Die Hard"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Matrix?",
+    "options": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Speed",
+      "The Rock",
+      "Face/Off"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator",
+      "Predador",
+      "RoboCop",
+      "Total Recall"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película El profesional (Léon)?",
+    "options": [
+      "Nicolas Winding Refn",
+      "Park Chan-wook",
+      "Luc Besson"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/07.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película Hora punta?",
+    "options": [
+      "Michael Mann",
+      "Christopher Nolan",
+      "Martin Scorsese"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película Independence Day?",
+    "options": [
+      "Roland Emmerich",
+      "Dean Devlin",
+      "M. Night Shyamalan"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Alien: Resurrección?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película Batman y Robin?",
+    "options": [
+      "Joel Schumacher",
+      "Christopher Nolan",
+      "Tim Burton"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Die Hard",
+      "Speed",
+      "The Rock",
+      "Face/Off"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Men in Black?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "El Padrino",
+      "La lista de Schindler",
+      "El profesor",
+      "El Señor de los Anillos"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Hora punta?",
+    "options": [
+      "1998",
+      "1997",
+      "1996",
+      "1995"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "El Padrino",
+      "La lista de Schindler",
+      "El profesor",
+      "El Señor de los Anillos"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película Batman vuelve?",
+    "options": [
+      "Val Kilmer",
+      "George Clooney",
+      "Christian Bale"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Terminator 2: El juicio final?",
+    "options": [
+      "1991",
+      "1990",
+      "1992",
+      "1989"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Titanic",
+      "Independence Day",
+      "The Matrix",
+      "Die Hard"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película El quinto elemento?",
+    "options": [
+      "Luc Besson",
+      "Park Chan-wook",
+      "Nicolas Winding Refn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película El profesional (Léon)?",
+    "options": [
+      "Nicolas Winding Refn",
+      "Park Chan-wook",
+      "Luc Besson"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  }
+]

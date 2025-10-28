@@ -1,0 +1,290 @@
+[
+  {
+    "q": "¿En qué año se estrenó Hora punta?",
+    "options": [
+      "1997",
+      "1998",
+      "1999",
+      "2000"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Independence Day?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Heat?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: Judgment Day",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó Batman vuelve?",
+    "options": [
+      "Val Kilmer",
+      "George Clooney",
+      "Christian Bale",
+      "Michael Keaton"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Die Hard?",
+    "options": [
+      "1996",
+      "1995",
+      "1994",
+      "1993"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó La momia?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Tom Cruise",
+      "Bruce Willis",
+      "Harrison Ford"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió Men in Black?",
+    "options": [
+      "Barry Sonnenfeld",
+      "Renny Harlin",
+      "Luc Besson",
+      "John McTiernan"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió Batman y Robin?",
+    "options": [
+      "Joel Schumacher",
+      "Tim Burton",
+      "Peter Jackson",
+      "Renny Harlin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Braveheart?",
+    "options": [
+      "Mel Gibson",
+      "Tom Cruise",
+      "Arnold Schwarzenegger",
+      "Bruce Willis"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Matrix?",
+    "options": [
+      "1998",
+      "1999",
+      "2000",
+      "2001"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Kill Bill",
+      "Misión imposible",
+      "The Matrix",
+      "Terminator 2: Judgment Day"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Mission imposible?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió El quinto elemento?",
+    "options": [
+      "Renny Harlin",
+      "Luc Besson",
+      "John McTiernan",
+      "James Cameron"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Sangre por sangre?",
+    "options": [
+      "1992",
+      "1993",
+      "1994",
+      "1995"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Independence Day?",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Desafío total?",
+    "options": [
+      "1990",
+      "1991",
+      "1992",
+      "1993"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó El profesional (Léon)?",
+    "options": [
+      "1993",
+      "1994",
+      "1995",
+      "1996"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Stargate: Puerta a las estrellas?",
+    "options": [
+      "1994",
+      "1995",
+      "1996",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Aliens?",
+    "options": [
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Doce hombres",
+    "options": [
+      "1995",
+      "1996",
+      "1997",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Alien: Resurrección?",
+    "options": [
+      "Sigourney Weaver",
+      "Linda Hamilton",
+      "Viggo Mortensen",
+      "Rip Torn"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Stargate?",
+    "options": [
+      "1994",
+      "1995",
+      "1996",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Terminator 2: Judgment Day?",
+    "options": [
+      "1990",
+      "1991",
+      "1992",
+      "1993"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  }
+]

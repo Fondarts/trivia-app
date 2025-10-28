@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "language": "en",
+  "packs": [
+    {
+      "id": "movies-en-1",
+      "category": "movies",
+      "files": ["movies1.json"]
+    },
+    {
+      "id": "geography-en-1",
+      "category": "geography",
+      "files": ["geography1.json"]
+    },
+    {
+      "id": "history-en-1",
+      "category": "history",
+      "files": ["history1.json"]
+    },
+    {
+      "id": "science-en-1",
+      "category": "science",
+      "files": ["science1.json"]
+    },
+    {
+      "id": "sports-en-1",
+      "category": "sports",
+      "files": ["sports1.json"]
+    }
+  ]
+}

@@ -1,0 +1,662 @@
+[
+  {
+    "q": "What is the closest planet to the Sun?",
+    "options": [
+      "Mercury",
+      "Venus",
+      "Earth",
+      "Mars"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What gas do we mainly breathe?",
+    "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Argon"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the molecule of water?",
+    "options": [
+      "NaCl",
+      "CO2",
+      "O2",
+      "H2O"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which organ pumps blood?",
+    "options": [
+      "Liver",
+      "Kidney",
+      "Heart",
+      "Lungs"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What force keeps us on the ground?",
+    "options": [
+      "Magnetism",
+      "Tension",
+      "Friction",
+      "Gravity"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which particle has a negative charge?",
+    "options": [
+      "Electron",
+      "Proton",
+      "Positron",
+      "Neutron"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the natural satellite of the Earth?",
+    "options": [
+      "Europa",
+      "The Moon",
+      "Titan",
+      "Phobos"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What science studies living beings?",
+    "options": [
+      "Physics",
+      "Geology",
+      "Chemistry",
+      "Biology"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What vitamin does the skin produce with the sun?",
+    "options": [
+      "Vitamin B12",
+      "Vitamin A",
+      "Vitamin D",
+      "Vitamin C"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the liquid metal at room temperature?",
+    "options": [
+      "Lead",
+      "Gallium",
+      "Mercury",
+      "Aluminum"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the main organ in charge of breathing?",
+    "options": [
+      "Stomach",
+      "Lungs",
+      "Pancreas",
+      "Spleen"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the approximate speed of light in km/s?",
+    "options": [
+      "150,000",
+      "300,000",
+      "30,000",
+      "3,000"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the name of the male sex cell?",
+    "options": [
+      "Embryo",
+      "Sperm",
+      "Ovum",
+      "Zygote"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What unit measures force?",
+    "options": [
+      "Watt",
+      "Newton",
+      "Pascal",
+      "Joule"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which planet is known as the red one?",
+    "options": [
+      "Mars",
+      "Venus",
+      "Saturn",
+      "Jupiter"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which organ filters blood to produce urine?",
+    "options": [
+      "Spleen",
+      "Pancreas",
+      "Liver",
+      "Kidney"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the state of water at 100°C at sea level?",
+    "options": [
+      "Plasma",
+      "Vapor",
+      "Liquid",
+      "Solid"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which scientist proposed the theory of relativity?",
+    "options": [
+      "Isaac Newton",
+      "Galileo Galilei",
+      "Albert Einstein",
+      "Niels Bohr"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What gas do plants need for photosynthesis?",
+    "options": [
+      "Nitrogen",
+      "Carbon dioxide",
+      "Hydrogen",
+      "Oxygen"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the unit of energy?",
+    "options": [
+      "Volt",
+      "Watt",
+      "Joule",
+      "Ampere"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which human organ produces insulin?",
+    "options": [
+      "Pancreas",
+      "Kidney",
+      "Liver",
+      "Spleen"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What bond joins amino acids in proteins?",
+    "options": [
+      "Peptide",
+      "Hydrogen bond",
+      "Metallic",
+      "Ionic"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is the atomic number of oxygen?",
+    "options": [
+      "8",
+      "6",
+      "7",
+      "10"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What law relates pressure and volume of a gas at constant T?",
+    "options": [
+      "Boyle-Mariotte",
+      "Gay-Lussac",
+      "Avogadro",
+      "Charles"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which planet has the great red spot?",
+    "options": [
+      "Uranus",
+      "Neptune",
+      "Jupiter",
+      "Saturn"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which scientist formulated the laws of motion?",
+    "options": [
+      "Galileo",
+      "Isaac Newton",
+      "Descartes",
+      "Kepler"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is the name of the reaction that releases energy in the Sun?",
+    "options": [
+      "Oxidation",
+      "Nuclear fission",
+      "Nuclear fusion",
+      "Radioactivity"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What cell structure contains DNA in eukaryotes?",
+    "options": [
+      "Mitochondrion",
+      "Nucleus",
+      "Ribosome",
+      "Lysosome"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What scale measures the acidity of a solution?",
+    "options": [
+      "Mohs",
+      "Richter",
+      "Beaufort",
+      "pH"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which particle mediates the electromagnetic force?",
+    "options": [
+      "Graviton (hypothetical)",
+      "Photon",
+      "W boson",
+      "Gluon"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which scientist discovered penicillin?",
+    "options": [
+      "Jenner",
+      "Alexander Fleming",
+      "Pasteur",
+      "Koch"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What unit measures frequency?",
+    "options": [
+      "Tesla",
+      "Pascal",
+      "Newton",
+      "Hertz"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which cell structure produces ATP?",
+    "options": [
+      "Golgi apparatus",
+      "Mitochondrion",
+      "Chloroplast",
+      "Centrosome"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What law relates current, voltage and resistance?",
+    "options": [
+      "Gauss's Law",
+      "Ohm's Law",
+      "Ampère's Law",
+      "Faraday's Law"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What name is given to blood with low oxygen?",
+    "options": [
+      "Arterial blood",
+      "Plasma",
+      "Serum",
+      "Venous blood"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What type of bond shares electrons?",
+    "options": [
+      "Ionic",
+      "H-bond",
+      "Metallic",
+      "Covalent"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which scientist proposed evolution by natural selection?",
+    "options": [
+      "Huxley",
+      "Charles Darwin",
+      "Jean-Baptiste Lamarck",
+      "Wallace"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which organ regulates balance and coordination?",
+    "options": [
+      "Cerebellum",
+      "Cortex",
+      "Medulla oblongata",
+      "Hypothalamus"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is the most abundant gas in the Sun?",
+    "options": [
+      "Helium",
+      "Carbon",
+      "Oxygen",
+      "Hydrogen"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What unit measures electrical work?",
+    "options": [
+      "Coulomb",
+      "Volt",
+      "Watt",
+      "Joule"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is Avogadro's number, which approximates particles per mole?",
+    "options": [
+      "3.00×10^8",
+      "6.022×10^23",
+      "1.60×10^-19",
+      "9.81"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What theorem relates entropy to microstates?",
+    "options": [
+      "Stokes",
+      "Noether",
+      "Boltzmann",
+      "Green"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What principle limits the precision of position-momentum?",
+    "options": [
+      "Exclusion",
+      "Superposition",
+      "Heisenberg",
+      "Pauli"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What experiment demonstrated the expansion of the universe?",
+    "options": [
+      "Michelson-Morley",
+      "Hubble's law (redshift)",
+      "Double slit",
+      "Cavendish"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which particle is its own antiparticle (hypothetical in neutrinos)?",
+    "options": [
+      "Majorana",
+      "Higgs",
+      "Dirac",
+      "Tauon"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What is the name of the dark cycle of photosynthesis?",
+    "options": [
+      "Calvin cycle",
+      "Cori cycle",
+      "Urea cycle",
+      "Krebs cycle"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What equation governs electromagnetic waves?",
+    "options": [
+      "Schrödinger",
+      "Navier-Stokes",
+      "Maxwell's equations",
+      "Poisson"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What phenomenon explains conventional superconductivity?",
+    "options": [
+      "Josephson",
+      "Meissner effect",
+      "BCS",
+      "Quantum Hall"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which uranium isotope is commonly fissioned in reactors?",
+    "options": [
+      "U-238",
+      "U-235",
+      "U-233",
+      "Pu-239"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What technique separates DNA by size?",
+    "options": [
+      "Chromatography",
+      "PCR",
+      "Spectrometry",
+      "Gel electrophoresis"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which protein cuts DNA in CRISPR?",
+    "options": [
+      "Dicer",
+      "Cas13",
+      "Cas12a",
+      "Cas9"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What law describes molecular diffusion?",
+    "options": [
+      "Fick's law",
+      "Henry's law",
+      "Raoult's law",
+      "Graham's law"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What scale measures modern seismic magnitude?",
+    "options": [
+      "Mercalli",
+      "Rossi–Forel",
+      "Richter",
+      "Moment magnitude (Mw)"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which mineral phase of carbon is hardest?",
+    "options": [
+      "Graphene",
+      "Graphite",
+      "Diamond",
+      "Fullerene"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What reaction produces ATP in oxidative phosphorylation?",
+    "options": [
+      "ATP synthase by proton gradient",
+      "Substrate-level phosphorylation",
+      "Alcoholic fermentation",
+      "Direct glycolysis"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What constant relates energy and frequency?",
+    "options": [
+      "Planck's constant",
+      "Avogadro's constant",
+      "Faraday's constant",
+      "Boltzmann's constant"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What parameter describes the curvature of spacetime?",
+    "options": [
+      "Riemann tensor",
+      "Divergence",
+      "Curl",
+      "Laplacian"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What type of galaxy is the Milky Way?",
+    "options": [
+      "Ring",
+      "Barred spiral",
+      "Elliptical",
+      "Irregular"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What reaction converts nitrogen to ammonia industrially?",
+    "options": [
+      "Ostwald process",
+      "Haber-Bosch process",
+      "Claus",
+      "Solvay"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which hormone regulates the basal metabolic rate?",
+    "options": [
+      "Thyroxine (T4)",
+      "Cortisol",
+      "Adrenaline",
+      "Insulin"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  }
+]

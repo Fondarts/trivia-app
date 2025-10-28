@@ -1,7 +1,7 @@
 {
-  "name": "quizle-app",
+  "name": "quizlo-app",
   "version": "1.0.0",
-  "description": "Quizle! - Trivia Game",
+  "description": "Quizlo! - Trivia Game",
   "main": "index.js",
   "scripts": {
     "build": "echo 'No build step required'",

@@ -1,4 +1,4 @@
-# 🚀 Deploy de Producción para Quizle!
+# 🚀 Deploy de Producción para Quizlo!
 
 ## Opción 1: Netlify (RECOMENDADO - GRATIS)
 
@@ -17,13 +17,13 @@ En Google Cloud Console, usar tu nueva URL de Netlify:
 
 **JavaScript Origins:**
 ```
-https://tu-app.netlify.app
+https://www.quizlo.app
 https://fpjkdibubjdbskthofdp.supabase.co
 ```
 
 **Redirect URIs:**
 ```
-https://tu-app.netlify.app/index.html
+https://www.quizlo.app/index.html
 https://fpjkdibubjdbskthofdp.supabase.co/auth/v1/callback
 ```
 
@@ -32,12 +32,12 @@ En Supabase Dashboard, agregar:
 
 **Site URL:**
 ```
-https://tu-app.netlify.app
+https://www.quizlo.app
 ```
 
 **Redirect URLs:**
 ```
-https://tu-app.netlify.app/index.html
+https://www.quizlo.app/index.html
 ```
 
 ---
@@ -78,7 +78,7 @@ firebase deploy
 
 ## Dominio Personalizado (PROFESIONAL)
 
-### 1. Comprar dominio (ej: quizle-game.com)
+### 1. Comprar dominio (ej: quizlo.app)
 
 ### 2. Configurar DNS en Netlify/Vercel
 - Apuntar dominio a Netlify/Vercel
@@ -86,7 +86,7 @@ firebase deploy
 
 ### 3. Actualizar configuraciones con tu dominio
 ```
-https://quizle-game.com
+https://www.quizlo.app
 ```
 
 ---
@@ -103,10 +103,10 @@ https://quizle-game.com
 
 ## URLs de Ejemplo que Obtienes
 
-- Netlify: `https://quizle-trivia-123456.netlify.app`
-- Vercel: `https://quizle-trivia.vercel.app`
-- Firebase: `https://quizle-trivia.web.app`
-- Dominio propio: `https://quizle-game.com`
+- Netlify: `https://quizlo-trivia-123456.netlify.app`
+- Vercel: `https://quizlo-trivia.vercel.app`
+- Firebase: `https://quizlo-trivia.web.app`
+- Dominio propio: `https://www.quizlo.app`
 
 ## Ventajas de Producción
 

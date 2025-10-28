@@ -16,12 +16,15 @@ Agrega estas URLs en la sección "Redirect URLs":
 http://192.168.0.21:8100/index.html
 http://127.0.0.1:8100/index.html
 http://localhost:8100/index.html
+https://www.quizlo.app
+https://www.quizlo.app/index.html
 ```
 
 ### 3. URLs del Site (opcional pero recomendado)
 En "Site URL" puedes poner:
 ```
 http://192.168.0.21:8100
+https://www.quizlo.app
 ```
 
 ### 4. Guardar Cambios
@@ -38,7 +41,7 @@ http://192.168.0.21:8100
 
 - **Desarrollo**: Usa las URLs con tu IP local (`192.168.0.21:8100`)
 - **Producción**: Cambia por tu dominio real cuando subas a producción
-- **Android**: Para la app nativa, necesitarás agregar también: `com.quizle.app://oauth/callback`
+- **Android**: Para la app nativa, necesitarás agregar también: `com.quizlo.app://oauth/callback`
 
 ## URLs Actuales del Servidor:
 - Local: http://127.0.0.1:8100

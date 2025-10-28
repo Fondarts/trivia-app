@@ -29,7 +29,9 @@ http://192.168.0.13:8100
 http://192.168.0.13:8100/index.html
 http://192.168.0.13:8100/auth-callback.html
 https://fpjkdibubjdbskthofdp.supabase.co/auth/v1/callback
-com.quizle.app://oauth/callback
+com.quizlo.app://oauth/callback
+https://www.quizlo.app
+https://www.quizlo.app/index.html
 ```
 
 #### B. Authentication → Providers → Google
@@ -60,6 +62,7 @@ http://localhost:3000
 http://localhost:5500
 http://127.0.0.1:5500
 https://fpjkdibubjdbskthofdp.supabase.co
+https://www.quizlo.app
 ```
 
 **Authorized Redirect URIs:**
@@ -70,13 +73,14 @@ http://localhost:5173/auth-callback.html
 http://localhost:5500/index.html
 http://127.0.0.1:5500/index.html
 https://fpjkdibubjdbskthofdp.supabase.co/auth/v1/callback
+https://www.quizlo.app/index.html
 ```
 
 #### B. Android Client (339736953753-shffn13ho0g92064uh7ooj95pcgebpoj)
 
 **Package Name:**
 ```
-com.quizle.app
+com.quizlo.app
 ```
 
 **SHA-1 Certificate Fingerprint:**

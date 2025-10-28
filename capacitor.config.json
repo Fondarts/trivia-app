@@ -1,6 +1,6 @@
 {
-  "appId": "com.quizle.app",
-  "appName": "Quizle!",
+  "appId": "com.quizlo.app",
+  "appName": "Quizlo!",
   "webDir": "www",
   "plugins": {
     "App": {

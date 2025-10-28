@@ -1,0 +1,33 @@
+{
+  "name": "Quizlo! - Trivia Game",
+  "short_name": "Quizlo!",
+  "description": "¡El juego de trivia más divertido! Pon a prueba tus conocimientos con miles de preguntas.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment", "education"],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/home.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Pantalla principal"
+    },
+    {
+      "src": "assets/screenshots/game.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Jugando una partida"
+    }
+  ]
+}

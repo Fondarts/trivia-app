@@ -1,0 +1,46 @@
+[
+  {
+    "q": "¿Cuál es la partícula con carga negativa?",
+    "options": [
+      "Protón",
+      "Neutrón",
+      "Electrón",
+      "Positrón"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué órgano bombea la sangre?",
+    "options": [
+      "Pulmón",
+      "Hígado",
+      "Corazón",
+      "Riñón"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Unidad del SI para la fuerza",
+    "options": [
+      "Newton",
+      "Joule",
+      "Watt",
+      "Pascal"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Molécula que transporta oxígeno en sangre",
+    "options": [
+      "Insulina",
+      "Hemoglobina",
+      "Clorofila",
+      "Colágeno"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  }
+]

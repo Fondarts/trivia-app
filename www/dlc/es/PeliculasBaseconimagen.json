@@ -1,0 +1,1417 @@
+[
+  {
+    "q": "¿Quién dirigió 'Jurassic Park' (1993)?",
+    "options": ["Steven Spielberg", "James Cameron", "Ridley Scott", "Peter Jackson"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor interpreta a Jack Dawson en 'Titanic'?",
+    "options": ["Brad Pitt", "Leonardo DiCaprio", "Matt Damon", "Tom Cruise"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El personaje Neo pertenece a...",
+    "options": ["Blade Runner", "Matrix", "Tron", "Dark City"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El famoso diálogo 'Yo soy tu padre' aparece en...",
+    "options": ["Star Wars: Episodio IV", "Star Wars: Episodio V", "Star Wars: Episodio VI", "Rogue One"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué estudio produjo 'Toy Story' (1995)?",
+    "options": ["DreamWorks", "Pixar", "Illumination", "Blue Sky"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué superhéroe es conocido como 'El Caballero Oscuro'?",
+    "options": ["Spider-Man", "Superman", "Batman", "Iron Man"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpretó a Hermione Granger en 'Harry Potter'?",
+    "options": ["Emma Stone", "Keira Knightley", "Natalie Portman", "Emma Watson"],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El planeta Pandora aparece en...",
+    "options": ["Avatar", "Dune", "Interstellar", "Guardians of the Galaxy"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director está detrás de 'Pulp Fiction'?",
+    "options": ["David Fincher", "Christopher Nolan", "Quentin Tarantino", "Guy Ritchie"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpretó a Iron Man en el UCM?",
+    "options": ["Chris Evans", "Robert Downey Jr.", "Mark Ruffalo", "Chris Hemsworth"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿En qué película animada aparece el vaquero Woody?",
+    "options": ["Shrek", "Toy Story", "Up", "Ratatouille"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El tiburón que aterroriza Amity Island es de...",
+    "options": ["Jaws (Tiburón)", "The Meg", "Open Water", "Deep Blue Sea"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién protagoniza 'Forrest Gump' (1994)?",
+    "options": ["Tom Hanks", "Robin Williams", "Kevin Costner", "Matt Damon"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "Hogwarts pertenece al universo de...",
+    "options": ["El Señor de los Anillos", "Narnia", "Harry Potter", "Percy Jackson"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "La frase 'Hasta la vista, baby' es de...",
+    "options": ["RoboCop", "Terminator 2", "Predator", "Rambo II"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'E.T. el extraterrestre'?",
+    "options": ["George Lucas", "Steven Spielberg", "Ron Howard", "James Cameron"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "La ciudad de Gotham está asociada a...",
+    "options": ["Superman", "Flash", "Batman", "Aquaman"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de Pixar trata sobre emociones personificadas?",
+    "options": ["Coco", "Soul", "Inside Out (Intensa-Mente)", "Up"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién compuso la icónica música de 'Star Wars'?",
+    "options": ["Hans Zimmer", "John Williams", "Howard Shore", "Ennio Morricone"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "Gollum es un personaje de...",
+    "options": ["Harry Potter", "El Hobbit / El Señor de los Anillos", "Narnia", "Juego de Tronos"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor interpreta a Jack Sparrow?",
+    "options": ["Johnny Depp", "Orlando Bloom", "Hugh Jackman", "Keanu Reeves"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cuál de estas películas es muda y en blanco y negro?",
+    "options": ["The Artist (2011)", "La La Land", "Roma", "Mank"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "Wakanda aparece por primera vez en...",
+    "options": ["Black Panther", "Avengers", "Captain America: Civil War", "Thor: Ragnarok"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director hizo 'Inception'?",
+    "options": ["Denis Villeneuve", "Christopher Nolan", "Sam Mendes", "J.J. Abrams"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpreta a Wolverine en la saga X-Men (2000-2017)?",
+    "options": ["Hugh Jackman", "Liev Schreiber", "Gerard Butler", "Karl Urban"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "La Tierra Media fue creada por...",
+    "options": ["Isaac Asimov", "J.R.R. Tolkien", "George R.R. Martin", "C.S. Lewis"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película ganó el Óscar a Mejor Película en 2020?",
+    "options": ["1917", "Joker", "Parasite", "Once Upon a Time in Hollywood"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirige 'La La Land'?",
+    "options": ["Damien Chazelle", "Barry Jenkins", "Greta Gerwig", "Richard Linklater"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué personaje lleva el escudo con una estrella?",
+    "options": ["Iron Man", "Capitán América", "Hawkeye", "Ant-Man"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El 'Batimóvil' pertenece a...",
+    "options": ["Flash", "Batman", "Green Lantern", "Aquaman"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El anillo único es central en...",
+    "options": ["El Hobbit", "El Señor de los Anillos", "Willow", "Conan"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz coprotagoniza 'La La Land' junto a Ryan Gosling?",
+    "options": ["Emma Stone", "Brie Larson", "Scarlett Johansson", "Anne Hathaway"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cuál fue el primer largometraje de Pixar?",
+    "options": ["Bichos", "Toy Story", "Monsters, Inc.", "Buscando a Nemo"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "El mago Gandalf es interpretado por...",
+    "options": ["Ian McKellen", "Christopher Lee", "Michael Caine", "Patrick Stewart"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película popularizó el bullet time?",
+    "options": ["Equilibrium", "The Matrix", "Dark City", "Hard Boiled"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'Avatar' (2009)?",
+    "options": ["James Cameron", "Peter Jackson", "George Lucas", "Ridley Scott"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "Shrek es un...",
+    "options": ["Dragón", "Mago", "Ogro", "Elfo"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Dónde transcurre gran parte de 'Gladiator'?",
+    "options": ["Grecia", "Roma", "Egipto", "Cartago"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "La frase 'Say hello to my little friend' es de...",
+    "options": ["Scarface", "Goodfellas", "The Godfather", "Heat"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película presentó a Jack Skellington?",
+    "options": ["Coraline", "El cadáver de la novia", "El extraño mundo de Jack", "Frankenweenie"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+
+  // --- MEDIUM (30) ---
+  {
+    "q": "¿En qué año se estrenó 'El Señor de los Anillos: La Comunidad del Anillo'?",
+    "options": ["1999", "2001", "2002", "2003"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Primer film ganador del Óscar a Película Animada (2002, ceremonia 74ª).",
+    "options": ["Shrek", "Toy Story 2", "Monsters, Inc.", "El viaje de Chihiro"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Director de fotografía de 'Blade Runner' (1982).",
+    "options": ["Roger Deakins", "Jordan Cronenweth", "Conrad Hall", "Greg Toland"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpretó al Joker en 'The Dark Knight' (2008)?",
+    "options": ["Joaquin Phoenix", "Heath Ledger", "Jared Leto", "Jack Nicholson"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "La nave comercial en 'Alien' (1979) se llama...",
+    "options": ["Sulaco", "Narcissus", "Nostromo", "Sevastopol"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién compuso la música de 'El Señor de los Anillos'?",
+    "options": ["Howard Shore", "James Newton Howard", "John Williams", "Hans Zimmer"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Cinta de Denis Villeneuve sobre un contacto extraterrestre.",
+    "options": ["Blade Runner 2049", "Arrival", "Prisoners", "Sicario"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film presentó al personaje Tyler Durden?",
+    "options": ["American Beauty", "The Sixth Sense", "Fight Club", "Snatch"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿En qué idioma se filmó 'Parasite' (2019)?",
+    "options": ["Coreano", "Japonés", "Chino mandarín", "Inglés"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'Whiplash' (2014)?",
+    "options": ["Damien Chazelle", "Barry Jenkins", "Greta Gerwig", "Tom Hooper"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Thriller de Fincher sobre un asesino serial de San Francisco.",
+    "options": ["Seven", "Zodiac", "Gone Girl", "The Game"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película ganó Mejor Película en los Óscar 2017 (ceremonia 89ª)?",
+    "options": ["La La Land", "Moonlight", "Arrival", "Manchester by the Sea"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'Mad Max: Fury Road'?",
+    "options": ["George Miller", "George Lucas", "Ridley Scott", "James Cameron"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Película de Nolan centrada en sueños compartidos.",
+    "options": ["Tenet", "Memento", "Inception", "Insomnia"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz protagoniza 'Black Swan' (2010)?",
+    "options": ["Mila Kunis", "Natalie Portman", "Rooney Mara", "Scarlett Johansson"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿En qué ciudad se ambienta 'Blade Runner' (1982)?",
+    "options": ["Nueva York 1997", "Los Ángeles 2019", "Tokio 2020", "San Francisco 2001"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Trilogía que NO es de Peter Jackson.",
+    "options": ["El Señor de los Anillos", "El Hobbit", "Matrix", "Ninguna de las anteriores"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Banda sonora de 'Interstellar' fue compuesta por...",
+    "options": ["Hans Zimmer", "John Williams", "Clint Mansell", "Alan Silvestri"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Cinta de animación stop-motion de Wes Anderson.",
+    "options": ["Isle of Dogs", "Fantastic Mr. Fox", "Ambas", "Ninguna"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'La forma del agua'?",
+    "options": ["Alfonso Cuarón", "Guillermo del Toro", "Alejandro G. Iñárritu", "Jean-Pierre Jeunet"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué año se estrenó 'Gladiator'?",
+    "options": ["1999", "2000", "2001", "2002"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién compuso la música de 'El Rey León' (1994)?",
+    "options": ["Alan Menken", "Hans Zimmer", "James Horner", "Thomas Newman"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película pertenece a Studio Ghibli?",
+    "options": ["Your Name", "La princesa Mononoke", "Paprika", "Akira"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué directora filmó 'Lady Bird' (2017)?",
+    "options": ["Sofia Coppola", "Greta Gerwig", "Patty Jenkins", "Chloé Zhao"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "'Children of Men' (2006) es de...",
+    "options": ["Guillermo del Toro", "Alejandro G. Iñárritu", "Alfonso Cuarón", "Alfonso Arau"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Film que popularizó la técnica 'found footage' en terror moderno.",
+    "options": ["Paranormal Activity", "The Blair Witch Project", "REC", "Cloverfield"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpreta a Furiosa en 'Mad Max: Fury Road'?",
+    "options": ["Charlize Theron", "Emily Blunt", "Rosamund Pike", "Jessica Chastain"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Director de 'The Social Network' (2010).",
+    "options": ["David Fincher", "Aaron Sorkin", "Danny Boyle", "Todd Phillips"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "'El laberinto del fauno' transcurre en...",
+    "options": ["México posrevolucionario", "España franquista", "Argentina dictadura", "Italia fascista"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+
+  // --- HARD (30) ---
+  {
+    "q": "¿En qué año se estrenó 'Ciudadano Kane'?",
+    "options": ["1939", "1941", "1945", "1950"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Cineasta soviético de 'Stalker' (1979).",
+    "options": ["Andréi Tarkovski", "Serguéi Eisenstein", "Dziga Vértov", "Klimov"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Actor que encarna a Salieri en 'Amadeus' (1984).",
+    "options": ["Tom Hulce", "F. Murray Abraham", "Ian McKellen", "Jeremy Irons"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Título original de 'El viaje de Chihiro'.",
+    "options": ["Mononoke Hime", "Sen to Chihiro no Kamikakushi", "Tonari no Totoro", "Kaze no Tani no Naushika"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Palma de Oro a 'Taxi Driver' (1976) fue para...",
+    "options": ["Francis Ford Coppola", "Martin Scorsese", "Sidney Lumet", "Michael Cimino"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Protagonista femenina de 'Blue Velvet' (1986).",
+    "options": ["Laura Dern", "Isabella Rossellini", "Juliette Binoche", "Sheryl Lee"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Autor de 'Persona' y 'Fanny y Alexander'.",
+    "options": ["Robert Bresson", "Ingmar Bergman", "Federico Fellini", "Michelangelo Antonioni"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'El espejo' (1975).",
+    "options": ["Lars von Trier", "Dreyer", "Andréi Tarkovski", "Konchalovsky"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Primer film sonoro popular (1927).",
+    "options": ["The Jazz Singer", "Metropolis", "Wings", "Nosferatu"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'Arca Rusa' (2002).",
+    "options": ["Tarkovski", "Aleksandr Sokúrov", "Mikhalkov", "Parajanov"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Actriz protagonista de 'Antichrist' (2009).",
+    "options": ["Nicole Kidman", "Tilda Swinton", "Charlotte Gainsbourg", "Kirsten Dunst"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Película de 2014 simulada en un solo plano (principalmente).",
+    "options": ["Birdman", "Rope", "1917", "Victoria"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'Cuentos de Tokio' (1953).",
+    "options": ["Hirokazu Kore-eda", "Yasujirō Ozu", "Akira Kurosawa", "Kenji Mizoguchi"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Guionista de 'Chinatown' (1974).",
+    "options": ["Roman Polanski", "Robert Towne", "William Goldman", "Francis Ford Coppola"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'La doble vida de Verónica' (1991).",
+    "options": ["Louis Malle", "Krzysztof Kieślowski", "Jean-Luc Godard", "Claude Lelouch"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Película húngara de Béla Tarr con duración superior a 7 horas.",
+    "options": ["Werckmeister Harmonies", "Sátántangó", "The Turin Horse", "Damnation"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'El caballo de Turín' (2011).",
+    "options": ["László Nemes", "Béla Tarr", "Miklós Jancsó", "István Szabó"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Año de 'El acorazado Potemkin'.",
+    "options": ["1925", "1927", "1930", "1919"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director iraní de 'El sabor de las cerezas' (1997).",
+    "options": ["Asghar Farhadi", "Jafar Panahi", "Abbas Kiarostami", "Majid Majidi"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Protagonista de 'El topo' (1970) de Jodorowsky.",
+    "options": ["Alejandro Jodorowsky", "Claudio Brook", "Emilio Fernández", "Fernando Casanova"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'Stalker' y 'Solaris' (1972).",
+    "options": ["Andréi Tarkovski", "Nikita Mijalkov", "Elem Klimov", "Andréi Konchalovsky"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Montajista de 'Psycho' (1960) junto a Hitchcock.",
+    "options": ["Thelma Schoonmaker", "Sally Menke", "George Tomasini", "Dede Allen"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'Sed de mal' (Touch of Evil, 1958)?",
+    "options": ["Orson Welles", "Billy Wilder", "Nicholas Ray", "Otto Preminger"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "'El mensajero del miedo' (1962) fue protagonizada por...",
+    "options": ["Laurence Harvey", "Gregory Peck", "Tony Curtis", "Burt Lancaster"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Película de Antonioni que populariza la 'alienación moderna'.",
+    "options": ["La aventura", "La noche", "El eclipse", "Todas las anteriores"],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'M' (1931).",
+    "options": ["Fritz Lang", "F.W. Murnau", "G.W. Pabst", "Ernst Lubitsch"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Quién compuso la música de 'Conan el Bárbaro' (1982)?",
+    "options": ["Vangelis", "Basil Poledouris", "Jerry Goldsmith", "Ennio Morricone"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Actriz de 'Persona' (1966) junto a Liv Ullmann.",
+    "options": ["Bibi Andersson", "Ingrid Thulin", "Harriet Andersson", "Barbro Hiort af Ornäs"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Director de 'El espejo oscuro' (1946) y 'Anatomía de un asesinato'.",
+    "options": ["Otto Preminger", "William Wyler", "Robert Siodmak", "Henry Hathaway"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpreta a Elsa en la versión original de Frozen?",
+    "options": ["Idina Menzel", "Demi Lovato", "Kristen Bell", "Mandy Moore"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué animal es Simba en 'El Rey León'?",
+    "options": ["Tigre", "León", "Puma", "Guepardo"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué personaje vive en una piña bajo el mar?",
+    "options": ["Bob Esponja", "Nemo", "Dory", "Patrick"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor interpreta a Deadpool?",
+    "options": ["Ryan Gosling", "Ryan Reynolds", "Chris Pratt", "Mark Ruffalo"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película popularizó la canción 'Let It Go'?",
+    "options": ["Moana", "Frozen", "Enredados", "Valiente"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "En 'Buscando a Nemo', ¿qué tipo de pez es Nemo?",
+    "options": ["Payaso", "Cirujano", "Globo", "Mariposa"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cuál es el nombre del ogro verde de DreamWorks?",
+    "options": ["Shrek", "Fiona", "Donkey", "Hulk"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor da vida a Thor en Marvel?",
+    "options": ["Liam Hemsworth", "Chris Hemsworth", "Luke Hemsworth", "Tom Hiddleston"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿De qué color es el sombrero de Indiana Jones?",
+    "options": ["Negro", "Marrón", "Gris", "Beige"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cómo se llama el amigo robot de Luke Skywalker?",
+    "options": ["BB-8", "C-3PO", "R2-D2", "K-2SO"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz protagoniza 'Pretty Woman'?",
+    "options": ["Julia Roberts", "Sandra Bullock", "Meg Ryan", "Nicole Kidman"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué animal es Dumbo?",
+    "options": ["Elefante", "Ratón", "Jirafa", "León"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué superhéroe lanza telarañas?",
+    "options": ["Spider-Man", "Batman", "Superman", "Flash"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor hace de Jack Sparrow?",
+    "options": ["Orlando Bloom", "Johnny Depp", "Colin Farrell", "Jude Law"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué personaje es conocido como 'El Rey de la Noche'?",
+    "options": ["Sauron", "Voldemort", "Night King", "Saruman"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿En qué película Pixar aparece Remy, una rata cocinera?",
+    "options": ["Coco", "Ratatouille", "Up", "Cars"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz interpreta a Viuda Negra en Marvel?",
+    "options": ["Scarlett Johansson", "Brie Larson", "Natalie Portman", "Elizabeth Olsen"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué monstruo verde dice '¡No me toques!' en Pixar?",
+    "options": ["Sully", "Mike Wazowski", "Shrek", "Hulk"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué superhéroe es conocido como 'El Hombre de Acero'?",
+    "options": ["Batman", "Superman", "Iron Man", "Hulk"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué famoso mago tiene una cicatriz en forma de rayo?",
+    "options": ["Harry Potter", "Gandalf", "Merlín", "Dr. Strange"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué pez ayuda a Marlin a buscar a Nemo?",
+    "options": ["Dory", "Bubbles", "Bruce", "Gill"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor es conocido por la frase 'I'll be back'?",
+    "options": ["Sylvester Stallone", "Bruce Willis", "Arnold Schwarzenegger", "Jean-Claude Van Damme"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué estudio creó 'Shrek'?",
+    "options": ["Pixar", "DreamWorks", "Disney", "Blue Sky"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué princesa Disney pierde un zapato de cristal?",
+    "options": ["Blancanieves", "Aurora", "Cenicienta", "Ariel"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué villano lucha contra Batman en 'The Dark Knight'?",
+    "options": ["Riddler", "Bane", "Joker", "Two-Face"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién es el padre de Simba?",
+    "options": ["Mufasa", "Scar", "Rafiki", "Zazú"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué vehículo usa Marty McFly para viajar en el tiempo?",
+    "options": ["Delorean", "Mustang", "Chevy Impala", "Camaro"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién es el villano principal en 'Los Increíbles'?",
+    "options": ["Syndrome", "Zurg", "Lotso", "Hopper"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿En qué película aparece Olaf, el muñeco de nieve?",
+    "options": ["Frozen", "Moana", "Encanto", "Valiente"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película inicia con la lámpara de Pixar saltando?",
+    "options": ["Monsters Inc.", "Toy Story", "Buscando a Nemo", "Cars"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+
+  // --- MEDIUM (40) ---
+  {
+    "q": "¿Quién dirigió 'El Gran Hotel Budapest'?",
+    "options": ["Wes Anderson", "Tim Burton", "David Fincher", "Guy Ritchie"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor protagoniza 'The Revenant'?",
+    "options": ["Leonardo DiCaprio", "Matt Damon", "Christian Bale", "Brad Pitt"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de 1999 reveló a 'Neo' como El Elegido?",
+    "options": ["Fight Club", "Matrix", "American Beauty", "The Sixth Sense"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director creó 'El viaje de Chihiro'?",
+    "options": ["Isao Takahata", "Hayao Miyazaki", "Makoto Shinkai", "Satoshi Kon"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de ciencia ficción popularizó el término 'replicante'?",
+    "options": ["Gattaca", "Blade Runner", "Minority Report", "I, Robot"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz ganó el Óscar por 'Los Miserables' (2012)?",
+    "options": ["Anne Hathaway", "Amanda Seyfried", "Helena Bonham Carter", "Amy Adams"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué año se estrenó 'Titanic'?",
+    "options": ["1995", "1997", "1999", "2001"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director realizó 'La lista de Schindler'?",
+    "options": ["Steven Spielberg", "Francis Ford Coppola", "Roman Polanski", "Oliver Stone"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpretó a Hannibal Lecter en 'El silencio de los inocentes'?",
+    "options": ["Anthony Hopkins", "Ian McKellen", "Kevin Spacey", "Al Pacino"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de Pixar presenta a una familia de superhéroes?",
+    "options": ["Los Increíbles", "Up", "Ratatouille", "Onward"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+[
+  // --- MEDIUM (continuación) ---
+  {
+    "q": "¿Qué actriz protagoniza 'Gravity' (2013)?",
+    "options": ["Cate Blanchett", "Sandra Bullock", "Charlize Theron", "Nicole Kidman"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'Django Unchained'?",
+    "options": ["Quentin Tarantino", "Robert Rodriguez", "Martin Scorsese", "Clint Eastwood"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film animado ganó el Óscar a Mejor Película Animada en 2022?",
+    "options": ["Encanto", "Luca", "Turning Red", "Mitchells vs. The Machines"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz interpreta a Wonder Woman en el DCEU?",
+    "options": ["Gal Gadot", "Margot Robbie", "Amber Heard", "Anne Hathaway"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de terror popularizó a Freddy Krueger?",
+    "options": ["Halloween", "A Nightmare on Elm Street", "Friday the 13th", "Scream"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director filmó 'La llegada' (Arrival)?",
+    "options": ["Christopher Nolan", "Denis Villeneuve", "Ridley Scott", "Neill Blomkamp"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actor ganó el Óscar por 'El pianista' (2002)?",
+    "options": ["Adrien Brody", "Sean Penn", "Russell Crowe", "Edward Norton"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película animada introduce a Miguel y el Día de Muertos?",
+    "options": ["Encanto", "Coco", "Vivo", "El libro de la vida"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿En qué ciudad transcurre 'In Bruges' (2008)?",
+    "options": ["Gante", "Amberes", "Brujas", "Bruselas"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'Oldboy' (2003)?",
+    "options": ["Park Chan-wook", "Bong Joon-ho", "Kim Ki-duk", "Takashi Miike"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz interpreta a Harley Quinn en DC?",
+    "options": ["Margot Robbie", "Kaley Cuoco", "Megan Fox", "Chloe Grace Moretz"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién fue el director de 'Slumdog Millionaire'?",
+    "options": ["Danny Boyle", "Ken Loach", "Richard Curtis", "Stephen Frears"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cinta introdujo al personaje Gollum en CGI?",
+    "options": ["El Hobbit", "El Señor de los Anillos: Las Dos Torres", "King Kong", "Narnia"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película francesa ganó el Óscar a mejor película extranjera en 2012?",
+    "options": ["Amour", "The Artist", "La vie en rose", "Intocable"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film de ciencia ficción mostró la nave Discovery One?",
+    "options": ["2001: Odisea del espacio", "Interstellar", "Contact", "Solaris"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director filmó 'Her' (2013)?",
+    "options": ["Spike Jonze", "Sofia Coppola", "David O. Russell", "Richard Linklater"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Quién interpreta a Legolas en 'El Señor de los Anillos'?",
+    "options": ["Orlando Bloom", "Elijah Wood", "Sean Bean", "Hugo Weaving"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director mexicano ganó el Óscar por 'Birdman'?",
+    "options": ["Alfonso Cuarón", "Alejandro G. Iñárritu", "Guillermo del Toro", "Emir Kusturica"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película popularizó la frase 'I drink your milkshake'?",
+    "options": ["There Will Be Blood", "No Country for Old Men", "Magnolia", "The Master"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz protagonizó 'La favorita' (2018)?",
+    "options": ["Olivia Colman", "Emma Stone", "Rachel Weisz", "Todas las anteriores"],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta dirigió 'Stalker' y 'Solaris'?",
+    "options": ["Andréi Tarkovski", "Serguéi Eisenstein", "Dziga Vértov", "Kurosawa"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película húngara de Béla Tarr dura más de 7 horas?",
+    "options": ["Sátántangó", "Werckmeister Harmonies", "El caballo de Turín", "Damnation"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film ganó la Palma de Oro en 1994 dirigido por Quentin Tarantino?",
+    "options": ["Reservoir Dogs", "Pulp Fiction", "Jackie Brown", "Kill Bill"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película japonesa de Kurosawa inspiró 'Los siete magníficos'?",
+    "options": ["Rashomon", "Trono de sangre", "Los siete samuráis", "Yojimbo"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director iraní realizó 'El sabor de las cerezas'?",
+    "options": ["Jafar Panahi", "Asghar Farhadi", "Abbas Kiarostami", "Majid Majidi"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Quién dirigió 'El ángel exterminador' (1962)?",
+    "options": ["Luis Buñuel", "Carlos Saura", "Juan Antonio Bardem", "Víctor Erice"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué año se estrenó 'El acorazado Potemkin'?",
+    "options": ["1925", "1927", "1930", "1935"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz protagoniza 'Anticristo' (2009)?",
+    "options": ["Nicole Kidman", "Charlotte Gainsbourg", "Tilda Swinton", "Isabelle Huppert"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de 1927 es considerada el primer film sonoro?",
+    "options": ["Metropolis", "The Jazz Singer", "Sunrise", "Nosferatu"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué guionista escribió 'Chinatown'?",
+    "options": ["William Goldman", "Robert Towne", "Francis Ford Coppola", "Roman Polanski"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director soviético realizó 'El hombre de la cámara' (1929)?",
+    "options": ["Dziga Vértov", "Andréi Tarkovski", "Eisenstein", "Murnau"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta sueco es autor de 'El séptimo sello'?",
+    "options": ["Ingmar Bergman", "Carl Theodor Dreyer", "Fellini", "Bresson"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película ganó el León de Oro en Venecia en 1954 dirigida por Kurosawa?",
+    "options": ["Los siete samuráis", "Rashomon", "Trono de sangre", "Vivir"],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director francés filmó 'La regla del juego'?",
+    "options": ["Jean Renoir", "Jean-Luc Godard", "François Truffaut", "Robert Bresson"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué actriz protagoniza 'Persona' junto a Liv Ullmann?",
+    "options": ["Bibi Andersson", "Ingrid Bergman", "Harriet Andersson", "Greta Garbo"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de Dreyer es famosa por el uso de primeros planos extremos?",
+    "options": ["Vampyr", "La pasión de Juana de Arco", "Ordet", "Gertrud"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director realizó 'Ordet' (1955)?",
+    "options": ["Carl Theodor Dreyer", "Robert Bresson", "Jean Renoir", "Fritz Lang"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta italiano dirigió '8½'?",
+    "options": ["Federico Fellini", "Luchino Visconti", "Roberto Rossellini", "Michelangelo Antonioni"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué año se estrenó 'Metrópolis' de Fritz Lang?",
+    "options": ["1927", "1925", "1931", "1933"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director realizó 'Hiroshima mon amour'?",
+    "options": ["Alain Resnais", "Jean Eustache", "Claude Chabrol", "Eric Rohmer"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película iraní de Panahi está rodada casi íntegramente en un coche?",
+    "options": ["El círculo", "Taxi Teherán", "Offside", "Tres caras"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film es considerado el manifiesto del neorrealismo italiano?",
+    "options": ["Roma, ciudad abierta", "Ladrón de bicicletas", "Umberto D.", "La terra trema"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director alemán filmó 'Nosferatu' (1922)?",
+    "options": ["F.W. Murnau", "Fritz Lang", "Robert Wiene", "Pabst"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de 1931 fue dirigida por Fritz Lang sobre un asesino de niños?",
+    "options": ["M", "Dr. Mabuse", "Metropolis", "Fausto"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director francés filmó 'Los 400 golpes'?",
+    "options": ["François Truffaut", "Jean-Luc Godard", "Claude Chabrol", "Eric Rohmer"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director húngaro filmó 'Werckmeister Harmonies'?",
+    "options": ["Béla Tarr", "István Szabó", "Miklós Jancsó", "Kovács"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta portugués dirigió 'En la ciudad de Simao'?",
+    "options": ["Pedro Costa", "Manoel de Oliveira", "Raúl Ruiz", "João César Monteiro"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director polaco hizo 'El Decálogo'?",
+    "options": ["Krzysztof Kieślowski", "Andrzej Wajda", "Roman Polanski", "Jerzy Skolimowski"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de 1953 de Ozu trata sobre padres que visitan a sus hijos en Tokio?",
+    "options": ["Primavera tardía", "Cuentos de Tokio", "Buenos días", "An Autumn Afternoon"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta danés realizó 'Rompiendo las olas'?",
+    "options": ["Lars von Trier", "Thomas Vinterberg", "Susanne Bier", "Carl Dreyer"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director griego firmó 'Canino' (2009)?",
+    "options": ["Yorgos Lanthimos", "Theo Angelopoulos", "Costa-Gavras", "Michael Cacoyannis"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta chino dirigió 'Héroe' (2002)?",
+    "options": ["Zhang Yimou", "Ang Lee", "Chen Kaige", "Wong Kar-wai"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de Wong Kar-wai ganó fama internacional en 2000?",
+    "options": ["Happy Together", "In the Mood for Love", "Chungking Express", "2046"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué directora libanesa realizó 'Caramel' (2007)?",
+    "options": ["Nadine Labaki", "Haifaa al-Mansour", "Mona Zaki", "Mira Nair"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film chileno ganó el Óscar a Mejor Película Extranjera en 2018?",
+    "options": ["Gloria", "Una mujer fantástica", "No", "Machuca"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director turco filmó 'Sueño de invierno' (2014)?",
+    "options": ["Nuri Bilge Ceylan", "Fatih Akin", "Reha Erdem", "Semih Kaplanoglu"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué cineasta tailandés ganó la Palma de Oro por 'Tío Boonmee recuerda sus vidas pasadas'?",
+    "options": ["Apichatpong Weerasethakul", "Pen-Ek Ratanaruang", "Nonzee Nimibutr", "Brillante Mendoza"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué film de 2019 de Bong Joon-ho ganó el Óscar a Mejor Película?",
+    "options": ["Parasite", "Snowpiercer", "The Host", "Memories of Murder"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué directora ganó el Óscar por 'Nomadland' (2020)?",
+    "options": ["Chloé Zhao", "Kathryn Bigelow", "Greta Gerwig", "Jane Campion"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué directora neozelandesa realizó 'El piano' (1993)?",
+    "options": ["Jane Campion", "Lynne Ramsay", "Sally Potter", "Andrea Arnold"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué película de Michelangelo Antonioni retrata la incomunicación moderna?",
+    "options": ["La aventura", "El eclipse", "La noche", "Todas las anteriores"],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué año se estrenó 'Un perro andaluz' de Buñuel y Dalí?",
+    "options": ["1929", "1932", "1930", "1935"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director realizó 'Cabeza borradora' (Eraserhead)?",
+    "options": ["David Lynch", "David Cronenberg", "Brian De Palma", "John Carpenter"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  }
+]

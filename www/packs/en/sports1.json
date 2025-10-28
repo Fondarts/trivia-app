@@ -1,0 +1,662 @@
+[
+  {
+    "q": "How many players per team in soccer on the field?",
+    "options": [
+      "12",
+      "9",
+      "10",
+      "11"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "For what sport is Lionel Messi famous?",
+    "options": [
+      "Soccer",
+      "Tennis",
+      "Baseball",
+      "Basketball"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country organizes the Olympic Games every 4 years (summer)?",
+    "options": [
+      "Greece",
+      "France",
+      "Different countries",
+      "United States"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sport is played at Wimbledon?",
+    "options": [
+      "Cricket",
+      "Golf",
+      "Rugby",
+      "Tennis"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the name of the world soccer championship?",
+    "options": [
+      "World Cup",
+      "Champions",
+      "Copa América",
+      "Eurocopa"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "How many points is a three-pointer in basketball worth?",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "4"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "With what is golf played?",
+    "options": [
+      "Golf clubs",
+      "Hockey stick",
+      "Bat",
+      "Racket"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which team won the 2010 World Cup?",
+    "options": [
+      "Germany",
+      "Brazil",
+      "Spain",
+      "France"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "In what sport does Usain Bolt compete?",
+    "options": [
+      "Cycling",
+      "Judo",
+      "Swimming",
+      "Athletics"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sport uses a board and pieces?",
+    "options": [
+      "Darts",
+      "Chess",
+      "Billiards",
+      "Curling"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country's national team is the 'Canarinha'?",
+    "options": [
+      "Argentina",
+      "Portugal",
+      "Mexico",
+      "Brazil"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What surface is historic at Roland Garros?",
+    "options": [
+      "Clay",
+      "Grass",
+      "Wood",
+      "Hard"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "How many sets are played to the best of 5?",
+    "options": [
+      "Up to 5",
+      "Up to 2",
+      "Up to 4",
+      "Up to 3"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sport uses a hoop and ball on a court?",
+    "options": [
+      "Basketball",
+      "Futsal",
+      "Handball",
+      "Volleyball"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which team won the 2002 World Cup?",
+    "options": [
+      "Germany",
+      "Brazil",
+      "Italy",
+      "France"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sport has a 'home run'?",
+    "options": [
+      "Cricket",
+      "Hockey",
+      "Rugby",
+      "Baseball"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country invented judo?",
+    "options": [
+      "Korea",
+      "Japan",
+      "Thailand",
+      "China"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sport has grand tours like the Tour?",
+    "options": [
+      "Motorsport",
+      "Athletics",
+      "Motorcycling",
+      "Cycling"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sport is played with a shuttlecock?",
+    "options": [
+      "Ping-pong",
+      "Tennis",
+      "Badminton",
+      "Squash"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What trophy is contested in rugby between European national teams?",
+    "options": [
+      "Tri Nations",
+      "Webb Ellis Cup",
+      "Rugby Championship",
+      "Six Nations"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Who won the 2014 World Cup?",
+    "options": [
+      "Spain",
+      "Germany",
+      "Brazil",
+      "Argentina"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "How many Grand Slams does tennis have per season?",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "3"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country has won the most soccer World Cups?",
+    "options": [
+      "Brazil",
+      "Italy",
+      "Germany",
+      "Argentina"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which runner holds the 100m (m) outdoor record?",
+    "options": [
+      "Usain Bolt",
+      "Yohan Blake",
+      "Asafa Powell",
+      "Tyson Gay"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which team won the Champions League in 2021?",
+    "options": [
+      "Real Madrid",
+      "Manchester City",
+      "Chelsea",
+      "Bayern"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "How many points is a try in rugby union worth?",
+    "options": [
+      "7",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which cyclist won 5 Tours de France?",
+    "options": [
+      "Eddy Merckx",
+      "Lance Armstrong (revoked)",
+      "Miguel Indurain",
+      "Bernard Hinault"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country dominates Olympic ice hockey historically?",
+    "options": [
+      "USA",
+      "Canada",
+      "Russia/USSR",
+      "Sweden"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which team won the 1998 World Cup?",
+    "options": [
+      "Germany",
+      "France",
+      "Brazil",
+      "Italy"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which player has the most NBA rings?",
+    "options": [
+      "Bill Russell",
+      "Kareem Abdul-Jabbar",
+      "Michael Jordan",
+      "LeBron James"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which circuit hosts the famous 24 Hours?",
+    "options": [
+      "Monza",
+      "Nürburgring",
+      "Le Mans",
+      "Spa"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country has won the most golds in swimming (historic)?",
+    "options": [
+      "China",
+      "Hungary",
+      "Australia",
+      "United States"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which national team tournament is in South America?",
+    "options": [
+      "Copa América",
+      "Gold Cup",
+      "Eurocopa",
+      "AFCON"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What trophy is contested in cricket between England and Australia?",
+    "options": [
+      "The Ashes",
+      "T20 WC",
+      "World Cup",
+      "Champions Trophy"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which athlete is 'La Pulga'?",
+    "options": [
+      "Diego Maradona",
+      "Neymar",
+      "Lionel Messi",
+      "Sergio Agüero"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which event combines swimming, cycling and running?",
+    "options": [
+      "Biathlon",
+      "Decathlon",
+      "Triathlon",
+      "Pentathlon"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country invented basketball?",
+    "options": [
+      "United States (Canadian origin of the creator)",
+      "Canada",
+      "France",
+      "United Kingdom"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which team won the 2022 World Cup?",
+    "options": [
+      "France",
+      "Croatia",
+      "Argentina",
+      "Morocco"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which tournament awards the Davis Cup?",
+    "options": [
+      "Golf",
+      "Athletics",
+      "Tennis",
+      "Rugby"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country won the first World Cup (1930)?",
+    "options": [
+      "Italy",
+      "Uruguay",
+      "Brazil",
+      "Argentina"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Who won the first Ballon d'Or (1956)?",
+    "options": [
+      "Stanley Matthews",
+      "Lev Yashin",
+      "Raymond Kopa",
+      "Alfredo Di Stéfano"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which athlete achieved 9.58s in 100m?",
+    "options": [
+      "Usain Bolt",
+      "Justin Gatlin",
+      "Yohan Blake",
+      "Asafa Powell"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which team won the 1950 World Cup?",
+    "options": [
+      "Italy",
+      "Sweden",
+      "Brazil",
+      "Uruguay"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which club has the most Copa Libertadores?",
+    "options": [
+      "River Plate",
+      "Independiente",
+      "Boca Juniors",
+      "Peñarol"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country has won the most total Olympic golds?",
+    "options": [
+      "United Kingdom",
+      "USSR/Russia",
+      "United States",
+      "China"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which boxer was 'The Greatest'?",
+    "options": [
+      "Mike Tyson",
+      "George Foreman",
+      "Muhammad Ali",
+      "Joe Frazier"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Grand Slam is played on hard court in January?",
+    "options": [
+      "US Open",
+      "Australian Open",
+      "Roland Garros",
+      "Wimbledon"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which team won Euro 2004?",
+    "options": [
+      "Portugal",
+      "Greece",
+      "Italy",
+      "Spain"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which swimmer has the most Olympic golds?",
+    "options": [
+      "Michael Phelps",
+      "Mark Spitz",
+      "Ian Thorpe",
+      "Ryan Lochte"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country won the first Rugby World Cup (1987)?",
+    "options": [
+      "England",
+      "Australia",
+      "South Africa",
+      "New Zealand"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Who won the 2020 Tour?",
+    "options": [
+      "Tadej Pogačar",
+      "Primož Roglič",
+      "Geraint Thomas",
+      "Egan Bernal"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which driver has the most F1 titles (tied)?",
+    "options": [
+      "Ayrton Senna",
+      "Michael Schumacher",
+      "Lewis Hamilton",
+      "Juan Manuel Fangio"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which team won the 2012 Africa Cup of Nations?",
+    "options": [
+      "Zambia",
+      "Nigeria",
+      "Ivory Coast",
+      "Egypt"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which club won the first Champions League (1956)?",
+    "options": [
+      "Reims",
+      "Barcelona",
+      "Real Madrid",
+      "Milan"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country hosted the 1964 Olympic Games?",
+    "options": [
+      "Germany",
+      "Italy",
+      "Mexico",
+      "Japan"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Who held the women's marathon world record (2023)?",
+    "options": [
+      "Tigst Assefa",
+      "Brigid Kosgei",
+      "Paula Radcliffe",
+      "Mary Keitany"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which tennis player won 14 Roland Garros?",
+    "options": [
+      "Roger Federer",
+      "Björn Borg",
+      "Rafael Nadal",
+      "Novak Djokovic"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which captain lifted the 1990 Cup with Germany?",
+    "options": [
+      "Andreas Brehme",
+      "Franz Beckenbauer",
+      "Lothar Matthäus",
+      "Jürgen Kohler"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which team won the 2019 Women's World Cup?",
+    "options": [
+      "England",
+      "Sweden",
+      "Netherlands",
+      "United States"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country won the first Women's World Cup (1991)?",
+    "options": [
+      "Norway",
+      "Germany",
+      "United States",
+      "China"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  }
+]

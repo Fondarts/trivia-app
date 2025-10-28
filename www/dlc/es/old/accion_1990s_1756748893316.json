@@ -1,0 +1,134 @@
+[
+  {
+    "q": "¿En qué año se estrenó Misión imposible?",
+    "options": [
+      "1996",
+      "1995",
+      "1998",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Desafío total?",
+    "options": [
+      "1992",
+      "1989",
+      "1991",
+      "1990"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Terminator 2: El juicio final?",
+    "options": [
+      "1993",
+      "1991",
+      "1992",
+      "1990"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Heat?",
+    "options": [
+      "1996",
+      "1995",
+      "1994",
+      "1997"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó La momia?",
+    "options": [
+      "1998",
+      "2001",
+      "2000",
+      "1999"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Hora punta?",
+    "options": [
+      "1998",
+      "2000",
+      "1999",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó El profesional (Léon)?",
+    "options": [
+      "1993",
+      "1995",
+      "1994",
+      "1996"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó キル?",
+    "options": [
+      "1999",
+      "1997",
+      "1996",
+      "1998"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó En tierra peligrosa 2?",
+    "options": [
+      "1999",
+      "1998",
+      "1997",
+      "1996"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Matrix?",
+    "options": [
+      "1999",
+      "2000",
+      "2001",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Batman vuelve",
+      "Heat",
+      "La momia",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  }
+]

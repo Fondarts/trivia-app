@@ -1,0 +1,62 @@
+[
+  {
+    "q": "¿Qué película es esta?",
+    "options": [
+      "Men in Black",
+      "Independence Day",
+      "The Fifth Element",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "Identifica esta película",
+    "options": [
+      "Total Recall",
+      "RoboCop",
+      "キル",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Misión imposible",
+      "キル",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película corresponde esta imagen?",
+    "options": [
+      "キル",
+      "The Matrix",
+      "Blade",
+      "Spawn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "Terminator 2",
+      "Face/Off",
+      "Con Air",
+      "キル"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  }
+]

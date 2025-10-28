@@ -1,0 +1,662 @@
+[
+  {
+    "q": "In what year did World War II begin?",
+    "options": [
+      "1941",
+      "1939",
+      "1945",
+      "1914"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which empire built the Colosseum?",
+    "options": [
+      "Egyptian Empire",
+      "Roman Empire",
+      "Byzantine Empire",
+      "Persian Empire"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Who was the first Roman emperor?",
+    "options": [
+      "Trajan",
+      "Julius Caesar",
+      "Augustus",
+      "Nero"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which civilization built the pyramids of Giza?",
+    "options": [
+      "Greeks",
+      "Sumerians",
+      "Mayans",
+      "Egyptians"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "On which continent did Homo sapiens originate?",
+    "options": [
+      "Africa",
+      "Europe",
+      "Asia",
+      "Oceania"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which wall fell in 1989?",
+    "options": [
+      "Wall of Jericho",
+      "Hadrian's Wall",
+      "Great Wall",
+      "Berlin Wall"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which ship sank in 1912?",
+    "options": [
+      "Lusitania",
+      "Bismarck",
+      "Titanic",
+      "Britannic"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Who was known as the Liberator of America?",
+    "options": [
+      "O'Higgins",
+      "San Martín",
+      "Sucre",
+      "Simón Bolívar"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What religious policy did Luther initiate in 1517?",
+    "options": [
+      "Counter-Reformation",
+      "Protestant Reformation",
+      "East-West Schism",
+      "Council of Nicaea"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which city was buried by Vesuvius?",
+    "options": [
+      "Naples",
+      "Herculaneum",
+      "Pompeii",
+      "Rome"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which revolution began in 1789?",
+    "options": [
+      "Meiji",
+      "French Revolution",
+      "Russian",
+      "Industrial Revolution"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Who was known as the Sun King?",
+    "options": [
+      "Louis XVI",
+      "Louis XIV",
+      "Charles V",
+      "Philip II"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country dropped the first atomic bombs?",
+    "options": [
+      "Germany",
+      "USSR",
+      "United States",
+      "Japan"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What ancient script is read with the Rosetta Stone?",
+    "options": [
+      "Linear B",
+      "Egyptian hieroglyphs",
+      "Runic",
+      "Cuneiform"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which navigator reached America in 1492?",
+    "options": [
+      "Magellan",
+      "Christopher Columbus",
+      "Cabot",
+      "Vasco da Gama"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which war indirectly pitted the US against the USSR?",
+    "options": [
+      "Korean War",
+      "Seven Years' War",
+      "Crimean War",
+      "Cold War"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What epidemic devastated Europe in the 14th century?",
+    "options": [
+      "Influenza",
+      "Smallpox",
+      "Black Death",
+      "Cholera"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What document signed the independence of the US?",
+    "options": [
+      "Declaration of Independence",
+      "Act of Union",
+      "Magna Carta",
+      "Treaty of Versailles"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which ancient kingdom built Machu Picchu?",
+    "options": [
+      "Olmec",
+      "Maya",
+      "Aztec",
+      "Inca"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What route connected China with the Mediterranean?",
+    "options": [
+      "Appian Way",
+      "Royal Road",
+      "Amber Road",
+      "Silk Road"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "In what year did the Western Roman Empire fall?",
+    "options": [
+      "632",
+      "529",
+      "410",
+      "476"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Who unified the Mongol Empire?",
+    "options": [
+      "Batu Khan",
+      "Genghis Khan",
+      "Kublai Khan",
+      "Tamerlane"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What treaty ended World War I?",
+    "options": [
+      "Treaty of Versailles",
+      "Armistice of Compiègne",
+      "Treaty of Brest-Litovsk",
+      "Treaty of Trianon"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which revolution introduced mechanization and factories?",
+    "options": [
+      "French Revolution",
+      "Industrial Revolution",
+      "Reformation",
+      "Enlightenment"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Who led the Chinese Long March?",
+    "options": [
+      "Zhou Enlai",
+      "Sun Yat-sen",
+      "Chiang Kai-shek",
+      "Mao Zedong"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which empire had its capital in Tenochtitlan?",
+    "options": [
+      "Olmec",
+      "Inca",
+      "Maya",
+      "Aztec"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which explorer circumnavigated the globe (expedition)?",
+    "options": [
+      "Drake",
+      "Cook",
+      "Hudson",
+      "Magellan-Elcano"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which English queen was the daughter of the Tudors and 'the Virgin Queen'?",
+    "options": [
+      "Mary I",
+      "Anne",
+      "Elizabeth I",
+      "Catherine"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which revolution overthrew the tsar in 1917?",
+    "options": [
+      "Turkish Revolution",
+      "German Revolution",
+      "Russian Revolution",
+      "Mexican Revolution"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Who wrote *The Prince*?",
+    "options": [
+      "Locke",
+      "Rousseau",
+      "Hobbes",
+      "Machiavelli"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which war of 1950-1953 ended in an armistice?",
+    "options": [
+      "Vietnam",
+      "Arab-Israeli",
+      "Indochina",
+      "Korean War"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which Mesopotamian civilization created the Code of Hammurabi?",
+    "options": [
+      "Akkadian",
+      "Assyrian",
+      "Sumerian",
+      "Babylonian"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Who was the pharaoh of the tomb discovered in 1922?",
+    "options": [
+      "Akhenaten",
+      "Amenhotep III",
+      "Ramesses II",
+      "Tutankhamun"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which conference of 1945 defined post-war Europe?",
+    "options": [
+      "Potsdam",
+      "San Francisco",
+      "Tehran",
+      "Yalta"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which Indian leader promoted non-violence?",
+    "options": [
+      "Ambedkar",
+      "Nehru",
+      "Bose",
+      "Mahatma Gandhi"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which pre-Columbian culture dominated Yucatan?",
+    "options": [
+      "Maya",
+      "Moche",
+      "Aztec",
+      "Inca"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which war was fought between Athens and Sparta?",
+    "options": [
+      "Punic Wars",
+      "Sacred Wars",
+      "Peloponnesian War",
+      "Greco-Persian Wars"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What invention by Gutenberg revolutionized Europe?",
+    "options": [
+      "Astrolabe",
+      "Compass",
+      "Gunpowder",
+      "Printing press with movable type"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which South African leader spent 27 years in prison?",
+    "options": [
+      "Nelson Mandela",
+      "Jacob Zuma",
+      "Thabo Mbeki",
+      "Desmond Tutu"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which empire is known for the 'Immortals'?",
+    "options": [
+      "Parthian",
+      "Hittite",
+      "Achaemenid Persian",
+      "Seljuk"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What year did the Thirty Years' War begin?",
+    "options": [
+      "1618",
+      "1625",
+      "1648",
+      "1605"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Who wrote the 95 Theses of Wittenberg?",
+    "options": [
+      "Zwingli",
+      "Calvin",
+      "Martin Luther",
+      "Melanchthon"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What treaty created the League of Nations?",
+    "options": [
+      "Treaty of Saint-Germain",
+      "Treaty of Neuilly",
+      "Treaty of Versailles",
+      "Treaty of Sèvres"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Chinese dynasty built a large part of the Great Wall?",
+    "options": [
+      "Han",
+      "Ming",
+      "Tang",
+      "Qin"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which battle stopped the Arabs in France (732)?",
+    "options": [
+      "Tours",
+      "Hastings",
+      "Poitiers",
+      "Agincourt"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which civilization developed the Quipu?",
+    "options": [
+      "Aztec",
+      "Moche",
+      "Maya",
+      "Inca"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Macedonian king conquered Persia?",
+    "options": [
+      "Philip II",
+      "Cassander",
+      "Alexander the Great",
+      "Perdiccas"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Who was the first Rashidun caliph?",
+    "options": [
+      "Abu Bakr",
+      "Uthman",
+      "Umar",
+      "Ali"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "What treaty ended the Seven Years' War?",
+    "options": [
+      "Treaty of Paris (1763)",
+      "Nijmegen",
+      "Utrecht",
+      "Ryswick"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Roman emperor issued the Edict of Milan?",
+    "options": [
+      "Julian",
+      "Theodosius",
+      "Constantine I",
+      "Diocletian"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which culture created the Nazca Lines?",
+    "options": [
+      "Paracas",
+      "Chavín",
+      "Nazca",
+      "Tiwanaku"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which empire had its capital in Cuzco?",
+    "options": [
+      "Aztec",
+      "Maya",
+      "Toltec",
+      "Inca"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which naval battle was decisive in 480 BC against Persia?",
+    "options": [
+      "Plataea",
+      "Artemisium",
+      "Marathon",
+      "Salamis"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which English document of 1215 limited royal power?",
+    "options": [
+      "Bill of Rights",
+      "Habeas Corpus Act",
+      "Magna Carta",
+      "Petition of Right"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Turkish leader founded the Republic in 1923?",
+    "options": [
+      "Enver Pasha",
+      "Abdulhamid II",
+      "Atatürk",
+      "Talat Pasha"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which French king was guillotined in 1793?",
+    "options": [
+      "Louis XVI",
+      "Louis XIV",
+      "Louis XV",
+      "Charles X"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which civilization invented zero (America)?",
+    "options": [
+      "Olmec",
+      "Maya",
+      "Aztec",
+      "Inca"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which war (1839–1842) involved opium and China?",
+    "options": [
+      "Second Opium War",
+      "First Opium War",
+      "Taiping",
+      "Boxers"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Polish expedition deciphered Enigma before Bletchley?",
+    "options": [
+      "Deklaracja",
+      "Biuro Szyfrów",
+      "AK",
+      "Sonderkommando"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Assyrian king built the library of Nineveh?",
+    "options": [
+      "Sennacherib",
+      "Sargon II",
+      "Ashurbanipal",
+      "Esarhaddon"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  }
+]

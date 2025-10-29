@@ -441,16 +441,23 @@ async function startAsyncGame(matchId) {
         // Configurar el estado del juego
         if (window.STATE) {
           window.STATE.mode = 'async';
+          window.STATE.status = 'waiting_for_opponent_answer'; // Estado por defecto para partidas asíncronas
           window.STATE.category = matchData.category;
           window.STATE.difficulty = matchData.difficulty;
           window.STATE.rounds = matchData.rounds;
           window.STATE.matchId = matchId;
           console.log('🎮 Estado configurado:', {
             mode: window.STATE.mode,
+            status: window.STATE.status,
             category: window.STATE.category,
             difficulty: window.STATE.difficulty,
             rounds: window.STATE.rounds
           });
+          
+          // Actualizar el estilo del botón Exit para modo asíncrono
+          if (window.updateExitButtonStyle) {
+            window.updateExitButtonStyle();
+          }
         }
         
         // Notificar que el jugador entró a la pregunta
@@ -1004,6 +1011,22 @@ export async function acceptRandomRequest(requestId){
   
   console.log('🎮 Partida creada:', match);
   
+  // Eliminar la solicitud de async_match_requests ya que fue aceptada y se creó la partida
+  try {
+    const { error: deleteError } = await sb
+      .from('async_match_requests')
+      .delete()
+      .eq('id', requestId);
+    
+    if (deleteError) {
+      console.error('⚠️ Error eliminando solicitud aceptada:', deleteError);
+    } else {
+      console.log('✅ Solicitud eliminada de async_match_requests (fue aceptada)');
+    }
+  } catch (error) {
+    console.error('⚠️ Error eliminando solicitud:', error);
+  }
+  
   // Notificar al creador de la partida via Realtime
   try {
     await sb
@@ -1015,12 +1038,36 @@ export async function acceptRandomRequest(requestId){
           requestId: requestId,
           matchId: match.id,
           accepterName: me.name,
+          accepterId: me.id,
+          requesterId: updatedRequest.requester_id,
           rounds: updatedRequest.rounds,
           category: updatedRequest.category,
           difficulty: updatedRequest.difficulty
         }
       });
     console.log('📡 Notificación enviada al creador');
+    
+    // También crear una notificación en la tabla de notificaciones si existe
+    try {
+      await sb
+        .from('notifications')
+        .insert({
+          user_id: updatedRequest.requester_id,
+          type: 'match_accepted',
+          title: '¡Partida Aceptada!',
+          message: `${me.name || 'Un jugador'} aceptó tu partida de ${updatedRequest.rounds} preguntas`,
+          data: {
+            matchId: match.id,
+            accepterId: me.id,
+            accepterName: me.name
+          },
+          created_at: isoNow()
+        });
+      console.log('✅ Notificación guardada en base de datos');
+    } catch (notifError) {
+      console.log('ℹ️ Tabla notifications no disponible o error:', notifError);
+      // No es crítico si no existe la tabla de notificaciones
+    }
   } catch (error) {
     console.error('Error enviando notificación:', error);
   }
@@ -1395,6 +1442,11 @@ export async function answerAsyncQuestion(matchId, questionIndex, answer, timeSp
       status: 'waiting_for_opponent_answer',
       message: 'Esperando que tu rival responda...'
     });
+    
+    // Actualizar el estilo del botón Exit (no rojo en modo asíncrono)
+    if (window.updateExitButtonStyle) {
+      window.updateExitButtonStyle();
+    }
   }
   
   return { success: true, bothAnswered };

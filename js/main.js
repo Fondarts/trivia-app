@@ -1314,6 +1314,13 @@ window.addEventListener('load', async ()=>{
         callbacks: {
           onStatus: (data) => {
             console.log('Async VS Status:', data);
+            
+            // Actualizar el estado global
+            if (window.STATE) {
+              window.STATE.status = data.status;
+              console.log('🎮 Estado actualizado:', window.STATE);
+            }
+            
             if (data.status === 'waiting_for_opponent') {
               const badge = document.getElementById('vsCodeBadge');
               if (badge) badge.textContent = 'Esperando rival...';

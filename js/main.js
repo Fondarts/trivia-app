@@ -1196,15 +1196,18 @@ window.addEventListener('load', async ()=>{
   document.getElementById('btnExitGame')?.addEventListener('click', async ()=>{
     // Verificar si estamos en modo asíncrono esperando rival
     const currentState = window.STATE || STATE;
-    const isAsyncWaiting = currentState && currentState.mode === 'async' && 
-      (currentState.status === 'waiting_for_opponent' || currentState.status === 'waiting_for_opponent_answer');
+    const isAsyncWaiting = (currentState && currentState.mode === 'async' && 
+      (currentState.status === 'waiting_for_opponent' || currentState.status === 'waiting_for_opponent_answer')) ||
+      (window.currentGameMode === 'async' && window.currentAsyncMatchId);
     
     console.log('🚪 Botón Exit clickeado:', {
       currentState,
       mode: currentState?.mode,
       status: currentState?.status,
       isAsyncWaiting,
-      vsActive
+      vsActive,
+      currentAsyncMatchId: window.currentAsyncMatchId,
+      currentGameMode: window.currentGameMode
     });
     
     if (isAsyncWaiting) {

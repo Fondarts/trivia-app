@@ -1166,15 +1166,17 @@ window.addEventListener('load', async ()=>{
       messageEl = document.createElement('div');
       messageEl.id = 'asyncExitMessage';
       messageEl.style.cssText = `
-        margin-top: 8px;
-        padding: 8px 12px;
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.3);
-        border-radius: 6px;
-        color: #3b82f6;
-        font-size: 14px;
+        margin-top: 12px;
+        padding: 12px 16px;
+        background: rgba(59, 130, 246, 0.15);
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        border-radius: 8px;
+        color: #1e40af;
+        font-size: 15px;
+        font-weight: 500;
         text-align: center;
-        line-height: 1.4;
+        line-height: 1.5;
+        box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
       `;
       
       // Insertar después del botón Exit

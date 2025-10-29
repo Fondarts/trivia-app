@@ -1188,17 +1188,8 @@ window.addEventListener('load', async ()=>{
     messageEl.textContent = 'Puedes salir y volver al menú de amigos. Te notificaremos cuando tu rival responda.';
     console.log('✅ Texto del mensaje configurado');
     
-    // Ocultar el mensaje después de 5 segundos
-    setTimeout(() => {
-      if (messageEl) {
-        messageEl.style.opacity = '0';
-        setTimeout(() => {
-          if (messageEl && messageEl.parentNode) {
-            messageEl.parentNode.removeChild(messageEl);
-          }
-        }, 300);
-      }
-    }, 5000);
+    // En partidas asíncronas, el mensaje debe permanecer visible
+    // No ocultar automáticamente
   }
 
   // Exponer función globalmente

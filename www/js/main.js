@@ -1115,16 +1115,77 @@ window.addEventListener('load', async ()=>{
   bindLeaderboardsOpen(renderLB);
   bindStatsOpen();
 
-  document.getElementById('btnExitGame')?.addEventListener('click', async ()=>{
-    if (!confirm('¿Seguro que querés salir de la partida?')) return;
-    if (vsActive){
-      await leaveMatch();
-      vsActive = false;
+  // Función para actualizar el estilo del botón Exit según el modo
+  function updateExitButtonStyle() {
+    const exitBtn = document.getElementById('btnExitGame');
+    if (!exitBtn) return;
+    
+    const currentState = window.STATE || STATE;
+    const isAsyncWaiting = currentState && currentState.mode === 'async' && 
+      (currentState.status === 'waiting_for_opponent' || currentState.status === 'waiting_for_opponent_answer');
+    
+    console.log('🎨 Actualizando estilo del botón Exit:', {
+      currentState,
+      mode: currentState?.mode,
+      status: currentState?.status,
+      isAsyncWaiting
+    });
+    
+    if (isAsyncWaiting) {
+      // En modo asíncrono esperando rival: botón normal (no rojo)
+      exitBtn.classList.remove('danger');
+      exitBtn.classList.add('secondary');
+      exitBtn.style.backgroundColor = '';
+      exitBtn.style.color = '';
+      console.log('✅ Botón Exit cambiado a modo asíncrono (no rojo)');
     } else {
-      endGame();
+      // En modo normal: botón rojo (danger)
+      exitBtn.classList.remove('secondary');
+      exitBtn.classList.add('danger');
+      console.log('✅ Botón Exit cambiado a modo normal (rojo)');
     }
-    showConfigUI();
-    setStatus('Listo', false);
+  }
+  
+  // Exponer función globalmente
+  window.updateExitButtonStyle = updateExitButtonStyle;
+
+  document.getElementById('btnExitGame')?.addEventListener('click', async ()=>{
+    // Verificar si estamos en modo asíncrono esperando rival
+    const currentState = window.STATE || STATE;
+    const isAsyncWaiting = currentState && currentState.mode === 'async' && 
+      (currentState.status === 'waiting_for_opponent' || currentState.status === 'waiting_for_opponent_answer');
+    
+    console.log('🚪 Botón Exit clickeado:', {
+      currentState,
+      mode: currentState?.mode,
+      status: currentState?.status,
+      isAsyncWaiting,
+      vsActive
+    });
+    
+    if (isAsyncWaiting) {
+      // En partidas asíncronas esperando rival, no mostrar confirmación
+      console.log('🎮 Saliendo de partida asíncrona (esperando rival)');
+      
+      // Para partidas asíncronas, solo salir sin terminar el juego
+      // No llamar a endGame() porque eso muestra resultados
+      showConfigUI();
+      setStatus('Listo', false);
+      
+      // Mostrar mensaje informativo
+      toast('Puedes salir y volver al menú de amigos. Te notificaremos cuando tu rival responda.');
+    } else {
+      // Para partidas normales, mostrar confirmación
+      if (!confirm('¿Seguro que querés salir de la partida?')) return;
+      if (vsActive){
+        await leaveMatch();
+        vsActive = false;
+      } else {
+        endGame();
+      }
+      showConfigUI();
+      setStatus('Listo', false);
+    }
   });
 
   document.getElementById('backVSResult')?.addEventListener('click', backToHome);

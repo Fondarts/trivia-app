@@ -1149,6 +1149,50 @@ window.addEventListener('load', async ()=>{
   // Exponer función globalmente
   window.updateExitButtonStyle = updateExitButtonStyle;
 
+  // Función para mostrar mensaje de partida asíncrona
+  function showAsyncExitMessage() {
+    const exitBtn = document.getElementById('btnExitGame');
+    if (!exitBtn) return;
+
+    // Crear o actualizar el mensaje
+    let messageEl = document.getElementById('asyncExitMessage');
+    if (!messageEl) {
+      messageEl = document.createElement('div');
+      messageEl.id = 'asyncExitMessage';
+      messageEl.style.cssText = `
+        margin-top: 8px;
+        padding: 8px 12px;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 6px;
+        color: #3b82f6;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.4;
+      `;
+      
+      // Insertar después del botón Exit
+      exitBtn.parentNode.insertBefore(messageEl, exitBtn.nextSibling);
+    }
+    
+    messageEl.textContent = 'Puedes salir y volver al menú de amigos. Te notificaremos cuando tu rival responda.';
+    
+    // Ocultar el mensaje después de 5 segundos
+    setTimeout(() => {
+      if (messageEl) {
+        messageEl.style.opacity = '0';
+        setTimeout(() => {
+          if (messageEl && messageEl.parentNode) {
+            messageEl.parentNode.removeChild(messageEl);
+          }
+        }, 300);
+      }
+    }, 5000);
+  }
+
+  // Exponer función globalmente
+  window.showAsyncExitMessage = showAsyncExitMessage;
+
   document.getElementById('btnExitGame')?.addEventListener('click', async ()=>{
     // Verificar si estamos en modo asíncrono esperando rival
     const currentState = window.STATE || STATE;
@@ -1172,8 +1216,8 @@ window.addEventListener('load', async ()=>{
       showConfigUI();
       setStatus('Listo', false);
       
-      // Mostrar mensaje informativo
-      toast('Puedes salir y volver al menú de amigos. Te notificaremos cuando tu rival responda.');
+      // Mostrar mensaje informativo debajo del botón Exit
+      showAsyncExitMessage();
     } else {
       // Para partidas normales, mostrar confirmación
       if (!confirm('¿Seguro que querés salir de la partida?')) return;

@@ -1151,12 +1151,18 @@ window.addEventListener('load', async ()=>{
 
   // Función para mostrar mensaje de partida asíncrona
   function showAsyncExitMessage() {
+    console.log('🎯 showAsyncExitMessage() ejecutándose');
     const exitBtn = document.getElementById('btnExitGame');
-    if (!exitBtn) return;
+    if (!exitBtn) {
+      console.error('❌ No se encontró btnExitGame');
+      return;
+    }
+    console.log('✅ btnExitGame encontrado:', exitBtn);
 
     // Crear o actualizar el mensaje
     let messageEl = document.getElementById('asyncExitMessage');
     if (!messageEl) {
+      console.log('🎯 Creando nuevo mensaje asyncExitMessage');
       messageEl = document.createElement('div');
       messageEl.id = 'asyncExitMessage';
       messageEl.style.cssText = `
@@ -1172,10 +1178,15 @@ window.addEventListener('load', async ()=>{
       `;
       
       // Insertar después del botón Exit
+      console.log('🎯 Insertando mensaje después del botón Exit');
       exitBtn.parentNode.insertBefore(messageEl, exitBtn.nextSibling);
+      console.log('✅ Mensaje insertado:', messageEl);
+    } else {
+      console.log('🎯 Mensaje asyncExitMessage ya existe, actualizando texto');
     }
     
     messageEl.textContent = 'Puedes salir y volver al menú de amigos. Te notificaremos cuando tu rival responda.';
+    console.log('✅ Texto del mensaje configurado');
     
     // Ocultar el mensaje después de 5 segundos
     setTimeout(() => {
@@ -1220,8 +1231,10 @@ window.addEventListener('load', async ()=>{
       setStatus('Listo', false);
       
       // Mostrar mensaje informativo debajo del botón Exit
+      console.log('🎯 Llamando a showAsyncExitMessage()');
       showAsyncExitMessage();
     } else {
+      console.log('🎮 Modo normal - mostrando confirmación');
       // Para partidas normales, mostrar confirmación
       if (!confirm('¿Seguro que querés salir de la partida?')) return;
       if (vsActive){

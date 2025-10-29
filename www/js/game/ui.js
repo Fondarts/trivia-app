@@ -522,6 +522,40 @@ export async function applyInitialUI(){
     console.error('[packs] no se pudieron cargar', e);
     toast('No se pudieron cargar los packs locales');
   }
+  
+  // Asegurar que los elementos de configuración se muestren correctamente
+  // después de que todo esté cargado
+  setTimeout(() => {
+    const modeSeg = document.getElementById('modeSeg');
+    if (modeSeg) {
+      const activeSeg = modeSeg.querySelector('.seg.active');
+      if (activeSeg) {
+        const mode = activeSeg.dataset.val || 'rounds';
+        console.log('🎯 Aplicando modo inicial:', mode);
+        
+        // Forzar la aplicación del modo inicial
+        const wrapRounds = document.getElementById('roundsWrap');
+        const diffSection = document.getElementById('diffSection');
+        const catSection = document.getElementById('catSection');
+        const spStartWrap = document.getElementById('spStartWrap');
+        
+        if (mode === 'rounds') {
+          if (wrapRounds) wrapRounds.style.display = 'block';
+          if (diffSection) diffSection.style.display = 'block';
+          if (catSection) catSection.style.display = 'block';
+          if (spStartWrap) spStartWrap.style.display = 'block';
+          console.log('✅ Elementos de modo rounds mostrados');
+        } else if (mode === 'timed') {
+          const wrapTime = document.getElementById('timerWrap');
+          if (wrapTime) wrapTime.style.display = 'block';
+          if (diffSection) diffSection.style.display = 'block';
+          if (catSection) catSection.style.display = 'block';
+          if (spStartWrap) spStartWrap.style.display = 'block';
+          console.log('✅ Elementos de modo timed mostrados');
+        }
+      }
+    }
+  }, 100);
 }
 
 export function renderStatsPage() {

@@ -106,9 +106,6 @@ function createFriendsPanel() {
     <div class="friends-header">
       <h3>Amigos</h3>
       <div style="display: flex; gap: 8px;">
-        <button class="btn small" id="btnDebugProfiles" style="font-size: 12px; padding: 4px 8px;">🐛</button>
-        <button class="btn small" id="btnCreateProfiles" style="font-size: 12px; padding: 4px 8px;">👤</button>
-        <button class="btn small" id="btnRepairFriends" style="font-size: 12px; padding: 4px 8px;">🔧</button>
         <button class="iconbtn" id="btnCloseFriends">✖</button>
       </div>
     </div>
@@ -171,106 +168,6 @@ function bindFriendsPanelEvents() {
     document.getElementById('friendsPanel')?.classList.remove('open');
   });
   
-  // Botón de debug de perfiles
-  document.getElementById('btnDebugProfiles')?.addEventListener('click', async () => {
-    if (!socialManager) {
-      showToast('Error: Sistema de amigos no inicializado');
-      return;
-    }
-    
-    showToast('Ejecutando debug de perfiles...');
-    
-    // Obtener los IDs de amigos actuales
-    const result = await socialManager.getFriends();
-    if (result.success && result.data.length > 0) {
-      const friendIds = result.data.map(f => f.user_id);
-      await socialManager.debugFriendProfiles(friendIds);
-      showToast('Debug completado. Revisa la consola.');
-    } else {
-      // Si no hay amigos, intentar obtener las relaciones directamente
-      const { data: friendships } = await socialManager.supabase
-        .from('friendships')
-        .select('*')
-        .or(`user_id.eq.${socialManager.userId},friend_id.eq.${socialManager.userId}`)
-        .eq('status', 'accepted');
-      
-      if (friendships && friendships.length > 0) {
-        const friendIds = friendships.map(f => 
-          f.user_id === socialManager.userId ? f.friend_id : f.user_id
-        );
-        const uniqueIds = [...new Set(friendIds)];
-        await socialManager.debugFriendProfiles(uniqueIds);
-        showToast('Debug completado. Revisa la consola.');
-      } else {
-        showToast('No hay relaciones de amistad para debuggear');
-      }
-    }
-  });
-  
-  // Botón de crear perfiles faltantes
-  document.getElementById('btnCreateProfiles')?.addEventListener('click', async () => {
-    if (!socialManager) {
-      showToast('Error: Sistema de amigos no inicializado');
-      return;
-    }
-    
-    showToast('Creando perfiles faltantes...');
-    
-    // Obtener las relaciones de amistad directamente
-    const { data: friendships } = await socialManager.supabase
-      .from('friendships')
-      .select('*')
-      .or(`user_id.eq.${socialManager.userId},friend_id.eq.${socialManager.userId}`)
-      .eq('status', 'accepted');
-    
-    if (friendships && friendships.length > 0) {
-      const friendIds = friendships.map(f => 
-        f.user_id === socialManager.userId ? f.friend_id : f.user_id
-      );
-      const uniqueIds = [...new Set(friendIds)];
-      
-      const result = await socialManager.createMissingProfiles(uniqueIds);
-      
-      if (result.success) {
-        if (result.data && result.data.length > 0) {
-          showToast(`${result.data.length} perfiles creados. Recargando lista...`);
-        } else {
-          showToast('No había perfiles faltantes.');
-        }
-        
-        // Recargar la lista de amigos
-        setTimeout(() => {
-          loadFriends();
-        }, 1000);
-      } else {
-        showToast('Error al crear perfiles');
-        console.error('Error creando perfiles:', result.error);
-      }
-    } else {
-      showToast('No hay relaciones de amistad para procesar');
-    }
-  });
-  
-  // Botón de reparación de relaciones
-  document.getElementById('btnRepairFriends')?.addEventListener('click', async () => {
-    if (!socialManager) {
-      showToast('Error: Sistema de amigos no inicializado');
-      return;
-    }
-    
-    showToast('Reparando relaciones de amistad...');
-    const result = await socialManager.repairFriendshipRelationships();
-    
-    if (result.success) {
-      showToast('Relaciones reparadas. Recargando lista...');
-      setTimeout(() => {
-        loadFriends();
-      }, 1000);
-    } else {
-      showToast('Error al reparar relaciones');
-      console.error('Error reparando relaciones:', result.error);
-    }
-  });
   
   // Tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {

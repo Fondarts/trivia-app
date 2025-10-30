@@ -1166,9 +1166,7 @@ window.addEventListener('load', async ()=>{
       messageEl = document.createElement('div');
       messageEl.id = 'asyncExitMessage';
       // Detectar si estamos en modo oscuro
-      const isDarkMode = document.body.classList.contains('dark-mode') || 
-                        document.documentElement.classList.contains('dark-mode') ||
-                        window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
       
       messageEl.style.cssText = `
         margin-top: 12px;

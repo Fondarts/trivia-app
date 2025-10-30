@@ -1540,29 +1540,46 @@ async function loadOpenMatches() {
       return;
     }
     
-    // Filtrar por estado activo
-    const activeMatches = allMatches ? allMatches.filter(match => 
-      match.status === 'active'
-    ) : [];
-    console.log('🎯 Partidas activas (antes de filtrar 24h):', activeMatches);
-    
-    // Filtrar partidas mayores a 24 horas y eliminarlas
+    // Filtrar partidas según reglas de terminación
     const now = Date.now();
     const twentyFourHoursMs = 24 * 60 * 60 * 1000;
+    const eightHoursMs = 8 * 60 * 60 * 1000;
+    const sixteenHoursMs = 16 * 60 * 60 * 1000;
     const validMatches = [];
     const expiredMatches = [];
-    
-    for (const match of activeMatches) {
+
+    for (const match of allMatches) {
       const matchTime = new Date(match.created_at).getTime();
       const age = now - matchTime;
       
-      if (age > twentyFourHoursMs) {
-        // Partida expirada - eliminarla
+      // Verificar si la partida está terminada por completar todas las preguntas
+      if (match.status === 'finished' || match.current_question >= match.rounds) {
+        console.log(`🏁 Partida ${match.id} terminada - completada`);
         expiredMatches.push(match);
-        console.log(`⏰ Partida ${match.id} expirada (${Math.floor(age / (1000 * 60 * 60))}h antigua), eliminando...`);
-      } else {
-        validMatches.push(match);
+        continue;
       }
+      
+      // Verificar si la partida expiró por 24 horas sin ser aceptada
+      if (age > twentyFourHoursMs && match.status !== 'question_active') {
+        console.log(`⏰ Partida ${match.id} expiró - 24h sin aceptar`);
+        expiredMatches.push(match);
+        continue;
+      }
+      
+      // Verificar si la partida expiró por abandono (16 horas sin responder)
+      if (match.question_start_time) {
+        const questionStartTime = new Date(match.question_start_time).getTime();
+        const questionAge = now - questionStartTime;
+        
+        if (questionAge > sixteenHoursMs) {
+          console.log(`🚫 Partida ${match.id} expiró - abandono (16h sin responder)`);
+          expiredMatches.push(match);
+          continue;
+        }
+      }
+      
+      // Si llegó aquí, la partida es válida
+      validMatches.push(match);
     }
     
     // Eliminar partidas expiradas de la base de datos

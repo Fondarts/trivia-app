@@ -225,7 +225,7 @@ async function nextAsyncQuestion() {
   // Verificar si hay más preguntas
   if (currentState.index >= currentState.total) {
     console.log('🏁 No hay más preguntas, terminando partida');
-    endAsyncGame();
+    await endAsyncGame();
     return;
   }
   
@@ -239,7 +239,7 @@ async function nextAsyncQuestion() {
   }
 }
 
-function endAsyncGame() {
+async function endAsyncGame() {
   console.log('🏁 endAsyncGame llamado');
   
   const currentState = window.STATE || STATE;
@@ -255,9 +255,41 @@ function endAsyncGame() {
     percentage: Math.round((currentState.score / currentState.total) * 100)
   });
   
-  // Aquí podrías mostrar una pantalla de resultados o llamar a una función de fin de juego
-  // Por ahora solo mostramos en consola
-  alert(`¡Partida terminada! Puntuación: ${currentState.score}/${currentState.total} (${Math.round((currentState.score / currentState.total) * 100)}%)`);
+  // Marcar partida como terminada en la base de datos
+  if (window.currentAsyncMatchId && sb) {
+    try {
+      await sb
+        .from('async_matches')
+        .update({ 
+          status: 'finished',
+          finished_at: isoNow()
+        })
+        .eq('id', window.currentAsyncMatchId);
+      
+      console.log('💾 Partida marcada como terminada en BD:', window.currentAsyncMatchId);
+    } catch (error) {
+      console.error('❌ Error marcando partida como terminada:', error);
+    }
+  }
+  
+  // Limpiar estado
+  currentState.mode = 'idle';
+  currentState.status = 'idle';
+  currentState.index = 0;
+  currentState.score = 0;
+  currentState.deck = [];
+  currentState.matchId = null;
+  
+  // Limpiar variables globales
+  window.currentAsyncMatchId = null;
+  window.currentGameMode = null;
+  window.currentAsyncMatch = null;
+  
+  // Mostrar menú principal
+  showConfigUI();
+  setStatus('Listo', false);
+  
+  console.log('✅ Partida asíncrona terminada');
 }
 
 // ===== Verificar si ambos jugadores respondieron
@@ -344,7 +376,7 @@ async function checkBothAnswered(matchId, questionIndex) {
       } else {
         console.log('🏁 ¡Partida terminada!');
         // Terminar partida asíncrona
-        endAsyncGame();
+        await endAsyncGame();
       }
     }
     

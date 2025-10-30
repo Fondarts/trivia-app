@@ -1230,6 +1230,14 @@ window.addEventListener('load', async ()=>{
       // Mostrar mensaje informativo debajo del botón Exit
       console.log('🎯 Llamando a showAsyncExitMessage()');
       showAsyncExitMessage();
+      
+      // Recargar el listado de partidas abiertas para actualizar el progreso
+      setTimeout(() => {
+        if (window.loadOpenMatches) {
+          console.log('🔄 Recargando listado de partidas abiertas...');
+          window.loadOpenMatches();
+        }
+      }, 1000);
     } else {
       console.log('🎮 Modo normal - mostrando confirmación');
       // Para partidas normales, mostrar confirmación

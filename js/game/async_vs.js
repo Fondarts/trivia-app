@@ -181,7 +181,7 @@ export function initAsyncVS({ supabase, userId, username, callbacks = {} }){
 }
 
 // ===== Funciones para avance automático de preguntas
-function nextAsyncQuestion() {
+async function nextAsyncQuestion() {
   console.log('🔄 nextAsyncQuestion llamado');
   
   const currentState = window.STATE || STATE;
@@ -198,6 +198,23 @@ function nextAsyncQuestion() {
   
   // Incrementar índice de pregunta
   currentState.index++;
+  
+  // Actualizar current_question en la base de datos
+  if (window.currentAsyncMatchId) {
+    try {
+      await sb
+        .from('async_matches')
+        .update({ current_question: currentState.index })
+        .eq('id', window.currentAsyncMatchId);
+      
+      console.log('💾 Progreso actualizado en BD:', {
+        matchId: window.currentAsyncMatchId,
+        currentQuestion: currentState.index
+      });
+    } catch (error) {
+      console.error('❌ Error actualizando progreso en BD:', error);
+    }
+  }
   
   console.log('📊 Estado actualizado:', {
     index: currentState.index,
@@ -320,9 +337,9 @@ async function checkBothAnswered(matchId, questionIndex) {
       
       if (questionIndex + 1 < (window.STATE?.total || 0)) {
         console.log('➡️ Avanzando a la siguiente pregunta...');
-        setTimeout(() => {
+        setTimeout(async () => {
           console.log('🔄 Llamando a nextAsyncQuestion...');
-          nextAsyncQuestion();
+          await nextAsyncQuestion();
         }, 1000); // Esperar 1 segundo para que se vea la respuesta
       } else {
         console.log('🏁 ¡Partida terminada!');

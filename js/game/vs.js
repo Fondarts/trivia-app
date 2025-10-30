@@ -337,9 +337,9 @@ export function answer(choiceIdx){
         if (window.asyncAnsweredSet.size >= window.asyncExpectedAnswers) {
           console.log('🎉 ¡Ambos jugadores respondieron en async mode! Avanzando automáticamente...');
           window.asyncAnsweredSet.clear();
-          setTimeout(() => {
+          setTimeout(async () => {
             if (window.nextAsyncQuestion) {
-              window.nextAsyncQuestion();
+              await window.nextAsyncQuestion();
             }
           }, 600);
         }

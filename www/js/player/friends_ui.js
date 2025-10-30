@@ -1544,15 +1544,57 @@ async function loadOpenMatches() {
     const activeMatches = allMatches ? allMatches.filter(match => 
       match.status === 'active'
     ) : [];
-    console.log('🎯 Partidas activas:', activeMatches);
+    console.log('🎯 Partidas activas (antes de filtrar 24h):', activeMatches);
     
-    if (activeMatches.length === 0) {
+    // Filtrar partidas mayores a 24 horas y eliminarlas
+    const now = Date.now();
+    const twentyFourHoursMs = 24 * 60 * 60 * 1000;
+    const validMatches = [];
+    const expiredMatches = [];
+    
+    for (const match of activeMatches) {
+      const matchTime = new Date(match.created_at).getTime();
+      const age = now - matchTime;
+      
+      if (age > twentyFourHoursMs) {
+        // Partida expirada - eliminarla
+        expiredMatches.push(match);
+        console.log(`⏰ Partida ${match.id} expirada (${Math.floor(age / (1000 * 60 * 60))}h antigua), eliminando...`);
+      } else {
+        validMatches.push(match);
+      }
+    }
+    
+    // Eliminar partidas expiradas de la base de datos
+    if (expiredMatches.length > 0) {
+      console.log(`🧹 Eliminando ${expiredMatches.length} partidas expiradas...`);
+      for (const match of expiredMatches) {
+        try {
+          const { error: deleteError } = await socialManager.supabase
+            .from('async_matches')
+            .delete()
+            .eq('id', match.id);
+          
+          if (deleteError) {
+            console.error(`❌ Error eliminando partida ${match.id}:`, deleteError);
+          } else {
+            console.log(`✅ Partida ${match.id} eliminada (expiró hace ${Math.floor((now - new Date(match.created_at).getTime()) / (1000 * 60 * 60))}h)`);
+          }
+        } catch (error) {
+          console.error(`❌ Error eliminando partida ${match.id}:`, error);
+        }
+      }
+    }
+    
+    console.log('🎯 Partidas válidas (no expiradas):', validMatches);
+    
+    if (validMatches.length === 0) {
       container.innerHTML = '<div class="empty-state">No tienes partidas abiertas</div>';
       return;
     }
     
     // Renderizar partidas
-    container.innerHTML = activeMatches.map(match => createMatchItem(match)).join('');
+    container.innerHTML = validMatches.map(match => createMatchItem(match)).join('');
     
     // Bind events para los botones de partidas
     bindMatchItemEvents();
@@ -1619,7 +1661,7 @@ function createMatchItem(match) {
       <div class="match-info">
         <div class="match-opponent">vs ${opponentName}</div>
         <div class="match-details">
-          ${match.rounds} preguntas • ${match.category} • ${match.difficulty}
+          ${match.current_question || 0}/${match.rounds} preguntas • ${match.category} • ${match.difficulty}
         </div>
         <div class="match-time">${timeAgo}</div>
       </div>
@@ -1650,6 +1692,14 @@ function bindMatchItemEvents() {
         // Iniciar el juego asíncrono
         if (window.startAsyncGame) {
           await window.startAsyncGame(matchId);
+          
+          // Recargar la lista de partidas abiertas después de aceptar
+          // (esto hará que la partida aceptada desaparezca del listado)
+          setTimeout(() => {
+            if (window.loadOpenMatches) {
+              window.loadOpenMatches();
+            }
+          }, 1000);
         } else {
           showToast('Error: Función de juego no disponible');
         }

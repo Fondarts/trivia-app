@@ -501,7 +501,8 @@ export async function startSolo(){
     
     // Configurar el estado para el juego asíncrono
     currentState.score = 0;
-    currentState.index = 0;
+    // NO resetear index - ya se configuró desde la BD en startAsyncGame
+    // currentState.index = 0; // ← Comentado para mantener el progreso
     currentState.total = currentState.rounds;
     
     await ensureInitial60();

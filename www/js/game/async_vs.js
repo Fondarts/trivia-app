@@ -446,12 +446,20 @@ async function startAsyncGame(matchId) {
           window.STATE.difficulty = matchData.difficulty;
           window.STATE.rounds = matchData.rounds;
           window.STATE.matchId = matchId;
-          console.log('🎮 Estado configurado:', {
+          
+          // Cargar progreso desde la base de datos
+          window.STATE.index = matchData.current_question || 0;
+          window.STATE.total = matchData.rounds;
+          window.STATE.score = 0; // Resetear score local
+          
+          console.log('🎮 Estado configurado con progreso:', {
             mode: window.STATE.mode,
             status: window.STATE.status,
             category: window.STATE.category,
             difficulty: window.STATE.difficulty,
-            rounds: window.STATE.rounds
+            rounds: window.STATE.rounds,
+            currentQuestion: window.STATE.index,
+            totalQuestions: window.STATE.total
           });
           
           // Actualizar el estilo del botón Exit para modo asíncrono

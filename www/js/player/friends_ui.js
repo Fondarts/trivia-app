@@ -1189,6 +1189,14 @@ async function showFriendProfile(friendId) {
           </div>
         </div>
         
+        <!-- Acciones -->
+        <div class="profile-section">
+          <div class="row" style="gap: 8px;">
+            <button class="btn accent" id="btnChallengeFriend" style="flex:1">Desafiar</button>
+            <button class="btn secondary danger" id="btnRemoveFriend" style="flex:1">Eliminar Amigo</button>
+          </div>
+        </div>
+        
         <!-- Estadísticas contra este amigo (más compacto) -->
         <div class="profile-section compact">
           <h4>Estadísticas VS</h4>
@@ -1234,14 +1242,6 @@ async function showFriendProfile(friendId) {
             <div class="loading">Cargando logros...</div>
           </div>
         </div>
-        
-        <!-- Acciones -->
-        <div class="profile-section">
-          <div class="row" style="gap: 8px;">
-            <button class="btn accent" id="btnChallengeFriend" style="flex:1">Desafiar</button>
-            <button class="btn secondary danger" id="btnRemoveFriend" style="flex:1">Eliminar Amigo</button>
-          </div>
-        </div>
       </div>
     `;
     document.body.appendChild(profileModal);
@@ -1252,11 +1252,40 @@ async function showFriendProfile(friendId) {
     });
   }
   
-  // Cargar datos del amigo
+  // Cargar datos del usuario
   try {
-    console.log('Cargando perfil del amigo:', friendId);
+    console.log('Cargando perfil del usuario:', friendId);
     
-    // Obtener perfil completo del amigo incluyendo XP y nivel actualizados
+    // Verificar si ya es amigo
+    const { data: friendships } = await socialManager.supabase
+      .from('friendships')
+      .select('status')
+      .or(`and(user_id.eq.${socialManager.userId},friend_id.eq.${friendId}),and(user_id.eq.${friendId},friend_id.eq.${socialManager.userId})`)
+      .limit(1);
+    
+    const isFriend = friendships && friendships.length > 0 && friendships[0].status === 'accepted';
+    const hasPendingRequest = friendships && friendships.length > 0 && friendships[0].status === 'pending';
+    
+    console.log('Relación de amistad:', { isFriend, hasPendingRequest, friendships });
+    
+    // Actualizar el botón según la relación
+    const btnRemove = document.getElementById('btnRemoveFriend');
+    if (btnRemove) {
+      if (isFriend) {
+        btnRemove.textContent = 'Eliminar Amigo';
+        btnRemove.className = 'btn secondary danger';
+      } else if (hasPendingRequest) {
+        btnRemove.textContent = 'Solicitud Pendiente';
+        btnRemove.className = 'btn secondary';
+        btnRemove.disabled = true;
+      } else {
+        btnRemove.textContent = 'Agregar Amigo';
+        btnRemove.className = 'btn secondary accent';
+        btnRemove.disabled = false;
+      }
+    }
+    
+    // Obtener perfil completo del usuario incluyendo XP y nivel actualizados
     const { data: profile, error: profileError } = await socialManager.supabase
       .from('user_profiles')
       .select('*')
@@ -1272,10 +1301,10 @@ async function showFriendProfile(friendId) {
       document.getElementById('friendProfileAvatar').src = profile.avatar_url || 'img/avatar_placeholder.svg';
       
       // Calcular y mostrar XP usando los datos reales del perfil
+      const totalXp = profile.total_xp || 0;
       let currentLevelXP = 0, xpForNextLevel = 100, progressPercent = 0;
       
       if (window.getLevelProgress) {
-        const totalXp = profile.total_xp || 0;
         const progress = window.getLevelProgress(totalXp);
         currentLevelXP = progress.currentLevelXP;
         xpForNextLevel = progress.xpForNextLevel;
@@ -1391,16 +1420,35 @@ async function showFriendProfile(friendId) {
     }, { once: true });
     
     document.getElementById('btnRemoveFriend')?.addEventListener('click', async () => {
-      if (confirm('¿Seguro que quieres eliminar a este amigo?')) {
-        // Eliminar amistad usando la función mejorada
-        const result = await socialManager.removeFriend(friendId);
+      if (isFriend) {
+        // Eliminar amigo
+        if (confirm('¿Seguro que quieres eliminar a este amigo?')) {
+          const result = await socialManager.removeFriend(friendId);
+          
+          if (result.success) {
+            showToast('Amigo eliminado');
+            profileModal.classList.remove('open');
+            loadFriends();
+          } else {
+            showToast('Error al eliminar amigo');
+          }
+        }
+      } else if (!hasPendingRequest) {
+        // Agregar amigo (enviar solicitud)
+        const result = await socialManager.sendFriendRequest(friendId);
         
         if (result.success) {
-          showToast('Amigo eliminado');
+          showToast('Solicitud enviada');
           profileModal.classList.remove('open');
-          loadFriends();
+          // Actualizar el botón
+          const btnRemove = document.getElementById('btnRemoveFriend');
+          if (btnRemove) {
+            btnRemove.textContent = 'Solicitud Pendiente';
+            btnRemove.className = 'btn secondary';
+            btnRemove.disabled = true;
+          }
         } else {
-          showToast('Error al eliminar amigo');
+          showToast(result.error || 'Error al enviar solicitud');
         }
       }
     }, { once: true });
@@ -1610,6 +1658,68 @@ async function loadOpenMatches() {
       return;
     }
     
+    // Enriquecer con estado de turno (ahora almacenado directamente en async_matches)
+    // Los triggers en la DB actualizan automáticamente player1_answered_current, player2_answered_current y current_turn_player_id
+    // Esto elimina la necesidad de consultar async_answers, haciendo la carga mucho más rápida
+    validMatches.forEach(match => {
+      const meId = socialManager.userId;
+      const isPlayer1 = match.player1_id === meId;
+      
+      // Usar los campos nuevos directamente (optimizado - sin consulta adicional)
+      if (match.player1_answered_current !== undefined && match.player2_answered_current !== undefined) {
+        match._meAnswered = isPlayer1 ? match.player1_answered_current : match.player2_answered_current;
+        match._opponentAnswered = isPlayer1 ? match.player2_answered_current : match.player1_answered_current;
+      } else {
+        // Fallback: usar current_turn_player_id si está disponible
+        if (match.current_turn_player_id !== null && match.current_turn_player_id !== undefined) {
+          match._meAnswered = match.current_turn_player_id !== meId;
+          match._opponentAnswered = match.current_turn_player_id === meId;
+        } else {
+          // Si no hay información (partida muy nueva), asumir que es turno del que no inició
+          match._meAnswered = false;
+          match._opponentAnswered = false;
+        }
+      }
+    });
+
+    // Para partidas sin question_start_time, obtener el timestamp de la primera respuesta como fallback
+    // Esto solo se hace para partidas que realmente lo necesitan (question_start_time es null)
+    const matchesWithoutStartTime = validMatches.filter(m => !m.question_start_time && m.status === 'question_active');
+    if (matchesWithoutStartTime.length > 0) {
+      try {
+        const matchIds = matchesWithoutStartTime.map(m => m.id);
+        const currentQ = matchesWithoutStartTime[0].current_question || 0; // Todas deberían tener la misma pregunta actual
+        
+        // Consulta optimizada: obtener todas las respuestas y filtrar el MIN por match_id en frontend
+        const { data: firstAnswers, error: answersError } = await socialManager.supabase
+          .from('async_answers')
+          .select('match_id, created_at')
+          .in('match_id', matchIds)
+          .eq('question_index', currentQ)
+          .order('created_at', { ascending: true });
+        
+        if (!answersError && Array.isArray(firstAnswers)) {
+          // Crear un mapa con el primer timestamp (mínimo) por match_id
+          const firstAnswerMap = {};
+          firstAnswers.forEach(a => {
+            const existing = firstAnswerMap[a.match_id];
+            if (!existing || new Date(a.created_at) < new Date(existing)) {
+              firstAnswerMap[a.match_id] = a.created_at;
+            }
+          });
+          
+          // Asignar fallback a las partidas que lo necesitan
+          matchesWithoutStartTime.forEach(match => {
+            if (firstAnswerMap[match.id]) {
+              match._questionStartFallback = firstAnswerMap[match.id];
+            }
+          });
+        }
+      } catch (e) {
+        console.warn('⚠️ No se pudo obtener timestamp de primera respuesta para fallback:', e);
+      }
+    }
+
     // Renderizar partidas
     container.innerHTML = validMatches.map(match => createMatchItem(match)).join('');
     
@@ -1670,9 +1780,47 @@ function createMatchItem(match) {
   } else {
     timeAgo = 'ahora';
   }
+  // Calcular estado (tu turno / esperando) y, si existe, el tiempo restante
+  const ASYNC_TIMEOUT_MS = 2 * 60 * 60 * 1000; // 2 horas por pregunta
+  let statusLine = '';
   
+  // Determinar correctamente el turno usando los campos almacenados en la DB:
+  // - current_turn_player_id indica directamente de quién es el turno
+  // - Si está null, usar player1_answered_current y player2_answered_current como fallback
+  const meId = socialManager.userId;
+  let finalIsMyTurn;
+  
+  if (match.current_turn_player_id !== null && match.current_turn_player_id !== undefined) {
+    // Campo directo: más simple y rápido
+    finalIsMyTurn = match.current_turn_player_id === meId;
+  } else {
+    // Fallback: calcular basándose en quién respondió
+    const isMyTurn = match._opponentAnswered && !match._meAnswered;
+    const neitherAnswered = !match._meAnswered && !match._opponentAnswered;
+    finalIsMyTurn = isMyTurn || (neitherAnswered && match.player1_id !== meId);
+  }
+  
+  // Para el tiempo: usar question_start_time o fallback con la primera respuesta
+  // Los triggers mantienen question_start_time actualizado, pero para partidas antiguas usamos fallback
+  const startIso = match.question_start_time || match._questionStartFallback;
+  
+  if (startIso) {
+    const elapsedMs = now - new Date(startIso);
+    const remainingMs = Math.max(0, ASYNC_TIMEOUT_MS - elapsedMs);
+    const remH = Math.floor(remainingMs / (1000 * 60 * 60));
+    const remM = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60));
+    const remainingFmt = remH > 0 ? `${remH}h ${remM}m` : `${remM}m`;
+    const isDanger = remainingMs <= (60 * 60 * 1000);
+    statusLine = finalIsMyTurn
+      ? `<span>te quedan <span class="${isDanger ? 'time-danger' : ''}">${remainingFmt}</span></span>`
+      : `<span>esperando al rival • <span class="${isDanger ? 'time-danger' : ''}">${remainingFmt}</span></span>`;
+  } else {
+    // Sin tiempo de inicio conocido, solo mostrar el estado del turno
+    statusLine = finalIsMyTurn ? '<span>tu turno</span>' : '<span>esperando al rival</span>';
+  }
+
   return `
-    <div class="match-item" data-match-id="${match.id}" data-opponent-id="${opponentId}">
+    <div class="match-item clickable-match" data-match-id="${match.id}" data-opponent-id="${opponentId}" style="cursor: pointer;">
       <div class="match-status ${isPlayer1 ? 'player1' : 'player2'}"></div>
       <img src="${opponentAvatar}" class="match-avatar" alt="${opponentName}" onerror="this.src='img/avatar_placeholder.svg'"/>
       <div class="match-info">
@@ -1680,10 +1828,10 @@ function createMatchItem(match) {
         <div class="match-details">
           ${match.current_question || 0}/${match.rounds} preguntas • ${match.category} • ${match.difficulty}
         </div>
-        <div class="match-time">${timeAgo}</div>
+        <div class="match-time">${timeAgo} • ${statusLine}</div>
       </div>
       <div class="match-actions">
-        <button class="btn small accent" onclick="window.startAsyncGame('${match.id}')">
+        <button class="btn small accent" onclick="event.stopPropagation(); window.startAsyncGame('${match.id}')">
           Entrar
         </button>
       </div>
@@ -1693,6 +1841,20 @@ function createMatchItem(match) {
 
 // Función para bindear eventos de los items de partida
 function bindMatchItemEvents() {
+  // Click en la cápsula de partida para ver perfil del oponente
+  document.querySelectorAll('.clickable-match').forEach(item => {
+    item.addEventListener('click', (e) => {
+      // Solo procesar si no se hizo click en un botón
+      if (!e.target.closest('button')) {
+        const opponentId = item.dataset.opponentId;
+        if (opponentId) {
+          showFriendProfile(opponentId);
+        }
+      }
+    });
+  });
+  
+  // Eventos legacy para botones con data-action
   document.querySelectorAll('[data-action="join-match"]').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
@@ -1730,6 +1892,7 @@ function bindMatchItemEvents() {
 
 // Exponer funciones globalmente
 window.loadOpenMatches = loadOpenMatches;
+window.showFriendProfile = showFriendProfile;
 
 export default {
   initFriendsSystem,

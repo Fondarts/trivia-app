@@ -111,6 +111,36 @@ function showConfigUI(){
   if (cfg)  cfg.style.display    = 'block';
 }
 
+// Actualizar descripción del modo de juego
+function updateGameModeDescription(mode) {
+  const descEl = document.getElementById('gameModeDescription');
+  if (!descEl) return;
+  
+  const iconEl = descEl.querySelector('.mode-desc-icon');
+  const textEl = descEl.querySelector('.mode-desc-text');
+  
+  if (!iconEl || !textEl) return;
+  
+  const descriptions = {
+    'random': {
+      icon: '⚡',
+      text: 'Partidas rápidas con respuestas en tiempo real'
+    },
+    'random_async': {
+      icon: '⏰',
+      text: 'Juega a tu ritmo - tienes 2 horas para cada respuesta'
+    },
+    'friend': {
+      icon: '👥',
+      text: 'Desafía a tus amigos y compite contra ellos'
+    }
+  };
+  
+  const desc = descriptions[mode] || descriptions['random'];
+  iconEl.textContent = desc.icon;
+  textEl.textContent = desc.text;
+}
+
 let vsQNo = 0;
 let vsQTotal = null;
 let vsActive = false;
@@ -1112,8 +1142,7 @@ window.addEventListener('load', async ()=>{
     }
   });
   document.getElementById('btnNext')?.addEventListener('click', nextQuestion);
-  bindLeaderboardsOpen(renderLB);
-  bindStatsOpen();
+  bindStatsOpen(renderLB);
 
   // Función para actualizar el estilo del botón Exit según el modo
   function updateExitButtonStyle() {
@@ -1191,7 +1220,7 @@ window.addEventListener('load', async ()=>{
       console.log('🎯 Mensaje asyncExitMessage ya existe, actualizando texto');
     }
     
-    messageEl.textContent = 'Puedes salir y volver al menú de amigos. Te notificaremos cuando tu rival responda.';
+    messageEl.textContent = 'Puedes salir. Te notificaremos cuando el rival haya contestado.';
     console.log('✅ Texto del mensaje configurado');
     
     // En partidas asíncronas, el mensaje debe permanecer visible
@@ -1625,6 +1654,9 @@ window.addEventListener('load', async ()=>{
           console.error('Error al abrir lista de amigos:', err);
         });
       }
+      
+      // Actualizar descripción del modo de juego
+      updateGameModeDescription(p.dataset.val);
       
       // UI: si es amigo, pintar pista en botón
       const btnHost = document.getElementById('btnVsHost');

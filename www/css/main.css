@@ -420,6 +420,31 @@ label {
   background: linear-gradient(135deg, #06b6d4, #0891b2);
 }
 
+/* Descripción de modo de juego */
+.game-mode-description {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.mode-desc-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.mode-desc-text {
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
 #btnFriends svg {
   color: #fff;
 }
@@ -427,6 +452,20 @@ label {
 #btnFriends:hover {
   background: linear-gradient(135deg, #0891b2, #0e7490);
   box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
+}
+
+/* Botón de estadísticas con color especial */
+#btnOpenStats {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+#btnOpenStats svg {
+  color: #fff;
+}
+
+#btnOpenStats:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
 }
 
 /* Botón avatar */
@@ -767,6 +806,8 @@ label {
   justify-content: center;
   transition: all var(--transition-fast);
   color: var(--text);
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 :root[data-theme="light"] .pill {
@@ -1360,6 +1401,10 @@ body.capacitor-app .fs .wrap {
 @keyframes shine { 0% { transform: rotate(45deg) translateX(-200%);} 100% { transform: rotate(45deg) translateX(200%);} }
 @keyframes ripple { to { transform: scale(4); opacity: 0;} }
 @keyframes glowPulse { 0%,100%{box-shadow:0 0 20px rgba(139,92,246,.5);}50%{box-shadow:0 0 40px rgba(139,92,246,.8);} }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
 
 /* Utility classes from animations.css */
 .animate-in { animation: fadeInUp 0.5s cubic-bezier(0.4,0,0.2,1) both; }
@@ -1384,7 +1429,7 @@ body.capacitor-app .fs .wrap {
 .achievement-unlock{ animation: bounceIn .6s cubic-bezier(.68,-.55,.265,1.55); }
 .trophy-shine{ position:relative; overflow:hidden; }
 .trophy-shine::before{ content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:linear-gradient(45deg,transparent 30%, rgba(255,215,0,.3) 50%, transparent 70%); animation: shine 3s infinite; }
-.ripple{ position:relative; overflow:hidden; }
+.ripple{ position:relative; overflow:visible; }
 .ripple-effect{ position:absolute; border-radius:50%; background:rgba(255,255,255,.6); transform:scale(0); animation:ripple .6s ease-out; pointer-events:none; }
 .glow{ animation: glowPulse 2s ease-in-out infinite; }
 
@@ -1400,6 +1445,37 @@ body.capacitor-app .fs .wrap {
 @keyframes dotPulse { 0%,80%,100%{ transform:scale(.8); opacity:.5;} 40%{ transform:scale(1.3); opacity:1;} }
 .splash-title { font-size:48px; font-weight:800; background:linear-gradient(135deg,#8b5cf6,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:10px; letter-spacing:-1px; }
 .splash-subtitle { font-size:14px; color:rgba(229,231,235,.7); text-transform:uppercase; letter-spacing:2px; font-weight:600; }
+
+/* Estilos para tabs de Estadísticas/Leaderboards */
+.stats-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--cardBorder);
+}
+
+.stats-tab {
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  opacity: 0.6;
+}
+
+.stats-tab:hover {
+  opacity: 0.8;
+}
+
+.stats-tab.active {
+  opacity: 1;
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
 .particles { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; pointer-events:none; }
 .particle { position:absolute; width:4px; height:4px; background:rgba(139,92,246,.6); border-radius:50%; animation: particleFloat 10s linear infinite; }
 @keyframes particleFloat { 0%{ transform:translateY(100vh) translateX(0); opacity:0;} 10%{ opacity:1;} 90%{ opacity:1;} 100%{ transform:translateY(-100vh) translateX(100px); opacity:0;} }

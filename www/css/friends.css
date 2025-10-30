@@ -190,6 +190,16 @@
   color: var(--muted);
 }
 
+/* Tiempo crítico (≤ 1h) */
+.time-danger {
+  color: #f44336;
+}
+
+.match-turn {
+  font-size: 10px;
+  color: var(--muted);
+}
+
 .match-actions {
   display: flex;
   gap: 8px;

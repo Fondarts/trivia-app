@@ -213,8 +213,8 @@ export function applyMissingTranslations() {
   // Títulos de ventanas completas
   const fsStatsTitle = document.querySelector('#fsStats .fs-titlebar-title');
   if (fsStatsTitle) fsStatsTitle.textContent = t('statisticsAndAchievements');
-  const fsLBTitle = document.querySelector('#fsLB .fs-titlebar-title');
-  if (fsLBTitle) fsLBTitle.textContent = t('leaderboards');
+  // fsLB ya no existe, está integrado en fsStats con tabs
+  // La traducción de leaderboards se maneja en el tab dentro de fsStats
 
   // Encabezados dentro de fsStats
   const firstH3 = document.querySelector('#fsStats h3');

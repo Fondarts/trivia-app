@@ -672,17 +672,48 @@ export function renderStatsPage() {
     `;
 }
 
-export function bindStatsOpen() {
+export function bindStatsOpen(renderLB) {
     const fsStats = document.getElementById('fsStats');
     const openBtn = document.getElementById('btnOpenStats');
     const backBtn = document.getElementById('backStats');
+    
+    // Manejar tabs de Estadísticas y Leaderboards
+    const statsTab = document.querySelector('.stats-tab[data-tab="stats"]');
+    const leaderboardsTab = document.querySelector('.stats-tab[data-tab="leaderboards"]');
+    const statsTabContent = document.getElementById('statsTabContent');
+    const leaderboardsTabContent = document.getElementById('leaderboardsTabContent');
+    
+    function switchTab(activeTab) {
+        if (activeTab === 'stats') {
+            if (statsTab) statsTab.classList.add('active');
+            if (leaderboardsTab) leaderboardsTab.classList.remove('active');
+            if (statsTabContent) statsTabContent.style.display = 'block';
+            if (leaderboardsTabContent) leaderboardsTabContent.style.display = 'none';
+            renderStatsPage();
+        } else if (activeTab === 'leaderboards') {
+            if (statsTab) statsTab.classList.remove('active');
+            if (leaderboardsTab) leaderboardsTab.classList.add('active');
+            if (statsTabContent) statsTabContent.style.display = 'none';
+            if (leaderboardsTabContent) leaderboardsTabContent.style.display = 'block';
+            if (renderLB) renderLB();
+        }
+    }
+    
+    if (statsTab) {
+        statsTab.addEventListener('click', () => switchTab('stats'));
+    }
+    
+    if (leaderboardsTab) {
+        leaderboardsTab.addEventListener('click', () => switchTab('leaderboards'));
+    }
     
     if (openBtn) {
         openBtn.addEventListener('click', () => {
             if (fsStats) {
                 fsStats.style.display = 'block';
                 window.scrollTo(0, 0);
-                renderStatsPage();
+                // Por defecto mostrar Estadísticas
+                switchTab('stats');
             }
         });
     }
@@ -694,12 +725,8 @@ export function bindStatsOpen() {
     }
 }
 
+// Mantener bindLeaderboardsOpen para compatibilidad, pero ahora está integrado en bindStatsOpen
 export function bindLeaderboardsOpen(renderLB){
-  const fsLB = document.getElementById('fsLB');
-  document.getElementById('btnOpenLB')?.addEventListener('click', async ()=>{
-    fsLB.style.display='block';
-    window.scrollTo(0,0);
-    if (renderLB) await renderLB();
-  });
-  document.getElementById('backLB')?.addEventListener('click', ()=> fsLB.style.display='none');
+  // Ahora esto está integrado en bindStatsOpen, pero mantenemos la función por compatibilidad
+  console.warn('bindLeaderboardsOpen está obsoleto, usar bindStatsOpen en su lugar');
 }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo 'No build step required'",
-    "serve": "npx http-server www -p 8100",
+    "serve": "npx http-server www -p 5502",
     "cap:sync": "npx cap sync",
     "cap:android": "npx cap open android",
     "cap:build": "npx cap sync && npx cap open android"

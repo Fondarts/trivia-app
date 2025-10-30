@@ -1,6 +1,8 @@
 # 🚀 Deploy de Producción para Quizlo!
 
-## Opción 1: Netlify (RECOMENDADO - GRATIS)
+> ⚠️ **NOTA:** Si Netlify está pausado por límites de crédito, consulta `SOLUCION_NETLIFY_PAUSADO.md` para soluciones inmediatas (Vercel, Firebase, etc.)
+
+## Opción 1: Netlify (GRATIS - Puede tener límites)
 
 ### 1. Preparar el Deploy
 ```bash
@@ -42,14 +44,23 @@ https://www.quizlo.app/index.html
 
 ---
 
-## Opción 2: Vercel (GRATIS)
+## Opción 2: Vercel (RECOMENDADO SI NETLIFY ESTÁ PAUSADO - GRATIS)
 
 ### 1. Deploy en Vercel
 1. Ve a: https://vercel.com
 2. Drag & Drop la carpeta `www/`
 3. Te dará: `https://tu-app.vercel.app`
+4. **Ventajas:** Plan gratuito más generoso, menos problemas con límites
 
-### 2. Configurar igual que Netlify pero con tu dominio de Vercel
+### 2. Configurar OAuth igual que Netlify pero con tu dominio de Vercel
+
+**Google Cloud Console:**
+- **JavaScript Origins:** `https://tu-app.vercel.app`
+- **Redirect URIs:** `https://tu-app.vercel.app/index.html`
+
+**Supabase Dashboard:**
+- **Site URL:** `https://tu-app.vercel.app`
+- **Redirect URLs:** `https://tu-app.vercel.app/index.html`
 
 ---
 
@@ -117,9 +128,16 @@ https://www.quizlo.app
 ✅ **Escalable**
 ✅ **Profesional**
 
+## ⚠️ Problemas Comunes
+
+### Netlify Pausado por Límites de Crédito
+- **Síntoma:** Error "Site not available - reached its usage limits"
+- **Solución inmediata:** Usar Vercel o Firebase Hosting
+- **Ver:** `SOLUCION_NETLIFY_PAUSADO.md` para guía completa
+
 ## Próximos Pasos
 
-1. **Deploy inmediato** en Netlify (5 minutos)
+1. **Deploy inmediato** en Netlify/Vercel (5 minutos)
 2. **Configurar OAuth** con la nueva URL
 3. **Testing completo**
 4. **Dominio personalizado** (opcional)

@@ -1171,12 +1171,13 @@ window.addEventListener('load', async ()=>{
         background: rgba(59, 130, 246, 0.15);
         border: 1px solid rgba(59, 130, 246, 0.4);
         border-radius: 8px;
-        color: #1e40af;
+        color: white;
         font-size: 15px;
         font-weight: 500;
         text-align: center;
         line-height: 1.5;
         box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       `;
       
       // Insertar después del botón Exit

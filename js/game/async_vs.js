@@ -458,6 +458,11 @@ async function startAsyncGame(matchId) {
           if (window.updateExitButtonStyle) {
             window.updateExitButtonStyle();
           }
+          
+          // Mostrar mensaje informativo para partidas asíncronas
+          if (window.showAsyncExitMessage) {
+            window.showAsyncExitMessage();
+          }
         }
         
         // Notificar que el jugador entró a la pregunta

@@ -131,37 +131,37 @@
       controls.style.cssText = `
         position: fixed;
         bottom: 20px;
-        left: ${offsetX + gameWidth - 140}px;
+        left: ${offsetX + gameWidth - 160}px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        gap: 5px;
+        gap: 8px;
         z-index: 10002;
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         pointer-events: auto;
       `;
 
       // Botón arriba
-      const upBtn = createFroggerButton('↑', 'up');
+      const upBtn = createFroggerButton('▲', 'up');
       upBtn.style.gridColumn = '2';
       upBtn.style.gridRow = '1';
       controls.appendChild(upBtn);
 
       // Botón izquierda
-      const leftBtn = createFroggerButton('←', 'left');
+      const leftBtn = createFroggerButton('◄', 'left');
       leftBtn.style.gridColumn = '1';
       leftBtn.style.gridRow = '2';
       controls.appendChild(leftBtn);
 
       // Botón derecha
-      const rightBtn = createFroggerButton('→', 'right');
+      const rightBtn = createFroggerButton('►', 'right');
       rightBtn.style.gridColumn = '3';
       rightBtn.style.gridRow = '2';
       controls.appendChild(rightBtn);
 
       // Botón abajo
-      const downBtn = createFroggerButton('↓', 'down');
+      const downBtn = createFroggerButton('▼', 'down');
       downBtn.style.gridColumn = '2';
       downBtn.style.gridRow = '3';
       controls.appendChild(downBtn);
@@ -174,21 +174,41 @@
 
     function createFroggerButton(text, direction) {
       const button = document.createElement('button');
-      button.textContent = text;
+      button.innerHTML = text;
       button.style.cssText = `
-        background: rgba(46, 204, 113, 0.8);
+        background: rgba(231, 76, 60, 0.95);
         color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 24px;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        font-size: 28px;
         font-weight: bold;
+        line-height: 1;
         cursor: pointer;
         transition: all 0.2s;
-        min-height: 35px;
+        width: 48px;
+        height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       `;
+      
+      // Efecto hover/active para mejor feedback
+      button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.9)';
+        button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
+      });
+      
+      button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1)';
+        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+      });
+      
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'scale(1)';
+        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+      });
 
       button.addEventListener('click', () => {
         movePlayer(direction);
@@ -319,11 +339,31 @@
       });
       
       // Verificar colisiones con defensores
+      // Usar un área de colisión más precisa (reducida) para evitar falsos positivos
+      const collisionTolerance = 0.75; // Reducir área de colisión al 75% para mayor precisión
+      const playerCollisionWidth = playerSize * collisionTolerance;
+      const playerCollisionHeight = playerSize * collisionTolerance;
+      const defenderCollisionWidth = defenderSize * collisionTolerance;
+      const defenderCollisionHeight = defenderSize * collisionTolerance;
+      
+      // Centrar el área de colisión dentro del sprite
+      const playerCollisionOffsetX = (playerSize - playerCollisionWidth) / 2;
+      const playerCollisionOffsetY = (playerSize - playerCollisionHeight) / 2;
+      const defenderCollisionOffsetX = (defenderSize - defenderCollisionWidth) / 2;
+      const defenderCollisionOffsetY = (defenderSize - defenderCollisionHeight) / 2;
+      
       game.defenders.forEach(defender => {
-        if (game.player.x < defender.x + defender.width &&
-            game.player.x + playerSize > defender.x &&
-            game.player.y < defender.y + defender.height &&
-            game.player.y + playerSize > defender.y) {
+        // Calcular posiciones reales de las áreas de colisión
+        const playerCollisionX = game.player.x + playerCollisionOffsetX;
+        const playerCollisionY = game.player.y + playerCollisionOffsetY;
+        const defenderCollisionX = defender.x + defenderCollisionOffsetX;
+        const defenderCollisionY = defender.y + defenderCollisionOffsetY;
+        
+        // Verificar colisión solo en el área central reducida
+        if (playerCollisionX < defenderCollisionX + defenderCollisionWidth &&
+            playerCollisionX + playerCollisionWidth > defenderCollisionX &&
+            playerCollisionY < defenderCollisionY + defenderCollisionHeight &&
+            playerCollisionY + playerCollisionHeight > defenderCollisionY) {
           game.gameOver = true;
           game.message = '¡Te detuvieron! DERROTA';
           setTimeout(() => window.BossCore.endBossGame(false), 500);

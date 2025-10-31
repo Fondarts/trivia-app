@@ -19,6 +19,8 @@
     let defensor01 = null;
     let defensor02 = null;
     let canchaImage = null;
+    let soccerBallImage = null;
+    let soccerBallLoaded = false;
     
     const game = {
       player: {x: gameWidth/2 - playerSize/2, y: gameHeight - laneHeight - playerSize/2},
@@ -63,6 +65,15 @@
         (img) => {
           canchaImage = img;
           game.canchaLoaded = true;
+        },
+        () => {}
+      );
+      
+      // Cargar imagen del balón de fútbol
+      window.BossCore.loadImageSimple('assets/soccer/soccer-ball-svgrepo-com.webp',
+        (img) => {
+          soccerBallImage = img;
+          soccerBallLoaded = true;
         },
         () => {}
       );
@@ -114,10 +125,13 @@
     function createFroggerTouchControls() {
       const controls = document.createElement('div');
       controls.id = 'frogger-touch-controls';
+      // Posicionar controles sobre el campo de juego (esquina inferior derecha del área del juego)
+      // El campo está centrado, así que calculamos la posición relativa al canvas
+      const offsetX = (canvas.width - gameWidth) / 2;
       controls.style.cssText = `
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        left: ${offsetX + gameWidth - 140}px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -152,7 +166,9 @@
       downBtn.style.gridRow = '3';
       controls.appendChild(downBtn);
 
-      document.body.appendChild(controls);
+      // Agregar controles al canvas o al contenedor del juego en lugar del body
+      const gameContainer = canvas.parentElement || document.body;
+      gameContainer.appendChild(controls);
       return controls;
     }
 
@@ -184,13 +200,18 @@
     // Crear controles táctiles
     const froggerTouchControls = createFroggerTouchControls();
     
-    // Actualizar HUD inicial
-    window.BossCore.updateBossHUD(`Cruces: ${game.score}/${game.target} - Usa las flechas o controles táctiles`);
+    // Ocultar HUD para frogger (no se necesita el mensaje de instrucciones)
+    const hud = document.getElementById('bossGameHUD');
+    if (hud) hud.style.display = 'none';
     
     function generateDefenders() {
       game.defenders = [];
       
-      for (let i = 0; i < lanes - 3; i++) { // Empezar desde arriba, pero excluir las 2 últimas filas (las más cercanas al jugador)
+      // Generar exactamente 10 filas de defensores (empezar desde arriba, excluir las últimas filas cercanas al jugador)
+      const maxDefenderRows = 10;
+      const rowsToGenerate = Math.min(maxDefenderRows, lanes - 3);
+      
+      for (let i = 0; i < rowsToGenerate; i++) { // Empezar desde arriba, pero excluir las últimas filas (las más cercanas al jugador)
         const isDefensor01 = Math.random() < 0.5;
         
         // Sistema de velocidades más variado y realista
@@ -365,25 +386,31 @@
       });
       
       // Dibujar jugador (balón de fútbol)
-      ctx.fillStyle = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(offsetX + game.player.x + playerSize/2, game.player.y + playerSize/2, playerSize/2, 0, 2 * Math.PI);
-      ctx.fill();
-      
-      // Líneas del balón
-      ctx.strokeStyle = '#000000';
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.arc(offsetX + game.player.x + playerSize/2, game.player.y + playerSize/2, playerSize/2, 0, 2 * Math.PI);
-      ctx.stroke();
-      
-      // Líneas del balón
-      ctx.beginPath();
-      ctx.moveTo(offsetX + game.player.x + playerSize/2, game.player.y);
-      ctx.lineTo(offsetX + game.player.x + playerSize/2, game.player.y + playerSize);
-      ctx.moveTo(offsetX + game.player.x, game.player.y + playerSize/2);
-      ctx.lineTo(offsetX + game.player.x + playerSize, game.player.y + playerSize/2);
-      ctx.stroke();
+      if (soccerBallLoaded && soccerBallImage && soccerBallImage.complete) {
+        // Dibujar imagen del balón SVG
+        ctx.drawImage(soccerBallImage, offsetX + game.player.x, game.player.y, playerSize, playerSize);
+      } else {
+        // Fallback: dibujar balón simple si la imagen no está cargada
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(offsetX + game.player.x + playerSize/2, game.player.y + playerSize/2, playerSize/2, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Líneas del balón
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(offsetX + game.player.x + playerSize/2, game.player.y + playerSize/2, playerSize/2, 0, 2 * Math.PI);
+        ctx.stroke();
+        
+        // Líneas del balón
+        ctx.beginPath();
+        ctx.moveTo(offsetX + game.player.x + playerSize/2, game.player.y);
+        ctx.lineTo(offsetX + game.player.x + playerSize/2, game.player.y + playerSize);
+        ctx.moveTo(offsetX + game.player.x, game.player.y + playerSize/2);
+        ctx.lineTo(offsetX + game.player.x + playerSize, game.player.y + playerSize/2);
+        ctx.stroke();
+      }
       
       // Dibujar texto
       ctx.fillStyle = '#ffffff';

@@ -33,7 +33,7 @@
         unlocked: false, 
         nodes: [], 
         boss: 'tetris',
-        mapImage: 'assets/maps/historia.webp',
+        mapImage: 'assets/maps/historia_V02.webp',
         bossImage: 'assets/bosses/demon_boss.webp',
         bossName: 'Faraón Eterno',
         bossDialog: '¡Mil años de historia me respaldan! No podrás vencerme.'

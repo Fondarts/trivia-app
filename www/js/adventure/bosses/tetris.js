@@ -11,7 +11,7 @@
     const BOSS_SPACE = 120; // Espacio arriba para el demonio
     // Sin HUD superior, centrar el tablero verticalmente dejando espacio para el demonio
     const playW = canvas.width - PAD * 2;
-    // Dejar espacio para el botón Rendirse (70px aprox.) y el demonio arriba
+    // Dejar espacio inferior (80px aprox.) y el demonio arriba
     const playH = canvas.height - (PAD * 2 + 80 + BOSS_SPACE);
     const cell = Math.max(12, Math.floor(Math.min(playW / cols, playH / rows)));
     const offsetX = Math.floor(PAD + (playW - cols * cell) / 2);

@@ -591,6 +591,13 @@
   <!-- Logo interactions y easter eggs -->
   <script src="./js/logo-interactions.js?v=1.0"></script>
   
+  <!-- Core utilities (deben cargarse antes de main.js) -->
+  <script type="module" src="./js/core/storage.js"></script>
+  <script type="module" src="./js/core/dom-utils.js"></script>
+  <script type="module" src="./js/core/state-manager.js"></script>
+  <script type="module" src="./js/core/async-matches-cache.js"></script>
+  <script type="module" src="./js/core/debounce.js"></script>
+  
   <!-- Módulo principal que carga todo lo demás -->
   <script type="module" src="./js/main.js?v=4.0"></script>
   

@@ -126,11 +126,6 @@
     const gameAreaWidth = canvas.width;
     const gameAreaHeight = canvas.height;
     
-    // Cargar imagen del demonio
-    const demonImage = new Image();
-    demonImage.src = 'assets/bosses/demon_boss.webp';
-    let demonLoaded = false;
-    demonImage.onload = () => { demonLoaded = true; };
     
     // Cargar partes del muñeco
     const headImage = new Image();
@@ -216,7 +211,6 @@
       message: '¡Adivina la ciudad o país!',
       
       // Configuración visual
-      demonLoaded: false,
       animationFrame: 0,
       
       // Configuración del handicap
@@ -301,8 +295,9 @@
     canvas.addEventListener('click', focusHiddenInputSoon);
     focusHiddenInputSoon();
     
-    // Actualizar HUD inicial
-    window.BossCore.updateBossHUD(`Errores: ${game.wrongGuesses}/${game.maxWrongGuesses} - Usa el teclado nativo`);
+    // Ocultar HUD para hangman (no se necesita)
+    const hud = document.getElementById('bossGameHUD');
+    if (hud) hud.style.display = 'none';
     
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -345,62 +340,6 @@
         gradient.addColorStop(1, '#1a1a2e');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, baseWidth, baseHeight);
-      }
-      
-      // === DEMONIO ASOMÁNDOSE (como en Tetris) ===
-      if (demonLoaded && demonImage.complete) {
-        const demonWidth = 120;
-        const demonHeight = 95;
-        const demonX = baseWidth/2 - demonWidth/2;
-        const demonY = -10;
-        
-        ctx.drawImage(demonImage, demonX, demonY, demonWidth, demonHeight);
-      } else {
-        // Dibujar demonio simple asomándose
-        ctx.save();
-        ctx.translate(baseWidth/2, 60);
-        
-        // Cuerpo del demonio (solo la parte superior)
-        ctx.fillStyle = '#8b0000';
-        ctx.fillRect(-40, -60, 80, 60);
-        
-        // Cabeza
-        ctx.fillStyle = '#a00000';
-        ctx.beginPath();
-        ctx.arc(0, -40, 30, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Cuernos
-        ctx.fillStyle = '#333';
-        ctx.beginPath();
-        ctx.moveTo(-20, -60);
-        ctx.lineTo(-25, -75);
-        ctx.lineTo(-15, -65);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.moveTo(20, -60);
-        ctx.lineTo(25, -75);
-        ctx.lineTo(15, -65);
-        ctx.fill();
-        
-        // Ojos
-        ctx.fillStyle = '#ff0000';
-        ctx.shadowColor = '#ff0000';
-        ctx.shadowBlur = 5;
-        ctx.beginPath();
-        ctx.arc(-10, -40, 4, 0, Math.PI * 2);
-        ctx.arc(10, -40, 4, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-        
-        // Sonrisa malvada
-        ctx.strokeStyle = '#000000';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(0, -30, 15, 0, Math.PI);
-        ctx.stroke();
-        
-        ctx.restore();
       }
       
       // Texto del juego (en la parte superior) - Responsive

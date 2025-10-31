@@ -135,23 +135,45 @@ export function initAsyncVS({ supabase, userId, username, callbacks = {} }){
         checkBothAnswered(payload.payload.matchId, payload.payload.questionIndex);
       }
     })
-    .on('broadcast', { event: 'both_answered' }, (payload) => {
+    .on('broadcast', { event: 'both_answered' }, async (payload) => {
       console.log('📡 Notificación de ambos respondieron:', payload);
       
-      // Verificar si es para nuestra partida actual
-      if (payload.payload && payload.payload.match_id === window.currentAsyncMatchId) {
-        console.log('🎉 ¡Ambos respondieron! Avanzando a la siguiente pregunta...', payload.payload);
+      // Verificar si es para una de nuestras partidas (puede que no estemos en la partida actualmente)
+      const matchId = payload.payload?.match_id || payload.payload?.matchId;
+      
+      if (matchId) {
+        // Verificar si esta partida es nuestra
+        const { data: match } = await sb
+          .from('async_matches')
+          .select('player1_id, player2_id')
+          .eq('id', matchId)
+          .single();
         
-        // Mostrar notificación al usuario
-        if (window.toast) {
-          window.toast(`¡Ambos respondieron! Avanzando a la pregunta ${payload.payload.nextQuestion + 1}...`);
-        }
+        const currentUserId = me?.id || window.currentUser?.id;
+        const isMyMatch = match && (match.player1_id === currentUserId || match.player2_id === currentUserId);
         
-        // Avanzar a la siguiente pregunta
-        if (window.nextAsyncQuestion) {
-          setTimeout(() => {
-            window.nextAsyncQuestion();
-          }, 2000); // Esperar 2 segundos para que vean el mensaje
+        if (isMyMatch) {
+          console.log('🎉 ¡Ambos respondieron! Nueva pregunta disponible...', payload.payload);
+          
+          // Mostrar notificación al usuario
+          if (window.toast) {
+            window.toast(`¡Ambos respondieron! Pregunta ${(payload.payload.nextQuestion || payload.payload.questionIndex) + 1} disponible`);
+          }
+          
+          // Invalidar caché de partidas abiertas
+          if (window.asyncMatchesCache && currentUserId) {
+            window.asyncMatchesCache.invalidate(currentUserId);
+          }
+          
+          // Si estamos en la partida actualmente, avanzar automáticamente
+          if (window.currentAsyncMatchId === matchId && window.nextAsyncQuestion) {
+            console.log('➡️ Avanzando automáticamente (jugador en partida)');
+            setTimeout(() => {
+              window.nextAsyncQuestion();
+            }, 2000); // Esperar 2 segundos para que vean el mensaje
+          } else {
+            console.log('ℹ️ Jugador no está en partida actualmente, verá nueva pregunta al entrar');
+          }
         }
       }
     })
@@ -199,22 +221,16 @@ async function nextAsyncQuestion() {
   // Incrementar índice de pregunta
   currentState.index++;
   
-  // Actualizar current_question en la base de datos
-  if (window.currentAsyncMatchId) {
-    try {
-      await sb
-        .from('async_matches')
-        .update({ current_question: currentState.index })
-        .eq('id', window.currentAsyncMatchId);
-      
-      console.log('💾 Progreso actualizado en BD:', {
-        matchId: window.currentAsyncMatchId,
-        currentQuestion: currentState.index
-      });
-    } catch (error) {
-      console.error('❌ Error actualizando progreso en BD:', error);
-    }
-  }
+  // CORRECCIÓN: NO actualizar current_question aquí
+  // El progreso se calcula dinámicamente desde async_answers
+  // Solo actualizar si es necesario para compatibilidad con código legacy
+  // NOTA: El avance real se hace en checkBothAnswered() usando advance_async_question()
+  // que ya actualiza current_question cuando ambos responden
+  console.log('💾 Progreso local actualizado (no se actualiza current_question en BD aquí):', {
+    matchId: window.currentAsyncMatchId,
+    currentQuestion: currentState.index,
+    note: 'El progreso se calcula desde async_answers, no desde current_question'
+  });
   
   console.log('📊 Estado actualizado:', {
     index: currentState.index,
@@ -354,30 +370,55 @@ async function checkBothAnswered(matchId, questionIndex) {
           }
         });
       
-      // Actualizar el current_question en la base de datos
-      await sb
-        .from('async_matches')
-        .update({ current_question: questionIndex + 1 })
-        .eq('id', matchId);
+      // CORRECCIÓN: Usar función RPC para avanzar pregunta y resetear campos
+      const nextQuestionIndex = questionIndex + 1;
       
-      // Avanzar a la siguiente pregunta si no es la última
-      console.log('🔍 Verificando si avanzar:', {
-        questionIndex: questionIndex + 1,
-        total: window.STATE?.total,
-        shouldAdvance: questionIndex + 1 < (window.STATE?.total || 0)
-      });
+      // Verificar si hay más preguntas
+      if (nextQuestionIndex >= (window.STATE?.total || match.rounds)) {
+        console.log('🏁 ¡Partida terminada!');
+        await endAsyncGame();
+        return;
+      }
       
-      if (questionIndex + 1 < (window.STATE?.total || 0)) {
-        console.log('➡️ Avanzando a la siguiente pregunta...');
+      // Llamar función RPC que actualiza BD y resetea campos
+      try {
+        const { error: rpcError } = await sb.rpc('advance_async_question', {
+          p_match_id: matchId,
+          p_next_question: nextQuestionIndex
+        });
+        
+        if (rpcError) {
+          console.warn('⚠️ Función RPC no disponible, usando UPDATE directo:', rpcError);
+          // Fallback: actualizar manualmente
+          await sb
+            .from('async_matches')
+            .update({ 
+              current_question: nextQuestionIndex,
+              player1_answered_current: FALSE,
+              player2_answered_current: FALSE,
+              current_turn_player_id: NULL,
+              question_start_time: new Date().toISOString(),
+              status: 'question_active',
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', matchId);
+        } else {
+          console.log('✅ Pregunta avanzada correctamente usando RPC');
+        }
+      } catch (error) {
+        console.error('❌ Error avanzando pregunta:', error);
+      }
+      
+      // Avanzar SOLO para el jugador que está actualmente en la partida
+      if (window.currentAsyncMatchId === matchId) {
+        console.log('➡️ Avanzando a la siguiente pregunta para jugador actual...');
         setTimeout(async () => {
           console.log('🔄 Llamando a nextAsyncQuestion...');
           await nextAsyncQuestion();
-        }, 1000); // Esperar 1 segundo para que se vea la respuesta
-      } else {
-        console.log('🏁 ¡Partida terminada!');
-        // Terminar partida asíncrona
-        await endAsyncGame();
+        }, 1000);
       }
+      
+      // NOTA: El otro jugador recibirá notificación Realtime y actualizará cuando entre de nuevo
     }
     
   } catch (error) {
@@ -482,6 +523,90 @@ async function startAsyncGame(matchId) {
         
         console.log('🎮 Datos de la partida:', matchData);
         
+        // CORRECCIÓN: Determinar qué pregunta debe ver este jugador
+        // No usar current_question directamente, sino calcular según respuestas
+        const currentUserId = me?.id || window.currentUser?.id;
+        if (!currentUserId) {
+          console.error('❌ No se pudo obtener ID del usuario actual');
+          throw new Error('Usuario no identificado');
+        }
+        
+        // Intentar usar función RPC para obtener pregunta correcta
+        let questionToShow = matchData.current_question || 0;
+        try {
+          const { data: rpcQuestion, error: rpcError } = await sb.rpc('get_current_question_for_player', {
+            p_match_id: matchId,
+            p_player_id: currentUserId
+          });
+          
+          if (!rpcError && rpcQuestion !== null) {
+            questionToShow = rpcQuestion;
+            console.log('✅ Pregunta determinada por RPC:', questionToShow);
+          } else {
+            // Fallback: calcular manualmente
+            console.log('⚠️ RPC no disponible, calculando pregunta manualmente...');
+            
+            // Obtener todas las respuestas del jugador actual
+            const { data: myAnswers } = await sb
+              .from('async_answers')
+              .select('question_index')
+              .eq('match_id', matchId)
+              .eq('player_id', currentUserId)
+              .order('question_index', { ascending: true });
+            
+            if (myAnswers && myAnswers.length > 0) {
+              // Encontrar la primera pregunta que NO respondió
+              const answeredIndices = new Set(myAnswers.map(a => a.question_index));
+              questionToShow = matchData.rounds; // Por defecto, asumir que terminó
+              
+              for (let i = 0; i < matchData.rounds; i++) {
+                if (!answeredIndices.has(i)) {
+                  questionToShow = i;
+                  break;
+                }
+              }
+            } else {
+              // No ha respondido ninguna, empezar desde la primera disponible
+              // Verificar hasta qué pregunta ambos jugadores respondieron
+              let maxCompleted = -1;
+              for (let i = 0; i < matchData.rounds; i++) {
+                const { data: answers } = await sb
+                  .from('async_answers')
+                  .select('player_id')
+                  .eq('match_id', matchId)
+                  .eq('question_index', i);
+                
+                if (answers) {
+                  const player1Answered = answers.some(a => a.player_id === matchData.player1_id);
+                  const player2Answered = answers.some(a => a.player_id === matchData.player2_id);
+                  
+                  if (player1Answered && player2Answered) {
+                    maxCompleted = i;
+                  } else {
+                    break; // Encontramos una pregunta no completada
+                  }
+                }
+              }
+              
+              questionToShow = maxCompleted + 1;
+            }
+            
+            console.log('✅ Pregunta calculada manualmente:', questionToShow);
+          }
+        } catch (error) {
+          console.warn('⚠️ Error calculando pregunta, usando current_question de BD:', error);
+          questionToShow = matchData.current_question || 0;
+        }
+        
+        // Verificar si la partida ya terminó
+        if (questionToShow >= matchData.rounds) {
+          console.log('🏁 Partida ya terminada');
+          if (window.toast) {
+            window.toast('Esta partida ya terminó');
+          }
+          return; // No iniciar juego
+        }
+        
         // Configurar el estado global para el juego asíncrono
         window.currentAsyncMatchId = matchId;
         window.currentGameMode = 'async';
@@ -496,8 +621,8 @@ async function startAsyncGame(matchId) {
           window.STATE.rounds = matchData.rounds;
           window.STATE.matchId = matchId;
           
-          // Cargar progreso desde la base de datos
-          window.STATE.index = matchData.current_question || 0;
+          // CORRECCIÓN: Usar pregunta calculada, no current_question de BD
+          window.STATE.index = questionToShow;
           window.STATE.total = matchData.rounds;
           window.STATE.score = 0; // Resetear score local
           
@@ -508,7 +633,8 @@ async function startAsyncGame(matchId) {
             difficulty: window.STATE.difficulty,
             rounds: window.STATE.rounds,
             currentQuestion: window.STATE.index,
-            totalQuestions: window.STATE.total
+            totalQuestions: window.STATE.total,
+            note: 'Pregunta calculada según respuestas del jugador, no current_question de BD'
           });
           
           // Actualizar el estilo del botón Exit para modo asíncrono
@@ -698,98 +824,31 @@ export async function loadAsyncMatches(){
     return [];
   }
   
-  // Limpiar partidas antiguas antes de cargar
-  await cleanupOldMatches();
+  // OPTIMIZACIÓN: Eliminado cleanupOldMatches() aquí - debería ejecutarse en un cron job
+  // OPTIMIZACIÓN: Eliminadas todas las consultas de debug en producción
   
   console.log('🔍 Cargando partidas asíncronas disponibles...');
-  console.log('🔍 Mi ID:', me.id);
   
-  // Debug: consulta sin filtros para ver todas las partidas
-  console.log('🔍 Consultando TODAS las partidas (sin filtros)...');
-  const { data: allMatchesRaw, error: allErrorRaw } = await sb
-    .from('async_match_requests')
-    .select('*')
-    .order('created_at', { ascending: false })
-    .limit(50);
-  
-  console.log('🔍 Todas las partidas (raw):', allMatchesRaw);
-  console.log('🔍 Error (raw):', allErrorRaw);
-  
-  // Debug: mostrar IDs únicos de todas las partidas
-  if (allMatchesRaw) {
-    const uniqueRequesterIds = [...new Set(allMatchesRaw.map(m => m.requester_id))];
-    console.log('🔍 IDs únicos de todas las partidas:', uniqueRequesterIds);
-    console.log('🔍 Mi ID está en la lista de todas las partidas:', uniqueRequesterIds.includes(me.id));
-    console.log('🔍 Total de partidas encontradas:', allMatchesRaw.length);
-    console.log('🔍 Partidas de otros usuarios:', allMatchesRaw.filter(m => m.requester_id !== me.id).length);
-  }
-  
-  // Debug: intentar consulta con bypass de RLS (si es posible)
-  console.log('🔍 Intentando consulta con bypass de RLS...');
-  try {
-    const { data: bypassMatches, error: bypassError } = await sb
-      .from('async_match_requests')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .limit(50);
-    
-    console.log('🔍 Partidas con bypass RLS:', bypassMatches);
-    console.log('🔍 Error bypass RLS:', bypassError);
-  } catch (e) {
-    console.log('🔍 Error en bypass RLS:', e.message);
-  }
-  
-  // Ahora la consulta original
+  // Query optimizada: una sola consulta con filtros en BD (no en frontend)
   const { data: allMatches, error: allError } = await sb
     .from('async_match_requests')
-    .select(`
-      id,
-      requester_id,
-      requester_name,
-      rounds,
-      category,
-      difficulty,
-      created_at,
-      status
-    `)
+    .select('id, requester_id, requester_name, rounds, category, difficulty, created_at, status')
     .eq('status', 'pending')
+    .neq('requester_id', me.id) // Filtrar en BD, no en frontend
     .order('created_at', { ascending: false })
     .limit(20);
   
   if (allError) {
-    console.error('Error cargando todas las partidas:', allError);
+    console.error('Error cargando partidas:', allError);
     throw allError;
   }
   
-  console.log('📋 Todas las partidas pendientes:', allMatches?.length || 0);
-  console.log('📋 Partidas encontradas:', allMatches);
+  const matches = allMatches || [];
+  console.log('📋 Partidas disponibles:', matches.length);
   
-  // Filtrar por usuario manualmente
-  const matches = allMatches?.filter(match => match.requester_id !== me.id) || [];
-  
-  console.log('📋 Partidas filtradas (sin mi ID):', matches.length);
-  console.log('📋 Mi ID para comparar:', me.id);
-  console.log('📋 IDs de partidas:', allMatches?.map(m => m.requester_id));
-  
-  // Debug: verificar si los IDs son realmente diferentes
-  const uniqueIds = [...new Set(allMatches?.map(m => m.requester_id) || [])];
-  console.log('📋 IDs únicos encontrados:', uniqueIds);
-  console.log('📋 Mi ID está en la lista:', uniqueIds.includes(me.id));
-  
-  // Si no hay partidas de otros usuarios, mostrar un mensaje más útil
-  if (matches.length === 0 && allMatches && allMatches.length > 0) {
-    console.log('ℹ️ Todas las partidas pendientes son tuyas. Necesitas que otra persona cree una partida.');
-    console.log('ℹ️ Verificando si hay IDs diferentes...');
-    
-    // Mostrar todas las partidas para debug
-    allMatches.forEach((match, index) => {
-      console.log(`Partida ${index + 1}:`, {
-        id: match.id,
-        requester_id: match.requester_id,
-        requester_name: match.requester_name,
-        es_mia: match.requester_id === me.id
-      });
-    });
+  // Si no hay partidas, mensaje útil
+  if (matches.length === 0) {
+    console.log('ℹ️ No hay partidas disponibles. Crea una partida y espera que alguien se una.');
   }
   
   return matches;
@@ -1143,6 +1202,13 @@ export async function acceptRandomRequest(requestId){
     category: updatedRequest.category,
     difficulty: updatedRequest.difficulty
   });
+  
+  // Invalidar caché de partidas abiertas para ambos jugadores
+  if (window.asyncMatchesCache) {
+    window.asyncMatchesCache.invalidate(updatedRequest.requester_id);
+    window.asyncMatchesCache.invalidate(me.id);
+    console.log('📦 Caché invalidado para ambos jugadores');
+  }
   
   // Iniciar automáticamente el juego para quien acepta
   console.log('🎮 Iniciando juego automáticamente para quien acepta...');

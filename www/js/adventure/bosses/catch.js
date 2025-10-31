@@ -37,9 +37,11 @@
       scienceImages = images;
     });
 
-    // Mantener una zona segura inferior para no tapar con el botón "Rendirse"
+    // Mantener una zona segura inferior
     const safeBottom = 90;
-    const player = { x: baseWidth / 2 - 55, y: baseHeight - safeBottom, width: 110, height: 16, speed: 9 * (handicap.playerSpeed || 1) };
+    const player = { x: baseWidth / 2 - 40, y: baseHeight - safeBottom, width: 80, height: 25, speed: 9 * (handicap.playerSpeed || 1) };
+    const basketWidth = player.width;
+    const basketHeight = player.height;
     // Usar scienceImages de BossCore (se actualizará cuando se carguen)
     const goodSprites = () => {
       return scienceImages.testTube && scienceImages.burner ? 
@@ -57,14 +59,20 @@
     let score = 0;
     let misses = 0;
     const maxMisses = 3;
+    let baseSpeed = 1.5; // Velocidad base inicial (más lento)
+    let speedMultiplier = 1.0; // Multiplicador que aumenta con el tiempo
+    let gameTime = 0; // Tiempo transcurrido en el juego
 
     function spawnObject() {
-      // 75% buenos, 25% malos
+      // 75% buenos (ciencia), 25% malos (no ciencia)
       const isGood = Math.random() < 0.75;
       const goodSpritesArray = goodSprites();
       const sprite = (isGood ? goodSpritesArray : badSprites)[Math.floor(Math.random() * (isGood ? goodSpritesArray.length : badSprites.length))];
       const size = 28 + Math.floor(Math.random() * 10);
-      objects.push({ x: Math.random() * (baseWidth - size), y: -size, size, speed: 2.7 + Math.random() * 1.8, sprite, good: isGood });
+      // Velocidad base + aleatorio, multiplicado por el multiplicador de velocidad
+      // Reducido el rango aleatorio también para empezar más lento
+      const currentSpeed = (baseSpeed + Math.random() * 1.0) * speedMultiplier;
+      objects.push({ x: Math.random() * (baseWidth - size), y: -size, size, speed: currentSpeed, sprite, good: isGood });
     }
 
     const keys = {};
@@ -72,6 +80,13 @@
     document.addEventListener('keyup', (e) => keys[e.key] = false);
 
     function update(dt) {
+      // Aceleración progresiva: aumentar la velocidad a medida que avanza el juego
+      gameTime += dt;
+      // Aumentar el multiplicador de velocidad cada 2 segundos (progresión gradual)
+      speedMultiplier = 1.0 + (gameTime / 2000) * 0.5; // Máximo ~2.5x después de mucho tiempo
+      // Limitar la velocidad máxima para que el juego siga siendo jugable
+      if (speedMultiplier > 3.0) speedMultiplier = 3.0;
+
       // teclado opcional
       if (keys['ArrowLeft'] || keys['a'] || keys['A']) player.x -= player.speed;
       if (keys['ArrowRight'] || keys['d'] || keys['D']) player.x += player.speed;
@@ -86,18 +101,31 @@
 
       for (let i = objects.length - 1; i >= 0; i--) {
         const o = objects[i];
+        // Actualizar velocidad del objeto con el multiplicador actual
         o.y += o.speed;
+        
+        // Colisión con el canasto
         if (o.y + o.size >= player.y && o.y <= player.y + player.height && o.x + o.size >= player.x && o.x <= player.x + player.width) {
           if (o.good) {
+            // Atrapar objeto de CIENCIA = CORRECTO, suma puntos
             score++;
           } else {
+            // Atrapar objeto NO CIENCIA = ERROR, pierde vida
             misses++;
           }
           objects.splice(i, 1);
           continue;
         }
+        
+        // Objeto cae al suelo
         if (o.y > baseHeight) {
-          misses++;
+          if (o.good) {
+            // Dejar caer objeto de CIENCIA = ERROR, pierde vida
+            misses++;
+          } else {
+            // Dejar caer objeto NO CIENCIA = CORRECTO, no pasa nada
+            // No incrementamos misses ni score
+          }
           objects.splice(i, 1);
         }
       }
@@ -117,9 +145,9 @@
       ctx.fillRect(0, 0, baseWidth, baseHeight);
       if (demonLoaded) ctx.drawImage(demonImage, baseWidth / 2 - 70, -20, 140, 120);
 
-      // paddle
-      ctx.fillStyle = '#2ecc71';
-      ctx.fillRect(player.x, player.y, player.width, player.height);
+      // Dibujar canasto en lugar de barra
+      drawBasket(ctx, player.x, player.y, basketWidth, basketHeight);
+      
       // zona segura inferior de referencia (opcional visual mínimo)
       // ctx.fillStyle = 'rgba(255,255,255,0.04)'; ctx.fillRect(0, baseHeight - safeBottom, baseWidth, 1);
 
@@ -139,7 +167,59 @@
       }
 
       ctx.restore();
-      window.BossCore.updateBossHUD(`Puntos: ${score}/10 · Fallos: ${misses}/${maxMisses} · Evita los rojos`);
+      window.BossCore.updateBossHUD(`Puntos: ${score}/10 · Fallos: ${misses}/${maxMisses} · Atrapa solo ciencia`);
+    }
+
+    // Función para dibujar el canasto
+    function drawBasket(ctx, x, y, width, height) {
+      ctx.save();
+      
+      // Cuerpo del canasto (parte inferior)
+      ctx.fillStyle = '#8B4513'; // Color marrón
+      ctx.fillRect(x, y + height * 0.4, width, height * 0.6);
+      
+      // Borde superior del canasto (arco)
+      ctx.strokeStyle = '#654321';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(x + width / 2, y + height * 0.4, width / 2, 0, Math.PI);
+      ctx.stroke();
+      
+      // Líneas horizontales del tejido del canasto
+      ctx.strokeStyle = '#654321';
+      ctx.lineWidth = 2;
+      for (let i = 1; i < 3; i++) {
+        const lineY = y + height * 0.4 + (height * 0.6 / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(x + 5, lineY);
+        ctx.lineTo(x + width - 5, lineY);
+        ctx.stroke();
+      }
+      
+      // Líneas verticales del tejido del canasto
+      ctx.strokeStyle = '#654321';
+      ctx.lineWidth = 1.5;
+      for (let i = 1; i < 5; i++) {
+        const lineX = x + (width / 6) * i;
+        ctx.beginPath();
+        ctx.moveTo(lineX, y + height * 0.4);
+        ctx.lineTo(lineX, y + height);
+        ctx.stroke();
+      }
+      
+      // Asas del canasto (opcional, para mejor visual)
+      ctx.strokeStyle = '#654321';
+      ctx.lineWidth = 3;
+      // Asa izquierda
+      ctx.beginPath();
+      ctx.arc(x - 5, y + height * 0.5, 8, Math.PI / 2, Math.PI * 1.5);
+      ctx.stroke();
+      // Asa derecha
+      ctx.beginPath();
+      ctx.arc(x + width + 5, y + height * 0.5, 8, -Math.PI / 2, Math.PI / 2);
+      ctx.stroke();
+      
+      ctx.restore();
     }
 
     let touchX = null;

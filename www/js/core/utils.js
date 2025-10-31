@@ -53,3 +53,7 @@ export function toast(msg) {
     console.log('Toast:', msg);
   }
 }
+
+// Re-exportar utilidades DOM y State Manager (disponibles como módulos ES6)
+export { DOMUtils, default as DOMUtilsDefault } from './dom-utils.js';
+export { StateManager, default as StateManagerDefault } from './state-manager.js';

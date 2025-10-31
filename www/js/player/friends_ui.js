@@ -1588,99 +1588,105 @@ async function loadOpenMatches() {
       return;
     }
     
-    // Filtrar partidas según reglas de terminación
-    const now = Date.now();
-    const twentyFourHoursMs = 24 * 60 * 60 * 1000;
-    const eightHoursMs = 8 * 60 * 60 * 1000;
-    const sixteenHoursMs = 16 * 60 * 60 * 1000;
-    const validMatches = [];
-    const expiredMatches = [];
-
-    for (const match of allMatches) {
-      const matchTime = new Date(match.created_at).getTime();
-      const age = now - matchTime;
-      
-      // Verificar si la partida está terminada por completar todas las preguntas
-      if (match.status === 'finished' || match.current_question >= match.rounds) {
-        console.log(`🏁 Partida ${match.id} terminada - completada`);
-        expiredMatches.push(match);
-        continue;
-      }
-      
-      // Verificar si la partida expiró por 24 horas sin ser aceptada
-      if (age > twentyFourHoursMs && match.status !== 'question_active') {
-        console.log(`⏰ Partida ${match.id} expiró - 24h sin aceptar`);
-        expiredMatches.push(match);
-        continue;
-      }
-      
-      // Verificar si la partida expiró por abandono (16 horas sin responder)
-      if (match.question_start_time) {
-        const questionStartTime = new Date(match.question_start_time).getTime();
-        const questionAge = now - questionStartTime;
-        
-        if (questionAge > sixteenHoursMs) {
-          console.log(`🚫 Partida ${match.id} expiró - abandono (16h sin responder)`);
-          expiredMatches.push(match);
-          continue;
-        }
-      }
-      
-      // Si llegó aquí, la partida es válida
-      validMatches.push(match);
-    }
+    // Si la función RPC ya filtró las partidas, usar directamente
+    // Si no, usar las que vienen de allMatches (ya filtradas arriba si es fallback)
+    const validMatches = allMatches;
     
-    // Eliminar partidas expiradas de la base de datos
-    if (expiredMatches.length > 0) {
-      console.log(`🧹 Eliminando ${expiredMatches.length} partidas expiradas...`);
-      for (const match of expiredMatches) {
-        try {
-          const { error: deleteError } = await socialManager.supabase
-            .from('async_matches')
-            .delete()
-            .eq('id', match.id);
-          
-          if (deleteError) {
-            console.error(`❌ Error eliminando partida ${match.id}:`, deleteError);
-          } else {
-            console.log(`✅ Partida ${match.id} eliminada (expiró hace ${Math.floor((now - new Date(match.created_at).getTime()) / (1000 * 60 * 60))}h)`);
-          }
-        } catch (error) {
-          console.error(`❌ Error eliminando partida ${match.id}:`, error);
-        }
-      }
-    }
-    
-    console.log('🎯 Partidas válidas (no expiradas):', validMatches);
+    console.log('🎯 Partidas válidas:', validMatches.length);
     
     if (validMatches.length === 0) {
       container.innerHTML = '<div class="empty-state">No tienes partidas abiertas</div>';
       return;
     }
     
-    // Enriquecer con estado de turno (ahora almacenado directamente en async_matches)
-    // Los triggers en la DB actualizan automáticamente player1_answered_current, player2_answered_current y current_turn_player_id
-    // Esto elimina la necesidad de consultar async_answers, haciendo la carga mucho más rápida
-    validMatches.forEach(match => {
+    // CORRECCIÓN: Calcular progreso real basado en respuestas, no current_question
+    // Esto asegura que ambos jugadores vean el mismo progreso
+    for (const match of validMatches) {
       const meId = socialManager.userId;
       const isPlayer1 = match.player1_id === meId;
       
-      // Usar los campos nuevos directamente (optimizado - sin consulta adicional)
-      if (match.player1_answered_current !== undefined && match.player2_answered_current !== undefined) {
-        match._meAnswered = isPlayer1 ? match.player1_answered_current : match.player2_answered_current;
-        match._opponentAnswered = isPlayer1 ? match.player2_answered_current : match.player1_answered_current;
-      } else {
-        // Fallback: usar current_turn_player_id si está disponible
-        if (match.current_turn_player_id !== null && match.current_turn_player_id !== undefined) {
-          match._meAnswered = match.current_turn_player_id !== meId;
-          match._opponentAnswered = match.current_turn_player_id === meId;
+      // Calcular cuántas preguntas completó el jugador actual (donde ambos respondieron)
+      // y cuántas respondió solo él (esperando al rival)
+      try {
+        // Obtener todas las respuestas de la partida para calcular progreso real
+        const { data: allAnswers } = await socialManager.supabase
+          .from('async_answers')
+          .select('question_index, player_id')
+          .eq('match_id', match.id)
+          .order('question_index', { ascending: true });
+        
+        if (allAnswers && allAnswers.length > 0) {
+          // Agrupar respuestas por pregunta
+          const answersByQuestion = {};
+          allAnswers.forEach(answer => {
+            if (!answersByQuestion[answer.question_index]) {
+              answersByQuestion[answer.question_index] = [];
+            }
+            answersByQuestion[answer.question_index].push(answer.player_id);
+          });
+          
+          // Calcular: cuántas preguntas completó (ambos respondieron)
+          let completedQuestions = 0;
+          let myAnsweredQuestions = 0;
+          
+          for (let i = 0; i < match.rounds; i++) {
+            const questionAnswers = answersByQuestion[i] || [];
+            const player1Answered = questionAnswers.includes(match.player1_id);
+            const player2Answered = questionAnswers.includes(match.player2_id);
+            
+            if (player1Answered && player2Answered) {
+              completedQuestions++;
+            }
+            
+            if ((isPlayer1 && player1Answered) || (!isPlayer1 && player2Answered)) {
+              myAnsweredQuestions++;
+            }
+          }
+          
+          // Actualizar match con progreso real calculado
+          match._realCompletedQuestions = completedQuestions;
+          match._myAnsweredQuestions = myAnsweredQuestions;
+          match._displayQuestion = completedQuestions; // Mostrar preguntas completadas
+          
+          console.log(`📊 Partida ${match.id}: Progreso calculado = ${completedQuestions}/${match.rounds} (completadas: ${completedQuestions}, yo respondí: ${myAnsweredQuestions})`);
+          
+          // Determinar si ya respondió la pregunta actual
+          const currentQuestionIndex = completedQuestions; // La siguiente pregunta a responder
+          const answersForCurrent = answersByQuestion[currentQuestionIndex] || [];
+          match._meAnswered = answersForCurrent.includes(meId);
+          match._opponentAnswered = answersForCurrent.includes(isPlayer1 ? match.player2_id : match.player1_id);
         } else {
-          // Si no hay información (partida muy nueva), asumir que es turno del que no inició
+          // No hay respuestas aún
+          match._realCompletedQuestions = 0;
+          match._myAnsweredQuestions = 0;
+          match._displayQuestion = 0;
+          match._meAnswered = false;
+          match._opponentAnswered = false;
+        }
+      } catch (error) {
+        console.warn('⚠️ Error calculando progreso real, usando current_question:', error);
+        // Fallback a current_question si falla el cálculo
+        match._displayQuestion = match.current_question || 0;
+        
+        // Usar campos calculados como fallback
+        if (match.player1_answered_current !== undefined && match.player2_answered_current !== undefined) {
+          match._meAnswered = isPlayer1 ? match.player1_answered_current : match.player2_answered_current;
+          match._opponentAnswered = isPlayer1 ? match.player2_answered_current : match.player1_answered_current;
+        } else {
           match._meAnswered = false;
           match._opponentAnswered = false;
         }
       }
-    });
+      
+      // También usar campos calculados para determinar turno
+      if (match.current_turn_player_id !== null && match.current_turn_player_id !== undefined) {
+        // Campo directo: más simple y rápido
+        match._finalIsMyTurn = match.current_turn_player_id === meId;
+      } else {
+        // Fallback: usar campos calculados
+        match._finalIsMyTurn = match._opponentAnswered && !match._meAnswered;
+      }
+    }
 
     // Para partidas sin question_start_time, obtener el timestamp de la primera respuesta como fallback
     // Esto solo se hace para partidas que realmente lo necesitan (question_start_time es null)
@@ -1784,21 +1790,11 @@ function createMatchItem(match) {
   const ASYNC_TIMEOUT_MS = 2 * 60 * 60 * 1000; // 2 horas por pregunta
   let statusLine = '';
   
-  // Determinar correctamente el turno usando los campos almacenados en la DB:
-  // - current_turn_player_id indica directamente de quién es el turno
-  // - Si está null, usar player1_answered_current y player2_answered_current como fallback
+  // Usar turno calculado previamente en loadOpenMatches
   const meId = socialManager.userId;
-  let finalIsMyTurn;
-  
-  if (match.current_turn_player_id !== null && match.current_turn_player_id !== undefined) {
-    // Campo directo: más simple y rápido
-    finalIsMyTurn = match.current_turn_player_id === meId;
-  } else {
-    // Fallback: calcular basándose en quién respondió
-    const isMyTurn = match._opponentAnswered && !match._meAnswered;
-    const neitherAnswered = !match._meAnswered && !match._opponentAnswered;
-    finalIsMyTurn = isMyTurn || (neitherAnswered && match.player1_id !== meId);
-  }
+  let finalIsMyTurn = match._finalIsMyTurn !== undefined 
+    ? match._finalIsMyTurn 
+    : (match.current_turn_player_id === meId);
   
   // Para el tiempo: usar question_start_time o fallback con la primera respuesta
   // Los triggers mantienen question_start_time actualizado, pero para partidas antiguas usamos fallback
@@ -1826,7 +1822,8 @@ function createMatchItem(match) {
       <div class="match-info">
         <div class="match-opponent">vs ${opponentName}</div>
         <div class="match-details">
-          ${match.current_question || 0}/${match.rounds} preguntas • ${match.category} • ${match.difficulty}
+          ${match._displayQuestion !== undefined ? match._displayQuestion : (match.current_question || 0)}/${match.rounds} preguntas • ${match.category} • ${match.difficulty}
+          <!-- DEBUG: ${match._realCompletedQuestions !== undefined ? `(calculado: ${match._realCompletedQuestions}, BD: ${match.current_question || 0})` : ''} -->
         </div>
         <div class="match-time">${timeAgo} • ${statusLine}</div>
       </div>
@@ -1892,6 +1889,23 @@ function bindMatchItemEvents() {
 
 // Exponer funciones globalmente
 window.loadOpenMatches = loadOpenMatches;
+
+// Invalidar caché cuando se crea/acepta/responde en una partida
+if (window.asyncMatchesCache) {
+  // Invalidar caché cuando se acepta una partida
+  const originalLoadMatches = loadOpenMatches;
+  window.loadOpenMatches = async function() {
+    await originalLoadMatches();
+  };
+  
+  // Exponer función para invalidar caché manualmente
+  window.invalidateAsyncMatchesCache = function() {
+    if (window.asyncMatchesCache && socialManager?.userId) {
+      window.asyncMatchesCache.invalidate(socialManager.userId);
+      console.log('📦 Caché de partidas invalidado manualmente');
+    }
+  };
+}
 window.showFriendProfile = showFriendProfile;
 
 export default {

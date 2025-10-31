@@ -1,5 +1,6 @@
 // www/js/stats.js
 
+import { Storage } from '../core/storage.js';
 import { ACHIEVEMENTS_LIST } from './achievements.js';
 import { calculateLevel } from './experience.js';
 
@@ -35,43 +36,33 @@ const defaultStats = {
 // --- CORRECCIÓN DE ERROR AQUÍ ---
 // Esta función ahora es más robusta y previene errores con datos guardados de versiones antiguas.
 export function getStats() {
-  let stats = defaultStats;
-  try {
-    const savedStats = JSON.parse(localStorage.getItem(STATS_KEY));
-    if (savedStats) {
-      // Fusiona los datos guardados de forma segura para garantizar que todas las propiedades existan.
-      stats = {
-        ...defaultStats,
-        ...savedStats,
-        correctByCategory: {
-          ...defaultStats.correctByCategory,
-          ...(savedStats.correctByCategory || {}),
-        }
-      };
+  const savedStats = Storage.get(STATS_KEY);
+  if (!savedStats) return defaultStats;
+  
+  // Fusiona los datos guardados de forma segura para garantizar que todas las propiedades existan.
+  return {
+    ...defaultStats,
+    ...savedStats,
+    correctByCategory: {
+      ...defaultStats.correctByCategory,
+      ...(savedStats.correctByCategory || {}),
     }
-    return stats;
-  } catch {
-    return defaultStats;
-  }
+  };
 }
 
 function saveStats(stats) {
-  localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+  Storage.set(STATS_KEY, stats);
 }
 
 export function getUnlockedAchievements() {
-  try {
-    const unlocked = JSON.parse(localStorage.getItem(ACHIEVEMENTS_KEY));
-    return new Set(unlocked || []);
-  } catch {
-    return new Set();
-  }
+  const unlocked = Storage.get(ACHIEVEMENTS_KEY, []);
+  return new Set(unlocked);
 }
 
 function saveUnlockedAchievement(achievementId) {
   const unlocked = getUnlockedAchievements();
   unlocked.add(achievementId);
-  localStorage.setItem(ACHIEVEMENTS_KEY, JSON.stringify([...unlocked]));
+  Storage.set(ACHIEVEMENTS_KEY, [...unlocked]);
 }
 
 function handleDailyStreak(stats) {

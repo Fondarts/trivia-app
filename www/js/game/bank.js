@@ -1,4 +1,6 @@
 // /web/js/bank.js
+import { Storage } from '../core/storage.js';
+
 export const BASE_LABELS = {
   movies:    'Películas y series',
   geography: 'Geografía',
@@ -20,46 +22,41 @@ export const PACKS_BASE = 'packs';
 export const SUPPORTED_LANGS = ['es', 'en'];
 
 export function getCurrentLanguage() {
-  try {
-    return localStorage.getItem(K.lang) || 'es';
-  } catch {
-    return 'es';
-  }
+  return Storage.get(K.lang, 'es');
 }
 
 export function getBank() {
-  try {
-    const raw = localStorage.getItem(K.bank);
-    if (raw) return JSON.parse(raw);
-  } catch {}
+  const bank = Storage.get(K.bank);
+  if (bank) return bank;
+  
   const empty = {};
   BASE_KEYS.forEach(k => (empty[k] = []));
-  localStorage.setItem(K.bank, JSON.stringify(empty));
+  Storage.set(K.bank, empty);
   return empty;
 }
 
 export function setBank(b) {
-  localStorage.setItem(K.bank, JSON.stringify(b));
+  Storage.set(K.bank, b);
 }
 
 export function clearBank() {
   const empty = {};
   BASE_KEYS.forEach(k => (empty[k] = []));
-  localStorage.setItem(K.bank, JSON.stringify(empty));
+  Storage.set(K.bank, empty);
 }
 
 export function getCustom() {
-  try {
-    const raw = localStorage.getItem(K.custom);
-    if (raw) return JSON.parse(raw);
-  } catch {}
+  const custom = Storage.get(K.custom);
+  if (custom) return custom;
+  
   const empty = {};
-  localStorage.setItem(K.custom, JSON.stringify(empty));
+  BASE_KEYS.forEach(k => (empty[k] = []));
+  Storage.set(K.custom, empty);
   return empty;
 }
 
 export function setCustom(c) {
-  localStorage.setItem(K.custom, JSON.stringify(c));
+  Storage.set(K.custom, c);
 }
 
 export function getBankCount() {

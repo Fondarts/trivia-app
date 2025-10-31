@@ -363,8 +363,8 @@
         drawGallows(0, 0, baseWidth, baseHeight, targetWidth, targetHeight, bgOffsetX, bgOffsetY);
       }
       
-      // Dibujar palabra oculta (centrada verticalmente)
-      drawHiddenWord(baseWidth/2, baseHeight * 0.78, game.word, game.guessedLetters);
+      // Dibujar palabra oculta (más arriba)
+      drawHiddenWord(baseWidth/2, baseHeight * 0.58, game.word, game.guessedLetters);
       
       // Dibujar letras usadas (en la parte inferior)
       drawUsedLetters(12, baseHeight - 16, game.guessedLetters);

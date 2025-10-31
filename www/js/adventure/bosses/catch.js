@@ -59,7 +59,7 @@
     let score = 0;
     let misses = 0;
     const maxMisses = 3;
-    let baseSpeed = 1.5; // Velocidad base inicial (más lento)
+    let baseSpeed = 0.8; // Velocidad base inicial (muy lento)
     let speedMultiplier = 1.0; // Multiplicador que aumenta con el tiempo
     let gameTime = 0; // Tiempo transcurrido en el juego
 
@@ -71,7 +71,7 @@
       const size = 28 + Math.floor(Math.random() * 10);
       // Velocidad base + aleatorio, multiplicado por el multiplicador de velocidad
       // Reducido el rango aleatorio también para empezar más lento
-      const currentSpeed = (baseSpeed + Math.random() * 1.0) * speedMultiplier;
+      const currentSpeed = (baseSpeed + Math.random() * 0.6) * speedMultiplier;
       objects.push({ x: Math.random() * (baseWidth - size), y: -size, size, speed: currentSpeed, sprite, good: isGood });
     }
 

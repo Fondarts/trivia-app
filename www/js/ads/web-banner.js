@@ -69,8 +69,8 @@ export class WebBanner {
       left: 0;
       right: 0;
       height: 90px;
-      background: #f8f9fa;
-      border-top: 1px solid #e9ecef;
+      background: transparent;
+      border-top: none;
       z-index: 1000;
       display: flex;
       align-items: center;

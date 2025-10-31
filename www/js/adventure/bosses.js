@@ -600,6 +600,78 @@
       ctx.translate(game.offsetX, game.offsetY);
       ctx.scale(game.scale, game.scale);
       
+      // === MARCO DECORATIVO ALREDEDOR DEL CAMPO DE JUEGO ===
+      const borderWidth = 8; // Grosor del marco
+      const borderPadding = 10; // Separación entre el juego y el marco
+      
+      // Marco exterior (borde oscuro con brillo)
+      ctx.strokeStyle = '#2c3e50';
+      ctx.lineWidth = borderWidth + 2;
+      ctx.strokeRect(
+        -borderPadding, 
+        -borderPadding, 
+        game.baseWidth + (borderPadding * 2), 
+        game.baseHeight + (borderPadding * 2)
+      );
+      
+      // Marco interior (borde brillante)
+      ctx.strokeStyle = '#ecf0f1';
+      ctx.lineWidth = borderWidth;
+      ctx.strokeRect(
+        -borderPadding, 
+        -borderPadding, 
+        game.baseWidth + (borderPadding * 2), 
+        game.baseHeight + (borderPadding * 2)
+      );
+      
+      // Línea de neón interna (efecto cinematográfico)
+      ctx.strokeStyle = '#e74c3c';
+      ctx.lineWidth = 3;
+      ctx.shadowColor = '#e74c3c';
+      ctx.shadowBlur = 15;
+      ctx.strokeRect(
+        -borderPadding + (borderWidth / 2), 
+        -borderPadding + (borderWidth / 2), 
+        game.baseWidth + (borderPadding * 2) - borderWidth, 
+        game.baseHeight + (borderPadding * 2) - borderWidth
+      );
+      ctx.shadowBlur = 0;
+      
+      // Esquinas decorativas (estilo cine vintage)
+      const cornerSize = 25;
+      const cornerThickness = 4;
+      ctx.strokeStyle = '#f39c12';
+      ctx.lineWidth = cornerThickness;
+      ctx.lineCap = 'round';
+      
+      // Esquina superior izquierda
+      ctx.beginPath();
+      ctx.moveTo(-borderPadding, -borderPadding + cornerSize);
+      ctx.lineTo(-borderPadding, -borderPadding);
+      ctx.lineTo(-borderPadding + cornerSize, -borderPadding);
+      ctx.stroke();
+      
+      // Esquina superior derecha
+      ctx.beginPath();
+      ctx.moveTo(game.baseWidth + borderPadding - cornerSize, -borderPadding);
+      ctx.lineTo(game.baseWidth + borderPadding, -borderPadding);
+      ctx.lineTo(game.baseWidth + borderPadding, -borderPadding + cornerSize);
+      ctx.stroke();
+      
+      // Esquina inferior izquierda
+      ctx.beginPath();
+      ctx.moveTo(-borderPadding, game.baseHeight + borderPadding - cornerSize);
+      ctx.lineTo(-borderPadding, game.baseHeight + borderPadding);
+      ctx.lineTo(-borderPadding + cornerSize, game.baseHeight + borderPadding);
+      ctx.stroke();
+      
+      // Esquina inferior derecha
+      ctx.beginPath();
+      ctx.moveTo(game.baseWidth + borderPadding - cornerSize, game.baseHeight + borderPadding);
+      ctx.lineTo(game.baseWidth + borderPadding, game.baseHeight + borderPadding);
+      ctx.lineTo(game.baseWidth + borderPadding, game.baseHeight + borderPadding - cornerSize);
+      ctx.stroke();
+      
       // Dibujar jefe (demonio)
       if (imageLoaded) {
         // Dibujar imagen del demonio si está cargada
@@ -1570,8 +1642,8 @@
       ctx.fillRect(hudX - 2, hudY, 2, 80);
       ctx.fillRect(hudX + hudWidth, hudY, 2, 80);
       
-      // Texto pixelado con MEJOR CONTRASTE
-      ctx.fillStyle = '#ffffff';
+      // Texto pixelado con MEJOR CONTRASTE - NOMBRE DEL JEFE EN NEGRO
+      ctx.fillStyle = '#000000';
       ctx.font = isMobile ? 'bold 18px "Courier New", monospace' : 'bold 24px "Courier New", monospace';
       ctx.fillText(game.boss.species.toUpperCase() + '♂', hudX + 20, hudY + 25);
       ctx.fillText('Lv' + game.boss.level, hudX + hudWidth - 60, hudY + 25);
@@ -1647,9 +1719,10 @@
       ctx.font = 'bold 14px "Courier New", monospace';
       ctx.fillText('HP', playerHudX + 20, playerHudY + 45);
       
-      // Mostrar números de HP debajo de la barra para evitar superposición
-      ctx.font = 'bold 14px "Courier New", monospace';
-      ctx.fillText(game.player.hp + '/' + game.player.maxHp, playerHudX + 90, playerHudY + 70);
+      // Mostrar números de HP debajo de la barra con mejor visibilidad
+      ctx.fillStyle = '#000000'; // Negro para mejor contraste
+      ctx.font = 'bold 16px "Courier New", monospace';
+      ctx.fillText(game.player.hp + '/' + game.player.maxHp, playerHudX + 20, playerHudY + 65);
       
       // Barra de EXP pixelada
       ctx.fillStyle = '#191970';

@@ -174,7 +174,7 @@
   overflow-y: auto;
   width: 100%;
   height: 100vh;
-  padding-top: 96px; /* despejar header fijo */
+  padding-top: 60px; /* Reducido para PC - despejar header fijo */
 }
 
 /* Contenedor del mapa con position relative */
@@ -182,7 +182,7 @@
   flex: 1;
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 100%; /* Ancho completo para PC */
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -195,13 +195,16 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  padding: 10px;
+  padding: 8px 10px; /* Padding cómodo */
   background: var(--bg1);
   border-top: 1px solid var(--cardBorder);
   flex-shrink: 0;
-  z-index: 10;
-  /* Ajustar para el banner en la parte inferior */
-  margin-bottom: 100px; /* Espacio para el banner */
+  z-index: 1010; /* Por encima del banner de publicidad (z-index: 1000) */
+  /* Sin margin-bottom para evitar espacio blanco sobre el banner */
+  margin-bottom: 0;
+  /* Agregar padding-bottom para dar espacio al banner sin crear barra blanca */
+  padding-bottom: 100px; /* Espacio suficiente para el banner de 90px + padding */
+  position: relative; /* Necesario para que z-index funcione */
 }
 
 .btn-control {
@@ -239,7 +242,7 @@
   margin: 0;
   padding: 0;
   background-color: #0d1224;
-  background-size: auto 100% !important; /* Fit vertical */
+  background-size: auto 100% !important; /* Fit vertical (altura 100%, ancho proporcional) */
   background-position: center center !important;
   background-repeat: no-repeat !important;
   border-radius: 12px;
@@ -253,7 +256,7 @@
   width: auto;
   height: 100%;
   transform: translateX(-50%);
-  object-fit: contain; /* Fit vertical */
+  object-fit: contain; /* Fit vertical manteniendo proporción */
   pointer-events: none;
   z-index: 1;
 }
@@ -267,9 +270,9 @@
   background: var(--bg1);
   border-bottom: 1px solid var(--cardBorder);
   flex-shrink: 0; /* No permitir que se comprima */
-  max-width: 520px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 12px 0; /* padding vertical, laterales exactos por elementos */
+  padding: 3px 0; /* Reducido a 3px de padding vertical */
 }
 
 .region-wrapper .map-info .map-title {

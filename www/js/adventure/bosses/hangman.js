@@ -150,15 +150,30 @@
     let hangmanPartsLoaded = 0;
     const totalHangmanParts = 6;
     
+    // Almacenar dimensiones naturales de las imágenes cuando carguen
+    const partDimensions = {};
+    
     // Función para verificar si todas las imágenes están cargadas
     function checkImageLoaded(image, imageName) {
       if (image.complete && image.naturalWidth > 0) {
         hangmanPartsLoaded++;
-        console.log(`${imageName} loaded: ${hangmanPartsLoaded}/${totalHangmanParts}`);
+        // Guardar dimensiones naturales
+        partDimensions[imageName] = {
+          width: image.naturalWidth,
+          height: image.naturalHeight,
+          ratio: image.naturalWidth / image.naturalHeight
+        };
+        console.log(`${imageName} loaded: ${hangmanPartsLoaded}/${totalHangmanParts} - ${image.naturalWidth}x${image.naturalHeight} (ratio: ${(image.naturalWidth/image.naturalHeight).toFixed(2)})`);
       } else {
         image.onload = () => {
           hangmanPartsLoaded++;
-          console.log(`${imageName} loaded: ${hangmanPartsLoaded}/${totalHangmanParts}`);
+          // Guardar dimensiones naturales
+          partDimensions[imageName] = {
+            width: image.naturalWidth,
+            height: image.naturalHeight,
+            ratio: image.naturalWidth / image.naturalHeight
+          };
+          console.log(`${imageName} loaded: ${hangmanPartsLoaded}/${totalHangmanParts} - ${image.naturalWidth}x${image.naturalHeight} (ratio: ${(image.naturalWidth/image.naturalHeight).toFixed(2)})`);
         };
         image.onerror = () => {
           console.error(`Error loading ${imageName}: ${image.src}`);
@@ -291,20 +306,40 @@
     
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // === DIBUJAR FONDO CON PROPORCIÓN CORRECTA ===
       ctx.save();
       ctx.translate(offsetX, offsetY);
       ctx.scale(scale, scale);
       
-      // Fondo principal (imagen de pizarra) con FIT VERTICAL (cover height)
+      // Calcular dimensiones del fondo manteniendo proporción original
+      // IMPORTANTE: El fondo y todas las partes tienen las mismas dimensiones (1536x2720)
+      // Por lo tanto, todas deben dibujarse con el mismo tamaño y posición
+      let targetWidth, targetHeight, bgOffsetX, bgOffsetY;
+      
       if (hangmanBgLoaded && hangmanBgImage.complete && hangmanBgImage.naturalWidth && hangmanBgImage.naturalHeight) {
-        // Calcular dimensiones para fit vertical (mantener altura completa, centrar ancho)
-        const imgRatio = hangmanBgImage.naturalWidth / hangmanBgImage.naturalHeight;
-        const targetHeight = baseHeight;
-        const targetWidth = targetHeight * imgRatio;
-        const offsetXImg = (baseWidth - targetWidth) / 2;
+        // Obtener proporción real de la imagen
+        const bgImgRatio = hangmanBgImage.naturalWidth / hangmanBgImage.naturalHeight;
+        const baseRatio = baseWidth / baseHeight;
         
-        ctx.drawImage(hangmanBgImage, offsetXImg, 0, targetWidth, targetHeight);
+        if (bgImgRatio > baseRatio) {
+          // Imagen más ancha: fit vertical (mantener altura)
+          targetHeight = baseHeight;
+          targetWidth = targetHeight * bgImgRatio;
+          bgOffsetX = (baseWidth - targetWidth) / 2;
+          bgOffsetY = 0;
+        } else {
+          // Imagen más alta: fit horizontal (mantener ancho)
+          targetWidth = baseWidth;
+          targetHeight = targetWidth / bgImgRatio;
+          bgOffsetX = 0;
+          bgOffsetY = (baseHeight - targetHeight) / 2;
+        }
+        
+        // Dibujar fondo una sola vez con proporción correcta
+        ctx.drawImage(hangmanBgImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       } else {
+        // Fallback: fondo de color
         const gradient = ctx.createLinearGradient(0, 0, 0, baseHeight);
         gradient.addColorStop(0, '#0a0a0a');
         gradient.addColorStop(1, '#1a1a2e');
@@ -317,7 +352,7 @@
         const demonWidth = 120;
         const demonHeight = 95;
         const demonX = baseWidth/2 - demonWidth/2;
-        const demonY = -10; // Asomándose desde arriba, menos intrusivo
+        const demonY = -10;
         
         ctx.drawImage(demonImage, demonX, demonY, demonWidth, demonHeight);
       } else {
@@ -381,32 +416,19 @@
         ctx.fillText(`💡 Pistas: ${game.hints}`, 20, 60);
       }
       
-      // === ÁREA DE JUEGO USANDO TODO EL CANVAS ===
-      
-      // Usar todo el canvas para el juego, sin marcos restrictivos
-      const gameAreaX = 0;
-      const gameAreaY = 0;
-      const gameAreaWidth = baseWidth;
-      const gameAreaHeight = baseHeight;
-      
-      // Fondo del área de juego (imagen de hangman) - USAR TODO EL CANVAS
-      if (hangmanBgLoaded && hangmanBgImage.complete) {
-        // Dibujar la imagen de fondo usando TODO el canvas
-        ctx.drawImage(hangmanBgImage, 0, 0, canvas.width, canvas.height);
-      } else {
-        // Fallback: fondo azul claro
-        ctx.fillStyle = '#e8f4fd';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // === DIBUJAR PARTES DEL MUÑECO EN EL MISMO SISTEMA DE COORDENADAS ===
+      // Pasar las dimensiones calculadas del fondo a drawGallows para que las partes
+      // se dibujen exactamente igual (mismo tamaño y posición)
+      // Solo dibujar si el fondo fue calculado correctamente
+      if (typeof targetWidth !== 'undefined' && typeof targetHeight !== 'undefined') {
+        drawGallows(0, 0, baseWidth, baseHeight, targetWidth, targetHeight, bgOffsetX, bgOffsetY);
       }
       
-      // Dibujar horca (usando todo el canvas)
-      drawGallows(gameAreaWidth * 0.08, gameAreaHeight * 0.22, gameAreaWidth * 0.84, gameAreaHeight * 0.58);
-      
       // Dibujar palabra oculta (centrada verticalmente)
-      drawHiddenWord(gameAreaWidth/2, gameAreaHeight * 0.78, game.word, game.guessedLetters);
+      drawHiddenWord(baseWidth/2, baseHeight * 0.78, game.word, game.guessedLetters);
       
       // Dibujar letras usadas (en la parte inferior)
-      drawUsedLetters(12, gameAreaHeight - 16, game.guessedLetters);
+      drawUsedLetters(12, baseHeight - 16, game.guessedLetters);
       
       // === MENSAJES DE JUEGO ===
       if (game.gameOver) {
@@ -419,61 +441,56 @@
         ctx.fillText(game.message, baseWidth/2, baseHeight/2);
         ctx.textAlign = 'left';
       }
+      
       ctx.restore();
     }
     
-    function drawGallows(x, y, width, height) {
-      // CALCULAR TAMAÑO PROPORCIONAL AL FONDO ORIGINAL
-      // El fondo original tiene proporción 1536x2720 (0.5647)
-      // Necesito que las partes del muñeco tengan el mismo tamaño relativo
+    function drawGallows(x, y, width, height, targetWidth, targetHeight, bgOffsetX, bgOffsetY) {
+      // === DIBUJAR PARTES DEL MUÑECO ===
+      // IMPORTANTE: Todas las imágenes (fondo y partes) tienen las MISMAS dimensiones: 1536x2720
+      // Por lo tanto, cada parte debe dibujarse exactamente igual que el fondo:
+      // - Mismo tamaño que el fondo (targetWidth x targetHeight)
+      // - Misma posición (bgOffsetX, bgOffsetY)
+      // - Simplemente se superponen porque tienen las mismas dimensiones
+      // Las áreas transparentes de cada imagen no se verán, solo las partes visibles
       
-      // Tamaño base proporcional al canvas (como el fondo)
-      const baseSize = Math.min(canvas.width * 0.15, canvas.height * 0.2); // Mucho más grande
+      // Dibujar partes del muñeco según errores (1-6)
+      // Cada parte se dibuja exactamente igual que el fondo (mismo tamaño y posición)
+      // Como todas tienen las mismas dimensiones y el contenido está en las mismas posiciones relativas,
+      // simplemente se superponen correctamente
       
-      // Posición en el lado derecho donde está la horca en el fondo
-      const hangmanCenterX = canvas.width * 0.75; // 75% del ancho del canvas
-      const hangmanCenterY = canvas.height * 0.25; // 25% de la altura del canvas
-      
-      // Dibujar partes del muñeco según errores usando las imágenes
       if (game.wrongGuesses >= 1 && headImage.complete && headImage.naturalWidth > 0) {
-        console.log('Dibujando cabeza');
-        const headSize = baseSize;
-        ctx.drawImage(headImage, hangmanCenterX - headSize/2, hangmanCenterY - headSize/2, headSize, headSize);
+        // Cabeza: dibujar con mismo tamaño y posición que el fondo
+        ctx.drawImage(headImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       }
       
       if (game.wrongGuesses >= 2 && bodyImage.complete && bodyImage.naturalWidth > 0) {
-        console.log('Dibujando cuerpo');
-        const bodySize = baseSize * 1.2;
-        ctx.drawImage(bodyImage, hangmanCenterX - bodySize/2, hangmanCenterY + baseSize/2, bodySize, bodySize);
+        // Cuerpo: dibujar con mismo tamaño y posición que el fondo
+        ctx.drawImage(bodyImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       }
       
-      if (game.wrongGuesses >= 3 && leftArmImage.complete && leftArmImage.naturalWidth > 0) {
-        console.log('Dibujando brazo izquierdo');
-        const armSize = baseSize * 0.8;
-        ctx.drawImage(leftArmImage, hangmanCenterX - baseSize * 1.5, hangmanCenterY + baseSize * 0.5, armSize, armSize);
+      if (game.wrongGuesses >= 3 && rightArmImage.complete && rightArmImage.naturalWidth > 0) {
+        // Brazo derecho: dibujar con mismo tamaño y posición que el fondo
+        ctx.drawImage(rightArmImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       }
       
-      if (game.wrongGuesses >= 4 && rightArmImage.complete && rightArmImage.naturalWidth > 0) {
-        console.log('Dibujando brazo derecho');
-        const armSize = baseSize * 0.8;
-        ctx.drawImage(rightArmImage, hangmanCenterX + baseSize * 0.5, hangmanCenterY + baseSize * 0.5, armSize, armSize);
+      if (game.wrongGuesses >= 4 && leftArmImage.complete && leftArmImage.naturalWidth > 0) {
+        // Brazo izquierdo: dibujar con mismo tamaño y posición que el fondo
+        ctx.drawImage(leftArmImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       }
       
       if (game.wrongGuesses >= 5 && leftLegImage.complete && leftLegImage.naturalWidth > 0) {
-        console.log('Dibujando pierna izquierda');
-        const legSize = baseSize * 0.9;
-        ctx.drawImage(leftLegImage, hangmanCenterX - baseSize * 0.3, hangmanCenterY + baseSize * 1.8, legSize, legSize);
+        // Pierna izquierda: dibujar con mismo tamaño y posición que el fondo
+        ctx.drawImage(leftLegImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       }
       
       if (game.wrongGuesses >= 6 && rightLegImage.complete && rightLegImage.naturalWidth > 0) {
-        console.log('Dibujando pierna derecha');
-        const legSize = baseSize * 0.9;
-        ctx.drawImage(rightLegImage, hangmanCenterX + baseSize * 0.3, hangmanCenterY + baseSize * 1.8, legSize, legSize);
+        // Pierna derecha: dibujar con mismo tamaño y posición que el fondo
+        ctx.drawImage(rightLegImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
       }
       
-      // Fallback: dibujar horca simple si las imágenes no están cargadas
-      if (hangmanPartsLoaded < totalHangmanParts) {
-        // Fallback: dibujar horca simple si las imágenes no están cargadas
+      // Fallback: dibujar horca simple solo si las imágenes no están cargadas
+      if (hangmanPartsLoaded < totalHangmanParts && !headImage.complete) {
         ctx.strokeStyle = '#8b4513';
         ctx.lineWidth = 6;
         
@@ -500,15 +517,6 @@
         ctx.moveTo(x + width * 0.7, y - height * 0.8);
         ctx.lineTo(x + width * 0.7, y - height * 0.6);
         ctx.stroke();
-        
-        // Dibujar muñeco simple como fallback
-        if (game.wrongGuesses >= 1) {
-          ctx.strokeStyle = '#000000';
-          ctx.lineWidth = 4;
-          ctx.beginPath();
-          ctx.arc(x + width * 0.7, y - height * 0.5, 20, 0, Math.PI * 2);
-          ctx.stroke();
-        }
       }
     }
     

@@ -31,18 +31,29 @@
 
   // Renderizar el mapa principal con las 6 regiones
   function renderAdventureMap() {
-    const container = document.getElementById('adventureMapContainer');
-    const fsAdventure = document.getElementById('fsAdventure');
+    const container = window.DOMOptimizer?.getCachedElement('adventureMapContainer') || 
+                     document.getElementById('adventureMapContainer');
+    const fsAdventure = window.DOMOptimizer?.getCachedElement('fsAdventure') || 
+                       document.getElementById('fsAdventure');
     if (!container || !window.AdventureMode) return;
     
     const ADVENTURE_STATE = window.AdventureMode.ADVENTURE_STATE;
     const stats = window.AdventureMode.getAdventureStats();
     
-    // Agregar header fijo si no existe
-    if (!fsAdventure.querySelector('.adventure-fixed-header')) {
-      const header = document.createElement('div');
-      header.className = 'adventure-fixed-header';
-      header.innerHTML = `
+    // Agregar header fijo si no existe (usar caché DOM)
+    const header = fsAdventure.querySelector('.adventure-fixed-header');
+    if (!header) {
+      const newHeader = window.DOMOptimizer?.getOrCreateElement(
+        'adventureFixedHeader',
+        'div',
+        fsAdventure,
+        {
+          className: 'adventure-fixed-header',
+          insertBefore: fsAdventure.firstChild
+        }
+      ) || document.createElement('div');
+      newHeader.className = 'adventure-fixed-header';
+      newHeader.innerHTML = `
         <div class="adventure-header-inner">
           <div class="app-title">
             <img src="assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
@@ -172,41 +183,54 @@
 
   // Función para vincular los botones del header de aventura
   function bindAdventureHeaderButtons() {
-    // Botón de tienda
-    const btnDLC = document.getElementById('btnDLCAdventure');
+    // Usar caché DOM para botones frecuentes
+    const btnDLC = window.DOMOptimizer?.getCachedElement('btnDLCAdventure') || 
+                   document.getElementById('btnDLCAdventure');
     if (btnDLC) {
       btnDLC.addEventListener('click', () => {
-        // Cerrar modo aventura y abrir tienda
-        document.getElementById('fsAdventure').style.display = 'none';
-        document.getElementById('configCard').style.display = 'block';
-        // Disparar evento de tienda si existe
-        const mainDLCBtn = document.getElementById('btnDLC');
+        // Cerrar modo aventura y abrir tienda (usar caché DOM)
+        const fsAdventure = window.DOMOptimizer?.getCachedElement('fsAdventure') || 
+                           document.getElementById('fsAdventure');
+        const configCard = window.DOMOptimizer?.getCachedElement('configCard') || 
+                          document.getElementById('configCard');
+        if (fsAdventure) fsAdventure.style.display = 'none';
+        if (configCard) configCard.style.display = 'block';
+        const mainDLCBtn = window.DOMOptimizer?.getCachedElement('btnDLC') || 
+                          document.getElementById('btnDLC');
         if (mainDLCBtn) mainDLCBtn.click();
       });
     }
     
-    // Botón de amigos
-    const btnFriends = document.getElementById('btnFriendsAdventure');
+    // Botón de amigos (usar caché DOM)
+    const btnFriends = window.DOMOptimizer?.getCachedElement('btnFriendsAdventure') || 
+                      document.getElementById('btnFriendsAdventure');
     if (btnFriends) {
       btnFriends.addEventListener('click', () => {
-        // Cerrar modo aventura y abrir amigos
-        document.getElementById('fsAdventure').style.display = 'none';
-        document.getElementById('configCard').style.display = 'block';
-        // Disparar evento de amigos si existe
-        const mainFriendsBtn = document.getElementById('btnFriends');
+        const fsAdventure = window.DOMOptimizer?.getCachedElement('fsAdventure') || 
+                          document.getElementById('fsAdventure');
+        const configCard = window.DOMOptimizer?.getCachedElement('configCard') || 
+                          document.getElementById('configCard');
+        if (fsAdventure) fsAdventure.style.display = 'none';
+        if (configCard) configCard.style.display = 'block';
+        const mainFriendsBtn = window.DOMOptimizer?.getCachedElement('btnFriends') || 
+                              document.getElementById('btnFriends');
         if (mainFriendsBtn) mainFriendsBtn.click();
       });
     }
     
-    // Botón de perfil
-    const btnProfile = document.getElementById('btnProfileAdventure');
+    // Botón de perfil (usar caché DOM)
+    const btnProfile = window.DOMOptimizer?.getCachedElement('btnProfileAdventure') || 
+                      document.getElementById('btnProfileAdventure');
     if (btnProfile) {
       btnProfile.addEventListener('click', () => {
-        // Cerrar modo aventura y abrir perfil
-        document.getElementById('fsAdventure').style.display = 'none';
-        document.getElementById('configCard').style.display = 'block';
-        // Disparar evento de perfil si existe
-        const mainProfileBtn = document.getElementById('btnProfile');
+        const fsAdventure = window.DOMOptimizer?.getCachedElement('fsAdventure') || 
+                          document.getElementById('fsAdventure');
+        const configCard = window.DOMOptimizer?.getCachedElement('configCard') || 
+                          document.getElementById('configCard');
+        if (fsAdventure) fsAdventure.style.display = 'none';
+        if (configCard) configCard.style.display = 'block';
+        const mainProfileBtn = window.DOMOptimizer?.getCachedElement('btnProfile') || 
+                             document.getElementById('btnProfile');
         if (mainProfileBtn) mainProfileBtn.click();
       });
     }
@@ -214,8 +238,11 @@
 
   // Renderizar los nodos de una región
   function renderRegionNodes(regionKey) {
-    const container = document.getElementById('adventureMapContainer');
-    const fsAdventure = document.getElementById('fsAdventure');
+    // Usar caché DOM para elementos frecuentes
+    const container = window.DOMOptimizer?.getCachedElement('adventureMapContainer') || 
+                     document.getElementById('adventureMapContainer');
+    const fsAdventure = window.DOMOptimizer?.getCachedElement('fsAdventure') || 
+                       document.getElementById('fsAdventure');
     if (!container || !window.AdventureMode) return;
     
     const ADVENTURE_STATE = window.AdventureMode.ADVENTURE_STATE;
@@ -227,11 +254,20 @@
     
     console.log('Renderizando región:', regionKey, region);
     
-    // Agregar header fijo si no existe
-    if (!fsAdventure.querySelector('.adventure-fixed-header')) {
-      const header = document.createElement('div');
-      header.className = 'adventure-fixed-header';
-      header.innerHTML = `
+    // Agregar header fijo si no existe (optimizado con caché DOM)
+    const header = fsAdventure.querySelector('.adventure-fixed-header');
+    if (!header) {
+      const newHeader = window.DOMOptimizer?.getOrCreateElement(
+        'adventureFixedHeader',
+        'div',
+        fsAdventure,
+        {
+          className: 'adventure-fixed-header',
+          insertBefore: fsAdventure.firstChild
+        }
+      ) || document.createElement('div');
+      newHeader.className = 'adventure-fixed-header';
+      newHeader.innerHTML = `
         <div class="adventure-header-inner">
           <div class="app-title">
             <img src="assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
@@ -255,13 +291,20 @@
           </div>
         </div>
       `;
-      fsAdventure.insertBefore(header, fsAdventure.firstChild);
+      if (!fsAdventure.contains(newHeader)) {
+        fsAdventure.insertBefore(newHeader, fsAdventure.firstChild);
+      }
       
-      // Vincular eventos de los botones del header de aventura
-      setTimeout(() => {
+      // Vincular eventos de los botones del header de aventura (optimizado)
+      window.DOMOptimizer?.queueDOMOperation(() => {
+        bindAdventureHeaderButtons();
+      }, 'normal') || setTimeout(() => {
         bindAdventureHeaderButtons();
       }, 100);
     }
+    
+    // Optimización: Reutilizar contenedor de región si existe
+    const existingWrapper = container.querySelector('.region-wrapper');
     
     // Posiciones del camino optimizadas para formato vertical 9:16
     const pathPositions = [
@@ -344,21 +387,45 @@
       </div>
     `;
     
-    // Aplicar imagen de fondo después de renderizar
-    setTimeout(() => {
+    // Aplicar imagen de fondo después de renderizar (optimizado: agrupar operaciones DOM)
+    window.DOMOptimizer?.batchSetTimeout([
+      () => {
+        const mapDiv = window.DOMOptimizer?.getCachedElement('regionMapDiv', container) || 
+                      document.getElementById('regionMapDiv');
+        if (mapDiv && region.mapImage) {
+          const imagePath = region.mapImage.replace('./', '');
+          window.DOMOptimizer?.updateElement(mapDiv, {
+            style: {
+              backgroundImage: `url('${imagePath}')`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }
+          }) || (mapDiv.style.cssText += `background-image: url('${imagePath}') !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important;`);
+          
+          console.log('Imagen aplicada al mapa:', imagePath);
+          
+          // Verificar que la imagen existe
+          const testImg = new Image();
+          testImg.src = imagePath;
+          testImg.onload = () => {
+            console.log('✅ Imagen cargada correctamente:', imagePath);
+          };
+          testImg.onerror = () => {
+            console.error('❌ Error cargando imagen:', imagePath);
+            const altPath = './' + imagePath;
+            console.log('Intentando ruta alternativa:', altPath);
+            mapDiv.style.backgroundImage = `url('${altPath}')`;
+          };
+        }
+      }
+    ], 100, 0) || setTimeout(() => {
       const mapDiv = document.getElementById('regionMapDiv');
       if (mapDiv && region.mapImage) {
-        // Intentar diferentes formas de la ruta
         const imagePath = region.mapImage.replace('./', '');
-        
-        // Aplicar directamente al elemento
         mapDiv.style.cssText += `background-image: url('${imagePath}') !important; background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important;`;
-        
-        // Log para debug
         console.log('Imagen aplicada al mapa:', imagePath);
-        console.log('Estilo actual del mapa:', mapDiv.style.cssText);
         
-        // Verificar que la imagen existe
         const testImg = new Image();
         testImg.src = imagePath;
         testImg.onload = () => {
@@ -366,9 +433,7 @@
         };
         testImg.onerror = () => {
           console.error('❌ Error cargando imagen:', imagePath);
-          // Intentar con ruta alternativa
           const altPath = './' + imagePath;
-          console.log('Intentando ruta alternativa:', altPath);
           mapDiv.style.backgroundImage = `url('${altPath}')`;
         };
       }
@@ -396,10 +461,12 @@
       marker.style.display = 'block';
     }
 
-    // Posicionar el marcador del jugador en el nodo actual
+    // Posicionar el marcador del jugador en el nodo actual (optimizado)
     try {
-      const marker = document.getElementById('playerMarker');
-      const markerImg = document.getElementById('playerMarkerImg');
+      const marker = window.DOMOptimizer?.getCachedElement('playerMarker', container) || 
+                    document.getElementById('playerMarker');
+      const markerImg = window.DOMOptimizer?.getCachedElement('playerMarkerImg', container) || 
+                       document.getElementById('playerMarkerImg');
       if (marker) {
         // intentar usar avatar real si está disponible
         if (window.getCurrentUser) {
@@ -412,55 +479,105 @@
       }
     } catch {}
 
-    // Cargar imagen de fondo como <img> (nuevo approach, evita conflictos con CSS background)
-    setTimeout(() => {
-      const bg = document.getElementById('regionBg');
-      if (!bg || !region.mapImage) return;
+    // Cargar imagen de fondo como <img> (optimizado: agrupar setTimeout)
+    window.DOMOptimizer?.batchSetTimeout([
+      () => {
+        const bg = window.DOMOptimizer?.getCachedElement('regionBg', container) || 
+                  document.getElementById('regionBg');
+        if (!bg || !region.mapImage) return;
 
-      const base = region.mapImage.replace(/^\.\//, '');
-      const candidates = [base, `./${base}`];
-      console.log('Cargando fondo región', regionKey, 'mapImage:', region.mapImage, 'candidatos:', candidates);
-      let i = 0;
-      const next = () => {
-        if (i >= candidates.length) return;
-        const url = candidates[i++];
-        const probe = new Image();
-        probe.onload = () => { 
-          bg.src = url; 
-          try { bg.style.opacity = '1'; } catch {}
-          console.log('Mapa cargado:', regionKey, url); 
+        const base = region.mapImage.replace(/^\.\//, '');
+        const candidates = [base, `./${base}`];
+        console.log('Cargando fondo región', regionKey, 'mapImage:', region.mapImage, 'candidatos:', candidates);
+        let i = 0;
+        const next = () => {
+          if (i >= candidates.length) return;
+          const url = candidates[i++];
+          const probe = new Image();
+          probe.onload = () => { 
+            window.DOMOptimizer?.updateElement(bg, {
+              attributes: { src: url },
+              style: { opacity: '1' }
+            }) || (bg.src = url);
+            console.log('Mapa cargado:', regionKey, url); 
+          };
+          probe.onerror = next;
+          probe.src = url;
         };
-        probe.onerror = next;
-        probe.src = url;
-      };
-      next();
-    }, 120);
+        next();
+      },
+      () => {
+        const mapDiv = window.DOMOptimizer?.getCachedElement('regionMapDiv', container) || 
+                      document.getElementById('regionMapDiv');
+        if (!mapDiv || !region.mapImage) return;
 
-    // Parche: reintentar fondo con verificación real y !important
-    setTimeout(() => {
-      const mapDiv = document.getElementById('regionMapDiv');
-      if (!mapDiv || !region.mapImage) return;
+        const base = region.mapImage.replace(/^\.\//, '');
+        const candidates = [base, `./${base}`];
 
-      const base = region.mapImage.replace(/^\.\//, '');
-      const candidates = [base, `./${base}`];
-
-      const tryLoad = (idx = 0) => {
-        if (idx >= candidates.length) return;
-        const url = candidates[idx];
-        const img = new Image();
-        img.onload = () => {
-          mapDiv.style.setProperty('background-image', `url('${url}')`, 'important');
-          mapDiv.style.setProperty('background-size', 'contain', 'important');
-          mapDiv.style.setProperty('background-position', 'center', 'important');
-          mapDiv.style.setProperty('background-repeat', 'no-repeat', 'important');
-          console.log('Fondo (parche) aplicado:', regionKey, url);
+        const tryLoad = (idx = 0) => {
+          if (idx >= candidates.length) return;
+          const url = candidates[idx];
+          const img = new Image();
+          img.onload = () => {
+            window.DOMOptimizer?.updateElement(mapDiv, {
+              style: {
+                backgroundImage: `url('${url}')`,
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }
+            }) || (
+              mapDiv.style.setProperty('background-image', `url('${url}')`, 'important'),
+              mapDiv.style.setProperty('background-size', 'contain', 'important'),
+              mapDiv.style.setProperty('background-position', 'center', 'important'),
+              mapDiv.style.setProperty('background-repeat', 'no-repeat', 'important')
+            );
+            console.log('Fondo (parche) aplicado:', regionKey, url);
+          };
+          img.onerror = () => tryLoad(idx + 1);
+          img.src = url;
         };
-        img.onerror = () => tryLoad(idx + 1);
-        img.src = url;
-      };
 
-      tryLoad(0);
-    }, 250);
+        tryLoad(0);
+      }
+    ], 120, 130) || (
+      setTimeout(() => {
+        const bg = document.getElementById('regionBg');
+        if (!bg || !region.mapImage) return;
+        const base = region.mapImage.replace(/^\.\//, '');
+        const candidates = [base, `./${base}`];
+        let i = 0;
+        const next = () => {
+          if (i >= candidates.length) return;
+          const url = candidates[i++];
+          const probe = new Image();
+          probe.onload = () => { bg.src = url; bg.style.opacity = '1'; };
+          probe.onerror = next;
+          probe.src = url;
+        };
+        next();
+      }, 120),
+      setTimeout(() => {
+        const mapDiv = document.getElementById('regionMapDiv');
+        if (!mapDiv || !region.mapImage) return;
+        const base = region.mapImage.replace(/^\.\//, '');
+        const candidates = [base, `./${base}`];
+        const tryLoad = (idx = 0) => {
+          if (idx >= candidates.length) return;
+          const url = candidates[idx];
+          const img = new Image();
+          img.onload = () => {
+            mapDiv.style.setProperty('background-image', `url('${url}')`, 'important');
+            mapDiv.style.setProperty('background-size', 'contain', 'important');
+            mapDiv.style.setProperty('background-position', 'center', 'important');
+            mapDiv.style.setProperty('background-repeat', 'no-repeat', 'important');
+          };
+          img.onerror = () => tryLoad(idx + 1);
+          img.src = url;
+        };
+        tryLoad(0);
+      }, 250)
+    );
   }
 
   // Funciones globales

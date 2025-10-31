@@ -128,6 +128,12 @@
         <span>Quizlo!</span>
       </div>
       <div class="row">
+        <button class="iconbtn" id="btnTestBoss" title="Test Bosses (Preproducción)" style="background: #ff6b6b;">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="currentColor" d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM15 20H6c-.55 0-1-.45-1-1v-1h10v2zm4-1c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14z"/>
+              <path fill="currentColor" d="M9 7h6v2H9zm0 3h6v2H9z"/>
+            </svg>
+        </button>
         <button class="iconbtn" id="btnDLC" title="Tienda de packs">
             <svg viewBox="0 0 512 512" width="22" height="22">
               <path fill="currentColor" d="M345.6 38.4v102.4h128V38.4h-128zm-102.4-25.6v76.8h51.2v51.2h51.2V12.8h-102.4zm-51.2 89.6v51.2h102.4v-25.6h-76.8v-25.6h-25.6zm307.2 51.2H171.5l25.6 179.2h238.1l51.2-179.2zM153.6 486.4c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4zm256 0c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4z"/>
@@ -497,8 +503,16 @@
   
   <!-- Scripts del modo aventura (no son módulos ES6) -->
   <script src="./js/adventure/mode.js"></script>
+  <script src="./js/adventure/dom-optimizer.js"></script>
   <script src="./js/adventure/map.js"></script>
   <script src="./js/adventure/game.js"></script>
+  <!-- Bosses: Core primero, luego módulos individuales, luego el router principal -->
+  <script src="./js/adventure/bosses/bosses-core.js"></script>
+  <script src="./js/adventure/bosses/tetris.js"></script>
+  <script src="./js/adventure/bosses/arkanoid.js"></script>
+  <script src="./js/adventure/bosses/catch.js"></script>
+  <script src="./js/adventure/bosses/frogger.js"></script>
+  <script src="./js/adventure/bosses/hangman.js"></script>
   <script src="./js/adventure/bosses.js"></script>
   <script src="./js/adventure/bosses_pokemon.js"></script>
   <script src="./js/adventure/init.js"></script>
@@ -508,6 +522,60 @@
   <script src="./js/platform/ads.js"></script>
   
   <!-- Sistema de amigos se carga desde los módulos ES6 -->
+
+  <!-- Modal de Test de Bosses (Preproducción) -->
+  <div class="modal" id="testBossModal">
+    <div class="panel" style="max-width: 600px;">
+      <div class="row" style="justify-content:space-between; margin-bottom: 20px;">
+        <div style="font-weight:800; font-size: 18px;">🎮 Test de Bosses</div>
+        <button class="iconbtn" id="btnCloseTestBoss" type="button">✖</button>
+      </div>
+      
+      <div style="margin-bottom: 16px; padding: 12px; background: rgba(255, 107, 107, 0.1); border-radius: 8px; border: 1px solid rgba(255, 107, 107, 0.3);">
+        <p style="margin: 0; font-size: 13px; color: var(--text); opacity: 0.8;">
+          🚧 <strong>Modo Preproducción</strong> - Prueba directa de jefes finales sin necesidad de completar el modo aventura.
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+        <button class="btn accent boss-test-btn" data-boss="movies" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span style="font-size: 32px;">🎬</span>
+          <span style="font-weight: 600;">Reino del Cine</span>
+          <span style="font-size: 12px; opacity: 0.7;">Arkanoid</span>
+        </button>
+        
+        <button class="btn accent boss-test-btn" data-boss="anime" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span style="font-size: 32px;">🎌</span>
+          <span style="font-weight: 600;">Valle Otaku</span>
+          <span style="font-size: 12px; opacity: 0.7;">Pokemon</span>
+        </button>
+        
+        <button class="btn accent boss-test-btn" data-boss="history" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span style="font-size: 32px;">📜</span>
+          <span style="font-weight: 600;">Tierra Antigua</span>
+          <span style="font-size: 12px; opacity: 0.7;">Tetris</span>
+        </button>
+        
+        <button class="btn accent boss-test-btn" data-boss="geography" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span style="font-size: 32px;">🌍</span>
+          <span style="font-weight: 600;">Atlas Mundial</span>
+          <span style="font-size: 12px; opacity: 0.7;">Ahorcado</span>
+        </button>
+        
+        <button class="btn accent boss-test-btn" data-boss="sports" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span style="font-size: 32px;">⚽</span>
+          <span style="font-weight: 600;">Campo Deportivo</span>
+          <span style="font-size: 12px; opacity: 0.7;">Frogger</span>
+        </button>
+        
+        <button class="btn accent boss-test-btn" data-boss="science" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span style="font-size: 32px;">🔬</span>
+          <span style="font-weight: 600;">Reino de la Ciencia</span>
+          <span style="font-size: 12px; opacity: 0.7;">Snake</span>
+        </button>
+      </div>
+    </div>
+  </div>
   
   <!-- Módulos ES6 -->
   <script type="module" src="./js/game/bank_bridge.js"></script>

@@ -1,6 +1,4 @@
-// Reemplazo completo de la batalla Pokemon para el jefe Otakuma
-// Este archivo debe incluirse después de adventure_bosses.js
-
+// bosses/pokemon.js - Boss del Reino de Anime (Pokemon)
 (function(window) {
   'use strict';
 
@@ -536,11 +534,15 @@
       const message = won ? '🎉 ¡VICTORIA! 🎉' : '💀 DERROTA 💀';
       game.message = message;
       
+      // Usar BossCore.endBossGame para consistencia con otros bosses
       setTimeout(() => {
-        if (window.bossGameState && window.bossGameState.callback) {
+        if (window.BossCore && window.BossCore.endBossGame) {
+          window.BossCore.endBossGame(won);
+        } else if (window.bossGameState && window.bossGameState.callback) {
+          // Fallback si BossCore no está disponible
           window.bossGameState.callback(won);
         }
-      }, 3000);
+      }, 2000);
     }
     
     // === RENDERIZADO ===
@@ -1257,61 +1259,10 @@
     gameLoop();
   }
   
-  // Reemplazar la función original en AdventureBosses si existe
-  if (window.AdventureBosses) {
-    const originalStartBossGame = window.AdventureBosses.startBossGame;
-    
-    window.AdventureBosses.startBossGame = function(regionKey, handicap, callback) {
-      if (regionKey === 'anime') {
-        // Configurar el boss game state
-        const gameType = 'pokemon';
-        
-        window.bossGameState = {
-          type: gameType,
-          handicap: handicap,
-          callback: callback,
-          canvas: null,
-          ctx: null,
-          animationId: null
-        };
-        
-        // Crear UI del boss game SIN botón de rendirse
-        const container = document.getElementById('adventureGameArea');
-        if (!container) {
-          console.error('No se encontró adventureGameArea');
-          return;
-        }
-        
-        container.innerHTML = `
-          <div class="boss-game-container" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10000; background: #fff; color: #000;">
-            <canvas id="bossGameCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
-          </div>
-        `;
-        
-        window.bossGameState.canvas = document.getElementById('bossGameCanvas');
-        if (!window.bossGameState.canvas) {
-          console.error('No se pudo crear el canvas');
-          return;
-        }
-        
-        window.bossGameState.canvas.width = window.innerWidth;
-        window.bossGameState.canvas.height = window.innerHeight;
-        window.bossGameState.ctx = window.bossGameState.canvas.getContext('2d');
-        // Pintar fondo blanco para asegurar legibilidad (por encima de cualquier tema)
-        try {
-          const c = window.bossGameState.canvas; const ctx = window.bossGameState.ctx;
-          ctx.save(); ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,c.width,c.height); ctx.restore();
-        } catch {}
-        
-        // Usar la nueva función optimizada
-        initAnimePokemonMobile(handicap);
-      } else {
-        // Para otros jefes, usar la función original
-        originalStartBossGame.call(this, regionKey, handicap, callback);
-      }
-    };
-  }
+  // Exponer función para el sistema modular
+  window.BossGames = window.BossGames || {};
+  window.BossGames.initAnimePokemon = initAnimePokemonMobile;
   
-  console.log('✅ Batalla Pokemon Mobile v6 - Archivo reparado completamente');
+  console.log('✅ Batalla Pokemon Mobile v6 - Integrado con sistema modular');
   
 })(window);

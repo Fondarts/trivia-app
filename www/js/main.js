@@ -1144,6 +1144,88 @@ window.addEventListener('load', async ()=>{
   document.getElementById('btnNext')?.addEventListener('click', nextQuestion);
   bindStatsOpen(renderLB);
 
+  // Modal de Test de Bosses (Preproducción)
+  const testBossModal = document.getElementById('testBossModal');
+  const btnTestBoss = document.getElementById('btnTestBoss');
+  const btnCloseTestBoss = document.getElementById('btnCloseTestBoss');
+  
+  if (btnTestBoss && testBossModal) {
+    btnTestBoss.addEventListener('click', () => {
+      testBossModal.classList.add('open');
+    });
+  }
+  
+  if (btnCloseTestBoss && testBossModal) {
+    btnCloseTestBoss.addEventListener('click', () => {
+      testBossModal.classList.remove('open');
+    });
+  }
+  
+  // Vincular botones de bosses en el modal de test
+  document.querySelectorAll('.boss-test-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bossKey = btn.dataset.boss;
+      
+      console.log('🎮 Test Boss clicked:', bossKey);
+      console.log('🔍 window.startBossGame:', window.startBossGame);
+      console.log('🔍 window.AdventureBosses:', window.AdventureBosses);
+      
+      // Cerrar modal
+      if (testBossModal) {
+        testBossModal.classList.remove('open');
+      }
+      
+      // Intentar obtener startBossGame de diferentes fuentes
+      const startBossGameFn = window.startBossGame || window.AdventureBosses?.startBossGame;
+      
+      if (startBossGameFn) {
+        const handicap = {
+          bossSpeed: 1,
+          bossLives: 3,
+          playerSpeed: 1,
+          playerLives: 3,
+          extraRows: 0
+        };
+        
+        // Mostrar el área de juego de aventura
+        const gameArea = document.getElementById('adventureGameArea');
+        if (gameArea) {
+          gameArea.style.display = 'block';
+          console.log('✅ adventureGameArea mostrado');
+        }
+        
+        // Ocultar el menú principal
+        const mainCard = document.getElementById('configCard');
+        if (mainCard) {
+          mainCard.style.display = 'none';
+        }
+        
+        startBossGameFn(bossKey, handicap, (won) => {
+          const bossNames = {
+            movies: '🎬 Reino del Cine',
+            anime: '🎌 Valle Otaku',
+            history: '📜 Tierra Antigua',
+            geography: '🌍 Atlas Mundial',
+            sports: '⚽ Campo Deportivo',
+            science: '🔬 Reino de la Ciencia'
+          };
+          
+          toast(won ? `¡Ganaste contra ${bossNames[bossKey]}!` : `Perdiste contra ${bossNames[bossKey]}`);
+          
+          // Volver al menú principal
+          if (gameArea) gameArea.style.display = 'none';
+          if (mainCard) mainCard.style.display = 'block';
+          
+          const fsAdventure = document.getElementById('fsAdventure');
+          if (fsAdventure) fsAdventure.style.display = 'none';
+        });
+      } else {
+        console.error('❌ startBossGame no está disponible. window:', window);
+        toast('Error: Los bosses aún no están cargados. Intenta de nuevo en un momento.');
+      }
+    });
+  });
+
   // Función para actualizar el estilo del botón Exit según el modo
   function updateExitButtonStyle() {
     const exitBtn = document.getElementById('btnExitGame');

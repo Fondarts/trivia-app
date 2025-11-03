@@ -13,16 +13,16 @@
     });
     const { scale, offsetX, offsetY, baseWidth, baseHeight } = scaleConfig;
 
-    // Cargar imagen del demonio usando BossCore helper
-    let demonImage = null;
-    let demonLoaded = false;
-    window.BossCore.loadBossImage('assets/bosses/demon_boss.webp')
-      .then(img => {
-        demonImage = img;
-        demonLoaded = true;
+    // Cargar imagen de fondo
+    let bgImage = null;
+    let bgImageLoaded = false;
+    window.BossCore.loadBossImage('assets/backgrounds/ciencia_bg.png')
+      .then(img => { 
+        bgImage = img; 
+        bgImageLoaded = true; 
       })
-      .catch(() => {
-        demonLoaded = false;
+      .catch(() => { 
+        bgImageLoaded = false; 
       });
 
     // Cargar imágenes de ciencia usando BossCore helper
@@ -37,42 +37,147 @@
       scienceImages = images;
     });
 
+    // Sistema de fórmulas químicas con sus nombres
+    const chemicalFormulas = [
+      { formula: 'H₂O', name: 'Agua', components: ['H₂', 'O'] },
+      { formula: 'CO₂', name: 'Dióxido de carbono', components: ['C', 'O₂'] },
+      { formula: 'NH₃', name: 'Amoníaco', components: ['N', 'H₃'] },
+      { formula: 'H₂SO₄', name: 'Ácido sulfúrico', components: ['H₂', 'S', 'O₄'] },
+      { formula: 'C₆H₁₂O₆', name: 'Glucosa', components: ['C₆', 'H₁₂', 'O₆'] },
+      { formula: 'CH₄', name: 'Metano', components: ['C', 'H₄'] },
+      { formula: 'NaCl', name: 'Cloruro de sodio', components: ['Na', 'Cl'] },
+      { formula: 'CaCO₃', name: 'Carbonato de calcio', components: ['Ca', 'C', 'O₃'] },
+      { formula: 'H₂O₂', name: 'Peróxido de hidrógeno', components: ['H₂', 'O₂'] },
+      { formula: 'Fe₂O₃', name: 'Óxido de hierro', components: ['Fe₂', 'O₃'] }
+    ];
+    
+    // Mezclar las fórmulas para que no sean siempre las mismas
+    const shuffledFormulas = [...chemicalFormulas].sort(() => Math.random() - 0.5);
+    let currentFormulaIndex = 0;
+    let currentFormula = shuffledFormulas[0];
+    let capturedElements = []; // Elementos capturados para la fórmula actual
+    
+    // Todos los elementos químicos posibles (buenos y malos) con colores y formas asignados
+    const elementConfigs = {
+      'H': { color: '#3498db', shape: 'circle' },      // Azul - Círculo
+      'H₂': { color: '#3498db', shape: 'square' },     // Azul - Cuadrado
+      'H₃': { color: '#3498db', shape: 'hexagon' },     // Azul - Hexágono
+      'H₄': { color: '#5dade2', shape: 'circle' },     // Azul claro - Círculo
+      'H₁₂': { color: '#5dade2', shape: 'square' },    // Azul claro - Cuadrado
+      'O': { color: '#e74c3c', shape: 'circle' },       // Rojo - Círculo
+      'O₂': { color: '#e74c3c', shape: 'square' },      // Rojo - Cuadrado
+      'O₃': { color: '#c0392b', shape: 'hexagon' },     // Rojo oscuro - Hexágono
+      'O₄': { color: '#c0392b', shape: 'circle' },     // Rojo oscuro - Círculo
+      'O₆': { color: '#e74c3c', shape: 'hexagon' },     // Rojo - Hexágono
+      'C': { color: '#2ecc71', shape: 'square' },      // Verde - Cuadrado
+      'C₆': { color: '#27ae60', shape: 'hexagon' },     // Verde oscuro - Hexágono
+      'N': { color: '#9b59b6', shape: 'circle' },       // Morado - Círculo
+      'S': { color: '#f39c12', shape: 'square' },       // Naranja - Cuadrado
+      'Na': { color: '#e67e22', shape: 'circle' },      // Naranja oscuro - Círculo
+      'Cl': { color: '#1abc9c', shape: 'hexagon' },     // Turquesa - Hexágono
+      'Ca': { color: '#16a085', shape: 'square' },       // Verde azulado - Cuadrado
+      'Fe₂': { color: '#95a5a6', shape: 'circle' },     // Gris - Círculo
+      'Au': { color: '#f1c40f', shape: 'hexagon' },     // Dorado - Hexágono
+      'Ag': { color: '#ecf0f1', shape: 'square' },      // Plateado - Cuadrado
+      'Pb': { color: '#34495e', shape: 'circle' },       // Gris oscuro - Círculo
+      'Hg': { color: '#e8f8f5', shape: 'hexagon' },      // Blanco azulado - Hexágono
+      'Cu': { color: '#d35400', shape: 'square' },       // Marrón - Cuadrado
+      'Zn': { color: '#7f8c8d', shape: 'circle' }        // Gris - Círculo
+    };
+    
+    const allElements = Object.keys(elementConfigs).filter(el => !['Au', 'Ag', 'Pb', 'Hg', 'Cu', 'Zn'].includes(el));
+    // Elementos incorrectos (que no pertenecen a ninguna fórmula común)
+    const wrongElements = ['Au', 'Ag', 'Pb', 'Hg', 'Cu', 'Zn'];
+    
     // Mantener una zona segura inferior
     const safeBottom = 90;
     const player = { x: baseWidth / 2 - 40, y: baseHeight - safeBottom, width: 80, height: 25, speed: 9 * (handicap.playerSpeed || 1) };
     const basketWidth = player.width;
     const basketHeight = player.height;
-    // Usar scienceImages de BossCore (se actualizará cuando se carguen)
-    const goodSprites = () => {
-      return scienceImages.testTube && scienceImages.burner ? 
-        [scienceImages.testTube, scienceImages.burner, scienceImages.flask, scienceImages.lab, scienceImages.microscope].filter(img => img) : [];
-    };
-    // Objetos malos (no relacionados a ciencia)
-    const badMovie = new Image(); badMovie.src = 'Icons/movie.png';
-    const badSports = new Image(); badSports.src = 'Icons/sports.png';
-    const badWorld = new Image(); badWorld.src = 'Icons/world.png';
-    const badSword = new Image(); badSword.src = 'Icons/sword.png';
-    const badSprites = [badMovie, badSports, badWorld, badSword];
+    
     const objects = [];
     let spawnTimer = 0;
-    let spawnInterval = 800;
-    let score = 0;
+    let spawnInterval = 1200; // Aumentar intervalo inicial
+    const maxObjectsOnScreen = 4; // Máximo de objetos simultáneos
+    let completedFormulas = 0;
     let misses = 0;
     const maxMisses = 3;
-    let baseSpeed = 0.8; // Velocidad base inicial (muy lento)
-    let speedMultiplier = 1.0; // Multiplicador que aumenta con el tiempo
-    let gameTime = 0; // Tiempo transcurrido en el juego
-
+    let baseSpeed = 0.8;
+    let speedMultiplier = 1.0;
+    let gameTime = 0;
+    const objectSize = 35; // Tamaño fijo para los elementos
+    
+    // Función para verificar si hay superposición al spawnear
+    function canSpawnAt(x, size) {
+      const minDistance = size + 10; // Distancia mínima entre objetos
+      for (const obj of objects) {
+        const distance = Math.abs(obj.x - x);
+        if (distance < minDistance && obj.y < 100) { // Solo verificar si está cerca de la parte superior
+          return false;
+        }
+      }
+      return true;
+    }
+    
     function spawnObject() {
-      // 75% buenos (ciencia), 25% malos (no ciencia)
-      const isGood = Math.random() < 0.75;
-      const goodSpritesArray = goodSprites();
-      const sprite = (isGood ? goodSpritesArray : badSprites)[Math.floor(Math.random() * (isGood ? goodSpritesArray.length : badSprites.length))];
-      const size = 28 + Math.floor(Math.random() * 10);
-      // Velocidad base + aleatorio, multiplicado por el multiplicador de velocidad
-      // Reducido el rango aleatorio también para empezar más lento
+      // 70% probabilidad de elemento correcto, 30% incorrecto
+      const isCorrect = Math.random() < 0.7;
+      let element;
+      
+      if (isCorrect) {
+        // Seleccionar un elemento que necesitamos para la fórmula actual
+        const neededElements = currentFormula.components.filter(c => !capturedElements.includes(c));
+        if (neededElements.length > 0) {
+          element = neededElements[Math.floor(Math.random() * neededElements.length)];
+        } else {
+          // Si ya tenemos todos, seleccionar uno al azar de los componentes
+          element = currentFormula.components[Math.floor(Math.random() * currentFormula.components.length)];
+        }
+      } else {
+        // Elemento incorrecto: algo que no está en la fórmula actual
+        const wrongOptions = allElements.filter(el => !currentFormula.components.includes(el))
+                                      .concat(wrongElements);
+        element = wrongOptions[Math.floor(Math.random() * wrongOptions.length)];
+      }
+      
+      // Obtener configuración del elemento (color y forma)
+      const elementConfig = elementConfigs[element] || { color: '#95a5a6', shape: 'circle' };
+      
+      // Intentar spawnear en una posición sin superposición
+      let attempts = 0;
+      let x;
+      do {
+        x = Math.random() * (baseWidth - objectSize);
+        attempts++;
+      } while (!canSpawnAt(x, objectSize) && attempts < 20);
+      
+      if (attempts >= 20) {
+        // Si no se puede encontrar posición, usar posición aleatoria normal
+        x = Math.random() * (baseWidth - objectSize);
+      }
+      
       const currentSpeed = (baseSpeed + Math.random() * 0.6) * speedMultiplier;
-      objects.push({ x: Math.random() * (baseWidth - size), y: -size, size, speed: currentSpeed, sprite, good: isGood });
+      objects.push({ 
+        x, 
+        y: -objectSize, 
+        size: objectSize, 
+        speed: currentSpeed, 
+        element, 
+        isCorrect,
+        color: elementConfig.color,
+        shape: elementConfig.shape
+      });
+    }
+    
+    function nextFormula() {
+      currentFormulaIndex++;
+      if (currentFormulaIndex >= shuffledFormulas.length) {
+        // Mezclar de nuevo si se acabaron
+        shuffledFormulas.sort(() => Math.random() - 0.5);
+        currentFormulaIndex = 0;
+      }
+      currentFormula = shuffledFormulas[currentFormulaIndex];
+      capturedElements = [];
     }
 
     const keys = {};
@@ -83,9 +188,9 @@
       // Aceleración progresiva: aumentar la velocidad a medida que avanza el juego
       gameTime += dt;
       // Aumentar el multiplicador de velocidad cada 2 segundos (progresión gradual)
-      speedMultiplier = 1.0 + (gameTime / 2000) * 0.5; // Máximo ~2.5x después de mucho tiempo
-      // Limitar la velocidad máxima para que el juego siga siendo jugable
-      if (speedMultiplier > 3.0) speedMultiplier = 3.0;
+      speedMultiplier = 1.0 + (gameTime / 3000) * 0.3; // Progresión más lenta
+      // Limitar la velocidad máxima a un valor más conservador
+      if (speedMultiplier > 1.8) speedMultiplier = 1.8;
 
       // teclado opcional
       if (keys['ArrowLeft'] || keys['a'] || keys['A']) player.x -= player.speed;
@@ -93,10 +198,13 @@
       player.x = Math.max(0, Math.min(baseWidth - player.width, player.x));
 
       spawnTimer += dt;
-      if (spawnTimer >= spawnInterval) {
+      // Solo spawnear si hay menos de maxObjectsOnScreen objetos en pantalla
+      if (spawnTimer >= spawnInterval && objects.length < maxObjectsOnScreen) {
         spawnTimer = 0;
         spawnObject();
-        spawnInterval = Math.max(400, spawnInterval - 10);
+        spawnInterval = Math.max(800, spawnInterval - 5); // Limitar mínimo a 800ms
+      } else if (spawnTimer >= spawnInterval) {
+        spawnTimer = 0; // Resetear timer pero no spawnear
       }
 
       for (let i = objects.length - 1; i >= 0; i--) {
@@ -106,12 +214,37 @@
         
         // Colisión con el canasto
         if (o.y + o.size >= player.y && o.y <= player.y + player.height && o.x + o.size >= player.x && o.x <= player.x + player.width) {
-          if (o.good) {
-            // Atrapar objeto de CIENCIA = CORRECTO, suma puntos
-            score++;
+          if (o.isCorrect && currentFormula.components.includes(o.element)) {
+            // Atrapar elemento correcto
+            if (!capturedElements.includes(o.element)) {
+              capturedElements.push(o.element);
+              
+              // Verificar si se completó la fórmula
+              const allCaptured = currentFormula.components.every(comp => capturedElements.includes(comp));
+              if (allCaptured) {
+                completedFormulas++;
+                if (completedFormulas >= 10) {
+                  window.BossCore.endBossGame(true);
+                  return false;
+                }
+                // No limpiar objetos, solo cambiar a la siguiente fórmula
+                nextFormula();
+              }
+            } else {
+              // Atrapar elemento duplicado = ERROR (ya lo tenemos)
+              misses++;
+              if (misses >= maxMisses) {
+                window.BossCore.endBossGame(false);
+                return false;
+              }
+            }
           } else {
-            // Atrapar objeto NO CIENCIA = ERROR, pierde vida
+            // Atrapar elemento incorrecto = ERROR
             misses++;
+            if (misses >= maxMisses) {
+              window.BossCore.endBossGame(false);
+              return false;
+            }
           }
           objects.splice(i, 1);
           continue;
@@ -119,31 +252,73 @@
         
         // Objeto cae al suelo
         if (o.y > baseHeight) {
-          if (o.good) {
-            // Dejar caer objeto de CIENCIA = ERROR, pierde vida
+          // Si cae un elemento correcto que necesitamos = ERROR
+          if (o.isCorrect && currentFormula.components.includes(o.element) && !capturedElements.includes(o.element)) {
             misses++;
-          } else {
-            // Dejar caer objeto NO CIENCIA = CORRECTO, no pasa nada
-            // No incrementamos misses ni score
+            if (misses >= maxMisses) {
+              window.BossCore.endBossGame(false);
+              return false;
+            }
           }
           objects.splice(i, 1);
         }
       }
 
-      if (score >= 10) { window.BossCore.endBossGame(true); return false; }
-      if (misses >= maxMisses) { window.BossCore.endBossGame(false); return false; }
       return true;
     }
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
+      
+      // Dibujar fondo de color base primero
+      ctx.fillStyle = '#0b1a2b';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Dibujar imagen de fondo con 50% de opacidad encima
+      if (bgImageLoaded && bgImage) {
+        // Calcular dimensiones manteniendo proporción (fit de altura)
+        const bgAspect = bgImage.naturalWidth / bgImage.naturalHeight;
+        const baseAspect = baseWidth / baseHeight;
+        
+        let bgDrawWidth, bgDrawHeight, bgDrawX, bgDrawY;
+        
+        if (bgAspect > baseAspect) {
+          // Imagen más ancha: ajustar a altura (fit vertical)
+          bgDrawHeight = baseHeight;
+          bgDrawWidth = bgDrawHeight * bgAspect;
+          bgDrawX = (baseWidth - bgDrawWidth) / 2;
+          bgDrawY = 0;
+        } else {
+          // Imagen más alta: ajustar a ancho (fit horizontal)
+          bgDrawWidth = baseWidth;
+          bgDrawHeight = bgDrawWidth / bgAspect;
+          bgDrawX = 0;
+          bgDrawY = (baseHeight - bgDrawHeight) / 2;
+        }
+        
+        ctx.save();
+        ctx.translate(offsetX, offsetY);
+        ctx.scale(scale, scale);
+        // Establecer opacidad al 50%
+        ctx.globalAlpha = 0.5;
+        // Dibujar imagen de fondo con proporción correcta
+        ctx.drawImage(bgImage, bgDrawX, bgDrawY, bgDrawWidth, bgDrawHeight);
+        ctx.restore();
+      }
+      
       ctx.translate(offsetX, offsetY);
       ctx.scale(scale, scale);
 
-      ctx.fillStyle = '#0b1a2b';
-      ctx.fillRect(0, 0, baseWidth, baseHeight);
-      if (demonLoaded) ctx.drawImage(demonImage, baseWidth / 2 - 70, -20, 140, 120);
+      // Dibujar marco alrededor del área de juego
+      ctx.strokeStyle = '#5a9ff2';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(0, 0, baseWidth, baseHeight);
+      
+      // Marco interior más sutil
+      ctx.strokeStyle = 'rgba(90, 159, 242, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(2, 2, baseWidth - 4, baseHeight - 4);
 
       // Dibujar canasto en lugar de barra
       drawBasket(ctx, player.x, player.y, basketWidth, basketHeight);
@@ -151,23 +326,102 @@
       // zona segura inferior de referencia (opcional visual mínimo)
       // ctx.fillStyle = 'rgba(255,255,255,0.04)'; ctx.fillRect(0, baseHeight - safeBottom, baseWidth, 1);
 
-      for (const o of objects) {
-        if (o.sprite && o.sprite.complete) {
-          ctx.drawImage(o.sprite, o.x, o.y, o.size, o.size);
-          if (!o.good) {
-            // resaltar malos con borde rojo
-            ctx.strokeStyle = 'rgba(231,76,60,0.9)';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(o.x, o.y, o.size, o.size);
+      // Función para dibujar diferentes formas
+      function drawShape(ctx, x, y, size, shape, color) {
+        ctx.fillStyle = color;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3;
+        
+        const centerX = x + size / 2;
+        const centerY = y + size / 2;
+        const radius = size / 2 - 2;
+        
+        if (shape === 'circle') {
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        } else if (shape === 'square') {
+          const padding = 2;
+          ctx.fillRect(x + padding, y + padding, size - padding * 2, size - padding * 2);
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(x + padding, y + padding, size - padding * 2, size - padding * 2);
+        } else if (shape === 'hexagon') {
+          ctx.beginPath();
+          for (let i = 0; i < 6; i++) {
+            const angle = (Math.PI / 3) * i;
+            const hx = centerX + radius * Math.cos(angle);
+            const hy = centerY + radius * Math.sin(angle);
+            if (i === 0) {
+              ctx.moveTo(hx, hy);
+            } else {
+              ctx.lineTo(hx, hy);
+            }
           }
-        } else {
-          ctx.fillStyle = o.good ? '#3498db' : '#e74c3c';
-          ctx.fillRect(o.x, o.y, o.size, o.size);
+          ctx.closePath();
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+          ctx.lineWidth = 2;
+          ctx.stroke();
         }
+      }
+      
+      // Dibujar elementos químicos
+      for (const o of objects) {
+        // Dibujar forma con su color asignado
+        drawShape(ctx, o.x, o.y, o.size, o.shape, o.color);
+        
+        // Texto del elemento químico
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 14px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(o.element, o.x + o.size / 2, o.y + o.size / 2);
       }
 
       ctx.restore();
-      window.BossCore.updateBossHUD(`Puntos: ${score}/10 · Fallos: ${misses}/${maxMisses} · Atrapa solo ciencia`);
+      
+      // Mostrar fórmula actual a la derecha (como en Tetris)
+      const sidebarX = offsetX + (baseWidth * scale) + 20;
+      let sidebarY = offsetY + 20;
+      
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 20px monospace';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      
+      // Fórmula objetivo con nombre
+      ctx.fillText(`Fórmula:`, sidebarX, sidebarY);
+      sidebarY += 25;
+      ctx.font = 'bold 24px Arial';
+      ctx.fillText(`${currentFormula.formula} = ${currentFormula.name}`, sidebarX, sidebarY);
+      sidebarY += 35;
+      
+      // Componentes necesarios
+      ctx.font = 'bold 16px monospace';
+      ctx.fillText('Necesitas:', sidebarX, sidebarY);
+      sidebarY += 25;
+      
+      const componentsDisplay = currentFormula.components.map(comp => {
+        const isCaptured = capturedElements.includes(comp);
+        return isCaptured ? `[${comp}]` : comp;
+      }).join(' + ');
+      
+      ctx.font = '18px Arial';
+      ctx.fillText(componentsDisplay, sidebarX, sidebarY);
+      sidebarY += 40;
+      
+      // Contador de fórmulas completadas
+      ctx.font = 'bold 16px monospace';
+      ctx.fillStyle = '#2ecc71';
+      ctx.fillText(`Completadas: ${completedFormulas}/10`, sidebarX, sidebarY);
+      
+      // Ocultar HUD para catch (ya no se usa)
+      const hud = document.getElementById('bossGameHUD');
+      if (hud) hud.style.display = 'none';
     }
 
     // Función para dibujar el canasto

@@ -15,24 +15,48 @@
     const playerSize = 50; // Jugador más grande para mobile
     const defenderSize = 60; // Defensores más grandes
     
+    // Definir área del arco (portería) - en la parte superior central del campo
+    const goalWidth = gameWidth * 0.25; // Ancho del arco (25% del ancho del campo)
+    const goalHeight = laneHeight * 1.5; // Altura del arco (1.5 líneas)
+    const goalX = (gameWidth - goalWidth) / 2; // Centrar el arco horizontalmente
+    const goalY = 0; // Arco en la parte superior del campo
+    
     // Cargar imágenes usando BossCore helpers
     let defensor01 = null;
     let defensor02 = null;
     let canchaImage = null;
     let soccerBallImage = null;
     let soccerBallLoaded = false;
+    let goalImage = null;
+    let goalImageLoaded = false;
+    let outImage = null;
+    let outImageLoaded = false;
+    let robadaImage = null;
+    let robadaImageLoaded = false;
+    
+    // Calcular posición inicial del jugador alineada con las líneas
+    const startLane = Math.max(0, lanes - 3); // Empezar en una de las últimas líneas
+    const startY = startLane * laneHeight + laneHeight/2 - playerSize/2;
     
     const game = {
-      player: {x: gameWidth/2 - playerSize/2, y: gameHeight - laneHeight - playerSize/2},
+      player: {x: gameWidth/2 - playerSize/2, y: startY},
       defenders: [],
       score: 0,
       target: 5, // Necesita cruzar 5 veces
+      lives: 3, // Vidas (corazones)
       gameOver: false,
       started: false,
       message: 'Usa las flechas para empezar a cruzar el campo!',
       speed: 100,
       imagesLoaded: 0,
-      canchaLoaded: false
+      canchaLoaded: false,
+      lastCheckedLane: -1, // Rastrear la última línea verificada para evitar múltiples verificaciones
+      showGoalAnimation: false, // Mostrar animación de gol
+      goalAnimationTime: 0, // Tiempo de la animación de gol
+      showOutAnimation: false, // Mostrar animación de "out" (pelota fuera)
+      outAnimationTime: 0, // Tiempo de la animación de "out"
+      showRobadaAnimation: false, // Mostrar animación de "robada" (tocado por defensor)
+      robadaAnimationTime: 0 // Tiempo de la animación de "robada"
     };
     
     // Función helper para cargar imágenes de Frogger
@@ -77,9 +101,46 @@
         },
         () => {}
       );
+      
+      // Cargar imagen del gol
+      window.BossCore.loadImageSimple('assets/soccer/gool01.webp',
+        (img) => {
+          goalImage = img;
+          goalImageLoaded = true;
+        },
+        () => {}
+      );
+      
+      // Cargar imagen de "afuera" (pelota fuera)
+      window.BossCore.loadImageSimple('assets/soccer/afuera.webp',
+        (img) => {
+          outImage = img;
+          outImageLoaded = true;
+        },
+        () => {}
+      );
+      
+      // Cargar imagen de "robada" (tocado por defensor)
+      window.BossCore.loadImageSimple('assets/soccer/robada.webp',
+        (img) => {
+          robadaImage = img;
+          robadaImageLoaded = true;
+        },
+        () => {}
+      );
     }
     
     loadFroggerImages();
+    
+    // Función helper para alinear el jugador a una línea específica
+    function alignPlayerToLane(laneIndex) {
+      return laneIndex * laneHeight + laneHeight/2 - playerSize/2;
+    }
+    
+    // Función helper para obtener la línea actual del jugador
+    function getCurrentLane(y) {
+      return Math.round((y + playerSize/2 - laneHeight/2) / laneHeight);
+    }
     
     // Función para mover el jugador
     function movePlayer(direction) {
@@ -90,25 +151,75 @@
         game.message = 'Cruza el campo 5 veces!';
       }
       
-      const step = 60; // Paso más grande para mobile
+      const currentLane = getCurrentLane(game.player.y);
+      
       if (direction === 'up') {
-        game.player.y -= step;
-        if (game.player.y < 0) {
-          // Llegó al otro lado del campo
-          game.score++;
-          game.player.y = gameHeight - laneHeight - playerSize/2;
-          if (game.score >= game.target) {
-            game.gameOver = true;
-            game.message = '¡VICTORIA! Cruzaste el campo 5 veces!';
-            setTimeout(() => window.BossCore.endBossGame(true), 1000);
-            return;
+        const newLane = currentLane - 1;
+        
+        // Si la pelota ya está en la línea 0 (última línea) o intenta ir más allá
+        if (currentLane === 0 || newLane < 0) {
+          // La pelota llegó a la última línea (arriba) - ejecutar inmediatamente
+          // Verificar si la pelota está dentro del área del arco (portería)
+          const playerCenterX = game.player.x + playerSize / 2;
+          const playerCenterY = game.player.y + playerSize / 2;
+          
+          // Verificar si la pelota está dentro del área del arco
+          if (playerCenterX >= goalX && 
+              playerCenterX <= goalX + goalWidth &&
+              playerCenterY >= goalY && 
+              playerCenterY <= goalY + goalHeight) {
+            // ¡GOL! La pelota está en la última línea dentro del arco
+            game.score++;
+            // Mostrar animación de gol
+            game.showGoalAnimation = true;
+            game.goalAnimationTime = Date.now();
+            
+            const resetLane = Math.max(0, lanes - 3);
+            game.player.y = alignPlayerToLane(resetLane);
+            game.player.x = gameWidth/2 - playerSize/2; // Resetear posición X también
+            if (game.score >= game.target) {
+              game.gameOver = true;
+              game.message = '¡VICTORIA! Cruzaste el campo 5 veces!';
+              setTimeout(() => window.BossCore.endBossGame(true), 1000);
+              return;
+            }
+          } else {
+            // La pelota está en la última línea pero NO está dentro del arco
+            // Pierde una vida (corazón) y vuelve a empezar desde la posición inicial (abajo)
+            game.lives--;
+            // Mostrar animación de "out"
+            game.showOutAnimation = true;
+            game.outAnimationTime = Date.now();
+            
+            if (game.lives <= 0) {
+              // Sin vidas, perder la partida
+              game.gameOver = true;
+              game.message = '¡Sin vidas! DERROTA';
+              setTimeout(() => window.BossCore.endBossGame(false), 1500);
+              return;
+            } else {
+              // Resetear pelota a la posición inicial (abajo de todo)
+              game.player.y = startY;
+              game.player.x = gameWidth/2 - playerSize/2; // Centrar horizontalmente
+              game.lastCheckedLane = startLane; // Resetear el rastreo
+            }
           }
+          // No mover la pelota más arriba, ya está en la última línea
+          return;
+        } else {
+          // Movimiento normal: mover a la siguiente línea
+          game.player.y = alignPlayerToLane(newLane);
         }
-      } else if (direction === 'down' && game.player.y < gameHeight - laneHeight) {
-        game.player.y += step;
+      } else if (direction === 'down') {
+        const newLane = currentLane + 1;
+        if (newLane < lanes) {
+          game.player.y = alignPlayerToLane(newLane);
+        }
       } else if (direction === 'left' && game.player.x > 0) {
+        const step = 60;
         game.player.x -= step;
       } else if (direction === 'right' && game.player.x < gameWidth - playerSize) {
+        const step = 60;
         game.player.x += step;
       }
     }
@@ -228,10 +339,12 @@
       game.defenders = [];
       
       // Generar exactamente 10 filas de defensores (empezar desde arriba, excluir las últimas filas cercanas al jugador)
+      // IMPORTANTE: No generar defensores en la línea superior (i=0) porque es fuera de la cancha
       const maxDefenderRows = 10;
       const rowsToGenerate = Math.min(maxDefenderRows, lanes - 3);
       
-      for (let i = 0; i < rowsToGenerate; i++) { // Empezar desde arriba, pero excluir las últimas filas (las más cercanas al jugador)
+      // Empezar desde i=1 (segunda línea) porque la línea 0 es fuera de la cancha (área del arco)
+      for (let i = 1; i <= rowsToGenerate; i++) { // Empezar desde la segunda línea, excluir la línea superior
         const isDefensor01 = Math.random() < 0.5;
         
         // Sistema de velocidades más variado y realista
@@ -311,6 +424,87 @@
     function update() {
       if (game.gameOver || !game.started) return;
       
+      // Manejar animación de gol (mostrar por 2.5 segundos con animaciones)
+      if (game.showGoalAnimation) {
+        const elapsed = Date.now() - game.goalAnimationTime;
+        if (elapsed > 2500) { // 2.5 segundos
+          game.showGoalAnimation = false;
+        }
+      }
+      
+      // Manejar animación de "out" (mostrar por 2 segundos con animaciones)
+      if (game.showOutAnimation) {
+        const elapsed = Date.now() - game.outAnimationTime;
+        if (elapsed > 2000) { // 2 segundos
+          game.showOutAnimation = false;
+        }
+      }
+      
+      // Manejar animación de "robada" (mostrar por 2 segundos con animaciones)
+      if (game.showRobadaAnimation) {
+        const elapsed = Date.now() - game.robadaAnimationTime;
+        if (elapsed > 2000) { // 2 segundos
+          game.showRobadaAnimation = false;
+        }
+      }
+      
+      // Verificar continuamente si la pelota está en la última línea (línea 0)
+      const currentLane = getCurrentLane(game.player.y);
+      // Solo verificar una vez cuando llegue a la línea 0 (no repetir mientras sigue ahí)
+      if (currentLane === 0 && game.lastCheckedLane !== 0) {
+        game.lastCheckedLane = 0; // Marcar que ya verificamos esta línea
+        
+        // La pelota está en la última línea - verificar gol o pérdida de vida
+        const playerCenterX = game.player.x + playerSize / 2;
+        const playerCenterY = game.player.y + playerSize / 2;
+        
+        // Verificar si la pelota está dentro del área del arco
+        if (playerCenterX >= goalX && 
+            playerCenterX <= goalX + goalWidth &&
+            playerCenterY >= goalY && 
+            playerCenterY <= goalY + goalHeight) {
+          // ¡GOL! La pelota está en la última línea dentro del arco
+          game.score++;
+          // Mostrar animación de gol
+          game.showGoalAnimation = true;
+          game.goalAnimationTime = Date.now();
+          
+          const resetLane = Math.max(0, lanes - 3);
+          game.player.y = alignPlayerToLane(resetLane);
+          game.player.x = gameWidth/2 - playerSize/2; // Resetear posición X también
+          game.lastCheckedLane = resetLane; // Resetear el rastreo
+          if (game.score >= game.target) {
+            game.gameOver = true;
+            game.message = '¡VICTORIA! Cruzaste el campo 5 veces!';
+            setTimeout(() => window.BossCore.endBossGame(true), 1000);
+            return;
+          }
+          } else {
+            // La pelota está en la última línea pero NO está dentro del arco
+            // Pierde una vida (corazón) y vuelve a empezar desde la posición inicial (abajo)
+            game.lives--;
+            // Mostrar animación de "out"
+            game.showOutAnimation = true;
+            game.outAnimationTime = Date.now();
+            
+            if (game.lives <= 0) {
+              // Sin vidas, perder la partida
+              game.gameOver = true;
+              game.message = '¡Sin vidas! DERROTA';
+              setTimeout(() => window.BossCore.endBossGame(false), 1500);
+              return;
+            } else {
+              // Resetear pelota a la posición inicial (abajo de todo)
+              game.player.y = startY;
+              game.player.x = gameWidth/2 - playerSize/2; // Centrar horizontalmente
+              game.lastCheckedLane = startLane; // Resetear el rastreo
+            }
+          }
+      } else if (currentLane !== 0) {
+        // Si la pelota no está en la línea 0, resetear el rastreo para permitir verificación nuevamente
+        game.lastCheckedLane = currentLane;
+      }
+      
       // Mover defensores
       game.defenders.forEach(defender => {
         // Manejar velocidad variable con intervalos más dinámicos
@@ -331,14 +525,19 @@
         }
         
         defender.x += defender.speed;
+        // Wrap-around: cuando sale por un lado, aparece por el otro
+        // Pero solo se dibuja cuando está completamente dentro del área visible
         if (defender.speed > 0 && defender.x > gameWidth) {
-          defender.x = -defender.width;
+          defender.x = -defender.width; // Aparecerá por la izquierda
         } else if (defender.speed < 0 && defender.x < -defender.width) {
-          defender.x = gameWidth;
+          defender.x = gameWidth; // Aparecerá por la derecha
         }
       });
       
       // Verificar colisiones con defensores
+      // Primero obtener la línea actual del jugador
+      const playerLane = getCurrentLane(game.player.y);
+      
       // Usar un área de colisión más precisa (reducida) para evitar falsos positivos
       const collisionTolerance = 0.75; // Reducir área de colisión al 75% para mayor precisión
       const playerCollisionWidth = playerSize * collisionTolerance;
@@ -352,10 +551,20 @@
       const defenderCollisionOffsetX = (defenderSize - defenderCollisionWidth) / 2;
       const defenderCollisionOffsetY = (defenderSize - defenderCollisionHeight) / 2;
       
+      // Calcular posiciones reales de las áreas de colisión del jugador
+      const playerCollisionX = game.player.x + playerCollisionOffsetX;
+      const playerCollisionY = game.player.y + playerCollisionOffsetY;
+      
       game.defenders.forEach(defender => {
-        // Calcular posiciones reales de las áreas de colisión
-        const playerCollisionX = game.player.x + playerCollisionOffsetX;
-        const playerCollisionY = game.player.y + playerCollisionOffsetY;
+        // Verificar primero que estén en la misma línea (solo defensores en la misma línea pueden colisionar)
+        const defenderLane = Math.round((defender.y + defenderSize/2 - laneHeight/2) / laneHeight);
+        
+        // Solo verificar colisión si están en la misma línea
+        if (defenderLane !== playerLane) {
+          return; // Saltar este defensor, está en una línea diferente
+        }
+        
+        // Calcular posiciones reales de las áreas de colisión del defensor
         const defenderCollisionX = defender.x + defenderCollisionOffsetX;
         const defenderCollisionY = defender.y + defenderCollisionOffsetY;
         
@@ -364,9 +573,14 @@
             playerCollisionX + playerCollisionWidth > defenderCollisionX &&
             playerCollisionY < defenderCollisionY + defenderCollisionHeight &&
             playerCollisionY + playerCollisionHeight > defenderCollisionY) {
+          // Mostrar animación de "robada"
+          game.showRobadaAnimation = true;
+          game.robadaAnimationTime = Date.now();
+          
+          // Esperar a que se muestre la animación antes de terminar el juego
           game.gameOver = true;
           game.message = '¡Te detuvieron! DERROTA';
-          setTimeout(() => window.BossCore.endBossGame(false), 500);
+          setTimeout(() => window.BossCore.endBossGame(false), 2000); // Esperar 2 segundos para mostrar la animación
           return;
         }
       });
@@ -379,6 +593,22 @@
       
       // Calcular offset para centrar el campo
       const offsetX = (canvas.width - gameWidth) / 2;
+      
+      // Dibujar área del arco (portería) visualmente
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 4;
+      ctx.setLineDash([]);
+      // Dibujar líneas del arco (portería) en la parte superior
+      ctx.beginPath();
+      // Línea superior del arco
+      ctx.moveTo(offsetX + goalX, goalY);
+      ctx.lineTo(offsetX + goalX + goalWidth, goalY);
+      // Líneas laterales del arco
+      ctx.moveTo(offsetX + goalX, goalY);
+      ctx.lineTo(offsetX + goalX, goalY + goalHeight);
+      ctx.moveTo(offsetX + goalX + goalWidth, goalY);
+      ctx.lineTo(offsetX + goalX + goalWidth, goalY + goalHeight);
+      ctx.stroke();
       
       // Fondo del campo de fútbol
       if (game.canchaLoaded && canchaImage && canchaImage.complete) {
@@ -413,16 +643,22 @@
         }
       }
       
-      // Dibujar defensores
+      // Dibujar defensores (solo si están completamente dentro del área visible de la cancha)
       game.defenders.forEach(defender => {
-        if (defender.image && defender.image.complete) {
-          ctx.drawImage(defender.image, offsetX + defender.x, defender.y, defender.width, defender.height);
-        } else {
-          // Fallback si la imagen no está cargada
-          ctx.fillStyle = defender.type === 'defensor01' ? '#e74c3c' : '#f39c12';
-          ctx.fillRect(offsetX + defender.x, defender.y, defender.width, defender.height);
+        // Solo dibujar si el defensor está completamente dentro de los límites de la cancha
+        // Evitar que aparezcan parcialmente fuera de los bordes
+        if (defender.x >= 0 && defender.x + defender.width <= gameWidth) {
+          // El defensor está completamente dentro del área visible
+          if (defender.image && defender.image.complete) {
+            ctx.drawImage(defender.image, offsetX + defender.x, defender.y, defender.width, defender.height);
+          } else {
+            // Fallback si la imagen no está cargada
+            ctx.fillStyle = defender.type === 'defensor01' ? '#e74c3c' : '#f39c12';
+            ctx.fillRect(offsetX + defender.x, defender.y, defender.width, defender.height);
+          }
         }
-        
+        // Si el defensor está fuera (parcialmente o completamente), no se dibuja
+        // Esto hace que "desaparezcan" cuando salen de la cancha
       });
       
       // Dibujar jugador (balón de fútbol)
@@ -456,6 +692,138 @@
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 20px Arial';
       ctx.fillText(`Cruces: ${game.score}/${game.target}`, offsetX + 20, 30);
+      // Dibujar vidas (corazones)
+      ctx.fillText(`Vidas: ${'❤️'.repeat(game.lives)}`, offsetX + 20, 60);
+      
+      // Dibujar animación de gol si está activa
+      if (game.showGoalAnimation && goalImageLoaded && goalImage) {
+        const elapsed = Date.now() - game.goalAnimationTime;
+        const duration = 2500; // Duración total de la animación
+        const progress = Math.min(elapsed / duration, 1); // Progreso de 0 a 1
+        
+        ctx.save();
+        
+        // Centrar la imagen en el canvas
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        // Efecto de zoom y bounce
+        let scale = 0;
+        if (progress < 0.3) {
+          // Primera fase: zoom in rápido con bounce
+          const bounceProgress = progress / 0.3;
+          scale = 1.2 * bounceProgress - 0.2 * Math.sin(bounceProgress * Math.PI * 3); // Bounce effect
+        } else if (progress < 0.7) {
+          // Segunda fase: mantener tamaño con ligero movimiento
+          scale = 1.0 + 0.1 * Math.sin((progress - 0.3) * Math.PI * 2); // Pulso sutil
+        } else {
+          // Tercera fase: zoom out con fade
+          const fadeProgress = (progress - 0.7) / 0.3;
+          scale = 1.0 - 0.3 * fadeProgress;
+        }
+        
+        // Rotación animada
+        const rotation = progress < 0.3 ? 
+          (progress / 0.3) * Math.PI * 0.1 * Math.sin(progress * Math.PI * 5) : // Rotación inicial
+          Math.sin(progress * Math.PI * 2) * 0.05; // Oscilación sutil
+        
+        // Fade in/out
+        let alpha = 1.0;
+        if (progress < 0.2) {
+          // Fade in rápido
+          alpha = progress / 0.2;
+        } else if (progress > 0.7) {
+          // Fade out al final
+          alpha = 1.0 - ((progress - 0.7) / 0.3);
+        }
+        
+        // Aplicar transformaciones
+        ctx.translate(centerX, centerY);
+        ctx.rotate(rotation);
+        ctx.scale(scale, scale);
+        ctx.globalAlpha = alpha;
+        
+        // Dibujar la imagen centrada
+        const drawX = -goalImage.width / 2;
+        const drawY = -goalImage.height / 2;
+        ctx.drawImage(goalImage, drawX, drawY);
+        
+        // Efecto de brillo/glow adicional
+        if (progress < 0.4) {
+          ctx.globalAlpha = alpha * 0.3 * (1 - progress / 0.4);
+          ctx.filter = 'blur(20px)';
+          ctx.drawImage(goalImage, drawX, drawY);
+        }
+        
+        ctx.restore();
+      }
+      
+      // Dibujar animación de "out" si está activa (animación diferente, más negativa)
+      if (game.showOutAnimation && outImageLoaded && outImage) {
+        const elapsed = Date.now() - game.outAnimationTime;
+        const duration = 2000; // Duración total de la animación
+        const progress = Math.min(elapsed / duration, 1); // Progreso de 0 a 1
+        
+        ctx.save();
+        
+        // Centrar la imagen en el canvas
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        // Efecto diferente: temblor/agitación y escala más pequeña al final
+        let scale = 0;
+        let shakeX = 0;
+        let shakeY = 0;
+        
+        if (progress < 0.2) {
+          // Primera fase: aparece con temblor
+          const shakeProgress = progress / 0.2;
+          scale = 0.8 + 0.4 * shakeProgress; // Zoom in más lento
+          // Efecto de temblor
+          shakeX = (Math.random() - 0.5) * 20 * (1 - shakeProgress);
+          shakeY = (Math.random() - 0.5) * 20 * (1 - shakeProgress);
+        } else if (progress < 0.6) {
+          // Segunda fase: temblor constante (malo)
+          scale = 1.0;
+          shakeX = (Math.random() - 0.5) * 15;
+          shakeY = (Math.random() - 0.5) * 15;
+        } else {
+          // Tercera fase: se encoge y desaparece
+          const shrinkProgress = (progress - 0.6) / 0.4;
+          scale = 1.0 - 0.5 * shrinkProgress; // Se hace más pequeño
+          shakeX = (Math.random() - 0.5) * 10 * (1 - shrinkProgress);
+          shakeY = (Math.random() - 0.5) * 10 * (1 - shrinkProgress);
+        }
+        
+        // Rotación negativa (como si estuviera cayendo)
+        const rotation = progress < 0.5 ? 
+          -Math.sin(progress * Math.PI * 3) * 0.15 : // Oscilación negativa
+          -0.15 + (progress - 0.5) * 0.3; // Rotación hacia abajo
+        
+        // Fade in/out más rápido
+        let alpha = 1.0;
+        if (progress < 0.15) {
+          // Fade in rápido
+          alpha = progress / 0.15;
+        } else if (progress > 0.6) {
+          // Fade out al final
+          alpha = 1.0 - ((progress - 0.6) / 0.4);
+        }
+        
+        // Aplicar transformaciones
+        ctx.translate(centerX + shakeX, centerY + shakeY);
+        ctx.rotate(rotation);
+        ctx.scale(scale, scale);
+        ctx.globalAlpha = alpha;
+        
+        // Dibujar la imagen centrada
+        const drawX = -outImage.width / 2;
+        const drawY = -outImage.height / 2;
+        ctx.drawImage(outImage, drawX, drawY);
+        
+        ctx.restore();
+      }
+      
       
       if (game.gameOver) {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
@@ -466,6 +834,72 @@
         ctx.textAlign = 'center';
         ctx.fillText(game.message, canvas.width/2, canvas.height/2);
         ctx.textAlign = 'left';
+      }
+      
+      // Dibujar animación de "robada" DESPUÉS del game over overlay para que se vea encima
+      if (game.showRobadaAnimation && robadaImageLoaded && robadaImage && robadaImage.complete) {
+        const elapsed = Date.now() - game.robadaAnimationTime;
+        const duration = 2000; // Duración total de la animación
+        const progress = Math.min(elapsed / duration, 1); // Progreso de 0 a 1
+        
+        ctx.save();
+        
+        // Centrar la imagen en el canvas
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        // Efecto similar a "out": temblor/agitación y escala más pequeña al final
+        let scale = 0;
+        let shakeX = 0;
+        let shakeY = 0;
+        
+        if (progress < 0.2) {
+          // Primera fase: aparece con temblor
+          const shakeProgress = progress / 0.2;
+          scale = 0.8 + 0.4 * shakeProgress; // Zoom in más lento
+          // Efecto de temblor
+          shakeX = (Math.random() - 0.5) * 20 * (1 - shakeProgress);
+          shakeY = (Math.random() - 0.5) * 20 * (1 - shakeProgress);
+        } else if (progress < 0.6) {
+          // Segunda fase: temblor constante (malo)
+          scale = 1.0;
+          shakeX = (Math.random() - 0.5) * 15;
+          shakeY = (Math.random() - 0.5) * 15;
+        } else {
+          // Tercera fase: se encoge y desaparece
+          const shrinkProgress = (progress - 0.6) / 0.4;
+          scale = 1.0 - 0.5 * shrinkProgress; // Se hace más pequeño
+          shakeX = (Math.random() - 0.5) * 10 * (1 - shrinkProgress);
+          shakeY = (Math.random() - 0.5) * 10 * (1 - shrinkProgress);
+        }
+        
+        // Rotación negativa (como si estuviera cayendo)
+        const rotation = progress < 0.5 ? 
+          -Math.sin(progress * Math.PI * 3) * 0.15 : // Oscilación negativa
+          -0.15 + (progress - 0.5) * 0.3; // Rotación hacia abajo
+        
+        // Fade in/out más rápido
+        let alpha = 1.0;
+        if (progress < 0.15) {
+          // Fade in rápido
+          alpha = progress / 0.15;
+        } else if (progress > 0.6) {
+          // Fade out al final
+          alpha = 1.0 - ((progress - 0.6) / 0.4);
+        }
+        
+        // Aplicar transformaciones
+        ctx.translate(centerX + shakeX, centerY + shakeY);
+        ctx.rotate(rotation);
+        ctx.scale(scale, scale);
+        ctx.globalAlpha = alpha;
+        
+        // Dibujar la imagen centrada
+        const drawX = -robadaImage.width / 2;
+        const drawY = -robadaImage.height / 2;
+        ctx.drawImage(robadaImage, drawX, drawY);
+        
+        ctx.restore();
       }
     }
     

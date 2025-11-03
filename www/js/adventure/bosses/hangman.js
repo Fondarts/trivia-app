@@ -295,8 +295,22 @@
             }
           });
           
+          // Evento click (funciona tanto en desktop como móvil)
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!button.disabled && !game.gameOver) {
+              processLetter(letter);
+              updateKeyboardButtons();
+            }
+          });
+          
+          // Eventos táctiles para móvil
+          let touchStarted = false;
           button.addEventListener('touchstart', (e) => {
             e.preventDefault();
+            e.stopPropagation();
+            touchStarted = true;
             if (!button.disabled) {
               button.style.transform = 'scale(0.95)';
               button.style.background = '#3a4558';
@@ -305,17 +319,26 @@
           
           button.addEventListener('touchend', (e) => {
             e.preventDefault();
+            e.stopPropagation();
+            if (touchStarted && !button.disabled && !game.gameOver) {
+              // Procesar la letra cuando se levanta el dedo
+              processLetter(letter);
+              updateKeyboardButtons();
+              touchStarted = false;
+            }
             if (!button.disabled) {
               button.style.transform = 'scale(1)';
               button.style.background = '#4a5568';
             }
           });
           
-          // Evento click
-          button.addEventListener('click', () => {
-            if (!button.disabled && !game.gameOver) {
-              processLetter(letter);
-              updateKeyboardButtons();
+          button.addEventListener('touchcancel', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            touchStarted = false;
+            if (!button.disabled) {
+              button.style.transform = 'scale(1)';
+              button.style.background = '#4a5568';
             }
           });
           

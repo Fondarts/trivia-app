@@ -18,6 +18,20 @@
         imageLoaded = false;
       });
     
+    // Cargar imagen de fondo
+    let bgImage = null;
+    let bgImageLoaded = false;
+    window.BossCore.loadBossImage('assets/backgrounds/arkanoid_bg.png')
+      .then(img => { 
+        bgImage = img; 
+        bgImageLoaded = true; 
+        console.log('Imagen de fondo de Arkanoid cargada correctamente');
+      })
+      .catch(err => { 
+        bgImageLoaded = false; 
+        console.error('Error cargando imagen de fondo de Arkanoid:', err);
+      });
+    
     // Usar BossCore.calculateScale para responsive design
     const scaleConfig = window.BossCore.calculateScale(800, 600, canvas, {
       mobileWidth: 400,
@@ -228,12 +242,28 @@
     }
     
     function draw() {
-      // Fondo degradado oscuro
+      // Siempre dibujar el fondo degradado oscuro primero
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
       gradient.addColorStop(0, '#0a0a0a');
       gradient.addColorStop(1, '#1a1a2e');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Dibujar imagen de fondo con 50% de opacidad encima del degradado
+      if (bgImageLoaded && bgImage) {
+        ctx.save();
+        ctx.globalAlpha = 0.5;
+        ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+        ctx.restore();
+      } else {
+        // Debug: verificar por qué no se dibuja la imagen
+        if (!bgImageLoaded) {
+          console.log('bgImage no está cargada aún');
+        }
+        if (!bgImage) {
+          console.log('bgImage es null');
+        }
+      }
       
       // Aplicar transformaciones de escala y posición
       ctx.save();

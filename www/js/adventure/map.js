@@ -2,6 +2,13 @@
 (function(window) {
   'use strict';
   
+  // Función helper para cache busting en URLs de imágenes
+  function addCacheBust(url) {
+    if (!url) return url;
+    const separator = url.includes('?') ? '&' : '?';
+    return url + separator + 'v=' + Date.now();
+  }
+
   // Función toast simple para mostrar mensajes
   function showToast(message) {
     // Usar alert como fallback si no hay toast
@@ -336,7 +343,7 @@
         
         <div class="map-container">
           <div class="region-map" id="regionMapDiv" style="${mapStyle}">
-            <img id="regionBg" class="region-bg" alt="map" src="${region.mapImage || ''}"/>
+            <img id="regionBg" class="region-bg" alt="map" src=""/>
             <div class="nodes-container">
               <div id="playerMarker" class="player-marker" style="display:none" onclick="window.handlePlayerMarkerClick('${regionKey}')"><img id="playerMarkerImg" src="img/avatar_placeholder.svg" alt="avatar"/></div>
           ${region.nodes.map((node, index) => {
@@ -492,7 +499,7 @@
         let i = 0;
         const next = () => {
           if (i >= candidates.length) return;
-          const url = candidates[i++];
+          const url = addCacheBust(candidates[i++]);
           const probe = new Image();
           probe.onload = () => { 
             window.DOMOptimizer?.updateElement(bg, {
@@ -516,7 +523,7 @@
 
         const tryLoad = (idx = 0) => {
           if (idx >= candidates.length) return;
-          const url = candidates[idx];
+          const url = addCacheBust(candidates[idx]);
           const img = new Image();
           img.onload = () => {
             window.DOMOptimizer?.updateElement(mapDiv, {
@@ -549,7 +556,7 @@
         let i = 0;
         const next = () => {
           if (i >= candidates.length) return;
-          const url = candidates[i++];
+          const url = addCacheBust(candidates[i++]);
           const probe = new Image();
           probe.onload = () => { bg.src = url; bg.style.opacity = '1'; };
           probe.onerror = next;
@@ -564,7 +571,7 @@
         const candidates = [base, `./${base}`];
         const tryLoad = (idx = 0) => {
           if (idx >= candidates.length) return;
-          const url = candidates[idx];
+          const url = addCacheBust(candidates[idx]);
           const img = new Image();
           img.onload = () => {
             mapDiv.style.setProperty('background-image', `url('${url}')`, 'important');

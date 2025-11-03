@@ -188,11 +188,180 @@
       hints: handicap.hints || 0
     };
     
+    // Crear teclado virtual con distribución QWERTY mejorado
+    function createVirtualKeyboard() {
+      // Limpiar teclado existente si hay
+      cleanupVirtualKeyboard();
+      
+      const keyboard = document.createElement('div');
+      keyboard.id = 'hangman-virtual-keyboard';
+      keyboard.style.cssText = `
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        background: transparent;
+        padding: 12px 8px 16px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        z-index: 10000;
+      `;
+      
+      // Distribución QWERTY estándar
+      const qwertyRows = [
+        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+        ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+      ];
+      
+      qwertyRows.forEach((row, rowIndex) => {
+        const rowDiv = document.createElement('div');
+        rowDiv.style.cssText = `
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          width: 100%;
+          max-width: 600px;
+        `;
+        
+        row.forEach(letter => {
+          const button = document.createElement('button');
+          button.textContent = letter;
+          button.dataset.letter = letter;
+          button.style.cssText = `
+            background: #4a5568;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            min-width: 38px;
+            height: 48px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            position: relative;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+          `;
+          
+          // Efecto hover
+          button.addEventListener('mouseenter', () => {
+            if (!button.disabled) {
+              button.style.background = '#5a667a';
+              button.style.transform = 'scale(1.05)';
+              button.style.boxShadow = '0 3px 6px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+            }
+          });
+          
+          button.addEventListener('mouseleave', () => {
+            if (!button.disabled) {
+              button.style.background = '#4a5568';
+              button.style.transform = 'scale(1)';
+              button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+            }
+          });
+          
+          // Efecto click/touch
+          button.addEventListener('mousedown', () => {
+            if (!button.disabled) {
+              button.style.transform = 'scale(0.95)';
+              button.style.background = '#3a4558';
+            }
+          });
+          
+          button.addEventListener('mouseup', () => {
+            if (!button.disabled) {
+              button.style.transform = 'scale(1)';
+              button.style.background = '#4a5568';
+            }
+          });
+          
+          button.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (!button.disabled) {
+              button.style.transform = 'scale(0.95)';
+              button.style.background = '#3a4558';
+            }
+          });
+          
+          button.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (!button.disabled) {
+              button.style.transform = 'scale(1)';
+              button.style.background = '#4a5568';
+            }
+          });
+          
+          // Evento click
+          button.addEventListener('click', () => {
+            if (!button.disabled && !game.gameOver) {
+              processLetter(letter);
+              updateKeyboardButtons();
+            }
+          });
+          
+          rowDiv.appendChild(button);
+        });
+        
+        keyboard.appendChild(rowDiv);
+      });
+      
+      document.body.appendChild(keyboard);
+      
+      // Función para actualizar el estado de los botones
+      function updateKeyboardButtons() {
+        const buttons = keyboard.querySelectorAll('button');
+        buttons.forEach(btn => {
+          const letter = btn.dataset.letter;
+          const isGuessed = game.guessedLetters.includes(letter);
+          
+          if (isGuessed || game.gameOver) {
+            btn.disabled = true;
+            btn.style.cursor = 'not-allowed';
+            if (game.word.includes(letter)) {
+              // Letra correcta (verde)
+              btn.style.background = '#2ecc71';
+              btn.style.boxShadow = '0 2px 4px rgba(46, 204, 113, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+              btn.style.opacity = '0.9';
+            } else {
+              // Letra incorrecta (rojo)
+              btn.style.background = '#e74c3c';
+              btn.style.boxShadow = '0 2px 4px rgba(231, 76, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+              btn.style.opacity = '0.9';
+            }
+            btn.style.transform = 'none';
+          } else {
+            btn.disabled = false;
+            btn.style.cursor = 'pointer';
+            btn.style.background = '#4a5568';
+            btn.style.opacity = '1';
+            btn.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+          }
+        });
+      }
+      
+      // Guardar función de actualización para poder llamarla desde fuera
+      window.updateHangmanKeyboard = updateKeyboardButtons;
+      
+      // Actualizar estado inicial
+      updateKeyboardButtons();
+    }
+    
     // Función para limpiar el teclado virtual
     function cleanupVirtualKeyboard() {
       const keyboard = document.getElementById('hangman-virtual-keyboard');
       if (keyboard) {
         keyboard.remove();
+      }
+      // Limpiar función global
+      if (window.updateHangmanKeyboard) {
+        delete window.updateHangmanKeyboard;
       }
     }
 
@@ -202,6 +371,11 @@
       
       if (letter >= 'A' && letter <= 'Z' && letter.length === 1 && !game.guessedLetters.includes(letter)) {
         game.guessedLetters.push(letter);
+        
+        // Actualizar teclado virtual si existe
+        if (window.updateHangmanKeyboard) {
+          window.updateHangmanKeyboard();
+        }
         
         if (game.word.includes(letter)) {
           // Letra correcta
@@ -269,6 +443,9 @@
     // Ocultar HUD para hangman (no se necesita)
     const hud = document.getElementById('bossGameHUD');
     if (hud) hud.style.display = 'none';
+    
+    // Crear teclado virtual
+    createVirtualKeyboard();
     
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -216,32 +216,45 @@
         ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
       ];
       
+      // Detectar si es móvil
+      const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
       qwertyRows.forEach((row, rowIndex) => {
         const rowDiv = document.createElement('div');
+        const gap = isMobile ? 4 : 5;
+        const padding = isMobile ? 4 : 0;
+        
         rowDiv.style.cssText = `
           display: flex;
           justify-content: center;
-          gap: 5px;
+          gap: ${gap}px;
           width: 100%;
-          max-width: 600px;
+          max-width: ${isMobile ? '100%' : '600px'};
+          padding: 0 ${padding}px;
         `;
         
         row.forEach(letter => {
           const button = document.createElement('button');
           button.textContent = letter;
           button.dataset.letter = letter;
+          
+          // Calcular ancho para móvil: distribuir el espacio disponible entre las teclas
+          const buttonWidth = isMobile ? 'calc((100% - ' + (padding * 2) + 'px - ' + (gap * (row.length - 1)) + 'px) / ' + row.length + ')' : 'auto';
+          
           button.style.cssText = `
             background: #4a5568;
             color: #ffffff;
             border: none;
             border-radius: 8px;
-            padding: 16px 12px;
-            font-size: 17px;
+            padding: ${isMobile ? '12px 8px' : '16px 12px'};
+            font-size: ${isMobile ? '15px' : '17px'};
             font-weight: 600;
             cursor: pointer;
             transition: all 0.1s ease;
-            min-width: 38px;
-            height: 48px;
+            min-width: ${isMobile ? buttonWidth : '38px'};
+            width: ${isMobile ? buttonWidth : 'auto'};
+            flex: ${isMobile ? '0 1 auto' : '0 1 auto'};
+            height: ${isMobile ? '44px' : '48px'};
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
                         inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -409,36 +422,42 @@
       processLetter(e.key.toUpperCase());
     });
 
-    // Configurar teclado nativo del móvil mediante un input oculto
-    const hiddenInput = document.createElement('input');
-    hiddenInput.type = 'text';
-    hiddenInput.inputMode = 'text';
-    hiddenInput.autocapitalize = 'characters';
-    hiddenInput.autocomplete = 'off';
-    hiddenInput.autocorrect = 'off';
-    hiddenInput.spellcheck = false;
-    hiddenInput.maxLength = 1;
-    hiddenInput.id = 'hangman-native-input';
-    hiddenInput.style.cssText = 'position:fixed;opacity:0;pointer-events:none;height:0;width:0;left:-1000px;top:-1000px;';
-    document.body.appendChild(hiddenInput);
+    // Detectar si es móvil para deshabilitar teclado nativo
+    const isMobileDevice = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Solo crear input oculto si NO es móvil (para desktops/laptops con teclado físico)
+    if (!isMobileDevice) {
+      // Configurar teclado nativo del móvil mediante un input oculto
+      const hiddenInput = document.createElement('input');
+      hiddenInput.type = 'text';
+      hiddenInput.inputMode = 'text';
+      hiddenInput.autocapitalize = 'characters';
+      hiddenInput.autocomplete = 'off';
+      hiddenInput.autocorrect = 'off';
+      hiddenInput.spellcheck = false;
+      hiddenInput.maxLength = 1;
+      hiddenInput.id = 'hangman-native-input';
+      hiddenInput.style.cssText = 'position:fixed;opacity:0;pointer-events:none;height:0;width:0;left:-1000px;top:-1000px;';
+      document.body.appendChild(hiddenInput);
 
-    function focusHiddenInputSoon() {
-      setTimeout(() => hiddenInput.focus(), 50);
-    }
-
-    hiddenInput.addEventListener('input', () => {
-      const value = (hiddenInput.value || '').toUpperCase();
-      if (value && value.length >= 1) {
-        const letter = value[value.length - 1];
-        processLetter(letter);
-        hiddenInput.value = '';
+      function focusHiddenInputSoon() {
+        setTimeout(() => hiddenInput.focus(), 50);
       }
-      focusHiddenInputSoon();
-    });
 
-    // Intentar mantener el foco para que el teclado nativo permanezca abierto
-    canvas.addEventListener('click', focusHiddenInputSoon);
-    focusHiddenInputSoon();
+      hiddenInput.addEventListener('input', () => {
+        const value = (hiddenInput.value || '').toUpperCase();
+        if (value && value.length >= 1) {
+          const letter = value[value.length - 1];
+          processLetter(letter);
+          hiddenInput.value = '';
+        }
+        focusHiddenInputSoon();
+      });
+
+      // Intentar mantener el foco para que el teclado nativo permanezca abierto
+      canvas.addEventListener('click', focusHiddenInputSoon);
+      focusHiddenInputSoon();
+    }
     
     // Ocultar HUD para hangman (no se necesita)
     const hud = document.getElementById('bossGameHUD');

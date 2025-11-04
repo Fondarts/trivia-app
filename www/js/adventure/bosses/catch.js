@@ -19,9 +19,6 @@
       return;
     }
     
-    // Actualizar HUD para indicar que el juego está iniciando
-    window.BossCore.updateBossHUD('Iniciando juego de ciencia...');
-    
     // Usar BossCore.calculateScale para responsive design
     const scaleConfig = window.BossCore.calculateScale(360, 640, canvas, {
       mobileWidth: 360,
@@ -150,12 +147,15 @@
     let spawnInterval = 1200; // Aumentar intervalo inicial
     const maxObjectsOnScreen = 4; // Máximo de objetos simultáneos
     let completedFormulas = 0;
-    let misses = 0;
-    const maxMisses = 3;
+    let lives = 3; // Vidas (corazones) - empezar con 3 vidas
     let baseSpeed = 0.8;
     let speedMultiplier = 1.0;
     let gameTime = 0;
     const objectSize = 35; // Tamaño fijo para los elementos
+    
+    // Actualizar HUD inicial con las vidas
+    const playerName = window.BossCore.getPlayerNameForBoss();
+    window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
     
     // Función para verificar si hay superposición al spawnear
     function canSpawnAt(x, size) {
@@ -306,14 +306,8 @@
         // O cuando esté completamente fuera del área visible (con margen)
         const removalMargin = o.size * 2;
         if (o.alpha <= 0 || o.y + o.size < -removalMargin || o.y > baseHeight + removalMargin || o.x + o.size < -removalMargin || o.x > baseWidth + removalMargin) {
-          // Si cae un elemento correcto que necesitamos = ERROR (solo cuando sale por abajo completamente)
-          if (o.y > baseHeight && o.isCorrect && currentFormula.components.includes(o.element) && !capturedElements.includes(o.element)) {
-            misses++;
-            if (misses >= maxMisses) {
-              window.BossCore.endBossGame(false);
-              return false;
-            }
-          }
+          // NO penalizar si un elemento correcto cae sin ser atrapado - simplemente desaparece
+          // Solo eliminar el objeto sin penalización
           objects.splice(i, 1);
           continue;
         }
@@ -381,9 +375,15 @@
         
         // 7. SOLO cuenta si hay superposición horizontal Y el elemento toca la parte superior
         if (hasHorizontalOverlap && isAboveOrTouching && (justCrossedTop || isTouchingTop)) {
-          if (o.isCorrect && currentFormula.components.includes(o.element)) {
-            // Atrapar elemento correcto
-            if (!capturedElements.includes(o.element)) {
+          // Verificar si el elemento está en la fórmula actual
+          const isInFormula = currentFormula.components.includes(o.element);
+          
+          if (isInFormula) {
+            // Atrapar elemento correcto (está en la fórmula)
+            const alreadyCaptured = capturedElements.includes(o.element);
+            
+            if (!alreadyCaptured) {
+              // Agregar el elemento a los capturados (primera vez)
               capturedElements.push(o.element);
               
               // Verificar si se completó la fórmula
@@ -397,24 +397,48 @@
                 // No limpiar objetos, solo cambiar a la siguiente fórmula
                 nextFormula();
               }
+              
+              // Eliminar el objeto después de capturarlo correctamente
+              objects.splice(i, 1);
+              continue;
             } else {
-              // Atrapar elemento duplicado = ERROR (ya lo tenemos)
-              misses++;
-              if (misses >= maxMisses) {
+              // Si ya lo tenemos capturado, restar vida (segunda vez)
+              lives--;
+              
+              // Actualizar HUD con las vidas restantes
+              const playerName = window.BossCore.getPlayerNameForBoss();
+              window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+              
+              // Verificar si aún quedan vidas
+              if (lives <= 0) {
+                // Sin vidas, perder la partida
                 window.BossCore.endBossGame(false);
                 return false;
               }
+              
+              // Eliminar el objeto después de penalizar
+              objects.splice(i, 1);
+              continue;
             }
           } else {
-            // Atrapar elemento incorrecto = ERROR
-            misses++;
-            if (misses >= maxMisses) {
+            // Atrapar elemento INCORRECTO (no está en la fórmula) = RESTAR UN CORAZÓN
+            lives--;
+            
+            // Actualizar HUD con las vidas restantes
+            const playerName = window.BossCore.getPlayerNameForBoss();
+            window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+            
+            // Verificar si aún quedan vidas
+            if (lives <= 0) {
+              // Sin vidas, perder la partida
               window.BossCore.endBossGame(false);
               return false;
             }
+            
+            // Eliminar el objeto después de capturarlo
+            objects.splice(i, 1);
+            continue;
           }
-          objects.splice(i, 1);
-          continue;
         }
       }
 
@@ -464,19 +488,26 @@
       ctx.translate(offsetX, offsetY);
       ctx.scale(scale, scale);
 
-      // Aplicar clip (matte) al área del marco - nada fuera del marco será visible
-      ctx.save();
-      ctx.beginPath();
-      ctx.rect(0, 0, baseWidth, baseHeight);
-      ctx.clip();
+      // Función para desaturar un color (convertir a escala de grises)
+      function desaturateColor(hexColor, amount = 0.7) {
+        // Convertir hex a RGB
+        const r = parseInt(hexColor.slice(1, 3), 16);
+        const g = parseInt(hexColor.slice(3, 5), 16);
+        const b = parseInt(hexColor.slice(5, 7), 16);
+        
+        // Calcular el promedio (gris)
+        const gray = (r + g + b) / 3;
+        
+        // Interpolar entre el color original y el gris
+        const desaturatedR = Math.round(r * (1 - amount) + gray * amount);
+        const desaturatedG = Math.round(g * (1 - amount) + gray * amount);
+        const desaturatedB = Math.round(b * (1 - amount) + gray * amount);
+        
+        // Convertir de vuelta a hex
+        return `#${desaturatedR.toString(16).padStart(2, '0')}${desaturatedG.toString(16).padStart(2, '0')}${desaturatedB.toString(16).padStart(2, '0')}`;
+      }
 
-      // Dibujar canasto en lugar de barra (dentro del clip)
-      drawBasket(ctx, player.x, player.y, basketWidth, basketHeight);
-      
-      // zona segura inferior de referencia (opcional visual mínimo)
-      // ctx.fillStyle = 'rgba(255,255,255,0.04)'; ctx.fillRect(0, baseHeight - safeBottom, baseWidth, 1);
-
-      // Función para dibujar diferentes formas
+      // Función para dibujar diferentes formas (definida antes del clip para que esté disponible en el sidebar)
       function drawShape(ctx, x, y, size, shape, color) {
         ctx.fillStyle = color;
         ctx.strokeStyle = color;
@@ -518,6 +549,18 @@
           ctx.stroke();
         }
       }
+
+      // Aplicar clip (matte) al área del marco - nada fuera del marco será visible
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, 0, baseWidth, baseHeight);
+      ctx.clip();
+
+      // Dibujar canasto en lugar de barra (dentro del clip)
+      drawBasket(ctx, player.x, player.y, basketWidth, basketHeight);
+      
+      // zona segura inferior de referencia (opcional visual mínimo)
+      // ctx.fillStyle = 'rgba(255,255,255,0.04)'; ctx.fillRect(0, baseHeight - safeBottom, baseWidth, 1);
       
       // Dibujar elementos químicos (solo la parte dentro del marco será visible gracias al clip)
       for (const o of objects) {
@@ -544,15 +587,29 @@
       // Restaurar el clip después de dibujar todos los elementos
       ctx.restore();
       
-      // Dibujar marco alrededor del área de juego (FUERA del clip para que sea visible)
+      // Dibujar marco mejorado alrededor del área de juego (FUERA del clip para que sea visible)
+      ctx.save();
+      
+      // Marco exterior con efecto glow
       ctx.strokeStyle = '#5a9ff2';
-      ctx.lineWidth = 4;
+      ctx.lineWidth = 5;
+      ctx.shadowColor = '#00ffff';
+      ctx.shadowBlur = 15;
       ctx.strokeRect(0, 0, baseWidth, baseHeight);
       
-      // Marco interior más sutil
-      ctx.strokeStyle = 'rgba(90, 159, 242, 0.3)';
+      // Marco interior brillante
+      ctx.strokeStyle = '#00ffff';
       ctx.lineWidth = 2;
+      ctx.shadowBlur = 8;
       ctx.strokeRect(2, 2, baseWidth - 4, baseHeight - 4);
+      
+      // Marco interior más sutil para profundidad
+      ctx.strokeStyle = 'rgba(90, 159, 242, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.shadowBlur = 0;
+      ctx.strokeRect(4, 4, baseWidth - 8, baseHeight - 8);
+      
+      ctx.restore();
       
       // Restaurar transformaciones
       ctx.restore();
@@ -576,20 +633,67 @@
       // Componentes necesarios
       ctx.font = 'bold 16px monospace';
       ctx.fillText('Necesitas:', sidebarX, sidebarY);
+      sidebarY += 30;
+      
+      // Dibujar cada componente visualmente con su forma y color
+      let currentX = sidebarX;
+      const elementDisplaySize = 35; // Tamaño para mostrar los elementos en la fórmula (aumentado para mejor visibilidad)
+      const elementSpacing = 45; // Espacio entre elementos (aumentado proporcionalmente)
+      
+      currentFormula.components.forEach((comp, index) => {
+        const isCaptured = capturedElements.includes(comp);
+        const elementConfig = elementConfigs[comp] || { color: '#95a5a6', shape: 'circle' };
+        
+        // Determinar el color a usar: original si está capturado, desaturado si no
+        const displayColor = isCaptured ? elementConfig.color : desaturateColor(elementConfig.color, 0.9);
+        
+        // Dibujar el elemento con su forma y color
+        ctx.save();
+        ctx.globalAlpha = 1.0; // Siempre opacidad completa para mejor legibilidad
+        
+        // Dibujar la forma del elemento
+        const elementY = sidebarY;
+        drawShape(ctx, currentX, elementY, elementDisplaySize, elementConfig.shape, displayColor);
+        
+        // Dibujar el texto del elemento (siempre con buena visibilidad)
+        ctx.fillStyle = '#fff'; // Texto siempre blanco y visible
+        ctx.font = isCaptured ? 'bold 16px Arial' : '16px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(comp, currentX + elementDisplaySize / 2, elementY + elementDisplaySize / 2);
+        
+        ctx.restore();
+        
+        // Agregar el símbolo "+" entre elementos (excepto el último)
+        if (index < currentFormula.components.length - 1) {
+          ctx.fillStyle = '#fff';
+          ctx.font = 'bold 16px Arial';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          // Centrar verticalmente el "+" en el centro exacto del elemento
+          const plusX = currentX + elementDisplaySize + (elementSpacing / 2);
+          const plusY = elementY + elementDisplaySize / 2;
+          ctx.fillText('+', plusX, plusY);
+        }
+        
+        currentX += elementDisplaySize + elementSpacing;
+      });
+      
+      sidebarY += elementDisplaySize + 20;
+      
+      // Vidas (corazones)
+      ctx.font = 'bold 16px monospace';
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      ctx.fillText(`Vidas: ${'❤️'.repeat(lives)}`, sidebarX, sidebarY);
       sidebarY += 25;
       
-      const componentsDisplay = currentFormula.components.map(comp => {
-        const isCaptured = capturedElements.includes(comp);
-        return isCaptured ? `[${comp}]` : comp;
-      }).join(' + ');
-      
-      ctx.font = '18px Arial';
-      ctx.fillText(componentsDisplay, sidebarX, sidebarY);
-      sidebarY += 40;
-      
-      // Contador de fórmulas completadas
+      // Contador de fórmulas completadas (alineado correctamente)
       ctx.font = 'bold 16px monospace';
       ctx.fillStyle = '#2ecc71';
+      ctx.textAlign = 'left'; // Asegurar alineamiento a la izquierda
+      ctx.textBaseline = 'top'; // Asegurar alineamiento superior
       ctx.fillText(`Completadas: ${completedFormulas}/10`, sidebarX, sidebarY);
     }
 

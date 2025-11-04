@@ -114,7 +114,7 @@
         // Mostrar imagen de victoria cuando se gana un boss
         // Crear el contenedor inmediatamente con estilos correctos para evitar desplazamiento
         const victoryDiv = document.createElement('div');
-        victoryDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20000; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; pointer-events: none;';
+        victoryDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20000; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; pointer-events: none;';
         container.appendChild(victoryDiv);
         
         // Pre-cargar la imagen y luego insertarla cuando esté lista
@@ -125,13 +125,35 @@
           imgElement.alt = '¡Ganaste!';
           imgElement.style.cssText = 'max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; animation: fadeInScale 0.5s ease;';
           victoryDiv.appendChild(imgElement);
+          
+          // Si hay una palabra guardada (hangman), mostrarla debajo de la imagen
+          if (window.bossGameState && window.bossGameState.wonWord) {
+            const wordText = document.createElement('div');
+            // Reemplazar guiones bajos por espacios para mejor legibilidad
+            const displayWord = window.bossGameState.wonWord.replace(/_/g, ' ');
+            wordText.textContent = `La palabra era: ${displayWord}`;
+            
+            // Ajustar tamaño de fuente según la longitud de la palabra (sin guiones bajos)
+            let fontSize = 24;
+            const wordLength = displayWord.length;
+            if (wordLength > 15) {
+              fontSize = 18; // Palabras muy largas (como "Santo Domingo")
+            } else if (wordLength > 10) {
+              fontSize = 20; // Palabras largas
+            }
+            
+            wordText.style.cssText = `color: #fff; font-size: ${fontSize}px; font-weight: bold; text-align: center; margin-top: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); animation: fadeInScale 0.5s ease;`;
+            victoryDiv.appendChild(wordText);
+            // Limpiar la palabra guardada después de mostrarla
+            delete window.bossGameState.wonWord;
+          }
         };
         img.src = 'assets/bosses/ganaste.webp';
       } else {
         // Mostrar imagen de derrota cuando pierdes contra un boss
         // Crear el contenedor inmediatamente con estilos correctos para evitar desplazamiento
         const defeatDiv = document.createElement('div');
-        defeatDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20000; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; pointer-events: none;';
+        defeatDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20000; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; pointer-events: none;';
         container.appendChild(defeatDiv);
         
         // Pre-cargar la imagen y luego insertarla cuando esté lista
@@ -142,6 +164,28 @@
           imgElement.alt = 'Derrota';
           imgElement.style.cssText = 'max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; animation: fadeInScale 0.5s ease;';
           defeatDiv.appendChild(imgElement);
+          
+          // Si hay una palabra guardada (hangman), mostrarla debajo de la imagen
+          if (window.bossGameState && window.bossGameState.lostWord) {
+            const wordText = document.createElement('div');
+            // Reemplazar guiones bajos por espacios para mejor legibilidad
+            const displayWord = window.bossGameState.lostWord.replace(/_/g, ' ');
+            wordText.textContent = `La palabra era: ${displayWord}`;
+            
+            // Ajustar tamaño de fuente según la longitud de la palabra (sin guiones bajos)
+            let fontSize = 24;
+            const wordLength = displayWord.length;
+            if (wordLength > 15) {
+              fontSize = 18; // Palabras muy largas (como "Santo Domingo")
+            } else if (wordLength > 10) {
+              fontSize = 20; // Palabras largas
+            }
+            
+            wordText.style.cssText = `color: #fff; font-size: ${fontSize}px; font-weight: bold; text-align: center; margin-top: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); animation: fadeInScale 0.5s ease;`;
+            defeatDiv.appendChild(wordText);
+            // Limpiar la palabra guardada después de mostrarla
+            delete window.bossGameState.lostWord;
+          }
         };
         img.src = 'assets/bosses/perdiste.webp';
       }
@@ -152,7 +196,7 @@
       if (window.bossGameState.callback) {
         window.bossGameState.callback(won);
       }
-    }, 2000);
+    }, 3000);
   }
 
   // Función para rendirse

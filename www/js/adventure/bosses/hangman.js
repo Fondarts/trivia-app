@@ -419,6 +419,8 @@
             game.won = true;
             game.gameOver = true;
             game.message = '¡VICTORIA! ¡Adivinaste la palabra!';
+            // Guardar la palabra para mostrarla debajo de la imagen de ganaste
+            window.bossGameState.wonWord = game.word;
             setTimeout(() => {
               cleanupVirtualKeyboard();
               window.BossCore.endBossGame(true);
@@ -430,7 +432,8 @@
           if (game.wrongGuesses >= game.maxWrongGuesses) {
             game.gameOver = true;
             game.won = false;
-            game.message = `¡DERROTA! La palabra era: ${game.word}`;
+            // Guardar la palabra para mostrarla debajo de la imagen de perdiste
+            window.bossGameState.lostWord = game.word;
             setTimeout(() => {
               cleanupVirtualKeyboard();
               window.BossCore.endBossGame(false);
@@ -560,15 +563,9 @@
       drawUsedLetters(12, baseHeight - 16, game.guessedLetters);
       
       // === MENSAJES DE JUEGO ===
+      // Los mensajes de victoria/derrota se muestran en endBossGame, no aquí
       if (game.gameOver) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-        ctx.fillRect(0, 0, baseWidth, baseHeight);
-        
-        ctx.fillStyle = game.won ? '#2ecc71' : '#e74c3c';
-        ctx.font = 'bold 24px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText(game.message, baseWidth/2, baseHeight/2);
-        ctx.textAlign = 'left';
+        // No mostrar mensajes aquí, se manejan en endBossGame
       }
       
       ctx.restore();

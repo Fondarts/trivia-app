@@ -784,17 +784,41 @@
     // Mostrar mensaje de resultado
     const container = document.getElementById('adventureGameArea');
     if (container) {
-      const message = won ? '🎉 ¡VICTORIA! 🎉' : '💀 DERROTA 💀';
-      const color = won ? '#2ecc71' : '#e74c3c';
-      
-      container.innerHTML += `
-        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-                    background: ${color}; color: white; padding: 30px 50px; 
-                    border-radius: 20px; font-size: 32px; font-weight: bold; 
-                    z-index: 20000; animation: fadeInScale 0.5s ease;">
-          ${message}
-        </div>
-      `;
+      if (won) {
+        // Mostrar imagen de victoria cuando se gana un boss
+        // Crear el contenedor inmediatamente con estilos correctos para evitar desplazamiento
+        const victoryDiv = document.createElement('div');
+        victoryDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20000; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; pointer-events: none;';
+        container.appendChild(victoryDiv);
+        
+        // Pre-cargar la imagen y luego insertarla cuando esté lista
+        const img = new Image();
+        img.onload = function() {
+          const imgElement = document.createElement('img');
+          imgElement.src = 'assets/bosses/ganaste.webp';
+          imgElement.alt = '¡Ganaste!';
+          imgElement.style.cssText = 'max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; animation: fadeInScale 0.5s ease;';
+          victoryDiv.appendChild(imgElement);
+        };
+        img.src = 'assets/bosses/ganaste.webp';
+      } else {
+        // Mostrar imagen de derrota cuando pierdes contra un boss
+        // Crear el contenedor inmediatamente con estilos correctos para evitar desplazamiento
+        const defeatDiv = document.createElement('div');
+        defeatDiv.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20000; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; pointer-events: none;';
+        container.appendChild(defeatDiv);
+        
+        // Pre-cargar la imagen y luego insertarla cuando esté lista
+        const img = new Image();
+        img.onload = function() {
+          const imgElement = document.createElement('img');
+          imgElement.src = 'assets/bosses/perdiste.webp';
+          imgElement.alt = 'Derrota';
+          imgElement.style.cssText = 'max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; animation: fadeInScale 0.5s ease;';
+          defeatDiv.appendChild(imgElement);
+        };
+        img.src = 'assets/bosses/perdiste.webp';
+      }
     }
     
     // Llamar al callback después de un delay

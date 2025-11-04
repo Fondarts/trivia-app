@@ -3,8 +3,24 @@
   'use strict';
 
   function initScienceCatch(handicap) {
+    // Verificar que BossCore esté disponible
+    if (!window.BossCore) {
+      console.error('❌ BossCore no está disponible. Asegúrate de cargar bosses.js antes que catch.js');
+      window.BossCore.updateBossHUD('❌ Error: BossCore no disponible');
+      return;
+    }
+    
     const canvas = window.bossGameState.canvas;
     const ctx = window.bossGameState.ctx;
+    
+    if (!canvas || !ctx) {
+      console.error('❌ Canvas o contexto no están disponibles');
+      window.BossCore.updateBossHUD('❌ Error: Canvas no disponible');
+      return;
+    }
+    
+    // Actualizar HUD para indicar que el juego está iniciando
+    window.BossCore.updateBossHUD('Iniciando juego de ciencia...');
     
     // Usar BossCore.calculateScale para responsive design
     const scaleConfig = window.BossCore.calculateScale(360, 640, canvas, {
@@ -23,6 +39,18 @@
       })
       .catch(() => { 
         bgImageLoaded = false; 
+      });
+
+    // Cargar imagen del científico
+    let scientistImage = null;
+    let scientistImageLoaded = false;
+    window.BossCore.loadBossImage('assets/bosses/cientifico.webp')
+      .then(img => { 
+        scientistImage = img; 
+        scientistImageLoaded = true; 
+      })
+      .catch(() => { 
+        scientistImageLoaded = false; 
       });
 
     // Cargar imágenes de ciencia usando BossCore helper
@@ -165,7 +193,9 @@
         element, 
         isCorrect,
         color: elementConfig.color,
-        shape: elementConfig.shape
+        shape: elementConfig.shape,
+        alpha: 1.0, // Opacidad inicial
+        prevY: -objectSize // Posición Y anterior para detectar colisiones
       });
     }
     
@@ -209,11 +239,126 @@
 
       for (let i = objects.length - 1; i >= 0; i--) {
         const o = objects[i];
-        // Actualizar velocidad del objeto con el multiplicador actual
-        o.y += o.speed;
+        // Guardar posición anterior antes de actualizar (importante para detectar colisiones)
+        if (o.prevY === undefined) o.prevY = o.y;
+        const previousY = o.prevY; // Guardar temporalmente
+        o.prevY = o.y; // Actualizar prevY con la posición actual antes de mover
+        o.y += o.speed; // Mover el objeto
         
-        // Colisión con el canasto
-        if (o.y + o.size >= player.y && o.y <= player.y + player.height && o.x + o.size >= player.x && o.x <= player.x + player.width) {
+        // Calcular opacidad basada en qué tan fuera del marco está el objeto
+        // El objeto comienza a desvanecerse cuando empieza a salir del marco
+        const fadeZoneHeight = o.size; // Zona de desvanecimiento de 1 vez el tamaño del objeto
+        
+        // Verificar si el objeto está dentro del marco visual (0 a baseHeight, 0 a baseWidth)
+        const isInsideFrame = o.y >= 0 && o.y + o.size <= baseHeight && o.x >= 0 && o.x + o.size <= baseWidth;
+        
+        if (isInsideFrame) {
+          // El objeto está completamente dentro del marco, opacidad completa
+          o.alpha = 1.0;
+        } else {
+          // El objeto está saliendo del marco, calcular opacidad basada en la distancia
+          let distanceOut = 0;
+          
+          // Salir por abajo (lo más común)
+          if (o.y + o.size > baseHeight) {
+            distanceOut = (o.y + o.size) - baseHeight;
+          }
+          // Salir por arriba (no debería pasar, pero por si acaso)
+          else if (o.y < 0) {
+            distanceOut = Math.abs(o.y);
+          }
+          // Salir por la derecha
+          else if (o.x + o.size > baseWidth) {
+            distanceOut = (o.x + o.size) - baseWidth;
+          }
+          // Salir por la izquierda
+          else if (o.x < 0) {
+            distanceOut = Math.abs(o.x);
+          }
+          
+          // Calcular opacidad: se desvanece gradualmente en la zona de desvanecimiento
+          o.alpha = Math.max(0, 1.0 - (distanceOut / fadeZoneHeight));
+        }
+        
+        // Eliminar objeto solo cuando esté completamente invisible y fuera del marco
+        // O cuando esté completamente fuera del área visible (con margen)
+        const removalMargin = o.size * 2;
+        if (o.alpha <= 0 || o.y + o.size < -removalMargin || o.y > baseHeight + removalMargin || o.x + o.size < -removalMargin || o.x > baseWidth + removalMargin) {
+          // Si cae un elemento correcto que necesitamos = ERROR (solo cuando sale por abajo completamente)
+          if (o.y > baseHeight && o.isCorrect && currentFormula.components.includes(o.element) && !capturedElements.includes(o.element)) {
+            misses++;
+            if (misses >= maxMisses) {
+              window.BossCore.endBossGame(false);
+              return false;
+            }
+          }
+          objects.splice(i, 1);
+          continue;
+        }
+        
+        // ===== COLISIÓN CON EL CIENTÍFICO - LÓGICA SIMPLE Y DIRECTA =====
+        // Solo cuenta si el elemento toca la parte SUPERIOR del científico desde ARRIBA
+        // El beaker está por encima de la cabeza del científico, así que la zona de colisión debe estar más arriba
+        
+        // 1. El objeto debe estar cayendo (movimiento hacia abajo)
+        if (o.speed <= 0) continue;
+        
+        // 2. Calcular posiciones del elemento
+        const elementBottom = o.y + o.size; // Parte inferior del elemento
+        const elementTop = o.y; // Parte superior del elemento
+        const elementPrevBottom = previousY + o.size; // Parte inferior anterior
+        
+        // 3. La zona de colisión está más arriba del científico (donde está el beaker)
+        // El beaker está sostenido por encima de la cabeza del científico
+        // Necesitamos calcular dónde está el beaker en la pantalla
+        // Si la imagen del científico se dibuja desde player.y, el beaker está en la parte superior de esa imagen
+        // Calcular la posición real del beaker considerando cómo se dibuja la imagen
+        let beakerY = player.y;
+        
+        if (scientistImageLoaded && scientistImage) {
+          // Calcular cómo se dibuja realmente la imagen
+          const imgAspect = scientistImage.naturalWidth / scientistImage.naturalHeight;
+          let actualDrawHeight = player.height;
+          let actualDrawY = player.y;
+          
+          if (imgAspect <= 1) {
+            // Si la imagen es más alta que ancha, se ajusta por ancho y se centra verticalmente
+            actualDrawHeight = (player.width / imgAspect);
+            actualDrawY = player.y + (player.height - actualDrawHeight) / 2;
+          }
+          
+          // El beaker está en la parte superior de la imagen (aproximadamente en el 5% superior)
+          const beakerOffsetInImage = actualDrawHeight * 0.05;
+          beakerY = actualDrawY + beakerOffsetInImage;
+        } else {
+          // Fallback: usar un offset fijo si la imagen no está cargada
+          beakerY = player.y - (player.height * 0.5);
+        }
+        
+        const scientistTopY = beakerY; // Zona de colisión donde está el beaker
+        
+        // 4. Verificar superposición horizontal (con margen para evitar costados)
+        const sideMargin = 8; // Margen para evitar capturas por los costados
+        const elementLeft = o.x;
+        const elementRight = o.x + o.size;
+        const scientistLeft = player.x + sideMargin;
+        const scientistRight = player.x + player.width - sideMargin;
+        
+        // Hay superposición horizontal si el elemento está dentro del área del científico (con margen)
+        const hasHorizontalOverlap = elementRight > scientistLeft && elementLeft < scientistRight;
+        
+        // 5. Detectar si el elemento está tocando la parte superior del científico
+        // Condición A: La parte inferior del elemento acaba de cruzar la parte superior del científico
+        const justCrossedTop = elementPrevBottom < scientistTopY && elementBottom >= scientistTopY;
+        
+        // Condición B: La parte inferior del elemento está en contacto con la parte superior (tolerancia de 5 píxeles)
+        const isTouchingTop = elementBottom >= scientistTopY && elementBottom <= scientistTopY + 5 && elementTop <= scientistTopY;
+        
+        // 6. El elemento debe estar por encima o tocando la parte superior (no debe haber pasado completamente)
+        const isAboveOrTouching = elementTop <= scientistTopY + 5;
+        
+        // 7. SOLO cuenta si hay superposición horizontal Y el elemento toca la parte superior
+        if (hasHorizontalOverlap && isAboveOrTouching && (justCrossedTop || isTouchingTop)) {
           if (o.isCorrect && currentFormula.components.includes(o.element)) {
             // Atrapar elemento correcto
             if (!capturedElements.includes(o.element)) {
@@ -248,19 +393,6 @@
           }
           objects.splice(i, 1);
           continue;
-        }
-        
-        // Objeto cae al suelo
-        if (o.y > baseHeight) {
-          // Si cae un elemento correcto que necesitamos = ERROR
-          if (o.isCorrect && currentFormula.components.includes(o.element) && !capturedElements.includes(o.element)) {
-            misses++;
-            if (misses >= maxMisses) {
-              window.BossCore.endBossGame(false);
-              return false;
-            }
-          }
-          objects.splice(i, 1);
         }
       }
 
@@ -310,17 +442,13 @@
       ctx.translate(offsetX, offsetY);
       ctx.scale(scale, scale);
 
-      // Dibujar marco alrededor del área de juego
-      ctx.strokeStyle = '#5a9ff2';
-      ctx.lineWidth = 4;
-      ctx.strokeRect(0, 0, baseWidth, baseHeight);
-      
-      // Marco interior más sutil
-      ctx.strokeStyle = 'rgba(90, 159, 242, 0.3)';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(2, 2, baseWidth - 4, baseHeight - 4);
+      // Aplicar clip (matte) al área del marco - nada fuera del marco será visible
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, 0, baseWidth, baseHeight);
+      ctx.clip();
 
-      // Dibujar canasto en lugar de barra
+      // Dibujar canasto en lugar de barra (dentro del clip)
       drawBasket(ctx, player.x, player.y, basketWidth, basketHeight);
       
       // zona segura inferior de referencia (opcional visual mínimo)
@@ -369,8 +497,14 @@
         }
       }
       
-      // Dibujar elementos químicos
+      // Dibujar elementos químicos (solo la parte dentro del marco será visible gracias al clip)
       for (const o of objects) {
+        // Guardar el estado del contexto
+        ctx.save();
+        
+        // Aplicar opacidad al objeto
+        ctx.globalAlpha = o.alpha || 1.0;
+        
         // Dibujar forma con su color asignado
         drawShape(ctx, o.x, o.y, o.size, o.shape, o.color);
         
@@ -380,8 +514,25 @@
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(o.element, o.x + o.size / 2, o.y + o.size / 2);
+        
+        // Restaurar el estado del contexto
+        ctx.restore();
       }
 
+      // Restaurar el clip después de dibujar todos los elementos
+      ctx.restore();
+      
+      // Dibujar marco alrededor del área de juego (FUERA del clip para que sea visible)
+      ctx.strokeStyle = '#5a9ff2';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(0, 0, baseWidth, baseHeight);
+      
+      // Marco interior más sutil
+      ctx.strokeStyle = 'rgba(90, 159, 242, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(2, 2, baseWidth - 4, baseHeight - 4);
+      
+      // Restaurar transformaciones
       ctx.restore();
       
       // Mostrar fórmula actual a la derecha (como en Tetris)
@@ -418,60 +569,39 @@
       ctx.font = 'bold 16px monospace';
       ctx.fillStyle = '#2ecc71';
       ctx.fillText(`Completadas: ${completedFormulas}/10`, sidebarX, sidebarY);
-      
-      // Ocultar HUD para catch (ya no se usa)
-      const hud = document.getElementById('bossGameHUD');
-      if (hud) hud.style.display = 'none';
     }
 
-    // Función para dibujar el canasto
+    // Función para dibujar el científico (reemplaza al canasto)
     function drawBasket(ctx, x, y, width, height) {
       ctx.save();
       
-      // Cuerpo del canasto (parte inferior)
-      ctx.fillStyle = '#8B4513'; // Color marrón
-      ctx.fillRect(x, y + height * 0.4, width, height * 0.6);
-      
-      // Borde superior del canasto (arco)
-      ctx.strokeStyle = '#654321';
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.arc(x + width / 2, y + height * 0.4, width / 2, 0, Math.PI);
-      ctx.stroke();
-      
-      // Líneas horizontales del tejido del canasto
-      ctx.strokeStyle = '#654321';
-      ctx.lineWidth = 2;
-      for (let i = 1; i < 3; i++) {
-        const lineY = y + height * 0.4 + (height * 0.6 / 4) * i;
-        ctx.beginPath();
-        ctx.moveTo(x + 5, lineY);
-        ctx.lineTo(x + width - 5, lineY);
-        ctx.stroke();
+      if (scientistImageLoaded && scientistImage) {
+        // Dibujar imagen del científico escalada al tamaño del área del jugador
+        // Ajustar altura para mantener proporción, centrando horizontalmente
+        const imgAspect = scientistImage.naturalWidth / scientistImage.naturalHeight;
+        let drawWidth = width;
+        let drawHeight = height;
+        let drawX = x;
+        let drawY = y;
+        
+        // Si la imagen es más ancha que alta, ajustar por altura
+        if (imgAspect > 1) {
+          drawHeight = height;
+          drawWidth = drawHeight * imgAspect;
+          drawX = x + (width - drawWidth) / 2;
+        } else {
+          // Si la imagen es más alta que ancha, ajustar por ancho
+          drawWidth = width;
+          drawHeight = drawWidth / imgAspect;
+          drawY = y + (height - drawHeight) / 2;
+        }
+        
+        ctx.drawImage(scientistImage, drawX, drawY, drawWidth, drawHeight);
+      } else {
+        // Fallback: dibujar un rectángulo simple si la imagen no está cargada
+        ctx.fillStyle = '#3498db';
+        ctx.fillRect(x, y, width, height);
       }
-      
-      // Líneas verticales del tejido del canasto
-      ctx.strokeStyle = '#654321';
-      ctx.lineWidth = 1.5;
-      for (let i = 1; i < 5; i++) {
-        const lineX = x + (width / 6) * i;
-        ctx.beginPath();
-        ctx.moveTo(lineX, y + height * 0.4);
-        ctx.lineTo(lineX, y + height);
-        ctx.stroke();
-      }
-      
-      // Asas del canasto (opcional, para mejor visual)
-      ctx.strokeStyle = '#654321';
-      ctx.lineWidth = 3;
-      // Asa izquierda
-      ctx.beginPath();
-      ctx.arc(x - 5, y + height * 0.5, 8, Math.PI / 2, Math.PI * 1.5);
-      ctx.stroke();
-      // Asa derecha
-      ctx.beginPath();
-      ctx.arc(x + width + 5, y + height * 0.5, 8, -Math.PI / 2, Math.PI / 2);
-      ctx.stroke();
       
       ctx.restore();
     }
@@ -495,6 +625,10 @@
     }, { passive: true });
     canvas.addEventListener('touchend', () => { touchX = null; });
 
+    // Ocultar HUD antes de iniciar el loop (ya no se usa)
+    const hud = document.getElementById('bossGameHUD');
+    if (hud) hud.style.display = 'none';
+    
     let last = 0;
     function loop(t) {
       window.bossGameState.animationId = requestAnimationFrame(loop);

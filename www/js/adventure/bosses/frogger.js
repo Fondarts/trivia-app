@@ -573,14 +573,33 @@
             playerCollisionX + playerCollisionWidth > defenderCollisionX &&
             playerCollisionY < defenderCollisionY + defenderCollisionHeight &&
             playerCollisionY + playerCollisionHeight > defenderCollisionY) {
-          // Mostrar animación de "robada"
+          
+          // 1. Perder una vida
+          game.lives--;
+          
+          // 2. Mostrar animación de "robada"
           game.showRobadaAnimation = true;
           game.robadaAnimationTime = Date.now();
           
-          // Esperar a que se muestre la animación antes de terminar el juego
-          game.gameOver = true;
-          game.message = '¡Te detuvieron! DERROTA';
-          setTimeout(() => window.BossCore.endBossGame(false), 2000); // Esperar 2 segundos para mostrar la animación
+          // 3. Resetear la pelota a su posición inicial
+          game.player.y = startY;
+          game.player.x = gameWidth/2 - playerSize/2; // Centrar horizontalmente
+          game.lastCheckedLane = startLane; // Resetear el rastreo
+          
+          // Actualizar HUD con las vidas restantes
+          const playerName = window.BossCore.getPlayerNameForBoss();
+          window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(game.lives)} | Goles: ${game.score}/${game.target}`);
+          
+          // 4. Verificar si aún quedan vidas
+          if (game.lives <= 0) {
+            // Sin vidas, perder la partida después de mostrar la animación
+            setTimeout(() => {
+              game.gameOver = true;
+              game.message = '¡Sin vidas! DERROTA';
+              window.BossCore.endBossGame(false);
+            }, 2000); // Esperar 2 segundos para mostrar la animación
+          }
+          // Si aún hay vidas, el juego continúa automáticamente
           return;
         }
       });
@@ -836,7 +855,7 @@
         ctx.textAlign = 'left';
       }
       
-      // Dibujar animación de "robada" DESPUÉS del game over overlay para que se vea encima
+      // Dibujar animación de "robada" (se muestra encima de todo)
       if (game.showRobadaAnimation && robadaImageLoaded && robadaImage && robadaImage.complete) {
         const elapsed = Date.now() - game.robadaAnimationTime;
         const duration = 2000; // Duración total de la animación

@@ -53,6 +53,28 @@
         scientistImageLoaded = false; 
       });
 
+    // Obtener avatar del usuario
+    function getUserAvatar() {
+      if (window.getCurrentUser) {
+        const user = window.getCurrentUser();
+        if (user && user.avatar) {
+          return { type: 'image', src: user.avatar };
+        }
+      }
+      return { type: 'emoji', value: '🔬' };
+    }
+
+    const userAvatar = getUserAvatar();
+    let avatarImage = null;
+    if (userAvatar.type === 'image') {
+      avatarImage = new Image();
+      avatarImage.src = userAvatar.src;
+      avatarImage.onerror = () => {
+        userAvatar.type = 'emoji';
+        userAvatar.value = '🔬';
+      };
+    }
+
     // Cargar imágenes de ciencia usando BossCore helper
     let scienceImages = {
       testTube: null,
@@ -596,7 +618,46 @@
           drawY = y + (height - drawHeight) / 2;
         }
         
+        // Dibujar la imagen del científico
         ctx.drawImage(scientistImage, drawX, drawY, drawWidth, drawHeight);
+        
+        // Dibujar avatar del usuario en la cara del científico
+        // La cara está aproximadamente en el 35% superior de la imagen y centrada horizontalmente
+        const faceSize = drawHeight * 0.14; // Tamaño de la cara (14% de la altura de la imagen)
+        const faceX = drawX + drawWidth / 2; // Centrado horizontal
+        const faceY = drawY + drawHeight * 0.38; // Aproximadamente en el 38% superior (bajado un poco)
+        
+        ctx.save();
+        // Crear círculo de recorte para el avatar
+        ctx.beginPath();
+        ctx.arc(faceX, faceY, faceSize, 0, Math.PI * 2);
+        ctx.clip();
+        
+        if (userAvatar.type === 'image' && avatarImage && avatarImage.complete) {
+          // Dibujar la imagen del avatar del usuario
+          ctx.drawImage(avatarImage, 
+            faceX - faceSize, 
+            faceY - faceSize, 
+            faceSize * 2, 
+            faceSize * 2);
+        } else {
+          // Si no hay imagen, usar fondo blanco con emoji
+          ctx.fillStyle = '#fff';
+          ctx.fillRect(faceX - faceSize, faceY - faceSize, faceSize * 2, faceSize * 2);
+          ctx.fillStyle = '#000';
+          ctx.font = `${faceSize * 0.8}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(userAvatar.value, faceX, faceY);
+        }
+        ctx.restore();
+        
+        // Borde alrededor del avatar (opcional, para que se vea mejor)
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(faceX, faceY, faceSize, 0, Math.PI * 2);
+        ctx.stroke();
       } else {
         // Fallback: dibujar un rectángulo simple si la imagen no está cargada
         ctx.fillStyle = '#3498db';

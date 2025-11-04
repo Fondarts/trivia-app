@@ -85,7 +85,7 @@
         () => { loadedCount++; }
       );
       
-      window.BossCore.loadImageSimple('assets/soccer/cancha_V02.webp',
+      window.BossCore.loadImageSimple('assets/soccer/cancha_V03.webp',
         (img) => {
           canchaImage = img;
           game.canchaLoaded = true;
@@ -416,7 +416,8 @@
           speedType: speedType < 0.15 ? 'tortuga' : 
                     speedType < 0.35 ? 'lento' : 
                     speedType < 0.65 ? 'normal' : 
-                    speedType < 0.85 ? 'rapido' : 'estrella'
+                    speedType < 0.85 ? 'rapido' : 'estrella',
+          horizontalRange: Math.random() * (2.5 - 1.5) + 1.5 // Límite horizontal aleatorio entre 1.5 y 2.5
         });
       }
     }
@@ -516,7 +517,9 @@
             const newSpeed = defender.baseSpeed + variation;
             const finalSpeed = Math.max(0.5, newSpeed) * defender.speedMultiplier; // Velocidad mínima de 0.5
             
-            defender.speed = (defender.type === 'defensor01' ? -1 : 1) * finalSpeed;
+            // Mantener la dirección actual si está rebotando, solo cambiar la magnitud
+            const currentDirection = defender.speed >= 0 ? 1 : -1;
+            defender.speed = currentDirection * finalSpeed;
             defender.lastSpeedChange = now;
             
             // Cambiar el intervalo para la próxima variación (más impredecible)
@@ -525,12 +528,31 @@
         }
         
         defender.x += defender.speed;
-        // Wrap-around: cuando sale por un lado, aparece por el otro
-        // Pero solo se dibuja cuando está completamente dentro del área visible
-        if (defender.speed > 0 && defender.x > gameWidth) {
-          defender.x = -defender.width; // Aparecerá por la izquierda
-        } else if (defender.speed < 0 && defender.x < -defender.width) {
-          defender.x = gameWidth; // Aparecerá por la derecha
+        
+        // Calcular límites extendidos (más amplio que el gameWidth)
+        // Usar el límite horizontal aleatorio de cada defensor (entre 1.5 y 2.5)
+        const extendedLeftBound = -defender.width * defender.horizontalRange; // Permitir que salgan según su rango individual
+        const extendedRightBound = gameWidth + defender.width * defender.horizontalRange; // Permitir que salgan según su rango individual
+        
+        // Rebote en los límites extendidos de la cancha (no desaparecer, solo cambiar dirección)
+        if (defender.speed > 0 && defender.x + defender.width >= extendedRightBound) {
+          // Llegó al límite derecho extendido, rebotar hacia la izquierda
+          defender.x = extendedRightBound - defender.width; // Asegurar que no se salga
+          defender.speed = -Math.abs(defender.speed); // Invertir dirección (siempre negativo)
+          // Invertir también el tipo visual para que se vea correctamente
+          if (defender.type === 'defensor02' && defensor02) {
+            defender.type = 'defensor01';
+            defender.image = defensor01;
+          }
+        } else if (defender.speed < 0 && defender.x <= extendedLeftBound) {
+          // Llegó al límite izquierdo extendido, rebotar hacia la derecha
+          defender.x = extendedLeftBound; // Asegurar que no se salga
+          defender.speed = Math.abs(defender.speed); // Invertir dirección (siempre positivo)
+          // Invertir también el tipo visual para que se vea correctamente
+          if (defender.type === 'defensor01' && defensor01) {
+            defender.type = 'defensor02';
+            defender.image = defensor02;
+          }
         }
       });
       
@@ -631,8 +653,20 @@
       
       // Fondo del campo de fútbol
       if (game.canchaLoaded && canchaImage && canchaImage.complete) {
-        // Usar imagen de cancha como fondo
-        ctx.drawImage(canchaImage, offsetX, 0, gameWidth, gameHeight);
+        // Calcular dimensiones haciendo fit vertical (como otros juegos)
+        // Primero ajustar al alto disponible, luego calcular ancho proporcionalmente
+        const imgAspect = canchaImage.naturalWidth / canchaImage.naturalHeight;
+        
+        // Ajustar al alto del juego
+        let drawHeight = gameHeight;
+        let drawWidth = drawHeight * imgAspect;
+        
+        // Centrar horizontalmente
+        const drawX = offsetX + (gameWidth - drawWidth) / 2;
+        const drawY = 0;
+        
+        // Dibujar la imagen manteniendo proporción (fit vertical)
+        ctx.drawImage(canchaImage, drawX, drawY, drawWidth, drawHeight);
       } else {
         // Fallback: fondo verde si la imagen no está cargada
         ctx.fillStyle = '#2ecc71'; // Verde césped
@@ -662,11 +696,13 @@
         }
       }
       
-      // Dibujar defensores (solo si están completamente dentro del área visible de la cancha)
+      // Dibujar defensores (permitir que se vean en todo el rango extendido)
       game.defenders.forEach(defender => {
-        // Solo dibujar si el defensor está completamente dentro de los límites de la cancha
-        // Evitar que aparezcan parcialmente fuera de los bordes
-        if (defender.x >= 0 && defender.x + defender.width <= gameWidth) {
+        // Dibujar si el defensor está dentro de su rango extendido individual (entre 1.5 y 2.5 veces el ancho)
+        // Permitir que se vean incluso cuando están completamente fuera del área visible
+        const extendedLeftBound = -defender.width * defender.horizontalRange;
+        const extendedRightBound = gameWidth + defender.width * defender.horizontalRange;
+        if (defender.x + defender.width > extendedLeftBound && defender.x < extendedRightBound) {
           // El defensor está completamente dentro del área visible
           if (defender.image && defender.image.complete) {
             ctx.drawImage(defender.image, offsetX + defender.x, defender.y, defender.width, defender.height);

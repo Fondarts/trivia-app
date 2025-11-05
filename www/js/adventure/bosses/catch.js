@@ -153,9 +153,16 @@
     let gameTime = 0;
     const objectSize = 35; // Tamaño fijo para los elementos
     
-    // Actualizar HUD inicial con las vidas
-    const playerName = window.BossCore.getPlayerNameForBoss();
-    window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+    // Detectar si es móvil
+    const isMobile = canvas.height > canvas.width;
+    
+    // Actualizar HUD inicial solo en PC (en móvil se mostrará en el canvas)
+    if (!isMobile) {
+      const playerName = window.BossCore.getPlayerNameForBoss();
+      window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+    } else {
+      window.BossCore.updateBossHUD(''); // Ocultar HUD en móvil
+    }
     
     // Función para verificar si hay superposición al spawnear
     function canSpawnAt(x, size) {
@@ -405,9 +412,11 @@
               // Si ya lo tenemos capturado, restar vida (segunda vez)
               lives--;
               
-              // Actualizar HUD con las vidas restantes
-              const playerName = window.BossCore.getPlayerNameForBoss();
-              window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+              // Actualizar HUD con las vidas restantes solo en PC
+              if (!isMobile) {
+                const playerName = window.BossCore.getPlayerNameForBoss();
+                window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+              }
               
               // Verificar si aún quedan vidas
               if (lives <= 0) {
@@ -424,9 +433,11 @@
             // Atrapar elemento INCORRECTO (no está en la fórmula) = RESTAR UN CORAZÓN
             lives--;
             
-            // Actualizar HUD con las vidas restantes
-            const playerName = window.BossCore.getPlayerNameForBoss();
-            window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+            // Actualizar HUD con las vidas restantes solo en PC
+            if (!isMobile) {
+              const playerName = window.BossCore.getPlayerNameForBoss();
+              window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(lives)} | Completadas: ${completedFormulas}/10`);
+            }
             
             // Verificar si aún quedan vidas
             if (lives <= 0) {
@@ -614,87 +625,161 @@
       // Restaurar transformaciones
       ctx.restore();
       
-      // Mostrar fórmula actual a la derecha (como en Tetris)
-      const sidebarX = offsetX + (baseWidth * scale) + 20;
-      let sidebarY = offsetY + 20;
+      // Detectar si es móvil
+      const isMobile = canvas.height > canvas.width;
       
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 20px monospace';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'top';
-      
-      // Fórmula objetivo con nombre
-      ctx.fillText(`Fórmula:`, sidebarX, sidebarY);
-      sidebarY += 25;
-      ctx.font = 'bold 24px Arial';
-      ctx.fillText(`${currentFormula.formula} = ${currentFormula.name}`, sidebarX, sidebarY);
-      sidebarY += 35;
-      
-      // Componentes necesarios
-      ctx.font = 'bold 16px monospace';
-      ctx.fillText('Necesitas:', sidebarX, sidebarY);
-      sidebarY += 30;
-      
-      // Dibujar cada componente visualmente con su forma y color
-      let currentX = sidebarX;
-      const elementDisplaySize = 35; // Tamaño para mostrar los elementos en la fórmula (aumentado para mejor visibilidad)
-      const elementSpacing = 45; // Espacio entre elementos (aumentado proporcionalmente)
-      
-      currentFormula.components.forEach((comp, index) => {
-        const isCaptured = capturedElements.includes(comp);
-        const elementConfig = elementConfigs[comp] || { color: '#95a5a6', shape: 'circle' };
+      if (isMobile) {
+        // MÓVIL: Mostrar información arriba del marco (fuera del área del juego)
+        // Línea 1: Fórmula y Vidas
+        // Línea 2: Elementos necesarios y Completadas
+        const line1Y = offsetY - 50; // Primera línea arriba del marco
+        const line2Y = offsetY - 30; // Segunda línea arriba del marco (subida 5px)
+        let line1X = offsetX + 10;
+        let line2X = offsetX + 10;
         
-        // Determinar el color a usar: original si está capturado, desaturado si no
-        const displayColor = isCaptured ? elementConfig.color : desaturateColor(elementConfig.color, 0.9);
+        ctx.fillStyle = '#fff';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'top';
         
-        // Dibujar el elemento con su forma y color
-        ctx.save();
-        ctx.globalAlpha = 1.0; // Siempre opacidad completa para mejor legibilidad
+        // LÍNEA 1: Solo el nombre de la fórmula (sin la composición química)
+        ctx.font = 'bold 16px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText(currentFormula.name, line1X, line1Y);
         
-        // Dibujar la forma del elemento
-        const elementY = sidebarY;
-        drawShape(ctx, currentX, elementY, elementDisplaySize, elementConfig.shape, displayColor);
+        // Vidas (corazones) alineadas a la derecha en la primera línea
+        ctx.font = 'bold 14px monospace';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'top';
+        const vidasText = `Vidas: ${'❤️'.repeat(lives)}`;
+        const vidasX = offsetX + (baseWidth * scale) - 10; // Alineado a la derecha del marco
+        ctx.fillText(vidasText, vidasX, line1Y + 1);
         
-        // Dibujar el texto del elemento (siempre con buena visibilidad)
-        ctx.fillStyle = '#fff'; // Texto siempre blanco y visible
-        ctx.font = isCaptured ? 'bold 16px Arial' : '16px Arial';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(comp, currentX + elementDisplaySize / 2, elementY + elementDisplaySize / 2);
+        // LÍNEA 2: Componentes necesarios (compactos, en línea)
+        const elementDisplaySize = 25; // Más pequeño en móvil
+        const elementSpacing = 30;
         
-        ctx.restore();
-        
-        // Agregar el símbolo "+" entre elementos (excepto el último)
-        if (index < currentFormula.components.length - 1) {
+        currentFormula.components.forEach((comp, index) => {
+          const isCaptured = capturedElements.includes(comp);
+          const elementConfig = elementConfigs[comp] || { color: '#95a5a6', shape: 'circle' };
+          const displayColor = isCaptured ? elementConfig.color : desaturateColor(elementConfig.color, 0.9);
+          
+          // Dibujar la forma del elemento
+          ctx.save();
+          ctx.globalAlpha = 1.0;
+          drawShape(ctx, line2X, line2Y, elementDisplaySize, elementConfig.shape, displayColor);
+          
+          // Texto del elemento
           ctx.fillStyle = '#fff';
-          ctx.font = 'bold 16px Arial';
+          ctx.font = isCaptured ? 'bold 12px Arial' : '12px Arial';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          // Centrar verticalmente el "+" en el centro exacto del elemento
-          const plusX = currentX + elementDisplaySize + (elementSpacing / 2);
-          const plusY = elementY + elementDisplaySize / 2;
-          ctx.fillText('+', plusX, plusY);
-        }
+          ctx.fillText(comp, line2X + elementDisplaySize / 2, line2Y + elementDisplaySize / 2);
+          ctx.restore();
+          
+          // Símbolo "+" entre elementos
+          if (index < currentFormula.components.length - 1) {
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('+', line2X + elementDisplaySize + (elementSpacing / 2), line2Y + elementDisplaySize / 2);
+          }
+          
+          line2X += elementDisplaySize + elementSpacing;
+        });
         
-        currentX += elementDisplaySize + elementSpacing;
-      });
-      
-      sidebarY += elementDisplaySize + 20;
-      
-      // Vidas (corazones)
-      ctx.font = 'bold 16px monospace';
-      ctx.fillStyle = '#fff';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'top';
-      ctx.fillText(`Vidas: ${'❤️'.repeat(lives)}`, sidebarX, sidebarY);
-      sidebarY += 25;
-      
-      // Contador de fórmulas completadas (alineado correctamente)
-      ctx.font = 'bold 16px monospace';
-      ctx.fillStyle = '#2ecc71';
-      ctx.textAlign = 'left'; // Asegurar alineamiento a la izquierda
-      ctx.textBaseline = 'top'; // Asegurar alineamiento superior
-      ctx.fillText(`Completadas: ${completedFormulas}/10`, sidebarX, sidebarY);
+        // Contador de fórmulas completadas alineado a la derecha en la segunda línea
+        ctx.font = 'bold 14px monospace';
+        ctx.fillStyle = '#2ecc71';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'top';
+        const completadasText = `Completadas: ${completedFormulas}/10`;
+        const completadasX = offsetX + (baseWidth * scale) - 10; // Alineado a la derecha del marco
+        ctx.fillText(completadasText, completadasX, line2Y + (elementDisplaySize - 14) / 2);
+        
+      } else {
+        // PC: Mostrar fórmula actual a la derecha (como en Tetris) - mantener diseño original
+        const sidebarX = offsetX + (baseWidth * scale) + 20;
+        let sidebarY = offsetY + 20;
+        
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 20px monospace';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'top';
+        
+        // Fórmula objetivo con nombre
+        ctx.fillText(`Fórmula:`, sidebarX, sidebarY);
+        sidebarY += 25;
+        ctx.font = 'bold 24px Arial';
+        ctx.fillText(`${currentFormula.formula} = ${currentFormula.name}`, sidebarX, sidebarY);
+        sidebarY += 35;
+        
+        // Componentes necesarios
+        ctx.font = 'bold 16px monospace';
+        ctx.fillText('Necesitas:', sidebarX, sidebarY);
+        sidebarY += 30;
+        
+        // Dibujar cada componente visualmente con su forma y color
+        let currentX = sidebarX;
+        const elementDisplaySize = 35; // Tamaño para mostrar los elementos en la fórmula (aumentado para mejor visibilidad)
+        const elementSpacing = 45; // Espacio entre elementos (aumentado proporcionalmente)
+        
+        currentFormula.components.forEach((comp, index) => {
+          const isCaptured = capturedElements.includes(comp);
+          const elementConfig = elementConfigs[comp] || { color: '#95a5a6', shape: 'circle' };
+          
+          // Determinar el color a usar: original si está capturado, desaturado si no
+          const displayColor = isCaptured ? elementConfig.color : desaturateColor(elementConfig.color, 0.9);
+          
+          // Dibujar el elemento con su forma y color
+          ctx.save();
+          ctx.globalAlpha = 1.0; // Siempre opacidad completa para mejor legibilidad
+          
+          // Dibujar la forma del elemento
+          const elementY = sidebarY;
+          drawShape(ctx, currentX, elementY, elementDisplaySize, elementConfig.shape, displayColor);
+          
+          // Dibujar el texto del elemento (siempre con buena visibilidad)
+          ctx.fillStyle = '#fff'; // Texto siempre blanco y visible
+          ctx.font = isCaptured ? 'bold 16px Arial' : '16px Arial';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(comp, currentX + elementDisplaySize / 2, elementY + elementDisplaySize / 2);
+          
+          ctx.restore();
+          
+          // Agregar el símbolo "+" entre elementos (excepto el último)
+          if (index < currentFormula.components.length - 1) {
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            // Centrar verticalmente el "+" en el centro exacto del elemento
+            const plusX = currentX + elementDisplaySize + (elementSpacing / 2);
+            const plusY = elementY + elementDisplaySize / 2;
+            ctx.fillText('+', plusX, plusY);
+          }
+          
+          currentX += elementDisplaySize + elementSpacing;
+        });
+        
+        sidebarY += elementDisplaySize + 20;
+        
+        // Vidas (corazones)
+        ctx.font = 'bold 16px monospace';
+        ctx.fillStyle = '#fff';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'top';
+        ctx.fillText(`Vidas: ${'❤️'.repeat(lives)}`, sidebarX, sidebarY);
+        sidebarY += 25;
+        
+        // Contador de fórmulas completadas (alineado correctamente)
+        ctx.font = 'bold 16px monospace';
+        ctx.fillStyle = '#2ecc71';
+        ctx.textAlign = 'left'; // Asegurar alineamiento a la izquierda
+        ctx.textBaseline = 'top'; // Asegurar alineamiento superior
+        ctx.fillText(`Completadas: ${completedFormulas}/10`, sidebarX, sidebarY);
+      }
     }
 
     // Función para dibujar el científico (reemplaza al canasto)

@@ -41,8 +41,8 @@
     const game = {
       player: {x: gameWidth/2 - playerSize/2, y: startY},
       defenders: [],
-      score: 0,
-      target: 5, // Necesita cruzar 5 veces
+      playerScore: 0, // Goles del jugador
+      opponentScore: handicap.opponentScore || 5, // Goles del oponente al inicio (depende del handicap)
       lives: 3, // Vidas (corazones)
       gameOver: false,
       started: false,
@@ -169,7 +169,7 @@
               playerCenterY >= goalY && 
               playerCenterY <= goalY + goalHeight) {
             // ¡GOL! La pelota está en la última línea dentro del arco
-            game.score++;
+            game.playerScore++;
             // Mostrar animación de gol
             game.showGoalAnimation = true;
             game.goalAnimationTime = Date.now();
@@ -177,9 +177,10 @@
             const resetLane = Math.max(0, lanes - 3);
             game.player.y = alignPlayerToLane(resetLane);
             game.player.x = gameWidth/2 - playerSize/2; // Resetear posición X también
-            if (game.score >= game.target) {
+            // Verificar victoria: el jugador gana cuando supera el marcador del oponente
+            if (game.playerScore > game.opponentScore) {
               game.gameOver = true;
-              game.message = '¡VICTORIA! Cruzaste el campo 5 veces!';
+              game.message = `¡VICTORIA! Has ganado ${game.playerScore} - ${game.opponentScore}!`;
               setTimeout(() => window.BossCore.endBossGame(true), 1000);
               return;
             }
@@ -397,6 +398,12 @@
           speedVariation = 0;
         }
         
+        // Determinar si este defensor puede cambiar de dirección antes de los bordes (aleatorio)
+        const canEarlyTurn = Math.random() < 0.4; // 40% de los defensores pueden cambiar antes
+        const earlyTurnProbability = canEarlyTurn ? Math.random() * 0.3 + 0.1 : 0; // Probabilidad de cambio: 10-40%
+        const turnZoneMin = gameWidth * 0.2; // Zona de cambio: 20% del campo
+        const turnZoneMax = gameWidth * 0.8; // hasta 80% del campo
+        
         game.defenders.push({
           x: Math.random() * (gameWidth - defenderSize),
           y: i * laneHeight + laneHeight/2 - defenderSize/2,
@@ -409,6 +416,12 @@
           speedVariation: speedVariation,
           lastSpeedChange: Date.now(),
           speedChangeInterval: Math.random() * 2000 + 1000, // Cambio cada 1-3 segundos
+          canEarlyTurn: canEarlyTurn,
+          earlyTurnProbability: earlyTurnProbability,
+          turnZoneMin: turnZoneMin,
+          turnZoneMax: turnZoneMax,
+          lastTurnTime: 0,
+          turnCooldown: 1000 + Math.random() * 2000, // Cooldown de 1-3 segundos entre cambios
           width: defenderSize,
           height: defenderSize,
           image: isDefensor01 ? defensor01 : defensor02,
@@ -465,7 +478,7 @@
             playerCenterY >= goalY && 
             playerCenterY <= goalY + goalHeight) {
           // ¡GOL! La pelota está en la última línea dentro del arco
-          game.score++;
+          game.playerScore++;
           // Mostrar animación de gol
           game.showGoalAnimation = true;
           game.goalAnimationTime = Date.now();
@@ -474,9 +487,10 @@
           game.player.y = alignPlayerToLane(resetLane);
           game.player.x = gameWidth/2 - playerSize/2; // Resetear posición X también
           game.lastCheckedLane = resetLane; // Resetear el rastreo
-          if (game.score >= game.target) {
+          // Verificar victoria: el jugador gana cuando supera el marcador del oponente
+          if (game.playerScore > game.opponentScore) {
             game.gameOver = true;
-            game.message = '¡VICTORIA! Cruzaste el campo 5 veces!';
+            game.message = `¡VICTORIA! Has ganado ${game.playerScore} - ${game.opponentScore}!`;
             setTimeout(() => window.BossCore.endBossGame(true), 1000);
             return;
           }
@@ -529,6 +543,35 @@
         
         defender.x += defender.speed;
         
+        // Rebote aleatorio antes de llegar a los bordes (solo para defensores que pueden)
+        const now = Date.now();
+        const defenderCenterX = defender.x + defender.width / 2;
+        
+        if (defender.canEarlyTurn && 
+            now - defender.lastTurnTime > defender.turnCooldown &&
+            defenderCenterX >= defender.turnZoneMin && 
+            defenderCenterX <= defender.turnZoneMax) {
+          // Está en la zona de cambio y puede cambiar
+          if (Math.random() < defender.earlyTurnProbability) {
+            // Cambiar dirección aleatoriamente
+            defender.speed = -defender.speed;
+            defender.lastTurnTime = now;
+            defender.turnCooldown = 1000 + Math.random() * 2000; // Nuevo cooldown
+            // Invertir tipo visual
+            if (defender.speed > 0) {
+              if (defender.type === 'defensor01' && defensor01) {
+                defender.type = 'defensor02';
+                defender.image = defensor02;
+              }
+            } else {
+              if (defender.type === 'defensor02' && defensor02) {
+                defender.type = 'defensor01';
+                defender.image = defensor01;
+              }
+            }
+          }
+        }
+        
         // Calcular límites extendidos (más amplio que el gameWidth)
         // Usar el límite horizontal aleatorio de cada defensor (entre 1.5 y 2.5)
         const extendedLeftBound = -defender.width * defender.horizontalRange; // Permitir que salgan según su rango individual
@@ -539,6 +582,7 @@
           // Llegó al límite derecho extendido, rebotar hacia la izquierda
           defender.x = extendedRightBound - defender.width; // Asegurar que no se salga
           defender.speed = -Math.abs(defender.speed); // Invertir dirección (siempre negativo)
+          defender.lastTurnTime = now; // Actualizar tiempo de último cambio para evitar cambios inmediatos
           // Invertir también el tipo visual para que se vea correctamente
           if (defender.type === 'defensor02' && defensor02) {
             defender.type = 'defensor01';
@@ -548,6 +592,7 @@
           // Llegó al límite izquierdo extendido, rebotar hacia la derecha
           defender.x = extendedLeftBound; // Asegurar que no se salga
           defender.speed = Math.abs(defender.speed); // Invertir dirección (siempre positivo)
+          defender.lastTurnTime = now; // Actualizar tiempo de último cambio para evitar cambios inmediatos
           // Invertir también el tipo visual para que se vea correctamente
           if (defender.type === 'defensor01' && defensor01) {
             defender.type = 'defensor02';
@@ -608,9 +653,7 @@
           game.player.x = gameWidth/2 - playerSize/2; // Centrar horizontalmente
           game.lastCheckedLane = startLane; // Resetear el rastreo
           
-          // Actualizar HUD con las vidas restantes
-          const playerName = window.BossCore.getPlayerNameForBoss();
-          window.BossCore.updateBossHUD(`Vidas: ${'❤️'.repeat(game.lives)} | Goles: ${game.score}/${game.target}`);
+          // HUD deshabilitado - ya se muestra el marcador y vidas en el canvas
           
           // 4. Verificar si aún quedan vidas
           if (game.lives <= 0) {
@@ -746,9 +789,12 @@
       // Dibujar texto
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 20px Arial';
-      ctx.fillText(`Cruces: ${game.score}/${game.target}`, offsetX + 20, 30);
-      // Dibujar vidas (corazones)
-      ctx.fillText(`Vidas: ${'❤️'.repeat(game.lives)}`, offsetX + 20, 60);
+      // Marcador del partido donde estaban las vidas (top-left)
+      ctx.fillText(`${game.playerScore} - ${game.opponentScore}`, offsetX + 20, 60);
+      // Vidas al lado derecho del arco, al mismo nivel que Cruces
+      const livesX = offsetX + goalX + goalWidth + 60; // A la derecha del arco con más espacio
+      const livesY = 60; // Al mismo nivel que Cruces
+      ctx.fillText(`Vidas: ${'❤️'.repeat(game.lives)}`, livesX, livesY);
       
       // Dibujar animación de gol si está activa
       if (game.showGoalAnimation && goalImageLoaded && goalImage) {

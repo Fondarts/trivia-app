@@ -446,8 +446,158 @@
     // No hay mínimo para pasar, siempre se llega al jefe
     // El handicap se calcula según el desempeño en las 10 preguntas
     
-    // Para Tetris (historia), usar sistema de 5 niveles con líneas basura, velocidad y líneas requeridas
+    // Para Tetris (historia) y Hangman (geography), usar sistema de 5 niveles
     const region = ADVENTURE_STATE.regions[ADVENTURE_STATE.currentRegion];
+    
+    // Para Hangman (geography), usar sistema de 5 niveles con dificultad de palabras, errores máximos y pistas
+    if (ADVENTURE_STATE.currentRegion === 'geography' || (region && region.boss === 'pacman')) {
+      // Nivel 1: 10 correctas - Muy fácil
+      if (questionsScore === 10) {
+        return {
+          type: 'level1',
+          playerLives: 5,
+          bossLives: 3,
+          playerSpeed: 1.0,
+          bossSpeed: 1.0,
+          extraRows: 0,
+          maxWrongGuesses: 8,       // 8 errores permitidos
+          hints: 3,                  // 3 pistas disponibles
+          wordDifficulty: 'easy',    // Palabras fáciles (4-6 letras)
+          message: '¡Perfecto! Nivel 1: Palabras fáciles, 8 errores permitidos, 3 pistas disponibles'
+        };
+      }
+      // Nivel 2: 8-9 correctas - Fácil
+      else if (questionsScore >= 8) {
+        return {
+          type: 'level2',
+          playerLives: 4,
+          bossLives: 3,
+          playerSpeed: 1.0,
+          bossSpeed: 1.2,
+          extraRows: 1,
+          maxWrongGuesses: 7,       // 7 errores permitidos
+          hints: 2,                  // 2 pistas disponibles
+          wordDifficulty: 'easy',    // Palabras fáciles
+          message: 'Muy bien! Nivel 2: Palabras fáciles, 7 errores permitidos, 2 pistas disponibles'
+        };
+      }
+      // Nivel 3: 5-7 correctas - Normal
+      else if (questionsScore >= 5) {
+        return {
+          type: 'level3',
+          playerLives: 2,
+          bossLives: 4,
+          playerSpeed: 1.0,
+          bossSpeed: 1.4,
+          extraRows: 2,
+          maxWrongGuesses: 6,       // 6 errores permitidos (normal)
+          hints: 1,                  // 1 pista disponible
+          wordDifficulty: 'medium',  // Palabras medias (7-9 letras)
+          message: 'Regular. Nivel 3: Palabras medias, 6 errores permitidos, 1 pista disponible'
+        };
+      }
+      // Nivel 4: 2-4 correctas - Difícil
+      else if (questionsScore >= 2) {
+        return {
+          type: 'level4',
+          playerLives: 1,
+          bossLives: 5,
+          playerSpeed: 1.0,
+          bossSpeed: 1.6,
+          extraRows: 3,
+          maxWrongGuesses: 5,       // 5 errores permitidos
+          hints: 0,                  // Sin pistas
+          wordDifficulty: 'hard',    // Palabras difíciles (10+ letras)
+          message: 'Difícil. Nivel 4: Palabras difíciles, 5 errores permitidos, sin pistas'
+        };
+      }
+      // Nivel 5: 0-1 correctas - Muy difícil
+      else {
+        return {
+          type: 'level5',
+          playerLives: 1,
+          bossLives: 5,
+          playerSpeed: 1.0,
+          bossSpeed: 1.8,
+          extraRows: 3,
+          maxWrongGuesses: 4,       // Solo 4 errores permitidos
+          hints: 0,                  // Sin pistas
+          wordDifficulty: 'hard',    // Palabras difíciles
+          message: 'Muy difícil! Nivel 5: Palabras difíciles, solo 4 errores permitidos, sin pistas'
+        };
+      }
+    }
+    
+    // Para Frogger (sports), usar sistema de 5 niveles con marcador inicial del oponente
+    if (region && region.boss === 'frogger' || ADVENTURE_STATE.currentRegion === 'sports') {
+      // Nivel 1: 10 correctas - Muy fácil
+      if (questionsScore === 10) {
+        return {
+          type: 'level1',
+          playerLives: 5,
+          bossLives: 3,
+          playerSpeed: 1.0,
+          bossSpeed: 1.0,
+          extraRows: 0,
+          opponentScore: 3,  // Marcador inicial: 0-3
+          message: '¡Perfecto! Nivel 1: Partido empieza 0-3, necesitas ganar para vencer'
+        };
+      }
+      // Nivel 2: 8-9 correctas - Fácil
+      else if (questionsScore >= 8) {
+        return {
+          type: 'level2',
+          playerLives: 4,
+          bossLives: 3,
+          playerSpeed: 1.0,
+          bossSpeed: 1.2,
+          extraRows: 1,
+          opponentScore: 5,  // Marcador inicial: 0-5
+          message: 'Muy bien! Nivel 2: Partido empieza 0-5, necesitas ganar para vencer'
+        };
+      }
+      // Nivel 3: 5-7 correctas - Normal
+      else if (questionsScore >= 5) {
+        return {
+          type: 'level3',
+          playerLives: 2,
+          bossLives: 4,
+          playerSpeed: 1.0,
+          bossSpeed: 1.4,
+          extraRows: 2,
+          opponentScore: 7,  // Marcador inicial: 0-7
+          message: 'Regular. Nivel 3: Partido empieza 0-7, necesitas ganar para vencer'
+        };
+      }
+      // Nivel 4: 2-4 correctas - Difícil
+      else if (questionsScore >= 2) {
+        return {
+          type: 'level4',
+          playerLives: 1,
+          bossLives: 5,
+          playerSpeed: 1.0,
+          bossSpeed: 1.6,
+          extraRows: 3,
+          opponentScore: 9,  // Marcador inicial: 0-9
+          message: 'Difícil. Nivel 4: Partido empieza 0-9, necesitas ganar para vencer'
+        };
+      }
+      // Nivel 5: 0-1 correctas - Muy difícil
+      else {
+        return {
+          type: 'level5',
+          playerLives: 1,
+          bossLives: 5,
+          playerSpeed: 1.0,
+          bossSpeed: 1.8,
+          extraRows: 3,
+          opponentScore: 11,  // Marcador inicial: 0-11
+          message: 'Muy difícil! Nivel 5: Partido empieza 0-11, necesitas ganar para vencer'
+        };
+      }
+    }
+    
+    // Para Tetris (historia), usar sistema de 5 niveles con líneas basura, velocidad y líneas requeridas
     if (region && region.boss === 'tetris') {
       // Nivel 1: 10 correctas - Muy fácil
       if (questionsScore === 10) {

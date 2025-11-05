@@ -21,7 +21,7 @@
     // Cargar imagen de fondo
     let bgImage = null;
     let bgImageLoaded = false;
-    window.BossCore.loadBossImage('assets/backgrounds/arkanoid_bg.png')
+    window.BossCore.loadBossImage('assets/maps/arkanoidBg02.webp')
       .then(img => { 
         bgImage = img; 
         bgImageLoaded = true; 
@@ -570,19 +570,76 @@
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       // Dibujar imagen de fondo con 50% de opacidad encima del degradado
+      // En móvil: fit vertical (llenar altura completa)
+      // En PC: mantener proporción completa
       if (bgImageLoaded && bgImage) {
         ctx.save();
         ctx.globalAlpha = 0.5;
-        ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+        
+        let drawWidth, drawHeight, drawX, drawY;
+        const bgAspectRatio = bgImage.width / bgImage.height;
+        const canvasAspectRatio = canvas.width / canvas.height;
+        
+        if (isMobile) {
+          // Móvil: fit vertical - ajustar por altura y centrar horizontalmente
+          drawHeight = canvas.height;
+          drawWidth = drawHeight * bgAspectRatio;
+          drawX = (canvas.width - drawWidth) / 2;
+          drawY = 0;
+        } else {
+          // PC: mantener proporción completa
+          if (canvasAspectRatio > bgAspectRatio) {
+            // Canvas es más ancho - ajustar por altura
+            drawHeight = canvas.height;
+            drawWidth = drawHeight * bgAspectRatio;
+            drawX = (canvas.width - drawWidth) / 2;
+            drawY = 0;
+          } else {
+            // Canvas es más alto - ajustar por ancho
+            drawWidth = canvas.width;
+            drawHeight = drawWidth / bgAspectRatio;
+            drawX = 0;
+            drawY = (canvas.height - drawHeight) / 2;
+          }
+        }
+        
+        ctx.drawImage(bgImage, drawX, drawY, drawWidth, drawHeight);
         ctx.restore();
-      } else {
-        // Debug: verificar por qué no se dibuja la imagen
-        if (!bgImageLoaded) {
-          console.log('bgImage no está cargada aún');
-        }
-        if (!bgImage) {
-          console.log('bgImage es null');
-        }
+      }
+      
+      // === MARCO LATERAL DEL CANVAS (fuera del área escalada) ===
+      // Dibujar los laterales del marco directamente en el canvas para que se vean en móvil
+      if (isMobile && game.offsetX > 5) {
+        // Hay espacio a los lados en móvil - dibujar marcos laterales
+        const lateralBarWidth = Math.max(4, Math.min(game.offsetX * 0.4, 20)); // Grosor de las barras laterales (4-20px)
+        
+        // Barra lateral izquierda con gradiente
+        const leftGradient = ctx.createLinearGradient(0, 0, lateralBarWidth, 0);
+        leftGradient.addColorStop(0, '#1a1a2e');
+        leftGradient.addColorStop(0.5, '#2c3e50');
+        leftGradient.addColorStop(1, '#ecf0f1');
+        ctx.fillStyle = leftGradient;
+        ctx.fillRect(0, 0, lateralBarWidth, canvas.height);
+        
+        // Barra lateral derecha con gradiente
+        const rightGradient = ctx.createLinearGradient(canvas.width - lateralBarWidth, 0, canvas.width, 0);
+        rightGradient.addColorStop(0, '#ecf0f1');
+        rightGradient.addColorStop(0.5, '#2c3e50');
+        rightGradient.addColorStop(1, '#1a1a2e');
+        ctx.fillStyle = rightGradient;
+        ctx.fillRect(canvas.width - lateralBarWidth, 0, lateralBarWidth, canvas.height);
+        
+        // Líneas de borde interno para mayor visibilidad
+        ctx.strokeStyle = '#ecf0f1';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(lateralBarWidth, 0);
+        ctx.lineTo(lateralBarWidth, canvas.height);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(canvas.width - lateralBarWidth, 0);
+        ctx.lineTo(canvas.width - lateralBarWidth, canvas.height);
+        ctx.stroke();
       }
       
       // Aplicar transformaciones de escala y posición
@@ -591,75 +648,86 @@
       ctx.scale(game.scale, game.scale);
       
       // === MARCO DECORATIVO ALREDEDOR DEL CAMPO DE JUEGO ===
-      const borderWidth = 8; // Grosor del marco
-      const borderPadding = 10; // Separación entre el juego y el marco
+      // Ajustar grosor del marco según el tamaño de pantalla
+      // En móvil usamos valores más pequeños que se escalan apropiadamente
+      const baseBorderWidth = isMobile ? 6 : 8;
+      const baseBorderPadding = isMobile ? 8 : 10;
+      const baseCornerSize = isMobile ? 18 : 25;
+      const baseCornerThickness = isMobile ? 3 : 4;
+      
+      // Ajustar según la escala para mantener consistencia visual
+      // Como estamos dentro del contexto escalado, necesitamos ajustar inversamente
+      const scaledBorderWidth = baseBorderWidth / game.scale;
+      const scaledBorderPadding = baseBorderPadding / game.scale;
+      const scaledCornerSize = baseCornerSize / game.scale;
+      const scaledCornerThickness = baseCornerThickness / game.scale;
       
       // Marco exterior (borde oscuro con brillo)
       ctx.strokeStyle = '#2c3e50';
-      ctx.lineWidth = borderWidth + 2;
+      ctx.lineWidth = scaledBorderWidth + 2;
       ctx.strokeRect(
-        -borderPadding, 
-        -borderPadding, 
-        game.baseWidth + (borderPadding * 2), 
-        game.baseHeight + (borderPadding * 2)
+        -scaledBorderPadding, 
+        -scaledBorderPadding, 
+        game.baseWidth + (scaledBorderPadding * 2), 
+        game.baseHeight + (scaledBorderPadding * 2)
       );
       
       // Marco interior (borde brillante)
       ctx.strokeStyle = '#ecf0f1';
-      ctx.lineWidth = borderWidth;
+      ctx.lineWidth = scaledBorderWidth;
       ctx.strokeRect(
-        -borderPadding, 
-        -borderPadding, 
-        game.baseWidth + (borderPadding * 2), 
-        game.baseHeight + (borderPadding * 2)
+        -scaledBorderPadding, 
+        -scaledBorderPadding, 
+        game.baseWidth + (scaledBorderPadding * 2), 
+        game.baseHeight + (scaledBorderPadding * 2)
       );
       
       // Línea de neón interna (efecto cinematográfico)
+      const baseNeonWidth = isMobile ? 2.5 : 3;
+      const baseNeonBlur = isMobile ? 12 : 15;
       ctx.strokeStyle = '#e74c3c';
-      ctx.lineWidth = 3;
+      ctx.lineWidth = baseNeonWidth / game.scale;
       ctx.shadowColor = '#e74c3c';
-      ctx.shadowBlur = 15;
+      ctx.shadowBlur = baseNeonBlur / game.scale;
       ctx.strokeRect(
-        -borderPadding + (borderWidth / 2), 
-        -borderPadding + (borderWidth / 2), 
-        game.baseWidth + (borderPadding * 2) - borderWidth, 
-        game.baseHeight + (borderPadding * 2) - borderWidth
+        -scaledBorderPadding + (scaledBorderWidth / 2), 
+        -scaledBorderPadding + (scaledBorderWidth / 2), 
+        game.baseWidth + (scaledBorderPadding * 2) - scaledBorderWidth, 
+        game.baseHeight + (scaledBorderPadding * 2) - scaledBorderWidth
       );
       ctx.shadowBlur = 0;
       
       // Esquinas decorativas (estilo cine vintage)
-      const cornerSize = 25;
-      const cornerThickness = 4;
       ctx.strokeStyle = '#f39c12';
-      ctx.lineWidth = cornerThickness;
+      ctx.lineWidth = scaledCornerThickness;
       ctx.lineCap = 'round';
       
       // Esquina superior izquierda
       ctx.beginPath();
-      ctx.moveTo(-borderPadding, -borderPadding + cornerSize);
-      ctx.lineTo(-borderPadding, -borderPadding);
-      ctx.lineTo(-borderPadding + cornerSize, -borderPadding);
+      ctx.moveTo(-scaledBorderPadding, -scaledBorderPadding + scaledCornerSize);
+      ctx.lineTo(-scaledBorderPadding, -scaledBorderPadding);
+      ctx.lineTo(-scaledBorderPadding + scaledCornerSize, -scaledBorderPadding);
       ctx.stroke();
       
       // Esquina superior derecha
       ctx.beginPath();
-      ctx.moveTo(game.baseWidth + borderPadding - cornerSize, -borderPadding);
-      ctx.lineTo(game.baseWidth + borderPadding, -borderPadding);
-      ctx.lineTo(game.baseWidth + borderPadding, -borderPadding + cornerSize);
+      ctx.moveTo(game.baseWidth + scaledBorderPadding - scaledCornerSize, -scaledBorderPadding);
+      ctx.lineTo(game.baseWidth + scaledBorderPadding, -scaledBorderPadding);
+      ctx.lineTo(game.baseWidth + scaledBorderPadding, -scaledBorderPadding + scaledCornerSize);
       ctx.stroke();
       
       // Esquina inferior izquierda
       ctx.beginPath();
-      ctx.moveTo(-borderPadding, game.baseHeight + borderPadding - cornerSize);
-      ctx.lineTo(-borderPadding, game.baseHeight + borderPadding);
-      ctx.lineTo(-borderPadding + cornerSize, game.baseHeight + borderPadding);
+      ctx.moveTo(-scaledBorderPadding, game.baseHeight + scaledBorderPadding - scaledCornerSize);
+      ctx.lineTo(-scaledBorderPadding, game.baseHeight + scaledBorderPadding);
+      ctx.lineTo(-scaledBorderPadding + scaledCornerSize, game.baseHeight + scaledBorderPadding);
       ctx.stroke();
       
       // Esquina inferior derecha
       ctx.beginPath();
-      ctx.moveTo(game.baseWidth + borderPadding - cornerSize, game.baseHeight + borderPadding);
-      ctx.lineTo(game.baseWidth + borderPadding, game.baseHeight + borderPadding);
-      ctx.lineTo(game.baseWidth + borderPadding, game.baseHeight + borderPadding - cornerSize);
+      ctx.moveTo(game.baseWidth + scaledBorderPadding - scaledCornerSize, game.baseHeight + scaledBorderPadding);
+      ctx.lineTo(game.baseWidth + scaledBorderPadding, game.baseHeight + scaledBorderPadding);
+      ctx.lineTo(game.baseWidth + scaledBorderPadding, game.baseHeight + scaledBorderPadding - scaledCornerSize);
       ctx.stroke();
       
       // Dibujar jefe (demonio)

@@ -446,6 +446,82 @@
     // No hay mínimo para pasar, siempre se llega al jefe
     // El handicap se calcula según el desempeño en las 10 preguntas
     
+    // Para Tetris (historia), usar sistema de 5 niveles con líneas basura, velocidad y líneas requeridas
+    const region = ADVENTURE_STATE.regions[ADVENTURE_STATE.currentRegion];
+    if (region && region.boss === 'tetris') {
+      // Nivel 1: 10 correctas - Muy fácil
+      if (questionsScore === 10) {
+        return {
+          type: 'level1',
+          playerLives: 5,
+          bossLives: 3,
+          playerSpeed: 1.0,
+          bossSpeed: 1.0,
+          extraRows: 0,
+          startingLines: 0,  // Sin líneas basura
+          linesRequired: 8,   // 8 líneas para ganar
+          message: '¡Perfecto! Nivel 1: Sin líneas basura, velocidad normal, 8 líneas requeridas'
+        };
+      }
+      // Nivel 2: 8-9 correctas - Fácil
+      else if (questionsScore >= 8) {
+        return {
+          type: 'level2',
+          playerLives: 4,
+          bossLives: 3,
+          playerSpeed: 1.0,
+          bossSpeed: 1.2,
+          extraRows: 1,
+          startingLines: 1,  // 1 línea basura
+          linesRequired: 10,  // 10 líneas para ganar
+          message: 'Muy bien! Nivel 2: 1 línea basura, velocidad rápida, 10 líneas requeridas'
+        };
+      }
+      // Nivel 3: 5-7 correctas - Normal
+      else if (questionsScore >= 5) {
+        return {
+          type: 'level3',
+          playerLives: 2,
+          bossLives: 4,
+          playerSpeed: 1.0,
+          bossSpeed: 1.4,
+          extraRows: 2,
+          startingLines: 2,  // 2 líneas basura
+          linesRequired: 12,  // 12 líneas para ganar
+          message: 'Regular. Nivel 3: 2 líneas basura, velocidad muy rápida, 12 líneas requeridas'
+        };
+      }
+      // Nivel 4: 2-4 correctas - Difícil
+      else if (questionsScore >= 2) {
+        return {
+          type: 'level4',
+          playerLives: 1,
+          bossLives: 5,
+          playerSpeed: 1.0,
+          bossSpeed: 1.6,
+          extraRows: 3,
+          startingLines: 3,  // 3 líneas basura
+          linesRequired: 15,  // 15 líneas para ganar
+          message: 'Difícil. Nivel 4: 3 líneas basura, velocidad extrema, 15 líneas requeridas'
+        };
+      }
+      // Nivel 5: 0-1 correctas - Muy difícil
+      else {
+        return {
+          type: 'level5',
+          playerLives: 1,
+          bossLives: 5,
+          playerSpeed: 1.0,
+          bossSpeed: 1.8,
+          extraRows: 3,
+          startingLines: 4,  // 4 líneas basura
+          linesRequired: 18,  // 18 líneas para ganar
+          message: 'Muy difícil! Nivel 5: 4 líneas basura, velocidad máxima, 18 líneas requeridas'
+        };
+      }
+    }
+    
+    // Para otros bosses, mantener el sistema anterior
     if (questionsScore === 10) {
       return {
         type: 'perfect',

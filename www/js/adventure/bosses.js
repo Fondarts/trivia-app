@@ -80,7 +80,15 @@
   // Función para actualizar el HUD
   function updateBossHUD(text) {
     const hud = document.getElementById('bossGameHUD');
-    if (hud) hud.innerHTML = text;
+    if (hud) {
+      hud.innerHTML = text;
+      // Ocultar el HUD si el texto está vacío
+      if (!text || text.trim() === '') {
+        hud.style.display = 'none';
+      } else {
+        hud.style.display = 'block';
+      }
+    }
   }
 
   // Función para finalizar el boss game

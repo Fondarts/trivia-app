@@ -18,8 +18,40 @@
     const offsetY = Math.floor(PAD + BOSS_SPACE + (playH - rows * cell) / 2);
     const grid = Array.from({ length: rows }, () => Array(cols).fill(0));
     let cleared = 0;
-    let fallInterval = Math.max(250, 700 - (handicap.bossSpeed || 1) * 80);
+    const linesRequired = handicap.linesRequired || 10; // Líneas requeridas para ganar
+    // Calcular velocidad basada en bossSpeed:
+    // bossSpeed 1.0 = 620ms (normal)
+    // bossSpeed 1.2 = 560ms (rápido)
+    // bossSpeed 1.4 = 500ms (muy rápido)
+    // bossSpeed 1.6 = 440ms (extremo)
+    // bossSpeed 1.8 = 380ms (máximo)
+    const baseInterval = 620;
+    const speedMultiplier = handicap.bossSpeed || 1.0;
+    let fallInterval = Math.max(250, Math.floor(baseInterval - (speedMultiplier - 1) * 150));
     let last = 0;
+    
+    // Agregar líneas basura de entrada si hay handicap
+    const startingLines = handicap.startingLines || 0;
+    if (startingLines > 0) {
+      // Llenar las últimas N filas con bloques aleatorios (dejando al menos un espacio vacío por fila)
+      for (let y = rows - startingLines; y < rows; y++) {
+        const filledCells = Math.floor(cols * 0.7); // 70% de las celdas llenas
+        const emptyCells = cols - filledCells;
+        const emptyPositions = new Set();
+        
+        // Seleccionar posiciones aleatorias para dejar vacías
+        while (emptyPositions.size < emptyCells) {
+          emptyPositions.add(Math.floor(Math.random() * cols));
+        }
+        
+        // Llenar el resto con bloques aleatorios (IDs 1-7, correspondientes a los colores)
+        for (let x = 0; x < cols; x++) {
+          if (!emptyPositions.has(x)) {
+            grid[y][x] = Math.floor(Math.random() * 7) + 1; // ID 1-7
+          }
+        }
+      }
+    }
 
     const SHAPES = [
       [[1,1,1,1]], // I
@@ -43,7 +75,7 @@
     let bgImg = null;
     let bossImg = null;
     
-    window.BossCore.loadBossImage('assets/backgrounds/tetris_BG.webp')
+    window.BossCore.loadBossImage('assets/maps/tetris02.webp')
       .then(img => { bgImg = img; })
       .catch(() => { bgImg = null; });
     
@@ -76,7 +108,7 @@
       }
       if (lines>0) {
         cleared += lines;
-        if (cleared >= 10) return window.BossCore.endBossGame(true);
+        if (cleared >= linesRequired) return window.BossCore.endBossGame(true);
       }
     }
 
@@ -185,27 +217,100 @@
 
       // draw
       ctx.clearRect(0,0,canvas.width,canvas.height);
-      // tablero (fondo) con proporción preservada y ajustado a ALTURA (cover-height)
+      // Fondo completo con opacidad reducida (fuera del marco)
       if (bgImg && bgImg.complete && bgImg.naturalWidth && bgImg.naturalHeight) {
         try {
           ctx.save();
-          ctx.globalAlpha = 0.25;
-          // Recortar al rectángulo del tablero para que no se salga
-          ctx.beginPath();
-          ctx.rect(offsetX, offsetY, cols*cell, rows*cell);
-          ctx.clip();
-          const bw = cols * cell; const bh = rows * cell;
-          const ir = bgImg.naturalWidth / bgImg.naturalHeight;
-          // Ajustar por altura: ocupar full alto y centrar, recortando lados si es necesario
-          let dh = bh; 
-          let dw = Math.floor(bh * ir);
-          const dx = offsetX + Math.floor((bw - dw) / 2);
-          const dy = offsetY + Math.floor((bh - dh) / 2);
-          ctx.drawImage(bgImg, dx, dy, dw, dh);
+          ctx.globalAlpha = 0.7; // 70% de opacidad para el fondo fuera del marco
+          // Dibujar el fondo en todo el canvas, manteniendo la proporción
+          const bgAspectRatio = bgImg.naturalWidth / bgImg.naturalHeight;
+          const canvasAspectRatio = canvas.width / canvas.height;
+          const isMobile = canvas.height > canvas.width; // Detectar móvil por orientación
+          
+          let drawWidth, drawHeight, drawX, drawY;
+          
+          // === Lógica para "vertical fit" en móvil y mantener proporción en PC ===
+          if (isMobile) {
+            // Móvil: fit vertical - ajustar por altura y centrar horizontalmente
+            drawHeight = canvas.height;
+            drawWidth = drawHeight * bgAspectRatio;
+            drawX = (canvas.width - drawWidth) / 2;
+            drawY = 0;
+          } else {
+            // PC: mantener proporción completa
+            if (canvasAspectRatio > bgAspectRatio) {
+              // Canvas es más ancho - ajustar por altura
+              drawHeight = canvas.height;
+              drawWidth = drawHeight * bgAspectRatio;
+              drawX = (canvas.width - drawWidth) / 2;
+              drawY = 0;
+            } else {
+              // Canvas es más alto - ajustar por ancho
+              drawWidth = canvas.width;
+              drawHeight = drawWidth / bgAspectRatio;
+              drawX = 0;
+              drawY = (canvas.height - drawHeight) / 2;
+            }
+          }
+          
+          ctx.drawImage(bgImg, drawX, drawY, drawWidth, drawHeight);
           ctx.restore();
         } catch {}
       }
-      // tablero
+      
+      // Fondo con opacidad reducida dentro del área del marco (para que se vea a través del tablero)
+      if (bgImg && bgImg.complete && bgImg.naturalWidth && bgImg.naturalHeight) {
+        try {
+          ctx.save();
+          ctx.globalAlpha = 0.15; // Opacidad reducida solo dentro del marco (más transparente)
+          // Recortar al rectángulo del tablero
+          ctx.beginPath();
+          ctx.rect(offsetX, offsetY, cols*cell, rows*cell);
+          ctx.clip();
+          
+          const bgAspectRatio = bgImg.naturalWidth / bgImg.naturalHeight;
+          const canvasAspectRatio = canvas.width / canvas.height;
+          const isMobile = canvas.height > canvas.width; // Detectar móvil por orientación
+          
+          let drawWidth, drawHeight, drawX, drawY;
+          
+          // === Lógica para "vertical fit" en móvil y mantener proporción en PC ===
+          if (isMobile) {
+            // Móvil: fit vertical - ajustar por altura y centrar horizontalmente
+            drawHeight = canvas.height;
+            drawWidth = drawHeight * bgAspectRatio;
+            drawX = (canvas.width - drawWidth) / 2;
+            drawY = 0;
+          } else {
+            // PC: mantener proporción completa
+            if (canvasAspectRatio > bgAspectRatio) {
+              // Canvas es más ancho - ajustar por altura
+              drawHeight = canvas.height;
+              drawWidth = drawHeight * bgAspectRatio;
+              drawX = (canvas.width - drawWidth) / 2;
+              drawY = 0;
+            } else {
+              // Canvas es más alto - ajustar por ancho
+              drawWidth = canvas.width;
+              drawHeight = drawWidth / bgAspectRatio;
+              drawX = 0;
+              drawY = (canvas.height - drawHeight) / 2;
+            }
+          }
+          
+          ctx.drawImage(bgImg, drawX, drawY, drawWidth, drawHeight);
+          ctx.restore();
+        } catch {}
+      }
+      
+      // tablero (marco) - agregar fill negro con opacidad
+      ctx.save();
+      ctx.globalAlpha = 0.4; // 40% de opacidad
+      ctx.fillStyle = '#000'; // Negro
+      ctx.fillRect(offsetX-1, offsetY-1, cols*cell+2, rows*cell+2);
+      ctx.restore();
+      
+      // Dibujar el borde del marco
       ctx.strokeStyle = '#888';
       ctx.lineWidth = 2;
       ctx.strokeRect(offsetX-1, offsetY-1, cols*cell+2, rows*cell+2);
@@ -213,63 +318,83 @@
       // pieza
       for (let y=0;y<piece.m.length;y++) for (let x=0;x<piece.m[y].length;x++) if (piece.m[y][x]) drawCell(piece.x+x,piece.y+y,colors[piece.id]);
 
+      // Detectar si es móvil
+      const isMobile = canvas.height > canvas.width;
+      
       // Demonio arriba del tablero
+      let bx = 0, by = 0, bW = 0, bH = 0;
       if (bossImg && bossImg.complete && bossImg.naturalWidth && bossImg.naturalHeight) {
         const bwRatio = bossImg.naturalWidth / bossImg.naturalHeight;
         const targetW = Math.max(100, Math.floor(cols * cell * 0.35));
-        const bW = targetW;
-        const bH = Math.floor(targetW / bwRatio);
-        const bx = offsetX + Math.floor((cols * cell) / 2) - Math.floor(bW / 2);
-        const by = PAD + 15; // Bajado 5px más
+        bW = targetW;
+        bH = Math.floor(targetW / bwRatio);
+        bx = offsetX + Math.floor((cols * cell) / 2) - Math.floor(bW / 2);
+        by = PAD + 28; // Posición Y del demonio
         ctx.drawImage(bossImg, bx, by, bW, bH);
       }
 
-      // HUD al lado derecho del tablero de juego
-      const sidebarX = offsetX + cols * cell + 20; // 20px de separación del tablero
-      const sidebarY = offsetY + 20; // Empezar un poco abajo del inicio del tablero
+      // Preview de siguiente pieza - calcular tamaño primero
+      const pvCell = isMobile 
+        ? Math.max(10, Math.floor(cell * 0.5)) // Más pequeño en móvil
+        : Math.max(12, Math.floor(cell * 0.7)); // Tamaño original en PC
+      const pvBoxW = pvCell * 4;
+      const pvBoxH = pvCell * 3;
+      
+      // HUD - posición diferente según si es móvil o PC
+      let sidebarX, sidebarY, linesX, linesY, previewX, previewY;
+      
+      if (isMobile) {
+        // Móvil: Líneas alineada al borde izquierdo del marco, Preview alineado con el borde derecho del marco
+        const demonCenterX = bx + bW / 2;
+        const spacing = 15; // Espacio entre el demonio y los elementos UI
+        
+        // Líneas alineada al borde izquierdo del marco del juego, justo encima del marco
+        linesX = offsetX; // Alineado al borde izquierdo del marco
+        linesY = offsetY - 25; // Justo encima del marco del juego
+        
+        // Preview alineado con el borde derecho del marco del juego
+        // El box tiene padding de 4px a cada lado, así que el ancho total es pvBoxW + 8
+        previewX = offsetX + cols * cell - pvBoxW - 4; // Alineado al borde derecho del marco
+        previewY = linesY - 60; // Más arriba que el texto "Líneas"
+        
+        // HUD original (para PC) - no se usa en móvil pero mantenemos la variable
+        sidebarX = offsetX + cols * cell + 20;
+        sidebarY = offsetY + 20;
+      } else {
+        // PC: mantener posición original al lado derecho del tablero
+        sidebarX = offsetX + cols * cell + 20; // 20px de separación del tablero
+        sidebarY = offsetY + 20; // Empezar un poco abajo del inicio del tablero
+        linesX = sidebarX;
+        linesY = sidebarY;
+        previewX = sidebarX;
+        previewY = sidebarY + 140;
+      }
       
       // Líneas completadas (texto blanco)
       ctx.fillStyle = '#fff';
-      ctx.font = 'bold 20px monospace';
-      ctx.textAlign = 'left';
+      ctx.font = isMobile ? 'bold 16px monospace' : 'bold 20px monospace'; // Más pequeño en móvil
+      ctx.textAlign = isMobile ? 'left' : 'left'; // Alineado a la izquierda para que se vea completo
       ctx.textBaseline = 'top';
-      ctx.fillText(`Líneas: ${cleared}/10`, sidebarX, sidebarY);
+      ctx.fillText(`Líneas: ${cleared}/${linesRequired}`, linesX, linesY);
       
-      // Instrucciones
-      ctx.font = '12px monospace';
-      ctx.fillStyle = '#666';
-      const instructions = [
-        'Click para',
-        'rotar',
-        '',
-        'Controles',
-        'para mover'
-      ];
-      let instY = sidebarY + 35;
-      instructions.forEach(line => {
-        ctx.fillText(line, sidebarX, instY);
-        instY += 14;
-      });
+      // Fondo y borde para la preview (mismos valores que el marco del juego)
+      ctx.save();
+      ctx.globalAlpha = 0.4; // 40% de opacidad (igual que el marco)
+      ctx.fillStyle = '#000'; // Negro
+      ctx.fillRect(previewX - 4, previewY - 4, pvBoxW + 8, pvBoxH + 8);
+      ctx.restore();
       
-      // Preview de siguiente pieza
-      const pvCell = Math.max(12, Math.floor(cell * 0.7));
-      const pvBoxW = pvCell * 4;
-      const pvBoxH = pvCell * 3;
-      const pvY = sidebarY + 140;
-      
-      // Fondo y borde para la preview
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-      ctx.fillRect(sidebarX - 4, pvY - 4, pvBoxW + 8, pvBoxH + 8);
-      ctx.strokeStyle = '#000';
+      // Dibujar el borde del preview (igual que el marco)
+      ctx.strokeStyle = '#888';
       ctx.lineWidth = 2;
-      ctx.strokeRect(sidebarX - 4, pvY - 4, pvBoxW + 8, pvBoxH + 8);
+      ctx.strokeRect(previewX - 4, previewY - 4, pvBoxW + 8, pvBoxH + 8);
       
       // Dibujar la pieza siguiente
       for (let y = 0; y < nextPiece.m.length; y++) {
         for (let x = 0; x < nextPiece.m[y].length; x++) {
           if (nextPiece.m[y][x]) {
             ctx.fillStyle = colors[nextPiece.id];
-            ctx.fillRect(sidebarX + x * pvCell, pvY + y * pvCell, pvCell - 1, pvCell - 1);
+            ctx.fillRect(previewX + x * pvCell, previewY + y * pvCell, pvCell - 1, pvCell - 1);
           }
         }
       }

@@ -84,19 +84,21 @@
     const BG_ASPECT = 1536 / 2720; // ~0.564705882
     const baseWidth = 360; // ancho lógico en retrato
     const baseHeight = Math.round(baseWidth / BG_ASPECT); // alto lógico según proporción exacta
+    
+    const isMobile = canvas.height > canvas.width;
+    
+    // Calcular escalado: en móvil usar fit vertical, en PC usar fit completo
     const scaleX = canvas.width / baseWidth;
     const scaleY = canvas.height / baseHeight;
-    const scale = Math.min(scaleX, scaleY);
+    const scale = isMobile ? scaleY : Math.min(scaleX, scaleY); // En móvil: fit vertical, en PC: fit completo
     const offsetX = (canvas.width - baseWidth * scale) / 2;
     const offsetY = (canvas.height - baseHeight * scale) / 2;
 
     // Primero cargar la imagen de fondo para obtener sus proporciones reales
     const hangmanBgImage = new Image();
-    hangmanBgImage.src = 'assets/atlas/hangman.webp';
+    hangmanBgImage.src = 'assets/hangman/pizarronaulaV03.webp';
     let hangmanBgLoaded = false;
     hangmanBgImage.onload = () => { hangmanBgLoaded = true; };
-    
-    const isMobile = canvas.height > canvas.width;
     
     // Dimensiones del área de juego
     const gameAreaWidth = canvas.width;
@@ -111,12 +113,12 @@
     const leftLegImage = new Image();
     const rightLegImage = new Image();
     
-    headImage.src = 'assets/atlas/01_head.webp';
-    bodyImage.src = 'assets/atlas/02_body.webp';
-    rightArmImage.src = 'assets/atlas/03_rightArm.webp';
-    leftArmImage.src = 'assets/atlas/04_leftArm.webp';
-    leftLegImage.src = 'assets/atlas/05_leftLeg.webp';
-    rightLegImage.src = 'assets/atlas/05_rightLeg.webp';
+    headImage.src = 'assets/hangman/parts/01_head_v02.webp';
+    bodyImage.src = 'assets/hangman/parts/02_body_V\'2.webp';
+    rightArmImage.src = 'assets/hangman/parts/03_rightArm_V02.webp';
+    leftArmImage.src = 'assets/hangman/parts/04_leftArm_V02.webp';
+    leftLegImage.src = 'assets/hangman/parts/05_leftLeg_V02.webp';
+    rightLegImage.src = 'assets/hangman/parts/06_rightLeg_V02.webp';
     
     let hangmanPartsLoaded = 0;
     const totalHangmanParts = 6;
@@ -508,21 +510,12 @@
       if (hangmanBgLoaded && hangmanBgImage.complete && hangmanBgImage.naturalWidth && hangmanBgImage.naturalHeight) {
         // Obtener proporción real de la imagen
         const bgImgRatio = hangmanBgImage.naturalWidth / hangmanBgImage.naturalHeight;
-        const baseRatio = baseWidth / baseHeight;
         
-        if (bgImgRatio > baseRatio) {
-          // Imagen más ancha: fit vertical (mantener altura)
-          targetHeight = baseHeight;
-          targetWidth = targetHeight * bgImgRatio;
-          bgOffsetX = (baseWidth - targetWidth) / 2;
-          bgOffsetY = 0;
-        } else {
-          // Imagen más alta: fit horizontal (mantener ancho)
-          targetWidth = baseWidth;
-          targetHeight = targetWidth / bgImgRatio;
-          bgOffsetX = 0;
-          bgOffsetY = (baseHeight - targetHeight) / 2;
-        }
+        // Forzar fit vertical (mantener altura, ajustar ancho)
+        targetHeight = baseHeight;
+        targetWidth = targetHeight * bgImgRatio;
+        bgOffsetX = (baseWidth - targetWidth) / 2;
+        bgOffsetY = 0;
         
         // Dibujar fondo una sola vez con proporción correcta
         ctx.drawImage(hangmanBgImage, bgOffsetX, bgOffsetY, targetWidth, targetHeight);
@@ -557,7 +550,7 @@
       }
       
       // Dibujar palabra oculta (más arriba)
-      drawHiddenWord(baseWidth/2, baseHeight * 0.58, game.word, game.guessedLetters);
+      drawHiddenWord(baseWidth/2, baseHeight * 0.52, game.word, game.guessedLetters);
       
       // Dibujar letras usadas (en la parte inferior)
       drawUsedLetters(12, baseHeight - 16, game.guessedLetters);

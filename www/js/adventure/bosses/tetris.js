@@ -147,29 +147,56 @@
       let touchStartX = null;
       let touchStartY = null;
       let lastSwipeHandledAt = 0;
+      let holdInterval = null; // Intervalo para caída continua al mantener presionado
+      let touchStartTime = 0;
+      let isHolding = false;
       const swipeThreshold = 20; // píxeles mínimos para considerar swipe
-      const repeatEveryMs = 80; // repetición al mantener swipe
+      const holdThreshold = 15; // píxeles máximos de movimiento para considerar "hold"
+      const repeatEveryMs = 50; // repetición al mantener swipe (más rápido)
+      const holdDelayMs = 200; // delay antes de activar caída continua al mantener presionado
 
-      // Tap en pantalla para rotar
-      canvas.addEventListener('click', () => {
-        const r = rotate(piece.m);
-        if (!collide(piece.x, piece.y, r)) piece.m = r;
+      // Tap en pantalla para rotar (solo si no hay touch activo)
+      canvas.addEventListener('click', (e) => {
+        // Solo rotar si no hay un touch activo (para evitar conflictos)
+        if (touchStartX === null && touchStartY === null) {
+          const r = rotate(piece.m);
+          if (!collide(piece.x, piece.y, r)) piece.m = r;
+        }
       });
 
       canvas.addEventListener('touchstart', (e) => {
+        e.preventDefault();
         const t = e.touches[0];
         touchStartX = t.clientX;
         touchStartY = t.clientY;
+        touchStartTime = performance.now();
         lastSwipeHandledAt = performance.now();
-      }, { passive: true });
+        isHolding = false;
+        
+        // Limpiar cualquier intervalo anterior
+        if (holdInterval) {
+          clearInterval(holdInterval);
+          holdInterval = null;
+        }
+      }, { passive: false });
 
       canvas.addEventListener('touchmove', (e) => {
+        e.preventDefault();
         const t = e.touches[0];
         const dx = t.clientX - touchStartX;
         const dy = t.clientY - touchStartY;
         const now = performance.now();
+        const totalMovement = Math.sqrt(dx * dx + dy * dy);
+        
+        // Limpiar intervalo de hold si hay movimiento significativo
+        if (holdInterval && totalMovement > holdThreshold) {
+          clearInterval(holdInterval);
+          holdInterval = null;
+          isHolding = false;
+        }
+        
+        // Detectar movimiento horizontal
         if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > swipeThreshold) {
-          // mover horizontal
           if (now - lastSwipeHandledAt >= repeatEveryMs) {
             if (dx > 0) {
               if (!collide(piece.x + 1, piece.y, piece.m)) piece.x++;
@@ -179,19 +206,58 @@
             lastSwipeHandledAt = now;
             touchStartX = t.clientX; // reiniciar para permitir movimientos por pasos
           }
-        } else if (Math.abs(dy) > swipeThreshold && dy > 0) {
-          // swipe hacia abajo: acelerar caída
+        } 
+        // Detectar swipe hacia abajo
+        else if (Math.abs(dy) > Math.abs(dx) && dy > swipeThreshold) {
+          // Caída rápida al deslizar hacia abajo
           if (now - lastSwipeHandledAt >= repeatEveryMs) {
             if (!collide(piece.x, piece.y + 1, piece.m)) piece.y++;
             lastSwipeHandledAt = now;
+            touchStartY = t.clientY; // reiniciar para permitir movimientos continuos
           }
         }
-      }, { passive: true });
+        // Si no hay movimiento significativo, activar "hold" después de un delay
+        else if (totalMovement <= holdThreshold && !isHolding && (now - touchStartTime) > holdDelayMs) {
+          isHolding = true;
+          // Activar caída continua mientras se mantiene presionado
+          if (holdInterval) clearInterval(holdInterval);
+          holdInterval = setInterval(() => {
+            if (!collide(piece.x, piece.y + 1, piece.m)) {
+              piece.y++;
+            } else {
+              // Si no puede bajar más, detener el intervalo
+              if (holdInterval) {
+                clearInterval(holdInterval);
+                holdInterval = null;
+              }
+            }
+          }, repeatEveryMs);
+        }
+      }, { passive: false });
 
-      canvas.addEventListener('touchend', () => {
+      canvas.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        // Limpiar intervalo al soltar
+        if (holdInterval) {
+          clearInterval(holdInterval);
+          holdInterval = null;
+        }
         touchStartX = null;
         touchStartY = null;
-      });
+        isHolding = false;
+      }, { passive: false });
+      
+      canvas.addEventListener('touchcancel', (e) => {
+        e.preventDefault();
+        // Limpiar intervalo al cancelar
+        if (holdInterval) {
+          clearInterval(holdInterval);
+          holdInterval = null;
+        }
+        touchStartX = null;
+        touchStartY = null;
+        isHolding = false;
+      }, { passive: false });
     }
 
     // Agregar controles táctiles (tap y swipe) y ocultar cualquier UI de flechas

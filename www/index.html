@@ -207,22 +207,48 @@
       </div>
 
       <div class="section" id="roundsWrap">
-        <label data-i18n="questionsCount">Cantidad de preguntas</label>
-        <select id="rounds" class="input">
-          <option value="5">5</option>
-          <option value="15" selected>15</option>
-          <option value="30">30</option>
-        </select>
+        <div class="selects-row">
+          <div class="select-wrapper">
+            <label data-i18n="questionsCount">Cantidad de preguntas</label>
+            <select id="rounds" class="input input-small">
+              <option value="5">5</option>
+              <option value="15" selected>15</option>
+              <option value="30">30</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <label data-i18n="difficulty">Dificultad</label>
+            <select id="difficulty" class="input input-small">
+              <option value="any" data-i18n="difficultyAny">Cualquiera</option>
+              <option value="easy" selected data-i18n="difficultyEasy">Fácil</option>
+              <option value="medium" data-i18n="difficultyMedium">Medio</option>
+              <option value="hard" data-i18n="difficultyHard">Difícil</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <div class="section" id="timeWrap" style="display:none">
-        <label data-i18n="time">Tiempo</label>
-        <select id="timer" class="input">
-          <option value="15">15s</option>
-          <option value="30" selected>30s</option>
-          <option value="60">1m</option>
-          <option value="180">3m</option>
-        </select>
+        <div class="selects-row">
+          <div class="select-wrapper">
+            <label data-i18n="time">Tiempo</label>
+            <select id="timer" class="input input-small">
+              <option value="15">15s</option>
+              <option value="30" selected>30s</option>
+              <option value="60">1m</option>
+              <option value="180">3m</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <label data-i18n="difficulty">Dificultad</label>
+            <select id="timedDifficulty" class="input input-small">
+              <option value="any" data-i18n="difficultyAny">Cualquiera</option>
+              <option value="easy" selected data-i18n="difficultyEasy">Fácil</option>
+              <option value="medium" data-i18n="difficultyMedium">Medio</option>
+              <option value="hard" data-i18n="difficultyHard">Difícil</option>
+            </select>
+          </div>
+        </div>
       </div>
       
       <div class="section" id="vsSection" style="display:none">
@@ -246,21 +272,24 @@
       </div>
 
       <div class="section" id="vsRoundsWrap" style="display:none">
-        <label data-i18n="questionsCount">Cantidad de preguntas</label>
-        <select id="vsRounds" class="input">
-          <option value="5">5</option>
-          <option value="15" selected>15</option>
-          <option value="30">30</option>
-        </select>
-      </div>
-
-      <div class="section" id="diffSection">
-        <label data-i18n="difficulty">Dificultad</label>
-        <div class="pills" id="diffPills">
-          <div class="pill" data-val="any" data-i18n="difficultyAny">Cualquiera</div>
-          <div class="pill active" data-val="easy" data-i18n="difficultyEasy">Fácil</div>
-          <div class="pill" data-val="medium" data-i18n="difficultyMedium">Medio</div>
-          <div class="pill" data-val="hard" data-i18n="difficultyHard">Difícil</div>
+        <div class="selects-row">
+          <div class="select-wrapper">
+            <label data-i18n="questionsCount">Cantidad de preguntas</label>
+            <select id="vsRounds" class="input input-small">
+              <option value="5">5</option>
+              <option value="15" selected>15</option>
+              <option value="30">30</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <label data-i18n="difficulty">Dificultad</label>
+            <select id="vsDifficulty" class="input input-small">
+              <option value="any" data-i18n="difficultyAny">Cualquiera</option>
+              <option value="easy" selected data-i18n="difficultyEasy">Fácil</option>
+              <option value="medium" data-i18n="difficultyMedium">Medio</option>
+              <option value="hard" data-i18n="difficultyHard">Difícil</option>
+            </select>
+          </div>
         </div>
       </div>
 

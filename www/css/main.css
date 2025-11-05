@@ -280,6 +280,33 @@ label {
   transform: translateY(-1px);
 }
 
+/* Selects en fila (cantidad de preguntas y dificultad) */
+.selects-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.select-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.select-wrapper label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Select pequeño */
+.input-small {
+  padding: 10px 12px;
+  font-size: 14px;
+  min-width: 0;
+}
+
 /* ===========================================
    5. BOTONES
    =========================================== */

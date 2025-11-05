@@ -311,10 +311,13 @@ export function initVisualEffects() {
   // Transiciones suaves de tema
   smoothThemeTransition();
   
-  // Agregar tooltips
+  // Agregar tooltips (excluir elementos que ya tienen tooltips CSS como .mode-btn)
   document.querySelectorAll('[title]').forEach(el => {
-    addTooltip(el, el.getAttribute('title'));
-    el.removeAttribute('title');
+    // No agregar tooltip dinámico si el elemento ya tiene un tooltip CSS
+    if (!el.querySelector('.mode-tooltip') && !el.classList.contains('mode-btn')) {
+      addTooltip(el, el.getAttribute('title'));
+      el.removeAttribute('title');
+    }
   });
   
   // Agregar sonidos a clicks

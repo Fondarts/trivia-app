@@ -480,8 +480,19 @@ function getActiveMode(){
 }
 
 function getActiveDifficulty(){
-  const p = [...document.querySelectorAll('#diffPills .pill')].find(x=> x.classList.contains('active'));
-  return p?.dataset?.val || 'easy';
+  // Verificar el select de dificultad según el modo activo
+  const mode = getActiveMode();
+  let diffSelect = null;
+  
+  if (mode === 'timed') {
+    diffSelect = document.getElementById('timedDifficulty');
+  } else if (mode === 'vs') {
+    diffSelect = document.getElementById('vsDifficulty');
+  } else {
+    diffSelect = document.getElementById('difficulty');
+  }
+  
+  return diffSelect?.value || 'easy';
 }
 // --- FIN DE FUNCIONES RESTAURADAS ---
 

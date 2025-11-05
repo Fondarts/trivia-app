@@ -969,7 +969,7 @@ window.addEventListener('load', async ()=>{
     setVsActive(true);
     setVSName(getPlayerNameForGame());
     const rounds = parseInt(document.getElementById('vsRounds')?.value, 10);
-    const diff = document.querySelector('#diffPills .pill.active')?.dataset.val;
+    const diff = document.getElementById('vsDifficulty')?.value || document.getElementById('difficulty')?.value || 'easy';
     const pendingFriendId = Storage.get('pending_friend_invite');
     const pendingFriendName = Storage.get('pending_friend_name');
 

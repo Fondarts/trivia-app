@@ -245,13 +245,22 @@ export function bindProfileModal(){
 }
 
 export function bindDifficultyPills(){
-  const wrap = document.getElementById('diffPills');
-  wrap?.querySelectorAll('.pill').forEach(p=>{
-    p.addEventListener('click', ()=>{
-      wrap.querySelectorAll('.pill').forEach(x=> x.classList.remove('active'));
-      p.classList.add('active');
-    });
-  });
+  // Los botones de dificultad fueron reemplazados por selects
+  // Esta función se mantiene por compatibilidad pero ya no es necesaria
+  const diffSelect = document.getElementById('difficulty');
+  const timedDiffSelect = document.getElementById('timedDifficulty');
+  const vsDiffSelect = document.getElementById('vsDifficulty');
+  
+  // Asegurar que los selects tengan el valor correcto si existen
+  if (diffSelect && !diffSelect.value) {
+    diffSelect.value = 'easy';
+  }
+  if (timedDiffSelect && !timedDiffSelect.value) {
+    timedDiffSelect.value = 'easy';
+  }
+  if (vsDiffSelect && !vsDiffSelect.value) {
+    vsDiffSelect.value = 'easy';
+  }
 }
 
 export function bindModeSegment(){
@@ -264,7 +273,8 @@ export function bindModeSegment(){
   const vsHostActions= document.getElementById('vsHostActions');
   const vsJoinActions= document.getElementById('vsJoinActions');
   const vsHostExtras = document.getElementById('vsHostExtras');
-  const diffSection  = document.getElementById('diffSection');
+  // diffSection ya no existe, la dificultad está ahora en roundsWrap y vsRoundsWrap
+  const diffSection = null;
   const catSection   = document.getElementById('catSection');
   const opponentSection = document.getElementById('opponentSection');
   const spStartWrap  = document.getElementById('spStartWrap');
@@ -284,7 +294,7 @@ export function bindModeSegment(){
     show(vsHostActions, false);
     show(vsJoinActions, false);
     show(vsHostExtras, false);
-    show(diffSection, false);
+    // diffSection ya no existe, la dificultad está integrada en roundsWrap y vsRoundsWrap
     show(catSection, false);
     show(opponentSection, false);
     show(spStartWrap, false);
@@ -301,7 +311,7 @@ export function bindModeSegment(){
       show(vsHostExtras, false); // Ocultar por defecto (solo se muestra en modo CREAR)
       // Asegurar que se vean dificultad y categoría en CREAR
       const isHostNow = (document.querySelector('#vsModeToggle .seg.active')?.dataset?.val || 'join') === 'host';
-      show(diffSection,  isHostNow);
+      // La dificultad está ahora en vsRoundsWrap
       show(catSection,   isHostNow);
       show(opponentSection, isHostNow);
       
@@ -327,13 +337,13 @@ export function bindModeSegment(){
     } else if (val === 'rounds') {
       // Modo rondas
       show(wrapRounds, true);
-      show(diffSection, true);
+      // La dificultad está ahora en roundsWrap
       show(catSection, true);
       show(spStartWrap, true);
     } else if (val === 'timed') {
       // Modo contrarreloj
       show(wrapTime, true);
-      show(diffSection, true);
+      // La dificultad está ahora en roundsWrap
       show(catSection, true);
       show(spStartWrap, true);
     }
@@ -353,7 +363,8 @@ export function bindVsToggle(){
   const toggle = document.getElementById('vsModeToggle'); if (!toggle) return;
   const vsSection    = document.getElementById('vsSection');
   const vsRoundsWrap = document.getElementById('vsRoundsWrap');
-  const diffSection  = document.getElementById('diffSection');
+  // diffSection ya no existe, la dificultad está ahora en roundsWrap y vsRoundsWrap
+  const diffSection = null;
   const catSection   = document.getElementById('catSection');
   const vsHostActions= document.getElementById('vsHostActions');
   const vsJoinActions= document.getElementById('vsJoinActions');
@@ -535,20 +546,20 @@ export async function applyInitialUI(){
         
         // Forzar la aplicación del modo inicial
         const wrapRounds = document.getElementById('roundsWrap');
-        const diffSection = document.getElementById('diffSection');
+        // La dificultad está ahora integrada en roundsWrap
         const catSection = document.getElementById('catSection');
         const spStartWrap = document.getElementById('spStartWrap');
         
         if (mode === 'rounds') {
           if (wrapRounds) wrapRounds.style.display = 'block';
-          if (diffSection) diffSection.style.display = 'block';
+          // La dificultad está integrada en roundsWrap
           if (catSection) catSection.style.display = 'block';
           if (spStartWrap) spStartWrap.style.display = 'block';
           console.log('✅ Elementos de modo rounds mostrados');
         } else if (mode === 'timed') {
           const wrapTime = document.getElementById('timerWrap');
           if (wrapTime) wrapTime.style.display = 'block';
-          if (diffSection) diffSection.style.display = 'block';
+          // La dificultad está integrada en roundsWrap
           if (catSection) catSection.style.display = 'block';
           if (spStartWrap) spStartWrap.style.display = 'block';
           console.log('✅ Elementos de modo timed mostrados');

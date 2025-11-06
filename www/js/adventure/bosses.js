@@ -97,6 +97,15 @@
       cancelAnimationFrame(window.bossGameState.animationId);
     }
     
+    // Si perdió, guardar el estado del juego para poder continuarlo con vidas extra
+    if (!won && window.bossGameState) {
+      // Guardar estado del juego actual en el estado global para poder continuarlo
+      window.bossGameState.canContinue = true;
+      window.bossGameState.originalHandicap = window.bossGameState.handicap;
+      window.bossGameState.originalRegionKey = window.bossGameState.regionKey;
+      window.bossGameState.originalCallback = window.bossGameState.callback;
+    }
+    
     // Limpiar controles táctiles
     const tetrisControls = document.getElementById('tetris-touch-controls');
     if (tetrisControls) {

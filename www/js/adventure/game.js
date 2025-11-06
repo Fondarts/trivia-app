@@ -129,7 +129,15 @@
 
   function renderAdventureQuestion() {
     const state = adventureGameState;
+    
+    // Verificar si se terminaron las preguntas o se acabó el tiempo antes de renderizar
     if (state.currentQuestion >= state.deck.length) {
+      endAdventureLevel();
+      return;
+    }
+    
+    // Si es contrarreloj y se acabó el tiempo, terminar el nivel
+    if (state.isTimed && state.timeLeft <= 0) {
       endAdventureLevel();
       return;
     }
@@ -193,9 +201,15 @@
     setTimeout(() => {
       state.currentQuestion++;
       
-      if (state.currentQuestion >= state.deck.length || (state.isTimed && state.timeLeft <= 0)) {
+      // Verificar si se terminaron las preguntas o se acabó el tiempo
+      if (state.currentQuestion >= state.deck.length) {
+        // Se terminaron todas las preguntas
+        endAdventureLevel();
+      } else if (state.isTimed && state.timeLeft <= 0) {
+        // Se acabó el tiempo
         endAdventureLevel();
       } else {
+        // Continuar con la siguiente pregunta
         renderAdventureQuestion();
       }
     }, 1000);
@@ -208,6 +222,22 @@
     if (state.timer) clearInterval(state.timer);
     
     state.timer = setInterval(() => {
+      // Verificar primero si el tiempo ya llegó a 0 antes de decrementar
+      if (state.timeLeft <= 0) {
+        console.log('⏰ Timer ya estaba en 0, terminando nivel...');
+        clearInterval(state.timer);
+        state.timer = null;
+        // Deshabilitar botones inmediatamente
+        const buttons = document.querySelectorAll('.option-btn');
+        buttons.forEach(btn => {
+          btn.disabled = true;
+          btn.style.pointerEvents = 'none';
+        });
+        // Terminar el nivel inmediatamente
+        endAdventureLevel();
+        return; // Salir del intervalo
+      }
+      
       state.timeLeft--;
       
       const hudEl = document.querySelector('.adventure-hud');
@@ -219,8 +249,18 @@
         hudEl?.classList.add('urgent');
       }
       
+      // Verificar nuevamente después de decrementar
       if (state.timeLeft <= 0) {
+        console.log('⏰ Timer llegó a 0, terminando nivel...');
         clearInterval(state.timer);
+        state.timer = null;
+        // Deshabilitar botones inmediatamente
+        const buttons = document.querySelectorAll('.option-btn');
+        buttons.forEach(btn => {
+          btn.disabled = true;
+          btn.style.pointerEvents = 'none';
+        });
+        // Terminar el nivel inmediatamente
         endAdventureLevel();
       }
     }, 1000);
@@ -229,9 +269,41 @@
   async function endAdventureLevel() {
     const state = adventureGameState;
     
+    console.log('🏁 endAdventureLevel llamado', {
+      timeLeft: state.timeLeft,
+      isTimed: state.isTimed,
+      currentQuestion: state.currentQuestion,
+      total: state.deck.length,
+      score: state.score
+    });
+    
+    // Asegurar que el timer esté detenido PRIMERO
     if (state.timer) {
       clearInterval(state.timer);
       state.timer = null;
+    }
+    
+    // Si es contrarreloj, asegurar que timeLeft refleje el estado correcto
+    if (state.isTimed && state.timeLeft < 0) {
+      state.timeLeft = 0;
+    }
+    
+    // Deshabilitar todos los botones para evitar respuestas después de que termine
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(btn => {
+      btn.disabled = true;
+      btn.style.pointerEvents = 'none';
+    });
+    
+    // Si se terminaron las preguntas pero aún no se procesó la última respuesta
+    // Asegurar que currentQuestion refleje que se terminaron todas
+    if (state.currentQuestion < state.deck.length) {
+      // Si estamos en alguna pregunta y no se ha respondido, marcar como terminado
+      // Esto puede pasar si se acabó el tiempo
+      if (state.isTimed && state.timeLeft <= 0) {
+        // Si se acabó el tiempo, no incrementar currentQuestion, solo marcar como terminado
+        // El score ya está calculado con las preguntas respondidas
+      }
     }
     
     // Verificar si pasó el nivel
@@ -271,17 +343,84 @@
     
     // Si no pasó el mínimo, perder una vida y no completar el nodo
     if (!passed) {
+      console.log('❌ No pasó el mínimo. Score:', state.score, 'Mínimo requerido:', minRequired);
+      let shouldShowResults = true;
+      let noLives = false;
+      
       try {
         if (window.AdventureMode && window.AdventureMode.loseLife) {
-          const reset = window.AdventureMode.loseLife();
-          // Si se reseteó el mapa por quedarse sin vidas, actualizar vista
-          if (reset) {
-            const stateAfter = window.AdventureMode.ADVENTURE_STATE;
-            if (window.renderRegionNodes) window.renderRegionNodes(stateAfter.currentRegion);
+          const result = window.AdventureMode.loseLife();
+          console.log('💔 Resultado de loseLife:', result);
+          console.log('❤️ Vidas después de perder:', window.AdventureMode.ADVENTURE_STATE.lives);
+          
+          // Si se quedó sin vidas, el modal ya se mostró, NO mostrar resultados ni actualizar mapa
+          if (result === 'no_lives') {
+            console.log('⚠️ Se quedó sin vidas, el modal ya se mostró. NO mostrar resultados ni actualizar mapa.');
+            shouldShowResults = false;
+            noLives = true;
+            // NO actualizar el mapa aquí porque el modal se está mostrando
+            // El modal se encargará de ocultar el mapa y mostrar el modal
+            // Salir temprano para no continuar con el flujo normal
+          } else {
+            // Si se reseteó el mapa (comportamiento antiguo), actualizar vista
+            if (result === true) {
+              const stateAfter = window.AdventureMode.ADVENTURE_STATE;
+              if (window.renderRegionNodes) window.renderRegionNodes(stateAfter.currentRegion);
+            }
+            
+            // SIEMPRE actualizar la UI del mapa para mostrar los corazones actualizados
+            // Esto asegura que los corazones se actualicen incluso si no se reseteó el mapa
+            if (window.renderRegionNodes && state.regionKey) {
+              const livesBeforeRender = window.AdventureMode?.ADVENTURE_STATE?.lives;
+              console.log('🔄 Actualizando UI del mapa para mostrar corazones actualizados...', {
+                regionKey: state.regionKey,
+                livesBeforeRender: livesBeforeRender,
+                livesType: typeof livesBeforeRender
+              });
+              window.renderRegionNodes(state.regionKey);
+              const livesAfterRender = window.AdventureMode?.ADVENTURE_STATE?.lives;
+              console.log('🔄 Después de renderizar, vidas:', livesAfterRender);
+            }
           }
         }
-      } catch (e) { console.error('Error al perder vida:', e); }
-      showAdventureResults(false, null);
+      } catch (e) { 
+        console.error('❌ Error al perder vida:', e); 
+        // Si hay error, mostrar resultados de todas formas
+        shouldShowResults = true;
+      }
+      
+      // Si se quedó sin vidas, salir aquí sin mostrar resultados
+      if (noLives) {
+        console.log('⚠️ Se quedó sin vidas, saliendo sin mostrar resultados');
+        return;
+      }
+      
+      // Mostrar resultados SIEMPRE que no se haya quedado sin vidas
+      if (shouldShowResults) {
+        const livesRemaining = window.AdventureMode?.ADVENTURE_STATE?.lives || 0;
+        console.log('❤️ Vidas restantes:', livesRemaining);
+        console.log('📊 Mostrando resultados de derrota...');
+        // Mostrar resultados SIEMPRE si shouldShowResults es true
+        try {
+          showAdventureResults(false, null);
+        } catch (e) {
+          console.error('❌ Error al mostrar resultados:', e);
+          // Si hay error, intentar mostrar resultados de forma básica
+          const gameArea = document.getElementById('adventureGameArea');
+          if (gameArea) {
+            gameArea.innerHTML = `
+              <div class="adventure-results">
+                <h2>Nivel Fallado ❌</h2>
+                <p>Necesitas al menos ${minRequired} correctas. Obtuviste: ${state.score}</p>
+                <button class="btn" onclick="window.retryAdventureLevel()">Reintentar</button>
+                <button class="btn secondary" onclick="window.backToRegionMap()">Volver al Mapa</button>
+              </div>
+            `;
+          }
+        }
+      } else {
+        console.log('⚠️ shouldShowResults=false, NO mostrar resultados (modal de sin vidas ya se mostró)');
+      }
       return;
     }
     
@@ -310,10 +449,16 @@
   }
 
   function showAdventureResults(completed, result) {
+    console.log('📊 showAdventureResults llamado', { completed, result, state: adventureGameState });
     const state = adventureGameState;
     const gameArea = document.getElementById('adventureGameArea');
     
-    if (!gameArea) return;
+    if (!gameArea) {
+      console.error('❌ gameArea no encontrado!');
+      return;
+    }
+    
+    console.log('✅ gameArea encontrado, mostrando resultados...');
     
     const stars = result?.stars || 0;
     const percentage = Math.round((state.score / state.total) * 100);
@@ -352,6 +497,11 @@
       newRegionKey = unlockOrder[state.regionKey];
     }
     
+    // Limpiar el contenido anterior y mostrar resultados
+    console.log('🔄 Limpiando gameArea y mostrando resultados...');
+    gameArea.innerHTML = '';
+    gameArea.style.display = 'block';
+    
     gameArea.innerHTML = `
       <div class="adventure-results">
         <h2>${title}</h2>
@@ -384,7 +534,14 @@
         ` : ''}
         
         <div class="result-actions">
-          ${!completed ? `
+          ${!completed && state.isBoss ? `
+            <button class="btn accent" onclick="window.watchAdForExtraLives()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 10px;">
+              📺 Ver Anuncio (+3 Vidas)
+            </button>
+            <button class="btn" onclick="window.retryAdventureLevel()">
+              Reintentar
+            </button>
+          ` : !completed ? `
             <button class="btn" onclick="window.retryAdventureLevel()">
               Reintentar
             </button>
@@ -401,6 +558,8 @@
         </div>
       </div>
     `;
+    
+    console.log('✅ Resultados mostrados correctamente en gameArea. HTML insertado.');
   }
 
   // Funciones globales
@@ -428,14 +587,34 @@
   };
 
   window.backToRegionMap = function() {
+    // Limpiar el timer del modal de sin vidas si existe
+    if (window.__noLivesTimerInterval__) {
+      clearInterval(window.__noLivesTimerInterval__);
+      window.__noLivesTimerInterval__ = null;
+    }
+    
+    // Cerrar el modal de sin vidas si existe
+    const modalContainer = document.getElementById('noLivesModalContainer');
+    if (modalContainer) {
+      modalContainer.style.display = 'none';
+      modalContainer.innerHTML = '';
+    }
+    
     const gameArea = document.getElementById('adventureGameArea');
     const adventureFS = document.getElementById('fsAdventure');
     
     if (gameArea) gameArea.style.display = 'none';
     if (adventureFS) adventureFS.style.display = 'block';
     
+    // Actualizar la UI del mapa para mostrar los corazones actualizados
     if (window.renderRegionNodes) {
-      window.renderRegionNodes(adventureGameState.regionKey);
+      const regionKey = adventureGameState.regionKey || window.AdventureMode?.ADVENTURE_STATE?.currentRegion;
+      if (regionKey) {
+        console.log('🔄 Actualizando mapa al volver, región:', regionKey, 'Vidas:', window.AdventureMode?.ADVENTURE_STATE?.lives);
+        window.renderRegionNodes(regionKey);
+      } else {
+        console.warn('⚠️ No se pudo obtener regionKey para actualizar el mapa');
+      }
     }
     
     // Ejecutar animación de avatar si corresponde
@@ -451,6 +630,117 @@
     }, 250);
   };
   
+  // Función para ver anuncio y recuperar vidas del modo aventura
+  window.watchAdForAdventureLives = async function() {
+    if (!window.RewardedAd) {
+      console.error('RewardedAd no disponible');
+      showToast('Error: Sistema de anuncios no disponible');
+      return;
+    }
+
+    const rewardedAd = new window.RewardedAd();
+    
+    // Mostrar anuncio
+    await rewardedAd.showRewardedAd(
+      // onRewarded: cuando el usuario ve el anuncio completo
+      async () => {
+        console.log('✅ Usuario vio el anuncio, otorgando 5 vidas...');
+        
+        // Verificar que AdventureMode esté disponible
+        if (window.AdventureMode && window.AdventureMode.ADVENTURE_STATE) {
+          // Dar 5 vidas
+          window.AdventureMode.ADVENTURE_STATE.lives = 5;
+          // Actualizar timestamp de última recarga
+          window.AdventureMode.ADVENTURE_STATE.lastLivesRefill = Date.now();
+          // Guardar progreso
+          if (window.AdventureMode.saveAdventureProgress) {
+            window.AdventureMode.saveAdventureProgress();
+          }
+          
+          showToast('✅ ¡5 vidas recuperadas!');
+          
+          // Cerrar el modal de sin vidas si existe
+          const modalContainer = document.getElementById('noLivesModalContainer');
+          if (modalContainer) {
+            modalContainer.style.display = 'none';
+            modalContainer.innerHTML = '';
+          }
+          
+          // Limpiar el timer del modal si existe
+          if (window.__noLivesTimerInterval__) {
+            clearInterval(window.__noLivesTimerInterval__);
+            window.__noLivesTimerInterval__ = null;
+          }
+          
+          // Cerrar el modal y volver al mapa
+          setTimeout(() => {
+            window.backToRegionMap();
+          }, 500);
+        } else {
+          showToast('Error: No se pudo recuperar las vidas');
+        }
+      },
+      // onError: si hay un error
+      (error) => {
+        console.error('❌ Error mostrando anuncio:', error);
+        showToast('Error al mostrar el anuncio. Intenta de nuevo.');
+      }
+    );
+  };
+
+  // Función para ver anuncio y obtener vidas extra (para bosses)
+  window.watchAdForExtraLives = async function() {
+    if (!window.RewardedAd) {
+      console.error('RewardedAd no disponible');
+      showToast('Error: Sistema de anuncios no disponible');
+      return;
+    }
+
+    const rewardedAd = new window.RewardedAd();
+    
+    // Mostrar anuncio
+    await rewardedAd.showRewardedAd(
+      // onRewarded: cuando el usuario ve el anuncio completo
+      async () => {
+        console.log('✅ Usuario vio el anuncio, otorgando vidas extra...');
+        
+        // Verificar si hay un juego de boss que puede continuar
+        if (window.bossGameState && window.bossGameState.canContinue) {
+          const regionKey = window.bossGameState.originalRegionKey;
+          const originalHandicap = window.bossGameState.originalHandicap;
+          const originalCallback = window.bossGameState.originalCallback;
+          
+          // Modificar el handicap para agregar 3 vidas extra
+          const newHandicap = { ...originalHandicap };
+          newHandicap.playerLives = 3; // Dar 3 vidas extra
+          newHandicap.extraLivesFromAd = true; // Marcar que vienen de un anuncio
+          
+          showToast('✅ ¡3 vidas extra obtenidas!');
+          
+          // Limpiar el estado de continuación
+          window.bossGameState.canContinue = false;
+          delete window.bossGameState.originalHandicap;
+          delete window.bossGameState.originalRegionKey;
+          delete window.bossGameState.originalCallback;
+          
+          // Reiniciar el juego del boss con las vidas extra
+          setTimeout(() => {
+            if (window.AdventureBosses) {
+              window.AdventureBosses.startBossGame(regionKey, newHandicap, originalCallback);
+            }
+          }, 500);
+        } else {
+          showToast('Error: No hay un juego de boss para continuar');
+        }
+      },
+      // onError: si hay un error
+      (error) => {
+        console.error('❌ Error mostrando anuncio:', error);
+        showToast('Error al mostrar el anuncio. Intenta de nuevo.');
+      }
+    );
+  };
+
   // Nueva función para ir directamente a una nueva región desbloqueada
   window.goToNewRegion = function(regionKey) {
     const gameArea = document.getElementById('adventureGameArea');

@@ -346,7 +346,17 @@
     let mapStyle = '';
     // No aplicar el estilo inline aquí, lo haremos después
     
-    const currentLives = window.AdventureMode?.ADVENTURE_STATE?.lives || 5;
+    // Leer las vidas directamente del estado que ya tenemos en scope
+    // Usar Number() para asegurar que sea un número, y si es NaN o undefined, usar 0
+    const currentLives = typeof ADVENTURE_STATE.lives === 'number' ? ADVENTURE_STATE.lives : 0;
+    console.log('💖 Renderizando corazones:', { 
+      currentLives, 
+      region: regionKey,
+      stateLives: ADVENTURE_STATE.lives,
+      stateLivesType: typeof ADVENTURE_STATE.lives,
+      windowLives: window.AdventureMode?.ADVENTURE_STATE?.lives,
+      windowLivesType: typeof window.AdventureMode?.ADVENTURE_STATE?.lives
+    });
     container.innerHTML = `
       <div class="region-wrapper">
         <div class="map-info">

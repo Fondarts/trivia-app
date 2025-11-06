@@ -76,7 +76,8 @@
     currentNode: 0,
     progress: {},
     lives: 5, // 5 vidas iniciales
-    powerUps: []
+    powerUps: [],
+    lastLivesRefill: null // Timestamp de última recarga de vidas (24 horas)
   };
 
   // Cargar progreso guardado
@@ -132,6 +133,7 @@
           if (data.progress && typeof data.progress === 'object') ADVENTURE_STATE.progress = data.progress;
           if (typeof data.lives === 'number') ADVENTURE_STATE.lives = data.lives;
           if (Array.isArray(data.powerUps)) ADVENTURE_STATE.powerUps = data.powerUps;
+          if (data.lastLivesRefill) ADVENTURE_STATE.lastLivesRefill = data.lastLivesRefill;
         } catch (mergeErr) {
           console.warn('Fallo al mezclar progreso de aventura, usando defaults:', mergeErr);
           // En caso de problema, caer a Object.assign clásico
@@ -166,6 +168,9 @@
         }));
       }
     });
+    
+    // Verificar y recargar vidas si pasaron 24 horas al cargar
+    checkAndRefillLives();
   }
 
   // Guardar progreso
@@ -177,7 +182,8 @@
         currentNode: ADVENTURE_STATE.currentNode,
         progress: ADVENTURE_STATE.progress,
         lives: ADVENTURE_STATE.lives,
-        powerUps: ADVENTURE_STATE.powerUps
+        powerUps: ADVENTURE_STATE.powerUps,
+        lastLivesRefill: ADVENTURE_STATE.lastLivesRefill
       }));
     } catch (e) {
       console.error('Error saving adventure progress:', e);
@@ -332,30 +338,361 @@
     return result;
   }
 
+  // Función para verificar y recargar vidas si pasaron 24 horas
+  function checkAndRefillLives() {
+    const now = Date.now();
+    const REFILL_INTERVAL = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+    
+    console.log('🔄 checkAndRefillLives llamado', {
+      currentLives: ADVENTURE_STATE.lives,
+      lastRefill: ADVENTURE_STATE.lastLivesRefill,
+      timeSinceRefill: ADVENTURE_STATE.lastLivesRefill ? now - ADVENTURE_STATE.lastLivesRefill : null,
+      shouldRefill: ADVENTURE_STATE.lastLivesRefill ? (now - ADVENTURE_STATE.lastLivesRefill >= REFILL_INTERVAL) : false
+    });
+    
+    // Si no hay timestamp de última recarga, inicializar
+    if (!ADVENTURE_STATE.lastLivesRefill) {
+      console.log('⏰ Inicializando lastLivesRefill');
+      ADVENTURE_STATE.lastLivesRefill = now;
+      saveAdventureProgress();
+      return false;
+    }
+    
+    // Si pasaron 24 horas, recargar vidas
+    if (now - ADVENTURE_STATE.lastLivesRefill >= REFILL_INTERVAL) {
+      console.log('⏰ Pasaron 24 horas, verificando si recargar vidas');
+      if (ADVENTURE_STATE.lives < 5) {
+        console.log('✅ Recargando vidas de', ADVENTURE_STATE.lives, 'a 5');
+        ADVENTURE_STATE.lives = 5;
+        ADVENTURE_STATE.lastLivesRefill = now;
+        saveAdventureProgress();
+        if (window.toast) window.toast('⏰ ¡Tus vidas se han recargado!');
+        return true; // Se recargaron vidas
+      }
+      // Actualizar timestamp aunque ya tengas 5 vidas
+      console.log('⏰ Ya tienes 5 vidas, solo actualizando timestamp');
+      ADVENTURE_STATE.lastLivesRefill = now;
+      saveAdventureProgress();
+    } else {
+      console.log('⏰ No pasaron 24 horas, no se recargan vidas');
+    }
+    
+    return false; // No se recargaron vidas
+  }
+  
+  // Función para obtener tiempo restante hasta próxima recarga
+  function getTimeUntilRefill() {
+    if (!ADVENTURE_STATE.lastLivesRefill) return null;
+    
+    const now = Date.now();
+    const REFILL_INTERVAL = 24 * 60 * 60 * 1000; // 24 horas
+    const timePassed = now - ADVENTURE_STATE.lastLivesRefill;
+    const timeRemaining = REFILL_INTERVAL - timePassed;
+    
+    if (timeRemaining <= 0) return null; // Ya pasó el tiempo
+    
+    const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
+    const minutes = Math.floor((timeRemaining % (60 * 60 * 1000)) / (60 * 1000));
+    
+    return { hours, minutes, total: timeRemaining };
+  }
+
   // Función para perder una vida
   function loseLife() {
+    console.log('💔 loseLife llamado. Vidas antes:', ADVENTURE_STATE.lives);
+    
+    // Verificar si se pueden recargar vidas primero
+    const refilled = checkAndRefillLives();
+    console.log('💔 Después de checkAndRefillLives. Vidas:', ADVENTURE_STATE.lives, 'Refilled:', refilled);
+    
     if (ADVENTURE_STATE.lives > 0) {
       ADVENTURE_STATE.lives--;
+      console.log('💔 Vida restada. Vidas restantes:', ADVENTURE_STATE.lives);
       saveAdventureProgress();
+      console.log('💔 Progreso guardado. Vidas en estado:', ADVENTURE_STATE.lives);
       
       if (ADVENTURE_STATE.lives === 0) {
-        // Reiniciar el mapa actual
-        const currentRegion = ADVENTURE_STATE.currentRegion;
-        ADVENTURE_STATE.regions[currentRegion].nodes.forEach(node => {
-          node.completed = false;
-          node.stars = 0;
-        });
-        ADVENTURE_STATE.lives = 5; // Restaurar vidas
-        ADVENTURE_STATE.currentNode = 0;
-        saveAdventureProgress();
-        
-        if (window.toast) window.toast('💔 Te quedaste sin vidas. El mapa se ha reiniciado.');
-        return true; // Indica que se reinició el mapa
+        // NO reiniciar automáticamente - mostrar modal con opciones
+        console.log('💔 Sin vidas, mostrando modal');
+        showNoLivesModal();
+        return 'no_lives'; // Indica que se quedó sin vidas
       }
       
       if (window.toast) window.toast(`❤️ Perdiste una vida. Te quedan ${ADVENTURE_STATE.lives} vidas.`);
+      
+      // Notificar que las vidas cambiaron para actualizar la UI
+      console.log('💖 Vidas actualizadas, debería actualizarse la UI del mapa');
+    } else {
+      console.log('💔 Ya no hay vidas, no se puede restar más');
     }
     return false; // No se reinició el mapa
+  }
+  
+  // Función para mostrar modal cuando te quedas sin vidas
+  function showNoLivesModal() {
+    console.log('💔 showNoLivesModal llamado');
+    
+    // ESPERAR a que termine cualquier renderizado del mapa antes de crear el modal
+    // Esto evita que el modal se elimine si renderRegionNodes se ejecuta después
+    setTimeout(() => {
+      const adventureFS = document.getElementById('fsAdventure');
+      const gameArea = document.getElementById('adventureGameArea');
+      
+      // Ocultar el mapa si está visible
+      if (adventureFS) {
+        adventureFS.style.display = 'none';
+      }
+      
+      // Ocultar gameArea si está visible
+      if (gameArea) {
+        gameArea.style.display = 'none';
+      }
+      
+      // Crear o obtener el modal directamente en el body
+      let modalContainer = document.getElementById('noLivesModalContainer');
+      if (!modalContainer) {
+        modalContainer = document.createElement('div');
+        modalContainer.id = 'noLivesModalContainer';
+        document.body.appendChild(modalContainer);
+        console.log('✅ modalContainer creado y añadido al body');
+      } else {
+        console.log('✅ modalContainer ya existe');
+      }
+      
+      // Asegurarse de que el modal esté visible y en la parte superior
+      modalContainer.style.display = 'block';
+      modalContainer.style.position = 'fixed';
+      modalContainer.style.top = '0';
+      modalContainer.style.left = '0';
+      modalContainer.style.right = '0';
+      modalContainer.style.bottom = '0';
+      modalContainer.style.zIndex = '99999';
+      modalContainer.style.pointerEvents = 'auto';
+      
+      // Función para actualizar el timer
+      function updateTimer() {
+        const timeUntilRefill = getTimeUntilRefill();
+        const timerElement = document.getElementById('noLivesTimer');
+        
+        if (!timerElement) return;
+        
+        if (timeUntilRefill) {
+          const hours = timeUntilRefill.hours;
+          const minutes = timeUntilRefill.minutes;
+          const seconds = Math.floor((timeUntilRefill.total % (60 * 1000)) / 1000);
+          timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        } else {
+          timerElement.textContent = '24:00:00';
+        }
+      }
+      
+      // Inicializar el timestamp si no existe
+      if (!ADVENTURE_STATE.lastLivesRefill) {
+        ADVENTURE_STATE.lastLivesRefill = Date.now();
+        saveAdventureProgress();
+      }
+      
+      // Obtener mensaje inicial
+      const timeUntilRefill = getTimeUntilRefill();
+      let refillMessage = '';
+      
+      if (timeUntilRefill) {
+        const hours = timeUntilRefill.hours;
+        const minutes = timeUntilRefill.minutes;
+        refillMessage = `Tus vidas se recargarán en ${hours}h ${minutes}m`;
+      } else {
+        refillMessage = 'Tus vidas se recargarán en 24 horas';
+      }
+      
+      // Limpiar contenido previo
+      modalContainer.innerHTML = '';
+      
+      console.log('🔍 Creando contenido del modal...');
+      console.log('🔍 modalContainer en DOM:', document.body.contains(modalContainer));
+      console.log('🔍 modalContainer display:', modalContainer.style.display);
+      console.log('🔍 modalContainer z-index:', modalContainer.style.zIndex);
+      
+      // Crear el HTML del modal
+      const modalHTML = `
+      <div class="no-lives-modal" style="
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.75) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 99999 !important;
+        padding: 20px !important;
+        font-family: 'Arial', sans-serif !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      ">
+        <div style="
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          border-radius: 20px;
+          padding: 40px;
+          max-width: 500px;
+          width: 100%;
+          text-align: center;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        ">
+          <div style="font-size: 80px; margin-bottom: 20px;">💔</div>
+          <h2 style="color: #fff; font-size: 28px; margin-bottom: 15px; font-weight: bold;">
+            ¡Te quedaste sin vidas!
+          </h2>
+          <p style="color: #ccc; font-size: 16px; margin-bottom: 30px; line-height: 1.6;">
+            Has perdido todas tus vidas en el modo aventura.
+          </p>
+          
+          <div style="
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+          ">
+            <div style="color: #fff; font-size: 18px; font-weight: bold; margin-bottom: 10px;">
+              ⏰ Recarga Automática
+            </div>
+            <div id="noLivesTimer" style="color: #4CAF50; font-size: 32px; font-weight: bold; font-family: 'Courier New', monospace; margin: 10px 0;">
+              ${timeUntilRefill ? `${timeUntilRefill.hours.toString().padStart(2, '0')}:${timeUntilRefill.minutes.toString().padStart(2, '0')}:00` : '24:00:00'}
+            </div>
+            <div style="color: #aaa; font-size: 14px; margin-top: 10px;">
+              ${refillMessage}
+            </div>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 15px;">
+            <button onclick="window.watchAdForAdventureLives()" style="
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              color: #fff;
+              border: none;
+              border-radius: 10px;
+              padding: 15px 30px;
+              font-size: 18px;
+              font-weight: bold;
+              cursor: pointer;
+              transition: transform 0.2s;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              📺 Ver Anuncio (Recuperar 5 Vidas)
+            </button>
+            
+            <button onclick="window.backToRegionMap()" style="
+              background: rgba(255, 255, 255, 0.1);
+              color: #fff;
+              border: 2px solid rgba(255, 255, 255, 0.3);
+              border-radius: 10px;
+              padding: 15px 30px;
+              font-size: 16px;
+              font-weight: bold;
+              cursor: pointer;
+              transition: background 0.2s;
+            " onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+              Volver al Mapa
+            </button>
+          </div>
+        </div>
+      </div>
+      `;
+      
+      // Insertar el HTML usando insertAdjacentHTML para asegurar que se inserte
+      try {
+        // Limpiar primero
+        modalContainer.innerHTML = '';
+        
+        // Insertar el HTML
+        modalContainer.insertAdjacentHTML('beforeend', modalHTML);
+      
+        console.log('✅ HTML insertado en modalContainer usando insertAdjacentHTML');
+        console.log('✅ modalContainer.innerHTML length:', modalContainer.innerHTML.length);
+        console.log('✅ modalContainer.children.length:', modalContainer.children.length);
+        
+        // Verificar inmediatamente si el elemento se creó
+        const modalElementCheck = modalContainer.querySelector('.no-lives-modal');
+        console.log('🔍 Modal element encontrado inmediatamente:', !!modalElementCheck);
+        if (modalElementCheck) {
+          console.log('✅ Modal element creado correctamente');
+          console.log('✅ Modal element display:', window.getComputedStyle(modalElementCheck).display);
+          console.log('✅ Modal element z-index:', window.getComputedStyle(modalElementCheck).zIndex);
+        } else {
+          console.error('❌ Modal element NO encontrado después de insertar HTML');
+          console.error('❌ modalContainer.innerHTML:', modalContainer.innerHTML.substring(0, 200));
+          console.error('❌ modalContainer.children:', modalContainer.children);
+          
+          // Intentar de nuevo con innerHTML directamente
+          console.log('🔄 Intentando con innerHTML directamente...');
+          modalContainer.innerHTML = modalHTML;
+          const modalElementCheck2 = modalContainer.querySelector('.no-lives-modal');
+          console.log('🔍 Modal element encontrado después de innerHTML:', !!modalElementCheck2);
+        }
+      } catch (error) {
+        console.error('❌ Error al insertar HTML:', error);
+        console.error('❌ Error stack:', error.stack);
+      }
+      
+      // Forzar que el modal sea visible después de que se cree el HTML
+      setTimeout(() => {
+        // Verificar que el modal se haya creado
+        const modalElement = modalContainer.querySelector('.no-lives-modal');
+        console.log('🔍 Modal element encontrado:', !!modalElement);
+        
+        modalContainer.style.display = 'block';
+        modalContainer.style.visibility = 'visible';
+        modalContainer.style.opacity = '1';
+        
+        if (modalElement) {
+          console.log('🔍 Modal element display:', window.getComputedStyle(modalElement).display);
+          console.log('🔍 Modal element z-index:', window.getComputedStyle(modalElement).zIndex);
+          console.log('🔍 Modal element visibility:', window.getComputedStyle(modalElement).visibility);
+          console.log('🔍 Modal element opacity:', window.getComputedStyle(modalElement).opacity);
+          
+          modalElement.style.display = 'flex';
+          modalElement.style.visibility = 'visible';
+          modalElement.style.opacity = '1';
+        }
+        
+        console.log('✅ Modal forzado a ser visible');
+        console.log('✅ modalContainer display:', modalContainer.style.display);
+        console.log('✅ modalContainer en DOM:', document.body.contains(modalContainer));
+        console.log('✅ modalContainer offsetWidth:', modalContainer.offsetWidth);
+        console.log('✅ modalContainer offsetHeight:', modalContainer.offsetHeight);
+        console.log('✅ modalContainer getBoundingClientRect:', modalContainer.getBoundingClientRect());
+      }, 10);
+      
+      // Actualizar el timer cada segundo
+      const timerInterval = setInterval(() => {
+        updateTimer();
+        
+        // Verificar si ya pasaron 24 horas
+        const timeUntilRefill = getTimeUntilRefill();
+        if (!timeUntilRefill || timeUntilRefill.total <= 0) {
+          // Si ya pasaron 24 horas, recargar vidas y cerrar el modal
+          clearInterval(timerInterval);
+          checkAndRefillLives();
+          // Cerrar el modal
+          if (modalContainer) {
+            modalContainer.style.display = 'none';
+            modalContainer.innerHTML = '';
+          }
+          if (window.backToRegionMap) {
+            window.backToRegionMap();
+          }
+        }
+      }, 1000);
+      
+      // Guardar el intervalo para poder limpiarlo si es necesario
+      window.__noLivesTimerInterval__ = timerInterval;
+      
+      console.log('✅ Modal de sin vidas mostrado en modalContainer');
+      console.log('✅ Modal visible:', modalContainer.style.display);
+      console.log('✅ Modal z-index:', modalContainer.style.zIndex);
+    }, 100); // Esperar 100ms para asegurar que cualquier renderizado del mapa haya terminado
   }
   
   // Completar un nodo
@@ -809,6 +1146,9 @@
     getAdventureStats,
     resetAdventureProgress,
     loseLife, // Exportar función de perder vida
+    checkAndRefillLives, // Exportar función de verificar recarga
+    getTimeUntilRefill, // Exportar función de tiempo restante
+    saveAdventureProgress, // Exportar función de guardar progreso
     // Agregar una función directa para God Mode
     startNodeDirectly: async function(regionKey, nodeIndex) {
       console.log('startNodeDirectly - God Mode override');

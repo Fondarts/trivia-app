@@ -14,7 +14,7 @@ export function toast(msg){
   const el = document.getElementById('toast') || (()=> {
     const t = document.createElement('div');
     t.id = 'toast';
-    t.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:#2c3e50;color:#fff;padding:12px 16px;border-radius:10px;z-index:99999;display:none;box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-weight: 600;';
+    t.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:#2c3e50;color:#fff;padding:12px 16px;border-radius:10px;z-index:99999;display:none;box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-weight: 600;max-width:calc(100vw - 40px);word-wrap:break-word;overflow-wrap:break-word;white-space:normal;text-align:center;box-sizing:border-box;';
     document.body.appendChild(t);
     return t;
   })();

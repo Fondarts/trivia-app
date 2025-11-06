@@ -21,6 +21,12 @@
         border-radius: 8px;
         z-index: 10000;
         animation: slideUp 0.3s ease;
+        max-width: calc(100vw - 40px);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        text-align: center;
+        box-sizing: border-box;
       `;
       document.body.appendChild(toastEl);
       setTimeout(() => toastEl.remove(), 3000);
@@ -48,6 +54,38 @@
     if (!window.AdventureMode) {
       console.error('AdventureMode no disponible');
       return false;
+    }
+    
+    // Verificar vidas antes de iniciar el nivel (excepto en God Mode)
+    if (!window.godModeActive) {
+      const currentLives = window.AdventureMode.ADVENTURE_STATE.lives || 0;
+      console.log('💔 Verificando vidas antes de iniciar nivel:', currentLives);
+      
+      // Verificar si se pueden recargar vidas (si pasaron 24 horas)
+      if (window.AdventureMode.checkAndRefillLives) {
+        window.AdventureMode.checkAndRefillLives();
+      }
+      
+      // Verificar vidas después de la recarga
+      const livesAfterCheck = window.AdventureMode.ADVENTURE_STATE.lives || 0;
+      console.log('💔 Vidas después de verificar recarga:', livesAfterCheck);
+      
+      // Si no tiene vidas, mostrar el modal y no permitir iniciar el nivel
+      if (livesAfterCheck === 0) {
+        console.log('❌ No tiene vidas, mostrando modal y bloqueando inicio de nivel');
+        
+        // Mostrar el modal de sin vidas
+        if (window.AdventureMode.showNoLivesModal) {
+          window.AdventureMode.showNoLivesModal();
+        } else {
+          // Si no está disponible, intentar llamarlo directamente
+          console.error('showNoLivesModal no está disponible');
+        }
+        
+        return false; // No permitir iniciar el nivel
+      }
+    } else {
+      console.log('⚡ God Mode activo, saltando verificación de vidas');
     }
     
     // Verificar que el banco esté cargado

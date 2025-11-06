@@ -1149,6 +1149,7 @@
     checkAndRefillLives, // Exportar función de verificar recarga
     getTimeUntilRefill, // Exportar función de tiempo restante
     saveAdventureProgress, // Exportar función de guardar progreso
+    showNoLivesModal, // Exportar función para mostrar modal de sin vidas
     // Agregar una función directa para God Mode
     startNodeDirectly: async function(regionKey, nodeIndex) {
       console.log('startNodeDirectly - God Mode override');

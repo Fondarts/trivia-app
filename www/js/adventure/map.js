@@ -30,6 +30,12 @@
         border-radius: 8px;
         z-index: 10000;
         animation: slideUp 0.3s ease;
+        max-width: calc(100vw - 40px);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        text-align: center;
+        box-sizing: border-box;
       `;
       document.body.appendChild(toastEl);
       setTimeout(() => toastEl.remove(), 3000);

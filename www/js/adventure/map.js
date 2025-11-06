@@ -313,17 +313,34 @@
     // Optimización: Reutilizar contenedor de región si existe
     const existingWrapper = container.querySelector('.region-wrapper');
     
-    // Posiciones del camino optimizadas para formato vertical 9:16
-    const pathPositions = [
-      { x: 50, y: 90 },  // Nodo 1 - Inicio abajo centro
-      { x: 70, y: 78 },  // Nodo 2 - Derecha
-      { x: 30, y: 66 },  // Nodo 3 - Izquierda  
-      { x: 65, y: 54 },  // Nodo 4 - Derecha
-      { x: 35, y: 42 },  // Nodo 5 - Izquierda
-      { x: 70, y: 30 },  // Nodo 6 - Derecha
-      { x: 30, y: 18 },  // Nodo 7 - Izquierda
-      { x: 50, y: 8 },   // Nodo 8 - BOSS arriba centro
-    ];
+    // Posiciones del camino específicas por región
+    const regionPositions = {
+      // Posiciones por defecto (genéricas)
+      default: [
+        { x: 50, y: 90 },  // Nodo 1 - Inicio abajo centro
+        { x: 70, y: 78 },  // Nodo 2 - Derecha
+        { x: 30, y: 66 },  // Nodo 3 - Izquierda  
+        { x: 65, y: 54 },  // Nodo 4 - Derecha
+        { x: 35, y: 42 },  // Nodo 5 - Izquierda
+        { x: 70, y: 30 },  // Nodo 6 - Derecha
+        { x: 30, y: 18 },  // Nodo 7 - Izquierda
+        { x: 50, y: 8 },   // Nodo 8 - BOSS arriba centro
+      ],
+      // Posiciones específicas para geografía (ajustadas según mediciones del usuario)
+      geography: [
+        { x: 47, y: 70 },  // Nodo 1 - Medido desde DevTools
+        { x: 50, y: 59 },  // Nodo 2 - Medido desde DevTools
+        { x: 40, y: 52 },  // Nodo 3 - Medido desde DevTools
+        { x: 52, y: 44 },  // Nodo 4 - Medido desde DevTools
+        { x: 42, y: 35 },  // Nodo 5 - Medido desde DevTools
+        { x: 50, y: 29 },  // Nodo 6 - Medido desde DevTools
+        { x: 43, y: 22 },  // Nodo 7 - Medido desde DevTools
+        { x: 50, y: 14 },  // Nodo 8 - BOSS - Medido desde DevTools
+      ]
+    };
+    
+    // Seleccionar posiciones según la región
+    const pathPositions = regionPositions[regionKey] || regionPositions.default;
     
     // Crear HTML con template strings correctos
     let mapStyle = '';
@@ -354,13 +371,17 @@
             const isCurrent = !node.completed && canPlayNormally && !isGodMode;
             const isLocked = !canPlay && !isGodMode;
             
+            // Calcular posición relativa al mapa de fondo (se calculará después de que la imagen cargue)
+            // Por ahora usar pos.x y pos.y como data attributes para calcular después
             return `
               <div class="adventure-node ${node.completed ? 'completed' : ''} 
                           ${isCurrent ? 'current' : ''} 
                           ${isLocked ? 'locked' : ''}
                           ${isGodMode && !node.completed ? 'god-mode clickable' : ''}
                           ${node.type}"
-                   style="left: ${pos.x}%; top: ${pos.y}%; cursor: ${canPlay ? 'pointer' : 'not-allowed'};"
+                   style="cursor: ${canPlay ? 'pointer' : 'not-allowed'};"
+                   data-map-x="${pos.x}"
+                   data-map-y="${pos.y}"
                    onclick="window.handleNodeClick('${regionKey}', ${index})"
                    data-node-index="${index}">
                 
@@ -448,11 +469,100 @@
 
     // Helpers para posicionar marcador con offset lateral
     function getNodePercentPosition(index) {
-      const positions = [
-        { x: 50, y: 90 },{ x: 70, y: 78 },{ x: 30, y: 66 },{ x: 65, y: 54 },
-        { x: 35, y: 42 },{ x: 70, y: 30 },{ x: 30, y: 18 },{ x: 50, y: 8 }
-      ];
+      // Usar las mismas posiciones específicas por región que se usan para renderizar
+      const regionPositions = {
+        default: [
+          { x: 50, y: 90 },{ x: 70, y: 78 },{ x: 30, y: 66 },{ x: 65, y: 54 },
+          { x: 35, y: 42 },{ x: 70, y: 30 },{ x: 30, y: 18 },{ x: 50, y: 8 }
+        ],
+        geography: [
+          { x: 47, y: 70 },{ x: 50, y: 59 },{ x: 40, y: 52 },{ x: 52, y: 44 },
+          { x: 42, y: 35 },{ x: 50, y: 29 },{ x: 43, y: 22 },{ x: 50, y: 14 }
+        ]
+      };
+      const positions = regionPositions[regionKey] || regionPositions.default;
       return positions[index];
+    }
+
+    // Función para calcular posiciones relativas al mapa de fondo (no al contenedor)
+    // El CSS usa background-size: auto 100% (fit vertical) o object-fit: contain
+    // Hacerla accesible globalmente para que animatePlayerMarkerTo pueda usarla
+    window.calculateMapRelativePosition = function(percentX, percentY) {
+      const mapDiv = document.getElementById('regionMapDiv');
+      const bgImg = document.getElementById('regionBg');
+      
+      if (!mapDiv) {
+        // Fallback: usar porcentaje del contenedor si no hay div
+        return { x: percentX, y: percentY, isRelative: false };
+      }
+      
+      // Obtener dimensiones del contenedor
+      const containerWidth = mapDiv.offsetWidth;
+      const containerHeight = mapDiv.offsetHeight;
+      
+      if (containerWidth === 0 || containerHeight === 0) {
+        // Contenedor no tiene dimensiones aún
+        return { x: percentX, y: percentY, isRelative: false };
+      }
+      
+      // Priorizar usar el elemento <img> si está disponible y tiene dimensiones
+      // El <img> tiene object-fit: contain, así que sus dimensiones renderizadas son las del mapa visible
+      let mapVisibleWidth, mapVisibleHeight, offsetX, offsetY;
+      
+      if (bgImg && bgImg.complete && bgImg.naturalWidth && bgImg.naturalHeight) {
+        // Usar las dimensiones renderizadas del elemento <img> (que ya tiene object-fit: contain aplicado)
+        // Usar offsetWidth/offsetHeight en lugar de getBoundingClientRect para posiciones relativas al contenedor
+        const imgWidth = bgImg.offsetWidth;
+        const imgHeight = bgImg.offsetHeight;
+        
+        if (imgWidth > 0 && imgHeight > 0) {
+          // El <img> ya está escalado y posicionado correctamente por CSS
+          // El CSS usa left: 50%, transform: translateX(-50%), así que está centrado
+          mapVisibleWidth = imgWidth;
+          mapVisibleHeight = imgHeight;
+          offsetX = (containerWidth - mapVisibleWidth) / 2;
+          offsetY = 0; // El CSS usa height: 100%, top: 0, así que está alineado arriba
+        } else {
+          // Fallback: calcular desde las dimensiones naturales
+          const naturalImgWidth = bgImg.naturalWidth;
+          const naturalImgHeight = bgImg.naturalHeight;
+          const imgAspectRatio = naturalImgWidth / naturalImgHeight;
+          const containerAspectRatio = containerWidth / containerHeight;
+          
+          if (containerAspectRatio > imgAspectRatio) {
+            mapVisibleHeight = containerHeight;
+            mapVisibleWidth = containerHeight * imgAspectRatio;
+            offsetX = (containerWidth - mapVisibleWidth) / 2;
+            offsetY = 0;
+          } else {
+            mapVisibleWidth = containerWidth;
+            mapVisibleHeight = containerWidth / imgAspectRatio;
+            offsetX = 0;
+            offsetY = (containerHeight - mapVisibleHeight) / 2;
+          }
+        }
+      } else {
+        // No hay imagen cargada, usar porcentaje del contenedor
+        return { x: percentX, y: percentY, isRelative: false };
+      }
+      
+      // Convertir porcentajes del mapa a píxeles absolutos
+      const absoluteX = offsetX + (mapVisibleWidth * percentX / 100);
+      const absoluteY = offsetY + (mapVisibleHeight * percentY / 100);
+      
+      // Convertir a porcentaje del contenedor
+      const containerPercentX = (absoluteX / containerWidth) * 100;
+      const containerPercentY = (absoluteY / containerHeight) * 100;
+      
+      return { 
+        x: containerPercentX, 
+        y: containerPercentY, 
+        isRelative: true,
+        mapVisibleWidth,
+        mapVisibleHeight,
+        offsetX,
+        offsetY
+      };
     }
 
     function placeMarkerAt(index, opts = {}) {
@@ -460,13 +570,77 @@
       const marker = document.getElementById('playerMarker');
       if (!pos || !marker) return;
 
+      // Calcular posición relativa al mapa de fondo
+      const calculatedPos = calculateMapRelativePosition(pos.x, pos.y);
+      
       // Offset lateral: avatar a la derecha y un poco abajo para pisar el círculo
       const offsetXPct = opts.offsetXPct ?? 5; // 5% del ancho del contenedor
       const offsetYPct = opts.offsetYPct ?? 2; // 2% del alto del contenedor
-      marker.style.left = (pos.x + offsetXPct) + '%';
-      marker.style.top = (pos.y + offsetYPct) + '%';
+      
+      marker.style.left = (calculatedPos.x + offsetXPct) + '%';
+      marker.style.top = (calculatedPos.y + offsetYPct) + '%';
       marker.style.display = 'block';
     }
+
+    // Función para actualizar posiciones de nodos relativas al mapa de fondo
+    function updateNodePositions() {
+      const nodes = container.querySelectorAll('.adventure-node');
+      nodes.forEach(node => {
+        const mapX = parseFloat(node.getAttribute('data-map-x'));
+        const mapY = parseFloat(node.getAttribute('data-map-y'));
+        if (!isNaN(mapX) && !isNaN(mapY)) {
+          const calculatedPos = calculateMapRelativePosition(mapX, mapY);
+          node.style.left = calculatedPos.x + '%';
+          node.style.top = calculatedPos.y + '%';
+        }
+      });
+    }
+
+    // Actualizar posiciones cuando la imagen del mapa cargue
+    const bgImg = document.getElementById('regionBg');
+    const mapDiv = document.getElementById('regionMapDiv');
+    
+    function updatePositionsWhenReady() {
+      // Esperar a que el contenedor y la imagen tengan dimensiones
+      if (mapDiv && mapDiv.offsetWidth > 0 && mapDiv.offsetHeight > 0) {
+        if (bgImg && bgImg.complete && bgImg.naturalWidth > 0) {
+          // Imagen cargada, actualizar posiciones
+          updateNodePositions();
+          
+          // También actualizar el marcador del jugador
+          const currentIndex = region.nodes.findIndex(n => !n.completed);
+          const idx = currentIndex === -1 ? region.nodes.length - 1 : currentIndex;
+          placeMarkerAt(idx);
+        } else if (bgImg) {
+          // Esperar a que la imagen cargue
+          bgImg.addEventListener('load', () => {
+            setTimeout(updatePositionsWhenReady, 100);
+          }, { once: true });
+        }
+      } else {
+        // Esperar un poco más para que el DOM se renderice
+        setTimeout(updatePositionsWhenReady, 100);
+      }
+    }
+    
+    // Iniciar actualización de posiciones
+    setTimeout(updatePositionsWhenReady, 200);
+    
+    // También actualizar en resize del window
+    let resizeTimeout;
+    const resizeHandler = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateNodePositions();
+        const currentIndex = region.nodes.findIndex(n => !n.completed);
+        const idx = currentIndex === -1 ? region.nodes.length - 1 : currentIndex;
+        placeMarkerAt(idx);
+      }, 250);
+    };
+    window.addEventListener('resize', resizeHandler);
+    
+    // Guardar el handler para poder limpiarlo después si es necesario
+    window._mapResizeHandler = resizeHandler;
 
     // Posicionar el marcador del jugador en el nodo actual (optimizado)
     try {
@@ -482,7 +656,16 @@
         }
         const currentIndex = region.nodes.findIndex(n => !n.completed);
         const idx = currentIndex === -1 ? region.nodes.length - 1 : currentIndex; // último si completó todos
-        placeMarkerAt(idx);
+        // Esperar a que la imagen cargue antes de posicionar
+        if (bgImg && bgImg.complete && bgImg.naturalWidth) {
+          placeMarkerAt(idx);
+        } else if (bgImg) {
+          bgImg.addEventListener('load', () => {
+            placeMarkerAt(idx);
+          }, { once: true });
+        } else {
+          placeMarkerAt(idx);
+        }
       }
     } catch {}
 
@@ -889,16 +1072,30 @@
       const svg = container.querySelector('.progress-links');
       if (!svg) return;
 
-      const positions = [
-        { x: 50, y: 90 },
-        { x: 70, y: 78 },
-        { x: 30, y: 66 },
-        { x: 65, y: 54 },
-        { x: 35, y: 42 },
-        { x: 70, y: 30 },
-        { x: 30, y: 18 },
-        { x: 50, y: 8 }
-      ];
+      // Usar las mismas posiciones específicas por región
+      const regionPositions = {
+        default: [
+          { x: 50, y: 90 },
+          { x: 70, y: 78 },
+          { x: 30, y: 66 },
+          { x: 65, y: 54 },
+          { x: 35, y: 42 },
+          { x: 70, y: 30 },
+          { x: 30, y: 18 },
+          { x: 50, y: 8 }
+        ],
+        geography: [
+          { x: 47, y: 70 },
+          { x: 50, y: 59 },
+          { x: 40, y: 52 },
+          { x: 52, y: 44 },
+          { x: 42, y: 35 },
+          { x: 50, y: 29 },
+          { x: 43, y: 22 },
+          { x: 50, y: 14 }
+        ]
+      };
+      const positions = regionPositions[regionKey] || regionPositions.default;
       const a = positions[fromIndex];
       const b = positions[toIndex];
       if (!a || !b) return;
@@ -912,20 +1109,43 @@
   window.drawProgressLink = drawProgressLink;
 
   // Animar el marcador del jugador hacia el índice objetivo
-  window.animatePlayerMarkerTo = function(targetIndex) {
+  window.animatePlayerMarkerTo = function(targetIndex, regionKey) {
     try {
       const marker = document.getElementById('playerMarker');
       if (!marker) return;
-      // misma lógica de offset que placeMarkerAt
-      const positions = [
-        { x: 50, y: 90 },{ x: 70, y: 78 },{ x: 30, y: 66 },{ x: 65, y: 54 },
-        { x: 35, y: 42 },{ x: 70, y: 30 },{ x: 30, y: 18 },{ x: 50, y: 8 }
-      ];
+      
+      // Usar las mismas posiciones específicas por región
+      const regionPositions = {
+        default: [
+          { x: 50, y: 90 },{ x: 70, y: 78 },{ x: 30, y: 66 },{ x: 65, y: 54 },
+          { x: 35, y: 42 },{ x: 70, y: 30 },{ x: 30, y: 18 },{ x: 50, y: 8 }
+        ],
+        geography: [
+          { x: 47, y: 70 },{ x: 50, y: 59 },{ x: 40, y: 52 },{ x: 52, y: 44 },
+          { x: 42, y: 35 },{ x: 50, y: 29 },{ x: 43, y: 22 },{ x: 50, y: 14 }
+        ]
+      };
+      const positions = regionPositions[regionKey] || regionPositions.default;
       const pos = positions[targetIndex];
       if (!pos) return;
+      
+      // Calcular posición relativa al mapa de fondo usando la misma función
+      const calculatedPos = window.calculateMapRelativePosition ? 
+        window.calculateMapRelativePosition(pos.x, pos.y) : 
+        { x: pos.x, y: pos.y, isRelative: false };
+      
+      let finalX = calculatedPos.x + 5; // Offset por defecto
+      let finalY = calculatedPos.y + 2;
+      
+      // Si no se pudo calcular relativamente, usar valores directos
+      if (!calculatedPos.isRelative) {
+        finalX = pos.x + 5;
+        finalY = pos.y + 2;
+      }
+      
       marker.style.transition = 'left 450ms ease, top 450ms ease';
-      marker.style.left = (pos.x + 5) + '%';
-      marker.style.top = (pos.y + 2) + '%';
+      marker.style.left = finalX + '%';
+      marker.style.top = finalY + '%';
       // restaurar transición por defecto luego
       setTimeout(() => {
         marker.style.transition = 'left 300ms ease, top 300ms ease';

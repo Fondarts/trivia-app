@@ -443,8 +443,9 @@
       try {
         if (typeof window.__adventureAnimateToIndex__ === 'number' && window.animatePlayerMarkerTo) {
           const target = window.__adventureAnimateToIndex__;
+          const regionKey = adventureGameState.regionKey;
           delete window.__adventureAnimateToIndex__;
-          window.animatePlayerMarkerTo(target);
+          window.animatePlayerMarkerTo(target, regionKey);
         }
       } catch {}
     }, 250);

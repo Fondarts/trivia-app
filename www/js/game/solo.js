@@ -235,6 +235,13 @@ export function renderQuestion(q){
   const qEl=document.getElementById('qText'); if(qEl) qEl.textContent=q.q; 
   try{ setQuestionMedia(q.img || (q.media && q.media.src) || null); }catch{}
   
+  // Guardar datos de pregunta para reporte
+  try {
+    if (window.setCurrentQuestionData) {
+      window.setCurrentQuestionData(q);
+    }
+  } catch(e) {}
+  
   // Mostrar banner durante preguntas (Android + Web)
   if (window.unifiedBanner) {
     window.unifiedBanner.showBanner();

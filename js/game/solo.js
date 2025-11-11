@@ -235,6 +235,13 @@ export function renderQuestion(q){
   const qEl=document.getElementById('qText'); if(qEl) qEl.textContent=q.q; 
   try{ setQuestionMedia(q.img || (q.media && q.media.src) || null); }catch{}
   
+  // Guardar datos de pregunta para reporte
+  try {
+    if (window.setCurrentQuestionData) {
+      window.setCurrentQuestionData(q);
+    }
+  } catch(e) {}
+  
   // Mostrar banner durante preguntas (Android + Web)
   if (window.unifiedBanner) {
     window.unifiedBanner.showBanner();
@@ -368,8 +375,8 @@ function openSingleResult({title, subtitle, scoreText}){
       appHeader.className = 'results-header';
       appHeader.innerHTML = `
         <div class="app-title">
-          <img src="./assets/logo/logo.png" alt="Quizle!" class="app-logo"/>
-          <span>Quizle!</span>
+          <img src="./assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
+          <span>Quizlo!</span>
         </div>
         <div class="row">
           <button class="iconbtn" id="btnDLCResults" title="Tienda de packs">
@@ -480,8 +487,19 @@ function getActiveMode(){
 }
 
 function getActiveDifficulty(){
-  const p = [...document.querySelectorAll('#diffPills .pill')].find(x=> x.classList.contains('active'));
-  return p?.dataset?.val || 'easy';
+  // Verificar el select de dificultad según el modo activo
+  const mode = getActiveMode();
+  let diffSelect = null;
+  
+  if (mode === 'timed') {
+    diffSelect = document.getElementById('timedDifficulty');
+  } else if (mode === 'vs') {
+    diffSelect = document.getElementById('vsDifficulty');
+  } else {
+    diffSelect = document.getElementById('difficulty');
+  }
+  
+  return diffSelect?.value || 'easy';
 }
 // --- FIN DE FUNCIONES RESTAURADAS ---
 
@@ -623,6 +641,30 @@ async function saveAsyncAnswerAndCheck(currentState, question, isCorrect, select
     return;
   }
   
+  // CORRECCIÓN: Verificar si el jugador ya respondió esta pregunta
+  // Evitar respuestas duplicadas que causan desincronización
+  const currentQuestionIndex = currentState.index - 1;
+  try {
+    const { data: existingAnswer } = await supabaseClient
+      .from('async_answers')
+      .select('id')
+      .eq('match_id', window.currentAsyncMatchId)
+      .eq('player_id', playerId)
+      .eq('question_index', currentQuestionIndex)
+      .single();
+    
+    if (existingAnswer) {
+      console.warn('⚠️ El jugador ya respondió esta pregunta, ignorando respuesta duplicada');
+      return; // Ya respondió, no hacer nada
+    }
+  } catch (checkError) {
+    // Si no existe, es normal (404 es esperado)
+    // Si hay otro error, loguear pero continuar
+    if (checkError.code !== 'PGRST116') {
+      console.warn('⚠️ Error verificando respuesta existente:', checkError);
+    }
+  }
+  
   try {
     // Guardar respuesta en base de datos
     const answerData = {
@@ -649,83 +691,96 @@ async function saveAsyncAnswerAndCheck(currentState, question, isCorrect, select
     
     console.log('✅ Respuesta guardada correctamente');
     
-    // Verificar si ambos jugadores respondieron (consulta simple a BD)
-    console.log('🔍 Consultando respuestas en BD:', {
-      match_id: window.currentAsyncMatchId,
-      question_index: currentState.index - 1
+    // OPTIMIZACIÓN: Usar campos calculados de async_matches en lugar de consultar async_answers
+    // El trigger actualiza automáticamente player1_answered_current y player2_answered_current
+    // Esto elimina una query adicional
+    console.log('🔍 Consultando estado de partida (campos calculados):', {
+      match_id: window.currentAsyncMatchId
     });
     
-    const { data: answers, error: queryError } = await supabaseClient
-      .from('async_answers')
-      .select('player_id, id, answer, answered_at')
-      .eq('match_id', window.currentAsyncMatchId)
-      .eq('question_index', currentState.index - 1);
+    const { data: updatedMatch, error: matchError } = await supabaseClient
+      .from('async_matches')
+      .select('player1_answered_current, player2_answered_current, current_question, updated_at')
+      .eq('id', window.currentAsyncMatchId)
+      .single();
     
-    console.log('🔍 Resultado de la consulta:', {
-      answers,
-      queryError,
-      answersLength: answers?.length
-    });
-    
-    // Expandir el array de respuestas para ver cada registro
-    if (answers && answers.length > 0) {
-      console.log('🔍 Detalle de cada respuesta:');
-      answers.forEach((answer, index) => {
-        console.log(`  Respuesta ${index + 1}:`, {
-          id: answer.id,
-          player_id: answer.player_id,
-          answer: answer.answer,
-          answered_at: answer.answered_at
-        });
-      });
+    if (matchError) {
+      console.error('❌ Error obteniendo estado de partida:', matchError);
+      // Fallback: consultar async_answers si los campos calculados no están disponibles
+      console.log('⚠️ Fallback: consultando async_answers directamente');
+      const { data: answers } = await supabaseClient
+        .from('async_answers')
+        .select('player_id')
+        .eq('match_id', window.currentAsyncMatchId)
+        .eq('question_index', currentState.index - 1);
+      
+      const answeredPlayers = answers?.map(a => a.player_id) || [];
+      const allPlayers = [window.currentAsyncMatch.player1_id, window.currentAsyncMatch.player2_id];
+      const bothAnswered = allPlayers.every(id => answeredPlayers.includes(id));
+      
+      if (bothAnswered) {
+        console.log('🎉 ¡Ambos jugadores respondieron! (fallback)');
+        await notifyBothAnswered(window.currentAsyncMatchId, currentState.index - 1);
+        setTimeout(() => {
+          if (window.nextAsyncQuestion) {
+            window.nextAsyncQuestion();
+          }
+        }, 600);
+      }
+      return;
     }
     
-    const answeredPlayers = answers?.map(a => a.player_id) || [];
-    const allPlayers = [window.currentAsyncMatch.player1_id, window.currentAsyncMatch.player2_id];
-    
-    console.log('🔍 IDs detallados:', {
-      answeredPlayers: answeredPlayers.map(id => `"${id}"`),
-      allPlayers: allPlayers.map(id => `"${id}"`),
-      answeredPlayersLength: answeredPlayers.length,
-      allPlayersLength: allPlayers.length
+    // Usar campos calculados (optimizado - sin query a async_answers)
+    console.log('✅ Estado de partida obtenido (campos calculados):', {
+      player1_answered: updatedMatch.player1_answered_current,
+      player2_answered: updatedMatch.player2_answered_current,
+      updated_at: updatedMatch.updated_at
     });
     
-    // Verificar cada ID individualmente
-    const player1Answered = answeredPlayers.includes(window.currentAsyncMatch.player1_id);
-    const player2Answered = answeredPlayers.includes(window.currentAsyncMatch.player2_id);
+    const bothAnswered = updatedMatch.player1_answered_current && 
+                         updatedMatch.player2_answered_current;
     
-    console.log('🔍 Verificación individual:', {
-      player1_id: window.currentAsyncMatch.player1_id,
-      player2_id: window.currentAsyncMatch.player2_id,
-      player1Answered,
-      player2Answered
-    });
-    
-    const bothAnswered = allPlayers.every(id => answeredPlayers.includes(id));
-    
-    console.log('🔍 Verificación de respuestas:', {
-      answeredPlayers,
-      allPlayers,
+    console.log('🔍 Verificación usando campos calculados:', {
+      player1_answered_current: updatedMatch.player1_answered_current,
+      player2_answered_current: updatedMatch.player2_answered_current,
       bothAnswered
     });
     
-             if (bothAnswered) {
-               console.log('🎉 ¡Ambos jugadores respondieron! Avanzando automáticamente...');
-               
-               // Notificar al otro jugador que ambos respondieron
-               await notifyBothAnswered(window.currentAsyncMatchId, currentState.index - 1);
-               
-               // Pequeño delay para que ambos vean los colores (como VS mode)
-               setTimeout(() => {
-                 console.log('🔄 Avanzando a siguiente pregunta...');
-                 if (window.nextAsyncQuestion) {
-                   window.nextAsyncQuestion();
-                 }
-               }, 600);
-             } else {
-               console.log('⏳ Esperando a que el rival responda...');
-             }
-    
+    if (bothAnswered) {
+      console.log('🎉 ¡Ambos jugadores respondieron! Notificando y avanzando...');
+      
+      const nextQuestionIndex = currentState.index;
+      
+      // Notificar al otro jugador que ambos respondieron (esto dispara el avance en BD)
+      await notifyBothAnswered(window.currentAsyncMatchId, currentState.index - 1);
+      
+      // El avance en BD se hace en async_vs.js checkBothAnswered
+      // Aquí solo invalidamos caché y avanzamos localmente si estamos en la partida
+      
+      // Invalidar caché de partidas abiertas cuando ambos responden
+      if (window.asyncMatchesCache && window.currentUser?.id) {
+        window.asyncMatchesCache.invalidate(window.currentUser.id);
+        // También invalidar para el otro jugador si tenemos su ID
+        const otherPlayerId = window.currentAsyncMatch?.player1_id === window.currentUser.id 
+          ? window.currentAsyncMatch?.player2_id 
+          : window.currentAsyncMatch?.player1_id;
+        if (otherPlayerId) {
+          window.asyncMatchesCache.invalidate(otherPlayerId);
+        }
+      }
+      
+      // Pequeño delay para que ambos vean los colores (como VS mode)
+      // NOTA: El avance automático se hace en checkBothAnswered (async_vs.js)
+      // pero también aquí para asegurar sincronización local
+      setTimeout(() => {
+        console.log('🔄 Avanzando a siguiente pregunta (local)...');
+        if (window.nextAsyncQuestion) {
+          window.nextAsyncQuestion();
+        }
+      }, 600);
+    } else {
+      console.log('⏳ Esperando a que el rival responda...');
+    }
   } catch (error) {
     console.error('Error en saveAsyncAnswerAndCheck:', error);
   }

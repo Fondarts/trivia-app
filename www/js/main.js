@@ -553,6 +553,14 @@ window.addEventListener('load', async ()=>{
   
   // Event listeners básicos ahora se manejan en bindAllEventListeners (más abajo)
   bindStatsOpen(renderLB);
+  
+  // Inicializar sistema de reporte de preguntas
+  try {
+    const { initQuestionReport } = await import('./game/question-report.js');
+    initQuestionReport();
+  } catch (error) {
+    console.error('[main] Error inicializando sistema de reporte:', error);
+  }
 
   // Modal de Test de Bosses (Preproducción)
   const testBossModal = document.getElementById('testBossModal');

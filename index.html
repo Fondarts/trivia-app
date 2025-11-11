@@ -436,6 +436,7 @@
         <div class="badge" id="kHUD">0/0 · 0 <span data-i18n="pts">pts</span></div>
         <button class="btn" id="btnNext" type="button" style="display:none;width:auto;min-width:140px" data-i18n="next">Siguiente</button>
       </div>
+      <button class="btn secondary small" id="btnReportQuestion" type="button" style="margin-top: 10px; width:100%; padding: 8px 12px; font-size: 13px;" title="Reportar pregunta">⚠️ Reportar Pregunta</button>
       <button class="btn secondary danger" id="btnExitGame" type="button" style="margin-top: 10px;" data-i18n="exit">Salir</button>
     </div>
   </div>
@@ -651,6 +652,44 @@
   <script src="./js/platform/ads.js"></script>
   
   <!-- Sistema de amigos se carga desde los módulos ES6 -->
+
+  <!-- Modal de Reporte de Pregunta -->
+  <div class="modal" id="reportQuestionModal">
+    <div class="panel" style="max-width: 500px;">
+      <div class="row" style="justify-content:space-between; margin-bottom: 20px;">
+        <div style="font-weight:800; font-size: 18px;">⚠️ Reportar Pregunta</div>
+        <button class="iconbtn" id="btnCloseReportModal" type="button">✖</button>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <label style="display:block; margin-bottom: 12px; font-weight:600;">Motivo del reporte:</label>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+            <input type="radio" name="reportReason" value="incorrect_image" style="cursor:pointer;">
+            <span>Imagen incorrecta</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+            <input type="radio" name="reportReason" value="incorrect_answer" style="cursor:pointer;">
+            <span>Respuesta incorrecta</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+            <input type="radio" name="reportReason" value="other" style="cursor:pointer;">
+            <span>Otro</span>
+          </label>
+        </div>
+      </div>
+      
+      <div id="reportOtherTextContainer" style="display:none; margin-bottom: 16px;">
+        <label style="display:block; margin-bottom: 8px; font-weight:600; color: var(--text);">Describe el problema:</label>
+        <textarea id="reportOtherText" placeholder="Escribe aquí el motivo del reporte..." style="width:100%; min-height:100px; padding:12px; border:1px solid var(--cardBorder); border-radius:8px; background:var(--bg1); color:var(--text); font-family:inherit; resize:vertical;"></textarea>
+      </div>
+      
+      <div style="display:flex; gap:10px; justify-content:flex-end;">
+        <button class="btn secondary" id="btnCancelReport" type="button">Cancelar</button>
+        <button class="btn" id="btnSendReport" type="button">Enviar reporte</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal para crear pack de preguntas -->
   <div class="modal" id="createPackModal" style="z-index: 10000;">

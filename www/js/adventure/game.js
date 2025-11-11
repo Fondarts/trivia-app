@@ -185,6 +185,21 @@
     
     if (!gameArea) return;
     
+    // Guardar datos de pregunta para reporte
+    try {
+      if (window.setCurrentQuestionData) {
+        // Enriquecer con información del contexto de aventura
+        const enrichedQuestion = {
+          ...q,
+          category: q.category || (state.regionKey || 'No disponible'),
+          difficulty: q.difficulty || 'No disponible'
+        };
+        window.setCurrentQuestionData(enrichedQuestion);
+      }
+    } catch(e) {
+      console.warn('[adventure] Error guardando datos de pregunta para reporte:', e);
+    }
+    
     const hudText = state.isTimed ? 
       `⏱️ ${state.timeLeft}s · 🎯 ${state.score} correctas` :
       `📝 ${state.currentQuestion + 1}/${state.total} · ⭐ ${state.score}/${state.currentQuestion}`;

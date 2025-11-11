@@ -231,6 +231,11 @@
               <path fill="currentColor" d="M345.6 38.4v102.4h128V38.4h-128zm-102.4-25.6v76.8h51.2v51.2h51.2V12.8h-102.4zm-51.2 89.6v51.2h102.4v-25.6h-76.8v-25.6h-25.6zm307.2 51.2H171.5l25.6 179.2h238.1l51.2-179.2zM153.6 486.4c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4zm256 0c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4z"/>
             </svg>
         </button>
+        <button class="iconbtn" id="btnCreatePack" title="Crear pack de preguntas">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            </svg>
+        </button>
 <!-- Botón de amigos temporal para usuarios no logueados -->
         <button class="iconbtn" id="btnFriends" title="Amigos" style="position: relative;">
             <svg viewBox="0 0 24 24" width="22" height="22">
@@ -647,6 +652,36 @@
   
   <!-- Sistema de amigos se carga desde los módulos ES6 -->
 
+  <!-- Modal para crear pack de preguntas -->
+  <div class="modal" id="createPackModal" style="z-index: 10000;">
+    <div class="panel" style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
+      <div class="row" style="justify-content:space-between; margin-bottom: 20px;">
+        <div style="font-weight:800; font-size: 18px;">➕ Crear Pack de Preguntas</div>
+        <button class="iconbtn" id="btnCloseCreatePack" type="button">✖</button>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <label style="display:block; margin-bottom: 8px; font-weight:600; color: var(--text);">Nombre del Pack:</label>
+        <input type="text" id="packNameInput" placeholder="Ej: Mi Pack de Cine" style="width:100%; padding:12px; border:1px solid var(--cardBorder); border-radius:8px; background:var(--bg1); color:var(--text); font-family:inherit;">
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
+          <label style="font-weight:600; color: var(--text);">Preguntas:</label>
+          <button class="btn accent" id="btnAddQuestion" type="button" style="padding: 8px 16px; font-size: 14px;">➕ Agregar Pregunta</button>
+        </div>
+        <div id="questionsList" style="display:flex; flex-direction:column; gap:12px;">
+          <!-- Las preguntas se agregarán aquí dinámicamente -->
+        </div>
+      </div>
+      
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--cardBorder);">
+        <button class="btn secondary" id="btnCancelCreatePack" type="button">Cancelar</button>
+        <button class="btn" id="btnSavePack" type="button">💾 Guardar Pack</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal de Test de Bosses (Preproducción) -->
   <div class="modal" id="testBossModal">
     <div class="panel" style="max-width: 600px;">
@@ -724,6 +759,9 @@
   
   <!-- Módulo principal que carga todo lo demás -->
   <script type="module" src="./js/main.js?v=4.0"></script>
+  
+  <!-- Módulo para crear packs de preguntas -->
+  <script type="module" src="./js/packs/create-pack.js"></script>
   
   <!-- Debug OAuth (solo para desarrollo) -->
   <script type="module" src="./js/debug-oauth.js"></script>

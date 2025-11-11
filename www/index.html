@@ -20,7 +20,15 @@
   <meta name="author" content="Quizlo!">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
+  <meta name="google-site-verification" content="L8NRNIYQxYL_NMkV0OU--KMdML0cNZ2b67hhiZFOtYA">
   <link rel="canonical" href="https://www.quizlo.app/">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Quizlo!">
+  <meta name="msapplication-TileColor" content="#8b5cf6">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   
   <!-- Language alternates -->
   <link rel="alternate" hreflang="es" href="https://www.quizlo.app/">
@@ -129,6 +137,21 @@
     "sameAs": []
   }
   </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.quizlo.app/"
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
@@ -190,7 +213,7 @@
     transition: opacity 0.5s ease;
   ">
     <div class="logo-container">
-      <img src="/assets/logo/logo.png" alt="Quizlo!" class="logo-splash"/>
+      <img src="/assets/logo/logo.png" alt="Quizlo! - Juego de Trivia Gratis" class="logo-splash" role="img"/>
       <div class="splash-title">Quizlo!</div>
       <div class="splash-subtitle">Trivia Game</div>
       <div class="dots-loader">
@@ -214,9 +237,9 @@
 
   </div>
   <div class="container" style="opacity: 0;">
-    <div class="header">
+    <header class="header" role="banner">
       <div class="app-title">
-        <img src="/assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
+        <img src="/assets/logo/logo.png" alt="Quizlo! - Logo del juego de trivia" class="app-logo" role="img"/>
         <span>Quizlo!</span>
       </div>
       <div class="row">
@@ -249,11 +272,12 @@
             </svg>
         </button>
         <button class="iconbtn avatar-btn" id="btnProfile" aria-label="Perfil de Usuario">
-          <img src="img/avatar_placeholder.svg" alt="Avatar"/>
+          <img src="img/avatar_placeholder.svg" alt="Avatar del usuario" role="img"/>
         </button>
       </div>
-    </div>
+    </header>
 
+    <main role="main">
     <div class="card" id="configCard">
       <!-- Sección de Login/Registro (solo visible cuando NO está logueado) -->
       <div class="section" id="authSection">
@@ -284,20 +308,20 @@
       <div class="section">
         <label data-i18n="mode">Modo</label>
         <div class="segment mode-segment" id="modeSeg">
-          <div class="seg mode-btn active" data-val="rounds" title="Solo">
-            <img class="mode-icon" src="./assets/icons/solo.svg" width="28" height="28" alt="Solo">
+          <div class="seg mode-btn active" data-val="rounds" title="Solo" aria-label="Modo solo">
+            <img class="mode-icon" src="./assets/icons/solo.svg" width="28" height="28" alt="Modo Solo - Jugar individual" aria-hidden="true">
             <span class="mode-tooltip" data-i18n="modeSolo">SOLO</span>
           </div>
-          <div class="seg mode-btn" data-val="timed" title="Contrarreloj">
-            <img class="mode-icon" src="./assets/icons/clock-svgrepo-com.svg" width="28" height="28" alt="Timed">
+          <div class="seg mode-btn" data-val="timed" title="Contrarreloj" aria-label="Modo contrarreloj">
+            <img class="mode-icon" src="./assets/icons/clock-svgrepo-com.svg" width="28" height="28" alt="Modo Contrarreloj - Jugar contra el tiempo" aria-hidden="true">
             <span class="mode-tooltip" data-i18n="modeTimed">TIMED</span>
           </div>
-          <div class="seg mode-btn" data-val="vs" title="Versus">
-            <img class="mode-icon" src="./assets/icons/vs.svg" width="28" height="28" alt="VS">
+          <div class="seg mode-btn" data-val="vs" title="Versus" aria-label="Modo versus">
+            <img class="mode-icon" src="./assets/icons/vs.svg" width="28" height="28" alt="Modo Versus - Competir con otro jugador" aria-hidden="true">
             <span class="mode-tooltip" data-i18n="modeVS">VS</span>
           </div>
-          <div class="seg mode-btn" data-val="adventure" title="Aventura">
-            <img class="mode-icon" src="./assets/icons/adventure.svg" width="28" height="28" alt="Aventura">
+          <div class="seg mode-btn" data-val="adventure" title="Aventura" aria-label="Modo aventura">
+            <img class="mode-icon" src="./assets/icons/adventure.svg" width="28" height="28" alt="Modo Aventura - Juego con jefes y niveles" aria-hidden="true">
             <span class="mode-tooltip" data-i18n="modeAdventure">AVENTURA</span>
           </div>
         </div>
@@ -428,7 +452,7 @@
           <div class="badge" id="bDiff">—</div>
         </div>
       </div>
-      <div id="qMedia" class="qMedia" style="display:none"><img alt="imagen"/></div>
+      <div id="qMedia" class="qMedia" style="display:none"><img alt="Imagen de la pregunta de trivia" role="img"/></div>
       <div id="qText" style="font-size:20px;font-weight:800; margin-top: 8px;">—</div>
       <div id="options" class="options" style="margin-top: 8px;"></div>
       <div class="progress" style="margin-top: 8px;"><div id="progressBar"></div></div>
@@ -439,6 +463,7 @@
       <button class="btn secondary small" id="btnReportQuestion" type="button" style="margin-top: 10px; width:100%; padding: 8px 12px; font-size: 13px;" title="Reportar pregunta">⚠️ Reportar Pregunta</button>
       <button class="btn secondary danger" id="btnExitGame" type="button" style="margin-top: 10px;" data-i18n="exit">Salir</button>
     </div>
+    </main>
   </div>
 
   <div class="fs" id="fsStats" style="display:none;">

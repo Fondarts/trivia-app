@@ -293,7 +293,7 @@ function createFriendItem(friend, isOnline) {
   return `
     <div class="friend-item clickable-friend" data-friend-id="${friend.user_id}" style="cursor: pointer;">
       <div class="friend-status ${isOnline ? 'online' : 'offline'}"></div>
-      <img src="${friend.avatar_url || 'img/avatar_placeholder.svg'}" class="friend-avatar" alt="${friend.nickname}"/>
+      <img src="${friend.avatar_url || './img/avatar_placeholder.svg'}" class="friend-avatar" alt="${friend.nickname}" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg';"/>
       <div class="friend-info">
         <div class="friend-name">${friend.nickname}</div>
         <div class="friend-level">Nivel ${friend.level || 1}</div>
@@ -396,7 +396,7 @@ async function searchUsers() {
     
     return `
       <div class="search-result-item">
-        <img src="${user.avatar_url || 'img/avatar_placeholder.svg'}" class="friend-avatar" alt="${user.nickname}"/>
+        <img src="${user.avatar_url || './img/avatar_placeholder.svg'}" class="friend-avatar" alt="${user.nickname}" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg';"/>
         <div class="friend-info">
           <div class="friend-name">${user.nickname}</div>
           <div class="friend-level">Nivel ${user.level || 1}</div>
@@ -513,6 +513,28 @@ async function loadRequests() {
       console.error('Error cargando invitaciones de juego:', gameError);
     }
     
+    // Cargar packs compartidos (solo pendientes)
+    let sharedPacks = [];
+    let packsError = null;
+    
+    try {
+      if (navigator.onLine) {
+        const result = await socialManager.supabase
+          .from('shared_packs')
+          .select('*')
+          .eq('to_user_id', socialManager.userId)
+          .eq('status', 'pending')
+          .order('created_at', { ascending: false });
+        
+        sharedPacks = result.data || [];
+        packsError = result.error;
+      }
+    } catch (error) {
+      // Si la tabla no existe, ignorar el error
+      console.log('⚠️ Tabla shared_packs no disponible');
+      packsError = null;
+    }
+    
     // Obtener datos de usuarios que enviaron invitaciones
     let gameInvitesWithUsers = [];
     if (gameInvites && gameInvites.length > 0) {
@@ -541,6 +563,34 @@ async function loadRequests() {
       }));
     }
     
+    // Obtener datos de usuarios que compartieron packs
+    let sharedPacksWithUsers = [];
+    if (sharedPacks && sharedPacks.length > 0) {
+      // Obtener todos los IDs de una vez
+      const fromUserIds = sharedPacks.map(sp => sp.from_user_id);
+      
+      // Obtener todos los perfiles de una vez
+      const { data: fromProfiles } = await socialManager.supabase
+        .from('user_profiles')
+        .select('user_id, nickname, avatar_url')
+        .in('user_id', fromUserIds);
+      
+      // Crear mapa de perfiles
+      const fromProfileMap = {};
+      (fromProfiles || []).forEach(p => {
+        fromProfileMap[p.user_id] = p;
+      });
+      
+      // Combinar datos
+      sharedPacksWithUsers = sharedPacks.map(sp => ({
+        ...sp,
+        from_user: fromProfileMap[sp.from_user_id] || {
+          nickname: 'Usuario',
+          avatar_url: null
+        }
+      }));
+    }
+    
     let html = '';
     
     // Renderizar solicitudes de amistad
@@ -548,7 +598,7 @@ async function loadRequests() {
       html += '<div class="request-group"><div class="group-title">Solicitudes de amistad</div>';
       html += friendRequestsWithUsers.map(req => `
         <div class="request-item">
-          <img src="${req.user?.avatar_url || 'img/avatar_placeholder.svg'}" class="friend-avatar"/>
+          <img src="${req.user?.avatar_url || './img/avatar_placeholder.svg'}" class="friend-avatar" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg';"/>
           <div class="friend-info">
             <div class="friend-name">${req.user?.nickname || 'Usuario'}</div>
             <div class="friend-level">Nivel ${req.user?.level || 1}</div>
@@ -569,7 +619,7 @@ async function loadRequests() {
         const isAsync = inv.game_type === 'async';
         return `
           <div class="request-item">
-            <img src="${inv.from_user?.avatar_url || 'img/avatar_placeholder.svg'}" class="friend-avatar"/>
+            <img src="${inv.from_user?.avatar_url || './img/avatar_placeholder.svg'}" class="friend-avatar" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg';"/>
             <div class="friend-info">
               <div class="friend-name">${inv.from_user?.nickname || 'Usuario'}</div>
               <div class="friend-level">${isAsync ? 'Desafío de 24h' : 'Partida en vivo'}</div>
@@ -577,6 +627,28 @@ async function loadRequests() {
             <div class="friend-actions">
               <button class="btn small accent" data-action="accept-game" data-invite="${inv.id}" data-type="${inv.game_type}" data-game="${inv.async_game_id || inv.room_code}">Jugar</button>
               <button class="btn small secondary" data-action="reject-game" data-invite="${inv.id}">Rechazar</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+      html += '</div>';
+    }
+    
+    // Renderizar packs compartidos
+    if (sharedPacksWithUsers.length > 0) {
+      html += '<div class="request-group"><div class="group-title">Packs compartidos</div>';
+      html += sharedPacksWithUsers.map(sp => {
+        const questionCount = sp.pack_data?.questions?.length || 0;
+        return `
+          <div class="request-item">
+            <img src="${sp.from_user?.avatar_url || './img/avatar_placeholder.svg'}" class="friend-avatar" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg';"/>
+            <div class="friend-info">
+              <div class="friend-name">${sp.from_user?.nickname || 'Usuario'}</div>
+              <div class="friend-level">📦 ${sp.pack_name || 'Pack sin nombre'} (${questionCount} preguntas)</div>
+            </div>
+            <div class="friend-actions">
+              <button class="btn small accent" data-action="accept-pack" data-pack-id="${sp.id}">Importar</button>
+              <button class="btn small secondary" data-action="reject-pack" data-pack-id="${sp.id}">Rechazar</button>
             </div>
           </div>
         `;
@@ -741,6 +813,79 @@ function bindRequestEvents() {
       loadRequests();
     });
   });
+  
+  // Aceptar pack compartido
+  document.querySelectorAll('[data-action="accept-pack"]').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const packId = e.target.dataset.packId;
+      
+      try {
+        // Obtener el pack compartido
+        const { data: packShare, error: fetchError } = await socialManager.supabase
+          .from('shared_packs')
+          .select('*')
+          .eq('id', packId)
+          .single();
+        
+        if (fetchError || !packShare) {
+          showToast('Error al cargar el pack');
+          return;
+        }
+        
+        // Obtener nombre del remitente
+        const { data: senderData } = await socialManager.supabase
+          .from('user_profiles')
+          .select('nickname')
+          .eq('user_id', packShare.from_user_id)
+          .single();
+        
+        const senderName = senderData?.nickname || 'Un amigo';
+        
+        // Importar el pack
+        if (window.importSharedPack && packShare.pack_data) {
+          window.importSharedPack(packShare.pack_data, senderName);
+        }
+        
+        // Marcar como importado
+        await socialManager.supabase
+          .from('shared_packs')
+          .update({ status: 'imported' })
+          .eq('id', packId);
+        
+        showToast('✅ Pack importado correctamente');
+        loadRequests();
+      } catch(error) {
+        console.error('Error aceptando pack:', error);
+        showToast('Error al importar el pack');
+      }
+    });
+  });
+  
+  // Rechazar pack compartido
+  document.querySelectorAll('[data-action="reject-pack"]').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const packId = e.target.dataset.packId;
+      
+      try {
+        const { error } = await socialManager.supabase
+          .from('shared_packs')
+          .update({ status: 'declined' })
+          .eq('id', packId);
+        
+        if (error) {
+          console.error('Error al rechazar pack:', error);
+          showToast('Error al rechazar pack');
+          return;
+        }
+        
+        showToast('Pack rechazado');
+        loadRequests();
+      } catch(error) {
+        console.error('Error rechazando pack:', error);
+        showToast('Error al rechazar pack');
+      }
+    });
+  });
 }
 
 async function loadRankings() {
@@ -787,7 +932,7 @@ async function loadRankings() {
       return `
         <div class="ranking-item ${index < 3 ? 'top-rank' : ''} ${isMe ? 'current-user' : ''} ${!isMe ? 'clickable-ranking' : ''}" data-friend-id="${rank.friend_id}" style="${!isMe ? 'cursor: pointer;' : ''}">
           <div class="ranking-position">#${index + 1}</div>
-          <img src="${rank.friend?.avatar_url || 'img/avatar_placeholder.svg'}" class="friend-avatar" alt="${displayName}"/>
+          <img src="${rank.friend?.avatar_url || './img/avatar_placeholder.svg'}" class="friend-avatar" alt="${displayName}" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg';"/>
           <div class="friend-info">
             <div class="friend-name">${displayName}</div>
             <div class="ranking-stats">
@@ -988,6 +1133,100 @@ function subscribeToNotifications() {
     })
     .subscribe();
   
+  // Suscribirse a cambios en tiempo real de shared_packs (packs compartidos)
+  const packShareChannel = socialManager.supabase
+    .channel(`shared-packs-${socialManager.userId}`)
+    .on(
+      'postgres_changes',
+      {
+        event: 'INSERT',
+        schema: 'public',
+        table: 'shared_packs',
+        filter: `to_user_id=eq.${socialManager.userId}`
+      },
+      async (payload) => {
+        console.log('Nuevo pack compartido detectado:', payload);
+        if (payload.new.status === 'pending') {
+          await handleReceivedPack(payload.new);
+        }
+      }
+    )
+    .subscribe();
+  
+  // También escuchar broadcasts como fallback
+  const packBroadcastChannel = socialManager.supabase
+    .channel(`pack-share-${socialManager.userId}`)
+    .on('broadcast', { event: 'pack-share' }, async (payload) => {
+      console.log('Pack compartido recibido por broadcast:', payload);
+      
+      const packShare = payload.payload;
+      if (packShare && packShare.pack_data) {
+        await handleReceivedPack({
+          from_user_id: packShare.from_user_id,
+          pack_name: packShare.pack_data.pack?.name,
+          pack_data: packShare.pack_data.pack
+        });
+      }
+    })
+    .subscribe();
+  
+  // Función para manejar packs recibidos (solo notificación, no importar automáticamente)
+  async function handleReceivedPack(packShare) {
+    try {
+      // Obtener el nombre del usuario que envía
+      const { data: senderData } = await socialManager.supabase
+        .from('user_profiles')
+        .select('nickname')
+        .eq('user_id', packShare.from_user_id)
+        .single();
+      
+      const senderName = senderData?.nickname || 'Un amigo';
+      const packName = packShare.pack_name || packShare.pack_data?.name || 'Pack sin nombre';
+      
+      // Mostrar notificación toast
+      showToast(`📦 ${senderName} te compartió el pack "${packName}"`);
+      
+      // Vibrar si está disponible
+      if (window.navigator?.vibrate) {
+        window.navigator.vibrate([200, 100, 200]);
+      }
+      
+      // Actualizar badge de notificaciones
+      checkNotifications();
+      
+      // Si el panel de solicitudes está abierto, recargarlo
+      const requestsTab = document.querySelector('.tab-btn[data-tab="requests"]');
+      if (requestsTab?.classList.contains('active')) {
+        loadRequests();
+      }
+    } catch(error) {
+      console.error('Error manejando pack recibido:', error);
+    }
+  }
+  
+  // Verificar packs pendientes al iniciar (solo para notificar, no importar)
+  checkPendingPacks();
+  
+  async function checkPendingPacks() {
+    try {
+      const { data: pendingPacks } = await socialManager.supabase
+        .from('shared_packs')
+        .select('*')
+        .eq('to_user_id', socialManager.userId)
+        .eq('status', 'pending')
+        .order('created_at', { ascending: false });
+      
+      if (pendingPacks && pendingPacks.length > 0) {
+        // Solo notificar, no importar automáticamente
+        const latestPack = pendingPacks[0];
+        await handleReceivedPack(latestPack);
+      }
+    } catch(error) {
+      // Si la tabla no existe, ignorar el error
+      console.log('Tabla shared_packs no disponible, usando solo broadcast');
+    }
+  }
+  
   // MÉTODO NORMAL: Suscribirse a cambios en tiempo real de friendships (solicitudes de amistad)
   const friendshipsChannel = socialManager.supabase
     .channel(`friendships-${socialManager.userId}`)
@@ -1085,9 +1324,23 @@ async function checkNotifications() {
       .eq('status', 'pending')
       .gte('expires_at', new Date().toISOString());
     
+    // Verificar packs compartidos pendientes
+    let sharedPacksCount = 0;
+    try {
+      const { data: sharedPacks } = await socialManager.supabase
+        .from('shared_packs')
+        .select('id')
+        .eq('to_user_id', socialManager.userId)
+        .eq('status', 'pending');
+      sharedPacksCount = sharedPacks ? sharedPacks.length : 0;
+    } catch(e) {
+      // Si la tabla no existe, ignorar
+    }
+    
     const totalNotifications = 
       (friendRequests ? friendRequests.length : 0) + 
-      (gameInvites ? gameInvites.length : 0);
+      (gameInvites ? gameInvites.length : 0) +
+      sharedPacksCount;
     
     // Actualizar badge
     updateNotificationBadge(totalNotifications);
@@ -1178,7 +1431,7 @@ async function showFriendProfile(friendId) {
         
         <!-- Header reorganizado con avatar a la izquierda -->
         <div class="profile-header-horizontal">
-          <img src="img/avatar_placeholder.svg" alt="Avatar" class="profile-avatar-large" id="friendProfileAvatar"/>
+          <img src="./img/avatar_placeholder.svg" alt="Avatar" class="profile-avatar-large" id="friendProfileAvatar"/>
           <div class="profile-info">
             <div class="profile-nickname" id="friendProfileNickname">—</div>
             <div class="level-badge" id="friendProfileLevel">Nivel 1</div>
@@ -1298,7 +1551,14 @@ async function showFriendProfile(friendId) {
     if (profile) {
       document.getElementById('friendProfileNickname').textContent = profile.nickname || 'Usuario';
       document.getElementById('friendProfileLevel').innerHTML = `Nivel ${profile.level || 1}`;
-      document.getElementById('friendProfileAvatar').src = profile.avatar_url || 'img/avatar_placeholder.svg';
+      const friendAvatar = document.getElementById('friendProfileAvatar');
+      if (friendAvatar) {
+        friendAvatar.src = profile.avatar_url || './img/avatar_placeholder.svg';
+        friendAvatar.onerror = function() {
+          this.onerror = null;
+          this.src = './img/avatar_placeholder.svg';
+        };
+      }
       
       // Calcular y mostrar XP usando los datos reales del perfil
       const totalXp = profile.total_xp || 0;
@@ -1818,7 +2078,7 @@ function createMatchItem(match) {
   return `
     <div class="match-item clickable-match" data-match-id="${match.id}" data-opponent-id="${opponentId}" style="cursor: pointer;">
       <div class="match-status ${isPlayer1 ? 'player1' : 'player2'}"></div>
-      <img src="${opponentAvatar}" class="match-avatar" alt="${opponentName}" onerror="this.src='img/avatar_placeholder.svg'"/>
+      <img src="${opponentAvatar}" class="match-avatar" alt="${opponentName}" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg'"/>
       <div class="match-info">
         <div class="match-opponent">vs ${opponentName}</div>
         <div class="match-details">

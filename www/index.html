@@ -720,28 +720,54 @@
   <div class="modal" id="createPackModal" style="z-index: 10000;">
     <div class="panel" style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
       <div class="row" style="justify-content:space-between; margin-bottom: 20px;">
-        <div style="font-weight:800; font-size: 18px;">➕ Crear Pack de Preguntas</div>
+        <div style="font-weight:800; font-size: 18px;">📦 Packs de Preguntas</div>
         <button class="iconbtn" id="btnCloseCreatePack" type="button">✖</button>
       </div>
       
-      <div style="margin-bottom: 20px;">
-        <label style="display:block; margin-bottom: 8px; font-weight:600; color: var(--text);">Nombre del Pack:</label>
-        <input type="text" id="packNameInput" placeholder="Ej: Mi Pack de Cine" style="width:100%; padding:12px; border:1px solid var(--cardBorder); border-radius:8px; background:var(--bg1); color:var(--text); font-family:inherit;">
+      <!-- Pestañas -->
+      <div style="display:flex; gap:8px; margin-bottom: 20px; border-bottom: 2px solid var(--cardBorder);">
+        <button class="pack-tab active" data-tab="create" style="padding: 10px 16px; background: transparent; border: none; color: var(--text); font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s;">
+          ➕ Crear Pack
+        </button>
+        <button class="pack-tab" data-tab="manage" style="padding: 10px 16px; background: transparent; border: none; color: var(--text); font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s;">
+          📋 Administrar Packs
+        </button>
       </div>
       
-      <div style="margin-bottom: 20px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
-          <label style="font-weight:600; color: var(--text);">Preguntas:</label>
-          <button class="btn accent" id="btnAddQuestion" type="button" style="padding: 8px 16px; font-size: 14px;">➕ Agregar Pregunta</button>
+      <!-- Contenido de pestaña: Crear Pack -->
+      <div id="createPackTab" class="pack-tab-content">
+        <div style="margin-bottom: 20px;">
+          <label style="display:block; margin-bottom: 8px; font-weight:600; color: var(--text);">Nombre del Pack:</label>
+          <input type="text" id="packNameInput" placeholder="Ej: Mi Pack de Cine" style="width:100%; padding:12px; border:1px solid var(--cardBorder); border-radius:8px; background:var(--bg1); color:var(--text); font-family:inherit;">
         </div>
-        <div id="questionsList" style="display:flex; flex-direction:column; gap:12px;">
-          <!-- Las preguntas se agregarán aquí dinámicamente -->
+        
+        <div style="margin-bottom: 20px;">
+          <label style="display:block; margin-bottom: 12px; font-weight:600; color: var(--text);">Preguntas:</label>
+          <div id="questionsList" style="display:flex; flex-direction:column; gap:12px;">
+            <!-- Las preguntas se agregarán aquí dinámicamente -->
+          </div>
+        </div>
+        
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--cardBorder);">
+          <button class="btn accent" id="btnAddQuestion" type="button" style="width: 100%; margin-bottom: 12px; padding: 12px 16px; font-size: 14px;">➕ Agregar Pregunta</button>
+          <div style="display:flex; gap:10px; justify-content:flex-end;">
+            <button class="btn secondary" id="btnCancelCreatePack" type="button">Cancelar</button>
+            <button class="btn" id="btnSavePack" type="button">💾 Guardar Pack</button>
+          </div>
         </div>
       </div>
       
-      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--cardBorder);">
-        <button class="btn secondary" id="btnCancelCreatePack" type="button">Cancelar</button>
-        <button class="btn" id="btnSavePack" type="button">💾 Guardar Pack</button>
+      <!-- Contenido de pestaña: Administrar Packs -->
+      <div id="managePackTab" class="pack-tab-content" style="display:none;">
+        <div id="packsListContainer" style="display:flex; flex-direction:column; gap:12px;">
+          <!-- Los packs se cargarán aquí dinámicamente -->
+        </div>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--cardBorder);">
+          <button class="btn secondary small" id="btnImportPack" type="button" style="width: 100%; padding: 10px 14px; font-size: 14px;">
+            📥 Importar Pack desde JSON
+          </button>
+          <input type="file" id="importPackFile" accept=".json" style="display:none;">
+        </div>
       </div>
     </div>
   </div>

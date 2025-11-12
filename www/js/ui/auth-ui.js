@@ -139,7 +139,7 @@ export async function updateAuthUI(user, options = {}) {
       console.log('🖼️ Elemento avatar encontrado:', !!profileAvatar);
       console.log('🖼️ ========================');
       
-      if (user.avatar && user.avatar !== 'img/avatar_placeholder.svg' && user.avatar !== 'img/avatarman.webp') {
+      if (user.avatar && user.avatar !== 'img/avatar_placeholder.svg' && user.avatar !== 'img/avatarman.webp' && !user.avatar.startsWith('img/')) {
         console.log('🖼️ Intentando cargar avatar de Google:', user.avatar);
         // Intentar cargar el avatar del usuario
         const avatarImg = new Image();
@@ -149,13 +149,13 @@ export async function updateAuthUI(user, options = {}) {
         };
         avatarImg.onerror = () => {
           console.log('⚠️ Avatar de Google falló, usando placeholder');
-          profileAvatar.src = 'img/avatarman.webp';
+          profileAvatar.src = './img/avatarman.webp';
         };
         avatarImg.src = user.avatar;
       } else {
         // Usar placeholder por defecto
         console.log('🖼️ No hay avatar de Google, usando placeholder por defecto');
-        profileAvatar.src = 'img/avatarman.webp';
+        profileAvatar.src = './img/avatarman.webp';
       }
     }
     DOMUtils.hide(profileAuthSection);
@@ -209,7 +209,11 @@ export async function updateAuthUI(user, options = {}) {
     
     // Actualizar avatar en el header
     const headerAvatar = document.querySelector('.avatar-btn img');
-    if (headerAvatar && user.avatar) headerAvatar.src = user.avatar;
+    if (headerAvatar && user.avatar && !user.avatar.startsWith('img/')) {
+      headerAvatar.src = user.avatar;
+    } else if (headerAvatar && (!user.avatar || user.avatar.startsWith('img/'))) {
+      headerAvatar.src = './img/avatarman.webp';
+    }
     
     // Actualizar el input oculto de playerName con el nickname
     if (playerNameInput) {
@@ -271,11 +275,11 @@ export async function updateAuthUI(user, options = {}) {
     if (profileLevelBadge) profileLevelBadge.innerHTML = '<span data-i18n="level">Nivel</span> 1';
     if (profileXpBar) profileXpBar.style.width = '0%';
     if (profileXpText) profileXpText.textContent = '0 / 100 XP';
-    if (profileAvatar) profileAvatar.src = 'img/avatar_placeholder.svg';
+    if (profileAvatar) profileAvatar.src = './img/avatar_placeholder.svg';
     
     // Limpiar avatar del header
     const headerAvatar = document.querySelector('.avatar-btn img');
-    if (headerAvatar) headerAvatar.src = 'img/avatar_placeholder.svg';
+    if (headerAvatar) headerAvatar.src = './img/avatar_placeholder.svg';
   }
 }
 

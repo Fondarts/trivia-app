@@ -35,7 +35,7 @@ import {
 import { bindAllEventListeners } from './init/event-bindings.js';
 
 // Game modules  
-import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, bindLeaderboardsOpen } from './game/ui.js';
+import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, bindLeaderboardsOpen, refreshCategorySelect } from './game/ui.js';
 import { startSolo, nextQuestion, endGame, renderQuestion } from './game/solo.js';
 import { initVS, createMatch, joinMatch, answer, setVSName, leaveMatch, startRandomMatch, cancelRandomSearch, isRandomSearching } from './game/vs.js';
 import { initAsyncVS, startAsyncRandomSearch } from './game/async_vs.js';
@@ -201,6 +201,7 @@ window.addEventListener('load', async ()=>{
   // Exponer utilidades DOM y State Manager globalmente (compatibilidad con código tradicional)
   window.DOMUtils = DOMUtils;
   window.StateManager = StateManager;
+  window.refreshCategorySelect = refreshCategorySelect;
   console.log('✅ Utilidades DOM y State Manager disponibles globalmente');
   
   // Función de debug para avatar
@@ -1234,9 +1235,9 @@ window.addEventListener('load', async ()=>{
       DOMUtils.update(DOMUtils.getElement('profileLevelBadge'), { innerHTML: '<span data-i18n="level">Nivel</span> 1' });
       DOMUtils.update(DOMUtils.getElement('profileXpBar'), { style: { width: '0%' } });
       DOMUtils.update(DOMUtils.getElement('profileXpText'), { textContent: '0 / 100 XP' });
-      DOMUtils.update(DOMUtils.getElement('profileAvatar'), { src: 'img/avatar_placeholder.svg' });
+      DOMUtils.update(DOMUtils.getElement('profileAvatar'), { src: './img/avatar_placeholder.svg' });
       const headerAvatar = document.querySelector('.avatar-btn img');
-      if (headerAvatar) headerAvatar.src = 'img/avatar_placeholder.svg';
+      if (headerAvatar) headerAvatar.src = './img/avatar_placeholder.svg';
       const profileModal = DOMUtils.getElement('profileModal');
       if (profileModal) profileModal.classList.remove('open');
     }

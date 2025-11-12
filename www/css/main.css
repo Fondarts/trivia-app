@@ -1798,3 +1798,44 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
   .achievement-icon-wrapper { width: 36px; height: 36px; }
   .achievement-icon-name { font-size: 10px; }
 }
+
+/* ===========================================
+   PESTAÑAS DE PACKS PERSONALIZADOS
+   =========================================== */
+.pack-tab {
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  opacity: 0.6;
+}
+
+.pack-tab:hover {
+  opacity: 0.8;
+}
+
+.pack-tab.active {
+  opacity: 1;
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.pack-tab-content {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -491,6 +491,24 @@ export function refreshCategorySelect(){
     } catch(e) {
       console.warn('[ui] refreshCategorySelect packs', e);
     }
+
+    // Grupo packs creados por el usuario (si hay)
+    try {
+      const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
+      if (userPacks.length > 0) {
+        const g = document.createElement('optgroup');
+        g.label = 'Packs Personalizados';
+        userPacks.forEach((pack, index) => {
+          const o = document.createElement('option');
+          o.value = `userpack:${index}`;
+          o.textContent = pack.name || `Pack ${index + 1}`;
+          g.appendChild(o);
+        });
+        sel.appendChild(g);
+      }
+    } catch(e) {
+      console.warn('[ui] refreshCategorySelect user packs', e);
+    }
   } catch (e) {
     console.error('[ui] refreshCategorySelect error', e);
     // Fallback absoluto si algo explota
@@ -502,6 +520,97 @@ export function refreshCategorySelect(){
 
   if (prev && [...sel.options].some(o=>o.value===prev)) sel.value = prev;
   else sel.value = 'all';
+  
+  // Vincular evento para actualizar selector de cantidad cuando cambie la categoría
+  if (!sel._hasCategoryListener) {
+    sel.addEventListener('change', () => {
+      updateRoundsSelectorForCategory();
+    });
+    sel._hasCategoryListener = true;
+  }
+  
+  // Actualizar selector de cantidad inicialmente
+  updateRoundsSelectorForCategory();
+}
+
+// Exponer globalmente para que pueda ser llamada desde otros módulos
+if (typeof window !== 'undefined') {
+  window.refreshCategorySelect = refreshCategorySelect;
+}
+
+// Función para actualizar el selector de cantidad de preguntas según la categoría seleccionada
+export function updateRoundsSelectorForCategory() {
+  const categorySel = document.getElementById('categorySel');
+  const roundsSel = document.getElementById('rounds');
+  if (!categorySel || !roundsSel) return;
+  
+  const selectedCategory = categorySel.value;
+  
+  // Si es un pack personalizado, leer la cantidad de preguntas
+  if (selectedCategory && selectedCategory.startsWith('userpack:')) {
+    try {
+      const packIndex = parseInt(selectedCategory.slice(9), 10);
+      const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
+      const pack = userPacks[packIndex];
+      
+      if (pack && pack.questions && Array.isArray(pack.questions)) {
+        const maxQuestions = pack.questions.length;
+        
+        // Guardar el valor actual si es válido
+        const currentValue = parseInt(roundsSel.value, 10);
+        
+        // Limpiar opciones existentes
+        roundsSel.innerHTML = '';
+        
+        // Agregar opciones hasta el máximo disponible
+        const availableOptions = [5, 15, 30].filter(n => n <= maxQuestions);
+        
+        // Si no hay opciones estándar que funcionen, agregar la cantidad exacta
+        if (availableOptions.length === 0 && maxQuestions > 0) {
+          const option = document.createElement('option');
+          option.value = maxQuestions.toString();
+          option.textContent = maxQuestions.toString();
+          option.selected = true;
+          roundsSel.appendChild(option);
+        } else {
+          availableOptions.forEach(n => {
+            const option = document.createElement('option');
+            option.value = n.toString();
+            option.textContent = n.toString();
+            // Seleccionar el valor actual si está disponible, o el más cercano
+            if (n === currentValue || (n === availableOptions[availableOptions.length - 1] && currentValue > n)) {
+              option.selected = true;
+            }
+            roundsSel.appendChild(option);
+          });
+          
+          // Si el valor actual es mayor que el máximo, seleccionar el máximo
+          if (currentValue > maxQuestions && availableOptions.length > 0) {
+            roundsSel.value = availableOptions[availableOptions.length - 1].toString();
+          }
+        }
+        
+        return maxQuestions;
+      }
+    } catch(e) {
+      console.warn('[ui] Error actualizando selector de preguntas para pack personalizado:', e);
+    }
+  } else {
+    // Para categorías normales, restaurar opciones por defecto
+    const currentValue = parseInt(roundsSel.value, 10);
+    roundsSel.innerHTML = '';
+    [5, 15, 30].forEach(n => {
+      const option = document.createElement('option');
+      option.value = n.toString();
+      option.textContent = n.toString();
+      if (n === currentValue || (n === 15 && !currentValue)) {
+        option.selected = true;
+      }
+      roundsSel.appendChild(option);
+    });
+  }
+  
+  return null;
 }
 
 export async function applyInitialUI(){

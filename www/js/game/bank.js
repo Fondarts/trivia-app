@@ -135,6 +135,26 @@ export function buildDeckSingle(categoryKey, count, diff = 'any', customPool = n
   let pool = [];
   if (categoryKey?.startsWith('custom:') && customPool) {
     pool = [...(customPool[categoryKey] || [])];
+  } else if (String(categoryKey||'').startsWith('userpack:')) {
+    // Cargar pack creado por el usuario desde localStorage
+    try {
+      const packIndex = parseInt(String(categoryKey).slice(9), 10);
+      const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
+      const pack = userPacks[packIndex];
+      if (pack && pack.questions && Array.isArray(pack.questions)) {
+        pool = pack.questions.map(q => ({
+          q: q.q || '',
+          options: q.options || [],
+          answer: q.answer || 0,
+          difficulty: q.difficulty || 'medium',
+          category: 'userpack',
+          img: q.img || null
+        }));
+      }
+    } catch(e) {
+      console.error('[bank] Error cargando pack de usuario:', e);
+      pool = [];
+    }
   } else if (String(categoryKey||'').startsWith('pack:')) {
     const pid = String(categoryKey).slice(5);
     pool = Object.values(bank).flatMap(arr => arr || []).filter(q => q && q.packId === pid);

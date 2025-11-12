@@ -554,7 +554,28 @@ export async function startSolo(){
     await ensureInitial60();
 
     if(segActive==='rounds'){
-      const total = parseInt(document.getElementById('rounds').value, 10);
+      let total = parseInt(document.getElementById('rounds').value, 10);
+      
+      // Si es un pack personalizado, asegurarse de no pedir más preguntas de las disponibles
+      if (selectedCat && selectedCat.startsWith('userpack:')) {
+        try {
+          const packIndex = parseInt(selectedCat.slice(9), 10);
+          const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
+          const pack = userPacks[packIndex];
+          if (pack && pack.questions && Array.isArray(pack.questions)) {
+            const maxQuestions = pack.questions.length;
+            if (total > maxQuestions) {
+              total = maxQuestions;
+              // Actualizar el selector también
+              const roundsSel = document.getElementById('rounds');
+              if (roundsSel) roundsSel.value = total.toString();
+            }
+          }
+        } catch(e) {
+          console.warn('[solo] Error verificando límite de pack personalizado:', e);
+        }
+      }
+      
       currentState.total = total;
       currentState.deck  = buildDeckSingle(selectedCat, total, diff);
     } else if (segActive==='timed'){

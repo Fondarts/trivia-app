@@ -776,7 +776,7 @@ export function renderStatsPage() {
                 const isUnlocked = unlocked.has(ach.id);
                 const iconPath = ach.icon ? `Icons/${ach.icon}` : '';
                 return `
-                    <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" title="${ach.description}">
+                    <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" data-tooltip="${ach.description}">
                         <div class="achievement-icon-wrapper">
                             ${iconPath ? 
                                 `<img src="${iconPath}" alt="${ach.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='${isUnlocked ? '🏆' : '🔒'}';" />` : 

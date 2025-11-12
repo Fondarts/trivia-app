@@ -1640,7 +1640,7 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
 /* =============================================
    APPENDED: achievements.css (stats & achievements)
    ============================================= */
-#fsStats { position: fixed; inset: 0; display: none; z-index: 900; background-color: var(--bg1); overflow-y: auto; overflow-x: hidden; }
+#fsStats { position: fixed; inset: 0; display: none; z-index: 900; background-color: var(--bg1); overflow-y: auto; overflow-x: visible; }
 #fsStats .wrap { max-width: 520px; margin: 0 auto; padding: 16px; padding-top: calc(36px + env(safe-area-inset-top, 0px)); padding-bottom: 40px; height: auto; min-height: 100%; overflow: visible; }
 #fsStats::-webkit-scrollbar { width: 8px; }
 #fsStats::-webkit-scrollbar-track { background: var(--cardBorder); }
@@ -1650,7 +1650,9 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
 #fsStats .fs-titlebar-title { font-size: 26px; font-weight: 800; color: var(--text); }
 #fsStats .back { background: transparent; border: none; color: var(--text); font-size: 24px; padding: 8px; cursor: pointer; border-radius: 10px; transition: transform var(--transition-fast), opacity var(--transition-fast); }
 #fsStats .back:hover { transform: scale(1.1); opacity: 0.7; }
-#fsStats .card { background: transparent; border: none; box-shadow: none; padding: 0; }
+#fsStats .card { background: transparent; border: none; box-shadow: none; padding: 0; overflow: visible; }
+#fsStats .stats-tab-content { overflow: visible; }
+#fsStats #statsTabContent { overflow: visible; }
 #fsStats h3 { font-size: 20px; font-weight: 800; margin: 20px 0 12px; color: var(--text); }
 #fsStats h3:first-child { margin-top: 0; }
 #fsStats hr { display: none; }
@@ -1678,8 +1680,8 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
 .category-stat-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.5s ease; border-radius: 10px; }
 .category-stat-count { min-width: 40px; text-align: right; font-weight: 700; color: var(--accent); font-size: 14px; }
 #achievementsContainer { background: transparent; padding: 0; margin: 0; overflow: visible; max-height: none; }
-.achievements-grid-icons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 0; margin: 0; max-height: none; overflow: visible; }
-.achievement-icon-item { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px 4px; background: transparent; border: none; cursor: pointer; transition: all var(--transition-fast); position: relative; min-height: 70px; max-height: 85px; overflow: visible; }
+.achievements-grid-icons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px 6px; padding: 0; margin: 0; max-height: none; overflow: visible; }
+.achievement-icon-item { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px 2px; background: transparent; border: none; cursor: pointer; transition: all var(--transition-fast); position: relative; min-height: 70px; max-height: 85px; overflow: visible; width: 100%; }
 .achievement-icon-item:hover { transform: translateY(-2px) scale(1.05); z-index: 10; }
 .achievement-icon-item.unlocked { background: transparent; border: none; }
 .achievement-icon-wrapper { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; position: relative; flex-shrink: 0; }
@@ -1703,13 +1705,13 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
   font-weight: 400; 
   white-space: normal; 
   min-width: 120px;
-  max-width: min(220px, calc(100vw - 40px));
+  max-width: min(280px, calc(100vw - 80px));
   width: max-content;
   text-align: center; 
   line-height: 1.4; 
   box-shadow: 0 4px 12px rgba(0,0,0,0.5); 
   border: 1px solid rgba(255,255,255,0.1); 
-  z-index: 10000; 
+  z-index: 10001; 
   opacity: 0; 
   visibility: hidden; 
   transition: all var(--transition-fast); 
@@ -1717,8 +1719,13 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-sizing: border-box;
+  hyphens: auto;
 }
-.achievement-icon-item:hover .achievement-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) scale(1); }
+.achievement-icon-item:hover .achievement-tooltip { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateX(-50%) scale(1); 
+}
 :root[data-theme="light"] .achievement-icon-item.locked .achievement-icon-name, :root[data-theme="light"] .achievement-icon-item.unlocked .achievement-icon-name { color: #1f2937; opacity: 1; text-shadow: none; }
 :root[data-theme="light"] .achievement-tooltip { background: #ffffff; color: #1f2937; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.1); }
 .achievement { padding: 10px; border-radius: 8px; margin-bottom: 8px; opacity: 0.6; border-left: 5px solid #bdc3c7; background-color: rgba(0,0,0,0.02); }
@@ -1743,7 +1750,7 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
   }
   .achievements-grid-icons { 
     grid-template-columns: repeat(4, 1fr); 
-    gap: 8px; 
+    gap: 8px 6px; 
     padding: 0;
     margin: 0;
     width: 100%;
@@ -1771,7 +1778,7 @@ body.capacitor-app .friends-panel { padding-top: calc(20px + env(safe-area-inset
   }
   .achievements-grid-icons { 
     grid-template-columns: repeat(3, 1fr); 
-    gap: 8px;
+    gap: 8px 6px;
     padding: 0;
     margin: 0;
     width: 100%;

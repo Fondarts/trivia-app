@@ -99,7 +99,6 @@ export function renderStatsPageTranslated() {
         'KNOWLEDGE_SPORTS': 'athlete',
         'KNOWLEDGE_SAGE': 'knowItAll',
         'DEDICATION_FIRST_GAME': 'beginner',
-        'DEDICATION_7_DAYS': 'regular',
         'DEDICATION_30_DAYS': 'veteran',
         'DEDICATION_100_GAMES': 'legend',
         'DEDICATION_500_GAMES': 'mythic',
@@ -146,7 +145,6 @@ export function renderStatsPageTranslated() {
         'KNOWLEDGE_SPORTS': 'athleteDesc',
         'KNOWLEDGE_SAGE': 'knowItAllDesc',
         'DEDICATION_FIRST_GAME': 'beginnerDesc',
-        'DEDICATION_7_DAYS': 'regularDesc',
         'DEDICATION_30_DAYS': 'veteranDesc',
         'DEDICATION_100_GAMES': 'legendDesc',
         'DEDICATION_500_GAMES': 'mythicDesc',
@@ -194,7 +192,7 @@ export function renderStatsPageTranslated() {
                 const description = achievementDescKeys[ach.id] ? t(achievementDescKeys[ach.id]) : ach.description;
                 
                 return `
-                    <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" title="${description}">
+                    <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" data-tooltip="${description}">
                         <div class="achievement-icon-wrapper">
                             ${iconPath ? 
                                 `<img src="${iconPath}" alt="${title}" onerror="this.style.display='none'; this.parentElement.innerHTML='${isUnlocked ? '🏆' : '🔒'}';"/>` : 

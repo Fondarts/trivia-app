@@ -12,7 +12,6 @@ export const ACHIEVEMENT_ICONS = {
   'KNOWLEDGE_SPORTS': 'sports.png',         // Actualizado
   'KNOWLEDGE_SAGE': 'wizard.png',
   'DEDICATION_FIRST_GAME': 'newbie.png',
-  'DEDICATION_7_DAYS': 'sword.png',
   'SURI_7_DAYS': 'Suri logro.webp',
   'DEDICATION_30_DAYS': 'sword.png',
   'DEDICATION_100_GAMES': 'wizard.png',
@@ -98,13 +97,6 @@ export const ACHIEVEMENTS_LIST = [
     description: 'Juega tu primera partida.',
     icon: 'newbie.png',
     condition: (stats) => stats.totalGamesPlayed >= 1,
-  },
-  {
-    id: 'DEDICATION_7_DAYS',
-    title: 'Regular',
-    description: 'Juega 7 días seguidos.',
-    icon: 'sword.png',
-    condition: (stats) => stats.consecutiveDaysPlayed >= 7,
   },
   {
     id: 'SURI_7_DAYS',

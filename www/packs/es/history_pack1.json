@@ -1,0 +1,662 @@
+[
+  {
+    "q": "¿En qué año comenzó la Segunda Guerra Mundial?",
+    "options": [
+      "1941",
+      "1939",
+      "1945",
+      "1914"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué imperio construyó el Coliseo?",
+    "options": [
+      "Imperio Egipcio",
+      "Imperio Romano",
+      "Imperio Bizantino",
+      "Imperio Persa"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién fue el primer emperador romano?",
+    "options": [
+      "Trajano",
+      "Julio César",
+      "Augusto",
+      "Nerón"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué civilización construyó las pirámides de Giza?",
+    "options": [
+      "Griegos",
+      "Sumerios",
+      "Mayas",
+      "Egipcios"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué continente se originó el Homo sapiens?",
+    "options": [
+      "África",
+      "Europa",
+      "Asia",
+      "Oceanía"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué muro cayó en 1989?",
+    "options": [
+      "Muro de Jericó",
+      "Muro de Adriano",
+      "Gran Muralla",
+      "Muro de Berlín"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué barco se hundió en 1912?",
+    "options": [
+      "Lusitania",
+      "Bismarck",
+      "Titanic",
+      "Britannic"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién fue conocido como el Libertador de América?",
+    "options": [
+      "O'Higgins",
+      "San Martín",
+      "Sucre",
+      "Simón Bolívar"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué póliza religiosa inició Lutero en 1517?",
+    "options": [
+      "Contrarreforma",
+      "Reforma protestante",
+      "Cisma de Oriente",
+      "Concilio de Nicea"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué ciudad fue sepultada por el Vesubio?",
+    "options": [
+      "Nápoles",
+      "Herculano",
+      "Pompeya",
+      "Roma"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué revolución comenzó en 1789?",
+    "options": [
+      "Meiji",
+      "Revolución Francesa",
+      "Rusa",
+      "Revolución Industrial"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién fue conocido como el Rey Sol?",
+    "options": [
+      "Luis XVI",
+      "Luis XIV",
+      "Carlos V",
+      "Felipe II"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué país lanzó las primeras bombas atómicas?",
+    "options": [
+      "Alemania",
+      "URSS",
+      "Estados Unidos",
+      "Japón"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué escriba antigua se lee con la Piedra Rosetta?",
+    "options": [
+      "Lineal B",
+      "Jeroglíficos egipcios",
+      "Rúnico",
+      "Cuneiforme"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué navegante llegó a América en 1492?",
+    "options": [
+      "Magallanes",
+      "Cristóbal Colón",
+      "Caboto",
+      "Vasco da Gama"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué guerra enfrentó a EEUU y URSS indirectamente?",
+    "options": [
+      "Guerra de Corea",
+      "Guerra de los Siete Años",
+      "Guerra de Crimea",
+      "Guerra Fría"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué epidemia devastó Europa en el siglo XIV?",
+    "options": [
+      "Gripe",
+      "Viruela",
+      "Peste Negra",
+      "Cólera"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué documento firmó la independencia de EEUU?",
+    "options": [
+      "Declaración de Independencia",
+      "Acta de Unión",
+      "Carta Magna",
+      "Tratado de Versalles"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué antiguo reino construyó Machu Picchu?",
+    "options": [
+      "Olmeca",
+      "Maya",
+      "Azteca",
+      "Inca"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué ruta conectó China con el Mediterráneo?",
+    "options": [
+      "Via Apia",
+      "Camino Real",
+      "Ruta del Ámbar",
+      "Ruta de la Seda"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué año cayó el Imperio Romano de Occidente?",
+    "options": [
+      "632",
+      "529",
+      "410",
+      "476"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién unificó el Imperio Mongol?",
+    "options": [
+      "Batu Kan",
+      "Gengis Kan",
+      "Kublai Kan",
+      "Tamerlán"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué tratado puso fin a la Primera Guerra Mundial?",
+    "options": [
+      "Tratado de Versalles",
+      "Armisticio de Compiègne",
+      "Tratado de Brest-Litovsk",
+      "Tratado de Trianon"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué revolución introdujo la mecanización y fábricas?",
+    "options": [
+      "Revolución Francesa",
+      "Revolución Industrial",
+      "Reforma",
+      "Ilustración"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién lideró la Larga Marcha china?",
+    "options": [
+      "Zhou Enlai",
+      "Sun Yat-sen",
+      "Chiang Kai-shek",
+      "Mao Zedong"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué imperio tuvo capital en Tenochtitlan?",
+    "options": [
+      "Olmeca",
+      "Inca",
+      "Maya",
+      "Azteca"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué explorador circunnavegó el globo (expedición)?",
+    "options": [
+      "Drake",
+      "Cook",
+      "Hudson",
+      "Magallanes-Elcano"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué reina inglesa fue hija de los Tudor y 'la Reina Virgen'?",
+    "options": [
+      "María I",
+      "Ana",
+      "Isabel I",
+      "Catalina"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué revolución derrocó al zar en 1917?",
+    "options": [
+      "Revolución Turca",
+      "Revolución Alemana",
+      "Revolución Rusa",
+      "Revolución Mexicana"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién escribió *El Príncipe*?",
+    "options": [
+      "Locke",
+      "Rousseau",
+      "Hobbes",
+      "Maquiavelo"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué guerra de 1950-1953 terminó en armisticio?",
+    "options": [
+      "Vietnám",
+      "Árabe-Israelí",
+      "Indochina",
+      "Guerra de Corea"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué civilización mesopotámica creó el Código de Hammurabi?",
+    "options": [
+      "Acadia",
+      "Asiria",
+      "Sumer",
+      "Babilonia"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién fue el faraón de la tumba descubierta en 1922?",
+    "options": [
+      "Akenatón",
+      "Amenhotep III",
+      "Ramsés II",
+      "Tutankamón"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué conferencia de 1945 definió la posguerra europea?",
+    "options": [
+      "Potsdam",
+      "San Francisco",
+      "Teherán",
+      "Yalta"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué líder indio promovió la no violencia?",
+    "options": [
+      "Ambedkar",
+      "Nehru",
+      "Bose",
+      "Mahatma Gandhi"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué cultura precolombina dominó Yucatán?",
+    "options": [
+      "Maya",
+      "Moche",
+      "Azteca",
+      "Inca"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué guerra se peleó entre Atenas y Esparta?",
+    "options": [
+      "Guerras Púnicas",
+      "Guerras Sagradas",
+      "Guerra del Peloponeso",
+      "Guerra Médica"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué invento de Gutenberg revolucionó Europa?",
+    "options": [
+      "Astrolabio",
+      "Brújula",
+      "Pólvora",
+      "Imprenta de tipos móviles"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué líder sudafricano pasó 27 años preso?",
+    "options": [
+      "Nelson Mandela",
+      "Jacob Zuma",
+      "Thabo Mbeki",
+      "Desmond Tutu"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué imperio es conocido por los 'Inmortales'?",
+    "options": [
+      "Parto",
+      "Hitita",
+      "Persa aqueménida",
+      "Selyúcida"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué año comenzó la Guerra de los Treinta Años?",
+    "options": [
+      "1618",
+      "1625",
+      "1648",
+      "1605"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Quién redactó las 95 tesis de Wittenberg?",
+    "options": [
+      "Zuinglio",
+      "Calvino",
+      "Martín Lutero",
+      "Melanchthon"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué tratado creó la Sociedad de Naciones?",
+    "options": [
+      "Tratado de Saint-Germain",
+      "Tratado de Neuilly",
+      "Tratado de Versalles",
+      "Tratado de Sèvres"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué dinastía china construyó gran parte de la Gran Muralla?",
+    "options": [
+      "Han",
+      "Ming",
+      "Tang",
+      "Qin"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué batalla detuvo a los árabes en Francia (732)?",
+    "options": [
+      "Tours",
+      "Hastings",
+      "Poitiers",
+      "Agincourt"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué civilización desarrolló el Quipu?",
+    "options": [
+      "Azteca",
+      "Moche",
+      "Maya",
+      "Inca"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué rey macedonio conquistó Persia?",
+    "options": [
+      "Filipo II",
+      "Casandro",
+      "Alejandro Magno",
+      "Perdicas"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Quién fue el primer califa Rashidun?",
+    "options": [
+      "Abu Bakr",
+      "Uthman",
+      "Umar",
+      "Ali"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué tratado puso fin a la Guerra de los Siete Años?",
+    "options": [
+      "Tratado de París (1763)",
+      "Nimega",
+      "Utrecht",
+      "Ryswick"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué emperador romano emitió el Edicto de Milán?",
+    "options": [
+      "Juliano",
+      "Teodosio",
+      "Constantino I",
+      "Diocleciano"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué cultura creó las Líneas de Nazca?",
+    "options": [
+      "Paracas",
+      "Chavín",
+      "Nazca",
+      "Tiwanaku"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué imperio tenía capital en Cuzco?",
+    "options": [
+      "Azteca",
+      "Maya",
+      "Tolteca",
+      "Inca"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué batalla naval fue decisiva en 480 a.C. contra Persia?",
+    "options": [
+      "Platea",
+      "Artemisio",
+      "Maratón",
+      "Salamina"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué documento inglés de 1215 limitó el poder real?",
+    "options": [
+      "Bill of Rights",
+      "Acta de Habeas Corpus",
+      "Carta Magna",
+      "Petición de Derechos"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué líder turco fundó la República en 1923?",
+    "options": [
+      "Enver Pasha",
+      "Abdulhamid II",
+      "Atatürk",
+      "Talat Pasha"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué rey francés fue guillotinado en 1793?",
+    "options": [
+      "Luis XVI",
+      "Luis XIV",
+      "Luis XV",
+      "Carlos X"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué civilización inventó el cero (América)?",
+    "options": [
+      "Olmeca",
+      "Maya",
+      "Azteca",
+      "Inca"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué guerra (1839–1842) involucró opio y China?",
+    "options": [
+      "Segunda del Opio",
+      "Primera Guerra del Opio",
+      "Taiping",
+      "Boxers"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué expedición polaca descifró Enigma antes de Bletchley?",
+    "options": [
+      "Deklaracja",
+      "Biuro Szyfrów",
+      "AK",
+      "Sonderkommando"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué rey asirio construyó la biblioteca de Nínive?",
+    "options": [
+      "Senaquerib",
+      "Sargón II",
+      "Asurbanipal",
+      "Asarhaddón"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  }
+]

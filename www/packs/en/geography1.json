@@ -1,0 +1,662 @@
+[
+  {
+    "q": "What is the capital of France?",
+    "options": [
+      "Marseille",
+      "Paris",
+      "Nice",
+      "Lyon"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which river flows through Egypt?",
+    "options": [
+      "Congo",
+      "Euphrates",
+      "Tigris",
+      "Nile"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the largest desert in the world?",
+    "options": [
+      "Sahara",
+      "Kalahari",
+      "Gobi",
+      "Atacama"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which ocean is the largest?",
+    "options": [
+      "Arctic",
+      "Indian",
+      "Pacific",
+      "Atlantic"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "In which continent is Brazil?",
+    "options": [
+      "Europe",
+      "Asia",
+      "South America",
+      "Africa"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the capital of Japan?",
+    "options": [
+      "Tokyo",
+      "Kyoto",
+      "Nagoya",
+      "Osaka"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which mountain range includes Everest?",
+    "options": [
+      "Alps",
+      "Himalayas",
+      "Rockies",
+      "Andes"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country is shaped like a boot?",
+    "options": [
+      "Italy",
+      "Greece",
+      "Portugal",
+      "Turkey"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the capital of Spain?",
+    "options": [
+      "Seville",
+      "Madrid",
+      "Valencia",
+      "Barcelona"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What sea separates Africa from Europe to the west?",
+    "options": [
+      "Black",
+      "Mediterranean",
+      "Red",
+      "Baltic"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country is an island and a continent?",
+    "options": [
+      "Iceland",
+      "Greenland",
+      "Australia",
+      "New Zealand"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the capital of Mexico?",
+    "options": [
+      "Puebla",
+      "Mexico City",
+      "Monterrey",
+      "Guadalajara"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which river flows through London?",
+    "options": [
+      "Danube",
+      "Thames",
+      "Seine",
+      "Rhine"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which lake is the largest by surface area?",
+    "options": [
+      "Victoria",
+      "Superior",
+      "Caspian",
+      "Baikal"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the capital of Argentina?",
+    "options": [
+      "Buenos Aires",
+      "Córdoba",
+      "Mendoza",
+      "Rosario"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country has Mount Fuji?",
+    "options": [
+      "China",
+      "South Korea",
+      "Taiwan",
+      "Japan"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What strait separates Spain and Morocco?",
+    "options": [
+      "Gibraltar",
+      "Dardanelles",
+      "Bosphorus",
+      "Malacca"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which continent is the most populous?",
+    "options": [
+      "Africa",
+      "Europe",
+      "America",
+      "Asia"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which country has the Amazon?",
+    "options": [
+      "Colombia",
+      "Venezuela",
+      "Brazil",
+      "Peru"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "Which capital is on the banks of the Seine?",
+    "options": [
+      "Prague",
+      "Berlin",
+      "Rome",
+      "Paris"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "What is the capital of Canada?",
+    "options": [
+      "Vancouver",
+      "Montreal",
+      "Ottawa",
+      "Toronto"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country is landlocked?",
+    "options": [
+      "Peru",
+      "Chile",
+      "Bolivia",
+      "Ecuador"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "In which country is the city of Dubrovnik?",
+    "options": [
+      "Montenegro",
+      "Slovenia",
+      "Croatia",
+      "Serbia"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which river is the longest in the world (disputed)?",
+    "options": [
+      "Nile",
+      "Mississippi",
+      "Yangtze",
+      "Amazon"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which desert is in China and Mongolia?",
+    "options": [
+      "Sahara",
+      "Gobi",
+      "Taklamakan",
+      "Kalahari"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country has its capital in Addis Ababa?",
+    "options": [
+      "Eritrea",
+      "Sudan",
+      "Somalia",
+      "Ethiopia"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which ocean bathes the east coast of Africa?",
+    "options": [
+      "Indian",
+      "Arctic",
+      "Pacific",
+      "Atlantic"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "In which mountain range is Aconcagua?",
+    "options": [
+      "Alps",
+      "Caucasus",
+      "Rockies",
+      "Andes"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country has the most islands in the world?",
+    "options": [
+      "Canada",
+      "Finland",
+      "Norway",
+      "Sweden"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which capital is on the banks of the Danube?",
+    "options": [
+      "Budapest",
+      "Vienna",
+      "Belgrade",
+      "Bratislava"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which African country was called Zaire?",
+    "options": [
+      "Nigeria",
+      "Ghana",
+      "Congo",
+      "DR Congo"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is the capital of Morocco?",
+    "options": [
+      "Casablanca",
+      "Rabat",
+      "Fez",
+      "Marrakech"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which island is shared by Haiti and the Dominican Republic?",
+    "options": [
+      "Cuba",
+      "Hispaniola",
+      "Jamaica",
+      "Puerto Rico"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which sea surrounds Saudi Arabia to the west?",
+    "options": [
+      "Persian Gulf",
+      "Arabian Sea",
+      "Red Sea",
+      "Mediterranean"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which European country uses the zloty?",
+    "options": [
+      "Slovakia",
+      "Czechia",
+      "Hungary",
+      "Poland"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is the capital of New Zealand?",
+    "options": [
+      "Wellington",
+      "Hamilton",
+      "Christchurch",
+      "Auckland"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country is known as the Netherlands?",
+    "options": [
+      "Denmark",
+      "Belgium",
+      "Luxembourg",
+      "Holland (Netherlands)"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which peninsula do Spain and Portugal share?",
+    "options": [
+      "Scandinavian",
+      "Iberian",
+      "Italian",
+      "Balkan"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country has its capital in Ankara?",
+    "options": [
+      "Armenia",
+      "Turkey",
+      "Georgia",
+      "Greece"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "What is the capital of Nigeria?",
+    "options": [
+      "Ibadan",
+      "Lagos",
+      "Abuja",
+      "Kano"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "Which country has its capital in Nur-Sultan (Astana)?",
+    "options": [
+      "Kyrgyzstan",
+      "Kazakhstan",
+      "Uzbekistan",
+      "Turkmenistan"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which river forms a large part of the border between the US and Mexico?",
+    "options": [
+      "Rio Grande",
+      "Colorado",
+      "Arkansas",
+      "Gila"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which inland sea is drying up dramatically?",
+    "options": [
+      "Dead",
+      "Aral",
+      "Balaton",
+      "Caspian"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which Spanish enclave is in North Africa next to Morocco?",
+    "options": [
+      "Ceuta",
+      "Peñón de Vélez",
+      "Ifni",
+      "Melilla"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country has the unrecognized region of Transnistria?",
+    "options": [
+      "Bulgaria",
+      "Moldova",
+      "Ukraine",
+      "Romania"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which mountain is the highest outside of Asia?",
+    "options": [
+      "Elbrus",
+      "Denali",
+      "Aconcagua",
+      "Kilimanjaro"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which ocean current warms Western Europe?",
+    "options": [
+      "Humboldt",
+      "Benguela",
+      "Kuroshio",
+      "Gulf Stream"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which capital is at the highest altitude in the world?",
+    "options": [
+      "Thimphu",
+      "Quito",
+      "La Paz (seat of government)",
+      "Addis Ababa"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country owns Kaliningrad?",
+    "options": [
+      "Lithuania",
+      "Poland",
+      "Russia",
+      "Germany"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which lake is the deepest in the world?",
+    "options": [
+      "Baikal",
+      "Tanganyika",
+      "Superior",
+      "Caspian"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which strait connects the Atlantic and the Mediterranean?",
+    "options": [
+      "Gibraltar",
+      "Skagerrak",
+      "Bosphorus",
+      "Dardanelles"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which sea is between Europe and Asia with an outlet to the Black Sea?",
+    "options": [
+      "North",
+      "Sea of Marmara",
+      "Aegean",
+      "Baltic"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which African country was not formally colonized?",
+    "options": [
+      "Botswana",
+      "Morocco",
+      "Ethiopia",
+      "Liberia"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which cold desert is found in Mongolia and China?",
+    "options": [
+      "Gobi",
+      "Atacama",
+      "Taklamakan",
+      "Patagonia"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which river flows through Paris and Le Havre?",
+    "options": [
+      "Loire",
+      "Garonne",
+      "Rhône",
+      "Seine"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which capital is in the Mekong Delta?",
+    "options": [
+      "Hanoi",
+      "Phnom Penh",
+      "Vientiane",
+      "None (Ho Chi Minh is not a capital)"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which country has the Deccan Plateau?",
+    "options": [
+      "Bangladesh",
+      "India",
+      "Pakistan",
+      "Nepal"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which peak is the highest in Africa?",
+    "options": [
+      "Kenya",
+      "Stanley",
+      "Kilimanjaro",
+      "Meru"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which region is known as the Horn of Africa?",
+    "options": [
+      "Uganda, Rwanda",
+      "Kenya, Tanzania",
+      "Somalia, Ethiopia, Eritrea, Djibouti",
+      "Sudan, South Sudan"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "Which sea separates Arabia from Iran?",
+    "options": [
+      "Persian Gulf",
+      "Arabian Sea",
+      "Red Sea",
+      "Gulf of Oman"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  }
+]

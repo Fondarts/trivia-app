@@ -1,0 +1,92 @@
+{
+  "name": "Quizlo! - Trivia Game",
+  "short_name": "Quizlo!",
+  "description": "¡El juego de trivia más divertido! Pon a prueba tus conocimientos con miles de preguntas.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment", "education"],
+  "shortcuts": [
+    {
+      "name": "Jugar Solo",
+      "short_name": "Solo",
+      "description": "Iniciar una partida individual",
+      "url": "./index.html?mode=rounds",
+      "icons": [{ "src": "./assets/icons/solo.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Modo Aventura",
+      "short_name": "Aventura",
+      "description": "Explorar el modo aventura",
+      "url": "./index.html?mode=adventure",
+      "icons": [{ "src": "./assets/icons/adventure.svg", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/home.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Pantalla principal"
+    },
+    {
+      "src": "assets/screenshots/game.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Jugando una partida"
+    }
+  ]
+}

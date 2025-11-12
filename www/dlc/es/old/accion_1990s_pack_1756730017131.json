@@ -1,0 +1,50 @@
+[
+  {
+    "q": "¿Quién protagonizó キル?",
+    "options": [
+      "Bruce Willis",
+      "Arnold Schwarzenegger",
+      "Will Smith",
+      "Tom Cruise"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó キル?",
+    "options": [
+      "1997",
+      "1991",
+      "1995",
+      "1998"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "キル",
+      "Terminator 2",
+      "Face/Off",
+      "Con Air"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "キル",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  }
+]

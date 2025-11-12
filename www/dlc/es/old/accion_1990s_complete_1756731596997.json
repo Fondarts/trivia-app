@@ -1,0 +1,218 @@
+[
+  {
+    "q": "¿En qué año se estrenó 'Independence Day'?",
+    "options": [
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió la película 'Alien: Resurrección'?",
+    "options": [
+      "Jean-Pierre Jeunet",
+      "Danny Cannon",
+      "Ridley Scott",
+      "James Cameron"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Batman y Robin",
+      "El profesional",
+      "Terminator 2: Judgment Day",
+      "Men in Black"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó 'El quinto elemento'?",
+    "options": [
+      "1997",
+      "1998",
+      "1999",
+      "2000"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó 'El profesional'?",
+    "options": [
+      "1994",
+      "1995",
+      "1996",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Men in Black",
+      "Terminator 2: Judgment Day",
+      "Batman vuelve",
+      "Alien: Resurrección"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/06.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: Judgment Day",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/05.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó la película 'La momia'?",
+    "options": [
+      "Brendan Fraser",
+      "Rachel Weisz",
+      "John Hannah",
+      "Arnold Schwarzenegger"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó la película 'Desafío total'?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Sylvester Stallone",
+      "Bruce Willis",
+      "Dolph Lundgren"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió la película 'Stargate: Puerta a las estrellas'?",
+    "options": [
+      "Roland Emmerich",
+      "Dean Devlin",
+      "Ridley Scott",
+      "Quentin Tarantino"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta imagen?",
+    "options": [
+      "Stargate: Puerta a las estrellas",
+      "El profesional",
+      "Terminator 2: Judgment Day",
+      "Men in Black"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/04.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Men in Black",
+      "Terminator 2: Judgment Day",
+      "Batman vuelve",
+      "Alien: Resurrección"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó 'Batman vuelve'?",
+    "options": [
+      "1992",
+      "1993",
+      "1994",
+      "1995"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó la película 'El profesional'?",
+    "options": [
+      "Al Pacino",
+      "Robert De Niro",
+      "Danny DeVito",
+      "Val Kilmer"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó The Matrix?",
+    "options": [
+      "1999",
+      "1998",
+      "2000",
+      "1997"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: Judgment Day",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó 'Independence Day'?",
+    "options": [
+      "1996",
+      "1997",
+      "1998",
+      "1999"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió la película 'Heat'?",
+    "options": [
+      "Michael Mann",
+      "Quentin Tarantino",
+      "Steven Spielberg",
+      "Martin Scorsese"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  }
+]

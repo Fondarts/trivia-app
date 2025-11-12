@@ -1,0 +1,254 @@
+[
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Terminator 2: El juicio final",
+      "Die Hard",
+      "Speed",
+      "The Rock"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Identifica esta película?",
+    "options": [
+      "La momia",
+      "El profesional (Léon)",
+      "En tierra peligrosa 2",
+      "Heat"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/02.jpg"
+  },
+  {
+    "q": "¿Quién protagonizó Batman y Robin?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "George Clooney",
+      "Chris O'Donnell",
+      "Will Smith"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó El profesional (Léon)?",
+    "options": [
+      "Jean Reno",
+      "Gary Oldman",
+      "Natalie Portman",
+      "Tim Roth"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió Braveheart?",
+    "options": [
+      "Mel Gibson",
+      "Steven Spielberg",
+      "Quentin Tarantino",
+      "Christopher Nolan"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Desafío total?",
+    "options": [
+      "Sylvester Stallone",
+      "Arnold Schwarzenegger",
+      "Bruce Willis",
+      "Dolph Lundgren"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Terminator 2: El juicio final?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Robert De Niro",
+      "Tom Cruise",
+      "Harrison Ford"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿De qué película es esta imagen?",
+    "options": [
+      "キル",
+      "Misión imposible",
+      "Matrix",
+      "Terminator 2: El juicio final"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Independence Day?",
+    "options": [
+      "1996",
+      "1995",
+      "1994",
+      "1993"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó The Matrix?",
+    "options": [
+      "1999",
+      "1998",
+      "2000",
+      "1997"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Hora punta?",
+    "options": [
+      "Robert De Niro",
+      "Al Pacino",
+      "Danny DeVito",
+      "Val Kilmer"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Die Hard?",
+    "options": [
+      "1996",
+      "1995",
+      "1994",
+      "1993"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién dirigió Heat?",
+    "options": [
+      "Michael Mann",
+      "Quentin Tarantino",
+      "Christopher Nolan",
+      "Martin Scorsese"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó El quinto elemento?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿Quién protagonizó Dos policías rebeldes?",
+    "options": [
+      "Will Smith",
+      "Martin Lawrence",
+      "Denzel Washington",
+      "Samuel L. Jackson"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "Batman vuelve",
+      "Batman y Robin",
+      "Die Hard",
+      "Speed"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/03.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó Men in Black?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Stargate: Puerta a las estrellas?",
+    "options": [
+      "1994",
+      "1995",
+      "1996",
+      "1997"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Alien: Resurrección?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Batman y Robin?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  },
+  {
+    "q": "¿En qué año se estrenó Batman vuelve?",
+    "options": [
+      "1997",
+      "1996",
+      "1995",
+      "1994"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": null
+  }
+]

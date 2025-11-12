@@ -1,0 +1,382 @@
+[
+  {
+    "q": "¿En qué año se estrenó el anime 'Neon Genesis Evangelion'?",
+    "options": ["1993", "1995", "1997", "1999"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cómo se llama el protagonista de 'Naruto'?",
+    "options": ["Naruto Uzumaki", "Sasuke Uchiha", "Itachi Uchiha", "Kakashi Hatake"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué tripulación lidera Monkey D. Luffy?",
+    "options": ["Piratas de Barbanegra", "Piratas de Big Mom", "Piratas del Sombrero de Paja", "Piratas de Shanks"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cuál es el protagonista de 'Death Note'?",
+    "options": ["Light Yagami", "Shinji Ikari", "Eren Yeager", "Edward Elric"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué deporte practican en 'Haikyu!!'?",
+    "options": ["Baloncesto", "Fútbol", "Vóley", "Béisbol"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿De qué estudio es la película 'Spirited Away'?",
+    "options": ["Madhouse", "Bones", "Studio Ghibli", "MAPPA"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cómo se llama el hermano menor de Edward en 'Fullmetal Alchemist'?",
+    "options": ["Roy", "Alphonse", "Ling", "Hohenheim"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién es el héroe nº 1 al inicio de 'My Hero Academia'?",
+    "options": ["Endeavor", "All Might", "Hawks", "Best Jeanist"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "En 'Attack on Titan', ¿cómo se apellida Eren?",
+    "options": ["Ackerman", "Reiss", "Braun", "Yeager"],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué instrumento toca Hitori en 'Bocchi the Rock!'?",
+    "options": ["Bajo", "Batería", "Guitarra", "Teclado"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "En 'Demon Slayer', ¿cómo se llama la hermana de Tanjiro?",
+    "options": ["Kanao", "Shinobu", "Nezuko", "Mitsuri"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Cuál es el nombre del shinigami que acompaña a Light?",
+    "options": ["Rem", "Ryuk", "Sidoh", "Gelus"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué club escolar protagoniza 'K-On!'?",
+    "options": ["Cocina", "Coro", "Light Music Club", "Fotografía"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿De qué color es el pelo de Goku en su forma base?",
+    "options": ["Negro", "Azul", "Rubio", "Plateado"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "En 'One Punch Man', ¿cómo se llama el discípulo cyborg de Saitama?",
+    "options": ["Metal Bat", "Genos", "King", "Bang"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Quién es el capitán del Escuadrón de Reconocimiento en 'AOT' durante gran parte de la serie?",
+    "options": ["Erwin Smith", "Hange Zoë", "Levi Ackerman", "Dot Pixis"],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "¿Qué juego mortal protagoniza 'Sword Art Online' en su primera temporada?",
+    "options": ["ALfheim Online", "Gun Gale Online", "SAO (Aincrad)", "Ordinal Scale"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "En 'Jujutsu Kaisen', ¿quién aloja a Sukuna?",
+    "options": ["Megumi Fushiguro", "Satoru Gojo", "Yuji Itadori", "Nobara Kugisaki"],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": ""
+  },
+  {
+    "q": "En 'Cowboy Bebop', ¿cuál es el nombre del corgi?",
+    "options": ["Ain", "Ein", "Ion", "Ian"],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": ""
+  },
+
+  {
+    "q": "En 'Steins;Gate', ¿cuál es el apodo de Rintaro Okabe?",
+    "options": ["Mad Scientist", "El Profe", "El Ingeniero", "Kyouma Phoenix"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué estudio animó 'Attack on Titan' Temporada 1?",
+    "options": ["Wit Studio", "MAPPA", "Production I.G", "A-1 Pictures"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Fullmetal Alchemist: Brotherhood', ¿cuál es la ley prohibida que rompen los hermanos Elric?",
+    "options": ["Transmutación de oro", "Transmutación humana", "Creación de homúnculos", "Fusión con quimeras"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Director de 'Ghost in the Shell' (1995):",
+    "options": ["Mamoru Oshii", "Satoshi Kon", "Hideaki Anno", "Rintaro"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Hunter x Hunter' (2011), ¿qué examen rinden al inicio?",
+    "options": ["Examen de Hechiceros", "Examen de Cazador", "Examen de Alquimistas", "Examen de Magos"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué mecha pilota Shinji en 'Evangelion'?",
+    "options": ["EVA-00", "EVA-01", "EVA-02", "EVA-03"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'One Piece', ¿quién es el médico de la tripulación?",
+    "options": ["Franky", "Robin", "Brook", "Chopper"],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué peculiaridad tiene Tohru Honda en 'Fruits Basket'?",
+    "options": ["Ve fantasmas", "Vive con la familia Sohma", "Puede transformarse en gato", "Es maga"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Gurren Lagann', ¿cuál es el lema recurrente de Kamina?",
+    "options": ["¡Cree en ti mismo!", "¡Quién demonios te crees que soy!", "¡Poder del amor!", "¡Nunca rendirse!"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Psycho-Pass', el Sybil System determina:",
+    "options": ["Nivel de talento", "Índice criminal", "Compatibilidad amorosa", "Nivel de IQ"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "Película de Hosoda con videojuegos y mundos virtuales (2009):",
+    "options": ["Mirai", "Belle", "The Boy and the Beast", "Summer Wars"],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué ciudad es clave en 'Durarara!!'?",
+    "options": ["Shibuya", "Shinjuku", "Ikebukuro", "Akihabara"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Made in Abyss', ¿cómo se llama la maldición que afecta al ascender?",
+    "options": ["La Marcha", "La Carga", "La Maldición del Abismo", "La Fiebre"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Vinland Saga', Thorfinn busca venganza por la muerte de:",
+    "options": ["Su hermano", "Su amigo", "Su padre", "Su madre"],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Kaguya-sama', el conflicto central es:",
+    "options": ["Guerra de confesiones de amor", "Rivalidad deportiva", "Concurso de bandas", "Debate político"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Your Lie in April', ¿qué instrumento toca Arima Kousei?",
+    "options": ["Violín", "Piano", "Chelo", "Clarinete"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "¿Qué sabor obsesiona a L en 'Death Note'?",
+    "options": ["Fresas", "Pastel de queso", "Chocolate", "Donas"],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": ""
+  },
+  {
+    "q": "En 'Re:Zero', la habilidad de Subaru es:",
+    "options": ["Volver al pasado (Return by Death)", "Teletransportación", "Control de sombras", "Leer pensamientos"],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": ""
+  },
+
+  {
+    "q": "¿Qué director creó 'Paranoia Agent'?",
+    "options": ["Satoshi Kon", "Masaaki Yuasa", "Kunihiko Ikuhara", "Shinichirō Watanabe"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "La técnica visual de 'Ping Pong The Animation' es de:",
+    "options": ["Hiroyuki Okiura", "Masaaki Yuasa", "Tatsuyuki Nagai", "Naoko Yamada"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué arco de 'One Piece' presenta a la CP9?",
+    "options": ["Alabasta", "Skypiea", "Enies Lobby/Water 7", "Marineford"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "En 'Berserk', el Eclipse es:",
+    "options": ["Un ritual para crear apóstoles", "Una guerra", "Un torneo", "Una maldición menor"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué autor es el creador de 'Hunter x Hunter' y 'Yu Yu Hakusho'?",
+    "options": ["Eiichiro Oda", "Yoshihiro Togashi", "Naoki Urasawa", "Hajime Isayama"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "En 'AOT', el Titán Fundador originalmente pertenece a:",
+    "options": ["Fritz/Reiss", "Yeager", "Tybur", "Ackerman"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué anime de 1997 reinterpreta la fama e identidad en clave thriller?",
+    "options": ["Serial Experiments Lain", "Boogiepop Phantom", "Perfect Blue", "Texhnolyze"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "En 'Steins;Gate', la organización enemiga que espía el laboratorio es:",
+    "options": ["SEELE", "Celty", "SERN", "WILLE"],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director es conocido por 'Revolutionary Girl Utena'?",
+    "options": ["Kunihiko Ikuhara", "Hideaki Anno", "Shingo Natsume", "Tetsurō Araki"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Película de Satoshi Kon que inspiró 'Inception':",
+    "options": ["Tokyo Godfathers", "Paprika", "Perfect Blue", "Millennium Actress"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué director fundó Science SARU y dirigió 'Devilman Crybaby'?",
+    "options": ["Masaaki Yuasa", "Naoko Yamada", "Yuzuru Tachikawa", "Hiroshi Nagahama"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "En 'Hajime no Ippo', el estilo de Ippo se caracteriza por:",
+    "options": ["Out-boxer", "In-fighter con peek-a-boo", "Counter puro", "Swarmer lateral"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "En 'Ping Pong', el apodo de Kong Wenge es:",
+    "options": ["China", "Dragon", "Peco", "Smile"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Anime de 2003 que reinterpreta 'Astro Boy' con tono noir:",
+    "options": ["Pluto", "Metropolis", "Texhnolyze", "Astro 2003"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "En 'Serial Experiments Lain', 'The Wired' alude a:",
+    "options": ["Un MMORPG", "Una red global tipo Internet", "Un metaverso", "Una IA militar"],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "Anime cyberpunk de 1998 ambientado en ciudad subterránea:",
+    "options": ["Texhnolyze", "Ergo Proxy", "Blame!", "Lain"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  },
+  {
+    "q": "¿Qué estudio animó 'Fate/Zero' y 'Demon Slayer: Mugen Train'?",
+    "options": ["ufotable", "A-1 Pictures", "Wit Studio", "Bones"],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": ""
+  }
+]

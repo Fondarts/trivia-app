@@ -1,0 +1,662 @@
+[
+  {
+    "q": "¿Quién interpretó a Jack Dawson en *Titanic*?",
+    "options": [
+      "Tom Cruise",
+      "Matt Damon",
+      "Brad Pitt",
+      "Leonardo DiCaprio"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué película animada aparece el personaje Woody?",
+    "options": [
+      "Toy Story",
+      "Monsters Inc",
+      "Shrek",
+      "Frozen"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién dirige *Jurassic Park* (1993)?",
+    "options": [
+      "James Cameron",
+      "Steven Spielberg",
+      "George Lucas",
+      "Peter Jackson"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué actor interpreta a Iron Man en Marvel?",
+    "options": [
+      "Mark Ruffalo",
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Chris Hemsworth"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué saga pertenece Darth Vader?",
+    "options": [
+      "Star Wars",
+      "Alien",
+      "Matrix",
+      "Star Trek"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué película popularizó 'Yo soy tu padre'?",
+    "options": [
+      "El Imperio Contraataca",
+      "El Retorno del Jedi",
+      "Una Nueva Esperanza",
+      "Rogue One"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué actor interpreta a Neo en *Matrix*?",
+    "options": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Matt Damon",
+      "Hugo Weaving"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué superhéroe es 'El Caballero Oscuro'?",
+    "options": [
+      "Batman",
+      "Spider-Man",
+      "Superman",
+      "Iron Man"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién interpretó a Hermione Granger?",
+    "options": [
+      "Keira Knightley",
+      "Emma Stone",
+      "Emma Watson",
+      "Natalie Portman"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué película presenta el planeta Pandora?",
+    "options": [
+      "Interstellar",
+      "Guardians of the Galaxy",
+      "Avatar",
+      "Dune"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué país transcurre *Coco*?",
+    "options": [
+      "Brasil",
+      "México",
+      "España",
+      "Argentina"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué personaje dice 'Hasta la vista, baby'?",
+    "options": [
+      "RoboCop",
+      "Rambo",
+      "Terminator",
+      "Predator"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién dirigió *E.T.*?",
+    "options": [
+      "Ron Howard",
+      "Steven Spielberg",
+      "James Cameron",
+      "George Lucas"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué estudio hizo *Toy Story*?",
+    "options": [
+      "Illumination",
+      "DreamWorks",
+      "Pixar",
+      "Blue Sky"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué héroe usa el Batimóvil?",
+    "options": [
+      "Superman",
+      "Batman",
+      "Flash",
+      "Iron Man"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué actriz protagoniza *La La Land* junto a Ryan Gosling?",
+    "options": [
+      "Scarlett Johansson",
+      "Anne Hathaway",
+      "Emma Stone",
+      "Brie Larson"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué tiburón aterrorizó Amity Island?",
+    "options": [
+      "Bruce (Jaws)",
+      "Megalodón",
+      "Tiburón Martillo",
+      "Tiburón Blanco"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué película inicia con un león rugiendo de MGM?",
+    "options": [
+      "Varias de MGM",
+      "Solo *Ben-Hur*",
+      "Solo *Rocky*",
+      "Solo *El Rey León*"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué película de Pixar trata sobre emociones?",
+    "options": [
+      "Up",
+      "Soul",
+      "Intensa-Mente",
+      "Coco"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Quién dirigió *Pulp Fiction*?",
+    "options": [
+      "Quentin Tarantino",
+      "David Fincher",
+      "Ridley Scott",
+      "Christopher Nolan"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué año se estrenó *La Comunidad del Anillo*?",
+    "options": [
+      "2003",
+      "2005",
+      "1999",
+      "2001"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién compuso la música de *Star Wars*?",
+    "options": [
+      "Ennio Morricone",
+      "Hans Zimmer",
+      "Howard Shore",
+      "John Williams"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Cuál fue el primer largometraje de Pixar?",
+    "options": [
+      "Monsters Inc.",
+      "Bichos",
+      "Buscando a Nemo",
+      "Toy Story"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién protagonizó *Forrest Gump*?",
+    "options": [
+      "Tom Hanks",
+      "Brad Pitt",
+      "Robin Williams",
+      "Matt Damon"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué película popularizó 'Say hello to my little friend'?",
+    "options": [
+      "Scarface",
+      "Heat",
+      "Goodfellas",
+      "The Godfather"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién interpretó al Joker en *The Dark Knight*?",
+    "options": [
+      "Joaquin Phoenix",
+      "Jack Nicholson",
+      "Jared Leto",
+      "Heath Ledger"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué film ganó el primer Óscar a Película Animada?",
+    "options": [
+      "Shrek",
+      "Buscando a Nemo",
+      "Toy Story",
+      "El Rey León"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué actriz protagonizó *Black Swan*?",
+    "options": [
+      "Natalie Portman",
+      "Anne Hathaway",
+      "Charlize Theron",
+      "Mila Kunis"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿En qué idioma está filmada *Parasite*?",
+    "options": [
+      "Chino Mandarín",
+      "Coreano",
+      "Inglés",
+      "Japonés"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué año se estrenó *Gladiator*?",
+    "options": [
+      "2002",
+      "2000",
+      "2001",
+      "1999"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién dirigió *La forma del agua*?",
+    "options": [
+      "Guillermo del Toro",
+      "Tim Burton",
+      "Jean-Pierre Jeunet",
+      "Alfonso Cuarón"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué actriz interpreta a Katniss Everdeen?",
+    "options": [
+      "Jennifer Lawrence",
+      "Margot Robbie",
+      "Kristen Stewart",
+      "Emma Stone"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué nave aparece en *Alien*?",
+    "options": [
+      "Nostromo",
+      "Discovery One",
+      "Serenity",
+      "Sulaco"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué director filmó planos largos en *Children of Men*?",
+    "options": [
+      "Alfonso Cuarón",
+      "Fincher",
+      "Iñárritu",
+      "PT Anderson"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué película de Nolan trata de sueños?",
+    "options": [
+      "Inception",
+      "Tenet",
+      "Memento",
+      "Insomnia"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué película ganó Mejor Película en 2017 (Óscar)?",
+    "options": [
+      "Moonlight",
+      "Manchester by the Sea",
+      "La La Land",
+      "Arrival"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Quién dirigió *Whiplash*?",
+    "options": [
+      "Denis Villeneuve",
+      "Greta Gerwig",
+      "Damien Chazelle",
+      "Barry Jenkins"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué film de 1999 presentó a Tyler Durden?",
+    "options": [
+      "The Sixth Sense",
+      "Matrix",
+      "American Beauty",
+      "Fight Club"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué director creó *Kill Bill*?",
+    "options": [
+      "Guy Ritchie",
+      "Quentin Tarantino",
+      "Robert Rodriguez",
+      "Wes Anderson"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Dónde transcurre *Blade Runner* (1982)?",
+    "options": [
+      "Tokio 2049",
+      "Los Ángeles 2019",
+      "Nueva York 2020",
+      "San Francisco 2001"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿En qué año se estrenó *Ciudadano Kane*?",
+    "options": [
+      "1941",
+      "1939",
+      "1950",
+      "1945"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué director soviético realizó *Stalker*?",
+    "options": [
+      "Dziga Vértov",
+      "Andréi Tarkovski",
+      "Mikhalkov",
+      "Eisenstein"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Quién interpretó a Salieri en *Amadeus*?",
+    "options": [
+      "Ian McKellen",
+      "F. Murray Abraham",
+      "Jeremy Irons",
+      "Tom Hulce"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Título original de *El viaje de Chihiro*?",
+    "options": [
+      "Mononoke Hime",
+      "Sen to Chihiro no Kamikakushi",
+      "Kaze no Tani no Naushika",
+      "Tonari no Totoro"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Qué director ganó la Palma por *Taxi Driver*?",
+    "options": [
+      "Martin Scorsese",
+      "Lumet",
+      "Cimino",
+      "Coppola"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Protagonista femenina de *Blue Velvet*?",
+    "options": [
+      "Juliette Binoche",
+      "Laura Dern",
+      "Sheryl Lee",
+      "Isabella Rossellini"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Cineasta de *Persona* y *Fanny y Alexander*?",
+    "options": [
+      "Bresson",
+      "Ingmar Bergman",
+      "Antonioni",
+      "Fellini"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Quién dirigió *El espejo*?",
+    "options": [
+      "Konchalovsky",
+      "Lars von Trier",
+      "Andréi Tarkovski",
+      "Dreyer"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Primer film con sonido sincronizado (popular)?",
+    "options": [
+      "The Jazz Singer (1927)",
+      "Metropolis",
+      "Wings",
+      "Nosferatu"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Director de *Arca Rusa* (plano secuencia)?",
+    "options": [
+      "Tarkovski",
+      "Aleksandr Sokúrov",
+      "Mikhalkov",
+      "Parajanov"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Actriz en *Anticristo* (2009)?",
+    "options": [
+      "Tilda Swinton",
+      "Nicole Kidman",
+      "Charlotte Gainsbourg",
+      "Björk"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Film de 2014 simulado en un plano?",
+    "options": [
+      "Birdman",
+      "Rope",
+      "Victoria",
+      "1917"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Director de *Cuentos de Tokio*?",
+    "options": [
+      "Kore-eda",
+      "Yasujirō Ozu",
+      "Kurosawa",
+      "Mizoguchi"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Guionista de *Chinatown*?",
+    "options": [
+      "William Goldman",
+      "Robert Towne",
+      "Roman Polanski",
+      "Coppola"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Director de *La doble vida de Verónica*?",
+    "options": [
+      "Malle",
+      "Krzysztof Kieślowski",
+      "Godard",
+      "Lelouch"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Película de Béla Tarr de 7+ horas?",
+    "options": [
+      "Sátántangó",
+      "Werckmeister Harmonies",
+      "The Turin Horse",
+      "Damnation"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Director de *El caballo de Turín*?",
+    "options": [
+      "Nemes",
+      "Jancsó",
+      "Béla Tarr",
+      "Szabó"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Año de *El acorazado Potemkin*?",
+    "options": [
+      "1930",
+      "1927",
+      "1925",
+      "1919"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Director de *El sabor de las cerezas*?",
+    "options": [
+      "Asghar Farhadi",
+      "Majid Majidi",
+      "Jafar Panahi",
+      "Abbas Kiarostami"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "¿Protagonista de *El topo* (1970) de Jodorowsky?",
+    "options": [
+      "Claudio Brook",
+      "Alejandro Jodorowsky",
+      "Fernando Casanova",
+      "Emilio Fernández"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  }
+]

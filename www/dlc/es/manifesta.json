@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "generated": "2025-08-29T18:00:00.000Z",
+  "totalPacks": 3,
+  "totalQuestions": 36,
+  "packs": [
+    {
+      "id": "cine_1990s_pack",
+      "name": "Cine 1990s Pack",
+      "description": "Pack de trivia con preguntas sobre películas de acción de los años 90",
+      "file": "cine_1990s_pack.json",
+      "questions": 12,
+      "difficulty": {
+        "easy": 4,
+        "medium": 4,
+        "hard": 4
+      },
+      "categories": {
+        "visual": 6,
+        "knowledge": 6
+      },
+      "version": "1.0.0",
+      "created": "2025-08-29T18:00:00.000Z"
+    },
+    {
+      "id": "cine_90s_pack",
+      "name": "Cine 90s Pack",
+      "description": "Pack de trivia sobre películas de los años 90",
+      "file": "cine_90s_pack.json",
+      "questions": 12,
+      "difficulty": {
+        "easy": 4,
+        "medium": 4,
+        "hard": 4
+      },
+      "categories": {
+        "visual": 6,
+        "knowledge": 6
+      },
+      "version": "1.0.0",
+      "created": "2025-08-29T17:00:00.000Z"
+    },
+    {
+      "id": "ciencia_basica_pack",
+      "name": "Ciencia Básica Pack",
+      "description": "Pack de trivia con preguntas de ciencia básica",
+      "file": "ciencia_basica_pack.json",
+      "questions": 12,
+      "difficulty": {
+        "easy": 5,
+        "medium": 4,
+        "hard": 3
+      },
+      "categories": {
+        "visual": 2,
+        "knowledge": 10
+      },
+      "version": "1.0.0",
+      "created": "2025-08-29T16:00:00.000Z"
+    }
+  ]
+}

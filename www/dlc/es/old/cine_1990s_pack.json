@@ -1,0 +1,48 @@
+[
+  {
+    "q": "¿Quiénes son los protagonistas de la película 'キル'?",
+    "options": [
+      "Tadanobu Asano, Rinko Kikuchi, Shinya Tsukamoto",
+      "Takashi Miike, Rie Inagaki, Tetsuya Nakamura"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿Quién dirigió la película 'キル'?",
+    "options": [
+      "Takashi Miike",
+      "Hideo Nakata",
+      "Shinya Tsukamoto",
+      "Kazuhisa Takenouchi"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿En qué año se estrenó キル?",
+    "options": [
+      "1997",
+      "1991",
+      "1988",
+      "1995"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "img/01.jpg"
+  },
+  {
+    "q": "¿A qué película pertenece esta escena?",
+    "options": [
+      "キル",
+      "Terminator 2",
+      "Die Hard",
+      "Speed"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "img/01.jpg"
+  }
+]

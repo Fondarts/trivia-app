@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "cine_90s_es_v1",
+      "title": "Cine de los 90",
+      "description": "Clásicos noventeros: directores, premios y tramas.",
+      "category": "movies",
+      "count": 6,
+      "price": "Gratis (dev)",
+      "version": 1,
+      "files": [
+        "cine_90s_pack.json"
+      ]
+    },
+    {
+      "id": "ciencia_basica_es_v1",
+      "title": "Ciencia Básica",
+      "description": "Física y biología nivel general.",
+      "category": "science",
+      "count": 4,
+      "price": "Gratis (dev)",
+      "version": 1,
+      "files": [
+        "ciencia_basica_pack.json"
+      ]
+    },
+    {
+      "id": "cine_1990s_pack",
+      "title": "Cine 1990s Pack",
+      "description": "Física y biología nivel general.",
+      "category": "science",
+      "count": 12,
+      "price": "Gratis (dev)",
+      "version": 1,
+      "files": [
+        "cine_1990s_pack.json"
+      ]
+    },
+    {
+      "id": "comedias_1990s_pack",
+      "title": "Comedias 1990s Pack",
+      "description": "Física y biología nivel general.",
+      "category": "science",
+      "count": 12,
+      "price": "Gratis (dev)",
+      "version": 1,
+      "files": [
+        "comedias_1990s_pack.json"
+      ]
+    },
+    {
+      "id": "Accion_1990s_pack",
+      "title": "BBCION 1990s Pack",
+      "description": "Física y biología nivel general.",
+      "category": "science",
+      "count": 25,
+      "price": "Gratis (dev)",
+      "version": 1,
+      "files": [
+        "accion_1990s_1756749961379.json"
+      ]
+    }
+  ]
+}

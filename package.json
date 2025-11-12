@@ -1,0 +1,35 @@
+{
+  "name": "quizlo-trivia",
+  "version": "3.0.0",
+  "description": "Quizlo! - Juego de Trivia Gratis",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build completado. Los archivos están en la carpeta www/'",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:run": "npx cap run android",
+    "android:build": "cd android && ./gradlew assembleRelease",
+    "android:build:debug": "cd android && ./gradlew assembleDebug",
+    "serve": "npx http-server www -p 8080 -c-1"
+  },
+  "keywords": [
+    "trivia",
+    "quiz",
+    "game",
+    "android",
+    "pwa"
+  ],
+  "author": "Quizlo!",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/cli": "^5.5.0",
+    "@capacitor/android": "^5.5.0",
+    "@capacitor/core": "^5.5.0",
+    "@capacitor/app": "^5.0.6",
+    "@capacitor/splash-screen": "^5.0.6",
+    "@capacitor/keyboard": "^5.0.6",
+    "@capacitor/status-bar": "^5.0.6"
+  }
+}
+
+

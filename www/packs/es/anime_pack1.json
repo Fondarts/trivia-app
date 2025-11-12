@@ -1,0 +1,1509 @@
+[
+  {
+    "q": "¿Cuál es el nombre del protagonista de *My Hero Academia*?",
+    "options": [
+      "Katsuki Bakugo",
+      "Izuku Midoriya",
+      "Shoto Todoroki",
+      "All Might"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *One-Punch Man*, ¿cuántos golpes necesita Saitama para vencer a sus enemigos?",
+    "options": [
+      "Cien",
+      "Diez",
+      "Uno",
+      "Depende del enemigo"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Attack on Titan* (Shingeki no Kyojin), ¿contra qué luchan los protagonistas?",
+    "options": [
+      "Demonios",
+      "Ghouls",
+      "Aliens",
+      "Titanes"
+    ],
+    "answer": 3,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el objetivo principal de Tanjiro en *Demon Slayer: Kimetsu no Yaiba*?",
+    "options": [
+      "Convertirse en el pilar más fuerte",
+      "Vengar a su familia",
+      "Convertir a su hermana en humana",
+      "Encontrar las esferas del dragón"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cómo se llama el hijo de Naruto y protagonista de *Boruto: Naruto Next Generations*?",
+    "options": [
+      "Boruto Uzumaki",
+      "Kawaki",
+      "Sarada Uchiha",
+      "Mitsuki"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Jujutsu Kaisen*, ¿quién es el hechicero de grado especial considerado el más fuerte?",
+    "options": [
+      "Yuji Itadori",
+      "Megumi Fushiguro",
+      "Satoru Gojo",
+      "Kento Nanami"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué comida es la favorita de Beerus en *Dragon Ball Super*?",
+    "options": [
+      "Ramen",
+      "Pudding",
+      "Pizza",
+      "Tacos"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *One Piece*, ¿qué fruta del diablo comió Monkey D. Luffy?",
+    "options": [
+      "Mera Mera no Mi",
+      "Gomu Gomu no Mi",
+      "Ope Ope no Mi",
+      "Gura Gura no Mi"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué anime un grupo de niños superdotados intenta escapar de un orfanato?",
+    "options": [
+      "Made in Abyss",
+      "The Promised Neverland",
+      "Hunter x Hunter",
+      "Erased"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Tokyo Revengers*?",
+    "options": [
+      "Manjiro Sano",
+      "Ken Ryuguji",
+      "Takemichi Hanagaki",
+      "Keisuke Baji"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Spy x Family*, ¿cuál es la habilidad secreta de Anya Forger?",
+    "options": [
+      "Super fuerza",
+      "Leer la mente",
+      "Invisibilidad",
+      "Volar"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Haikyuu!!*, ¿qué posición juega el protagonista Shoyo Hinata?",
+    "options": [
+      "Levantador (Setter)",
+      "Bloqueador Central (Middle Blocker)",
+      "Libero",
+      "Atacante Lateral (Wing Spiker)"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué instrumento toca Kousei Arima en *Your Lie in April*?",
+    "options": [
+      "Violín",
+      "Piano",
+      "Guitarra",
+      "Flauta"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del gremio de magos al que pertenece Natsu Dragneel en *Fairy Tail*?",
+    "options": [
+      "Sabertooth",
+      "Blue Pegasus",
+      "Fairy Tail",
+      "Lamia Scale"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Food Wars! (Shokugeki no Soma)*, ¿cuál es la especialidad de Soma Yukihira?",
+    "options": [
+      "Repostería",
+      "Cocina italiana",
+      "Cocina creativa y casera",
+      "Cocina molecular"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Black Clover*?",
+    "options": [
+      "Yuno",
+      "Asta",
+      "Yami Sukehiro",
+      "Noelle Silva"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *The Seven Deadly Sins*, ¿cuál es el pecado capital de Meliodas?",
+    "options": [
+      "Gula",
+      "Envidia",
+      "Ira",
+      "Pereza"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *JoJo's Bizarre Adventure: Golden Wind*, ¿quién es el protagonista principal?",
+    "options": [
+      "Jotaro Kujo",
+      "Josuke Higashikata",
+      "Giorno Giovanna",
+      "Joseph Joestar"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Kakegurui*, ¿a qué se dedican los estudiantes de la Academia Privada Hyakkaou?",
+    "options": [
+      "A estudiar",
+      "A apostar",
+      "A luchar",
+      "A cocinar"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Fire Force*?",
+    "options": [
+      "Arthur Boyle",
+      "Takehisa Hinawa",
+      "Shinra Kusakabe",
+      "Akitaru Obi"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Assassination Classroom*, ¿a quién deben asesinar los estudiantes de la clase 3-E?",
+    "options": [
+      "Al director",
+      "A Koro-sensei",
+      "Al ministro de defensa",
+      "A un compañero"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *That Time I Got Reincarnated as a Slime*?",
+    "options": [
+      "Veldora",
+      "Rimuru Tempest",
+      "Benimaru",
+      "Shion"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Blue Lock*?",
+    "options": [
+      "Meguru Bachira",
+      "Rensuke Kunigami",
+      "Yoichi Isagi",
+      "Seishiro Nagi"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Chainsaw Man*, ¿cómo se llama el compañero demonio de Denji que es una chica?",
+    "options": [
+      "Aki Hayakawa",
+      "Power",
+      "Makima",
+      "Pochita"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Cyberpunk: Edgerunners*, ¿cuál es el nombre del protagonista?",
+    "options": [
+      "Maine",
+      "David Martinez",
+      "Pilar",
+      "Faraday"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre de la protagonista de *Komi Can't Communicate*?",
+    "options": [
+      "Najimi Osana",
+      "Shouko Komi",
+      "Hitomi Tadano",
+      "Ren Yamai"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Bocchi the Rock!*, ¿qué instrumento toca Hitori Gotoh?",
+    "options": [
+      "Bajo",
+      "Batería",
+      "Guitarra",
+      "Teclado"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Ranking of Kings*?",
+    "options": [
+      "Kage",
+      "Bojji",
+      "Daida",
+      "Hiling"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Beastars*, ¿cuál es la especie del protagonista Legoshi?",
+    "options": [
+      "Ciervo rojo",
+      "Lobo gris",
+      "Tigre de bengala",
+      "Oso pardo"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Aggretsuko*?",
+    "options": [
+      "Fenneko",
+      "Retsuko",
+      "Haida",
+      "Washimi"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Mushoku Tensei: Jobless Reincarnation*, ¿cómo se llama el protagonista?",
+    "options": [
+      "Paul Greyrat",
+      "Rudeus Greyrat",
+      "Ruijerd Superdia",
+      "Orsted"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre de la protagonista de *Lycoris Recoil*?",
+    "options": [
+      "Takina Inoue",
+      "Chisato Nishikigi",
+      "Mizuki Nakahara",
+      "Kurumi"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Horimiya*, ¿cuál es el nombre de la protagonista femenina?",
+    "options": [
+      "Tohru Honda",
+      "Kyoko Hori",
+      "Yuki Yoshikawa",
+      "Sakura Kouno"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Fruits Basket*, ¿en qué se transforma Kyo Soma cuando lo abraza alguien del sexo opuesto?",
+    "options": [
+      "En un ratón",
+      "En un gato",
+      "En un perro",
+      "En un dragón"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *To Your Eternity*?",
+    "options": [
+      "Fushi",
+      "Gugu",
+      "Parona",
+      "Hayase"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Odd Taxi*, ¿qué animal es el protagonista Odokawa?",
+    "options": [
+      "Un gato",
+      "Una morsa",
+      "Un mono",
+      "Un perro"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Somali and the Forest Spirit*?",
+    "options": [
+      "Somali",
+      "Golem",
+      "Shizuno",
+      "Yabashira"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Rent-A-Girlfriend*, ¿cuál es el nombre del protagonista?",
+    "options": [
+      "Kazuya Kinoshita",
+      "Shun Kuribayashi",
+      "Yoshiaki Kibe",
+      "Kazuomi Oshima"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *The Rising of the Shield Hero*?",
+    "options": [
+      "Naofumi Iwatani",
+      "Ren Amaki",
+      "Motoyasu Kitamura",
+      "Itsuki Kawasumi"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Don't Toy with Me, Miss Nagatoro*, ¿cuál es el pasatiempo del senpai de Nagatoro?",
+    "options": [
+      "El dibujo",
+      "La música",
+      "El deporte",
+      "La lectura"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Goblin Slayer*?",
+    "options": [
+      "Sacerdotisa",
+      "Goblin Slayer",
+      "Arquera elfa",
+      "Chamán enano"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Golden Kamuy*, ¿qué buscan el protagonista Saichi Sugimoto y la chica ainu Asirpa?",
+    "options": [
+      "Una ciudad perdida",
+      "Un tesoro de oro",
+      "Una cura para una enfermedad",
+      "Un artefacto mágico"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Megalobox*?",
+    "options": [
+      "Joe",
+      "Yuri",
+      "Nanbu",
+      "Sachio"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Cells at Work!*, ¿qué tipo de célula es la protagonista femenina?",
+    "options": [
+      "Un glóbulo blanco",
+      "Un glóbulo rojo",
+      "Una plaqueta",
+      "Un linfocito T"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Overlord*?",
+    "options": [
+      "Ainz Ooal Gown",
+      "Albedo",
+      "Shalltear Bloodfallen",
+      "Demiurge"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Konosuba*, ¿cuál es la diosa que acompaña a Kazuma a otro mundo?",
+    "options": [
+      "Eris",
+      "Aqua",
+      "Megumin",
+      "Darkness"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Erased*, ¿cuál es la habilidad del protagonista Satoru Fujinuma?",
+    "options": [
+      "Viajar en el tiempo",
+      "Leer la mente",
+      "Mover objetos con la mente",
+      "Ver el futuro"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre de la protagonista de *Violet Evergarden*?",
+    "options": [
+      "Cattleya Baudelaire",
+      "Violet Evergarden",
+      "Erica Brown",
+      "Iris Cannary"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué se basa el anime *Drifters*?",
+    "options": [
+      "Figuras históricas de diferentes épocas que luchan en un mundo de fantasía",
+      "Un grupo de amigos que viajan por el mundo",
+      "Una carrera de coches a través de Japón",
+      "Un grupo de estudiantes que intentan salvar su escuela"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Devilman Crybaby*?",
+    "options": [
+      "Ryo Asuka",
+      "Akira Fudo",
+      "Miki Makimura",
+      "Miko Kuroda"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Made in Abyss*, ¿a dónde viajan los protagonistas Riko y Reg?",
+    "options": [
+      "Al espacio",
+      "A un abismo gigante",
+      "A otro mundo",
+      "A través del tiempo"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre del protagonista de *Dororo*?",
+    "options": [
+      "Hyakkimaru",
+      "Dororo",
+      "Tahomaru",
+      "Jukai"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿En qué se especializa el club al que se unen los protagonistas de *Yuru Camp*?",
+    "options": [
+      "En acampar",
+      "En cocinar",
+      "En hacer senderismo",
+      "En pescar"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Cuál es el nombre de la protagonista de *A Place Further than the Universe*?",
+    "options": [
+      "Mari Tamaki",
+      "Shirase Kobuchizawa",
+      "Hinata Miyake",
+      "Yuzuki Shiraishi"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Re:Zero*, ¿cuál es la habilidad principal de Subaru Natsuki?",
+    "options": [
+      "Regresar de la muerte",
+      "Controlar el tiempo",
+      "Magia de hielo",
+      "Super velocidad"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Dr. Stone*, ¿cuál es el primer gran descubrimiento científico que Senku logra recrear?",
+    "options": [
+      "La pólvora",
+      "El fuego",
+      "El jabón",
+      "El vino"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Vinland Saga*, ¿cuál es el sueño de Thorfinn al inicio de la serie?",
+    "options": [
+      "Ser el mejor guerrero",
+      "Encontrar Vinland",
+      "Vengar a su padre",
+      "Ser un granjero"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Steins;Gate*, ¿qué objeto casero se utiliza para enviar mensajes al pasado?",
+    "options": [
+      "Una tostadora",
+      "Un teléfono móvil",
+      "Un microondas",
+      "Una televisión"
+    ],
+    "answer": 2,
+    "difficulty": "easy"
+  },
+  {
+    "q": "¿Qué es el 'One For All' en *My Hero Academia*?",
+    "options": [
+      "El nombre de la academia",
+      "Un don (quirk) que se puede transferir",
+      "El lema de los villanos",
+      "Un ataque especial de All Might"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Death Note*, ¿cuál es el nombre del shinigami que acompaña a Light Yagami?",
+    "options": [
+      "Rem",
+      "Ryuk",
+      "Sidoh",
+      "Gelus"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Neon Genesis Evangelion*, ¿cuál es el nombre del EVA que pilota Shinji Ikari?",
+    "options": [
+      "Unidad-00",
+      "Unidad-01",
+      "Unidad-02",
+      "Unidad-03"
+    ],
+    "answer": 1,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Parasyte: The Maxim*, ¿cómo se llama el parásito que infecta la mano derecha de Shinichi Izumi?",
+    "options": [
+      "Migi",
+      "Hidari",
+      "Uda",
+      "Tamiya"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Oshi no Ko*, ¿cuál es el secreto de los gemelos Aqua y Ruby Hoshino?",
+    "options": [
+      "Son la reencarnación de dos fans de su madre, la idol Ai Hoshino",
+      "Tienen poderes sobrenaturales",
+      "Son hijos de un dios",
+      "Son viajeros en el tiempo"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Kaiju No. 8*, ¿en qué se puede transformar el protagonista Kafka Hibino?",
+    "options": [
+      "En un kaiju",
+      "En un robot gigante",
+      "En un superhéroe",
+      "En un monstruo marino"
+    ],
+    "answer": 0,
+    "difficulty": "easy"
+  },
+  {
+    "q": "En *Mob Psycho 100*, ¿cómo se llama el mentor de Shigeo 'Mob' Kageyama?",
+    "options": [
+      "Teruki Hanazawa",
+      "Ritsu Kageyama",
+      "Dimple",
+      "Arataka Reigen"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En la película *Your Name* (Kimi no Na wa), ¿qué fenómeno natural es clave en la trama?",
+    "options": [
+      "Un terremoto",
+      "Un eclipse solar",
+      "El paso de un cometa",
+      "Una inundación"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Jujutsu Kaisen*, ¿cuál es la técnica de Megumi Fushiguro?",
+    "options": [
+      "Técnica de Discurso Maldito",
+      "Técnica de Diez Sombras",
+      "Técnica del Muñeco de Paja",
+      "Destello Oscuro"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En el arco de Wano de *One Piece*, ¿contra qué Emperador del Mar (Yonkou) lucha principalmente Luffy?",
+    "options": [
+      "Shanks",
+      "Big Mom",
+      "Kurohige",
+      "Kaido"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Naruto Shippuden*, ¿cuál es el nombre del equipo de Sasuke después de dejar a Orochimaru?",
+    "options": [
+      "Akatsuki",
+      "Taka",
+      "Hebi",
+      "Equipo 7"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Bleach*, ¿cuál es el nombre de la Zanpakuto de Ichigo Kurosaki?",
+    "options": [
+      "Zangetsu",
+      "Senbonzakura",
+      "Hyorinmaru",
+      "Sode no Shirayuki"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Fullmetal Alchemist: Brotherhood*, ¿cuál es el nombre del homúnculo que representa la soberbia?",
+    "options": [
+      "Envy",
+      "Pride",
+      "Wrath",
+      "Greed"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Cowboy Bebop*, ¿cuál es el nombre de la nave espacial de la tripulación?",
+    "options": [
+      "Serenity",
+      "Bebop",
+      "Outlaw Star",
+      "Swordfish II"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Samurai Champloo*, ¿quiénes son los dos samuráis que acompañan a Fuu en su viaje?",
+    "options": [
+      "Mugen y Jin",
+      "Spike y Jet",
+      "Gintoki y Hijikata",
+      "Kenshin y Sanosuke"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Gurren Lagann*, ¿cuál es el nombre del mecha principal que pilotan Simon y Kamina?",
+    "options": [
+      "Lagann",
+      "Gurren",
+      "Gurren Lagann",
+      "Arc-Gurren Lagann"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Kill la Kill*, ¿cuál es el nombre de la prenda divina que viste Ryuko Matoi?",
+    "options": [
+      "Senketsu",
+      "Junketsu",
+      "Bakuzan",
+      "Guts"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Anohana: The Flower We Saw That Day*, ¿cuál es el nombre de la chica que regresa como un fantasma?",
+    "options": [
+      "Naruko Anjou",
+      "Meiko Honma",
+      "Chiriko Tsurumi",
+      "Atsumu Matsuyuki"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Toradora!*, ¿cuáles son los apodos de los protagonistas Ryuji Takasu y Taiga Aisaka?",
+    "options": [
+      "El Dragón y el Tigre",
+      "El Perro y el Gato",
+      "El Sol y la Luna",
+      "El Ángel y el Demonio"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Clannad: After Story*, ¿cuál es el nombre de la hija de Tomoya y Nagisa?",
+    "options": [
+      "Ushio",
+      "Fuko",
+      "Kyou",
+      "Tomoyo"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Angel Beats!*, ¿dónde se desarrolla la historia?",
+    "options": [
+      "En un mundo de fantasía",
+      "En un purgatorio con forma de instituto",
+      "En un futuro distópico",
+      "En el Japón feudal"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Madoka Magica*, ¿qué es Kyubey?",
+    "options": [
+      "Un gato mágico",
+      "Un alienígena que concede deseos a cambio de que las chicas se conviertan en chicas mágicas",
+      "Un familiar de una bruja",
+      "Un ser humano con poderes mágicos"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Psycho-Pass*, ¿cómo se llama el sistema que mide el estado mental y la probabilidad de que una persona cometa crímenes?",
+    "options": [
+      "Sistema Sybil",
+      "Sistema Dominator",
+      "Sistema Psycho-Pass",
+      "Sistema Enforcer"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Fate/Zero*, ¿quién es el Master de Saber?",
+    "options": [
+      "Kiritsugu Emiya",
+      "Kirei Kotomine",
+      "Tokiomi Tohsaka",
+      "Waver Velvet"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Shinsekai Yori*, ¿qué habilidad tienen los humanos en el futuro?",
+    "options": [
+      "Psicoquinesis",
+      "Volar",
+      "Invisibilidad",
+      "Super fuerza"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Monster*, ¿cuál es el nombre del cirujano que salva la vida de un niño que se convierte en un asesino en serie?",
+    "options": [
+      "Kenzo Tenma",
+      "Heinrich Lunge",
+      "Wolfgang Grimmer",
+      "Johan Liebert"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Mushishi*, ¿qué son los Mushi?",
+    "options": [
+      "Fantasmas",
+      "Criaturas sobrenaturales que son la forma de vida más básica",
+      "Demonios",
+      "Aliens"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Natsume's Book of Friends*, ¿qué hereda Takashi Natsume de su abuela Reiko?",
+    "options": [
+      "Una gran fortuna",
+      "Un libro con los nombres de los yokai que ha derrotado",
+      "Una casa en el campo",
+      "Un gato que habla"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Gintama*, ¿cuál es el trabajo de los protagonistas Gintoki, Shinpachi y Kagura?",
+    "options": [
+      "Son samuráis a sueldo",
+      "Son detectives privados",
+      "Son cazadores de recompensas",
+      "Hacen cualquier trabajo que se les pida"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *The Disastrous Life of Saiki K.*, ¿cuál es el poder principal del protagonista Kusuo Saiki?",
+    "options": [
+      "Psicoquinesis",
+      "Telepatía",
+      "Piroquinesis",
+      "Todos los poderes psíquicos imaginables"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Barakamon*, ¿por qué el calígrafo Seishu Handa se muda a una isla remota?",
+    "options": [
+      "Para buscar inspiración",
+      "Para escapar de sus problemas",
+      "Porque golpeó a un crítico de arte",
+      "Para enseñar caligrafía a los niños de la isla"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *March Comes in Like a Lion*, ¿a qué se dedica el protagonista Rei Kiriyama?",
+    "options": [
+      "Es jugador profesional de shogi",
+      "Es estudiante de secundaria",
+      "Es huérfano",
+      "Todas las anteriores"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Land of the Lustrous*, ¿de qué están hechas las protagonistas?",
+    "options": [
+      "De gemas preciosas",
+      "De metal",
+      "De hueso",
+      "De plantas"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Girls' Last Tour*, ¿qué hacen las protagonistas Chito y Yuuri?",
+    "options": [
+      "Buscan un lugar para vivir",
+      "Viajan por un mundo postapocalíptico en un vehículo Kettenkrad",
+      "Buscan a otros supervivientes",
+      "Buscan comida y refugio"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Showa Genroku Rakugo Shinju*, ¿a qué arte se dedican los protagonistas?",
+    "options": [
+      "Al teatro kabuki",
+      "Al rakugo, un tipo de monólogo cómico japonés",
+      "A la ceremonia del té",
+      "A la caligrafía"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *The Tatami Galaxy*, ¿qué le sucede al protagonista cada vez que toma una mala decisión en la universidad?",
+    "options": [
+      "El tiempo se rebobina y tiene la oportunidad de elegir de nuevo",
+      "Se encuentra con un dios que le da consejos",
+      "Es transportado a un mundo paralelo",
+      "Se despierta en su habitación como si nada hubiera pasado"
+    ],
+    "answer": 0,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Kaiba*, ¿qué es posible en el mundo futurista en el que se desarrolla la historia?",
+    "options": [
+      "Transferir la memoria y la conciencia a chips",
+      "Comprar y vender cuerpos",
+      "Borrar los recuerdos de una persona",
+      "Todas las anteriores"
+    ],
+    "answer": 3,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Attack on Titan*, ¿cuál es el nombre del titán que posee Eren Jaeger?",
+    "options": [
+      "Titán Colosal",
+      "Titán Acorazado",
+      "Titán de Ataque",
+      "Titán Fundador"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Code Geass*, ¿qué orden específica le da Lelouch a Euphemia con su Geass fuera de control?",
+    "options": [
+      "Que lo ame para siempre",
+      "Que se suicide",
+      "Que mate a todos los japoneses",
+      "Que le entregue el control de la Zona 11"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "¿Qué personaje de *Naruto Shippuden* se convierte en el Sexto Hokage al final de la serie?",
+    "options": [
+      "Naruto Uzumaki",
+      "Kakashi Hatake",
+      "Sasuke Uchiha",
+      "Tsunade"
+    ],
+    "answer": 1,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Hunter x Hunter*, ¿cuáles son los cuatro principios fundamentales del Nen?",
+    "options": [
+      "Fuego, Agua, Tierra, Aire",
+      "Ataque, Defensa, Velocidad, Estrategia",
+      "Ten, Zetsu, Ren y Hatsu",
+      "Ken, Gyo, In y En"
+    ],
+    "answer": 2,
+    "difficulty": "medium"
+  },
+  {
+    "q": "En *Chainsaw Man*, ¿cuál es el demonio con el que Denji hace un contrato para convertirse en Chainsaw Man?",
+    "options": [
+      "El Demonio Pistola",
+      "El Demonio de la Oscuridad",
+      "Pochita (Demonio de la Motosierra)",
+      "Makima (Demonio del Control)"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Death Parade*, ¿qué juego decide el destino de las almas de los muertos?",
+    "options": [
+      "Un juego de mesa",
+      "Un juego de cartas",
+      "Un juego de dardos",
+      "Un juego al azar"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Ping Pong the Animation*, ¿cuál es el apodo de Yutaka Hoshino?",
+    "options": [
+      "Peco",
+      "Smile",
+      "Dragon",
+      "Demon"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Sonny Boy*, ¿adónde son transportados los estudiantes de la clase de Nagara?",
+    "options": [
+      "A un mundo desierto",
+      "A una isla flotante",
+      "A un universo paralelo",
+      "A una dimensión de la que no pueden escapar"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Vivy: Fluorite Eye's Song*, ¿cuál es la misión de Vivy?",
+    "options": [
+      "Cantar para hacer feliz a la gente",
+      "Salvar a la humanidad de una guerra contra las IA",
+      "Encontrar a su creador",
+      "Escribir una canción que cambie el mundo"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Heike Monogatari*, ¿qué habilidad tiene la protagonista Biwa?",
+    "options": [
+      "Puede ver el futuro",
+      "Puede hablar con los muertos",
+      "Puede controlar el fuego",
+      "Puede curar heridas"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *ACCA: 13-Territory Inspection Dept.*, ¿cuál es el trabajo del protagonista Jean Otus?",
+    "options": [
+      "Es inspector de la agencia ACCA",
+      "Es un espía del gobierno",
+      "Es un panadero",
+      "Es un detective privado"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Houseki no Kuni*, ¿cuál es la dureza de Phosphophyllite, la protagonista?",
+    "options": [
+      "3.5",
+      "5",
+      "7",
+      "10"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Dorohedoro*, ¿qué busca el protagonista Caiman?",
+    "options": [
+      "Al mago que le convirtió la cabeza en la de un reptil",
+      "Una forma de recuperar sus recuerdos",
+      "Venganza",
+      "Todas las anteriores"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Keep Your Hands Off Eizouken!*, ¿cuáles son los roles de las tres protagonistas en su club de anime?",
+    "options": [
+      "Directora, animadora y productora",
+      "Guionista, actriz de voz y editora de sonido",
+      "Compositora, cantante y diseñadora de personajes",
+      "Directora de arte, diseñadora de fondos y colorista"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Great Pretender*, ¿en qué se especializa el grupo de estafadores al que se une Makoto Edamura?",
+    "options": [
+      "En estafas a pequeña escala",
+      "En estafas a gran escala a personas ricas y corruptas",
+      "En falsificación de obras de arte",
+      "En robos de joyas"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Idaten Deities in the Peaceful Generation*, ¿qué sucede con los dioses después de 800 años de paz?",
+    "options": [
+      "Han perdido sus poderes",
+      "Han olvidado cómo luchar",
+      "Se han vuelto perezosos y arrogantes",
+      "Todas las anteriores"
+    ],
+    "answer": 3,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Heavenly Delusion*, ¿qué buscan Maru y Kiruko?",
+    "options": [
+      "Un lugar llamado 'Cielo'",
+      "Una cura para una enfermedad",
+      "A los padres de Maru",
+      "Un arma para luchar contra los monstruos"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Frieren: Beyond Journey's End*, ¿por qué la elfa Frieren decide emprender un nuevo viaje?",
+    "options": [
+      "Para entender mejor a los humanos",
+      "Para encontrar una forma de resucitar a sus antiguos compañeros",
+      "Para visitar los lugares que recorrió con sus amigos",
+      "Para recoger todo tipo de magia"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *The Apothecary Diaries*, ¿cuál es la especialidad de la protagonista Maomao?",
+    "options": [
+      "La medicina y los venenos",
+      "La cocina",
+      "La costura",
+      "La música"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Delicious in Dungeon*, ¿qué hacen los protagonistas para sobrevivir en la mazmorra?",
+    "options": [
+      "Comen los monstruos que derrotan",
+      "Buscan tesoros para comprar comida",
+      "Cultivan sus propios alimentos en la mazmorra",
+      "Reciben suministros del exterior"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Undead Unluck*, ¿cuáles son los poderes de los protagonistas Andy y Fuuko Izumo?",
+    "options": [
+      "Él es inmortal y ella atrae la mala suerte",
+      "Él puede controlar el fuego y ella puede controlar el agua",
+      "Él es súper fuerte y ella es súper rápida",
+      "Él puede leer la mente y ella puede hacerse invisible"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Made in Abyss*, ¿cómo se llama la maldición de la sexta capa que impide el regreso?",
+    "options": [
+      "La maldición de la Ceguera Absoluta",
+      "La maldición de la Pérdida de la Humanidad",
+      "La maldición del Dolor Insoportable",
+      "La maldición del Olvido Eterno"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En la serie *Monogatari*, ¿qué tipo de aberración es la que afecta a Hitagi Senjougahara al inicio?",
+    "options": [
+      "Un gato maldito",
+      "Un cangrejo pesado",
+      "Un caracol perdido",
+      "Un mono demoníaco"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Kaiju No. 8*, ¿cuál es el nombre en clave que le dan las Fuerzas de Defensa al kaiju en el que se transforma Kafka Hibino?",
+    "options": [
+      "Kaiju No. 9",
+      "El Destructor",
+      "Kaiju No. 8",
+      "El Renegado"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Steins;Gate 0*, ¿cuál es el nombre del sistema de inteligencia artificial que recrea la personalidad de Kurisu Makise?",
+    "options": [
+      "Amadeus",
+      "Salieri",
+      "Mozart",
+      "Beethoven"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Re:Zero*, ¿cuál es el nombre del Arzobispo del Pecado que representa la Pereza?",
+    "options": [
+      "Regulus Corneas",
+      "Petelgeuse Romanee-Conti",
+      "Ley Batenkaitos",
+      "Capella Emerada Lugunica"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Jujutsu Kaisen*, ¿cuál es el nombre del dominio de Satoru Gojo?",
+    "options": [
+      "Vacío Infinito",
+      "Jardín Quimera de las Sombras",
+      "Horizonte del Loto Cautivador",
+      "Expansión de Dominio"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *One Piece*, ¿cuál es el nombre real de la fruta Gomu Gomu no Mi de Luffy?",
+    "options": [
+      "Fruta Humano-Humano, Modelo: Sol",
+      "Fruta Humano-Humano, Modelo: Nika",
+      "Fruta Goma-Goma, Modelo: Despertar",
+      "Fruta Dios-Dios, Modelo: Sol"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Vinland Saga*, ¿quién es el personaje histórico en el que se basa Thorfinn?",
+    "options": [
+      "Thorfinn Karlsefni",
+      "Leif Erikson",
+      "Erik el Rojo",
+      "Canuto el Grande"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Fullmetal Alchemist: Brotherhood*, ¿cuál es el verdadero nombre del homúnculo King Bradley?",
+    "options": [
+      "Soberbia",
+      "Avaricia",
+      "Ira",
+      "Envidia"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Neon Genesis Evangelion: The End of Evangelion*, ¿qué es el Proyecto de Instrumentalización Humana?",
+    "options": [
+      "Un plan para crear nuevos Evas",
+      "Un plan para fusionar a toda la humanidad en una sola conciencia",
+      "Un plan para destruir a todos los Ángeles",
+      "Un plan para colonizar otro planeta"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Madoka Magica*, ¿cuál es el verdadero propósito de Kyubey al crear chicas mágicas?",
+    "options": [
+      "Salvar el universo de la entropía",
+      "Conquistar la Tierra",
+      "Experimentar con las emociones humanas",
+      "Divertirse"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Shinsekai Yori*, ¿cuál es el origen de los queerats (bakenezumi)?",
+    "options": [
+      "Son una especie alienígena",
+      "Son humanos que han sido modificados genéticamente",
+      "Son una evolución de las ratas topo",
+      "Son demonios del inframundo"
+    ],
+    "answer": 1,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *The Tatami Galaxy*, ¿quién es el personaje que siempre aparece para sabotear los planes del protagonista?",
+    "options": [
+      "Ozu",
+      "Akashi",
+      "Higuchi",
+      "Jogasaki"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Mushishi*, ¿qué es el Kouki, la sustancia que a veces emiten los Mushi?",
+    "options": [
+      "Un veneno mortal",
+      "Una luz que atrae a otros Mushi",
+      "El origen de la vida",
+      "Un néctar que cura enfermedades"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Showa Genroku Rakugo Shinju*, ¿cuál es el nombre de la pieza de rakugo que une y separa a los protagonistas?",
+    "options": [
+      "Shinigami",
+      "Jugemu",
+      "Nozarashi",
+      "Sukeroku"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Fate/Zero*, ¿cuál es el verdadero deseo de Kiritsugu Emiya al buscar el Santo Grial?",
+    "options": [
+      "Salvar a su esposa",
+      "Ser el hombre más poderoso del mundo",
+      "La paz mundial",
+      "Vengarse de sus enemigos"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Monster*, ¿cuál es el nombre del libro de cuentos que es clave en la trama?",
+    "options": [
+      "El Monstruo Sin Nombre",
+      "El Niño de los Ojos Grandes",
+      "El Lobo y la Niña",
+      "La Puerta Abierta"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Gintama*, ¿cuál es el nombre del grupo terrorista que lidera Katsura Kotarou?",
+    "options": [
+      "El Shinsengumi",
+      "El Kiheitai",
+      "El Jouishishi",
+      "El Mimawarigumi"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Houseki no Kuni*, ¿qué gema es la compañera de Diamond y tiene una dureza de 10?",
+    "options": [
+      "Ruby",
+      "Sapphire",
+      "Bort",
+      "Jade"
+    ],
+    "answer": 2,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Dorohedoro*, ¿quién es el hombre que vive dentro de la boca de Caiman?",
+    "options": [
+      "Risu",
+      "En",
+      "Shin",
+      "Noi"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  },
+  {
+    "q": "En *Heavenly Delusion*, ¿qué es el 'pájaro devorador de hombres' que ataca a Maru y Kiruko?",
+    "options": [
+      "Un Hiruko",
+      "Un robot militar",
+      "Un animal mutante",
+      "Una alucinación"
+    ],
+    "answer": 0,
+    "difficulty": "hard"
+  }
+]

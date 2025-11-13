@@ -17,7 +17,7 @@ BEGIN
     player1_answered_current = FALSE,  -- Resetear para nueva pregunta
     player2_answered_current = FALSE,  -- Resetear para nueva pregunta
     current_turn_player_id = NULL,     -- Ningún jugador ha respondido aún
-    question_start_time = NOW(),       -- Iniciar timer de 12h para nueva pregunta
+    question_start_time = NOW(),       -- Iniciar timer de 6h para nueva pregunta
     status = 'question_active',
     updated_at = NOW()
   WHERE id = p_match_id;

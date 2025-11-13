@@ -157,13 +157,13 @@ BEGIN
     AND m.status NOT IN ('finished', 'abandoned')
     -- Filtrar partidas expiradas en BD (no en frontend)
     AND (
-      -- Partida no activa aún: máximo 24 horas desde creación
-      (m.status != 'question_active' AND m.created_at > NOW() - INTERVAL '24 hours')
+      -- Partida no activa aún: máximo 48 horas desde creación
+      (m.status != 'question_active' AND m.created_at > NOW() - INTERVAL '48 hours')
       OR
-      -- Partidas activas: máximo 12 horas desde última pregunta (cambiado de 16h)
+      -- Partidas activas: máximo 6 horas desde última pregunta (cada jugador tiene 6h para responder)
       (m.status = 'question_active' AND (
         m.question_start_time IS NULL OR 
-        m.question_start_time > NOW() - INTERVAL '12 hours'
+        m.question_start_time > NOW() - INTERVAL '6 hours'
       ))
       OR
       -- Partida terminada (ya filtrada arriba, pero por si acaso)
@@ -214,35 +214,49 @@ WHERE status = 'pending';
 CREATE OR REPLACE FUNCTION cleanup_expired_async_matches()
 RETURNS INTEGER AS $$
 DECLARE
-  deleted_count INTEGER;
+  deleted_matches_count INTEGER := 0;
+  match_record RECORD;
+  ultima_actividad TIMESTAMPTZ;
+  horas_sin_actividad NUMERIC;
+  ultima_respuesta TIMESTAMPTZ;
 BEGIN
-  -- Eliminar partidas expiradas en una sola query
-  WITH expired_matches AS (
-    SELECT id
+  -- Iterar sobre TODAS las partidas
+  FOR match_record IN
+    SELECT id, status, updated_at, question_start_time, created_at, finished_at
     FROM async_matches
-    WHERE (
-      -- Partidas terminadas
-      status IN ('finished', 'abandoned')
-      OR
-      -- Partidas con todas las preguntas completadas
-      (current_question IS NOT NULL AND current_question >= rounds)
-      OR
-      -- Partidas inactivas de más de 24 horas
-      (status != 'question_active' AND created_at < NOW() - INTERVAL '24 hours')
-      OR
-      -- Partidas activas abandonadas (más de 12 horas sin respuesta - cambiado de 16h)
-      (status = 'question_active' 
-       AND question_start_time IS NOT NULL 
-       AND question_start_time < NOW() - INTERVAL '12 hours')
-    )
-    LIMIT 100 -- Limitar para no bloquear BD
-  )
-  DELETE FROM async_matches
-  WHERE id IN (SELECT id FROM expired_matches);
+  LOOP
+    -- Obtener última respuesta si existe
+    SELECT MAX(answered_at) INTO ultima_respuesta
+    FROM async_answers
+    WHERE match_id = match_record.id;
+    
+    -- Calcular última actividad (la más reciente)
+    ultima_actividad := GREATEST(
+      COALESCE(match_record.updated_at, '1970-01-01'::timestamptz),
+      COALESCE(match_record.question_start_time, '1970-01-01'::timestamptz),
+      COALESCE(ultima_respuesta, '1970-01-01'::timestamptz),
+      COALESCE(match_record.finished_at, '1970-01-01'::timestamptz),
+      COALESCE(match_record.created_at, '1970-01-01'::timestamptz)
+    );
+    
+    -- Calcular horas sin actividad
+    horas_sin_actividad := EXTRACT(EPOCH FROM (NOW() - ultima_actividad)) / 3600;
+    
+    -- BORRAR si:
+    -- 1. Tiene más de 72 horas sin actividad, O
+    -- 2. Está marcada como 'finished' o 'abandoned' (sin importar el tiempo)
+    IF horas_sin_actividad >= 72 OR match_record.status IN ('finished', 'abandoned') THEN
+      -- Borrar respuestas primero
+      DELETE FROM async_answers WHERE match_id = match_record.id;
+      
+      -- Borrar partida
+      DELETE FROM async_matches WHERE id = match_record.id;
+      
+      deleted_matches_count := deleted_matches_count + 1;
+    END IF;
+  END LOOP;
   
-  GET DIAGNOSTICS deleted_count = ROW_COUNT;
-  
-  RETURN deleted_count;
+  RETURN deleted_matches_count;
 END;
 $$ LANGUAGE plpgsql;
 

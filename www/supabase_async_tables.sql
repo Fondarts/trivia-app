@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS async_match_requests (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   accepted_at TIMESTAMPTZ,
   rejected_at TIMESTAMPTZ,
-  expires_at TIMESTAMPTZ DEFAULT (NOW() + INTERVAL '5 minutes')
+  expires_at TIMESTAMPTZ DEFAULT (NOW() + INTERVAL '48 hours')
 );
 
 -- Tabla de partidas asíncronas
@@ -102,14 +102,33 @@ CREATE POLICY "Users can create answers for their matches" ON async_answers
     )
   );
 
--- Función para limpiar solicitudes expiradas
+-- Función para limpiar solicitudes expiradas (BORRAR TODO LO INACTIVO)
+-- Elimina solicitudes sin aceptar después de 48 horas Y todas las ya procesadas
+-- IMPORTANTE: Solo borra solicitudes que NO tienen partidas asociadas (para evitar foreign key errors)
 CREATE OR REPLACE FUNCTION cleanup_expired_requests()
-RETURNS void AS $$
+RETURNS INTEGER AS $$
+DECLARE
+  deleted_count INTEGER;
 BEGIN
-  UPDATE async_match_requests 
-  SET status = 'cancelled' 
-  WHERE status = 'pending' 
-  AND expires_at < NOW();
+  -- BORRAR todas las solicitudes que:
+  -- 1. Están pendientes y tienen más de 48 horas, O
+  -- 2. Están aceptadas/canceladas/rechazadas (ya no son activas)
+  -- Y que NO tienen partidas asociadas (para evitar foreign key constraint)
+  DELETE FROM async_match_requests 
+  WHERE (
+    -- Solicitudes pendientes expiradas
+    (status = 'pending' AND (expires_at < NOW() OR created_at < NOW() - INTERVAL '48 hours'))
+    OR
+    -- Solicitudes ya procesadas (no activas)
+    status IN ('accepted', 'cancelled', 'rejected')
+  )
+  -- IMPORTANTE: Solo borrar si NO hay partidas que referencien esta solicitud
+  AND NOT EXISTS (
+    SELECT 1 FROM async_matches WHERE request_id = async_match_requests.id
+  );
+  
+  GET DIAGNOSTICS deleted_count = ROW_COUNT;
+  RETURN deleted_count;
 END;
 $$ LANGUAGE plpgsql;
 

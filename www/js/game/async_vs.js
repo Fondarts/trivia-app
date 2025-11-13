@@ -1,9 +1,11 @@
-// js/async_vs.js — VS Asíncrono con 2 horas por pregunta
+// js/async_vs.js — VS Asíncrono con 6 horas por pregunta
 import { buildDeckSingle } from './bank.js';
 
 const TIMER_PER_QUESTION = 15; // segundos para responder
-const ASYNC_TIMEOUT_HOURS = 2; // horas para entrar a la pregunta
+const ASYNC_TIMEOUT_HOURS = 6; // horas para responder una pregunta (cada jugador tiene 6h desde que la pregunta está disponible)
 const ASYNC_TIMEOUT_MS = ASYNC_TIMEOUT_HOURS * 60 * 60 * 1000;
+const REQUEST_EXPIRY_HOURS = 48; // horas para aceptar una solicitud de partida
+const REQUEST_EXPIRY_MS = REQUEST_EXPIRY_HOURS * 60 * 60 * 1000;
 
 let sb = null;
 let me = { id: null, name: 'Anon', pid: null };
@@ -648,6 +650,24 @@ async function startAsyncGame(matchId) {
           }
         }
         
+        // IMPORTANTE: Si es la primera vez que alguien entra a esta pregunta,
+        // establecer question_start_time para iniciar el timer de 6 horas
+        if (!matchData.question_start_time && questionToShow === 0) {
+          console.log('⏰ Estableciendo question_start_time para primera pregunta...');
+          await sb
+            .from('async_matches')
+            .update({ 
+              question_start_time: isoNow(),
+              status: 'question_active'
+            })
+            .eq('id', matchId);
+          
+          // Configurar timeout para la primera pregunta (6 horas)
+          setTimeout(async () => {
+            await timeoutAsyncQuestion(matchId, 0);
+          }, ASYNC_TIMEOUT_MS);
+        }
+        
         // Notificar que el jugador entró a la pregunta
         await notifyQuestionStarted(matchId, matchData);
         
@@ -1105,6 +1125,8 @@ export async function acceptRandomRequest(requestId){
   const sharedDeck = buildDeckSingle(updatedRequest.category, updatedRequest.rounds, updatedRequest.difficulty);
   console.log('🎲 Deck generado:', sharedDeck.length, 'preguntas');
   
+  // IMPORTANTE: Cuando se acepta una partida, resetear el reloj
+  // question_start_time se establecerá cuando el primer jugador entre a la primera pregunta
   const { data: match, error: matchError } = await sb
     .from('async_matches')
     .insert({
@@ -1120,6 +1142,7 @@ export async function acceptRandomRequest(requestId){
       current_question: 0,
       status: 'active',
       deck: sharedDeck, // Guardar el deck en la base de datos
+      question_start_time: null, // Se establecerá cuando el primer jugador entre
       created_at: isoNow()
     })
     .select()
@@ -1308,7 +1331,7 @@ export async function createAsyncRequest({ rounds=10, category='all', difficulty
     difficulty,
     status: 'pending',
     created_at: isoNow(),
-    expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() // 24 horas
+    expires_at: new Date(Date.now() + REQUEST_EXPIRY_MS).toISOString() // 48 horas
   };
   
   console.log('📝 Creando solicitud asíncrona:', requestData);
@@ -1326,11 +1349,8 @@ export async function createAsyncRequest({ rounds=10, category='all', difficulty
   
   console.log('✅ Solicitud creada:', data);
   
-  // Configurar timeout para cancelar solicitud si no hay respuesta
-  setTimeout(async () => {
-    await cancelAsyncRequest(data.id);
-  }, 5 * 60 * 1000); // 5 minutos timeout
-  
+  // No configurar timeout local - la limpieza se hace en BD con expires_at
+  // La función cleanup_expired_requests() en BD se encarga de borrar solicitudes expiradas
   
   cb.onStatus({ 
     status: 'waiting_for_opponent', 
@@ -1602,16 +1622,20 @@ async function advanceAsyncQuestion(matchId, nextQuestionIndex){
   }
   
   // Avanzar a siguiente pregunta
+  // IMPORTANTE: question_start_time se establece cuando se avanza a una nueva pregunta
+  // Cada jugador tiene 6 horas desde este momento para responder
   await sb
     .from('async_matches')
     .update({ 
       current_question: nextQuestionIndex,
-      question_start_time: isoNow(),
+      question_start_time: isoNow(), // Resetear timer: cada jugador tiene 6h desde ahora
       status: 'question_active'
     })
     .eq('id', matchId);
   
-  // Configurar timeout para la pregunta
+  // Configurar timeout para la pregunta (6 horas)
+  // NOTA: Este timeout se ejecutará en el cliente, pero también necesitamos verificación en BD
+  // La función en BD check_async_question_timeout() se ejecutará periódicamente
   setTimeout(async () => {
     await timeoutAsyncQuestion(matchId, nextQuestionIndex);
   }, ASYNC_TIMEOUT_MS);
@@ -1633,23 +1657,77 @@ async function advanceAsyncQuestion(matchId, nextQuestionIndex){
 }
 
 // ===== Timeout de pregunta asíncrona
+// Esta función se ejecuta cuando un jugador no responde en 6 horas
 async function timeoutAsyncQuestion(matchId, questionIndex){
   if (!sb) return;
   
   const match = await getAsyncMatchStatus(matchId);
   if (!match || match.current_question !== questionIndex) return;
   
-  // Marcar pregunta como timeout
-  await sb
-    .from('async_matches')
-    .update({ 
-      status: 'question_timeout',
-      current_question: questionIndex + 1
-    })
-    .eq('id', matchId);
+  console.log('⏰ Timeout de pregunta detectado:', { matchId, questionIndex });
   
-  // Avanzar a siguiente pregunta
-  await advanceAsyncQuestion(matchId, questionIndex + 1);
+  // Obtener el deck para saber la respuesta correcta
+  const deck = JSON.parse(match.deck || '[]');
+  const question = deck[questionIndex];
+  
+  if (!question) {
+    console.error('❌ No se encontró la pregunta en el deck');
+    return;
+  }
+  
+  // Determinar qué jugador no respondió
+  const { data: answers } = await sb
+    .from('async_answers')
+    .select('player_id')
+    .eq('match_id', matchId)
+    .eq('question_index', questionIndex);
+  
+  const answeredPlayerIds = answers?.map(a => a.player_id) || [];
+  const allPlayers = [match.player1_id, match.player2_id];
+  const playerWhoDidntAnswer = allPlayers.find(id => !answeredPlayerIds.includes(id));
+  
+  if (!playerWhoDidntAnswer) {
+    console.log('✅ Ambos jugadores ya respondieron, no hay timeout');
+    return;
+  }
+  
+  console.log('⏰ Jugador que no respondió:', playerWhoDidntAnswer);
+  
+  // Guardar respuesta incorrecta automáticamente para el jugador que no respondió
+  // Usar un índice que no sea ninguna opción válida para indicar "no respondió"
+  const incorrectAnswerIndex = -1; // Valor especial que indica timeout
+  
+  await sb
+    .from('async_answers')
+    .insert([{
+      match_id: matchId,
+      player_id: playerWhoDidntAnswer,
+      question_index: questionIndex,
+      answer: incorrectAnswerIndex.toString(), // Guardar como string "-1" para indicar timeout
+      time_spent: ASYNC_TIMEOUT_MS, // Tiempo máximo usado
+      answered_at: isoNow()
+    }]);
+  
+  console.log('✅ Respuesta incorrecta automática guardada para jugador que no respondió');
+  
+  // Verificar si ahora ambos respondieron (incluyendo la respuesta automática)
+  const { data: allAnswers } = await sb
+    .from('async_answers')
+    .select('player_id')
+    .eq('match_id', matchId)
+    .eq('question_index', questionIndex);
+  
+  const allAnsweredIds = allAnswers?.map(a => a.player_id) || [];
+  const bothNowAnswered = allPlayers.every(id => allAnsweredIds.includes(id));
+  
+  if (bothNowAnswered) {
+    // Ambos respondieron (uno automáticamente), avanzar a siguiente pregunta
+    console.log('➡️ Ambos respondieron (uno por timeout), avanzando a siguiente pregunta...');
+    await advanceAsyncQuestion(matchId, questionIndex + 1);
+  } else {
+    // Esto no debería pasar, pero por si acaso
+    console.warn('⚠️ Algo salió mal: aún no ambos respondieron después del timeout');
+  }
 }
 
 // ===== Iniciar partida asíncrona

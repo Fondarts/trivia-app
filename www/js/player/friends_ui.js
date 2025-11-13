@@ -1848,9 +1848,34 @@ async function loadOpenMatches() {
       return;
     }
     
-    // Si la función RPC ya filtró las partidas, usar directamente
-    // Si no, usar las que vienen de allMatches (ya filtradas arriba si es fallback)
-    const validMatches = allMatches;
+    // FILTRAR PARTIDAS: SOLO MOSTRAR LO QUE ESTÁ REALMENTE ACTIVO
+    // Excluir partidas terminadas, abandonadas, o sin actividad reciente
+    const now = new Date();
+    const validMatches = allMatches.filter(match => {
+      // EXCLUIR partidas terminadas o abandonadas (siempre)
+      if (match.status === 'finished' || match.status === 'abandoned') {
+        console.log(`🚫 Excluyendo partida ${match.id}: status=${match.status}`);
+        return false;
+      }
+      
+      // Calcular última actividad (la más reciente disponible)
+      const lastActivity = new Date(Math.max(
+        match.updated_at ? new Date(match.updated_at).getTime() : 0,
+        match.question_start_time ? new Date(match.question_start_time).getTime() : 0,
+        match.finished_at ? new Date(match.finished_at).getTime() : 0,
+        match.created_at ? new Date(match.created_at).getTime() : 0
+      ));
+      
+      const hoursElapsed = (now - lastActivity) / (1000 * 60 * 60);
+      
+      // EXCLUIR si pasaron más de 72 horas sin actividad
+      if (hoursElapsed > 72) {
+        console.log(`⏰ Excluyendo partida ${match.id}: ${hoursElapsed.toFixed(1)}h sin actividad (última: ${lastActivity.toISOString()})`);
+        return false;
+      }
+      
+      return true;
+    });
     
     console.log('🎯 Partidas válidas:', validMatches.length);
     
@@ -2047,7 +2072,7 @@ function createMatchItem(match) {
     timeAgo = 'ahora';
   }
   // Calcular estado (tu turno / esperando) y, si existe, el tiempo restante
-  const ASYNC_TIMEOUT_MS = 2 * 60 * 60 * 1000; // 2 horas por pregunta
+  const ASYNC_TIMEOUT_MS = 6 * 60 * 60 * 1000; // 6 horas por pregunta
   let statusLine = '';
   
   // Usar turno calculado previamente en loadOpenMatches

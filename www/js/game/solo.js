@@ -202,13 +202,25 @@ function hud(){
     } else {
       el.classList.remove('urgent');
     }
-  } else if (currentState.mode === 'async') {
-    // Modo asíncrono - mostrar timer de pregunta
-    const timerDisplay = asyncQuestionTimer && asyncQuestionTimeLeft > 0 ? ` · ${asyncQuestionTimeLeft}s` : '';
-    el.textContent = `${currentState.index}/${currentState.total} · ${currentState.score} pts${timerDisplay}`;
+  } else if (currentState.mode === 'async' || currentState.mode === 'async_v2') {
+    // Modo asíncrono - mostrar timer de pregunta (solo para async V1)
+    const timerDisplay = (currentState.mode === 'async' && asyncQuestionTimer && asyncQuestionTimeLeft > 0) ? ` · ${asyncQuestionTimeLeft}s` : '';
     
-    // Cambiar color cuando quedan 5 segundos o menos
-    if (asyncQuestionTimeLeft <= 5 && asyncQuestionTimeLeft > 0) {
+    // Validar que el índice no exceda el total (corrección de bug)
+    const displayIndex = Math.min(currentState.index, currentState.total - 1);
+    el.textContent = `${displayIndex + 1}/${currentState.total} · ${currentState.score} pts${timerDisplay}`;
+    
+    // Si el índice excedió el total, es un error - loguear para debug
+    if (currentState.index >= currentState.total) {
+      console.error('❌ ERROR: Índice excedió el total:', {
+        index: currentState.index,
+        total: currentState.total,
+        mode: currentState.mode
+      });
+    }
+    
+    // Cambiar color cuando quedan 5 segundos o menos (solo para async V1)
+    if (currentState.mode === 'async' && asyncQuestionTimeLeft <= 5 && asyncQuestionTimeLeft > 0) {
       el.classList.add('urgent');
     } else {
       el.classList.remove('urgent');
@@ -222,14 +234,193 @@ function setProgress(p){
   const el = document.getElementById('progressBar');
   if (el) el.style.width = `${Math.round(p*100)}%`;
 }
-function showGame(show){
-  const g = document.getElementById('gameArea');
-  const c = document.getElementById('configCard');
-  if (g) g.style.display = show ? 'block' : 'none';
-  if (c) c.style.display = show ? 'none'  : 'block';
-}
 
 function setQuestionMedia(u){ const w=document.getElementById('qMedia'); if(!w) return; const img=w.querySelector('img'); if(!u){ w.style.display='none'; return;} img.onload=()=>w.style.display='block'; img.onerror=()=>w.style.display='none'; img.src=u; }
+
+// Función auxiliar para convertir dificultad a estrellas
+function getDifficultyStars(difficulty) {
+  const diffMap = {
+    'easy': '★',
+    'medium': '★★',
+    'hard': '★★★',
+    'any': '★'
+  };
+  return diffMap[difficulty?.toLowerCase()] || '★';
+}
+
+export function openSingleResult({title, subtitle, scoreText, details, matchId, opponentId, rounds, category, difficulty}){
+  const fs = document.getElementById('fsSingleResult');
+  document.getElementById('srTitle').textContent   = title;
+  document.getElementById('srSubtitle').textContent= subtitle;
+  document.getElementById('srScore').textContent   = scoreText;
+  
+  // Mostrar detalles si están disponibles
+  const detailsEl = document.getElementById('srDetails');
+  if (detailsEl) {
+    if (details) {
+      detailsEl.textContent = details;
+      detailsEl.style.display = 'block';
+    } else if (scoreText && difficulty) {
+      // Construir detalles automáticamente si no se proporcionan
+      const [correct, total] = scoreText.split(' / ');
+      const stars = getDifficultyStars(difficulty);
+      detailsEl.textContent = `Respondiste correctamente ${correct}/${total} en dificultad ${stars}`;
+      detailsEl.style.display = 'block';
+    } else {
+      detailsEl.style.display = 'none';
+    }
+  }
+  
+  // Agregar el header completo si no existe
+  if (!fs.querySelector('.results-header')) {
+    const wrap = fs.querySelector('.wrap');
+    if (wrap) {
+      const appHeader = document.createElement('div');
+      appHeader.className = 'results-header';
+      appHeader.innerHTML = `
+        <div class="app-title">
+          <img src="./assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
+          <span>Quizlo!</span>
+        </div>
+        <div class="row">
+          <button class="iconbtn" id="btnFriendsResults" title="Amigos" style="position: relative;">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+            <span class="notification-badge" id="friendsBadgeResults" style="display: none;">0</span>
+          </button>
+          <button class="iconbtn avatar-btn" id="btnProfileResults" aria-label="Perfil de Usuario">
+            <img src="img/avatar_placeholder.svg" alt="Avatar"/>
+          </button>
+        </div>
+      `;
+      wrap.insertBefore(appHeader, wrap.firstChild);
+      
+      // Vincular eventos de los botones
+      setTimeout(() => {
+        const btnFriends = document.getElementById('btnFriendsResults');
+        if (btnFriends) {
+          btnFriends.addEventListener('click', () => {
+            fs.style.display = 'none';
+            showGame(false);
+            const mainFriendsBtn = document.getElementById('btnFriends');
+            if (mainFriendsBtn) mainFriendsBtn.click();
+          });
+        }
+        
+        const btnProfile = document.getElementById('btnProfileResults');
+        if (btnProfile) {
+          btnProfile.addEventListener('click', () => {
+            fs.style.display = 'none';
+            showGame(false);
+            const mainProfileBtn = document.getElementById('btnProfile');
+            if (mainProfileBtn) mainProfileBtn.click();
+          });
+        }
+      }, 100);
+    }
+  }
+  
+  fs.style.display='block';
+  window.scrollTo(0,0);
+
+  // Botón de Revancha
+  const srRematch = document.getElementById('srRematch');
+  if (srRematch) {
+    srRematch.onclick = async () => {
+      if (matchId && opponentId && rounds && category && difficulty) {
+        try {
+          // Crear nueva partida con las mismas características
+          if (window.asyncVSV2 && window.asyncVSV2.createMatch) {
+            const newMatch = await window.asyncVSV2.createMatch({
+              rounds,
+              category,
+              difficulty
+            });
+            
+            // Enviar notificación al rival (esto se puede hacer via Realtime o notificaciones)
+            // Por ahora, la partida aparecerá en "Partidas Abiertas" del rival
+            if (window.toast) {
+              window.toast('Revancha creada. Tu rival recibirá una notificación.');
+            }
+            
+            // Cerrar pantalla de resultados
+            fs.style.display = 'none';
+            showGame(false);
+            
+            // Opcional: abrir la nueva partida automáticamente
+            // await window.asyncVSV2.startGame(newMatch.id);
+          } else {
+            console.error('❌ Sistema async_v2 no disponible');
+            if (window.toast) {
+              window.toast('Error: Sistema de partidas no disponible');
+            }
+          }
+        } catch (error) {
+          console.error('❌ Error creando revancha:', error);
+          if (window.toast) {
+            window.toast('Error al crear revancha. Intenta de nuevo.');
+          }
+        }
+      } else {
+        // Si no hay datos de partida, simplemente iniciar un nuevo juego
+        fs.style.display = 'none';
+        startSolo();
+      }
+    };
+  }
+
+  // Botón de Compartir
+  const srShare = document.getElementById('srShare');
+  if (srShare) {
+    srShare.onclick = () => {
+      // Obtener valores actuales del DOM
+      const currentTitle = document.getElementById('srTitle')?.textContent || title;
+      const currentSubtitle = document.getElementById('srSubtitle')?.textContent || subtitle;
+      const currentScore = document.getElementById('srScore')?.textContent || scoreText;
+      const currentDetails = document.getElementById('srDetails')?.textContent || details || '';
+      
+      // Construir mensaje para WhatsApp
+      const shareText = `${currentTitle}\n${currentSubtitle}\n${currentScore}${currentDetails ? '\n' + currentDetails : ''}\n\n¡Jugá Quizlo! 🎮`;
+      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+      window.open(whatsappUrl, '_blank');
+    };
+  }
+
+  // Botón de Salir (antes "Inicio")
+  const srHome = document.getElementById('srHome');
+  if (srHome) {
+    srHome.onclick = () => {
+      fs.style.display = 'none';
+      showGame(false);
+      // Ir a pantalla principal
+      if (window.showConfigUI) {
+        window.showConfigUI();
+      }
+    };
+  }
+
+  // Botón de cerrar (X)
+  document.getElementById('backSingleResult').onclick = ()=>{
+    fs.style.display='none';
+    showGame(false);
+    if (window.showConfigUI) {
+      window.showConfigUI();
+    }
+  };
+}
+
+export function showGame(show){
+  const g = document.getElementById('gameArea');
+  const c = document.getElementById('configCard');
+  if (show) {
+    g.style.display = 'block';
+    if (c) c.style.display = 'none';
+  } else {
+    g.style.display = 'none';
+    if (c) c.style.display = 'block';
+  }
+}
 
 export function renderQuestion(q){ 
   const qEl=document.getElementById('qText'); if(qEl) qEl.textContent=q.q; 
@@ -254,9 +445,31 @@ export function renderQuestion(q){
   // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
   const currentState = window.STATE || STATE;
   
-  // Si estamos en modo asíncrono, iniciar timer de 15 segundos
+  // Guardar tiempo de inicio de pregunta para calcular timeSpent (modo async_v2)
+  if (currentState.mode === 'async_v2') {
+    currentState.questionStartTime = Date.now();
+    console.log('⏰ Tiempo de inicio de pregunta guardado:', currentState.questionStartTime);
+  }
+  
+  // Si estamos en modo asíncrono V1, iniciar timer de 15 segundos
+  // V2 no usa timer local, cada jugador tiene 6 horas
   if (currentState.mode === 'async') {
     startAsyncQuestionTimer(q, currentState);
+  }
+
+  // Verificar si ya respondió (modo async_v2)
+  const alreadyAnswered = currentState.mode === 'async_v2' && currentState.alreadyAnswered;
+  const myAnswerIndex = currentState.mode === 'async_v2' ? currentState.myAnswerIndex : null;
+  
+  if (alreadyAnswered && myAnswerIndex !== null) {
+    console.log('✅ Ya respondió esta pregunta, mostrando respuesta marcada:', myAnswerIndex);
+    // Si ya respondió, marcar como locked desde el inicio
+    locked = true;
+    
+    // Mostrar mensaje informativo
+    if (window.showAsyncExitMessage) {
+      window.showAsyncExitMessage();
+    }
   }
 
   q.options.forEach((opt,i)=>{
@@ -264,15 +477,55 @@ export function renderQuestion(q){
     div.type='button';
     div.className = 'option';
     div.textContent = `${String.fromCharCode(65+i)}. ${opt}`;
+    
+    // Si ya respondió, marcar la respuesta y deshabilitar opciones
+    if (alreadyAnswered && myAnswerIndex !== null) {
+      if (i === myAnswerIndex) {
+        // Marcar la respuesta del jugador
+        if (i === q.answer) {
+          div.classList.add('correct');
+          currentState.score++;
+        } else {
+          div.classList.add('wrong');
+        }
+      }
+      
+      // Mostrar respuesta correcta si respondió mal
+      if (myAnswerIndex !== q.answer && i === q.answer) {
+        div.classList.add('correct');
+      }
+      
+      // Deshabilitar todas las opciones
+      div.classList.add('disabled');
+      div.style.pointerEvents = 'none';
+    }
 
     const handler = async ()=>{
+      // Si ya respondió, no permitir cambiar la respuesta
+      if (alreadyAnswered) {
+        console.log('⚠️ Ya respondiste esta pregunta, no puedes cambiarla');
+        return;
+      }
+      
       if (locked) return; locked = true;
 
       // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
       const currentState = window.STATE || STATE;
 
-      const question = currentState.deck[currentState.index - 1];
-      if (!question) return;
+      // En modo async_v2, usar directamente la pregunta q que se pasó a renderQuestion
+      // En otros modos, usar el índice (que se incrementa después de renderizar)
+      const question = (currentState.mode === 'async_v2') 
+        ? q  // Usar la pregunta actual que se está mostrando
+        : currentState.deck[currentState.index - 1];  // Modo normal: índice ya incrementado
+      
+      if (!question) {
+        console.error('❌ Pregunta no encontrada:', { 
+          mode: currentState.mode, 
+          index: currentState.index,
+          deckLength: currentState.deck?.length 
+        });
+        return;
+      }
 
       let results = {};
       if(i===q.answer){
@@ -295,13 +548,20 @@ export function renderQuestion(q){
         option.style.pointerEvents = 'none';
       });
 
-      // Si estamos en modo asíncrono, guardar respuesta y verificar avance
-      if (currentState.mode === 'async') {
-        // Limpiar timer ya que respondimos
-        clearAsyncQuestionTimer();
+      // Si estamos en modo asíncrono (V1 o V2), guardar respuesta y verificar avance
+      if (currentState.mode === 'async' || currentState.mode === 'async_v2') {
+        // Limpiar timer ya que respondimos (solo para V1)
+        if (currentState.mode === 'async') {
+          clearAsyncQuestionTimer();
+        }
+        
+        // Calcular tiempo transcurrido desde que se mostró la pregunta
+        const timeSpent = currentState.questionStartTime 
+          ? Date.now() - currentState.questionStartTime 
+          : 0;
         
         // Guardar respuesta y verificar si ambos respondieron
-        await saveAsyncAnswerAndCheck(currentState, question, i === q.answer, i);
+        await saveAsyncAnswerAndCheck(currentState, question, i === q.answer, i, timeSpent);
       }
 
       updatePlayerXPBar();
@@ -309,11 +569,24 @@ export function renderQuestion(q){
       if(results.bonusToast) toast(results.bonusToast);
       results.newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
 
-      if (currentState.mode === 'async') {
+      if (currentState.mode === 'async' || currentState.mode === 'async_v2') {
         // En modo asíncrono, no avanzar automáticamente
         // Esperar a que ambos respondan
         console.log('⏳ Esperando a que el rival responda...');
         toast('⏳ Esperando a que el rival responda...');
+        
+        // Actualizar estado para indicar que está esperando
+        currentState.status = 'waiting_for_opponent_answer';
+        
+        // Mostrar mensaje informativo debajo del botón Exit
+        if (window.showAsyncExitMessage) {
+          window.showAsyncExitMessage();
+        }
+        
+        // Actualizar estilo del botón Exit (no rojo en modo asíncrono)
+        if (window.updateExitButtonStyle) {
+          window.updateExitButtonStyle();
+        }
       } else if (currentState.mode==='timed' || SETTINGS.autoNextRounds) {
         setTimeout(()=> nextQuestion(), 800);
       } else {
@@ -361,93 +634,6 @@ export function nextQuestion(){
   }
 }
 
-function openSingleResult({title, subtitle, scoreText}){
-  const fs = document.getElementById('fsSingleResult');
-  document.getElementById('srTitle').textContent   = title;
-  document.getElementById('srSubtitle').textContent= subtitle;
-  document.getElementById('srScore').textContent   = scoreText;
-  
-  // Agregar el header completo si no existe
-  if (!fs.querySelector('.results-header')) {
-    const wrap = fs.querySelector('.wrap');
-    if (wrap) {
-      const appHeader = document.createElement('div');
-      appHeader.className = 'results-header';
-      appHeader.innerHTML = `
-        <div class="app-title">
-          <img src="./assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
-          <span>Quizlo!</span>
-        </div>
-        <div class="row">
-          <button class="iconbtn" id="btnDLCResults" title="Tienda de packs">
-            <svg viewBox="0 0 512 512" width="22" height="22">
-              <path fill="currentColor" d="M345.6 38.4v102.4h128V38.4h-128zm-102.4-25.6v76.8h51.2v51.2h51.2V12.8h-102.4zm-51.2 89.6v51.2h102.4v-25.6h-76.8v-25.6h-25.6zm307.2 51.2H171.5l25.6 179.2h238.1l51.2-179.2zM153.6 486.4c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4zm256 0c21.2 0 38.4-17.2 38.4-38.4s-17.2-38.4-38.4-38.4-38.4 17.2-38.4 38.4 17.2 38.4 38.4 38.4z"/>
-            </svg>
-          </button>
-          <button class="iconbtn" id="btnFriendsResults" title="Amigos" style="position: relative;">
-            <svg viewBox="0 0 24 24" width="22" height="22">
-              <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-            </svg>
-            <span class="notification-badge" id="friendsBadgeResults" style="display: none;">0</span>
-          </button>
-          <button class="iconbtn avatar-btn" id="btnProfileResults" aria-label="Perfil de Usuario">
-            <img src="img/avatar_placeholder.svg" alt="Avatar"/>
-          </button>
-        </div>
-      `;
-      wrap.insertBefore(appHeader, wrap.firstChild);
-      
-      // Vincular eventos de los botones
-      setTimeout(() => {
-        const btnDLC = document.getElementById('btnDLCResults');
-        if (btnDLC) {
-          btnDLC.addEventListener('click', () => {
-            fs.style.display = 'none';
-            showGame(false);
-            const mainDLCBtn = document.getElementById('btnDLC');
-            if (mainDLCBtn) mainDLCBtn.click();
-          });
-        }
-        
-        const btnFriends = document.getElementById('btnFriendsResults');
-        if (btnFriends) {
-          btnFriends.addEventListener('click', () => {
-            fs.style.display = 'none';
-            showGame(false);
-            const mainFriendsBtn = document.getElementById('btnFriends');
-            if (mainFriendsBtn) mainFriendsBtn.click();
-          });
-        }
-        
-        const btnProfile = document.getElementById('btnProfileResults');
-        if (btnProfile) {
-          btnProfile.addEventListener('click', () => {
-            fs.style.display = 'none';
-            showGame(false);
-            const mainProfileBtn = document.getElementById('btnProfile');
-            if (mainProfileBtn) mainProfileBtn.click();
-          });
-        }
-      }, 100);
-    }
-  }
-  
-  fs.style.display='block';
-  window.scrollTo(0,0);
-
-  document.getElementById('srAgain').onclick = ()=> {
-    fs.style.display='none';
-    startSolo();
-  };
-  document.getElementById('srHome').onclick = ()=>{
-    fs.style.display='none';
-    showGame(false);
-  };
-  document.getElementById('backSingleResult').onclick = ()=>{
-    fs.style.display='none';
-    showGame(false);
-  };
-}
 
 export async function endGame(){
   if (timerInt) { clearInterval(timerInt); timerInt = null; }
@@ -455,6 +641,15 @@ export async function endGame(){
 
   // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
   const currentState = window.STATE || STATE;
+
+  // NO mostrar resultados si está en modo async_v2 esperando al rival
+  // Solo mostrar resultados cuando la partida realmente terminó
+  if (currentState.mode === 'async_v2' && 
+      (currentState.status === 'waiting_for_opponent_answer' || window.currentAsyncMatchId)) {
+    console.log('⏸️ Modo async_v2 esperando rival - NO mostrar resultados');
+    showGame(false);
+    return; // Salir sin mostrar resultados
+  }
 
   if (currentState.mode==='rounds' || currentState.mode==='async'){
     const isPerfect = (currentState.score === currentState.total && currentState.total >= 15);
@@ -508,13 +703,14 @@ export async function startSolo(){
   // Usar window.STATE si está disponible (modo asíncrono), sino usar STATE local
   const currentState = window.STATE || STATE;
   
-  // Si estamos en modo asíncrono, usar los datos de la partida
-  if (currentState.mode === 'async') {
+  // Si estamos en modo asíncrono (V1 o V2), usar los datos de la partida
+  if (currentState.mode === 'async' || currentState.mode === 'async_v2') {
     console.log('🎮 Iniciando juego asíncrono con datos:', {
       mode: currentState.mode,
       category: currentState.category,
       difficulty: currentState.difficulty,
-      rounds: currentState.rounds
+      rounds: currentState.rounds,
+      index: currentState.index
     });
     
     // Configurar el estado para el juego asíncrono
@@ -526,12 +722,27 @@ export async function startSolo(){
     await ensureInitial60();
     
     // Usar el deck de la base de datos si existe
-    if (window.currentAsyncMatch && window.currentAsyncMatch.deck && window.currentAsyncMatch.deck.length > 0) {
-      currentState.deck = window.currentAsyncMatch.deck;
+    if (window.currentAsyncMatch && window.currentAsyncMatch.deck) {
+      // Si el deck es un string JSON, parsearlo
+      if (typeof window.currentAsyncMatch.deck === 'string') {
+        currentState.deck = JSON.parse(window.currentAsyncMatch.deck);
+      } else {
+        currentState.deck = window.currentAsyncMatch.deck;
+      }
       console.log('🎮 Deck cargado desde BD:', currentState.deck.length, 'preguntas');
+    } else if (currentState.deck && currentState.deck.length > 0) {
+      // Si ya está en STATE, usarlo
+      console.log('🎮 Deck ya está en STATE:', currentState.deck.length, 'preguntas');
     } else {
+      // Fallback: generar deck localmente
       currentState.deck = buildDeckSingle(currentState.category, currentState.rounds, currentState.difficulty);
       console.log('🎮 Deck generado localmente:', currentState.deck.length, 'preguntas');
+    }
+    
+    // Asegurar que el index esté dentro del rango válido
+    if (currentState.index < 0 || currentState.index >= currentState.deck.length) {
+      console.warn('⚠️ Index fuera de rango, ajustando a 0');
+      currentState.index = 0;
     }
   } else {
     // Modo normal (solo, timed, etc.)
@@ -589,7 +800,33 @@ export async function startSolo(){
   }
 
   showGame(true);
-  nextQuestion();
+  
+  // En modo async_v2, el índice ya está configurado correctamente
+  // No llamar a nextQuestion() porque incrementa el índice
+  // Renderizar directamente la pregunta actual
+  if (currentState.mode === 'async_v2') {
+    const deck = currentState.deck || [];
+    const question = deck[currentState.index];
+    if (question) {
+      renderQuestion(question);
+      hud();
+      setProgress((currentState.index + 1) / currentState.total);
+      
+      // Si ya respondió, mostrar mensaje y actualizar estilo del botón
+      if (currentState.alreadyAnswered) {
+        if (window.showAsyncExitMessage) {
+          window.showAsyncExitMessage();
+        }
+        if (window.updateExitButtonStyle) {
+          window.updateExitButtonStyle();
+        }
+      }
+    } else {
+      console.error('❌ No se encontró la pregunta en el índice:', currentState.index);
+    }
+  } else {
+    nextQuestion();
+  }
 }
 
 // ===== Funciones para modo asíncrono
@@ -601,14 +838,22 @@ let asyncExpectedAnswers = 2;
 window.asyncAnsweredSet = asyncAnsweredSet;
 window.asyncExpectedAnswers = asyncExpectedAnswers;
 
-async function saveAsyncAnswerAndCheck(currentState, question, isCorrect, selectedAnswer) {
+async function saveAsyncAnswerAndCheck(currentState, question, isCorrect, selectedAnswer, timeSpent = 0) {
   console.log('💾 saveAsyncAnswerAndCheck llamado:', {
     hasMatchId: !!window.currentAsyncMatchId,
     matchId: window.currentAsyncMatchId,
     questionIndex: currentState.index - 1,
     isCorrect,
-    selectedAnswer
+    selectedAnswer,
+    timeSpent,
+    gameMode: window.currentGameMode
   });
+  
+  // Detectar si estamos en modo V2
+  if (window.currentGameMode === 'async_v2' && window.saveAsyncAnswerV2) {
+    console.log('✅ Usando sistema V2 para guardar respuesta');
+    return await window.saveAsyncAnswerV2(currentState, question, isCorrect, selectedAnswer, timeSpent);
+  }
   
   if (!window.currentAsyncMatchId) {
     console.error('❌ No hay matchId para guardar respuesta');

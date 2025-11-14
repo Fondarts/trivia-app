@@ -36,9 +36,10 @@ import { bindAllEventListeners } from './init/event-bindings.js';
 
 // Game modules  
 import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, bindLeaderboardsOpen, refreshCategorySelect } from './game/ui.js';
-import { startSolo, nextQuestion, endGame, renderQuestion } from './game/solo.js';
+import { startSolo, nextQuestion, endGame, renderQuestion, openSingleResult, showGame } from './game/solo.js';
 import { initVS, createMatch, joinMatch, answer, setVSName, leaveMatch, startRandomMatch, cancelRandomSearch, isRandomSearching } from './game/vs.js';
 import { initAsyncVS, startAsyncRandomSearch } from './game/async_vs.js';
+import { initAsyncVSV2 } from './game/async_vs_v2.js';
 import { STATE } from './core/store.js';
 
 // Player modules
@@ -248,6 +249,8 @@ window.addEventListener('load', async ()=>{
   window.STATE = STATE;
   window.renderQuestion = renderQuestion;
   window.answer = answer;
+  window.openSingleResult = openSingleResult;
+  window.showGame = showGame;
   
   // Exponer funciones VS globalmente
   window.renderVSQuestion = renderVSQuestion;
@@ -743,7 +746,7 @@ window.addEventListener('load', async ()=>{
       console.log('🎯 Mensaje asyncExitMessage ya existe, actualizando texto');
     }
     
-    messageEl.textContent = 'Puedes salir. Te notificaremos cuando el rival haya contestado.';
+    messageEl.textContent = 'Podés salir mientras esperás a que tu rival responda';
     console.log('✅ Texto del mensaje configurado');
     
     // En partidas asíncronas, el mensaje debe permanecer visible
@@ -756,14 +759,27 @@ window.addEventListener('load', async ()=>{
   document.getElementById('btnExitGame')?.addEventListener('click', async ()=>{
     // Verificar si estamos en modo asíncrono esperando rival
     const currentState = window.STATE || STATE;
-    const isAsyncWaiting = (currentState && currentState.mode === 'async' && 
-      (currentState.status === 'waiting_for_opponent' || currentState.status === 'waiting_for_opponent_answer')) ||
-      (window.currentGameMode === 'async' && window.currentAsyncMatchId);
+    
+    // Detectar si está en modo async_v2 (ya respondió o no, pero está en partida asíncrona)
+    const isAsyncV2 = currentState?.mode === 'async_v2' || window.currentGameMode === 'async_v2';
+    const isAsyncV1 = currentState?.mode === 'async' || window.currentGameMode === 'async';
+    const hasAsyncMatch = !!window.currentAsyncMatchId;
+    
+    // Si está en modo async (V1 o V2) y tiene una partida activa, NO mostrar confirmación
+    const isAsyncWaiting = (isAsyncV2 || isAsyncV1) && hasAsyncMatch &&
+      (currentState?.status === 'waiting_for_opponent' || 
+       currentState?.status === 'waiting_for_opponent_answer' ||
+       currentState?.alreadyAnswered ||
+       isAsyncV2); // En async_v2 siempre permitir salir sin confirmación
     
     console.log('🚪 Botón Exit clickeado:', {
       currentState,
       mode: currentState?.mode,
       status: currentState?.status,
+      alreadyAnswered: currentState?.alreadyAnswered,
+      isAsyncV2,
+      isAsyncV1,
+      hasAsyncMatch,
       isAsyncWaiting,
       vsActive: getVsActive(),
       currentAsyncMatchId: window.currentAsyncMatchId,
@@ -772,16 +788,16 @@ window.addEventListener('load', async ()=>{
     
     if (isAsyncWaiting) {
       // En partidas asíncronas esperando rival, no mostrar confirmación
-      console.log('🎮 Saliendo de partida asíncrona (esperando rival)');
+      console.log('🎮 Saliendo de partida asíncrona (esperando rival) - NO se abandona la partida');
       
       // Para partidas asíncronas, solo salir sin terminar el juego
-      // No llamar a endGame() porque eso muestra resultados
+      // NO llamar a endGame() ni leaveMatch() porque eso abandonaría la partida
+      // Solo volver a la pantalla principal
       showConfigUI();
       setStatus('Listo', false);
       
-      // Mostrar mensaje informativo debajo del botón Exit
-      console.log('🎯 Llamando a showAsyncExitMessage()');
-      showAsyncExitMessage();
+      // Limpiar referencias pero mantener la partida activa
+      // No limpiar currentAsyncMatchId para que pueda volver a entrar
       
       // Recargar el listado de partidas abiertas para actualizar el progreso
       setTimeout(() => {
@@ -789,7 +805,7 @@ window.addEventListener('load', async ()=>{
           console.log('🔄 Recargando listado de partidas abiertas...');
           window.loadOpenMatches();
         }
-      }, 1000);
+      }, 500);
     } else {
       console.log('🎮 Modo normal - mostrando confirmación');
       // Para partidas normales, mostrar confirmación
@@ -928,6 +944,7 @@ window.addEventListener('load', async ()=>{
         finalUsername: username
       });
       
+      // Inicializar sistema V1 (legacy)
       initAsyncVS({
         supabase,
         userId: userId,
@@ -981,6 +998,34 @@ window.addEventListener('load', async ()=>{
           }
         }
       });
+      
+      // Inicializar sistema V2 (nuevo)
+      initAsyncVSV2({
+        supabase,
+        userId: userId,
+        username: username,
+        callbacks: {
+          onStatus: (data) => {
+            console.log('Async VS V2 Status:', data);
+            if (data.status === 'match_created') {
+              toast('Partida V2 creada. Esperando que alguien acepte...');
+            } else if (data.status === 'match_accepted') {
+              toast(`¡${data.opponent} aceptó tu desafío! Ve a "Partidas Abiertas" para jugar.`);
+              if (window.loadOpenMatches) {
+                window.loadOpenMatches();
+              }
+            }
+          },
+          onQuestion: (data) => console.log('Async VS V2 Question:', data),
+          onEnd: (data) => console.log('Async VS V2 End:', data),
+          onMatchUpdate: (data) => {
+            console.log('Async VS V2 Match Update:', data);
+            if (window.loadOpenMatches) {
+              window.loadOpenMatches();
+            }
+          }
+        }
+      });
   }
 
   const onHost = async ()=>{
@@ -1021,22 +1066,21 @@ window.addEventListener('load', async ()=>{
          }
 
          if (opponentType === 'random_async' && !pendingFriendId){
-           // Buscar rival aleatorio asíncrono
+           // Buscar rival aleatorio asíncrono - USAR SOLO V2
            try {
-             const result = await startAsyncRandomSearch({ rounds, category: cat, difficulty: diff });
+             if (!window.asyncVSV2 || !window.asyncVSV2.createMatch) {
+               throw new Error('Sistema V2 no está disponible. Recarga la página.');
+             }
+             
+             console.log('✅ Creando partida asíncrona (V2)...');
+             const result = await window.asyncVSV2.createMatch({ rounds, category: cat, difficulty: diff });
              const badge = document.getElementById('vsCodeBadge');
-             if (result.status === 'match_created') {
-               if (badge) badge.textContent = `Partida: ${result.matchId}`;
-               toast(`¡Partida asíncrona creada contra ${result.opponent}!`);
-            } else {
-              if (badge) badge.textContent = 'Esperando rival...';
-              toast('Solicitud enviada. Esperando que alguien acepte...');
-              // El botón btnViewRequests ya no existe, no intentar mostrarlo
-            }
+             if (badge) badge.textContent = `Partida: ${result.id.substring(0, 8)}...`;
+             toast('Partida creada. Esperando que alguien acepte...');
              return;
            } catch (e){
              console.error('Error iniciando matchmaking asíncrono:', e);
-             toast('No se pudo iniciar el emparejamiento asíncrono');
+             toast('No se pudo crear la partida. Verifica la consola para más detalles.');
              return;
            }
          }
@@ -1214,17 +1258,27 @@ window.addEventListener('load', async ()=>{
     },
     onExitGame: async () => {
       const currentState = window.STATE || STATE;
-      const isAsyncWaiting = (currentState && currentState.mode === 'async' && 
-        (currentState.status === 'waiting_for_opponent' || currentState.status === 'waiting_for_opponent_answer')) ||
-        (window.currentGameMode === 'async' && window.currentAsyncMatchId);
+      
+      // Detectar si está en modo async_v2 (ya respondió o no, pero está en partida asíncrona)
+      const isAsyncV2 = currentState?.mode === 'async_v2' || window.currentGameMode === 'async_v2';
+      const isAsyncV1 = currentState?.mode === 'async' || window.currentGameMode === 'async';
+      const hasAsyncMatch = !!window.currentAsyncMatchId;
+      
+      // Si está en modo async (V1 o V2) y tiene una partida activa, NO mostrar confirmación
+      const isAsyncWaiting = (isAsyncV2 || isAsyncV1) && hasAsyncMatch &&
+        (currentState?.status === 'waiting_for_opponent' || 
+         currentState?.status === 'waiting_for_opponent_answer' ||
+         currentState?.alreadyAnswered ||
+         isAsyncV2); // En async_v2 siempre permitir salir sin confirmación
       
       if (isAsyncWaiting) {
+        console.log('🎮 onExitGame: Saliendo de partida asíncrona (esperando rival) - NO se abandona la partida');
         showConfigUI();
         setStatus('Listo', false);
         if (window.showAsyncExitMessage) showAsyncExitMessage();
         setTimeout(() => {
           if (window.loadOpenMatches) window.loadOpenMatches();
-        }, 1000);
+        }, 500);
       } else {
         if (!confirm('¿Seguro que querés salir de la partida?')) return;
         if (getVsActive()) {

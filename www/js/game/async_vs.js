@@ -195,7 +195,33 @@ export function initAsyncVS({ supabase, userId, username, callbacks = {} }){
   window.getAsyncMatchStatus = getAsyncMatchStatus;
   window.getPendingRequests = getPendingRequests;
   window.acceptRandomRequest = acceptRandomRequest;
-  window.startAsyncGame = startAsyncGame;
+  // Función wrapper - USAR SOLO V2
+  window.startAsyncGame = async function(matchId) {
+    if (!sb) {
+      console.error('❌ Supabase no inicializado');
+      return;
+    }
+    
+    // Verificar si es una partida V2
+    const { data: v2Match } = await sb
+      .from('async_matches_v2')
+      .select('id')
+      .eq('id', matchId)
+      .single();
+    
+    if (v2Match) {
+      console.log('✅ Partida V2 detectada');
+      if (window.asyncVSV2 && window.asyncVSV2.startGame) {
+        return await window.asyncVSV2.startGame(matchId);
+      } else {
+        throw new Error('Sistema V2 no está disponible. Recarga la página.');
+      }
+    } else {
+      // Intentar migrar partida V1 a V2 o mostrar error
+      console.warn('⚠️ Partida V1 detectada. El sistema ahora usa solo V2.');
+      throw new Error('Esta partida usa el sistema antiguo. Por favor, crea una nueva partida.');
+    }
+  };
   window.loadAsyncMatches = loadAsyncMatches;
   window.displayAsyncMatches = displayAsyncMatches;
   window.joinAsyncMatch = joinAsyncMatch;
@@ -837,34 +863,59 @@ export async function cleanupOldMatches(){
   }
 }
 
-// ===== Cargar partidas asíncronas disponibles
+// ===== Cargar partidas asíncronas disponibles (V2)
 export async function loadAsyncMatches(){
   if (!sb) {
     console.log('⚠️ Supabase no inicializado - retornando array vacío');
     return [];
   }
   
-  // OPTIMIZACIÓN: Eliminado cleanupOldMatches() aquí - debería ejecutarse en un cron job
-  // OPTIMIZACIÓN: Eliminadas todas las consultas de debug en producción
+  console.log('🔍 Cargando partidas asíncronas disponibles (V2)...');
+  console.log('🔍 Usuario actual (me.id):', me.id);
   
-  console.log('🔍 Cargando partidas asíncronas disponibles...');
-  
-  // Query optimizada: una sola consulta con filtros en BD (no en frontend)
-  const { data: allMatches, error: allError } = await sb
-    .from('async_match_requests')
-    .select('id, requester_id, requester_name, rounds, category, difficulty, created_at, status')
+  // Primero, obtener TODAS las partidas pending para debug
+  const { data: allPendingMatches, error: debugError } = await sb
+    .from('async_matches_v2')
+    .select('id, player1_id, player1_name, player2_id, status')
     .eq('status', 'pending')
-    .neq('requester_id', me.id) // Filtrar en BD, no en frontend
+    .is('player2_id', null);
+  
+  console.log('🔍 TODAS las partidas pending (sin filtrar por usuario):', allPendingMatches?.length || 0);
+  console.log('🔍 Detalle de partidas pending:', allPendingMatches);
+  
+  // Cargar partidas V2 que están pending y pueden ser aceptadas
+  const { data: v2Matches, error: v2Error } = await sb
+    .from('async_matches_v2')
+    .select('id, player1_id, player1_name, rounds, category, difficulty, created_at, status, expires_at')
+    .eq('status', 'pending')
+    .neq('player1_id', me.id) // No mostrar mis propias partidas
+    .is('player2_id', null) // Solo las que no tienen player2
     .order('created_at', { ascending: false })
     .limit(20);
   
-  if (allError) {
-    console.error('Error cargando partidas:', allError);
-    throw allError;
+  console.log('🔍 Partidas después de filtrar (excluyendo mis propias):', v2Matches?.length || 0);
+  console.log('🔍 Detalle de partidas filtradas:', v2Matches);
+  
+  if (v2Error) {
+    console.error('Error cargando partidas V2:', v2Error);
+    throw v2Error;
   }
   
-  const matches = allMatches || [];
-  console.log('📋 Partidas disponibles:', matches.length);
+  // Transformar a formato compatible con displayAsyncMatches
+  const matches = (v2Matches || []).map(match => ({
+    id: match.id,
+    requester_id: match.player1_id, // Para compatibilidad
+    requester_name: match.player1_name, // Para compatibilidad
+    rounds: match.rounds,
+    category: match.category,
+    difficulty: match.difficulty,
+    created_at: match.created_at,
+    status: match.status,
+    expires_at: match.expires_at,
+    _isV2: true // Marcar como V2
+  }));
+  
+  console.log('📋 Partidas disponibles (V2):', matches.length);
   
   // Si no hay partidas, mensaje útil
   if (matches.length === 0) {
@@ -930,12 +981,23 @@ export function displayAsyncMatches(matches){
     
     const categoryName = categoryNames[match.category] || match.category;
     
-    // Calcular tiempo restante
-    const createdAt = new Date(match.created_at);
-    const now = new Date();
-    const timeDiff = now - createdAt;
-    const hoursRemaining = Math.max(0, 24 - Math.floor(timeDiff / (1000 * 60 * 60)));
-    const minutesRemaining = Math.max(0, 60 - Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)));
+    // Calcular tiempo restante (V2 usa expires_at, V1 usa created_at + 48h)
+    let hoursRemaining, minutesRemaining;
+    if (match._isV2 && match.expires_at) {
+      // V2: usar expires_at
+      const expiresAt = new Date(match.expires_at);
+      const now = new Date();
+      const timeDiff = expiresAt - now;
+      hoursRemaining = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60)));
+      minutesRemaining = Math.max(0, Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)));
+    } else {
+      // V1: usar created_at + 48h (legacy)
+      const createdAt = new Date(match.created_at);
+      const now = new Date();
+      const timeDiff = now - createdAt;
+      hoursRemaining = Math.max(0, 48 - Math.floor(timeDiff / (1000 * 60 * 60))); // V2 usa 48h
+      minutesRemaining = Math.max(0, 60 - Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)));
+    }
     
     let timeRemainingText = '';
     if (hoursRemaining > 0) {
@@ -969,33 +1031,102 @@ export function displayAsyncMatches(matches){
   });
 }
 
-// ===== Unirse a partida asíncrona
+// ===== Unirse a partida asíncrona (V2)
 export async function joinAsyncMatch(matchId){
   if (!sb) throw new Error('Supabase no inicializado');
   
-  console.log('🎮 Uniéndose a partida asíncrona:', matchId);
+  console.log('🎮 Uniéndose a partida asíncrona V2:', matchId);
   
   try {
-    const result = await acceptRandomRequest(matchId);
+    // Verificar si es una partida V2
+    const { data: v2Match } = await sb
+      .from('async_matches_v2')
+      .select('id, player1_name, status')
+      .eq('id', matchId)
+      .single();
     
-    if (result.status === 'match_created') {
-      // Ocultar lista de partidas
-      const listContainer = document.getElementById('asyncMatchesList');
-      if (listContainer) {
-        listContainer.style.display = 'none';
+    if (v2Match) {
+      // Es una partida V2, usar el sistema V2
+      if (window.asyncVSV2 && window.asyncVSV2.acceptMatch) {
+        console.log('✅ Usando sistema V2 para aceptar partida');
+        const result = await window.asyncVSV2.acceptMatch(matchId);
+        
+        // Ocultar lista de partidas
+        const listContainer = document.getElementById('asyncMatchesList');
+        if (listContainer) {
+          listContainer.style.display = 'none';
+        }
+        
+        // Mostrar información de la partida
+        const vsCodeBadge = document.getElementById('vsCodeBadge');
+        if (vsCodeBadge) {
+          vsCodeBadge.textContent = `Partida: ${matchId.substring(0, 8)}...`;
+        }
+        
+        if (window.toast) {
+          window.toast(`¡Te uniste a la partida contra ${v2Match.player1_name}!`);
+        }
+        
+        // Iniciar automáticamente el juego para quien acepta
+        console.log('🎮 Iniciando juego automáticamente para quien acepta (V2)...');
+        setTimeout(async () => {
+          if (window.asyncVSV2 && window.asyncVSV2.startGame) {
+            try {
+              await window.asyncVSV2.startGame(matchId);
+              console.log('✅ Juego iniciado automáticamente');
+            } catch (error) {
+              console.error('❌ Error iniciando juego automático:', error);
+              if (window.toast) {
+                window.toast('Error al iniciar la partida. Intenta entrar manualmente.');
+              }
+            }
+          } else if (window.startAsyncGame) {
+            // Fallback al sistema antiguo si V2 no está disponible
+            try {
+              await window.startAsyncGame(matchId);
+            } catch (error) {
+              console.error('❌ Error iniciando juego automático (fallback):', error);
+            }
+          }
+        }, 1000);
+        
+        // Recargar lista de partidas disponibles
+        if (window.loadAsyncMatches) {
+          setTimeout(() => {
+            window.loadAsyncMatches().then(matches => {
+              window.displayAsyncMatches(matches);
+            });
+          }, 500);
+        }
+        
+        return { status: 'match_accepted', matchId: matchId, opponent: v2Match.player1_name };
+      } else {
+        throw new Error('Sistema V2 no está disponible');
       }
+    } else {
+      // Es una partida V1 (legacy), usar el sistema antiguo
+      console.log('⚠️ Partida V1 detectada, usando sistema legacy');
+      const result = await acceptRandomRequest(matchId);
       
-      // Mostrar información de la partida
-      const vsCodeBadge = document.getElementById('vsCodeBadge');
-      if (vsCodeBadge) {
-        vsCodeBadge.textContent = `Partida: ${result.matchId}`;
+      if (result.status === 'match_created') {
+        // Ocultar lista de partidas
+        const listContainer = document.getElementById('asyncMatchesList');
+        if (listContainer) {
+          listContainer.style.display = 'none';
+        }
+        
+        // Mostrar información de la partida
+        const vsCodeBadge = document.getElementById('vsCodeBadge');
+        if (vsCodeBadge) {
+          vsCodeBadge.textContent = `Partida: ${result.matchId}`;
+        }
+        
+        if (window.toast) {
+          window.toast(`¡Te uniste a la partida contra ${result.opponent}!`);
+        }
+        
+        return result;
       }
-      
-      if (window.toast) {
-        window.toast(`¡Te uniste a la partida contra ${result.opponent}!`);
-      }
-      
-      return result;
     }
   } catch (error) {
     console.error('Error uniéndose a partida:', error);

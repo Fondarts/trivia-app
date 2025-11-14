@@ -1742,44 +1742,104 @@ async function loadOpenMatches() {
     // Obtener partidas asíncronas del usuario actual
     console.log('🔍 Buscando partidas para usuario:', socialManager.userId);
     
-    // Primero verificar que la tabla existe y tiene datos
+    // Verificar que la tabla V2 existe
     const { data: testData, error: testError } = await socialManager.supabase
-      .from('async_matches')
+      .from('async_matches_v2')
       .select('id')
       .limit(1);
     
-    console.log('🔍 Test de tabla async_matches:', { testData, testError });
+    console.log('🔍 Test de tabla async_matches_v2:', { testData, testError });
     
     if (testError) {
-      console.error('Error accediendo a la tabla async_matches:', testError);
-      container.innerHTML = '<div class="error">Error: Tabla async_matches no disponible</div>';
+      console.error('Error accediendo a la tabla async_matches_v2:', testError);
+      container.innerHTML = '<div class="error">Error: Tabla async_matches_v2 no disponible. Verifica que ejecutaste el SQL en Supabase.</div>';
       return;
     }
     
-    // Obtener partidas donde el usuario es player1
-    const { data: player1Matches, error: player1Error } = await socialManager.supabase
-      .from('async_matches')
-      .select('*')
-      .eq('player1_id', socialManager.userId)
-      .order('created_at', { ascending: false });
+    // ===== CARGAR SOLO PARTIDAS V2 =====
+    let allMatches = [];
+    try {
+      // Obtener partidas V2 donde el usuario es player1
+      const { data: v2Player1Matches, error: p1Error } = await socialManager.supabase
+        .from('async_matches_v2')
+        .select('*')
+        .eq('player1_id', socialManager.userId)
+        .order('last_activity_at', { ascending: false });
+      
+      console.log('🔍 Partidas como player1:', { count: v2Player1Matches?.length || 0, error: p1Error });
+      
+      // Obtener partidas V2 donde el usuario es player2
+      const { data: v2Player2Matches, error: p2Error } = await socialManager.supabase
+        .from('async_matches_v2')
+        .select('*')
+        .eq('player2_id', socialManager.userId)
+        .order('last_activity_at', { ascending: false });
+      
+      console.log('🔍 Partidas como player2:', { count: v2Player2Matches?.length || 0, error: p2Error });
+      
+      // También cargar partidas pending que pueden ser aceptadas por cualquier usuario
+      // (solo si el usuario NO es el creador)
+      const { data: v2PendingMatches, error: pendingError } = await socialManager.supabase
+        .from('async_matches_v2')
+        .select('*')
+        .eq('status', 'pending')
+        .neq('player1_id', socialManager.userId) // No mostrar mis propias partidas pending
+        .is('player2_id', null) // Solo las que no tienen player2
+        .order('created_at', { ascending: false })
+        .limit(20); // Limitar para no sobrecargar
+      
+      console.log('🔍 Partidas pending disponibles para aceptar:', { count: v2PendingMatches?.length || 0, error: pendingError });
+      
+      allMatches = [
+        ...(v2Player1Matches || []), 
+        ...(v2Player2Matches || []),
+        ...(v2PendingMatches || [])
+      ];
+      
+      // Eliminar duplicados (por si una partida aparece en múltiples consultas)
+      const uniqueMatches = [];
+      const seenIds = new Set();
+      for (const match of allMatches) {
+        if (!seenIds.has(match.id)) {
+          seenIds.add(match.id);
+          uniqueMatches.push(match);
+        }
+      }
+      allMatches = uniqueMatches;
+      
+      // Marcar como V2
+      allMatches = allMatches.map(m => ({
+        ...m,
+        _isV2: true,
+        // Normalizar campos para compatibilidad con código existente
+        updated_at: m.last_activity_at,
+        question_start_time: null, // V2 no usa este campo
+        current_question: null, // Se calcula desde respuestas
+      }));
+      
+      console.log('🔍 Partidas V2 encontradas:', allMatches.length);
+      console.log('📋 Detalle de partidas encontradas:', allMatches.map(m => ({
+        id: m.id.substring(0, 8),
+        player1_id: m.player1_id,
+        player2_id: m.player2_id,
+        status: m.status,
+        created_at: m.created_at,
+        last_activity_at: m.last_activity_at
+      })));
+    } catch (v2Error) {
+      console.error('❌ Error cargando partidas V2:', v2Error);
+      container.innerHTML = '<div class="error">Error al cargar partidas. Verifica la consola.</div>';
+      return;
+    }
     
-    console.log('🔍 Partidas como player1:', { player1Matches, player1Error });
-    
-    // Obtener partidas donde el usuario es player2
-    const { data: player2Matches, error: player2Error } = await socialManager.supabase
-      .from('async_matches')
-      .select('*')
-      .eq('player2_id', socialManager.userId)
-      .order('created_at', { ascending: false });
-    
-    console.log('🔍 Partidas como player2:', { player2Matches, player2Error });
-    
-    // Combinar ambas listas y ordenar por fecha (más recientes primero)
-    const allMatches = [...(player1Matches || []), ...(player2Matches || [])]
-      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-    const hasError = player1Error || player2Error;
-    
-    console.log('📊 Todas las partidas del usuario:', { allMatches, hasError });
+    // Ordenar por fecha (más recientes primero)
+    allMatches.sort((a, b) => {
+      const dateA = new Date(a.last_activity_at);
+      const dateB = new Date(b.last_activity_at);
+      return dateB - dateA;
+    });
+    console.log('📊 Todas las partidas del usuario (V2) - DESPUÉS DE ORDENAR:', allMatches.length);
+    console.log('📋 IDs de partidas:', allMatches.map(m => m.id.substring(0, 8)));
     
     // Obtener perfiles de los jugadores para mostrar nombres y avatares reales
     if (allMatches.length > 0) {
@@ -1826,27 +1886,6 @@ async function loadOpenMatches() {
       console.log('📊 Partidas actualizadas con perfiles:', allMatches);
     }
     
-    if (hasError) {
-      console.error('Error obteniendo partidas:', { player1Error, player2Error });
-      
-      // Mostrar error más específico
-      let errorMessage = 'Error al cargar partidas';
-      if (player1Error?.code === 'PGRST301' || player2Error?.code === 'PGRST301') {
-        errorMessage = 'Error: Políticas de seguridad bloquean el acceso';
-      } else if (player1Error?.code === 'PGRST116' || player2Error?.code === 'PGRST116') {
-        errorMessage = 'Error: Tabla no encontrada o sin permisos';
-      } else if (player1Error?.status === 400 || player2Error?.status === 400) {
-        errorMessage = 'Error 400: Consulta inválida - Verificar políticas RLS';
-      }
-      
-      container.innerHTML = `
-        <div class="error">
-          ${errorMessage}
-          <br><small>Revisar políticas de Supabase</small>
-        </div>
-      `;
-      return;
-    }
     
     // FILTRAR PARTIDAS: SOLO MOSTRAR LO QUE ESTÁ REALMENTE ACTIVO
     // Excluir partidas terminadas, abandonadas, o sin actividad reciente
@@ -1858,22 +1897,29 @@ async function loadOpenMatches() {
         return false;
       }
       
-      // Calcular última actividad (la más reciente disponible)
-      const lastActivity = new Date(Math.max(
-        match.updated_at ? new Date(match.updated_at).getTime() : 0,
-        match.question_start_time ? new Date(match.question_start_time).getTime() : 0,
-        match.finished_at ? new Date(match.finished_at).getTime() : 0,
-        match.created_at ? new Date(match.created_at).getTime() : 0
-      ));
+      // Para V2, usar last_activity_at directamente
+      let lastActivity;
+      if (match._isV2) {
+        lastActivity = match.last_activity_at ? new Date(match.last_activity_at) : new Date(match.created_at);
+      } else {
+        // Para V1 (legacy), calcular desde múltiples campos
+        lastActivity = new Date(Math.max(
+          match.updated_at ? new Date(match.updated_at).getTime() : 0,
+          match.question_start_time ? new Date(match.question_start_time).getTime() : 0,
+          match.finished_at ? new Date(match.finished_at).getTime() : 0,
+          match.created_at ? new Date(match.created_at).getTime() : 0
+        ));
+      }
       
       const hoursElapsed = (now - lastActivity) / (1000 * 60 * 60);
       
       // EXCLUIR si pasaron más de 72 horas sin actividad
       if (hoursElapsed > 72) {
-        console.log(`⏰ Excluyendo partida ${match.id}: ${hoursElapsed.toFixed(1)}h sin actividad (última: ${lastActivity.toISOString()})`);
+        console.log(`⏰ Excluyendo partida ${match.id.substring(0, 8)}: ${hoursElapsed.toFixed(1)}h sin actividad (última: ${lastActivity.toISOString()})`);
         return false;
       }
       
+      console.log(`✅ Partida ${match.id.substring(0, 8)} válida: ${hoursElapsed.toFixed(1)}h desde última actividad`);
       return true;
     });
     
@@ -1889,6 +1935,56 @@ async function loadOpenMatches() {
     for (const match of validMatches) {
       const meId = socialManager.userId;
       const isPlayer1 = match.player1_id === meId;
+      
+      // Para partidas V2, usar la función SQL para obtener pregunta actual
+      if (match._isV2) {
+        try {
+          const { data: currentQuestion } = await socialManager.supabase.rpc('get_current_question_v2', {
+            p_match_id: match.id,
+            p_player_id: meId
+          });
+          
+          if (currentQuestion !== null && currentQuestion !== undefined) {
+            match._displayQuestion = currentQuestion;
+            match._realCompletedQuestions = currentQuestion; // La pregunta actual es la siguiente a completar
+            
+            // Verificar si ambos respondieron la pregunta actual
+            const { data: bothAnswered } = await socialManager.supabase.rpc('both_players_answered_v2', {
+              p_match_id: match.id,
+              p_question_index: currentQuestion
+            });
+            
+            match._meAnswered = false; // Por defecto
+            match._opponentAnswered = false;
+            
+            if (!bothAnswered) {
+              // Obtener quién respondió
+              const { data: answers } = await socialManager.supabase
+                .from('async_answers_v2')
+                .select('player_id')
+                .eq('match_id', match.id)
+                .eq('question_index', currentQuestion);
+              
+              const answeredPlayerIds = (answers || []).map(a => a.player_id);
+              match._meAnswered = answeredPlayerIds.includes(meId);
+              match._opponentAnswered = answeredPlayerIds.includes(isPlayer1 ? match.player2_id : match.player1_id);
+            }
+            
+            match._finalIsMyTurn = match._opponentAnswered && !match._meAnswered;
+          } else {
+            // Partida terminada
+            match._displayQuestion = match.rounds;
+            match._realCompletedQuestions = match.rounds;
+            match._meAnswered = true;
+            match._opponentAnswered = true;
+            match._finalIsMyTurn = false;
+          }
+          
+          continue; // Saltar al siguiente match
+        } catch (v2Error) {
+          console.warn('⚠️ Error calculando progreso V2:', v2Error);
+        }
+      }
       
       // Calcular cuántas preguntas completó el jugador actual (donde ambos respondieron)
       // y cuántas respondió solo él (esperando al rival)
@@ -1973,43 +2069,7 @@ async function loadOpenMatches() {
       }
     }
 
-    // Para partidas sin question_start_time, obtener el timestamp de la primera respuesta como fallback
-    // Esto solo se hace para partidas que realmente lo necesitan (question_start_time es null)
-    const matchesWithoutStartTime = validMatches.filter(m => !m.question_start_time && m.status === 'question_active');
-    if (matchesWithoutStartTime.length > 0) {
-      try {
-        const matchIds = matchesWithoutStartTime.map(m => m.id);
-        const currentQ = matchesWithoutStartTime[0].current_question || 0; // Todas deberían tener la misma pregunta actual
-        
-        // Consulta optimizada: obtener todas las respuestas y filtrar el MIN por match_id en frontend
-        const { data: firstAnswers, error: answersError } = await socialManager.supabase
-          .from('async_answers')
-          .select('match_id, created_at')
-          .in('match_id', matchIds)
-          .eq('question_index', currentQ)
-          .order('created_at', { ascending: true });
-        
-        if (!answersError && Array.isArray(firstAnswers)) {
-          // Crear un mapa con el primer timestamp (mínimo) por match_id
-          const firstAnswerMap = {};
-          firstAnswers.forEach(a => {
-            const existing = firstAnswerMap[a.match_id];
-            if (!existing || new Date(a.created_at) < new Date(existing)) {
-              firstAnswerMap[a.match_id] = a.created_at;
-            }
-          });
-          
-          // Asignar fallback a las partidas que lo necesitan
-          matchesWithoutStartTime.forEach(match => {
-            if (firstAnswerMap[match.id]) {
-              match._questionStartFallback = firstAnswerMap[match.id];
-            }
-          });
-        }
-      } catch (e) {
-        console.warn('⚠️ No se pudo obtener timestamp de primera respuesta para fallback:', e);
-      }
-    }
+    // V2 usa last_activity_at, no necesita fallback
 
     // Renderizar partidas
     container.innerHTML = validMatches.map(match => createMatchItem(match)).join('');
@@ -2036,12 +2096,20 @@ function createMatchItem(match) {
     opponentId, 
     originalName: opponentName,
     player1_name: match.player1_name,
-    player2_name: match.player2_name
+    player2_name: match.player2_name,
+    status: match.status
   });
   
-  // Si el nombre está vacío o es "Anon", usar un nombre genérico mejor
-  if (!opponentName || opponentName === 'Anon' || opponentName.trim() === '') {
-    opponentName = `Jugador ${opponentId.substring(0, 4)}`;
+  // Si la partida está pending y no hay oponente aún
+  if (match.status === 'pending' && !opponentId) {
+    opponentName = isPlayer1 ? 'Esperando oponente...' : match.player1_name || 'Jugador';
+  } else if (!opponentName || opponentName === 'Anon' || opponentName.trim() === '') {
+    // Si el nombre está vacío o es "Anon", usar un nombre genérico mejor
+    if (opponentId) {
+      opponentName = `Jugador ${opponentId.substring(0, 4)}`;
+    } else {
+      opponentName = 'Jugador';
+    }
     console.log('🔄 Usando nombre genérico:', opponentName);
   }
   
@@ -2058,7 +2126,7 @@ function createMatchItem(match) {
   
   // Calcular tiempo transcurrido
   const now = new Date();
-  const matchTime = new Date(match.created_at);
+  const matchTime = new Date(match._isV2 ? match.last_activity_at : match.created_at);
   const diffMs = now - matchTime;
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
   const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
@@ -2081,9 +2149,8 @@ function createMatchItem(match) {
     ? match._finalIsMyTurn 
     : (match.current_turn_player_id === meId);
   
-  // Para el tiempo: usar question_start_time o fallback con la primera respuesta
-  // Los triggers mantienen question_start_time actualizado, pero para partidas antiguas usamos fallback
-  const startIso = match.question_start_time || match._questionStartFallback;
+  // Para el tiempo: V2 siempre usa last_activity_at
+  const startIso = match.last_activity_at;
   
   if (startIso) {
     const elapsedMs = now - new Date(startIso);
@@ -2101,7 +2168,7 @@ function createMatchItem(match) {
   }
 
   return `
-    <div class="match-item clickable-match" data-match-id="${match.id}" data-opponent-id="${opponentId}" style="cursor: pointer;">
+    <div class="match-item clickable-match" data-match-id="${match.id}" data-opponent-id="${opponentId || ''}" style="cursor: pointer;">
       <div class="match-status ${isPlayer1 ? 'player1' : 'player2'}"></div>
       <img src="${opponentAvatar}" class="match-avatar" alt="${opponentName}" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg'"/>
       <div class="match-info">
@@ -2129,7 +2196,7 @@ function bindMatchItemEvents() {
       // Solo procesar si no se hizo click en un botón
       if (!e.target.closest('button')) {
         const opponentId = item.dataset.opponentId;
-        if (opponentId) {
+        if (opponentId && opponentId !== '') {
           showFriendProfile(opponentId);
         }
       }

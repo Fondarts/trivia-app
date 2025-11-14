@@ -116,18 +116,10 @@ function show(){ ensureModal().style.display='flex'; }
 function hide(){ const ov = document.getElementById('dlcModal'); if (ov) ov.style.display='none'; }
 
 // --- ensure button in header (if missing)
+// DESACTIVADO: Botón de tienda removido
 function ensureButton(){
-  let btn = document.getElementById('btnDLC');
-  if (!btn){
-    const hdr = document.querySelector('.header .row') || document.querySelector('.header');
-    if (!hdr) return;
-    btn = document.createElement('button');
-    btn.id = 'btnDLC'; btn.className = 'iconbtn'; btn.title = t('packStore');
-    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 7V6a5 5 0 0 1 10 0v1h3a1 1 0 0 1 .98 1.197l-2 10A2 2 0 0 1 17 20H7a2 2 0 0 1-1.98-1.803l-2-10A1 1 0 0 1 4 7h3Zm2 0h6V6a3 3 0 0 0-6 0v1Z"/></svg>';
-    hdr.insertBefore(btn, hdr.firstChild);
-  }
-  // bind click (idempotent)
-  btn.onclick = openStore;
+  // Función desactivada - botón de tienda removido
+  return;
 }
 
 async function fetchJSON(url){
@@ -234,8 +226,9 @@ async function openStore(){ try{ await render(); show(); }catch(e){ console.erro
 window.__openStore = openStore;
 
 // Bind on load (and ensure button exists)
+// DESACTIVADO: Botón de tienda removido
 document.addEventListener('DOMContentLoaded', ()=>{
-  ensureButton();
-  const btn = document.getElementById('btnDLC');
-  if (btn) btn.addEventListener('click', openStore);
+  // ensureButton(); // Desactivado
+  // const btn = document.getElementById('btnDLC');
+  // if (btn) btn.addEventListener('click', openStore);
 });

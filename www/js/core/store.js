@@ -6,9 +6,10 @@ export const SETTINGS = (() => {
       theme: saved.theme || (document.documentElement.getAttribute('data-theme') || 'dark'),
       sounds: saved.sounds !== undefined ? !!saved.sounds : true,
       autoNextRounds: saved.autoNextRounds !== undefined ? !!saved.autoNextRounds : false,
+      groupByCategory: saved.groupByCategory !== undefined ? !!saved.groupByCategory : true,
     };
   } catch {
-    return { theme: 'dark', sounds: true, autoNextRounds: false };
+    return { theme: 'dark', sounds: true, autoNextRounds: false, groupByCategory: true };
   }
 })();
 

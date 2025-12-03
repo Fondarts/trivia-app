@@ -1,5 +1,5 @@
 import { SETTINGS, persistSettings } from '../core/store.js';
-import { getBank, getBankCount, warmLocalBank, BASE_LABELS } from './bank.js';
+import { getBank, getBankCount, warmLocalBank, BASE_LABELS, PACKS_BASE, SUPPORTED_LANGS } from './bank.js';
 import { getStats, getUnlockedAchievements } from '../player/stats.js';
 import { getLevelProgress } from '../player/experience.js';
 import { ACHIEVEMENTS_LIST } from '../player/achievements.js';
@@ -174,8 +174,8 @@ export function bindProfileModal(){
           toast(lang === 'en' ? 'Language changed to English' : 'Idioma cambiado a Español');
           
           // Recargar el banco de preguntas en el nuevo idioma
-          warmLocalBank(lang).then(() => {
-            refreshCategorySelect();
+          warmLocalBank(lang).then(async () => {
+            await refreshCategorySelect();
             // Actualizar toda la UI sin recargar la página
             updateI18nUI();
             // Actualizar el badge del nivel con el nuevo idioma
@@ -228,6 +228,23 @@ export function bindProfileModal(){
         e.stopPropagation();
         SETTINGS.autoNextRounds = e.target.checked;
         persistSettings();
+      });
+    }
+
+    // Group by category checkbox
+    let chkGroupByCategory = document.getElementById('optGroupByCategory');
+    if (chkGroupByCategory) {
+      const newChk = chkGroupByCategory.cloneNode(true);
+      newChk.checked = !!SETTINGS.groupByCategory;
+      chkGroupByCategory.parentNode.replaceChild(newChk, chkGroupByCategory);
+      chkGroupByCategory = newChk;
+      
+      chkGroupByCategory.addEventListener('change', (e) => {
+        e.stopPropagation();
+        SETTINGS.groupByCategory = e.target.checked;
+        persistSettings();
+        // Refrescar el selector de categorías para aplicar el cambio
+        refreshCategorySelect();
       });
     }
 
@@ -446,7 +463,7 @@ export function bindVsToggle(){
   window.applyVsMode = apply;
 }
 
-export function refreshCategorySelect(){
+export async function refreshCategorySelect(){
   const sel = document.getElementById('categorySel');
   if (!sel) return;
   const prev = sel.value;
@@ -470,6 +487,110 @@ export function refreshCategorySelect(){
       groupBase.appendChild(o);
     });
     sel.appendChild(groupBase);
+
+    // Grupo packs disponibles según idioma (desde manifest.json)
+    try {
+      const currentLang = getLanguage();
+      const lang = SUPPORTED_LANGS.includes(currentLang) ? currentLang : 'es';
+      const manifestUrl = `${PACKS_BASE}/${lang}/manifest.json`;
+      
+      const res = await fetch(manifestUrl);
+      if (res.ok) {
+        const manifest = await res.json();
+        const packsMap = new Map(); // Para agrupar por categoría
+        
+        if (manifest.packs && Array.isArray(manifest.packs)) {
+          manifest.packs.forEach(pack => {
+            const category = pack.category || 'misc';
+            const files = pack.files || [];
+            
+            // Procesar TODOS los archivos del pack, no solo el primero
+            files.forEach(fileName => {
+              // Asegurar que el nombre del archivo tenga la extensión .json
+              let normalizedFileName = fileName;
+              if (normalizedFileName && !normalizedFileName.endsWith('.json')) {
+                normalizedFileName = normalizedFileName + '.json';
+              }
+              
+              // Usar el id del manifest como nombre de visualización
+              // Si hay múltiples archivos, usar id + nombre del archivo
+              let packName;
+              if (pack.id) {
+                if (files.length > 1) {
+                  // Si hay múltiples archivos, mostrar id + nombre del archivo
+                  const fileDisplayName = normalizedFileName.replace('.json', '').replace(/_/g, ' ').replace(/-/g, ' ');
+                  packName = `${pack.id} - ${fileDisplayName}`;
+                } else {
+                  // Si solo hay un archivo, usar solo el id
+                  packName = pack.id;
+                }
+              } else {
+                // Fallback: generar nombre del archivo si no hay id
+                packName = normalizedFileName.replace('.json', '').replace(/_/g, ' ').replace(/-/g, ' ');
+                packName = packName.split(' ').map(word => 
+                  word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' ');
+              }
+              
+              // Si el pack tiene un título específico para este archivo, usarlo
+              if (pack.title) {
+                packName = pack.title;
+              }
+              
+              if (!packsMap.has(category)) {
+                packsMap.set(category, []);
+              }
+              packsMap.get(category).push({
+                id: pack.id || normalizedFileName.replace('.json', ''),
+                name: packName,
+                fileName: normalizedFileName,
+                category: category
+              });
+            });
+          });
+          
+          // Crear grupos por categoría o lista plana según configuración
+          if (packsMap.size > 0) {
+            const groupByCategory = SETTINGS.groupByCategory !== false; // Por defecto true
+            
+            if (groupByCategory) {
+              // Agrupar por categoría
+              packsMap.forEach((packs, category) => {
+                const categoryLabel = labels[category] || category;
+                const g = document.createElement('optgroup');
+                g.label = categoryLabel;
+                
+                packs.forEach(pack => {
+                  const o = document.createElement('option');
+                  o.value = `filepack:${lang}:${pack.fileName}`;
+                  o.textContent = pack.name;
+                  g.appendChild(o);
+                });
+                
+                sel.appendChild(g);
+              });
+            } else {
+              // Mostrar todos sin agrupar
+              const g = document.createElement('optgroup');
+              g.label = typeof t === 'function' ? t('categoryAll') : 'Todos los packs';
+              
+              packsMap.forEach((packs, category) => {
+                packs.forEach(pack => {
+                  const o = document.createElement('option');
+                  o.value = `filepack:${lang}:${pack.fileName}`;
+                  o.textContent = pack.name;
+                  g.appendChild(o);
+                });
+              });
+              
+              sel.appendChild(g);
+            }
+          }
+        }
+      }
+    } catch(e) {
+      console.warn('[ui] refreshCategorySelect cargando packs desde manifest', e);
+    }
 
     // Grupo packs instalados (si hay)
     try {
@@ -624,11 +745,11 @@ export async function applyInitialUI(){
   bindProfileModal();
   bindDifficultyPills();
   // Cargar categorías ASAP para evitar UI vacía si algo falla después
-  try { refreshCategorySelect(); } catch(e){ console.warn('[ui] refreshCategorySelect temprana falló', e); }
+  try { await refreshCategorySelect(); } catch(e){ console.warn('[ui] refreshCategorySelect temprana falló', e); }
   // Enlazar segmentos con tolerancia a errores
   try { bindModeSegment(); } catch(e){ console.error('[ui] bindModeSegment error', e); }
   try { bindVsToggle(); } catch(e){ console.error('[ui] bindVsToggle error', e); }
-  refreshCategorySelect();
+  await refreshCategorySelect();
   updateBankCount();
   updatePlayerXPBar();
 
@@ -637,7 +758,7 @@ export async function applyInitialUI(){
   try {
     await warmLocalBank(currentLang);
     updateBankCount();
-    refreshCategorySelect();
+    await refreshCategorySelect();
   } catch (e) {
     console.error('[packs] no se pudieron cargar', e);
     toast('No se pudieron cargar los packs locales');

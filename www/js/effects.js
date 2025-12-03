@@ -299,8 +299,8 @@ export function initVisualEffects() {
   const themeInput = document.querySelector(`input[name="theme"][value="${savedTheme}"]`);
   if (themeInput) themeInput.checked = true;
   
-  // Agregar ripple a todos los botones
-  document.querySelectorAll('.btn, .pill, .seg, .option').forEach(addRippleEffect);
+  // Efecto ripple desactivado
+  // document.querySelectorAll('.btn, .pill, .seg, .option').forEach(addRippleEffect);
   
   // Animar elementos al aparecer
   animateElements();

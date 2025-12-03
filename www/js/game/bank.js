@@ -130,11 +130,92 @@ export function difficultyFilter(arr, diff) {
   return arr.filter(q => String(q.difficulty).toLowerCase() === d);
 }
 
-export function buildDeckSingle(categoryKey, count, diff = 'any', customPool = null) {
+// Cache para packs de archivos cargados
+const filePackCache = new Map();
+
+export async function buildDeckSingle(categoryKey, count, diff = 'any', customPool = null) {
   const bank = getBank();
   let pool = [];
+  
   if (categoryKey?.startsWith('custom:') && customPool) {
     pool = [...(customPool[categoryKey] || [])];
+  } else if (String(categoryKey||'').startsWith('filepack:')) {
+    // Cargar pack desde archivo JSON según idioma
+    try {
+      const parts = String(categoryKey).split(':');
+      if (parts.length >= 3) {
+        const lang = parts[1];
+        const fileName = parts.slice(2).join(':'); // Por si el nombre tiene ':'
+        const cacheKey = `${lang}:${fileName}`;
+        
+        // Verificar cache primero
+        if (filePackCache.has(cacheKey)) {
+          pool = [...filePackCache.get(cacheKey)];
+        } else {
+          // Cargar el archivo
+          const url = `${PACKS_BASE}/${lang}/${fileName}`;
+          const res = await fetch(url);
+          if (res.ok) {
+            const arr = await res.json();
+            if (Array.isArray(arr)) {
+              // Calcular la base URL para resolver rutas relativas de imágenes
+              const base = url.substring(0, url.lastIndexOf('/') + 1);
+              
+              pool = arr.map(q => {
+                if (!q || !Array.isArray(q.options) || q.options.length !== 4) return null;
+                const ans = Number.isInteger(q.answer) ? q.answer : 0;
+                if (ans < 0 || ans > 3) return null;
+                let difficulty = String(q.difficulty || 'medium').toLowerCase();
+                if (!['easy', 'medium', 'hard'].includes(difficulty)) difficulty = 'medium';
+                
+                // Resolver ruta de imagen: si es URL absoluta, usarla; si es relativa, resolver desde base
+                let imgUrl = null;
+                if (q.img && typeof q.img === 'string') {
+                  if (/^https?:\/\//.test(q.img)) {
+                    // URL absoluta (http/https)
+                    imgUrl = q.img;
+                  } else {
+                    // Ruta relativa: resolver desde la base del archivo JSON
+                    // Remover ./ si existe
+                    let imgPath = q.img.replace(/^\.\//, '');
+                    
+                    // Resolver rutas relativas como ../img/ desde packs/es/
+                    // Desde packs/es/, ../ sube a packs/, luego img/ va a packs/img/
+                    if (imgPath.startsWith('../')) {
+                      // Remover ../ y construir ruta desde PACKS_BASE
+                      const resolvedPath = imgPath.replace(/^\.\.\//, '');
+                      // La ruta resultante (ej: img/archivo.webp) se concatena con PACKS_BASE
+                      // Construir ruta relativa: packs/img/archivo.webp
+                      imgUrl = `${PACKS_BASE}/${resolvedPath}`.replace(/\/+/g, '/');
+                    } else {
+                      // Ruta relativa simple: concatenar con base (packs/es/)
+                      imgUrl = base + imgPath;
+                    }
+                  }
+                }
+                
+                return {
+                  q: String(q.q || '').trim(),
+                  options: q.options.slice(0, 4),
+                  answer: ans,
+                  difficulty: difficulty,
+                  category: q.category || 'misc',
+                  img: imgUrl
+                };
+              }).filter(q => q !== null);
+              
+              // Guardar en cache
+              filePackCache.set(cacheKey, pool);
+            }
+          } else {
+            console.error('[bank] Error cargando pack de archivo:', url, res.status);
+          }
+        }
+      }
+    } catch(e) {
+      console.error('[bank] Error cargando pack de archivo:', e);
+      pool = [];
+    }
   } else if (String(categoryKey||'').startsWith('userpack:')) {
     // Cargar pack creado por el usuario desde localStorage
     try {
@@ -167,22 +248,56 @@ export function buildDeckSingle(categoryKey, count, diff = 'any', customPool = n
   const filtered = difficultyFilter(pool, diff);
   const deck = [];
 
-  function pickOne(from) {
-    const i = Math.floor(Math.random() * from.length);
-    return from.splice(i, 1)[0];
+  // Función mejorada para mezclar array usando Fisher-Yates shuffle
+  function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   }
 
-  let tmp = [...filtered];
-  while (deck.length < count && tmp.length) {
-    deck.push(pickOne(tmp));
+  // Obtener historial de preguntas recientes desde localStorage
+  const recentQuestionsKey = `recent_questions_${categoryKey}`;
+  const recentQuestions = JSON.parse(localStorage.getItem(recentQuestionsKey) || '[]');
+  
+  // Filtrar preguntas recientes para evitar repeticiones inmediatas
+  let availableQuestions = filtered.filter(q => {
+    // Comparar por texto de pregunta para evitar duplicados
+    const questionText = q.q || '';
+    return !recentQuestions.some(recent => recent === questionText);
+  });
+
+  // Si no hay suficientes preguntas disponibles (sin las recientes), usar todas
+  if (availableQuestions.length < count) {
+    availableQuestions = [...filtered];
   }
 
-  let rest = pool.filter(q => !deck.includes(q));
-  while (deck.length < count && rest.length) {
-    deck.push(pickOne(rest));
+  // Mezclar completamente el array antes de seleccionar
+  const shuffled = shuffleArray(availableQuestions);
+
+  // Seleccionar las preguntas necesarias
+  for (let i = 0; i < count && i < shuffled.length; i++) {
+    deck.push(shuffled[i]);
   }
 
-  return deck;
+  // Si aún no hay suficientes, agregar del pool completo (ya filtrado por dificultad)
+  if (deck.length < count) {
+    const remaining = filtered.filter(q => !deck.includes(q));
+    const shuffledRemaining = shuffleArray(remaining);
+    for (let i = 0; deck.length < count && i < shuffledRemaining.length; i++) {
+      deck.push(shuffledRemaining[i]);
+    }
+  }
+
+  // Actualizar historial de preguntas recientes (mantener últimas 50)
+  const newRecent = deck.map(q => q.q || '').concat(recentQuestions);
+  const updatedRecent = newRecent.slice(0, 50); // Mantener solo las últimas 50
+  localStorage.setItem(recentQuestionsKey, JSON.stringify(updatedRecent));
+
+  // Mezclar el deck final una vez más para mayor aleatoriedad
+  return shuffleArray(deck);
 }
 
 export function listAvailableCategories() {

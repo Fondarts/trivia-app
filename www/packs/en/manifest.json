@@ -3,29 +3,39 @@
   "language": "en",
   "packs": [
     {
-      "id": "movies-en-1",
+      "id": "Movies1",
       "category": "movies",
       "files": ["movies1.json"]
     },
     {
-      "id": "geography-en-1",
+      "id": "Geography1",
       "category": "geography",
       "files": ["geography1.json"]
     },
     {
-      "id": "history-en-1",
+      "id": "History1",
       "category": "history",
       "files": ["history1.json"]
     },
     {
-      "id": "science-en-1",
+      "id": "Science1",
       "category": "science",
       "files": ["science1.json"]
     },
     {
-      "id": "sports-en-1",
+      "id": "Sports1",
       "category": "sports",
       "files": ["sports1.json"]
+    },
+    {
+      "id": "Movie pack 001",
+      "category": "movies",
+      "files": ["0001_movies_en.json"]
+    },
+    {
+      "id": "6815 Movies En",
+      "category": "movies",
+      "files": ["6815_movies_en.json"]
     }
   ]
 }

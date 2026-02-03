@@ -24,13 +24,13 @@ class AsyncMatchesCache {
    */
   async get(userId, fetchFn) {
     if (!userId) {
-      console.warn('AsyncMatchesCache: userId no proporcionado');
+
       return await fetchFn();
     }
     
     // Verificar si hay una carga en progreso (evitar múltiples queries simultáneas)
     if (this.isLoading.get(userId)) {
-      console.log('📦 AsyncMatchesCache: Esperando carga en progreso...');
+
       // Esperar hasta que termine la carga
       await this.waitForLoad(userId);
       // Intentar obtener del caché de nuevo
@@ -44,13 +44,12 @@ class AsyncMatchesCache {
     
     // Si hay caché válido, retornarlo
     if (cached && this.isValid(cached)) {
-      console.log('📦 AsyncMatchesCache: Cache HIT para usuario:', userId);
+
       return cached.data;
     }
     
     // Si no hay caché o expiró, obtener de BD
-    console.log('📦 AsyncMatchesCache: Cache MISS, obteniendo de BD...');
-    
+
     // Marcar como cargando
     this.isLoading.set(userId, true);
     
@@ -63,12 +62,10 @@ class AsyncMatchesCache {
         timestamp: Date.now(),
         version: 1
       });
-      
-      console.log('📦 AsyncMatchesCache: Datos guardados en caché:', data.length, 'partidas');
-      
+
       return data;
     } catch (error) {
-      console.error('📦 AsyncMatchesCache: Error obteniendo datos:', error);
+
       throw error;
     } finally {
       // Desmarcar como cargando
@@ -108,11 +105,11 @@ class AsyncMatchesCache {
    */
   invalidate(userId) {
     if (userId && this.cache.has(userId)) {
-      console.log('📦 AsyncMatchesCache: Invalidando caché para usuario:', userId);
+
       this.cache.delete(userId);
     } else {
       // Invalidar todo el caché
-      console.log('📦 AsyncMatchesCache: Invalidando todo el caché');
+
       this.cache.clear();
     }
     
@@ -131,7 +128,7 @@ class AsyncMatchesCache {
       cached.data = updateFn(cached.data);
       cached.timestamp = Date.now(); // Actualizar timestamp (renovar TTL)
       cached.version = (cached.version || 0) + 1;
-      console.log('📦 AsyncMatchesCache: Caché actualizado para usuario:', userId);
+
     }
   }
   
@@ -168,7 +165,7 @@ class AsyncMatchesCache {
           try {
             cb();
           } catch (error) {
-            console.error('Error en callback de AsyncMatchesCache:', error);
+
           }
         });
       }
@@ -179,7 +176,7 @@ class AsyncMatchesCache {
           try {
             cb();
           } catch (error) {
-            console.error('Error en callback de AsyncMatchesCache:', error);
+
           }
         });
       });
@@ -215,7 +212,7 @@ class AsyncMatchesCache {
    * Limpiar todo el caché
    */
   clear() {
-    console.log('📦 AsyncMatchesCache: Limpiando todo el caché');
+
     this.cache.clear();
     this.isLoading.clear();
   }
@@ -226,7 +223,7 @@ class AsyncMatchesCache {
    */
   setTTL(ttl) {
     this.ttl = ttl;
-    console.log('📦 AsyncMatchesCache: TTL actualizado a', ttl, 'ms');
+
   }
 }
 
@@ -237,6 +234,3 @@ export const asyncMatchesCache = new AsyncMatchesCache();
 if (typeof window !== 'undefined') {
   window.asyncMatchesCache = asyncMatchesCache;
 }
-
-console.log('✅ AsyncMatchesCache inicializado');
-

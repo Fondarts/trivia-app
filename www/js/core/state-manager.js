@@ -37,7 +37,7 @@ export const StateManager = {
         return value;
       }
     } catch (e) {
-      console.warn(`Error leyendo estado ${key} de localStorage:`, e);
+
     }
     
     return defaultValue;
@@ -72,7 +72,7 @@ export const StateManager = {
           localStorage.setItem(this._storagePrefix + key, JSON.stringify(value));
         }
       } catch (e) {
-        console.warn(`Error guardando estado ${key} en localStorage:`, e);
+
       }
     }
     
@@ -82,7 +82,7 @@ export const StateManager = {
     }
     
     if (!silent && changed) {
-      console.debug(`[StateManager] ${key} actualizado:`, { oldValue, newValue: value });
+
     }
     
     return changed;
@@ -155,7 +155,7 @@ export const StateManager = {
         try {
           callback(newValue, oldValue, key);
         } catch (e) {
-          console.error(`Error en observer de ${key}:`, e);
+
         }
       });
     }
@@ -167,7 +167,7 @@ export const StateManager = {
         try {
           callback(key, newValue, oldValue);
         } catch (e) {
-          console.error(`Error en wildcard observer:`, e);
+
         }
       });
     }
@@ -183,7 +183,7 @@ export const StateManager = {
     try {
       localStorage.removeItem(this._storagePrefix + key);
     } catch (e) {
-      console.warn(`Error eliminando estado ${key} de localStorage:`, e);
+
     }
     
     // Notificar eliminación
@@ -205,7 +205,7 @@ export const StateManager = {
           localStorage.removeItem(this._storagePrefix + key);
         });
       } catch (e) {
-        console.warn('Error limpiando localStorage:', e);
+
       }
     }
     
@@ -239,13 +239,13 @@ export const StateManager = {
             try {
               this._state[key] = JSON.parse(localStorage.getItem(storageKey));
             } catch (e) {
-              console.warn(`Error parseando estado ${key}:`, e);
+
             }
           }
         }
       }
     } catch (e) {
-      console.warn('Error cargando estado desde localStorage:', e);
+
     }
   },
   
@@ -287,7 +287,7 @@ export const StateManager = {
         }
       }
     } catch (e) {
-      console.warn('Error obteniendo claves de localStorage:', e);
+
     }
     
     return [...new Set([...memoryKeys, ...storageKeys])];

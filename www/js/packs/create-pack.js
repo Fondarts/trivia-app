@@ -13,7 +13,7 @@ export function initCreatePack() {
   const btnSavePack = document.getElementById('btnSavePack');
   
   if (!btnCreatePack || !modal) {
-    console.warn('[create-pack] Elementos del modal no encontrados');
+
     return;
   }
   
@@ -410,7 +410,7 @@ async function savePack() {
     
     // Refrescar selector de categorías para que aparezca el nuevo pack
     if (window.refreshCategorySelect) {
-      window.refreshCategorySelect();
+      await window.refreshCategorySelect();
     }
     
     // Cambiar a pestaña de administración para ver el pack guardado
@@ -420,7 +420,7 @@ async function savePack() {
     // Resetear formulario
     resetForm();
   } catch (error) {
-    console.error('[create-pack] Error guardando pack:', error);
+
     alert('❌ Error al guardar el pack. Por favor intenta de nuevo.');
   }
 }
@@ -535,7 +535,7 @@ function loadPacksList() {
       };
     });
   } catch(e) {
-    console.error('[create-pack] Error cargando lista de packs:', e);
+
     container.innerHTML = '<div style="text-align:center; padding:40px; color:var(--danger);">Error al cargar los packs.</div>';
   }
 }
@@ -591,7 +591,7 @@ function editPack(packIndex) {
       btnSave.textContent = '💾 Actualizar Pack';
     }
   } catch(e) {
-    console.error('[create-pack] Error editando pack:', e);
+
     alert('Error al cargar el pack para editar');
   }
 }
@@ -633,7 +633,7 @@ function downloadPack(packIndex) {
       window.toast('✅ Pack descargado correctamente');
     }
   } catch(e) {
-    console.error('[create-pack] Error descargando pack:', e);
+
     alert('Error al descargar el pack');
   }
 }
@@ -658,7 +658,7 @@ function sharePack(packIndex) {
     // Crear modal para seleccionar amigos
     showSharePackModal(packIndex, pack);
   } catch(e) {
-    console.error('[create-pack] Error compartiendo pack:', e);
+
     alert('Error al compartir el pack');
   }
 }
@@ -774,11 +774,11 @@ async function sendPackToFriends(packIndex, friendIds) {
           .select();
         
         if (!error && data) {
-          console.log(`✅ Pack guardado en BD para ${friendId}`);
+
           sentCount++;
         } else {
           // Fallback: usar broadcast si la tabla no existe
-          console.log(`⚠️ Tabla shared_packs no disponible, usando broadcast para ${friendId}`);
+
           try {
             const channel = window.socialManager.supabase.channel(`pack-share-${friendId}`);
             const subscribePromise = new Promise((resolve) => {
@@ -801,15 +801,15 @@ async function sendPackToFriends(packIndex, friendIds) {
             });
             
             if (!sendError) {
-              console.log(`✅ Pack enviado por broadcast a ${friendId}`);
+
               sentCount++;
             }
           } catch(broadcastError) {
-            console.error(`Error enviando pack a ${friendId}:`, broadcastError);
+
           }
         }
       } catch(e) {
-        console.error(`Error enviando pack a ${friendId}:`, e);
+
       }
     }
     
@@ -819,13 +819,13 @@ async function sendPackToFriends(packIndex, friendIds) {
       alert(`✅ Pack compartido con ${sentCount} amigo${sentCount !== 1 ? 's' : ''}`);
     }
   } catch(e) {
-    console.error('[create-pack] Error enviando pack:', e);
+
     alert('Error al compartir el pack');
   }
 }
 
 // Importar pack desde archivo JSON
-function importPackFromFile(file) {
+async function importPackFromFile(file) {
   const reader = new FileReader();
   
   reader.onload = (e) => {
@@ -872,7 +872,9 @@ function importPackFromFile(file) {
       
       // Refrescar selector de categorías
       if (window.refreshCategorySelect) {
-        window.refreshCategorySelect();
+        (async () => {
+          await window.refreshCategorySelect();
+        })();
       }
       
       if (window.toast) {
@@ -881,7 +883,7 @@ function importPackFromFile(file) {
         alert(`✅ Pack "${importedPack.name}" importado correctamente`);
       }
     } catch(error) {
-      console.error('[create-pack] Error importando pack:', error);
+
       alert('Error al importar el pack. Verifica que el archivo JSON sea válido.');
     }
   };
@@ -894,7 +896,7 @@ function importPackFromFile(file) {
 }
 
 // Eliminar pack
-function deletePack(packIndex) {
+async function deletePack(packIndex) {
   if (!confirm('¿Estás seguro de que quieres eliminar este pack? Esta acción no se puede deshacer.')) {
     return;
   }
@@ -909,20 +911,20 @@ function deletePack(packIndex) {
     
     // Refrescar selector de categorías
     if (window.refreshCategorySelect) {
-      window.refreshCategorySelect();
+      await window.refreshCategorySelect();
     }
     
     if (window.toast) {
       window.toast('✅ Pack eliminado correctamente');
     }
   } catch(e) {
-    console.error('[create-pack] Error eliminando pack:', e);
+
     alert('Error al eliminar el pack');
   }
 }
 
 // Importar pack compartido por un amigo
-function importSharedPack(packData, senderName) {
+async function importSharedPack(packData, senderName) {
   try {
     if (!packData || !packData.name || !packData.questions) {
       alert('El pack compartido no tiene el formato correcto');
@@ -950,7 +952,7 @@ function importSharedPack(packData, senderName) {
     
     // Refrescar selector de categorías
     if (window.refreshCategorySelect) {
-      window.refreshCategorySelect();
+      await window.refreshCategorySelect();
     }
     
     if (window.toast) {
@@ -965,7 +967,7 @@ function importSharedPack(packData, senderName) {
       loadPacksList();
     }
   } catch(error) {
-    console.error('[create-pack] Error importando pack compartido:', error);
+
     alert('Error al importar el pack compartido');
   }
 }

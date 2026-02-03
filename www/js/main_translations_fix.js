@@ -11,9 +11,7 @@ export function updateModeIndicatorWithTranslations() {
   const modeName = activeMode.dataset.val;
   const modeKeys = {
     'rounds': 'modeSoloFull',
-    'timed': 'modeTimedFull',
-    'vs': 'modeVSFull',
-    'adventure': 'modeAdventureFull'
+    'wordsearch': 'modeSopaFull'
   };
   
   // Buscar o crear el indicador
@@ -223,27 +221,6 @@ export function applyMissingTranslations() {
   // Botones/menus
   const friendsBtn = document.getElementById('btnFriends');
   if (friendsBtn) friendsBtn.title = t('friendsSystem');
-  const dlcBtn = document.getElementById('btnDLC');
-  if (dlcBtn) dlcBtn.title = t('packStore');
-
-  // Panel de tienda si está abierto
-  const dlcPanel = document.querySelector('.dlc-panel');
-  if (dlcPanel) {
-    const title = dlcPanel.querySelector('.dlc-title');
-    if (title) title.textContent = t('available');
-    const small = dlcPanel.querySelector('.dlc-small');
-    if (small) small.textContent = t('packsHint');
-    dlcPanel.setAttribute('aria-label', t('packStore'));
-    // Botones de precio/estado
-    dlcPanel.querySelectorAll('.dlc-small.dlc-price').forEach(el=>{
-      if (/Instalado/i.test(el.textContent)) el.textContent = t('installed');
-      if (/Gratis/i.test(el.textContent)) el.textContent = t('free');
-    });
-    dlcPanel.querySelectorAll('.dlc-btn').forEach(btn=>{
-      if (/Instalado/i.test(btn.textContent)) btn.textContent = t('installed');
-      if (/Obtener|Get/i.test(btn.textContent)) btn.textContent = t('get');
-    });
-  }
 
   // Panel amigos simple si existe
   const friendsPanel = document.getElementById('simpleFriendsPanel');

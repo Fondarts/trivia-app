@@ -116,58 +116,19 @@ export function addAnswerEffect(element, isCorrect) {
   }
 }
 
-// Función para mejorar la transición entre temas
-export function smoothThemeTransition() {
-  const root = document.documentElement;
-  const themes = document.querySelectorAll('input[name="theme"]');
-  
-  // Pre-cargar ambos fondos
-  preloadBackgrounds();
-  
-  themes.forEach(theme => {
-    theme.addEventListener('change', (e) => {
-      // Crear overlay de transición
-      const overlay = document.createElement('div');
-      overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: ${e.target.value === 'dark' ? '#0f172a' : '#f0f9ff'};
-        z-index: 9999;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      `;
-      document.body.appendChild(overlay);
-      
-      // Animar transición
-      requestAnimationFrame(() => {
-        overlay.style.opacity = '1';
-        setTimeout(() => {
-          root.setAttribute('data-theme', e.target.value);
-          localStorage.setItem('theme', e.target.value);
-          overlay.style.opacity = '0';
-          setTimeout(() => overlay.remove(), 300);
-        }, 300);
-      });
-    });
-  });
-}
+// Función de transición de tema eliminada - solo hay un tema ahora
 
 // Función para pre-cargar fondos
 function preloadBackgrounds() {
   const backgrounds = [
-    './assets/backgrounds/bgdark.webp',
-    './assets/backgrounds/bglight.webp'
+    './assets/backgrounds/BG_01.png'
   ];
   
   backgrounds.forEach(src => {
     const img = new Image();
     img.src = src;
-    img.onload = () => console.log(`✅ Fondo cargado: ${src}`);
-    img.onerror = () => console.error(`❌ Error cargando fondo: ${src}`);
+    img.onload = () => {};
+    img.onerror = () => {};
   });
 }
 
@@ -293,11 +254,8 @@ export function playSound(type) {
 
 // Inicializar efectos al cargar
 export function initVisualEffects() {
-  // Aplicar tema guardado
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  const themeInput = document.querySelector(`input[name="theme"][value="${savedTheme}"]`);
-  if (themeInput) themeInput.checked = true;
+  // Aplicar tema único (light)
+  document.documentElement.setAttribute('data-theme', 'light');
   
   // Efecto ripple desactivado
   // document.querySelectorAll('.btn, .pill, .seg, .option').forEach(addRippleEffect);
@@ -307,9 +265,6 @@ export function initVisualEffects() {
   
   // Mejorar efectos de hover
   enhanceHoverEffects();
-  
-  // Transiciones suaves de tema
-  smoothThemeTransition();
   
   // Agregar tooltips (excluir elementos que ya tienen tooltips CSS como .mode-btn)
   document.querySelectorAll('[title]').forEach(el => {
@@ -327,7 +282,6 @@ export function initVisualEffects() {
     }
   });
   
-  console.log('✨ Efectos visuales inicializados');
 }
 
 // Auto-inicializar cuando el DOM esté listo

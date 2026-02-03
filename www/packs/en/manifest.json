@@ -29,13 +29,13 @@
     },
     {
       "id": "Movie pack 001",
-      "category": "movies",
+      "category": "movies and tv",
       "files": ["0001_movies_en.json"]
     },
     {
-      "id": "6815 Movies En",
-      "category": "movies",
-      "files": ["6815_movies_en.json"]
+      "id": "Tv Pack 001",
+      "category": "movies and tv",
+      "files": ["0002_television_en.json"]
     }
   ]
 }

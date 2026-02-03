@@ -80,7 +80,7 @@ export async function warmLocalBank(lang = 'es') {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     manifest = await res.json();
   } catch (e) {
-    console.error('[bank] No se pudo cargar manifest:', manifestUrl, e);
+
     // en vez de throw, devolvemos banco vacío para no bloquear la app
     const bank = {}; BASE_KEYS.forEach(k => (bank[k] = []));
     setBank(bank);
@@ -115,7 +115,7 @@ export async function warmLocalBank(lang = 'es') {
           });
         }
       } catch (e) {
-        console.error('[bank] Error cargando pack:', url, e);
+
       }
     }
   }
@@ -208,12 +208,12 @@ export async function buildDeckSingle(categoryKey, count, diff = 'any', customPo
               filePackCache.set(cacheKey, pool);
             }
           } else {
-            console.error('[bank] Error cargando pack de archivo:', url, res.status);
+
           }
         }
       }
     } catch(e) {
-      console.error('[bank] Error cargando pack de archivo:', e);
+
       pool = [];
     }
   } else if (String(categoryKey||'').startsWith('userpack:')) {
@@ -233,7 +233,7 @@ export async function buildDeckSingle(categoryKey, count, diff = 'any', customPo
         }));
       }
     } catch(e) {
-      console.error('[bank] Error cargando pack de usuario:', e);
+
       pool = [];
     }
   } else if (String(categoryKey||'').startsWith('pack:')) {
@@ -317,7 +317,6 @@ export async function ensureBankReady(lang = 'es', { force = false } = {}) {
   if (existing > 0 && !force) return getBank();
   return await warmLocalBank(lang);
 }
-
 
 // Backwards-compat alias expected by game_solo.js
 export async function ensureInitial60(lang = 'es') {

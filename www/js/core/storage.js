@@ -58,7 +58,7 @@ class StorageSystem {
       localStorage.removeItem(test);
       return true;
     } catch (e) {
-      console.warn('[Storage] localStorage no disponible:', e);
+
       return false;
     }
   }
@@ -70,12 +70,12 @@ class StorageSystem {
     try {
       const savedVersion = localStorage.getItem(this._versionKey);
       if (savedVersion !== this._version) {
-        console.log(`[Storage] Migrando de versión ${savedVersion || 'desconocida'} a ${this._version}`);
+
         this._migrate(savedVersion);
         localStorage.setItem(this._versionKey, this._version);
       }
     } catch (e) {
-      console.warn('[Storage] Error verificando versión:', e);
+
     }
   }
   
@@ -116,7 +116,7 @@ class StorageSystem {
       const result = validator(value);
       return result === true || result === undefined;
     } catch (e) {
-      console.error(`[Storage] Validación fallida para ${key}:`, e);
+
       return false;
     }
   }
@@ -141,7 +141,7 @@ class StorageSystem {
    */
   get(key, defaultValue = null) {
     if (!key || typeof key !== 'string') {
-      console.warn('[Storage] Key inválida:', key);
+
       return defaultValue;
     }
     
@@ -156,7 +156,7 @@ class StorageSystem {
           try {
             localStorage.removeItem(key);
           } catch (e) {
-            console.warn(`[Storage] Error eliminando ${key} expirado:`, e);
+
           }
         }
         return defaultValue;
@@ -191,7 +191,7 @@ class StorageSystem {
       
       // Validar si hay validador
       if (!this._validate(key, value)) {
-        console.warn(`[Storage] Valor inválido para ${key}, usando default`);
+
         return defaultValue;
       }
       
@@ -203,7 +203,7 @@ class StorageSystem {
       
       return value;
     } catch (e) {
-      console.error(`[Storage] Error leyendo ${key}:`, e);
+
       return defaultValue;
     }
   }
@@ -219,7 +219,7 @@ class StorageSystem {
    */
   set(key, value, options = {}) {
     if (!key || typeof key !== 'string') {
-      console.warn('[Storage] Key inválida:', key);
+
       return false;
     }
     
@@ -227,7 +227,7 @@ class StorageSystem {
     
     // Validar si está habilitado
     if (validate && !this._validate(key, value)) {
-      console.error(`[Storage] Valor inválido para ${key}`);
+
       return false;
     }
     
@@ -274,7 +274,7 @@ class StorageSystem {
     } catch (e) {
       // Puede ser error de quota excedida
       if (e.name === 'QuotaExceededError') {
-        console.error('[Storage] Quota excedida, intentando limpiar cache...');
+
         this._cleanCache();
         
         // Intentar de nuevo una vez
@@ -282,12 +282,11 @@ class StorageSystem {
           localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value));
           return true;
         } catch (e2) {
-          console.error('[Storage] Error persistente al guardar:', e2);
+
           return false;
         }
       }
-      
-      console.error(`[Storage] Error guardando ${key}:`, e);
+
       return false;
     }
   }
@@ -316,7 +315,7 @@ class StorageSystem {
         localStorage.removeItem(key);
         return true;
       } catch (e) {
-        console.error(`[Storage] Error eliminando ${key}:`, e);
+
         return false;
       }
     }
@@ -386,13 +385,13 @@ class StorageSystem {
           try {
             localStorage.removeItem(key);
           } catch (e) {
-            console.warn(`[Storage] Error eliminando ${key}:`, e);
+
           }
         });
         
         return true;
       } catch (e) {
-        console.error('[Storage] Error limpiando storage:', e);
+
         return false;
       }
     }
@@ -420,7 +419,7 @@ class StorageSystem {
           if (key) keysSet.add(key);
         }
       } catch (e) {
-        console.warn('[Storage] Error obteniendo claves:', e);
+
       }
     }
     
@@ -507,7 +506,7 @@ class StorageSystem {
           }
         }
       } catch (e) {
-        console.warn('[Storage] Error calculando info:', e);
+
       }
     }
     

@@ -3,7 +3,7 @@
 
 import { DOMUtils } from '../core/dom-utils.js';
 import { showConfigUI } from '../ui/game-ui.js';
-import { backToHome } from '../handlers/vs-handlers.js';
+// VS handlers removido
 import { nextQuestion } from '../game/solo.js';
 import AuthSystem from '../auth/auth_v2.js';
 import { showSimpleAuthModal } from '../auth/modal_v2.js';
@@ -39,17 +39,9 @@ export function bindAllEventListeners(options = {}) {
   DOMUtils.getElement('btnStart')?.addEventListener('click', onStartGame);
   DOMUtils.getElement('btnNext')?.addEventListener('click', nextQuestion);
   
-  // Botones de resultados VS
-  DOMUtils.getElement('backVSResult')?.addEventListener('click', backToHome);
-  DOMUtils.getElement('btnBackHome')?.addEventListener('click', backToHome);
-  
-  DOMUtils.getElement('btnShareResult')?.addEventListener('click', async () => {
-    try {
-      await navigator.share({
-        title: 'Resultado VS',
-        text: lastResultShareText || 'Jugué VS en Trivia'
-      });
-    } catch {}
+  // Botones de resultados
+  DOMUtils.getElement('btnBackHome')?.addEventListener('click', () => {
+    showConfigUI();
   });
   
   // Botones de resultados solo
@@ -64,11 +56,6 @@ export function bindAllEventListeners(options = {}) {
     if (fsSingleResult) DOMUtils.hide(fsSingleResult);
     showConfigUI();
   });
-  
-  // Botones VS
-  DOMUtils.getElement('btnVsHost')?.addEventListener('click', onHost);
-  DOMUtils.getElement('btnVsCancel')?.addEventListener('click', onCancelSearch);
-  DOMUtils.getElement('btnVsJoin')?.addEventListener('click', onJoin);
   
   // Botón de amigos
   DOMUtils.getElement('btnFriends')?.addEventListener('click', onShowFriends);

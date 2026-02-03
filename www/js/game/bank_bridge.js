@@ -1,13 +1,10 @@
 // js/bank_bridge.js - Puente para exponer funciones de bank.js globalmente
 (function() {
   'use strict';
-  
-  console.log('=== Bank Bridge Iniciando ===');
-  
+
   // Importar las funciones necesarias de bank.js
   import('./bank.js').then(async function(module) {
-    console.log('Bank module loaded successfully');
-    
+
     // Exponer todas las funciones necesarias globalmente
     window.buildDeckSingle = module.buildDeckSingle;
     window.getBank = module.getBank;
@@ -20,26 +17,16 @@
     window.BASE_KEYS = module.BASE_KEYS;
     
     // Inicializar el banco automáticamente
-    console.log('Inicializando banco de preguntas...');
+
     try {
       await module.ensureBankReady('es');
       const count = module.getBankCount();
-      console.log(`✅ Banco cargado. Total de preguntas: ${count}`);
-      
-      // Verificar que hay preguntas para movies (necesario para aventura)
-      const bank = module.getBank();
-      if (bank.movies && bank.movies.length > 0) {
-        console.log(`✅ Categoría 'movies' disponible con ${bank.movies.length} preguntas`);
-      } else {
-        console.warn('⚠️ No hay preguntas en categoría movies');
-      }
-      
+
       // Disparar evento para indicar que el banco está listo
       window.dispatchEvent(new Event('bankReady'));
       
     } catch (error) {
-      console.error('Error inicializando banco:', error);
-      
+
       // Crear banco de fallback con preguntas de prueba
       const fallbackBank = {
         movies: [],
@@ -64,18 +51,15 @@
       
       // Guardar banco de fallback
       localStorage.setItem('trivia_bank', JSON.stringify(fallbackBank));
-      console.log('✅ Banco de fallback creado con preguntas de prueba');
-      
+
       // Disparar evento
       window.dispatchEvent(new Event('bankReady'));
     }
     
   }).catch(function(error) {
-    console.error('Error cargando módulo bank.js:', error);
-    
+
     // Fallback completo: crear funciones básicas
-    console.warn('Creando funciones de banco de fallback...');
-    
+
     // Crear banco de fallback
     const fallbackBank = {
       movies: [],
@@ -117,8 +101,8 @@
       return count;
     };
     
-    window.buildDeckSingle = function(categoryKey, count, diff) {
-      console.log('buildDeckSingle fallback:', categoryKey, count, diff);
+    window.buildDeckSingle = async function(categoryKey, count, diff) {
+
       const bank = window.getBank();
       let pool = bank[categoryKey] || [];
       
@@ -149,8 +133,7 @@
     
     // Guardar banco de fallback
     window.setBank(fallbackBank);
-    
-    console.log('✅ Funciones de banco de fallback creadas');
+
     console.log('Total de preguntas:', window.getBankCount());
     
     // Disparar evento

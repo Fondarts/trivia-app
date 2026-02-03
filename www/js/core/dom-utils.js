@@ -261,7 +261,7 @@ export const DOMUtils = {
     open(modalId, options = {}) {
       const modal = DOMUtils.getElement(modalId);
       if (!modal) {
-        console.warn(`Modal ${modalId} no encontrado`);
+
         return false;
       }
       

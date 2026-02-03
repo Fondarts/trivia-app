@@ -1,0 +1,6338 @@
+[
+  {
+    "q": "In Breaking Bad, what business does Walter use as a front?",
+    "options": [
+      "A car wash",
+      "A diner",
+      "A laundromat",
+      "A hardware store"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what color is linked to Skyler’s wardrobe?",
+    "options": [
+      "Blue",
+      "White",
+      "Pink",
+      "Yellow"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what kind of fast-food restaurant does Gus own?",
+    "options": [
+      "Chicken restaurant",
+      "Taco stand",
+      "Burger chain",
+      "Pizza place"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what item does Walter hide behind an electrical outlet early in the series?",
+    "options": [
+      "Cash bundle",
+      "Gun",
+      "Ricardo’s notebook",
+      "A pack of diamonds"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what kind of car does Walter buy Walter Jr.?",
+    "options": [
+      "A Dodge Challenger",
+      "A Ford Mustang",
+      "A Toyota Supra",
+      "A Pontiac Firebird"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what vehicle becomes Jesse’s signature ride?",
+    "options": [
+      "Red Toyota Tercel",
+      "Green Jeep",
+      "Yellow Monte Carlo",
+      "Blue Honda"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what color is often associated with Marie Schrader?",
+    "options": [
+      "Purple",
+      "Pink",
+      "Blue",
+      "Green"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what object does Walt use to poison Brock?",
+    "options": [
+      "Lily of the valley berries",
+      "A ricin cigarette",
+      "A tainted drink",
+      "A laced sandwich"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what message does Walt write in the sand during exile?",
+    "options": [
+      "'Heisenberg'",
+      "'52'",
+      "'I'm alive'",
+      "'Hank'"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what fast-food chain does Gus Fring own?",
+    "options": [
+      "Los Pollos Hermanos",
+      "El Pollo Sabroso",
+      "Casa del Pollo",
+      "Pollos del Sol"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what animal appears in the swimming pool after a mid-air collision?",
+    "options": [
+      "A pink teddy bear",
+      "A rubber duck",
+      "A plastic shark",
+      "A toy boat"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what does Walt use to kill Krazy-8’s cousin Emilio?",
+    "options": [
+      "Phosphine gas",
+      "A gunshot",
+      "Poisoned food",
+      "Car exhaust"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what object does Walt leave behind in the bathroom that exposes him?",
+    "options": [
+      "A book with Hank’s inscription",
+      "A burner phone",
+      "A ricin vial",
+      "A funeral card"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what subject does Walter White teach at high school?",
+    "options": [
+      "Chemistry",
+      "Biology",
+      "Physics",
+      "Math"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, what color does Marie Schrader obsessively wear?",
+    "options": [
+      "Purple",
+      "Blue",
+      "Pink",
+      "Green"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Breaking Bad, which fast-food restaurant chain does Gus use as a front?",
+    "options": [
+      "Los Pollos Hermanos",
+      "Pollo Feliz",
+      "Chicken Fiesta",
+      "El Pollo Dorado"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_t97q2wx9.webp"
+  },
+  {
+    "q": "In Friends, what is the name of Ross’s pet monkey?",
+    "options": [
+      "Marcel",
+      "George",
+      "Pip",
+      "Buddy"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what phrase does Joey use to flirt?",
+    "options": [
+      "How you doin'?",
+      "Hey sweetheart",
+      "Lookin’ good",
+      "Yo babe"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what item does Phoebe believe contains her mother’s spirit?",
+    "options": [
+      "A cat",
+      "A mirror",
+      "A bracelet",
+      "A guitar pick"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what item does Chandler destroy at Joey’s audition?",
+    "options": [
+      "A chair",
+      "A camera",
+      "A phone",
+      "A briefcase"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what is Joey’s favorite food?",
+    "options": [
+      "Sandwiches",
+      "Pizza",
+      "Fried chicken",
+      "Fries"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what does Monica do when she gets stressed?",
+    "options": [
+      "Clean obsessively",
+      "Dance wildly",
+      "Bake cupcakes",
+      "Go jogging"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what is the name of Ross and Monica’s dog from childhood that he believed had died?",
+    "options": [
+      "Chi-Chi",
+      "Fluffy",
+      "Pepper",
+      "Bo-Bo"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what song does Ross play on the keyboard that horrifies everyone?",
+    "options": [
+      "His 'wordless sound' compositions",
+      "Smelly Cat",
+      "I’ll Be There for You",
+      "The Lion Sleeps Tonight"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what is Joey’s most famous catchphrase?",
+    "options": [
+      "How you doin’?",
+      "Could I be any cooler?",
+      "This is my spot",
+      "Oh. My. God."
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what holiday armadillo does Ross dress as?",
+    "options": [
+      "The Holiday Armadillo",
+      "The Winter Turtle",
+      "The Christmas Lizard",
+      "The Santa Mole"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what game do Monica and Rachel lose the apartment over?",
+    "options": [
+      "A trivia contest",
+      "Poker",
+      "Darts",
+      "Pictionary"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what does Joey get stuck on his head?",
+    "options": [
+      "A turkey",
+      "A bucket",
+      "A wig",
+      "A lamp shade"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, what is the name of the coffee shop the group often visits?",
+    "options": [
+      "Central Perk",
+      "Coffee Central",
+      "Urban Brew",
+      "Central Roast"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Friends, which character famously sings 'Smelly Cat'?",
+    "options": [
+      "Phoebe",
+      "Rachel",
+      "Monica",
+      "Janice"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_nx8v7zkj.webp"
+  },
+  {
+    "q": "In Game of Thrones, what metal is needed to kill White Walkers?",
+    "options": [
+      "Dragonglass",
+      "Valyrian steel",
+      "Gold",
+      "Bronze"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what creature hatches from Daenerys’ eggs?",
+    "options": [
+      "Dragons",
+      "Wyverns",
+      "Serpents",
+      "Direwolves"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what animal represents House Stark?",
+    "options": [
+      "Direwolf",
+      "Eagle",
+      "Lion",
+      "Boar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what animal accompanies the Wildlings in battle?",
+    "options": [
+      "Giants",
+      "Direwolves",
+      "Dragons",
+      "Shadowcats"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what animal does Bran often warg into?",
+    "options": [
+      "A direwolf",
+      "A raven",
+      "A horse",
+      "A crow"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what phrase do the Faceless Men use to describe themselves?",
+    "options": [
+      "No one",
+      "The forgotten",
+      "The unseen",
+      "The shadows"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what material are the dragonglass weapons made from?",
+    "options": [
+      "Obsidian",
+      "Frozen iron",
+      "Shadowstone",
+      "Sky glass"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what creature does Arya fear as a child?",
+    "options": [
+      "A cat in the Red Keep",
+      "The direwolves",
+      "The ravens",
+      "The dragons"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what object does Littlefinger always wear?",
+    "options": [
+      "A mockingbird pin",
+      "A golden ring",
+      "A silver chain",
+      "A wolf brooch"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what phrase activates Arya’s coin when meeting a Faceless Man?",
+    "options": [
+      "Valar Morghulis",
+      "Dracarys",
+      "Valar Dohaeris",
+      "Winter is Coming"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what is the ancestral home of House Stark?",
+    "options": [
+      "Winterfell",
+      "Casterly Rock",
+      "Highgarden",
+      "Riverrun"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what material can kill White Walkers?",
+    "options": [
+      "Dragonglass",
+      "Valyrian bronze",
+      "Mountain steel",
+      "Red crystal"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In Game of Thrones, what are Daenerys’s dragons named?",
+    "options": [
+      "Drogon, Rhaegal, Viserion",
+      "Balerion, Vhagar, Meraxes",
+      "Drogon, Aegon, Visenya",
+      "Rhaegal, Aerys, Varys"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_sgsz4h1x.webp"
+  },
+  {
+    "q": "In The Office (US), what does Jim put Dwight’s stapler inside?",
+    "options": [
+      "Jell-O",
+      "Yogurt",
+      "A shoebox",
+      "A cereal box"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_5xuw9dv0.webp"
+  },
+  {
+    "q": "In The Office (US), what food causes Kevin to spill his famous dish?",
+    "options": [
+      "Chili",
+      "Mac and cheese",
+      "Stew",
+      "Lasagna"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_5xuw9dv0.webp"
+  },
+  {
+    "q": "In The Office (US), what item does Creed steal during the Halloween episode?",
+    "options": [
+      "A pumpkin",
+      "A copier",
+      "A monitor",
+      "A stapler"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_5xuw9dv0.webp"
+  },
+  {
+    "q": "In The Office (US), what product does Michael accidentally grill his foot on?",
+    "options": [
+      "A George Foreman grill",
+      "A panini press",
+      "A cast iron skillet",
+      "An electric stove"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_5xuw9dv0.webp"
+  },
+  {
+    "q": "In The Office (US), what item does Angela refuse to let anyone touch?",
+    "options": [
+      "Her cat",
+      "Her framed diploma",
+      "Her stapler",
+      "Her tea set"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_5xuw9dv0.webp"
+  },
+  {
+    "q": "In Stranger Things, what game do the boys often play?",
+    "options": [
+      "Dungeons & Dragons",
+      "Magic: The Gathering",
+      "Warhammer",
+      "Clue"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what arcade game does Dustin love?",
+    "options": [
+      "Dragon’s Lair",
+      "Pac-Man",
+      "Galaga",
+      "Joust"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what snack becomes Hopper’s obsession?",
+    "options": [
+      "Eggos",
+      "Twinkies",
+      "Beef jerky",
+      "Skittles"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what toy does Eleven get obsessed with in season 3?",
+    "options": [
+      "Rubik’s cube",
+      "Walkie-talkie",
+      "Magic 8 ball",
+      "Slap bracelet"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what does Will use to communicate with Joyce?",
+    "options": [
+      "Christmas lights",
+      "A walkie-talkie",
+      "A cassette recorder",
+      "A radio tower"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what song becomes Max’s emotional anchor?",
+    "options": [
+      "Running Up That Hill",
+      "Take On Me",
+      "In the Air Tonight",
+      "Time After Time"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what game are the kids frequently seen playing in the basement?",
+    "options": [
+      "Dungeons & Dragons",
+      "Risk",
+      "Warhammer",
+      "Magic: The Gathering"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what everyday object is used to amplify Eleven’s powers in Season 1?",
+    "options": [
+      "A sensory deprivation tank",
+      "A walkie-talkie",
+      "A flashlight",
+      "A slingshot"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what treat does Hopper leave for Eleven?",
+    "options": [
+      "Eggo waffles",
+      "Chocolate pudding",
+      "Pop-Tarts",
+      "Peanut butter"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what object helps the kids navigate the Upside Down?",
+    "options": [
+      "A compass",
+      "A flashlight",
+      "A map",
+      "A radio"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what song helps Max escape Vecna’s control?",
+    "options": [
+      "Running Up That Hill",
+      "Take On Me",
+      "Don’t Stop Believin’",
+      "Time After Time"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what is the name of the parallel dimension?",
+    "options": [
+      "The Upside Down",
+      "The Dark Below",
+      "The Other Side",
+      "The Nether Zone"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, what is the name of the mall introduced in Season 3?",
+    "options": [
+      "Starcourt Mall",
+      "Hawkins Plaza",
+      "Forest Hills Mall",
+      "Midwest Center"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In Stranger Things, which board game do the kids play when Will disappears?",
+    "options": [
+      "Dungeons & Dragons",
+      "Monopoly",
+      "Risk",
+      "Clue"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_36a2fsfl.webp"
+  },
+  {
+    "q": "In The Sopranos, what type of animal does Tony become obsessed with in his backyard?",
+    "options": [
+      "Ducks",
+      "Deer",
+      "Cats",
+      "Hawks"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In The Sopranos, what recurring dream element haunts Tony?",
+    "options": [
+      "A talking fish",
+      "A burning house",
+      "A crooked mirror",
+      "A white horse"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In The Sopranos, what item does Tony often feed the ducks in his pool?",
+    "options": [
+      "Bread",
+      "Corn",
+      "Seeds",
+      "Leftover pasta"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In The Sopranos, what animal symbol appears during Tony’s therapy sessions?",
+    "options": [
+      "A duck",
+      "A bear",
+      "A hawk",
+      "A fish"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In The Sopranos, what animal appears in Tony’s dream and symbolizes his guilt?",
+    "options": [
+      "A fish",
+      "A horse",
+      "A crow",
+      "A dog"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In The Sopranos, what is the name of Tony’s therapist?",
+    "options": [
+      "Dr. Melfi",
+      "Dr. Milford",
+      "Dr. Malfi",
+      "Dr. Martin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In The Sopranos, what type of business does Tony officially say he works in?",
+    "options": [
+      "Waste management",
+      "Construction",
+      "Real estate",
+      "Shipping"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_lmj5xjy9.webp"
+  },
+  {
+    "q": "In Lost, what code must be entered into the hatch computer?",
+    "options": [
+      "4 8 15 16 23 42",
+      "1 2 3 4 5 6",
+      "12 13 14 15 16 17",
+      "00 12 34 56 78"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what sequence of numbers is associated with the mysterious hatch?",
+    "options": [
+      "4 8 15 16 23 42",
+      "2 7 11 19 29 49",
+      "10 14 22 33 44 55",
+      "5 12 18 27 36 45"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what object Desmond repeatedly interacts with in the hatch?",
+    "options": [
+      "A computer",
+      "A radio",
+      "A hatch window",
+      "A compass"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what is the name of the airline that crashes on the island?",
+    "options": [
+      "Oceanic Airlines",
+      "Pacific Air",
+      "Island Starways",
+      "Vista Air"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what number does Hurley repeatedly encounter on his lottery ticket and elsewhere?",
+    "options": [
+      "4, 8, 15, 16, 23, 42",
+      "1, 2, 3, 4, 5, 6",
+      "3, 6, 9, 12, 15, 18",
+      "5, 7, 11, 13, 17, 19"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what is the name of the scientific organization behind many island experiments?",
+    "options": [
+      "DHARMA Initiative",
+      "Hanso Group",
+      "Island Research Corp",
+      "Hydra Organization"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what object must be pressed every 108 minutes?",
+    "options": [
+      "A button in the hatch",
+      "A lever in the bunker",
+      "A radio transmitter",
+      "A sealed valve"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, on which fictional airline’s flight do the survivors crash?",
+    "options": [
+      "Oceanic Airlines",
+      "Pacific Air",
+      "Sunrise Airways",
+      "Transworld Lines"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In Lost, what code sequence must be entered into the hatch computer?",
+    "options": [
+      "4 8 15 16 23 42",
+      "1 3 7 9 11 13",
+      "5 10 15 20 25 30",
+      "2 4 6 8 10 12"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_9v4buhf8.webp"
+  },
+  {
+    "q": "In The Mandalorian, what nickname do fans give Grogu?",
+    "options": [
+      "Baby Yoda",
+      "Tiny Jedi",
+      "Green Child",
+      "Little Force"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what metal is used to forge armor?",
+    "options": [
+      "Beskar",
+      "Durasteel",
+      "Cortosis",
+      "Transpirium"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what creature does Mando learn to ride in season 1?",
+    "options": [
+      "A blurrg",
+      "A dewback",
+      "A tauntaun",
+      "A varactyl"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what creature attacks the Razor Crest on the icy planet?",
+    "options": [
+      "Ice spiders",
+      "Crystal worms",
+      "Frost bats",
+      "Snow serpents"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what metal is used to forge armor?",
+    "options": [
+      "Beskar",
+      "Durasteel",
+      "Mithral",
+      "Chromite"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what creature does Din Djarin’s clan use as their sigil?",
+    "options": [
+      "A mudhorn",
+      "A mythosaur",
+      "A krayt dragon",
+      "A raptor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what animal threatens Din and Grogu in the ice cave?",
+    "options": [
+      "A spider creature",
+      "A frost wyrm",
+      "A pack of wolves",
+      "A shadow beast"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what item does Grogu take from Din as a token?",
+    "options": [
+      "A gear knob",
+      "A cape button",
+      "A belt piece",
+      "A visor screw"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Mandalorian, what object does Din trade to get information about Jedi?",
+    "options": [
+      "His beskar spear",
+      "His ship’s part",
+      "Grogu’s toy",
+      "A kyber crystal"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_7lfroan3.webp"
+  },
+  {
+    "q": "In The Walking Dead, what object symbolizes leadership for Rick early on?",
+    "options": [
+      "His sheriff hat",
+      "A machete",
+      "A necklace",
+      "A walkie-talkie"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what weapon becomes Michonne’s signature?",
+    "options": [
+      "Katana",
+      "Crossbow",
+      "Hammer",
+      "Spear"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what item becomes Rick’s symbol of leadership?",
+    "options": [
+      "His sheriff badge",
+      "His revolver",
+      "His boots",
+      "His walkie-talkie"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what object is Negan known for?",
+    "options": [
+      "A barbed-wire bat",
+      "A revolver",
+      "A spear",
+      "A machete"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what faction brands people with the letter A?",
+    "options": [
+      "The Saviors",
+      "The Wolves",
+      "The Commonwealth",
+      "Terminus"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what object becomes Rick’s signature weapon?",
+    "options": [
+      "A revolver",
+      "A hunting knife",
+      "A crossbow",
+      "A fire axe"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what weapon does Daryl primarily use?",
+    "options": [
+      "A crossbow",
+      "A katana",
+      "A revolver",
+      "A baseball bat"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what is the name of the settlement led by Negan?",
+    "options": [
+      "The Sanctuary",
+      "Terminus",
+      "Hilltop",
+      "The Kingdom"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what object does Morgan use as his signature weapon in later seasons?",
+    "options": [
+      "A staff",
+      "A machete",
+      "A hammer",
+      "A chain"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what is the name of Rick Grimes’ son?",
+    "options": [
+      "Carl",
+      "Shane",
+      "Daryl",
+      "Glenn"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Walking Dead, what weapon is Michonne best known for using?",
+    "options": [
+      "Katana",
+      "Crossbow",
+      "Revolver",
+      "Machete"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_s98b820k.webp"
+  },
+  {
+    "q": "In The Crown, what event marks Elizabeth’s unexpected rise to the throne?",
+    "options": [
+      "Her father's death",
+      "A coup attempt",
+      "A political scandal",
+      "An abdication"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what animal symbolizes Elizabeth’s solitude?",
+    "options": [
+      "The stag",
+      "The raven",
+      "The swan",
+      "The fox"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what natural phenomenon symbolizes pressure on Elizabeth?",
+    "options": [
+      "Fog",
+      "Rain",
+      "Wind",
+      "Thunder"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what animal does Philip hunt that symbolizes pressure and tradition?",
+    "options": [
+      "A stag",
+      "A boar",
+      "A fox",
+      "A pheasant"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what object symbolizes daily responsibility?",
+    "options": [
+      "The red dispatch box",
+      "The crown case",
+      "The parliamentary folder",
+      "The royal bell"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what item symbolizes the Queen’s burden?",
+    "options": [
+      "The crown",
+      "A golden brooch",
+      "A pearl necklace",
+      "A velvet cape"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what symbol of monarchy is used during coronations?",
+    "options": [
+      "St. Edward’s Crown",
+      "The White Scepter",
+      "The Royal Torch",
+      "The Sapphire Staff"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what animal injures Prince Philip during a carriage accident?",
+    "options": [
+      "A horse",
+      "A deer",
+      "A boar",
+      "A dog"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what personal hobby does the Queen’s husband Philip pursue?",
+    "options": [
+      "Carriage driving and flying",
+      "Sailing and painting",
+      "Hunting and sculpture",
+      "Writing and acting"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what weekly event does the Queen have with the Prime Minister?",
+    "options": [
+      "An audience meeting",
+      "A cabinet briefing",
+      "A luncheon",
+      "A tea with the Cabinet"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what disaster in Wales deeply affects the Queen and the country?",
+    "options": [
+      "The Aberfan mining tragedy",
+      "A royal plane crash",
+      "A castle fire",
+      "A ship sinking near Dover"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what animal injures Princess Anne during a riding competition?",
+    "options": [
+      "A horse",
+      "A dog",
+      "A swan",
+      "A deer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, who plays Queen Elizabeth II in the first two seasons?",
+    "options": [
+      "Claire Foy",
+      "Olivia Colman",
+      "Imelda Staunton",
+      "Gillian Anderson"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In The Crown, what tragic event occurs in Aberfan?",
+    "options": [
+      "A coal spoil tip collapses on a school",
+      "A train derailment",
+      "A dam bursts flooding a town",
+      "A coal mine fire underground"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ymwzwtlx.webp"
+  },
+  {
+    "q": "In Mad Men, what product does Don Draper pitch using a carousel metaphor?",
+    "options": [
+      "A slide projector",
+      "A car",
+      "A camera",
+      "A television"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ie86jkiy.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, what color do Handmaids wear?",
+    "options": [
+      "Red",
+      "Green",
+      "Blue",
+      "Black"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, what object Offred hides for hope?",
+    "options": [
+      "A message scratched in the closet",
+      "A red ribbon",
+      "A secret key",
+      "A map"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, where do Handmaids exchange illicit messages?",
+    "options": [
+      "The supermarket",
+      "The laundromat",
+      "The hospital",
+      "The park"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, what color do the Wives wear?",
+    "options": [
+      "Blue",
+      "Black",
+      "Green",
+      "White"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid's Tale, what color do Handmaids wear?",
+    "options": [
+      "Red",
+      "Blue",
+      "Green",
+      "Black"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid's Tale, what Latin phrase appears carved in June’s room?",
+    "options": [
+      "Nolite te bastardes carborundorum",
+      "Ad astra per aspera",
+      "Per angusta ad augusta",
+      "Sic itur ad astra"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, what do Handmaids call their forced birthing practice?",
+    "options": [
+      "The Ceremony",
+      "The Ritual",
+      "Blessed Birth",
+      "The Offering"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, what is June’s Handmaid name?",
+    "options": [
+      "Offred",
+      "Ofglen",
+      "Ofsamuel",
+      "Ofsteven"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In The Handmaid’s Tale, what is the theocratic regime called?",
+    "options": [
+      "Gilead",
+      "Panem",
+      "Oceania",
+      "The Republic"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_1270iqe4.webp"
+  },
+  {
+    "q": "In True Detective season 1, what symbol appears at several crime scenes?",
+    "options": [
+      "Stick sculpture",
+      "Triangular mark",
+      "Eye drawing",
+      "Feather circle"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective season 3, what object ties Wayne’s memories together?",
+    "options": [
+      "A wooden toy",
+      "A notebook",
+      "A cassette",
+      "A badge"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective season 1, what object does Rust carve?",
+    "options": [
+      "Beer can men",
+      "Wooden birds",
+      "Metal crosses",
+      "Stone tablets"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective season 2, what item haunts Ray’s memory?",
+    "options": [
+      "A red box",
+      "A belt buckle",
+      "A wooden toy",
+      "A cassette"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective season 1, what unusual structure appears in the field scenes?",
+    "options": [
+      "Stick totems",
+      "Burned cars",
+      "Rusted cages",
+      "Hollow trees"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective season 3, what object binds memories across timelines?",
+    "options": [
+      "A wooden figure",
+      "A badge",
+      "A tape",
+      "A notebook"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective S2, what object haunts Ray’s trauma visions?",
+    "options": [
+      "A toy soldier",
+      "A burning door",
+      "A red box",
+      "A broken lamp"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective S1, what job does Rust hold when he meets Marty?",
+    "options": [
+      "A homicide detective",
+      "A ranger",
+      "A narcotics officer",
+      "An undercover agent"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective S3, what toy repeatedly appears across decades?",
+    "options": [
+      "A straw figure",
+      "A wooden horse",
+      "A red marble",
+      "A toy soldier"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective S3, what object appears repeatedly in the children's drawings?",
+    "options": [
+      "A stick hut",
+      "A spiral",
+      "A crow",
+      "A red mask"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective Season 1, what symbol is repeatedly found at crime scenes?",
+    "options": [
+      "A twig crown",
+      "A painted eye",
+      "A spiral",
+      "A broken star"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective Season 1, what object does Rust often create while interrogating?",
+    "options": [
+      "Beer can sculptures",
+      "Paper figures",
+      "Wire spirals",
+      "Chalk drawings"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective Season 3, what children’s toy becomes a recurring clue?",
+    "options": [
+      "A straw doll",
+      "A marble",
+      "A small horse",
+      "A carved stone"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective Season 2, what bird mask becomes symbolic?",
+    "options": [
+      "A raven mask",
+      "An owl mask",
+      "A hawk mask",
+      "A vulture mask"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective Season 1, which state is the main investigation set in?",
+    "options": [
+      "Louisiana",
+      "Texas",
+      "Alabama",
+      "Mississippi"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In True Detective Season 1, what object do Rust Cohle and Marty Hart initially find at a crime scene?",
+    "options": [
+      "A twig crown on a body",
+      "A carved stone idol",
+      "A copper spiral",
+      "A paper mask"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_5yap6iom.webp"
+  },
+  {
+    "q": "In Ozark, what business do Marty and Wendy buy to launder money?",
+    "options": [
+      "A strip club",
+      "A funeral home",
+      "A motel",
+      "A fishing company"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what animal does Ruth have a strange attachment to?",
+    "options": [
+      "A bobcat statue",
+      "A wounded bird",
+      "A stray dog",
+      "A snake"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what item becomes Marty’s quiet ritual object?",
+    "options": [
+      "A tattered notebook",
+      "A coffee mug",
+      "A coin",
+      "A fishing lure"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what object does Wendy stare at during her breakdown moment?",
+    "options": [
+      "A tablecloth pattern",
+      "A window reflection",
+      "A cracked cup",
+      "A wall calendar"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what type of business do the Byrdes open to launder money?",
+    "options": [
+      "A casino",
+      "A hotel",
+      "A boat service",
+      "A laundromat"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what group becomes an early threat to the Byrdes?",
+    "options": [
+      "The Snells",
+      "The KC Mob",
+      "The Fitz Clan",
+      "The Zobells"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what business do the Byrdes manage as a laundering front?",
+    "options": [
+      "A lakeside casino",
+      "A motel",
+      "A boat dock",
+      "A diner"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what wildlife animal appears repeatedly as symbolism for Wendy?",
+    "options": [
+      "A wolf",
+      "A crow",
+      "A deer",
+      "A serpent"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what symbol is used in the show’s title cards?",
+    "options": [
+      "Objects hinting at episode themes",
+      "Animal silhouettes",
+      "Chemical symbols",
+      "Letters forming a map"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what item does Marty give Ruth that becomes emotionally significant?",
+    "options": [
+      "A funeral envelope of cash",
+      "A car key",
+      "A security code",
+      "A family heirloom"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what object does Wendy keep hidden that Marty never sees?",
+    "options": [
+      "A political letter",
+      "A phone list",
+      "A coded document",
+      "A map of influence"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, where do the Byrde family move to launder money?",
+    "options": [
+      "The Lake of the Ozarks",
+      "The Florida Keys",
+      "The Great Lakes",
+      "The Colorado Rockies"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In Ozark, what is Marty Byrde’s original profession?",
+    "options": [
+      "Financial planner",
+      "Lawyer",
+      "Accountant",
+      "Real estate broker"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_clx8lq85.webp"
+  },
+  {
+    "q": "In The Boys, what corporation controls the superheroes?",
+    "options": [
+      "Vought",
+      "PrimeGuard",
+      "ApexCo",
+      "Sentinel Group"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what substance gives temporary superpowers?",
+    "options": [
+      "Temp V",
+      "Blue Juice",
+      "V-Lite",
+      "Power Seraph"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what beverage is Homelander frequently shown drinking?",
+    "options": [
+      "Milk",
+      "Soda",
+      "Coffee",
+      "Protein shakes"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what animal does The Deep befriend and lose tragically?",
+    "options": [
+      "A whale",
+      "A dolphin",
+      "A goldfish",
+      "A crab"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what item does Starlight use as a disguise?",
+    "options": [
+      "A baseball cap",
+      "A blonde wig",
+      "A hoodie and sunglasses",
+      "A trench coat"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what method weakens Homelander temporarily?",
+    "options": [
+      "High-frequency sound",
+      "UV emitters",
+      "Cryogenic gas",
+      "Blood toxicity"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what drink is associated with Homelander?",
+    "options": [
+      "Milk",
+      "Whiskey",
+      "Energy drink",
+      "Protein shake"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what substance temporarily gives humans superpowers?",
+    "options": [
+      "Compound V",
+      "Blue Ice",
+      "Temp Boost",
+      "V-Serum Light"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what animal does The Deep try to rescue unsuccessfully?",
+    "options": [
+      "A dolphin",
+      "A whale",
+      "A crab",
+      "A seal"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what beverage is closely associated with A-Train?",
+    "options": [
+      "Energy drinks",
+      "Protein shakes",
+      "Soda",
+      "Electrolyte water"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what is the in-universe superhero team parodying the Justice League?",
+    "options": [
+      "The Seven",
+      "The Supers",
+      "The Elite",
+      "The League"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what corporation manages the superheroes?",
+    "options": [
+      "Vought",
+      "Global Seven",
+      "Power Inc",
+      "HeroCore"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what explosive method is used on Translucent?",
+    "options": [
+      "A bomb planted inside his body",
+      "A sniper shot",
+      "An electric shock trap",
+      "A laser drill"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what drink does Homelander consume obsessively?",
+    "options": [
+      "Milk",
+      "Protein shakes",
+      "Vodka",
+      "Energy drinks"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, what is the name of the superhero team that mirrors the Justice League?",
+    "options": [
+      "The Seven",
+      "The Legion",
+      "The Vanguard",
+      "The Elite"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Boys, who leads The Boys group?",
+    "options": [
+      "Billy Butcher",
+      "Hughie Campbell",
+      "Frenchie",
+      "Mother’s Milk"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_cl6dusla.webp"
+  },
+  {
+    "q": "In The Bear, what position is Carmy known for before returning to Chicago?",
+    "options": [
+      "Fine-dining chef",
+      "Food critic",
+      "Pastry chef",
+      "Butcher"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what dessert becomes Carmy’s obsession?",
+    "options": [
+      "The chocolate cake",
+      "The lemon tart",
+      "The soufflé",
+      "The cream puff"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what burnt object becomes iconic during the remodel?",
+    "options": [
+      "The donut",
+      "The apron",
+      "The wooden spoon",
+      "The cookbook"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what dish torments Carmy as a reminder of his past restaurant?",
+    "options": [
+      "The family spaghetti",
+      "The risotto failure",
+      "The burnt steak",
+      "The signature fish"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what nickname is given to the failing restaurant?",
+    "options": [
+      "The Beef",
+      "The Joint",
+      "The Spot",
+      "The Backroom"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what broken item symbolizes Carmy’s emotional spiral?",
+    "options": [
+      "A kitchen timer",
+      "A cracked plate",
+      "A damaged fridge door",
+      "A torn recipe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what kind of restaurant is Carmen trying to transform?",
+    "options": [
+      "A family sandwich shop",
+      "A fine dining steakhouse",
+      "A pizza joint",
+      "A bakery"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what personal item of his brother’s haunts Carmy?",
+    "options": [
+      "A letter with instructions",
+      "A set of knives",
+      "A chef’s jacket",
+      "A key without a lock"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what word does the kitchen yell to acknowledge orders?",
+    "options": [
+      "Yes, chef!",
+      "Order up!",
+      "Heard!",
+      "On it!"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what item of Carmy’s triggers a panic episode?",
+    "options": [
+      "A malfunctioning oven door",
+      "A broken alarm",
+      "A cracked dish",
+      "A burnt pan"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what kind of restaurant does Carmen Berzatto inherit?",
+    "options": [
+      "An Italian beef sandwich shop",
+      "A pizzeria",
+      "A fine-dining bistro",
+      "A diner"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In The Bear, what word does the kitchen staff shout to acknowledge orders?",
+    "options": [
+      "Yes, chef!",
+      "Heard!",
+      "Copy!",
+      "On it!"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_pvcdpr8x.webp"
+  },
+  {
+    "q": "In Severance, what phrase activates the procedure?",
+    "options": [
+      "Outie mode",
+      "Severed protocol",
+      "Lumon command",
+      "Innie state"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what office item symbolizes control?",
+    "options": [
+      "The warning card",
+      "The finger trap",
+      "The mug",
+      "The hallway badge"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what room induces hallucinations?",
+    "options": [
+      "The break room",
+      "The map room",
+      "The birthing wing",
+      "The elevator pit"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what Lumon room displays unnervingly cheerful paintings?",
+    "options": [
+      "The wellness room",
+      "The file room",
+      "The map room",
+      "The archival wing"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what unsettling instruction appears during punishments?",
+    "options": [
+      "Apologize to your innie",
+      "Repeat your sins",
+      "Write your regrets",
+      "Detail your failures"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what object in the wellness room is intentionally unsettling?",
+    "options": [
+      "A smiling portrait",
+      "A breathing doll",
+      "A flickering candle",
+      "A spinning wheel"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what unsettling corporate perk do the Innies receive?",
+    "options": [
+      "Dance breaks",
+      "Fake vacations",
+      "Memory tokens",
+      "Award chips"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what phrase is plastered across Lumon’s corporate propaganda?",
+    "options": [
+      "Lumon loves you",
+      "Be grateful",
+      "Your work matters",
+      "You are valued"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what item employees must leave behind before entering the Lumon office floor?",
+    "options": [
+      "Personal devices",
+      "Shoes",
+      "Outerwear",
+      "ID badges"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what food item is used as an incentive reward?",
+    "options": [
+      "Waffle parties",
+      "Frozen yogurt",
+      "Pizza night",
+      "Chocolate hour"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what term is used for the outside version of each worker?",
+    "options": [
+      "Outie",
+      "Outer self",
+      "Top side",
+      "External"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what department does Mark work in at Lumon?",
+    "options": [
+      "Macrodata refinement",
+      "Optics and design",
+      "Security",
+      "Wellness"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what strange reward is given in the infamous office 'party'?",
+    "options": [
+      "A waffle party",
+      "A balloon party",
+      "A cake meditation",
+      "A nap circle"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what are the two versions of a person called inside and outside work?",
+    "options": [
+      "Innie and Outie",
+      "Worker and Sleeper",
+      "Inner and Outer",
+      "Day-self and Night-self"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Severance, what company do the severed employees work for?",
+    "options": [
+      "Lumon",
+      "MacroCorp",
+      "HeliDyne",
+      "SevTech"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_ozflegun.webp"
+  },
+  {
+    "q": "In Mr. Robot, what mask becomes a symbol for fsociety?",
+    "options": [
+      "A Monopoly-like mask",
+      "A clown mask",
+      "A gas mask",
+      "A wolf mask"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what building do fsociety target in the season 1 finale?",
+    "options": [
+      "E Corp data facility",
+      "FBI tower",
+      "Wall Street terminal",
+      "City Hall"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what everyday item becomes a metaphor for Elliot’s dissociation?",
+    "options": [
+      "A blank window",
+      "A black hoodie",
+      "A broken mirror",
+      "A ceiling crack"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what object symbolizes Elliot’s fear of control?",
+    "options": [
+      "His father’s jacket",
+      "His blank monitor",
+      "His glitching clock",
+      "His locked window"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what object does Elliot repeatedly fix?",
+    "options": [
+      "A broken window",
+      "A router",
+      "A cassette player",
+      "A jacket zipper"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what recurring visual motif represents Elliot’s fractured identity?",
+    "options": [
+      "A blinking exit sign",
+      "A split screen",
+      "A broken doorframe",
+      "A black curtain"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what object constantly flickers during Elliot’s anxiety episodes?",
+    "options": [
+      "A ceiling lamp",
+      "A bedside clock",
+      "A phone screen",
+      "A neon sign"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what alias does Elliot use to communicate anonymously?",
+    "options": [
+      "Sam Sepiol",
+      "Raymond Tower",
+      "Colby Knight",
+      "William Page"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what breed is the dog Elliot briefly takes care of?",
+    "options": [
+      "A terrier",
+      "A pit bull",
+      "A dachshund",
+      "A golden retriever"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what item is Elliot addicted to using?",
+    "options": [
+      "Morphine",
+      "Cigarettes",
+      "VR headsets",
+      "Sleeping pills"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what mask becomes the symbol of fsociety?",
+    "options": [
+      "A Monopoly-style mask",
+      "A clown mask",
+      "A broken skull mask",
+      "A rictus grin mask"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what is the name of the hacking group Elliot joins?",
+    "options": [
+      "fsociety",
+      "hacktiv",
+      "darkroot",
+      "anonsys"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In Mr. Robot, what New York landmark is visible from Elliot’s apartment building roof?",
+    "options": [
+      "The Queensboro Bridge",
+      "The Statue of Liberty",
+      "The Empire State Building",
+      "The Brooklyn Bridge"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_az6n3x6l.webp"
+  },
+  {
+    "q": "In The Expanse, what engine technology changes humanity?",
+    "options": [
+      "Epstein drive",
+      "Steam boosters",
+      "Fusion rails",
+      "Pulse coils"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what drink is a Belter luxury?",
+    "options": [
+      "Real coffee",
+      "Whiskey",
+      "Milk",
+      "Fruit juice"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what mining station is a tension hotspot early on?",
+    "options": [
+      "Ceres",
+      "Phoebe",
+      "Io",
+      "Tycho"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what beverage is a luxury among Belters?",
+    "options": [
+      "Fresh coffee",
+      "Clean water",
+      "Tomato juice",
+      "Rice wine"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what group lives under low gravity and has modified physiology?",
+    "options": [
+      "Belters",
+      "Earthers",
+      "Martians",
+      "Drifters"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, which organization does Fred Johnson command?",
+    "options": [
+      "OPA",
+      "Free Navy",
+      "Earth Coalition",
+      "Mars Central"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what mysterious substance drives the central conflict?",
+    "options": [
+      "Protomolecule",
+      "Dark ice",
+      "Helium-3",
+      "Quantum foam"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what symbol appears in Miller’s hallucinations?",
+    "options": [
+      "A blue glowing hat",
+      "A triangular doorway",
+      "A falling key",
+      "A spinning coin"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what is the name given to humans born in the asteroid belt?",
+    "options": [
+      "Belters",
+      "Ringers",
+      "Drifters",
+      "Floaters"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what ship does James Holden command?",
+    "options": [
+      "Rocinante",
+      "Canterbury",
+      "Behemoth",
+      "Agatha King"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what mysterious alien technology changes the balance of power?",
+    "options": [
+      "The protomolecule",
+      "The flux drive",
+      "The dark gate",
+      "The blue lattice"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what accent distinguishes Belters?",
+    "options": [
+      "A mixed creole",
+      "A sharp clipped accent",
+      "A soft slavic tone",
+      "A Portuguese-influenced accent"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, what is the name of the ship that becomes the main setting?",
+    "options": [
+      "Rocinante",
+      "Nauvoo",
+      "Agatha King",
+      "Behemoth"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In The Expanse, which group is referred to as Belters?",
+    "options": [
+      "People born in the asteroid belt",
+      "Miners on Mars",
+      "Smugglers from Europa",
+      "Colonists on Ganymede"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_r48x23xz.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what is Thomas Shelby’s signature accessory?",
+    "options": [
+      "A flat cap",
+      "A gold ring",
+      "A red tie",
+      "A silver cane"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what animal does Tommy race?",
+    "options": [
+      "Horses",
+      "Dogs",
+      "Pigeons",
+      "Rabbits"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what illegal product do the Shelbys first trade?",
+    "options": [
+      "Stolen guns",
+      "Moonshine",
+      "Fake cigarettes",
+      "Counterfeit money"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what is Tommy’s primary vice?",
+    "options": [
+      "Opium",
+      "Gin",
+      "Cigarettes",
+      "Rum"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what narcotic do the Shelbys deal early in the series?",
+    "options": [
+      "Opium",
+      "Cocaine",
+      "Laudanum",
+      "Morphine"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what item does Thomas Shelby always carry with him?",
+    "options": [
+      "A razor-lined cap",
+      "A brass lighter",
+      "A blackjack",
+      "A silver coin"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what drink does Tommy repeatedly pour during negotiations?",
+    "options": [
+      "Whiskey",
+      "Gin",
+      "Vodka",
+      "Absinthe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what city is the Shelby family based in?",
+    "options": [
+      "Birmingham",
+      "Manchester",
+      "Liverpool",
+      "Leeds"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what war did Tommy and many of his men fight in?",
+    "options": [
+      "World War I",
+      "World War II",
+      "Boer War",
+      "Korean War"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In Peaky Blinders, what illegal product do the Shelbys frequently smuggle early on?",
+    "options": [
+      "Stolen guns",
+      "Opium",
+      "Whiskey",
+      "Counterfeit currency"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186403_587s96yn.webp"
+  },
+  {
+    "q": "In The Leftovers, what unexplained event changes the world?",
+    "options": [
+      "Sudden Departure",
+      "Vanishing Day",
+      "Rapture Night",
+      "Global Dissolve"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what animal repeatedly appears mysteriously in season 1?",
+    "options": [
+      "Dogs",
+      "Birds",
+      "Deer",
+      "Goats"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what unsettling ritual does the Guilty Remnant practice?",
+    "options": [
+      "Constant silence",
+      "Fasting",
+      "Walking backward",
+      "Burning photos"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what item do Guilty Remnant members silently hand out?",
+    "options": [
+      "Cigarettes",
+      "Photographs",
+      "Chalk notes",
+      "White envelopes"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what ritual do the Guilty Remnant members follow?",
+    "options": [
+      "Silence",
+      "Blindfolding",
+      "Kneeling at dawn",
+      "Marking walls"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what natural site is tied to Kevin’s visions?",
+    "options": [
+      "A pond",
+      "A forest",
+      "A rock cliff",
+      "A basement room"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what percentage of the world’s population disappears?",
+    "options": [
+      "2%",
+      "1%",
+      "5%",
+      "7%"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what cult wears all white?",
+    "options": [
+      "The Guilty Remnant",
+      "The Silent Order",
+      "The Vanished Choir",
+      "The Last Witnesses"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what percentage of the world’s population disappears?",
+    "options": [
+      "2%",
+      "10%",
+      "5%",
+      "1%"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In The Leftovers, what is the name of the white-clad cult?",
+    "options": [
+      "Guilty Remnant",
+      "Silent Witnesses",
+      "Remaining Few",
+      "Vanished Order"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_8kjsdvgq.webp"
+  },
+  {
+    "q": "In Vikings, what type of ship is central to the early voyages?",
+    "options": [
+      "Longship",
+      "Knarr",
+      "Dragon boat",
+      "War canoe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, what object signifies Ragnar’s leadership?",
+    "options": [
+      "His arm ring",
+      "His sword hilt",
+      "His shield",
+      "His cloak pin"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, what symbol marks Ragnar’s ship sails?",
+    "options": [
+      "A dragon head",
+      "A raven banner",
+      "A serpent coil",
+      "A wolf sigil"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, what weapon does Lagertha frequently use in battle?",
+    "options": [
+      "A shield and sword",
+      "A spear",
+      "A war axe",
+      "Twin knives"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, what weapon does Bjorn prefer?",
+    "options": [
+      "A massive axe",
+      "Twin swords",
+      "A spear",
+      "A war hammer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, what ritual does Ragnar undergo to prove himself?",
+    "options": [
+      "Blood eagle rite",
+      "Blade oath",
+      "Winter trial",
+      "Stone climb"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, who is Ragnar Lothbrok’s shipbuilder and close friend?",
+    "options": [
+      "Floki",
+      "Athelstan",
+      "Rollo",
+      "Bjorn"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Vikings, what does Ragnar dream of raiding instead of England at first?",
+    "options": [
+      "The West beyond known maps",
+      "Rome",
+      "Constantinople",
+      "Paris"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_od3c0fwn.webp"
+  },
+  {
+    "q": "In Dark, what connects multiple families across decades?",
+    "options": [
+      "A time loop",
+      "A meteor",
+      "A prophecy",
+      "A secret cult"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what object becomes the physical anchor of the time paradox?",
+    "options": [
+      "The bunker door",
+      "The pocket watch",
+      "The cave map",
+      "The electric chair"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what object creates a stable time link?",
+    "options": [
+      "A time machine box",
+      "A diary",
+      "A metal chair",
+      "A radio"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what physical item proves that time lines overlap?",
+    "options": [
+      "Identical letters",
+      "Double passports",
+      "Twin photographs",
+      "Broken clocks"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what object is repeatedly passed through generations?",
+    "options": [
+      "A pocket watch",
+      "A ring",
+      "A knife",
+      "A photo album"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what structure becomes a literal time intersection?",
+    "options": [
+      "The Winden cave",
+      "The watchtower",
+      "The bunker hatch",
+      "The school basement"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what personal object does Martha carry?",
+    "options": [
+      "A pendant",
+      "A notebook",
+      "A small knife",
+      "A memory stone"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what physical item exposes the dual timelines?",
+    "options": [
+      "Two identical letters",
+      "A mirrored scar",
+      "A burnt photograph",
+      "A misplaced calendar"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what object first appears in both timelines to establish the paradox?",
+    "options": [
+      "A metal box",
+      "A pendant",
+      "A letter",
+      "A burned photo"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what job does Egon Tiedemann hold in the 1950s?",
+    "options": [
+      "Police officer",
+      "Pastor",
+      "Shopkeeper",
+      "Electrician"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what structure becomes the crossroad of timelines?",
+    "options": [
+      "The cave entrance",
+      "The school basement",
+      "The church ruins",
+      "The bunker ladder"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what item does Jonas carry that belonged to his father?",
+    "options": [
+      "A yellow raincoat",
+      "A compass",
+      "A wristwatch",
+      "A photo"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what item creates the first time-loop connection between Jonas and Mikkel?",
+    "options": [
+      "A yellow raincoat",
+      "A map of caves",
+      "A music box",
+      "A hearing aid"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Dark, what item links the three time periods together?",
+    "options": [
+      "A broken pocket watch",
+      "A leather diary",
+      "A red ribbon",
+      "A stone pendant"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_lmbdw5pp.webp"
+  },
+  {
+    "q": "In Westworld, what do the hosts call humans?",
+    "options": [
+      "The newcomers",
+      "The shadows",
+      "The watchers",
+      "The creators"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what maze symbol appears repeatedly?",
+    "options": [
+      "A circular labyrinth",
+      "A triangle spiral",
+      "A square pattern",
+      "A branching tree"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what narrative loop traps the hosts?",
+    "options": [
+      "Repeating storylines",
+      "Memory leak",
+      "Data purge",
+      "Dream cycles"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what phrase triggers a host malfunction?",
+    "options": [
+      "These violent delights have violent ends",
+      "Activate core loop",
+      "Return to narrative",
+      "Freeze all motor functions"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what behavior indicates a host malfunction?",
+    "options": [
+      "Reveries",
+      "Looping sentences",
+      "Glitch stares",
+      "Random laughter"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what structure marks the boundary of the old narrative?",
+    "options": [
+      "The buried church",
+      "The canyon bridge",
+      "The broken saloon",
+      "The old depot"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what object does Dolores repeatedly pick up?",
+    "options": [
+      "A can of peaches",
+      "A blue ribbon",
+      "A photograph",
+      "A milk bottle"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what hidden object signals the deeper storyline beneath the park?",
+    "options": [
+      "A toy maze",
+      "A silver coin",
+      "A broken arrow",
+      "A glass pyramid"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what instrument does Ford often listen to classical music on?",
+    "options": [
+      "A player piano",
+      "A phonograph",
+      "A violin",
+      "A digital console"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what symbol marks the center of the Maze?",
+    "options": [
+      "A human brain",
+      "A spiral grid",
+      "A handprint",
+      "A labyrinth skull"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what ability does Maeve gradually unlock?",
+    "options": [
+      "Controlling other hosts",
+      "Seeing future loops",
+      "Freezing time",
+      "Navigating the system map"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what machine is primarily used to print host bodies?",
+    "options": [
+      "Skeletal printers",
+      "Armature vats",
+      "Host forges",
+      "Synthetic welders"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what early hosts contain recognizable porcelain elements?",
+    "options": [
+      "White porcelain joints",
+      "Metal screws",
+      "Glass segments",
+      "Bone-like resin"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what object is used to identify hosts after deactivation?",
+    "options": [
+      "A small metal transmitter",
+      "A glass shard",
+      "A neural coin",
+      "A black chip"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what phrase awakens suppressed host memories?",
+    "options": [
+      "These violent delights have violent ends",
+      "Open your eyes",
+      "Remember the maze",
+      "Welcome back"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what shape repeatedly appears as a metaphor for consciousness?",
+    "options": [
+      "A maze",
+      "A spiral",
+      "A circle",
+      "A triangle"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what object is found inside early host skulls?",
+    "options": [
+      "A little black marble",
+      "A memory card",
+      "A gold capsule",
+      "A ceramic ring"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what symbol is engraved on the inside of the maze toy?",
+    "options": [
+      "A human figure",
+      "A serpent",
+      "A star",
+      "A spiral"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what is the name of the park where guests can live out Western fantasies?",
+    "options": [
+      "Westworld",
+      "Frontierland",
+      "The Range",
+      "New Texas"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Westworld, what are the artificially created humans called?",
+    "options": [
+      "Hosts",
+      "Replicants",
+      "Constructs",
+      "Synths"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_2fkmu5l8.webp"
+  },
+  {
+    "q": "In Twin Peaks, what object reveals Laura Palmer’s secret?",
+    "options": [
+      "Her diary",
+      "A cassette tape",
+      "A locket",
+      "A videotape"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_js2e1u6a.webp"
+  },
+  {
+    "q": "In Twin Peaks, what object reveals Cooper’s unsettling visions?",
+    "options": [
+      "The red room curtains",
+      "The coffee cup",
+      "The log",
+      "The owl masks"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_js2e1u6a.webp"
+  },
+  {
+    "q": "In Twin Peaks, what object does the Log Lady treat as an oracle?",
+    "options": [
+      "A log",
+      "A stone",
+      "A notebook",
+      "A pine cone"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_js2e1u6a.webp"
+  },
+  {
+    "q": "In Twin Peaks, what object sits on the table in the Red Room?",
+    "options": [
+      "A small lamp",
+      "A plate of cookies",
+      "A cup of coffee",
+      "A cigarette box"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_js2e1u6a.webp"
+  },
+  {
+    "q": "In Twin Peaks, what drink does Agent Cooper obsess over?",
+    "options": [
+      "Coffee",
+      "Black tea",
+      "Hot cocoa",
+      "Apple cider"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_js2e1u6a.webp"
+  },
+  {
+    "q": "In Twin Peaks, what object is discovered in Laura Palmer’s hiding place?",
+    "options": [
+      "A diary",
+      "A cassette",
+      "A photo strip",
+      "A necklace"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_js2e1u6a.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what food does Leslie Knope adore?",
+    "options": [
+      "Waffles",
+      "Burgers",
+      "Pancakes",
+      "Spaghetti"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, What animal attacks Andy during a music event?",
+    "options": [
+      "A possum",
+      "A raccoon",
+      "A goose",
+      "A dog"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what food causes Leslie’s famous sugar crash?",
+    "options": [
+      "Waffles",
+      "Cupcakes",
+      "Chocolate fountain",
+      "Breakfast burrito"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what band is Andy the lead singer of?",
+    "options": [
+      "Mouse Rat",
+      "Fire Ponies",
+      "Sonic Eagle",
+      "Pawnee Riot"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what animal repeatedly terrorizes Pawnee?",
+    "options": [
+      "Raccoons",
+      "Possums",
+      "Coyotes",
+      "Hawks"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what food does Leslie Knope passionately love?",
+    "options": [
+      "Waffles",
+      "Tacos",
+      "Cornbread",
+      "Ice cream"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what animal terrorizes the town annually?",
+    "options": [
+      "A raccoon",
+      "A goose",
+      "A possum",
+      "A bear"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what is the name of the town where the show is set?",
+    "options": [
+      "Pawnee",
+      "Fairview",
+      "Hawthorne",
+      "Liberty Falls"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what snack combination is Ron Swanson particularly fond of?",
+    "options": [
+      "Bacon and eggs",
+      "Steak and whiskey",
+      "Turkey leg and beer",
+      "Pancakes and sausage"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what annual event does the Parks Department obsessively plan?",
+    "options": [
+      "Harvest Festival",
+      "Town Founding Parade",
+      "Founders Day Picnic",
+      "Lakefront Fireworks"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, who is Leslie Knope’s political idol?",
+    "options": [
+      "Madeleine Albright",
+      "Hillary Clinton",
+      "Michelle Obama",
+      "Nancy Pelosi"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what legendary figure do the town’s murals depict?",
+    "options": [
+      "Violent founding fathers",
+      "Wilderness bandits",
+      "Local cowboys",
+      "Old fishermen"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what scandal brings down Councilman Dexhart?",
+    "options": [
+      "An affair",
+      "Embezzlement",
+      "A forged signature",
+      "Falsifying budgets"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, what is the name of the town where the show is set?",
+    "options": [
+      "Pawnee",
+      "Fairview",
+      "Eagleton",
+      "Hawkins"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Parks and Recreation, which breakfast food does Leslie Knope adore?",
+    "options": [
+      "Waffles",
+      "Pancakes",
+      "French toast",
+      "Donuts"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186404_k91oh8w2.webp"
+  },
+  {
+    "q": "In Mindhunter, what technique do Holden and Bill pioneer?",
+    "options": [
+      "Criminal profiling",
+      "DNA forensics",
+      "Psychometric scoring",
+      "AI patterning"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what activity does Holden use to relax?",
+    "options": [
+      "Listening to records",
+      "Jogging",
+      "Cooking",
+      "Drawing"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what technique is used to understand serial killers?",
+    "options": [
+      "Behavioral interviews",
+      "Hypnosis",
+      "Polygraph testing",
+      "Dream reconstruction"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, which notorious killer is interviewed first?",
+    "options": [
+      "Ed Kemper",
+      "David Berkowitz",
+      "Charles Manson",
+      "Dennis Rader"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what technique does Bill use to bond with his son?",
+    "options": [
+      "Building model planes",
+      "Playing chess",
+      "Going fishing",
+      "Watching crime shows"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what agency do Holden and Bill work for?",
+    "options": [
+      "The FBI Behavioral Science Unit",
+      "The CIA",
+      "The Secret Service",
+      "The US Marshals"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what early term do they help develop for a type of criminal?",
+    "options": [
+      "Serial killer",
+      "Mass murderer",
+      "Compulsive offender",
+      "Pathological stalker"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what hobby does Holden briefly pick up to calm his nerves?",
+    "options": [
+      "Running on a track",
+      "Playing guitar",
+      "Collecting records",
+      "Painting miniatures"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what unusual habit does Bill’s adopted son display?",
+    "options": [
+      "Staging crime scenes",
+      "Collecting knives",
+      "Breaking windows silently",
+      "Talking to mannequins"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, what unit do Holden Ford and Bill Tench work in?",
+    "options": [
+      "Behavioral Science Unit",
+      "Federal Homicide Division",
+      "Serial Crimes Taskforce",
+      "Violent Crimes Section"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Mindhunter, interviewing which killer helps shape their profiling methods the most?",
+    "options": [
+      "Ed Kemper",
+      "Ted Bundy",
+      "Charles Manson",
+      "David Berkowitz"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186404_21ml8jxx.webp"
+  },
+  {
+    "q": "In Fargo, what unusual weapon does Dodd use?",
+    "options": [
+      "A cattle prod",
+      "A bone saw",
+      "A pipe wrench",
+      "A harpoon"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_bcehqg5m.webp"
+  },
+  {
+    "q": "In Fargo (TV), what item of clothing becomes a key clue in Season 1?",
+    "options": [
+      "A parka",
+      "A red glove",
+      "A sheriff badge",
+      "A scarf"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_bcehqg5m.webp"
+  },
+  {
+    "q": "In Fargo (TV), what object is used to commit a key murder in Season 2?",
+    "options": [
+      "A UFO distraction",
+      "A garden hoe",
+      "A snow shovel",
+      "A crowbar"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_bcehqg5m.webp"
+  },
+  {
+    "q": "In Fargo (TV), what US state is most of the story associated with?",
+    "options": [
+      "Minnesota",
+      "Wisconsin",
+      "North Dakota",
+      "Iowa"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_bcehqg5m.webp"
+  },
+  {
+    "q": "In Fargo (TV), what weather condition is often present during crimes?",
+    "options": [
+      "Snow",
+      "Heatwave",
+      "Heavy rain",
+      "Fog"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_bcehqg5m.webp"
+  },
+  {
+    "q": "In Barry, what hobby does Barry pursue to escape his violence?",
+    "options": [
+      "Acting",
+      "Writing",
+      "Painting",
+      "Cooking"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what emotion does Barry struggle to express on stage?",
+    "options": [
+      "Sadness",
+      "Joy",
+      "Anger",
+      "Hope"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what item does NoHo Hank always keep tidy?",
+    "options": [
+      "His boots",
+      "His desk",
+      "His nails",
+      "His sunglasses"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what acting technique does Gene Cousineau teach?",
+    "options": [
+      "Truth in the moment",
+      "Emotional memory",
+      "Internal monologue",
+      "Body mapping"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what object does Barry keep from his military past?",
+    "options": [
+      "A medal",
+      "A notebook",
+      "A photo",
+      "A dog tag"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what is the name of Barry’s hometown?",
+    "options": [
+      "Cleveland",
+      "Detroit",
+      "Chicago",
+      "Portland"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what career is Barry trying to leave behind?",
+    "options": [
+      "Being a hitman",
+      "Being a soldier",
+      "Being a boxer",
+      "Being a driver"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what unusual hobby does Barry try to pursue?",
+    "options": [
+      "Acting",
+      "Painting",
+      "Baking",
+      "Sculpting"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what martial art does Barry briefly attempt to pursue?",
+    "options": [
+      "Taekwondo",
+      "Karate",
+      "Kickboxing",
+      "Judo"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what acting technique does Gene Cousineau swear by?",
+    "options": [
+      "Truth in the moment",
+      "Emotional stretching",
+      "Memory collapse",
+      "Fear immersion"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what city is the main setting for Barry’s acting classes?",
+    "options": [
+      "Los Angeles",
+      "New York",
+      "Chicago",
+      "Atlanta"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Barry, what is Barry’s profession before pursuing acting?",
+    "options": [
+      "Hitman",
+      "Police officer",
+      "Soldier of fortune TV star",
+      "Private investigator"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_cz0e8tcf.webp"
+  },
+  {
+    "q": "In Euphoria, what object triggers Rue’s relapse fear?",
+    "options": [
+      "A suitcase",
+      "A pill bottle",
+      "A checkbook",
+      "A razor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_bllhac21.webp"
+  },
+  {
+    "q": "In Sherlock, what household item does Sherlock shoot out of boredom?",
+    "options": [
+      "The wall",
+      "The fridge",
+      "The window",
+      "A pillow"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what object does Sherlock smash to simulate gunshots?",
+    "options": [
+      "A pair of headphones",
+      "A violin case",
+      "A tea cup",
+      "A magnifying lens"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what item does Moriarty leave as a calling card?",
+    "options": [
+      "An apple",
+      "A gold coin",
+      "A puzzle cube",
+      "A silver pin"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what rare item of clothing does Sherlock request from Mrs. Hudson?",
+    "options": [
+      "A deerstalker",
+      "A long scarf",
+      "A coat pin",
+      "A leather glove"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what food item does Sherlock store in the microwave?",
+    "options": [
+      "His severed head experiment",
+      "A violin string kit",
+      "Leftover pasta",
+      "A fake bomb"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what address do Sherlock and Watson share?",
+    "options": [
+      "221B Baker Street",
+      "22A Regent Street",
+      "14C Fleet Street",
+      "10B Oxford Street"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what instrument does Sherlock play?",
+    "options": [
+      "Violin",
+      "Piano",
+      "Clarinet",
+      "Cello"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what phrase does Moriarty leave on Sherlock’s note at the pool?",
+    "options": [
+      "Get Sherlock",
+      "Miss me?",
+      "Game on",
+      "You lose"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Sherlock, what object does Sherlock shoot into the wall when bored?",
+    "options": [
+      "A smiley face target",
+      "A newspaper article",
+      "A violin bow",
+      "A cigarette pack"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_hs0ben19.webp"
+  },
+  {
+    "q": "In Legion, what entity manifests as a monstrous figure in David’s mind?",
+    "options": [
+      "The Shadow King",
+      "The Endless",
+      "The Eye",
+      "The Host"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_de9h87jw.webp"
+  },
+  {
+    "q": "In Legion, what childhood object resurfaces as David’s fear symbol?",
+    "options": [
+      "The angry boy book",
+      "A broken robot",
+      "A stuffed bear",
+      "A toy soldier"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_de9h87jw.webp"
+  },
+  {
+    "q": "In Legion, what room contains David’s fractured memories?",
+    "options": [
+      "The chalk room",
+      "The white hall",
+      "The mirror box",
+      "The red studio"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_de9h87jw.webp"
+  },
+  {
+    "q": "In Legion, what monster-like figure materializes from David’s mind?",
+    "options": [
+      "The Yellow-Eyed Demon",
+      "The Stone Giant",
+      "The Memory Beast",
+      "The Black Worm"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_de9h87jw.webp"
+  },
+  {
+    "q": "In Legion, what defining feature reveals the Shadow King’s presence?",
+    "options": [
+      "Yellow eyes",
+      "A crooked smile",
+      "A red cloak",
+      "A floating crown"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_de9h87jw.webp"
+  },
+  {
+    "q": "In The Office (US), what does Dwight use to store his secret weapons?",
+    "options": [
+      "His desk drawers",
+      "The ceiling tiles",
+      "His car trunk",
+      "A fake wall panel"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what does Dwight use to test Michael’s paranoia?",
+    "options": [
+      "A fake fire drill",
+      "A lie detector",
+      "A hidden microphone",
+      "A trapped drawer"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what false identity does Jim use when pranking Dwight during the CPR session?",
+    "options": [
+      "Michael Scarn",
+      "Agent Utica",
+      "Dr. Life Saver",
+      "Dave"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what is Michael Scott’s screenplay called?",
+    "options": [
+      "Threat Level Midnight",
+      "Agent of Justice",
+      "Dunder Mystery Force",
+      "Golden Hours"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what item does Jim put Dwight’s stapler into as a prank?",
+    "options": [
+      "Jell-O",
+      "A teapot",
+      "A block of ice",
+      "A jelly jar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what is Michael Scott’s self-penned action hero persona?",
+    "options": [
+      "Michael Scarn",
+      "Mike Thunder",
+      "Scott Steel",
+      "Agent Scranton"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what gift does Pam secretly cherish from Jim at her desk?",
+    "options": [
+      "A teapot",
+      "A bracelet",
+      "A coffee mug",
+      "A snow globe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (UK), what is the name of the paper company?",
+    "options": [
+      "Wernham Hogg",
+      "Dunder-Mifflin UK",
+      "Berkshire Paper",
+      "Slough Papers"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what food does Kevin famously drop all over the floor?",
+    "options": [
+      "Chili",
+      "Spaghetti",
+      "Soup",
+      "Stew"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what item does Dwight fire a weapon into during a safety demonstration?",
+    "options": [
+      "A CPR dummy",
+      "A microwave",
+      "A stack of papers",
+      "A pumpkin"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what mascot costume does Michael wear at a business school?",
+    "options": [
+      "A blue superhero",
+      "A bee",
+      "A tiger",
+      "A lion"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what phrase does Creed repeatedly use to avoid trouble?",
+    "options": [
+      "I was never here",
+      "That’s not my job",
+      "I’m the victim",
+      "Let’s not make this a big deal"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), who starts the fire that leads to the 'Fire Drill' episode cold open?",
+    "options": [
+      "Dwight",
+      "Ryan",
+      "Michael",
+      "Creed"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In The Office (US), what type of company is Dunder Mifflin?",
+    "options": [
+      "Paper company",
+      "Insurance firm",
+      "Marketing agency",
+      "Tech startup"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186405_iyfd1xlq.webp"
+  },
+  {
+    "q": "In Hannibal, what recurring visual appears during Will’s seizures?",
+    "options": [
+      "Antlers",
+      "Deserts",
+      "Broken clocks",
+      "Paper wings"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what recurring shape appears in Will’s hallucinations?",
+    "options": [
+      "A black stag",
+      "A white wolf",
+      "A red snake",
+      "A bone spiral"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what black liquid appears in Will’s disturbing visions?",
+    "options": [
+      "Oil-like fluid",
+      "Ink",
+      "Tar",
+      "Dark water"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what unusual dish does Hannibal often prepare?",
+    "options": [
+      "Human organs",
+      "Exotic reptiles",
+      "Rare birds",
+      "Wild mushrooms"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what hobby does Will Graham use to calm his mind?",
+    "options": [
+      "Building fly-fishing lures",
+      "Carving wood figures",
+      "Painting abstract scenes",
+      "Cooking complex meals"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what ingredient does Hannibal often use to disguise his meals?",
+    "options": [
+      "Exotic spices",
+      "Red wine reductions",
+      "Veal stock",
+      "Smoked herbs"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what is Will Graham’s particular skill?",
+    "options": [
+      "Empathic profiling",
+      "Hypnosis",
+      "Interrogation",
+      "Forensic accounting"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Hannibal, what does Hannibal Lecter secretly serve his guests?",
+    "options": [
+      "Human flesh",
+      "Exotic wild game",
+      "Rare fish",
+      "Synthetic meat"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186406_3o6nyz71.webp"
+  },
+  {
+    "q": "In Black Mirror: White Bear, what symbol appears repeatedly?",
+    "options": [
+      "A black square",
+      "A looping triangle",
+      "A bear mask",
+      "A red circle"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186406_pbe7udj2.webp"
+  },
+  {
+    "q": "In Black Mirror, what technology does the episode 'White Christmas' revolve around?",
+    "options": [
+      "Digital consciousness",
+      "Time loops",
+      "Gene editing",
+      "AI weapons"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what device stores consciousness in the episode 'San Junipero'?",
+    "options": [
+      "A virtual reality system",
+      "A memory sponge",
+      "A neural recorder",
+      "A mind capsule"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what device records everything people see in 'The Entire History of You'?",
+    "options": [
+      "A brain implant",
+      "A wearable camera",
+      "A retinal lens",
+      "A memory chip"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what item is used as currency in the episode 'Fifteen Million Merits'?",
+    "options": [
+      "Merits",
+      "Clicks",
+      "Tokens",
+      "Cycles"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what rating system controls people’s lives in 'Nosedive'?",
+    "options": [
+      "A social media star rating",
+      "A salary grade",
+      "A health score",
+      "A loyalty index"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what nostalgic technology features in 'Bandersnatch'?",
+    "options": [
+      "Choose-your-own adventure game",
+      "Walkman tape",
+      "Floppy disks",
+      "CRT televisions"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what device allows people to block others from sight in 'White Christmas'?",
+    "options": [
+      "An ocular implant",
+      "A wrist band",
+      "A phone app",
+      "A neural chip"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what is the main premise of the episode 'USS Callister'?",
+    "options": [
+      "A digital clone trapped in a fantasy world",
+      "A looping time prison",
+      "A society controlled by implants",
+      "A deadly talent show"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, what is stored on the 'cookies' seen in several episodes?",
+    "options": [
+      "Digital copies of consciousness",
+      "Security credentials",
+      "Encrypted media",
+      "AI assistants"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Black Mirror, in 'Nosedive', what determines a person’s social standing?",
+    "options": [
+      "A star rating system",
+      "A bank score",
+      "Genetic test results",
+      "Government classification"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_aoooa9m0.webp"
+  },
+  {
+    "q": "In Dexter, what blood-related object does Dexter keep as trophies?",
+    "options": [
+      "Glass slides",
+      "Vials",
+      "Ribbons",
+      "Stained cloth"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_7mfhi01l.webp"
+  },
+  {
+    "q": "In Dexter, what boat does Dexter use to dispose of bodies?",
+    "options": [
+      "Slice of Life",
+      "Ocean Runner",
+      "Dark Current",
+      "Sea Shadow"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_7mfhi01l.webp"
+  },
+  {
+    "q": "In Dexter, what food item does Dexter often bring to work?",
+    "options": [
+      "Donuts",
+      "Sandwiches",
+      "Fruit cups",
+      "Protein bars"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_7mfhi01l.webp"
+  },
+  {
+    "q": "In Dexter, what object do detectives find that makes them suspect the Ice Truck Killer?",
+    "options": [
+      "A painted fingernail",
+      "A broken blade",
+      "A frozen vial",
+      "A shoe heel"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_7mfhi01l.webp"
+  },
+  {
+    "q": "In Dexter, what is Dexter Morgan’s day job?",
+    "options": [
+      "Blood-spatter analyst",
+      "Crime scene photographer",
+      "Forensic pathologist",
+      "Homicide detective"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_7mfhi01l.webp"
+  },
+  {
+    "q": "In Dexter, what code does Dexter follow when choosing victims?",
+    "options": [
+      "Harry’s code",
+      "Morgan’s law",
+      "Dark passenger rule",
+      "Miami statute"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_7mfhi01l.webp"
+  },
+  {
+    "q": "In House M.D., what item does House frequently use while thinking?",
+    "options": [
+      "A cane",
+      "A stress ball",
+      "A yo-yo",
+      "A small puzzle cube"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what habit often frustrates Dr. Cuddy?",
+    "options": [
+      "House stealing her parking spot",
+      "House sleeping in her office",
+      "House forging documents",
+      "House feeding her dog treats"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what unique method does House use to diagnose difficult cases?",
+    "options": [
+      "Differential diagnosis whiteboard",
+      "Technology-assisted scans",
+      "Patient role-play simulations",
+      "Team intuition tests"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what snack does House frequently steal from Wilson?",
+    "options": [
+      "Chips",
+      "Chocolate",
+      "Peanuts",
+      "Mints"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what unusual hobby does House have outside of medicine?",
+    "options": [
+      "Playing the piano and guitar",
+      "Collecting stamps",
+      "Breeding dogs",
+      "Building model trains"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what sport injury originally leads to House’s chronic pain?",
+    "options": [
+      "An infarction in his leg muscle",
+      "A car crash",
+      "A biking accident",
+      "A fall from a ladder"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what hospital does House work at?",
+    "options": [
+      "Princeton-Plainsboro Teaching Hospital",
+      "New Jersey General",
+      "Mercer University Hospital",
+      "St. James Medical Center"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In House M.D., what is House’s favorite soap opera?",
+    "options": [
+      "General Hospital",
+      "Passions",
+      "Bold and the Beautiful",
+      "Days of Our Lives"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_ud99dm2b.webp"
+  },
+  {
+    "q": "In The Witcher, what creature does Geralt battle in Blaviken?",
+    "options": [
+      "Renfri and her gang",
+      "A striga",
+      "A kikimora",
+      "A wyvern"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what monster does Geralt defeat in King Foltest’s castle?",
+    "options": [
+      "A striga",
+      "A leshy",
+      "A botchling",
+      "A ghoul"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what object signifies Geralt’s acceptance of destiny with Ciri?",
+    "options": [
+      "The Law of Surprise",
+      "A silver brooch",
+      "A shared emblem",
+      "A pendant"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what coin is commonly used in the Continent?",
+    "options": [
+      "Orens",
+      "Decims",
+      "Gold crowns",
+      "Velerion"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what phrase do bards sing about Geralt?",
+    "options": [
+      "Toss a coin to your Witcher",
+      "Praise the White Wolf",
+      "Song of the Butcher",
+      "Hero of the Path"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what marketplace event reveals Ciri’s scream powers?",
+    "options": [
+      "An attack on Cintra",
+      "A horse stampede",
+      "A failed betrothal",
+      "A public duel"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what magical transformation does Yennefer undergo?",
+    "options": [
+      "From deformed hunchback to sorceress beauty",
+      "From human to elf hybrid",
+      "From blind to sighted seer",
+      "From old woman to young girl"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what monster kills Renfri’s group in Blaviken?",
+    "options": [
+      "Geralt himself",
+      "A wraith",
+      "A ghoul pack",
+      "A striga"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what is the profession of Geralt of Rivia?",
+    "options": [
+      "Monster hunter",
+      "Bard",
+      "Sorcerer",
+      "Knight"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In The Witcher, what is the Law of Surprise related to?",
+    "options": [
+      "A form of payment",
+      "A duel code",
+      "A magical curse",
+      "A royal decree"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_c5vy7s4i.webp"
+  },
+  {
+    "q": "In Narcos, what product is central to the storyline?",
+    "options": [
+      "Cocaine",
+      "Emeralds",
+      "Coffee",
+      "Oil"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, what nickname is Pablo Escobar often called?",
+    "options": [
+      "El Patrón",
+      "El Tigre",
+      "El Jefe",
+      "El Mando"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, what US agency works with Peña and Murphy?",
+    "options": [
+      "DEA",
+      "FBI",
+      "CIA",
+      "ATF"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, what does Escobar build for himself when facing prison?",
+    "options": [
+      "A luxurious self-designed prison",
+      "A secret airstrip",
+      "A fortified mansion",
+      "An underground bunker"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, what animal is associated with Escobar’s extravagant zoo?",
+    "options": [
+      "Hippos",
+      "Lions",
+      "Elephants",
+      "Giraffes"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, what explosive tactic does the Cali Cartel use against Pablo’s men?",
+    "options": [
+      "Car bombs",
+      "Poisoned shipments",
+      "Sniper attacks",
+      "Tunnel explosives"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, which Colombian drug lord is the focus of the first two seasons?",
+    "options": [
+      "Pablo Escobar",
+      "Gilberto Rodríguez",
+      "Joaquín Guzmán",
+      "Griselda Blanco"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos, what US agency do Murphy and Peña work for?",
+    "options": [
+      "DEA",
+      "CIA",
+      "FBI",
+      "ATF"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Narcos: Mexico, which cartels are central to the story?",
+    "options": [
+      "Guadalajara cartel and splinter groups",
+      "Medellín and Cali cartels",
+      "Tijuana and Juárez only",
+      "Sinaloa cartel alone"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_g60rjp6w.webp"
+  },
+  {
+    "q": "In Chernobyl, what material is used to seal the reactor?",
+    "options": [
+      "Sand and boron",
+      "Lead bricks",
+      "Concrete foam",
+      "Granite powder"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_5bbq9mik.webp"
+  },
+  {
+    "q": "In Chernobyl, what animals must be put down to stop contamination?",
+    "options": [
+      "Dogs",
+      "Goats",
+      "Boars",
+      "Birds"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_5bbq9mik.webp"
+  },
+  {
+    "q": "In Chernobyl, what object must firefighters remove from rooftops?",
+    "options": [
+      "Graphite blocks",
+      "Metal shards",
+      "Burning tar",
+      "Radio wires"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_5bbq9mik.webp"
+  },
+  {
+    "q": "In Chernobyl, what colored suits do liquidators wear?",
+    "options": [
+      "Black uniforms",
+      "Green suits",
+      "Yellow hazmat",
+      "Orange coats"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_5bbq9mik.webp"
+  },
+  {
+    "q": "In Chernobyl, in which country did the nuclear disaster occur?",
+    "options": [
+      "Soviet Union (modern-day Ukraine)",
+      "Poland",
+      "Belarus",
+      "Russia (far east)"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_5bbq9mik.webp"
+  },
+  {
+    "q": "In Chernobyl, what is the main reactor involved in the explosion?",
+    "options": [
+      "Reactor 4",
+      "Reactor 1",
+      "Reactor 2",
+      "Reactor 3"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_5bbq9mik.webp"
+  },
+  {
+    "q": "In Boardwalk Empire, what drink is smuggled during Prohibition?",
+    "options": [
+      "Alcohol",
+      "Coffee",
+      "Tobacco",
+      "Sugar"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_tx60mn31.webp"
+  },
+  {
+    "q": "In Six Feet Under, what business does the Fisher family run?",
+    "options": [
+      "A funeral home",
+      "A flower shop",
+      "A bakery",
+      "A bookstore"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_en6lx2v8.webp"
+  },
+  {
+    "q": "In Six Feet Under, what object triggers Nate’s panic attacks?",
+    "options": [
+      "A buzzing light",
+      "A broken urn",
+      "An old shoe",
+      "A damp carpet"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_en6lx2v8.webp"
+  },
+  {
+    "q": "In Six Feet Under, what business does the Fisher family run?",
+    "options": [
+      "A funeral home",
+      "A flower shop",
+      "A law firm",
+      "A bakery"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_en6lx2v8.webp"
+  },
+  {
+    "q": "In Six Feet Under, what unique aspect opens each episode?",
+    "options": [
+      "A death scene",
+      "A news report",
+      "A flash-forward",
+      "A dream sequence"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_en6lx2v8.webp"
+  },
+  {
+    "q": "In Fleabag, what animal statue does Fleabag repeatedly interact with?",
+    "options": [
+      "A small fox sculpture",
+      "A rabbit figure",
+      "A horse carving",
+      "A lion bust"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In Fleabag, what animal repeatedly symbolizes chaos in her life?",
+    "options": [
+      "A fox",
+      "A dog",
+      "A crow",
+      "A pigeon"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In Fleabag, what business does Fleabag run?",
+    "options": [
+      "A guinea pig-themed café",
+      "A small bookstore",
+      "A flower shop",
+      "A vintage clothing store"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In Fleabag, what narrative device does she use constantly?",
+    "options": [
+      "Breaking the fourth wall to talk to the audience",
+      "Voiceover diaries",
+      "Black-and-white flashbacks",
+      "Animated sequences"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In Fleabag, what animal is featured in a key statue that keeps changing hands?",
+    "options": [
+      "A golden sculpture of a woman",
+      "A marble fox",
+      "A bronze rabbit",
+      "A glass bird"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In Fleabag, what animal features in the café theme?",
+    "options": [
+      "Guinea pigs",
+      "Cats",
+      "Dogs",
+      "Owls"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In Fleabag, what narrative device does the main character use constantly?",
+    "options": [
+      "Breaking the fourth wall",
+      "Voiceover diaries",
+      "Black-and-white flashbacks",
+      "Animated inserts"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186408_r3u53tfm.webp"
+  },
+  {
+    "q": "In The Haunting of Hill House, what bent-limbed entity terrifies young Luke?",
+    "options": [
+      "The Bent-Neck Lady",
+      "The Crawling Man",
+      "The Hollow Ghost",
+      "The Night Creeper"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_lpv9ioej.webp"
+  },
+  {
+    "q": "In The Haunting of Hill House, what ghost is seen standing in the corner?",
+    "options": [
+      "The Tall Man",
+      "The Bent-Neck Lady",
+      "The Screaming Woman",
+      "The Hollow Boy"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_lpv9ioej.webp"
+  },
+  {
+    "q": "In The Haunting of Hill House, which sibling is most sensitive to supernatural occurrences?",
+    "options": [
+      "Theo",
+      "Steve",
+      "Shirley",
+      "Luke"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_lpv9ioej.webp"
+  },
+  {
+    "q": "In The Haunting of Hill House, what nickname is given to the ghost that haunts Nell?",
+    "options": [
+      "The Bent-Neck Lady",
+      "The Tall Man",
+      "The Hollow Bride",
+      "The Red Room Woman"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186408_lpv9ioej.webp"
+  },
+  {
+    "q": "In The Last of Us (HBO), what object symbolizes Ellie’s fear of abandonment?",
+    "options": [
+      "A switchblade",
+      "A music cassette",
+      "A joke book",
+      "A firefly pendant"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_e0o6c54f.webp"
+  },
+  {
+    "q": "In The Last of Us, what animal does Ellie attempt to pet in the abandoned mall?",
+    "options": [
+      "A giraffe",
+      "A dog",
+      "A horse",
+      "A bird"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_e0o6c54f.webp"
+  },
+  {
+    "q": "In Atlanta, what animal appears symbolically in the pilot episode?",
+    "options": [
+      "An alligator",
+      "A peacock",
+      "A pit bull",
+      "A deer"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_qpir4vwg.webp"
+  },
+  {
+    "q": "In House of the Dragon, what object symbolizes the legacy of the Targaryens?",
+    "options": [
+      "The ancestral dagger",
+      "A crown of rubies",
+      "A silver dragon medallion",
+      "A book of lineage"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_2gwcb2ps.webp"
+  },
+  {
+    "q": "In House of the Dragon, what symbol appears in Viserys’ recurring dreams?",
+    "options": [
+      "A white dragon",
+      "A falling crown",
+      "A burning sword",
+      "A tidal wave"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_2gwcb2ps.webp"
+  },
+  {
+    "q": "In House of the Dragon, what illness slowly weakens King Viserys?",
+    "options": [
+      "A necrotic infection",
+      "Dragonstone fever",
+      "Moon plague",
+      "Silver rot"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_2gwcb2ps.webp"
+  },
+  {
+    "q": "In House of the Dragon, what weapon does Daemon wield in many battles?",
+    "options": [
+      "A Valyrian steel sword",
+      "A reinforced spear",
+      "A war hammer",
+      "A golden axe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_2gwcb2ps.webp"
+  },
+  {
+    "q": "In House of the Dragon, which king sits on the Iron Throne when the series begins?",
+    "options": [
+      "Viserys I Targaryen",
+      "Aegon I Targaryen",
+      "Jaehaerys I Targaryen",
+      "Daemon Targaryen"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_2gwcb2ps.webp"
+  },
+  {
+    "q": "In House of the Dragon, what dragon does Rhaenyra ride?",
+    "options": [
+      "Syrax",
+      "Caraxes",
+      "Vhagar",
+      "Meleys"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_2gwcb2ps.webp"
+  },
+  {
+    "q": "In The Good Place, what food item is humorously abundant?",
+    "options": [
+      "Frozen yogurt",
+      "Pizza slices",
+      "Chocolate bars",
+      "Pudding cups"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In The Good Place, what word does Janet often say before appearing?",
+    "options": [
+      "'Hi, there!'",
+      "'Hello!'",
+      "'Yes?'",
+      "'Here!'"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In The Good Place, what reveals that the neighborhood is not what it seems?",
+    "options": [
+      "People being tortured in subtle ways",
+      "Random earthquakes",
+      "Doors that won’t open",
+      "Food that has no taste"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In The Good Place, what profession did Chidi have in life?",
+    "options": [
+      "Ethics professor",
+      "Lawyer",
+      "Doctor",
+      "Architect"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In The Good Place, what is Janet technically classified as?",
+    "options": [
+      "Not a girl and not a robot",
+      "An angelic AI",
+      "A cosmic librarian",
+      "A good-bot"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In The Good Place, what is Michael’s role in the neighborhood?",
+    "options": [
+      "Architect",
+      "Judge",
+      "Human guide",
+      "Demon supervisor"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In The Good Place, what philosophy subject does Chidi teach Eleanor?",
+    "options": [
+      "Ethics",
+      "Metaphysics",
+      "Logic",
+      "Political philosophy"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_52xy4arn.webp"
+  },
+  {
+    "q": "In Firefly, what is the name of the crew’s spaceship?",
+    "options": [
+      "Serenity",
+      "Galena",
+      "Morningstar",
+      "Horizon"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In Firefly, what phrase does Mal often use to motivate his crew?",
+    "options": [
+      "'We keep flying.'",
+      "'Stay tight.'",
+      "'Move fast.'",
+      "'Hold the line.'"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In Firefly, what profession does Inara practice?",
+    "options": [
+      "Companion",
+      "Navigator",
+      "Medic",
+      "Pilot"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In Firefly, what job does Kaylee perform on the ship?",
+    "options": [
+      "Engineer",
+      "Pilot",
+      "Medic",
+      "Gunner"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In Firefly, what term does the crew use to refer to unpredictable space dangers?",
+    "options": [
+      "Reavers",
+      "Wraiths",
+      "Void ghosts",
+      "Black riders"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In Firefly, what is the name of Malcolm Reynolds’ ship?",
+    "options": [
+      "Serenity",
+      "Endeavor",
+      "Reliant",
+      "Liberty"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In Firefly, which character is a Companion by profession?",
+    "options": [
+      "Inara Serra",
+      "River Tam",
+      "Kaylee Frye",
+      "Zoe Washburne"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_ipffia2l.webp"
+  },
+  {
+    "q": "In The X-Files, what phrase adorns Mulder’s iconic poster?",
+    "options": [
+      "I Want to Believe",
+      "Truth Is Out There",
+      "We Are Not Alone",
+      "Believe the Unknown"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_sv0v975a.webp"
+  },
+  {
+    "q": "In The X-Files, what phenomenon does Scully frequently attempt to scientifically explain?",
+    "options": [
+      "Alien sightings",
+      "Ghost apparitions",
+      "Mutant life",
+      "Weather anomalies"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_sv0v975a.webp"
+  },
+  {
+    "q": "In The X-Files, what location does Mulder claim contains proof of alien life?",
+    "options": [
+      "Deep Throat’s archives",
+      "Fort Benning bunker",
+      "Roswell vault",
+      "Syndicate archive"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_sv0v975a.webp"
+  },
+  {
+    "q": "In Fringe, what food item does Walter often request?",
+    "options": [
+      "Root beer floats",
+      "Blueberry pancakes",
+      "Banana pudding",
+      "Onion rings"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_l03ks979.webp"
+  },
+  {
+    "q": "In Fringe, what forbidden memory device does Walter use to recover past secrets?",
+    "options": [
+      "A neural spike",
+      "A memory bath",
+      "A cortex stimulator",
+      "A mind prism"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_l03ks979.webp"
+  },
+  {
+    "q": "In Fringe, what alternate-universe feature distinguishes Olivia’s counterpart?",
+    "options": [
+      "Red hair",
+      "Glasses",
+      "A tattoo",
+      "A limp"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_l03ks979.webp"
+  },
+  {
+    "q": "In Line of Duty, what term is used for corrupt officers?",
+    "options": [
+      "Bent coppers",
+      "Dark badges",
+      "False uniforms",
+      "Crooked blues"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_rtficcmt.webp"
+  },
+  {
+    "q": "In Line of Duty, what interrogation tactic is used repeatedly against suspects?",
+    "options": [
+      "AC-12 interview tables",
+      "Pressure chambers",
+      "Rapid questioning",
+      "Memory traps"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_rtficcmt.webp"
+  },
+  {
+    "q": "In Line of Duty, what phrase signals the start of a formal interrogation?",
+    "options": [
+      "'Interview commencing'",
+      "'We are recording'",
+      "'Mother of God'",
+      "'AC-12 present'"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_rtficcmt.webp"
+  },
+  {
+    "q": "In The Good Doctor, what condition does Shaun Murphy have?",
+    "options": [
+      "Autism and savant syndrome",
+      "Bipolar disorder",
+      "Synesthesia",
+      "Memory hyperplasia"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_ovjsfbst.webp"
+  },
+  {
+    "q": "In The Good Doctor, what food does Shaun dislike due to texture?",
+    "options": [
+      "Apples",
+      "Corn",
+      "Bread",
+      "Pasta"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_ovjsfbst.webp"
+  },
+  {
+    "q": "In Yellowstone, what symbol brands loyal ranch members?",
+    "options": [
+      "A 'Y' mark",
+      "A horse crest",
+      "A cattle skull",
+      "A mountain outline"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_e7bd7ts1.webp"
+  },
+  {
+    "q": "In Yellowstone, what illegal act does Rip help cover up in Season 1?",
+    "options": [
+      "A toxic dump",
+      "A ranch worker's death",
+      "Horse smuggling",
+      "Fence sabotage"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_e7bd7ts1.webp"
+  },
+  {
+    "q": "In Suits, what secret does Mike Ross hide when joining the firm?",
+    "options": [
+      "He never went to law school",
+      "He forged his identity",
+      "He has a criminal record",
+      "He plagiarized cases"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_0ttjco5j.webp"
+  },
+  {
+    "q": "In Suits, what gift does Donna treasure from Harvey?",
+    "options": [
+      "A can opener",
+      "A signed book",
+      "A vintage pen",
+      "A gold necklace"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_0ttjco5j.webp"
+  },
+  {
+    "q": "In Arrested Development, what vehicle becomes Michael’s main office?",
+    "options": [
+      "A stair car",
+      "A food truck",
+      "A moving van",
+      "A yacht"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_qikaoo1o.webp"
+  },
+  {
+    "q": "In Arrested Development, what item does Gob use for magic tricks?",
+    "options": [
+      "A dead dove",
+      "A gold chain",
+      "A rubber coin",
+      "A broken hat"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_qikaoo1o.webp"
+  },
+  {
+    "q": "In Arrested Development, what is the Bluth family’s business?",
+    "options": [
+      "Real estate development",
+      "Car dealerships",
+      "Construction tools",
+      "Restaurants"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_qikaoo1o.webp"
+  },
+  {
+    "q": "In Arrested Development, what does Tobias frequently say he wants to do with acting?",
+    "options": [
+      "Become an actor who 'blues himself'",
+      "Be a serious drama star",
+      "Start a comedy troupe",
+      "Make his own sitcom"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_qikaoo1o.webp"
+  },
+  {
+    "q": "In Arrested Development, what frozen treat does the Bluth family sell?",
+    "options": [
+      "Banana stand treats",
+      "Orange floats",
+      "Frozen yogurt",
+      "Ice pops"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_qikaoo1o.webp"
+  },
+  {
+    "q": "In The IT Crowd, what phrase does Roy often shout when dealing with computers?",
+    "options": [
+      "Have you tried turning it off and on again?",
+      "System crash!",
+      "Who wrote this code?",
+      "Stop the server!"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_789j56xe.webp"
+  },
+  {
+    "q": "In The IT Crowd, what emergency phrase is used during the fire episode?",
+    "options": [
+      "'Fire! Exits are… complicated!'",
+      "'System meltdown!'",
+      "'Abort all tasks!'",
+      "'Server’s overheating!'"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_789j56xe.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what phrase does Jake use to celebrate?",
+    "options": [
+      "Cool cool cool",
+      "Nice nice nice",
+      "Boom shakalaka",
+      "Solid gold"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what song does Boyle play at every wedding?",
+    "options": [
+      "'Your Body Is a Wonderland'",
+      "'Sugar'",
+      "'Shallow'",
+      "'Africa'"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what is Jake’s favorite action movie franchise?",
+    "options": [
+      "Die Hard",
+      "Fast & Furious",
+      "Mission: Impossible",
+      "Lethal Weapon"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what animal is Captain Holt obsessed with for his squad mascot?",
+    "options": [
+      "A corgi",
+      "A raven",
+      "A turtle",
+      "An owl"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what is the Halloween tradition at the precinct?",
+    "options": [
+      "A heist to crown the ultimate detective/genius",
+      "An all-night stakeout",
+      "Costumed patrol shifts",
+      "Prank wars between squads"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what holiday does Boyle obsess over?",
+    "options": [
+      "Thanksgiving",
+      "Arbor Day",
+      "St. Patrick’s Day",
+      "Valentine’s Day"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what award does Holt mistakenly win?",
+    "options": [
+      "A hula hoop contest",
+      "A burger-eating challenge",
+      "A karaoke trophy",
+      "A youth medal"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what recurring criminal is Jake obsessed with catching?",
+    "options": [
+      "The Pontiac Bandit",
+      "The Masked Thief",
+      "The Ghost Burglar",
+      "The Queens Phantom"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what is the precinct number where the series takes place?",
+    "options": [
+      "99th precinct",
+      "21st precinct",
+      "47th precinct",
+      "13th precinct"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In Brooklyn Nine-Nine, what does Captain Holt always keep on his desk?",
+    "options": [
+      "A small toy car",
+      "A nameplate and a mug",
+      "A cactus plant",
+      "A framed bird photo"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_17zn7gqf.webp"
+  },
+  {
+    "q": "In The West Wing, what snack does Josh often steal from co-workers?",
+    "options": [
+      "Muffins",
+      "Peanuts",
+      "Chocolate bars",
+      "Popcorn"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_g5mo1i6b.webp"
+  },
+  {
+    "q": "In The West Wing, what sports item does President Bartlet frequently use?",
+    "options": [
+      "A pool cue",
+      "A baseball glove",
+      "A yo-yo",
+      "A tennis racket"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_g5mo1i6b.webp"
+  },
+  {
+    "q": "In The West Wing, what is President Bartlet’s first name?",
+    "options": [
+      "Josiah",
+      "Jonathan",
+      "James",
+      "Jeremiah"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_g5mo1i6b.webp"
+  },
+  {
+    "q": "In The West Wing, what job does C.J. Cregg hold?",
+    "options": [
+      "Press Secretary",
+      "Chief of Staff",
+      "Communications Director",
+      "National Security Advisor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_g5mo1i6b.webp"
+  },
+  {
+    "q": "In The Morning Show, what industry is the show centered on?",
+    "options": [
+      "Broadcast journalism",
+      "Fashion",
+      "Politics",
+      "Sports analysis"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In The Morning Show, what internal system dominates newsroom communication?",
+    "options": [
+      "The rundown",
+      "The live grid",
+      "The point tracker",
+      "The bubble board"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In The Morning Show, what unexpected on-air event shocks viewers?",
+    "options": [
+      "A sudden resignation",
+      "A studio blackout",
+      "A confession from a host",
+      "A guest collapse"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In The Morning Show, what scandal sparks the show’s restructuring?",
+    "options": [
+      "Sexual misconduct allegations",
+      "A ratings fraud",
+      "A political bias scandal",
+      "A staged on-air accident"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In The Morning Show, what role does Alex Levy play on the show?",
+    "options": [
+      "Co-anchor",
+      "Weather host",
+      "Executive producer",
+      "Field correspondent"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In The Morning Show, what aspiring journalist joins the team after a viral video?",
+    "options": [
+      "Bradley Jackson",
+      "Claire Lewis",
+      "Hannah Shoenfeld",
+      "Mia Jordan"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In The Morning Show, what crisis does Mitch Kessler face?",
+    "options": [
+      "A sexual misconduct scandal",
+      "A financial meltdown",
+      "A health emergency",
+      "A legal fraud case"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186409_6l1jcw2v.webp"
+  },
+  {
+    "q": "In For All Mankind, what event changes the course of history?",
+    "options": [
+      "The Soviet lunar landing",
+      "A failed Apollo test",
+      "A nuclear scare",
+      "A Mars test launch"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_zet35ju1.webp"
+  },
+  {
+    "q": "In For All Mankind, what object becomes a memorial artifact on the moon?",
+    "options": [
+      "A plaque",
+      "A helmet visor",
+      "A flag fragment",
+      "A boot cast"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_zet35ju1.webp"
+  },
+  {
+    "q": "In For All Mankind, what country expands lunar bases aggressively?",
+    "options": [
+      "The Soviet Union",
+      "China",
+      "Germany",
+      "France"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_zet35ju1.webp"
+  },
+  {
+    "q": "In For All Mankind, what celestial body becomes the new frontier?",
+    "options": [
+      "The moon",
+      "Mars",
+      "Europa",
+      "Asteroid belt"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186409_zet35ju1.webp"
+  },
+  {
+    "q": "In The Witcher: Blood Origin, what instrument accompanies Éile’s songs?",
+    "options": [
+      "A harp",
+      "A flute",
+      "A lute",
+      "A drum"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186409_7rkefdsm.webp"
+  },
+  {
+    "q": "In Seinfeld, what soup shop enforces strict ordering rules?",
+    "options": [
+      "The Soup Nazi’s",
+      "The Broth King",
+      "Kenny’s Kitchen",
+      "Monk’s Café Express"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what holiday does George’s father invent?",
+    "options": [
+      "Festivus",
+      "Costanzamas",
+      "Noel Lite",
+      "Midwinter Grievance"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what personal hygiene item does Jerry refuse to share with his girlfriend?",
+    "options": [
+      "A toothbrush",
+      "A towel",
+      "Nail clippers",
+      "A razor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what food item does Kramer deep-fry in his apartment?",
+    "options": [
+      "A turkey",
+      "Twinkies",
+      "Oreos",
+      "A shoe"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what dessert does Elaine obsess over in one episode?",
+    "options": [
+      "The chocolate babka",
+      "Cream pie",
+      "Strudel",
+      "Cherry tart"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what item does Jerry accuse Babu of mishandling?",
+    "options": [
+      "Paperwork",
+      "His visa form",
+      "A passport stamp",
+      "A phone record"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what is the first name of the character known as the 'Soup Nazi'?",
+    "options": [
+      "Yev Kassem",
+      "Ali Kassem",
+      "Yuri Kasim",
+      "Nate Kassim"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In Seinfeld, what holiday do the Costanzas celebrate instead of Christmas?",
+    "options": [
+      "Festivus",
+      "Costanzamas",
+      "Noel Lite",
+      "Winterfest"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_ji3m9qh1.webp"
+  },
+  {
+    "q": "In The Simpsons, what instrument does Lisa play?",
+    "options": [
+      "Saxophone",
+      "Violin",
+      "Flute",
+      "Piano"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In The Simpsons, what is the name of the bar Homer frequently visits?",
+    "options": [
+      "Moe’s Tavern",
+      "Duff Pub",
+      "Springfield Bar",
+      "Joe’s Place"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In The Simpsons, what is the name of Bart’s superhero alter ego?",
+    "options": [
+      "Bartman",
+      "Bat-Bart",
+      "Kid Lightning",
+      "Masked Menace"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In The Simpsons, what does Homer steal from the Kwik-E-Mart late at night?",
+    "options": [
+      "Hot dogs",
+      "Beer",
+      "Donuts",
+      "Corn chips"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In The Simpsons, what does Bart write repeatedly on the chalkboard in the intro?",
+    "options": [
+      "Punishment lines",
+      "Homework excuses",
+      "Random jokes",
+      "Graffiti names"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In The Simpsons, what instrument does Lisa Simpson play?",
+    "options": [
+      "Saxophone",
+      "Flute",
+      "Violin",
+      "Piano"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In The Simpsons, what is the name of the bar Homer frequents?",
+    "options": [
+      "Moe’s Tavern",
+      "Joe’s Pub",
+      "Duff Bar",
+      "Springfield Saloon"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_tbe5jvb8.webp"
+  },
+  {
+    "q": "In Futurama, what drink does Fry deliver when he gets frozen?",
+    "options": [
+      "A pizza",
+      "A Slurm can",
+      "A soda crate",
+      "A coffee order"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  },
+  {
+    "q": "In Futurama, what company do Fry and the crew work for?",
+    "options": [
+      "Planet Express",
+      "Galaxy Go",
+      "Star Courier",
+      "Universe Deliveries"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  },
+  {
+    "q": "In Futurama, which character is known for saying 'Bite my shiny metal ass'?",
+    "options": [
+      "Bender",
+      "Zoidberg",
+      "Fry",
+      "Hermes"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  },
+  {
+    "q": "In Futurama, what illegal drink is addictive to robots?",
+    "options": [
+      "Electricity shots",
+      "Oil cocktails",
+      "Data slushies",
+      "Turbo caffeine"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  },
+  {
+    "q": "In Futurama, what creature lives in Leela’s childhood aquarium?",
+    "options": [
+      "A three-eyed fish",
+      "A minnow swarm",
+      "A crab colony",
+      "A kelp worm"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  },
+  {
+    "q": "In Futurama, how many years is Fry frozen before he wakes up?",
+    "options": [
+      "1000 years",
+      "500 years",
+      "300 years",
+      "1500 years"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  },
+  {
+    "q": "In Futurama, what is the name of the delivery company Fry works for?",
+    "options": [
+      "Planet Express",
+      "Galactic Deliveries",
+      "Solar Shipping",
+      "Universe Express"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764771186412_wtkj2ph0.webp"
+  }
+]

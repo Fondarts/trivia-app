@@ -6,7 +6,6 @@ window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXB
 
 // Configuración de Google OAuth
 window.GOOGLE_CLIENT_ID = '339736953753-h9oekqkii28804iv84r5mqad61p7m4es.apps.googleusercontent.com';
-window.GOOGLE_CLIENT_ID_ANDROID = '339736953753-shffn13ho0g92064uh7ooj95pcgebpoj.apps.googleusercontent.com';
 
 // Inicializar Supabase cuando esté disponible
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         detectSessionInUrl: true
       }
     });
-    console.log('✅ Cliente Supabase inicializado');
+
   } else {
-    console.error('❌ No se pudo inicializar Supabase');
+
   }
 });

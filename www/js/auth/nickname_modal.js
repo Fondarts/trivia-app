@@ -267,7 +267,7 @@ export function showNicknameModal(obligatory = false) {
               onConflict: 'user_id'
             });
         } catch (error) {
-          console.log('Error guardando nickname en servidor:', error);
+
         }
       }
       

@@ -4,14 +4,13 @@ let socialManager = null;
 let currentUserNickname = '';
 
 export function initFriendsSystem(supabase, userId, nickname) {
-  console.log('Iniciando UI de amigos con:', { userId, nickname, hasSupabase: !!supabase });
-  
+
   // Verificar si ya existe un socialManager global
   if (window.socialManager) {
     socialManager = window.socialManager;
-    console.log('SocialManager encontrado');
+
   } else {
-    console.error('SocialManager no encontrado - debe inicializarse primero con social.js');
+
     return;
   }
   currentUserNickname = nickname;
@@ -56,21 +55,20 @@ export function initFriendsSystem(supabase, userId, nickname) {
 function createFriendsButton() {
   const header = document.querySelector('.header .row');
   if (!header) {
-    console.error('No se encontró el header para agregar el botón de amigos');
+
     return;
   }
   
   // Verificar si ya existe
   let existingBtn = document.getElementById('btnFriends');
   if (existingBtn) {
-    console.log('Botón de amigos ya existe, reutilizando...');
+
     // Si ya existe, solo asegurarse de que tenga el evento
     existingBtn.removeEventListener('click', toggleFriendsPanel); // Remover si ya existe
     existingBtn.addEventListener('click', toggleFriendsPanel);
     return;
   }
-  
-  console.log('Creando botón de amigos...');
+
   const friendsBtn = document.createElement('button');
   friendsBtn.id = 'btnFriends';
   friendsBtn.className = 'iconbtn';
@@ -92,7 +90,7 @@ function createFriendsButton() {
   }
   
   friendsBtn.addEventListener('click', toggleFriendsPanel);
-  console.log('Botón de amigos creado y evento vinculado');
+
 }
 
 function createFriendsPanel() {
@@ -167,8 +165,7 @@ function bindFriendsPanelEvents() {
   document.getElementById('btnCloseFriends')?.addEventListener('click', () => {
     document.getElementById('friendsPanel')?.classList.remove('open');
   });
-  
-  
+
   // Tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -198,19 +195,19 @@ function bindFriendsPanelEvents() {
 }
 
 export function toggleFriendsPanel() {
-  console.log('toggleFriendsPanel ejecutado');
+
   const panel = document.getElementById('friendsPanel');
   if (panel) {
-    console.log('Panel encontrado, toggling...');
+
     panel.classList.toggle('open');
     if (panel.classList.contains('open')) {
-      console.log('Panel abierto, cargando amigos...');
+
       loadFriends();
     } else {
-      console.log('Panel cerrado');
+
     }
   } else {
-    console.error('Panel de amigos no encontrado!');
+
     // Intentar crear el panel si no existe
     createFriendsPanel();
     // Intentar de nuevo
@@ -223,28 +220,27 @@ export function toggleFriendsPanel() {
 }
 
 async function loadFriends() {
-  console.log('Cargando amigos...');
-  
+
   if (!socialManager) {
-    console.error('socialManager no está disponible');
+
     return;
   }
   
   const container = document.getElementById('friendsList');
   if (!container) {
-    console.error('No se encontró el contenedor friendsList');
+
     return;
   }
   
   try {
     // Primero intentar reparar relaciones rotas
-    console.log('Verificando y reparando relaciones de amistad...');
+
     await socialManager.repairFriendshipRelationships();
     
     const result = await socialManager.getFriends();
     
     if (!result || !result.success) {
-      console.error('Error al obtener amigos:', result?.error);
+
       container.innerHTML = '<div class="error">Error al cargar amigos</div>';
       return;
     }
@@ -277,7 +273,7 @@ async function loadFriends() {
   // Bind events para los botones
   bindFriendItemEvents();
   } catch (error) {
-    console.error('Error en loadFriends:', error);
+
     container.innerHTML = '<div class="error">Error al cargar amigos</div>';
   }
 }
@@ -366,11 +362,9 @@ async function searchUsers() {
   if (!container) return;
   
   container.innerHTML = '<div class="loading">Buscando...</div>';
-  
-  console.log('Buscando usuarios con query:', query);
+
   const result = await socialManager.searchUsers(query);
-  console.log('Resultado de búsqueda:', result);
-  
+
   if (!result.success) {
     container.innerHTML = '<div class="error">Error al buscar usuarios</div>';
     return;
@@ -410,11 +404,9 @@ async function searchUsers() {
   document.querySelectorAll('[data-action="add-friend"]').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const targetUserId = e.target.dataset.user;
-      console.log('Click en agregar amigo:', targetUserId);
-      
+
       const result = await socialManager.sendFriendRequest(targetUserId);
-      console.log('Resultado de enviar solicitud:', result);
-      
+
       if (result.success) {
         showToast('Solicitud enviada');
         e.target.disabled = true;
@@ -438,9 +430,7 @@ async function loadRequests() {
   if (!container) return;
   
   container.innerHTML = '<div class="loading">Cargando solicitudes...</div>';
-  
-  console.log('Cargando solicitudes para usuario:', socialManager.userId);
-  
+
   try {
     // Cargar solicitudes de amistad pendientes
     const { data: friendRequests, error: friendError } = await socialManager.supabase
@@ -448,11 +438,9 @@ async function loadRequests() {
       .select('*')
       .eq('friend_id', socialManager.userId)
       .eq('status', 'pending');
-    
-    console.log('Solicitudes de amistad encontradas:', friendRequests);
-    
+
     if (friendError) {
-      console.error('Error cargando solicitudes de amistad:', friendError);
+
     }
     
     // Ahora obtener los datos de los usuarios que enviaron las solicitudes
@@ -495,22 +483,22 @@ async function loadRequests() {
           .select('*')
           .eq('to_user_id', socialManager.userId)
           .eq('status', 'pending')
-          .in('game_type', ['sync', 'vs', 'async']) // Aceptar sync, vs y async
+          .in('game_type', ['sync', 'async']) // VS removido
           .gte('expires_at', new Date().toISOString())
           .order('created_at', { ascending: false });
         
         gameInvites = result.data || [];
         gameError = result.error;
       } else {
-        console.log('⚠️ Sin conexión - no se pueden cargar invitaciones');
+
       }
     } catch (error) {
-      console.log('⚠️ Error de conexión cargando invitaciones:', error.message);
+
       gameError = error;
     }
     
     if (gameError) {
-      console.error('Error cargando invitaciones de juego:', gameError);
+
     }
     
     // Cargar packs compartidos (solo pendientes)
@@ -531,7 +519,7 @@ async function loadRequests() {
       }
     } catch (error) {
       // Si la tabla no existe, ignorar el error
-      console.log('⚠️ Tabla shared_packs no disponible');
+
       packsError = null;
     }
     
@@ -666,20 +654,19 @@ async function loadRequests() {
     bindRequestEvents();
     
   } catch (error) {
-    console.error('Error cargando solicitudes:', error);
+
     container.innerHTML = '<div class="error">Error al cargar solicitudes</div>';
   }
 }
 
 function bindRequestEvents() {
-  console.log('Vinculando eventos de solicitudes');
-  
+
   // Aceptar solicitud de amistad
   document.querySelectorAll('[data-action="accept-friend"]').forEach(btn => {
-    console.log('Vinculando botón aceptar para solicitud:', btn.dataset.request);
+
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
-      console.log('Click en aceptar solicitud:', e.target.dataset.request);
+
       const requestId = e.target.dataset.request;
       const result = await socialManager.acceptFriendRequest(requestId);
       if (result.success) {
@@ -695,17 +682,17 @@ function bindRequestEvents() {
         }, 1000);
       } else {
         showToast('Error al aceptar solicitud');
-        console.error('Error:', result.error);
+
       }
     });
   });
   
   // Rechazar solicitud de amistad
   document.querySelectorAll('[data-action="reject-friend"]').forEach(btn => {
-    console.log('Vinculando botón rechazar para solicitud:', btn.dataset.request);
+
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
-      console.log('Click en rechazar solicitud:', e.target.dataset.request);
+
       const requestId = e.target.dataset.request;
       try {
         // Eliminar la solicitud
@@ -715,14 +702,14 @@ function bindRequestEvents() {
           .eq('id', requestId);
         
         if (error) {
-          console.error('Error al rechazar:', error);
+
           showToast('Error al rechazar solicitud');
         } else {
           showToast('Solicitud rechazada');
           loadRequests();
         }
       } catch (error) {
-        console.error('Error:', error);
+
         showToast('Error al rechazar solicitud');
       }
     });
@@ -734,12 +721,7 @@ function bindRequestEvents() {
       const inviteId = e.target.dataset.invite;
       const gameType = e.target.dataset.type;
       const gameData = e.target.dataset.game;
-      
-      console.log('Aceptando invitación de juego:');
-      console.log('  - Invite ID:', inviteId);
-      console.log('  - Game Type:', gameType);
-      console.log('  - Game Data:', gameData);
-      
+
       // Marcar invitación como aceptada
       const { error } = await socialManager.supabase
         .from('game_invitations')
@@ -747,7 +729,7 @@ function bindRequestEvents() {
         .eq('id', inviteId);
       
       if (error) {
-        console.error('Error al aceptar invitación:', error);
+
         showToast('Error al aceptar invitación');
         return;
       }
@@ -759,44 +741,9 @@ function bindRequestEvents() {
         // Cerrar panel de amigos
         document.getElementById('friendsPanel')?.classList.remove('open');
       } else {
-        // Unirse a sala VS
-        showToast('Uniéndose a sala: ' + gameData);
-        
-        // Cerrar panel de amigos
+        // VS removido - mostrar mensaje
+        showToast('Modo VS no disponible');
         document.getElementById('friendsPanel')?.classList.remove('open');
-        
-        // Cambiar a modo VS y a la pestaña de unirse
-        const vsSeg = document.querySelector('#modeSeg .seg[data-val="vs"]');
-        if (vsSeg) {
-          // Activar VS
-          document.querySelectorAll('#modeSeg .seg').forEach(s => s.classList.remove('active'));
-          vsSeg.classList.add('active');
-          vsSeg.click();
-          
-          // Esperar a que se muestre y cambiar a "unirse"
-          setTimeout(() => {
-            const joinSeg = document.querySelector('#vsModeToggle .seg[data-val="join"]');
-            if (joinSeg) {
-              document.querySelectorAll('#vsModeToggle .seg').forEach(s => s.classList.remove('active'));
-              joinSeg.classList.add('active');
-              joinSeg.click();
-              
-              // Poner el código en el input
-              const codeInput = document.getElementById('inputVsCode');
-              if (codeInput) {
-                codeInput.value = gameData;
-                
-                // Auto-unirse después de un momento
-                setTimeout(() => {
-                  const btnJoin = document.getElementById('btnVsJoin');
-                  if (btnJoin) {
-                    btnJoin.click();
-                  }
-                }, 500);
-              }
-            }
-          }, 200);
-        }
       }
     });
   });
@@ -855,7 +802,7 @@ function bindRequestEvents() {
         showToast('✅ Pack importado correctamente');
         loadRequests();
       } catch(error) {
-        console.error('Error aceptando pack:', error);
+
         showToast('Error al importar el pack');
       }
     });
@@ -873,7 +820,7 @@ function bindRequestEvents() {
           .eq('id', packId);
         
         if (error) {
-          console.error('Error al rechazar pack:', error);
+
           showToast('Error al rechazar pack');
           return;
         }
@@ -881,7 +828,7 @@ function bindRequestEvents() {
         showToast('Pack rechazado');
         loadRequests();
       } catch(error) {
-        console.error('Error rechazando pack:', error);
+
         showToast('Error al rechazar pack');
       }
     });
@@ -891,19 +838,17 @@ function bindRequestEvents() {
 async function loadRankings() {
   const container = document.getElementById('rankingsList');
   if (!container) {
-    console.error('No se encontró el contenedor rankingsList');
+
     return;
   }
-  
-  console.log('Cargando rankings...');
+
   container.innerHTML = '<div class="loading">Cargando rankings...</div>';
   
   try {
     const result = await socialManager.getFriendRankings();
-    console.log('Resultado de rankings:', result);
-    
+
     if (!result.success) {
-      console.error('Error obteniendo rankings:', result.error);
+
       container.innerHTML = '<div class="error">Error al cargar rankings</div>';
       return;
     }
@@ -961,21 +906,17 @@ async function loadRankings() {
   });
   
   } catch (error) {
-    console.error('Error en loadRankings:', error);
+
     container.innerHTML = '<div class="error">Error al cargar rankings</div>';
   }
 }
 
 async function inviteFriendToSync(friendId, friendNameParam = null) {
   try {
-    console.log('=== inviteFriendToSync iniciado ===');
-    console.log('Friend ID:', friendId);
-    console.log('Friend Name:', friendNameParam);
-    console.log('socialManager disponible?', !!window.socialManager);
-    
+
     // Verificar que socialManager existe
     if (!window.socialManager) {
-      console.error('socialManager no está disponible');
+
       showToast('Error: Sistema de amigos no inicializado');
       return;
     }
@@ -1009,46 +950,10 @@ async function inviteFriendToSync(friendId, friendNameParam = null) {
     localStorage.setItem('pending_friend_invite', friendId);
     localStorage.setItem('pending_friend_name', friendName);
     
-    // Mostrar la interfaz de configuración VS
-    showToast(`Configura la partida contra ${friendName}`);
-    
-    // Cambiar a modo VS
-    const vsSeg = document.querySelector('#modeSeg .seg[data-val="vs"]');
-    if (vsSeg) {
-      // Remover active de todos los segmentos
-      document.querySelectorAll('#modeSeg .seg').forEach(s => s.classList.remove('active'));
-      // Activar VS
-      vsSeg.classList.add('active');
-      // Disparar el evento para cambiar la UI
-      vsSeg.click();
-      
-      // Esperar a que se muestre la sección VS y pre-configurar el modo host
-      setTimeout(() => {
-        // Asegurarse de que está en modo "crear"
-        const hostSeg = document.querySelector('#vsModeToggle .seg[data-val="host"]');
-        if (hostSeg && !hostSeg.classList.contains('active')) {
-          document.querySelectorAll('#vsModeToggle .seg').forEach(s => s.classList.remove('active'));
-          hostSeg.classList.add('active');
-          hostSeg.click();
-        }
-        
-        // Cambiar el texto del botón para indicar que es contra un amigo
-        const btnHost = document.getElementById('btnVsHost');
-        if (btnHost) {
-          btnHost.textContent = `Crear partida contra ${friendName}`;
-          btnHost.classList.add('friend-vs');
-        }
-        
-        // Agregar un indicador visual
-        const badge = document.getElementById('vsCodeBadge');
-        if (badge) {
-          badge.textContent = `Configura la partida contra ${friendName}`;
-          badge.style.color = 'var(--accent)';
-        }
-      }, 100);
-    }
+    // VS removido - mostrar mensaje
+    showToast(`Modo VS no disponible`);
   } catch (error) {
-    console.error('Error al invitar amigo:', error);
+
     showToast('Error al configurar la partida');
   }
 }
@@ -1085,7 +990,7 @@ async function inviteFriendToAsync(friendId) {
       showToast('Error al crear desafío');
     }
   } catch (error) {
-    console.error('Error creando juego asíncrono:', error);
+
     showToast('Error al crear desafío');
   }
 }
@@ -1107,8 +1012,7 @@ function subscribeToNotifications() {
   const broadcastChannel = socialManager.supabase
     .channel(`friend-invite-${socialManager.userId}`)
     .on('broadcast', { event: 'game-invite' }, async (payload) => {
-      console.log('Invitación recibida por canal alternativo:', payload);
-      
+
       const invite = payload.payload;
       if (invite && invite.to_user_id === socialManager.userId) {
         // Obtener el nombre del usuario que envía
@@ -1119,7 +1023,7 @@ function subscribeToNotifications() {
           .single();
         
         const senderName = senderData?.nickname || 'Un amigo';
-        showToast(`${senderName} te invitó a jugar VS! Código: ${invite.room_code}`);
+        showToast(`${senderName} te envió una invitación (VS removido)`);
         
         // Vibrar si está disponible
         if (window.navigator?.vibrate) {
@@ -1145,7 +1049,7 @@ function subscribeToNotifications() {
         filter: `to_user_id=eq.${socialManager.userId}`
       },
       async (payload) => {
-        console.log('Nuevo pack compartido detectado:', payload);
+
         if (payload.new.status === 'pending') {
           await handleReceivedPack(payload.new);
         }
@@ -1157,8 +1061,7 @@ function subscribeToNotifications() {
   const packBroadcastChannel = socialManager.supabase
     .channel(`pack-share-${socialManager.userId}`)
     .on('broadcast', { event: 'pack-share' }, async (payload) => {
-      console.log('Pack compartido recibido por broadcast:', payload);
-      
+
       const packShare = payload.payload;
       if (packShare && packShare.pack_data) {
         await handleReceivedPack({
@@ -1200,7 +1103,7 @@ function subscribeToNotifications() {
         loadRequests();
       }
     } catch(error) {
-      console.error('Error manejando pack recibido:', error);
+
     }
   }
   
@@ -1223,7 +1126,7 @@ function subscribeToNotifications() {
       }
     } catch(error) {
       // Si la tabla no existe, ignorar el error
-      console.log('Tabla shared_packs no disponible, usando solo broadcast');
+
     }
   }
   
@@ -1239,7 +1142,7 @@ function subscribeToNotifications() {
         filter: `friend_id=eq.${socialManager.userId}`
       },
       (payload) => {
-        console.log('Nueva solicitud de amistad detectada:', payload);
+
         if (payload.new.status === 'pending') {
           showToast('¡Nueva solicitud de amistad!');
           checkNotifications();
@@ -1265,7 +1168,7 @@ function subscribeToNotifications() {
         filter: `to_user_id=eq.${socialManager.userId}`
       },
       async (payload) => {
-        console.log('Nueva invitación de juego detectada:', payload);
+
         if (payload.new.status === 'pending') {
           // Obtener el nombre del usuario que envía la invitación
           const { data: senderData } = await socialManager.supabase
@@ -1278,7 +1181,7 @@ function subscribeToNotifications() {
           const gameType = payload.new.game_type;
           
           if (gameType === 'sync') {
-            showToast(`${senderName} te invitó a jugar VS!`);
+            showToast(`${senderName} te envió una invitación (VS removido)`);
           } else {
             showToast(`${senderName} te envió un desafío de 24h!`);
           }
@@ -1364,7 +1267,7 @@ async function checkNotifications() {
     localStorage.setItem('last_notification_count', totalNotifications.toString());
     
   } catch (error) {
-    console.error('Error verificando notificaciones:', error);
+
   }
 }
 
@@ -1450,25 +1353,6 @@ async function showFriendProfile(friendId) {
           </div>
         </div>
         
-        <!-- Estadísticas contra este amigo (más compacto) -->
-        <div class="profile-section compact">
-          <h4>Estadísticas VS</h4>
-          <div id="friendVsStats" class="stats-row">
-            <div class="stat-compact">
-              <span class="stat-value" id="vsWins">0</span>
-              <span class="stat-label">V</span>
-            </div>
-            <div class="stat-compact">
-              <span class="stat-value" id="vsLosses">0</span>
-              <span class="stat-label">D</span>
-            </div>
-            <div class="stat-compact">
-              <span class="stat-value" id="vsWinRate">0%</span>
-              <span class="stat-label">Win%</span>
-            </div>
-          </div>
-        </div>
-        
         <!-- Estadísticas generales del amigo (más compacto) -->
         <div class="profile-section compact">
           <h4>Estadísticas Globales</h4>
@@ -1507,8 +1391,7 @@ async function showFriendProfile(friendId) {
   
   // Cargar datos del usuario
   try {
-    console.log('Cargando perfil del usuario:', friendId);
-    
+
     // Verificar si ya es amigo
     const { data: friendships } = await socialManager.supabase
       .from('friendships')
@@ -1518,9 +1401,7 @@ async function showFriendProfile(friendId) {
     
     const isFriend = friendships && friendships.length > 0 && friendships[0].status === 'accepted';
     const hasPendingRequest = friendships && friendships.length > 0 && friendships[0].status === 'pending';
-    
-    console.log('Relación de amistad:', { isFriend, hasPendingRequest, friendships });
-    
+
     // Actualizar el botón según la relación
     const btnRemove = document.getElementById('btnRemoveFriend');
     if (btnRemove) {
@@ -1544,9 +1425,8 @@ async function showFriendProfile(friendId) {
       .select('*')
       .eq('user_id', friendId)
       .single();
-    
-    console.log('Perfil obtenido:', profile);
-    if (profileError) console.error('Error obteniendo perfil:', profileError);
+
+    if (profileError) 
     
     if (profile) {
       document.getElementById('friendProfileNickname').textContent = profile.nickname || 'Usuario';
@@ -1570,35 +1450,14 @@ async function showFriendProfile(friendId) {
         xpForNextLevel = progress.xpForNextLevel;
         progressPercent = progress.progressPercent;
       }
-      
-      console.log('XP del amigo:', { totalXp, currentLevelXP, xpForNextLevel, progressPercent });
-      
+
       const xpBar = document.getElementById('friendProfileXpBar');
       const xpText = document.getElementById('friendProfileXpText');
       if (xpBar) xpBar.style.width = `${progressPercent}%`;
       if (xpText) xpText.textContent = `${currentLevelXP} / ${xpForNextLevel} XP`;
     }
     
-    // Obtener rankings VS
-    const { data: ranking } = await socialManager.supabase
-      .from('friend_rankings')
-      .select('*')
-      .eq('user_id', socialManager.userId)
-      .eq('friend_id', friendId)
-      .single();
-    
-    if (ranking) {
-      const totalGames = ranking.wins + ranking.losses;
-      const winRate = totalGames > 0 ? Math.round((ranking.wins / totalGames) * 100) : 0;
-      
-      document.getElementById('vsWins').textContent = ranking.wins;
-      document.getElementById('vsLosses').textContent = ranking.losses;
-      document.getElementById('vsWinRate').textContent = winRate + '%';
-    } else {
-      document.getElementById('vsWins').textContent = '0';
-      document.getElementById('vsLosses').textContent = '0';
-      document.getElementById('vsWinRate').textContent = '0%';
-    }
+    // Rankings VS removidos
     
     // Obtener estadísticas globales del amigo desde la tabla correcta
     const { data: stats, error: statsError } = await socialManager.supabase
@@ -1606,9 +1465,8 @@ async function showFriendProfile(friendId) {
       .select('total_games_played, questions_correct, questions_answered, best_win_streak')
       .eq('user_id', friendId)
       .single();
-    
-    console.log('Stats del amigo:', stats);
-    if (statsError) console.error('Error obteniendo stats:', statsError);
+
+    if (statsError) 
     
     if (stats) {
       document.getElementById('friendTotalGames').textContent = stats.total_games_played || 0;
@@ -1624,8 +1482,7 @@ async function showFriendProfile(friendId) {
     }
     
     // Obtener logros del amigo directamente de user_achievements
-    console.log('Obteniendo logros del amigo:', friendId);
-    
+
     // Usar la lista de logros global si está disponible
     const ACHIEVEMENTS_LIST = window.ACHIEVEMENTS_LIST || [];
     
@@ -1637,9 +1494,8 @@ async function showFriendProfile(friendId) {
       .from('user_achievements')
       .select('achievement_id')
       .eq('user_id', friendId);
-    
-    console.log('Logros obtenidos:', achievements);
-    if (achError) console.error('Error obteniendo logros:', achError);
+
+    if (achError) 
     
     if (achievements && Array.isArray(achievements)) {
       achievements.forEach(ach => {
@@ -1717,41 +1573,37 @@ async function showFriendProfile(friendId) {
     profileModal.classList.add('open');
     
   } catch (error) {
-    console.error('Error cargando perfil del amigo:', error);
+
     showToast('Error al cargar el perfil');
   }
 }
 
 // Función para cargar partidas abiertas
 async function loadOpenMatches() {
-  console.log('Cargando partidas abiertas...');
-  
+
   const container = document.getElementById('matchesList');
   if (!container) {
-    console.error('No se encontró el contenedor matchesList');
+
     return;
   }
   
   if (!socialManager) {
-    console.error('socialManager no está disponible');
+
     container.innerHTML = '<div class="error">Sistema de amigos no inicializado</div>';
     return;
   }
   
   try {
     // Obtener partidas asíncronas del usuario actual
-    console.log('🔍 Buscando partidas para usuario:', socialManager.userId);
-    
+
     // Verificar que la tabla V2 existe
     const { data: testData, error: testError } = await socialManager.supabase
       .from('async_matches_v2')
       .select('id')
       .limit(1);
-    
-    console.log('🔍 Test de tabla async_matches_v2:', { testData, testError });
-    
+
     if (testError) {
-      console.error('Error accediendo a la tabla async_matches_v2:', testError);
+
       container.innerHTML = '<div class="error">Error: Tabla async_matches_v2 no disponible. Verifica que ejecutaste el SQL en Supabase.</div>';
       return;
     }
@@ -1765,18 +1617,14 @@ async function loadOpenMatches() {
         .select('*')
         .eq('player1_id', socialManager.userId)
         .order('last_activity_at', { ascending: false });
-      
-      console.log('🔍 Partidas como player1:', { count: v2Player1Matches?.length || 0, error: p1Error });
-      
+
       // Obtener partidas V2 donde el usuario es player2
       const { data: v2Player2Matches, error: p2Error } = await socialManager.supabase
         .from('async_matches_v2')
         .select('*')
         .eq('player2_id', socialManager.userId)
         .order('last_activity_at', { ascending: false });
-      
-      console.log('🔍 Partidas como player2:', { count: v2Player2Matches?.length || 0, error: p2Error });
-      
+
       // También cargar partidas pending que pueden ser aceptadas por cualquier usuario
       // (solo si el usuario NO es el creador)
       const { data: v2PendingMatches, error: pendingError } = await socialManager.supabase
@@ -1787,9 +1635,7 @@ async function loadOpenMatches() {
         .is('player2_id', null) // Solo las que no tienen player2
         .order('created_at', { ascending: false })
         .limit(20); // Limitar para no sobrecargar
-      
-      console.log('🔍 Partidas pending disponibles para aceptar:', { count: v2PendingMatches?.length || 0, error: pendingError });
-      
+
       allMatches = [
         ...(v2Player1Matches || []), 
         ...(v2Player2Matches || []),
@@ -1816,8 +1662,7 @@ async function loadOpenMatches() {
         question_start_time: null, // V2 no usa este campo
         current_question: null, // Se calcula desde respuestas
       }));
-      
-      console.log('🔍 Partidas V2 encontradas:', allMatches.length);
+
       console.log('📋 Detalle de partidas encontradas:', allMatches.map(m => ({
         id: m.id.substring(0, 8),
         player1_id: m.player1_id,
@@ -1827,7 +1672,7 @@ async function loadOpenMatches() {
         last_activity_at: m.last_activity_at
       })));
     } catch (v2Error) {
-      console.error('❌ Error cargando partidas V2:', v2Error);
+
       container.innerHTML = '<div class="error">Error al cargar partidas. Verifica la consola.</div>';
       return;
     }
@@ -1847,16 +1692,12 @@ async function loadOpenMatches() {
         ...allMatches.map(m => m.player1_id),
         ...allMatches.map(m => m.player2_id)
       ])];
-      
-      console.log('👥 IDs de jugadores únicos:', allPlayerIds);
-      
+
       const { data: profiles, error: profilesError } = await socialManager.supabase
         .from('user_profiles')
         .select('user_id, nickname, avatar_url')
         .in('user_id', allPlayerIds);
-      
-      console.log('👥 Perfiles obtenidos:', { profiles, profilesError });
-      
+
       // Crear mapa de perfiles para búsqueda rápida
       const profileMap = {};
       if (profiles) {
@@ -1882,18 +1723,16 @@ async function loadOpenMatches() {
           match.player2_avatar = player2Profile.avatar_url;
         }
       });
-      
-      console.log('📊 Partidas actualizadas con perfiles:', allMatches);
+
     }
-    
-    
+
     // FILTRAR PARTIDAS: SOLO MOSTRAR LO QUE ESTÁ REALMENTE ACTIVO
     // Excluir partidas terminadas, abandonadas, o sin actividad reciente
     const now = new Date();
     const validMatches = allMatches.filter(match => {
       // EXCLUIR partidas terminadas o abandonadas (siempre)
       if (match.status === 'finished' || match.status === 'abandoned') {
-        console.log(`🚫 Excluyendo partida ${match.id}: status=${match.status}`);
+
         return false;
       }
       
@@ -1922,9 +1761,7 @@ async function loadOpenMatches() {
       console.log(`✅ Partida ${match.id.substring(0, 8)} válida: ${hoursElapsed.toFixed(1)}h desde última actividad`);
       return true;
     });
-    
-    console.log('🎯 Partidas válidas:', validMatches.length);
-    
+
     if (validMatches.length === 0) {
       container.innerHTML = '<div class="empty-state">No tienes partidas abiertas</div>';
       return;
@@ -1982,7 +1819,7 @@ async function loadOpenMatches() {
           
           continue; // Saltar al siguiente match
         } catch (v2Error) {
-          console.warn('⚠️ Error calculando progreso V2:', v2Error);
+
         }
       }
       
@@ -2045,7 +1882,7 @@ async function loadOpenMatches() {
           match._opponentAnswered = false;
         }
       } catch (error) {
-        console.warn('⚠️ Error calculando progreso real, usando current_question:', error);
+
         // Fallback a current_question si falla el cálculo
         match._displayQuestion = match.current_question || 0;
         
@@ -2078,28 +1915,18 @@ async function loadOpenMatches() {
     bindMatchItemEvents();
     
   } catch (error) {
-    console.error('Error en loadOpenMatches:', error);
+
     container.innerHTML = '<div class="error">Error al cargar partidas</div>';
   }
 }
 
 // Función para crear un item de partida
 function createMatchItem(match) {
-  console.log('🎮 Creando item para partida:', match);
-  
+
   const isPlayer1 = match.player1_id === socialManager.userId;
   const opponentId = isPlayer1 ? match.player2_id : match.player1_id;
   let opponentName = isPlayer1 ? match.player2_name : match.player1_name;
-  
-  console.log('👤 Datos originales:', { 
-    isPlayer1, 
-    opponentId, 
-    originalName: opponentName,
-    player1_name: match.player1_name,
-    player2_name: match.player2_name,
-    status: match.status
-  });
-  
+
   // Si la partida está pending y no hay oponente aún
   if (match.status === 'pending' && !opponentId) {
     opponentName = isPlayer1 ? 'Esperando oponente...' : match.player1_name || 'Jugador';
@@ -2110,7 +1937,7 @@ function createMatchItem(match) {
     } else {
       opponentName = 'Jugador';
     }
-    console.log('🔄 Usando nombre genérico:', opponentName);
+
   }
   
   // Usar avatar real si está disponible, sino generar uno
@@ -2172,7 +1999,7 @@ function createMatchItem(match) {
       <div class="match-status ${isPlayer1 ? 'player1' : 'player2'}"></div>
       <img src="${opponentAvatar}" class="match-avatar" alt="${opponentName}" onerror="this.onerror=null; this.src='./img/avatar_placeholder.svg'"/>
       <div class="match-info">
-        <div class="match-opponent">vs ${opponentName}</div>
+        <div class="match-opponent">${opponentName}</div>
         <div class="match-details">
           ${match._displayQuestion !== undefined ? match._displayQuestion : (match.current_question || 0)}/${match.rounds} preguntas • ${match.category} • ${match.difficulty}
           <!-- DEBUG: ${match._realCompletedQuestions !== undefined ? `(calculado: ${match._realCompletedQuestions}, BD: ${match.current_question || 0})` : ''} -->
@@ -2210,8 +2037,7 @@ function bindMatchItemEvents() {
       e.stopPropagation();
       
       const matchId = e.target.dataset.match;
-      console.log('Entrando a partida:', matchId);
-      
+
       try {
         // Cerrar panel de amigos
         const panel = document.getElementById('friendsPanel');
@@ -2232,7 +2058,7 @@ function bindMatchItemEvents() {
           showToast('Error: Función de juego no disponible');
         }
       } catch (error) {
-        console.error('Error entrando a partida:', error);
+
         showToast('Error al entrar a la partida');
       }
     });
@@ -2254,7 +2080,7 @@ if (window.asyncMatchesCache) {
   window.invalidateAsyncMatchesCache = function() {
     if (window.asyncMatchesCache && socialManager?.userId) {
       window.asyncMatchesCache.invalidate(socialManager.userId);
-      console.log('📦 Caché de partidas invalidado manualmente');
+
     }
   };
 }

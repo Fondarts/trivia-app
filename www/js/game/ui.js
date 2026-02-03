@@ -4,6 +4,7 @@ import { getStats, getUnlockedAchievements } from '../player/stats.js';
 import { getLevelProgress } from '../player/experience.js';
 import { ACHIEVEMENTS_LIST } from '../player/achievements.js';
 import { t, setLanguage, getLanguage, initI18n, updateUI as updateI18nUI } from '../core/i18n.js';
+import { populateBibleBookSelector } from './bible-study.js';
 
 export function updateBankCount(){
   // Esta función ya no se usa para mostrar el badge en la página principal
@@ -176,6 +177,7 @@ export function bindProfileModal(){
           // Recargar el banco de preguntas en el nuevo idioma
           warmLocalBank(lang).then(async () => {
             await refreshCategorySelect();
+            populateBibleBookSelector();
             // Actualizar toda la UI sin recargar la página
             updateI18nUI();
             // Actualizar el badge del nivel con el nuevo idioma
@@ -185,21 +187,7 @@ export function bindProfileModal(){
       });
     });
     
-    // Theme radio buttons - clone and replace to remove old listeners
-    document.querySelectorAll('input[name="theme"]').forEach(radio => {
-      const newRadio = radio.cloneNode(true);
-      // Preserve checked state
-      newRadio.checked = radio.checked;
-      radio.parentNode.replaceChild(newRadio, radio);
-      
-      newRadio.addEventListener('change', (e) => {
-        e.stopPropagation();
-        const theme = e.target.value;
-        SETTINGS.theme = theme;
-        persistSettings();
-        document.documentElement.setAttribute('data-theme', theme);
-      });
-    });
+    // Theme selector removed - only one theme now
 
     // Sounds checkbox
     let chkSounds = document.getElementById('optSounds');
@@ -265,104 +253,45 @@ export function bindDifficultyPills(){
   // Los botones de dificultad fueron reemplazados por selects
   // Esta función se mantiene por compatibilidad pero ya no es necesaria
   const diffSelect = document.getElementById('difficulty');
-  const timedDiffSelect = document.getElementById('timedDifficulty');
-  const vsDiffSelect = document.getElementById('vsDifficulty');
-  
   // Asegurar que los selects tengan el valor correcto si existen
   if (diffSelect && !diffSelect.value) {
     diffSelect.value = 'easy';
-  }
-  if (timedDiffSelect && !timedDiffSelect.value) {
-    timedDiffSelect.value = 'easy';
-  }
-  if (vsDiffSelect && !vsDiffSelect.value) {
-    vsDiffSelect.value = 'easy';
   }
 }
 
 export function bindModeSegment(){
   const seg = document.getElementById('modeSeg'); if (!seg) return;
-  const wrapRounds   = document.getElementById('roundsWrap');
-  const wrapTime     = document.getElementById('timeWrap');
-  const vsSection    = document.getElementById('vsSection');
-  const vsRoundsWrap = document.getElementById('vsRoundsWrap');
-  const vsActionArea = document.getElementById('vsActionArea');
-  const vsHostActions= document.getElementById('vsHostActions');
-  const vsJoinActions= document.getElementById('vsJoinActions');
-  const vsHostExtras = document.getElementById('vsHostExtras');
-  // diffSection ya no existe, la dificultad está ahora en roundsWrap y vsRoundsWrap
-  const diffSection = null;
-  const catSection   = document.getElementById('catSection');
-  const opponentSection = document.getElementById('opponentSection');
-  const spStartWrap  = document.getElementById('spStartWrap');
+  const wrapRounds     = document.getElementById('roundsWrap');
+  const wordsearchWrap = document.getElementById('wordsearchWrap');
+  const bibleStudyWrap = document.getElementById('bibleStudyWrap');
+  const catSection     = document.getElementById('catSection');
+  const spStartWrap    = document.getElementById('spStartWrap');
+  const spStartWrapWS  = document.getElementById('spStartWrapWS');
 
-  const show = (el,on)=>{ if (el) el.style.display = on ? (el===vsHostExtras?'flex':'block') : 'none'; };
+  const show = (el,on)=>{ if (el) el.style.display = on ? 'block' : 'none'; };
 
   function apply(val){
-    const isVS = (val==='vs');
-    const isAdventure = (val==='adventure');
-    
-    // Ocultar todo primero
-    show(wrapRounds, false);
-    show(wrapTime, false);
-    show(vsSection, false);
-    show(vsRoundsWrap, false);
-    show(vsActionArea, false);
-    show(vsHostActions, false);
-    show(vsJoinActions, false);
-    show(vsHostExtras, false);
-    // diffSection ya no existe, la dificultad está integrada en roundsWrap y vsRoundsWrap
-    show(catSection, false);
-    show(opponentSection, false);
-    show(spStartWrap, false);
-    
-    if (isAdventure) {
-      // Modo aventura no necesita configuración adicional
-      show(spStartWrap, true); // Solo mostrar el botón de empezar
-    } else if (isVS) {
-      // Modo VS
-      show(vsSection, true);
-      show(vsActionArea, true);
-      show(vsRoundsWrap, false); // Ocultar por defecto (solo se muestra en modo CREAR)
-      show(vsHostActions, false); // Ocultar por defecto (solo se muestra en modo CREAR)
-      show(vsHostExtras, false); // Ocultar por defecto (solo se muestra en modo CREAR)
-      // Asegurar que se vean dificultad y categoría en CREAR
-      const isHostNow = (document.querySelector('#vsModeToggle .seg.active')?.dataset?.val || 'join') === 'host';
-      // La dificultad está ahora en vsRoundsWrap
-      show(catSection,   isHostNow);
-      show(opponentSection, isHostNow);
-      
-      // Aplicar configuración por defecto del modo VS (UNIRSE)
-      const vsToggle = document.getElementById('vsModeToggle');
-      if (vsToggle) {
-        const joinSeg = vsToggle.querySelector('.seg[data-val="join"]');
-        if (joinSeg && joinSeg.classList.contains('active')) {
-          // Simular click para activar el modo UNIRSE
-          setTimeout(() => joinSeg.click(), 100);
-        }
-      }
-      
-      // Asegurar que se ejecute la función apply para mostrar los elementos correctos
-      setTimeout(() => {
-        if (window.applyVsMode) {
-          const activeSeg = document.querySelector('#vsModeToggle .seg.active');
-          const val = activeSeg?.dataset?.val || 'join';
-          window.applyVsMode(val);
-        }
-      }, 300);
-      
-    } else if (val === 'rounds') {
-      // Modo rondas
+    if (val === 'rounds') {
       show(wrapRounds, true);
-      // La dificultad está ahora en roundsWrap
+      show(wordsearchWrap, false);
+      show(bibleStudyWrap, false);
       show(catSection, true);
       show(spStartWrap, true);
-    } else if (val === 'timed') {
-      // Modo contrarreloj
-      show(wrapTime, true);
-      // La dificultad está ahora en roundsWrap
-      show(catSection, true);
-      show(spStartWrap, true);
+      show(spStartWrapWS, false);
+    } else if (val === 'wordsearch') {
+      show(wrapRounds, false);
+      show(wordsearchWrap, true);
+      show(bibleStudyWrap, false);
+      show(catSection, false);
+      show(spStartWrap, false);
+      show(spStartWrapWS, true);
+    } else if (val === 'bible') {
+      show(wrapRounds, false);
+      show(wordsearchWrap, false);
+      show(bibleStudyWrap, true);
+      show(catSection, false);
+      show(spStartWrap, false);
+      show(spStartWrapWS, false);
     }
   }
 
@@ -373,95 +302,9 @@ export function bindModeSegment(){
       apply(s.dataset.val);
     });
   });
-  apply(seg.querySelector('.seg.active')?.dataset?.val || 'rounds');
+  apply('rounds');
 }
 
-export function bindVsToggle(){
-  const toggle = document.getElementById('vsModeToggle'); if (!toggle) return;
-  const vsSection    = document.getElementById('vsSection');
-  const vsRoundsWrap = document.getElementById('vsRoundsWrap');
-  // diffSection ya no existe, la dificultad está ahora en roundsWrap y vsRoundsWrap
-  const diffSection = null;
-  const catSection   = document.getElementById('catSection');
-  const vsHostActions= document.getElementById('vsHostActions');
-  const vsJoinActions= document.getElementById('vsJoinActions');
-  const vsHostExtras = document.getElementById('vsHostExtras');
-
-  const show = (el,on)=>{ if (el) el.style.display = on ? (el===vsHostExtras?'flex':'block') : 'none'; };
-
-  function apply(val){
-    // Aplicar siempre, aunque la sección VS aún no esté visible
-    const isHost = (val==='host');
-    const isJoin = (val==='join');
-    
-    // Elementos que solo se muestran en modo CREAR
-    show(vsRoundsWrap, isHost);
-    show(diffSection,  isHost);
-    show(catSection,   isHost);
-    show(vsHostActions,isHost);
-    show(vsHostExtras, isHost);
-    
-    // Elementos que solo se muestran en modo UNIRSE
-    show(vsJoinActions, false); // Siempre ocultar input manual
-    
-    // Mostrar lista de partidas asíncronas en modo UNIRSE
-    const asyncMatchesList = document.getElementById('asyncMatchesList');
-    if (asyncMatchesList) {
-      asyncMatchesList.style.display = isJoin ? 'block' : 'none';
-    }
-    
-    // Ocultar sección de oponente en modo UNIRSE
-    const opponentSection = document.getElementById('opponentSection');
-    if (opponentSection) {
-      opponentSection.style.display = isJoin ? 'none' : 'block';
-    }
-    
-    if (isHost) {
-      // Modo CREAR - ocultar lista de partidas
-      const asyncMatchesList = document.getElementById('asyncMatchesList');
-      if (asyncMatchesList) asyncMatchesList.style.display = 'none';
-    } else if (isJoin) {
-      // Modo UNIRSE - cargar partidas asíncronas
-      console.log('🔍 Modo UNIRSE activado');
-      const asyncMatchesList = document.getElementById('asyncMatchesList');
-      console.log('🔍 Lista de partidas encontrada:', !!asyncMatchesList);
-      
-      if (asyncMatchesList) {
-        asyncMatchesList.style.display = 'block';
-        console.log('✅ Lista de partidas mostrada');
-        
-        // Cargar partidas asíncronas
-        if (window.loadAsyncMatches && window.displayAsyncMatches) {
-          console.log('🔍 Cargando partidas asíncronas...');
-          window.loadAsyncMatches().then(matches => {
-            console.log('📋 Partidas cargadas:', matches);
-            window.displayAsyncMatches(matches);
-          }).catch(error => {
-            console.log('⚠️ Error cargando partidas (normal si no hay conexión):', error.message);
-            // Mostrar mensaje de que no hay partidas disponibles
-            window.displayAsyncMatches([]);
-          });
-        } else {
-          console.log('⚠️ Funciones de partidas asíncronas no disponibles aún');
-        }
-      } else {
-        console.error('❌ Lista de partidas no encontrada');
-      }
-    }
-  }
-
-  toggle.querySelectorAll('.seg').forEach(s=>{
-    s.addEventListener('click', ()=>{
-      toggle.querySelectorAll('.seg').forEach(x=> x.classList.remove('active'));
-      s.classList.add('active');
-      apply(s.dataset.val || 'host');
-    });
-  });
-  apply(toggle.querySelector('.seg.active')?.dataset?.val || 'join');
-  
-  // Hacer la función apply accesible globalmente
-  window.applyVsMode = apply;
-}
 
 export async function refreshCategorySelect(){
   const sel = document.getElementById('categorySel');
@@ -589,7 +432,7 @@ export async function refreshCategorySelect(){
         }
       }
     } catch(e) {
-      console.warn('[ui] refreshCategorySelect cargando packs desde manifest', e);
+
     }
 
     // Grupo packs instalados (si hay)
@@ -610,7 +453,7 @@ export async function refreshCategorySelect(){
         sel.appendChild(g);
       }
     } catch(e) {
-      console.warn('[ui] refreshCategorySelect packs', e);
+
     }
 
     // Grupo packs creados por el usuario (si hay)
@@ -628,10 +471,10 @@ export async function refreshCategorySelect(){
         sel.appendChild(g);
       }
     } catch(e) {
-      console.warn('[ui] refreshCategorySelect user packs', e);
+
     }
   } catch (e) {
-    console.error('[ui] refreshCategorySelect error', e);
+
     // Fallback absoluto si algo explota
     const optAll = document.createElement('option'); optAll.value = 'all'; optAll.textContent = 'Todas las categorías'; sel.appendChild(optAll);
     ;['movies','geography','history','science','sports','anime'].forEach(k => {
@@ -714,7 +557,7 @@ export function updateRoundsSelectorForCategory() {
         return maxQuestions;
       }
     } catch(e) {
-      console.warn('[ui] Error actualizando selector de preguntas para pack personalizado:', e);
+
     }
   } else {
     // Para categorías normales, restaurar opciones por defecto
@@ -745,10 +588,9 @@ export async function applyInitialUI(){
   bindProfileModal();
   bindDifficultyPills();
   // Cargar categorías ASAP para evitar UI vacía si algo falla después
-  try { await refreshCategorySelect(); } catch(e){ console.warn('[ui] refreshCategorySelect temprana falló', e); }
+  try { await refreshCategorySelect(); } catch(e){  }
   // Enlazar segmentos con tolerancia a errores
-  try { bindModeSegment(); } catch(e){ console.error('[ui] bindModeSegment error', e); }
-  try { bindVsToggle(); } catch(e){ console.error('[ui] bindVsToggle error', e); }
+  try { bindModeSegment(); } catch(e){  }
   await refreshCategorySelect();
   updateBankCount();
   updatePlayerXPBar();
@@ -760,7 +602,7 @@ export async function applyInitialUI(){
     updateBankCount();
     await refreshCategorySelect();
   } catch (e) {
-    console.error('[packs] no se pudieron cargar', e);
+
     toast('No se pudieron cargar los packs locales');
   }
   
@@ -772,8 +614,7 @@ export async function applyInitialUI(){
       const activeSeg = modeSeg.querySelector('.seg.active');
       if (activeSeg) {
         const mode = activeSeg.dataset.val || 'rounds';
-        console.log('🎯 Aplicando modo inicial:', mode);
-        
+
         // Forzar la aplicación del modo inicial
         const wrapRounds = document.getElementById('roundsWrap');
         // La dificultad está ahora integrada en roundsWrap
@@ -785,14 +626,7 @@ export async function applyInitialUI(){
           // La dificultad está integrada en roundsWrap
           if (catSection) catSection.style.display = 'block';
           if (spStartWrap) spStartWrap.style.display = 'block';
-          console.log('✅ Elementos de modo rounds mostrados');
-        } else if (mode === 'timed') {
-          const wrapTime = document.getElementById('timerWrap');
-          if (wrapTime) wrapTime.style.display = 'block';
-          // La dificultad está integrada en roundsWrap
-          if (catSection) catSection.style.display = 'block';
-          if (spStartWrap) spStartWrap.style.display = 'block';
-          console.log('✅ Elementos de modo timed mostrados');
+
         }
       }
     }
@@ -969,5 +803,5 @@ export function bindStatsOpen(renderLB) {
 // Mantener bindLeaderboardsOpen para compatibilidad, pero ahora está integrado en bindStatsOpen
 export function bindLeaderboardsOpen(renderLB){
   // Ahora esto está integrado en bindStatsOpen, pero mantenemos la función por compatibilidad
-  console.warn('bindLeaderboardsOpen está obsoleto, usar bindStatsOpen en su lugar');
+
 }

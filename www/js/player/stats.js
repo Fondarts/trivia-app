@@ -15,7 +15,6 @@ const defaultStats = {
   totalGamesPlayed: 0,
   soloGamesPlayed: 0,
   timedGamesPlayed: 0,
-  vsGamesWon: 0,
   winStreak: 0,
   bestWinStreak: 0,
   currentCorrectStreak: 0,
@@ -142,7 +141,6 @@ export async function trackEvent(eventName, data = {}) {
         if (data.won) {
             stats.winStreak++;
             if (stats.winStreak > stats.bestWinStreak) stats.bestWinStreak = stats.winStreak;
-            if (data.mode === 'vs') stats.vsGamesWon++;
         } else {
             stats.winStreak = 0;
         }
@@ -162,7 +160,7 @@ export async function trackEvent(eventName, data = {}) {
     }
   } catch (err) {
     // Si falla, solo guardar localmente (ya está hecho arriba)
-    console.log('Stats guardadas localmente');
+
   }
 
   const newAchievements = await checkForNewAchievements(stats);
@@ -195,10 +193,10 @@ async function checkForNewAchievements(currentStats) {
                   achievement_id: achievement.id
                 })
                 .select();
-              console.log('Logro guardado en la nube:', achievement.id);
+
             }
           } catch (error) {
-            console.error('Error guardando logro en Supabase:', error);
+
           }
         }
       }

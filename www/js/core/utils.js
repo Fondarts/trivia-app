@@ -9,11 +9,8 @@ export const Logger = {
 
 // Detección de plataforma
 export const Platform = {
-  isAndroid: () => /android/i.test(navigator.userAgent),
-  isIOS: () => /iphone|ipad|ipod/i.test(navigator.userAgent),
   isMobile: () => /android|iphone|ipad|ipod/i.test(navigator.userAgent),
-  isCapacitor: () => window.Capacitor !== undefined,
-  isWeb: () => !window.Capacitor
+  isWeb: () => true
 };
 
 // Sistema de sonidos
@@ -50,7 +47,7 @@ export function toast(msg) {
     window.toast(msg);
   } else {
     // Fallback simple
-    console.log('Toast:', msg);
+
   }
 }
 

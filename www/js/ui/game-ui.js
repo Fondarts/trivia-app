@@ -24,8 +24,10 @@ export function showGameUI() {
 export function showConfigUI() {
   const cfg = DOMUtils.getElement('configCard');
   const game = DOMUtils.getElement('gameArea');
+  const wsArea = DOMUtils.getElement('wordsearchGameArea');
   
   DOMUtils.hide(game);
+  if (wsArea) DOMUtils.hide(wsArea);
   DOMUtils.show(cfg);
 }
 

@@ -3,8 +3,7 @@
 
 export async function getGlobalLeaderboard(supabase, limit = 100) {
     try {
-        console.log('Obteniendo leaderboard global...');
-        
+
         // Obtener los mejores jugadores por XP total (que determina el nivel)
         const { data: players, error } = await supabase
             .from('user_profiles')
@@ -19,7 +18,7 @@ export async function getGlobalLeaderboard(supabase, limit = 100) {
             .limit(limit);
         
         if (error) {
-            console.error('Error obteniendo leaderboard:', error);
+
             return { success: false, error: error.message };
         }
         
@@ -65,7 +64,7 @@ export async function getGlobalLeaderboard(supabase, limit = 100) {
         };
         
     } catch (error) {
-        console.error('Error en getGlobalLeaderboard:', error);
+
         return { success: false, error: error.message };
     }
 }
@@ -96,7 +95,7 @@ export async function getLeaderboardByWinRate(supabase, limit = 100) {
             .gt('questions_answered', 50); // Mínimo 50 preguntas
         
         if (statsError) {
-            console.error('Error obteniendo stats:', statsError);
+
             // Si no hay stats, devolver array vacío
             return { success: true, data: [] };
         }
@@ -138,7 +137,7 @@ export async function getLeaderboardByWinRate(supabase, limit = 100) {
         return { success: true, data: sorted };
         
     } catch (error) {
-        console.error('Error en getLeaderboardByWinRate:', error);
+
         return { success: false, error: error.message };
     }
 }
@@ -154,7 +153,7 @@ export async function getLeaderboardByStreak(supabase, limit = 100) {
             .limit(limit);
         
         if (statsError) {
-            console.error('Error obteniendo stats de racha:', statsError);
+
             return { success: true, data: [] };
         }
         
@@ -171,7 +170,7 @@ export async function getLeaderboardByStreak(supabase, limit = 100) {
             .in('user_id', userIds);
         
         if (profileError) {
-            console.error('Error obteniendo perfiles:', profileError);
+
         }
         
         const currentUserId = window.getCurrentUser ? window.getCurrentUser()?.id : null;
@@ -194,7 +193,7 @@ export async function getLeaderboardByStreak(supabase, limit = 100) {
         return { success: true, data: players };
         
     } catch (error) {
-        console.error('Error en getLeaderboardByStreak:', error);
+
         return { success: false, error: error.message };
     }
 }

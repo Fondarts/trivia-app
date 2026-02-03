@@ -16,9 +16,9 @@ function initEmailJS() {
     try {
       window.emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
       emailjsReady = true;
-      console.log('[report] EmailJS inicializado correctamente');
+
     } catch (error) {
-      console.error('[report] Error inicializando EmailJS:', error);
+
     }
   }
 }
@@ -31,7 +31,7 @@ if (!window.emailjs) {
     initEmailJS();
   };
   script.onerror = () => {
-    console.error('[report] Error cargando EmailJS');
+
   };
   document.head.appendChild(script);
 } else {
@@ -42,7 +42,7 @@ if (!window.emailjs) {
 export function setCurrentQuestionData(q) {
   // Asegurar que tenemos un objeto válido
   if (!q) {
-    console.warn('[report] setCurrentQuestionData recibió un objeto vacío');
+
     return;
   }
   
@@ -64,15 +64,7 @@ export function setCurrentQuestionData(q) {
   };
   
   currentQuestionData = enrichedData;
-  
-  console.log('[report] Datos de pregunta guardados:', {
-    question: enrichedData.q,
-    category: enrichedData.category,
-    difficulty: enrichedData.difficulty,
-    options: enrichedData.options.length,
-    answer: enrichedData.answer,
-    image: enrichedData.img
-  });
+
 }
 
 // Obtener categoría del contexto del juego
@@ -92,16 +84,6 @@ function getCategoryFromContext() {
     }
   }
   
-  // Intentar obtener del modo aventura
-  if (window.AdventureMode && window.AdventureMode.ADVENTURE_STATE) {
-    const regionKey = window.AdventureMode.ADVENTURE_STATE.currentRegion;
-    if (regionKey) {
-      // Mapear regionKey a nombre de categoría
-      const categoryMap = {
-        'ciencia': 'Ciencia',
-        'historia': 'Historia',
-        'geografia': 'Geografía',
-        'deportes': 'Deportes',
         'cine': 'Cine',
         'anime': 'Anime',
         'testcine': 'Test cine'
@@ -198,27 +180,28 @@ export function initQuestionReport() {
 // Enviar reporte por EmailJS
 async function sendReport(reason, otherDescription) {
   if (!emailjsReady) {
-    console.error('[report] EmailJS no está listo');
+
     alert('Error: El sistema de reportes no está disponible. Por favor intenta más tarde.');
     return;
   }
   
   // Verificar que el Service ID esté configurado
   if (!EMAILJS_CONFIG.SERVICE_ID || EMAILJS_CONFIG.SERVICE_ID === '') {
-    console.error('[report] Service ID no configurado');
+
     alert('Error: El sistema de reportes no está configurado correctamente. Por favor contacta al administrador.');
     return;
   }
   
   const btnSend = document.getElementById('btnSendReport');
   if (!btnSend) {
-    console.error('[report] Botón btnSendReport no encontrado');
+
     return;
   }
   
   const reasonText = {
     'incorrect_image': 'Imagen incorrecta',
     'incorrect_answer': 'Respuesta incorrecta',
+    'incorrect_translation': 'Traducción incorrecta',
     'other': 'Otro'
   }[reason] || reason;
   
@@ -272,8 +255,7 @@ async function sendReport(reason, otherDescription) {
       EMAILJS_CONFIG.TEMPLATE_ID,
       templateParams
     );
-    
-    console.log('[report] Email enviado:', response);
+
     if (window.toast) {
       window.toast('✅ Reporte enviado correctamente. ¡Gracias!');
     } else {
@@ -283,8 +265,7 @@ async function sendReport(reason, otherDescription) {
     btnSend.disabled = false;
     btnSend.textContent = 'Enviar reporte';
   } catch (error) {
-    console.error('[report] Error enviando email:', error);
-    
+
     // Mensaje de error más específico
     let errorMessage = '❌ Error al enviar el reporte. Por favor intenta de nuevo.';
     if (error.text && error.text.includes('service ID not found')) {

@@ -202,38 +202,18 @@ export const ACHIEVEMENTS_LIST = [
     title: 'Reflexos Ninja',
     description: 'Completa una partida contrarreloj con 30+ puntos.',
     icon: 'sword.png', // Temporal para ninja
-    condition: (stats) => false, // Requiere datos de partidas timed
+    condition: (stats) => false, // Modo timed eliminado
   },
   {
     id: 'TIMED_WINS_5',
     title: 'Máquina del Tiempo',
     description: 'Gana 5 partidas contrarreloj.',
     icon: 'morning.png', // Temporal para hourglass
-    condition: (stats) => stats.timedGamesPlayed >= 5,
+    condition: (stats) => false, // Modo timed eliminado
   },
 
   // === LOGROS COMPETITIVOS ===
-  {
-    id: 'VS_FIRST_WIN',
-    title: 'Primera Victoria',
-    description: 'Gana tu primera partida VS.',
-    icon: 'newbie.png', // Temporal para medal_bronze
-    condition: (stats) => stats.vsGamesWon >= 1,
-  },
-  {
-    id: 'VS_WINS_10',
-    title: 'Campeón',
-    description: 'Gana 10 partidas VS.',
-    icon: 'anniversary.png', // Temporal para medal_gold
-    condition: (stats) => stats.vsGamesWon >= 10,
-  },
-  {
-    id: 'VS_STREAK_5',
-    title: 'Invencible',
-    description: 'Gana 5 partidas VS seguidas.',
-    icon: 'god.png', // Temporal para champion
-    condition: (stats) => stats.bestWinStreak >= 5,
-  },
+  // Logros VS removidos
 
   // === LOGROS DE EXPERIENCIA ===
   {

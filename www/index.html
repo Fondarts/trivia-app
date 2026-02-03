@@ -1,17 +1,11 @@
 <!doctype html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <meta name="google-signin-client_id" content="339736953753-h9oekqkii28804iv84r5mqad61p7m4es.apps.googleusercontent.com"/>
   <meta name="google-signin-scope" content="profile email"/>
   
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7829392929574421"
-     crossorigin="anonymous"></script>
-  
-  <!-- Google Funding Choices (CMP para consentimiento GDPR) -->
-  <script src="https://fundingchoicesmessages.google.com/i/pub-7829392929574421?ers=1" async></script>
   
   <!-- SEO Meta Tags -->
   <title>Quizlo! - Juego de Trivia Gratis | Preguntas y Respuestas Online</title>
@@ -44,13 +38,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Quizlo!">
   
-  <!-- Android Chrome / PWA -->
+  <!-- PWA -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Quizlo!">
-  <meta name="theme-color" content="#8b5cf6" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#8b5cf6" media="(prefers-color-scheme: light)">
-  
-  <!-- Android: Prevenir selección de texto accidental (ya está arriba) -->
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -85,7 +76,7 @@
     "url": "https://www.quizlo.app/",
     "description": "Juego de trivia gratis con miles de preguntas sobre cine, deportes, ciencia, historia y más. Juega solo, contra el tiempo o desafía a tus amigos.",
     "applicationCategory": "Game",
-    "operatingSystem": "Web Browser, Android, iOS",
+    "operatingSystem": "Web Browser",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -99,8 +90,7 @@
     "featureList": [
       "Miles de preguntas de trivia",
       "Múltiples categorías (cine, deportes, ciencia, historia, geografía)",
-      "Modo solo, modo tiempo, modo versus",
-      "Modo aventura con jefes",
+      "Modo solo, modo versus",
       "Sistema de logros y XP",
       "Competir con amigos",
       "Gratis y sin registro requerido"
@@ -124,7 +114,7 @@
     "name": "Quizlo!",
     "description": "Juego de trivia interactivo con miles de preguntas sobre múltiples categorías",
     "gameLocation": "Online",
-    "gamePlatform": ["Web Browser", "Android", "iOS"],
+    "gamePlatform": ["Web Browser"],
     "genre": ["Trivia", "Educational", "Puzzle"],
     "numberOfPlayers": {
       "@type": "QuantitativeValue",
@@ -169,7 +159,6 @@
   <link rel="stylesheet" href="./css/friends.css?v=1.0">
   <!-- animations.css and logo-animations.css merged into main.css -->
   <!-- profile.css and achievements.css merged into main.css -->
-  <link rel="stylesheet" href="./css/adventure.css?v=3.0">
   
   <script>
     // Debug helper para desarrollo local
@@ -251,12 +240,6 @@
         <span>Quizlo!</span>
       </div>
       <div class="row">
-        <button class="iconbtn" id="btnTestBoss" title="Test Bosses (Preproducción)" style="background: #ff6b6b;">
-            <svg viewBox="0 0 24 24" width="22" height="22">
-              <path fill="currentColor" d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM15 20H6c-.55 0-1-.45-1-1v-1h10v2zm4-1c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14z"/>
-              <path fill="currentColor" d="M9 7h6v2H9zm0 3h6v2H9z"/>
-            </svg>
-        </button>
         <button class="iconbtn" id="btnCreatePack" title="Crear pack de preguntas">
             <svg viewBox="0 0 24 24" width="22" height="22">
               <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
@@ -285,9 +268,7 @@
       <!-- Sección de Login/Registro (solo visible cuando NO está logueado) -->
       <div class="section" id="authSection">
         <div class="auth-prompt">
-          <p style="text-align:center; margin: 0 0 12px; color: var(--muted); font-size: 14px;">
-            🎮 Crea una cuenta para guardar tu progreso y competir con amigos
-          </p>
+          <p class="auth-prompt-text" data-i18n="welcomeMessage">🎮 crea tu cuenta para llevar tu progreso a todos lados</p>
           <button class="btn accent" id="btnShowAuth" type="button">
             <span style="font-size: 16px;">👤</span> Iniciar Sesión / Registrarse
           </button>
@@ -302,12 +283,6 @@
         </div>
       </div>
       
-      <!-- Sección de nombre temporal (solo para usuarios NO logueados) -->
-      <div class="section" id="guestNameSection">
-        <label data-i18n="yourName">Tu nombre</label>
-        <input id="playerName" class="input" data-i18n-placeholder="yourNamePlaceholder" placeholder="Tu nombre"/>
-      </div>
-
       <div class="section">
         <label data-i18n="mode">Modo</label>
         <div class="segment mode-segment" id="modeSeg">
@@ -315,17 +290,13 @@
             <img class="mode-icon" src="./assets/icons/solo.svg" width="28" height="28" alt="Modo Solo - Jugar individual" aria-hidden="true">
             <span class="mode-tooltip" data-i18n="modeSolo">SOLO</span>
           </div>
-          <div class="seg mode-btn" data-val="timed" title="Contrarreloj" aria-label="Modo contrarreloj">
-            <img class="mode-icon" src="./assets/icons/clock-svgrepo-com.svg" width="28" height="28" alt="Modo Contrarreloj - Jugar contra el tiempo" aria-hidden="true">
-            <span class="mode-tooltip" data-i18n="modeTimed">TIMED</span>
+          <div class="seg mode-btn" data-val="wordsearch" title="Sopa de letras" aria-label="Sopa de letras">
+            <img class="mode-icon" src="./assets/icons/wordsearch.svg" width="28" height="28" alt="Sopa de letras" aria-hidden="true">
+            <span class="mode-tooltip" data-i18n="modeSopa">SOPA</span>
           </div>
-          <div class="seg mode-btn" data-val="vs" title="Versus" aria-label="Modo versus">
-            <img class="mode-icon" src="./assets/icons/vs.svg" width="28" height="28" alt="Modo Versus - Competir con otro jugador" aria-hidden="true">
-            <span class="mode-tooltip" data-i18n="modeVS">VS</span>
-          </div>
-          <div class="seg mode-btn" data-val="adventure" title="Aventura" aria-label="Modo aventura">
-            <img class="mode-icon" src="./assets/icons/adventure.svg" width="28" height="28" alt="Modo Aventura - Juego con jefes y niveles" aria-hidden="true">
-            <span class="mode-tooltip" data-i18n="modeAdventure">AVENTURA</span>
+          <div class="seg mode-btn" data-val="bible" title="Estudio de la Biblia" aria-label="Estudio de la Biblia">
+            <img class="mode-icon" src="./assets/icons/bible.svg" width="28" height="28" alt="Estudio de la Biblia" aria-hidden="true">
+            <span class="mode-tooltip" data-i18n="modeBible">BIBLIA</span>
           </div>
         </div>
       </div>
@@ -352,68 +323,30 @@
         </div>
       </div>
 
-      <div class="section" id="timeWrap" style="display:none">
-        <div class="selects-row">
-          <div class="select-wrapper">
-            <label data-i18n="time">Tiempo</label>
-            <select id="timer" class="input input-small">
-              <option value="15">15s</option>
-              <option value="30" selected>30s</option>
-              <option value="60">1m</option>
-              <option value="180">3m</option>
-            </select>
-          </div>
-          <div class="select-wrapper">
-            <label data-i18n="difficulty">Dificultad</label>
-            <select id="timedDifficulty" class="input input-small">
-              <option value="any" data-i18n="difficultyAny">Cualquiera</option>
-              <option value="easy" selected data-i18n="difficultyEasy">Fácil</option>
-              <option value="medium" data-i18n="difficultyMedium">Medio</option>
-              <option value="hard" data-i18n="difficultyHard">Difícil</option>
-            </select>
-          </div>
+
+      <div class="section" id="wordsearchWrap" style="display:none">
+        <div class="select-wrapper">
+          <label data-i18n="difficulty">Dificultad</label>
+          <select id="wsDifficulty" class="input input-small">
+            <option value="easy" data-i18n="difficultyEasy">Fácil</option>
+            <option value="medium" selected data-i18n="difficultyMedium">Medio</option>
+            <option value="hard" data-i18n="difficultyHard">Difícil</option>
+          </select>
         </div>
-      </div>
-      
-      <div class="section" id="vsSection" style="display:none">
-        <div class="segment two" id="vsModeToggle">
-          <div class="seg active" data-val="join" data-i18n="join">UNIRSE</div>
-          <div class="seg" data-val="host" data-i18n="create">CREAR</div>
+        <div class="section" id="spStartWrapWS">
+          <button class="btn" id="btnStartWordSearch" type="button" data-i18n="start">EMPEZAR</button>
         </div>
       </div>
 
-      <div class="section" id="opponentSection">
-        <label>Tipo de partida</label>
-        <div class="pills three" id="opponentPills">
-          <div class="pill active" data-val="random">Rápidas</div>
-          <div class="pill" data-val="random_async">Lentas</div>
-          <div class="pill" data-val="friend">Amigos</div>
+      <div class="section" id="bibleStudyWrap" style="display:none">
+        <div class="select-wrapper">
+          <label data-i18n="bibleSelectBook">Libro de la Biblia</label>
+          <select id="bibleBookSel" class="input">
+            <option value="" data-i18n="bibleSelectBookPlaceholder">Selecciona un libro</option>
+          </select>
         </div>
-        <div class="game-mode-description" id="gameModeDescription">
-          <span class="mode-desc-icon">⚡</span>
-          <span class="mode-desc-text">Partidas rápidas con respuestas en tiempo real</span>
-        </div>
-      </div>
-
-      <div class="section" id="vsRoundsWrap" style="display:none">
-        <div class="selects-row">
-          <div class="select-wrapper">
-            <label data-i18n="questionsCount">Cantidad de preguntas</label>
-            <select id="vsRounds" class="input input-small">
-              <option value="5">5</option>
-              <option value="15" selected>15</option>
-              <option value="30">30</option>
-            </select>
-          </div>
-          <div class="select-wrapper">
-            <label data-i18n="difficulty">Dificultad</label>
-            <select id="vsDifficulty" class="input input-small">
-              <option value="any" data-i18n="difficultyAny">Cualquiera</option>
-              <option value="easy" selected data-i18n="difficultyEasy">Fácil</option>
-              <option value="medium" data-i18n="difficultyMedium">Medio</option>
-              <option value="hard" data-i18n="difficultyHard">Difícil</option>
-            </select>
-          </div>
+        <div id="bibleReadingArea" class="bible-reading-area">
+          <p class="bible-reading-placeholder" data-i18n="bibleSelectBookToRead">Selecciona un libro para leer.</p>
         </div>
       </div>
 
@@ -426,24 +359,6 @@
         <button class="btn" id="btnStart" type="button" data-i18n="start">EMPEZAR</button>
       </div>
 
-      <div class="section" id="vsActionArea" style="display:none">
-        <div id="vsHostActions">
-          <button class="btn" id="btnVsHost" type="button" data-i18n="createRoom">Crear sala</button>
-          <button class="btn danger" id="btnVsCancel" type="button" style="display:none" data-i18n="cancelSearch">Cancelar Búsqueda</button>
-        </div>
-        <div id="vsJoinActions" style="display:none">
-          <input id="inputVsCode" class="input" data-i18n-placeholder="roomCode" placeholder="Código de sala"/>
-          <button class="btn secondary" id="btnVsJoin" type="button" data-i18n="joinRoom">Unirse</button>
-        </div>
-        
-        <!-- Lista de partidas asíncronas disponibles -->
-        <div id="asyncMatchesList" style="display:none">
-          <h3 data-i18n="availableMatches">Partidas Disponibles</h3>
-          <div id="asyncMatchesContainer" class="matches-container">
-            <!-- Las partidas se cargarán aquí dinámicamente -->
-          </div>
-        </div>
-      </div>
       
     </div>
 
@@ -467,6 +382,23 @@
         <button class="btn" id="btnNext" type="button" style="display:none;width:auto;min-width:140px" data-i18n="next">Siguiente</button>
       </div>
       <button class="btn secondary danger" id="btnExitGame" type="button" style="margin-top: 10px;" data-i18n="exit">Salir</button>
+    </div>
+
+    <div class="card" id="wordsearchGameArea" style="display:none">
+      <div class="row" style="justify-content:space-between; align-items:center; margin-bottom: 8px;">
+        <span class="badge" id="wsFoundCount">0 / 0</span>
+        <button class="btn secondary danger small" id="btnExitWordSearch" type="button" data-i18n="exit">Salir</button>
+      </div>
+      <div id="wsGrid" class="ws-grid" role="grid" aria-label="Sopa de letras"></div>
+      <div class="ws-word-list-wrap">
+        <label data-i18n="wsFindWords">Encontrar palabras</label>
+        <div id="wsWordList" class="ws-word-list"></div>
+      </div>
+      <div id="wsComplete" class="ws-complete" style="display:none">
+        <p class="ws-complete-title" data-i18n="wsCongratulations">¡Felicitaciones!</p>
+        <p class="ws-complete-text" data-i18n="wsAllFound">Encontraste todas las palabras.</p>
+        <button class="btn" id="btnWsPlayAgain" type="button" data-i18n="wsPlayAgain">Jugar de nuevo</button>
+      </div>
     </div>
     </main>
   </div>
@@ -549,19 +481,6 @@
     </div>
   </div>
 
-  <!-- Pantalla del Modo Aventura -->
-  <div class="fs fs-adventure" id="fsAdventure">
-    <div class="adventure-container">
-      <div id="adventureMapContainer">
-        <!-- Aquí se renderizará el mapa de aventura -->
-      </div>
-    </div>
-  </div>
-  
-  <!-- Área de juego de aventura -->
-  <div id="adventureGameArea">
-    <!-- Aquí se renderizará el juego de aventura -->
-  </div>
 
   <div class="modal" id="profileModal">
     <div class="panel">
@@ -597,15 +516,6 @@
           <button class="btn accent" id="profileBtnAuth" style="width:100%">Iniciar Sesión / Registrarse</button>
         </div>
       </div>
-      <div class="profile-section">
-        <h4 data-i18n="purchases">Compras</h4>
-        <div class="bank-info" id="profileBankInfo">Base: 300</div>
-        <div class="empty-state" data-i18n="purchasesEmpty">Aquí aparecerán los packs que compres.</div>
-      </div>
-      <div class="profile-section">
-        <h4 data-i18n="plan">Plan</h4>
-        <div class="empty-state" data-i18n="planFree">Actualmente usas el plan Gratuito. ¡Pronto podrás quitar la publicidad!</div>
-      </div>
       <div class="profile-section settings-section">
         <h4 data-i18n="settings">Ajustes</h4>
         <div class="row" style="justify-content:space-between">
@@ -618,19 +528,6 @@
             <label class="badge">
               <input type="radio" name="language" value="en"/> 
               <span data-i18n="english">English</span>
-            </label>
-          </div>
-        </div>
-        <div class="row" style="justify-content:space-between">
-          <label data-i18n="theme">Tema</label>
-          <div class="row">
-            <label class="badge">
-              <input type="radio" name="theme" value="dark" checked/> 
-              <span data-i18n="themeDark">Dark</span>
-            </label>
-            <label class="badge">
-              <input type="radio" name="theme" value="light"/> 
-              <span data-i18n="themeLight">Claro</span>
             </label>
           </div>
         </div>
@@ -667,28 +564,8 @@
   <!-- Core (configuración global) -->
   <script src="./js/core/config.js"></script>
   
-  <!-- Scripts del modo aventura (no son módulos ES6) -->
-  <script src="./js/adventure/mode.js"></script>
-  <script src="./js/adventure/dom-optimizer.js"></script>
-  <script src="./js/adventure/map.js"></script>
-  <script src="./js/adventure/game.js"></script>
-  <!-- Bosses: Sistema unificado primero, luego módulos individuales -->
-  <!-- Sistema de anuncios de recompensa -->
-  <script src="./js/ads/rewarded-ad.js"></script>
-  
-  <script src="./js/adventure/bosses.js"></script>
-  <script src="./js/adventure/bosses/tetris.js"></script>
-  <script src="./js/adventure/bosses/arkanoid.js"></script>
-  <script src="./js/adventure/bosses/catch.js"></script>
-  <script src="./js/adventure/bosses/frogger.js"></script>
-  <script src="./js/adventure/bosses/hangman.js"></script>
-  <script src="./js/adventure/bosses/snake.js"></script>
-  <script src="./js/adventure/bosses/pokemon.js"></script>
-  <script src="./js/adventure/init.js"></script>
-  
   <!-- Platform specific (no son módulos ES6) -->
   <script src="./js/auth/simple-oauth.js"></script>
-  <script src="./js/platform/ads.js"></script>
   
   <!-- Sistema de amigos se carga desde los módulos ES6 -->
 
@@ -790,64 +667,8 @@
     </div>
   </div>
 
-  <!-- Modal de Test de Bosses (Preproducción) -->
-  <div class="modal" id="testBossModal">
-    <div class="panel" style="max-width: 600px;">
-      <div class="row" style="justify-content:space-between; margin-bottom: 20px;">
-        <div style="font-weight:800; font-size: 18px;">🎮 Test de Bosses</div>
-        <button class="iconbtn" id="btnCloseTestBoss" type="button">✖</button>
-      </div>
-      
-      <div style="margin-bottom: 16px; padding: 12px; background: rgba(255, 107, 107, 0.1); border-radius: 8px; border: 1px solid rgba(255, 107, 107, 0.3);">
-        <p style="margin: 0; font-size: 13px; color: var(--text); opacity: 0.8;">
-          🚧 <strong>Modo Preproducción</strong> - Prueba directa de jefes finales sin necesidad de completar el modo aventura.
-        </p>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-        <button class="btn accent boss-test-btn" data-boss="movies" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-size: 32px;">🎬</span>
-          <span style="font-weight: 600;">Reino del Cine</span>
-          <span style="font-size: 12px; opacity: 0.7;">Arkanoid</span>
-        </button>
-        
-        <button class="btn accent boss-test-btn" data-boss="anime" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-size: 32px;">🎌</span>
-          <span style="font-weight: 600;">Valle Otaku</span>
-          <span style="font-size: 12px; opacity: 0.7;">Pokemon</span>
-        </button>
-        
-        <button class="btn accent boss-test-btn" data-boss="history" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-size: 32px;">📜</span>
-          <span style="font-weight: 600;">Tierra Antigua</span>
-          <span style="font-size: 12px; opacity: 0.7;">Tetris</span>
-        </button>
-        
-        <button class="btn accent boss-test-btn" data-boss="geography" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-size: 32px;">🌍</span>
-          <span style="font-weight: 600;">Atlas Mundial</span>
-          <span style="font-size: 12px; opacity: 0.7;">Ahorcado</span>
-        </button>
-        
-        <button class="btn accent boss-test-btn" data-boss="sports" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-size: 32px;">⚽</span>
-          <span style="font-weight: 600;">Campo Deportivo</span>
-          <span style="font-size: 12px; opacity: 0.7;">Frogger</span>
-        </button>
-        
-        <button class="btn accent boss-test-btn" data-boss="science" style="padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-          <span style="font-size: 32px;">🔬</span>
-          <span style="font-weight: 600;">Reino de la Ciencia</span>
-          <span style="font-size: 12px; opacity: 0.7;">Snake</span>
-        </button>
-      </div>
-    </div>
-  </div>
-  
   <!-- Módulos ES6 -->
   <script type="module" src="./js/game/bank_bridge.js"></script>
-  <script type="module" src="./js/game/async_vs.js"></script>
-  <script type="module" src="./js/store/dlc.js?v=3.1"></script>
   
   <!-- Módulos de efectos visuales -->
   <script type="module" src="./js/effects.js?v=1.0"></script>

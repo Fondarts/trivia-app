@@ -194,6 +194,6 @@
         // setTimeout(addHoverSound, 1000);
         
         // Log para confirmar que se cargó
-        console.log('✨ Logo interactions initialized!');
+
     }
 })();

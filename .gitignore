@@ -24,6 +24,7 @@ ios/
 # IDE
 .idea/
 .vscode/
+.vs/
 *.iml
 
 # OS

@@ -328,14 +328,13 @@ async function handleGoogleLogin() {
     // Usar la función simple de OAuth
     if (window.simpleGoogleLogin) {
       await window.simpleGoogleLogin();
-      console.log('✅ OAuth iniciado desde modal con función simple');
+
       // El redireccionamiento lo maneja la función simple
     } else {
       throw new Error('Sistema de autenticación no disponible');
     }
   } catch (error) {
-    console.error('Error en login:', error);
-    
+
     // Mostrar error
     btnGoogle.style.display = 'flex';
     loading.classList.remove('active');

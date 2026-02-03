@@ -66,27 +66,6 @@
       "description": "Iniciar una partida individual",
       "url": "./index.html?mode=rounds",
       "icons": [{ "src": "./assets/icons/solo.svg", "sizes": "96x96" }]
-    },
-    {
-      "name": "Modo Aventura",
-      "short_name": "Aventura",
-      "description": "Explorar el modo aventura",
-      "url": "./index.html?mode=adventure",
-      "icons": [{ "src": "./assets/icons/adventure.svg", "sizes": "96x96" }]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "assets/screenshots/home.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "label": "Pantalla principal"
-    },
-    {
-      "src": "assets/screenshots/game.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "label": "Jugando una partida"
     }
   ]
 }

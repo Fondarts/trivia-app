@@ -1,0 +1,7106 @@
+[
+  {
+    "q": "Who directed the movie Inception?",
+    "options": [
+      "Christopher Nolan",
+      "James Cameron",
+      "Ridley Scott",
+      "David Fincher"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_7viypnu0.webp"
+  },
+  {
+    "q": "In Inception, what object does Cobb use as a totem?",
+    "options": [
+      "A spinning top",
+      "A coin",
+      "A die",
+      "A ring"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_7viypnu0.webp"
+  },
+  {
+    "q": "In Inception, what code phrase does Fischer’s subconscious use?",
+    "options": [
+      "I will not tell you",
+      "My father doesn’t want me to be him",
+      "This isn’t real",
+      "I know you’re dreaming"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_7viypnu0.webp"
+  },
+  {
+    "q": "In Inception, what shape is Cobb’s totem?",
+    "options": [
+      "A spinning top",
+      "A coin",
+      "A die",
+      "A ring"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_7viypnu0.webp"
+  },
+  {
+    "q": "In Inception, what object does Cobb use as his personal totem?",
+    "options": [
+      "A spinning top",
+      "A metal coin",
+      "A ring",
+      "A dice piece"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_7viypnu0.webp"
+  },
+  {
+    "q": "In Inception, which character is responsible for designing the dream levels?",
+    "options": [
+      "Ariadne",
+      "Eames",
+      "Yusuf",
+      "Saito"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_7viypnu0.webp"
+  },
+  {
+    "q": "Who plays Jack Dawson in Titanic?",
+    "options": [
+      "Brad Pitt",
+      "Leonardo DiCaprio",
+      "Matt Damon",
+      "Tom Cruise"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_klhd8j4s.webp"
+  },
+  {
+    "q": "In Titanic, what is the name of the ship that sinks?",
+    "options": [
+      "Titanic",
+      "Olympic",
+      "Britannic",
+      "Carpathia"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_klhd8j4s.webp"
+  },
+  {
+    "q": "In Titanic, what does Rose throw into the ocean?",
+    "options": [
+      "The Heart of the Ocean",
+      "A necklace from Jack",
+      "Her diary",
+      "A ring"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_klhd8j4s.webp"
+  },
+  {
+    "q": "In Titanic, what instrument leads the ship’s band during the sinking?",
+    "options": [
+      "Violin",
+      "Piano",
+      "Clarinet",
+      "Trumpet"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_klhd8j4s.webp"
+  },
+  {
+    "q": "In Titanic, what is the name of the necklace central to the story?",
+    "options": [
+      "Heart of the Ocean",
+      "Blue Eternity",
+      "Sea Sapphire",
+      "Ocean's Jewel"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_klhd8j4s.webp"
+  },
+  {
+    "q": "In Titanic, what is Jack’s profession before boarding the ship?",
+    "options": [
+      "An artist",
+      "A sailor",
+      "A waiter",
+      "A mechanic"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_klhd8j4s.webp"
+  },
+  {
+    "q": "Who plays Neo in The Matrix?",
+    "options": [
+      "Keanu Reeves",
+      "Tom Cruise",
+      "Will Smith",
+      "Johnny Depp"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what color pill does Neo choose?",
+    "options": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what is the name of the sentient machines’ field where humans are grown?",
+    "options": [
+      "The Fields",
+      "The Farm",
+      "The Human Pods",
+      "The Breeding Chambers"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what is Neo’s real name?",
+    "options": [
+      "Thomas Anderson",
+      "John Smith",
+      "Michael Stanton",
+      "Jack Harvey"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what device removes the tracking bug from Neo?",
+    "options": [
+      "A suction machine",
+      "A laser scalpel",
+      "A magnetic extractor",
+      "An EMP pod"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what does Neo see in the Oracle’s kitchen?",
+    "options": [
+      "A bending spoon",
+      "A burning paper",
+      "A floating key",
+      "A melting coin"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what color pill does Neo take?",
+    "options": [
+      "Red",
+      "Blue",
+      "Green",
+      "White"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "In The Matrix, what does Neo see on the street that triggers déjà vu?",
+    "options": [
+      "A black cat",
+      "A broken mirror",
+      "A flickering streetlamp",
+      "A repeating pedestrian"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_b0mhc2v0.webp"
+  },
+  {
+    "q": "Who directed Pulp Fiction?",
+    "options": [
+      "Quentin Tarantino",
+      "Martin Scorsese",
+      "Guy Ritchie",
+      "Joel Coen"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_h786o7az.webp"
+  },
+  {
+    "q": "In Pulp Fiction, what is Vincent Vega injecting at the beginning?",
+    "options": [
+      "Heroin",
+      "Cocaine",
+      "Morphine",
+      "Adrenaline"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_h786o7az.webp"
+  },
+  {
+    "q": "In The Lion King, what kind of animal is Simba?",
+    "options": [
+      "Lion",
+      "Tiger",
+      "Leopard",
+      "Cheetah"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ny7hfqz0.webp"
+  },
+  {
+    "q": "In The Lion King, what is the name of Simba’s father?",
+    "options": [
+      "Mufasa",
+      "Scar",
+      "Rafiki",
+      "Zazu"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ny7hfqz0.webp"
+  },
+  {
+    "q": "In The Lion King, what is the name of the three hyenas who serve Scar?",
+    "options": [
+      "Shenzi, Banzai and Ed",
+      "Zuri, Kion and Makuu",
+      "Tama, Nala and Kiara",
+      "Rafiki, Zazu and Timon"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ny7hfqz0.webp"
+  },
+  {
+    "q": "In The Lion King, who raises Simba after he runs away?",
+    "options": [
+      "Timon and Pumbaa",
+      "Rafiki and Zazu",
+      "Scar and the hyenas",
+      "The elephant herd"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ny7hfqz0.webp"
+  },
+  {
+    "q": "In The Lion King, what fruit does Rafiki use to draw Simba’s mane?",
+    "options": [
+      "A gourd",
+      "A banana",
+      "A papaya",
+      "A coconut"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ny7hfqz0.webp"
+  },
+  {
+    "q": "In The Lion King, what location does Simba grow up in after fleeing?",
+    "options": [
+      "The jungle oasis",
+      "The elephant graveyard",
+      "The savannah plains",
+      "The termite mound valley"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ny7hfqz0.webp"
+  },
+  {
+    "q": "Who voices Woody in Toy Story?",
+    "options": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Robin Williams",
+      "Billy Crystal"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ed8zf57h.webp"
+  },
+  {
+    "q": "In Toy Story, what is the name of the space ranger toy?",
+    "options": [
+      "Buzz Lightyear",
+      "Duke Caboom",
+      "Forky",
+      "Lotso"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ed8zf57h.webp"
+  },
+  {
+    "q": "In Toy Story, what is the name of Sid’s mutant baby doll toy?",
+    "options": [
+      "Babyface",
+      "Spinner",
+      "Spike",
+      "Crawler"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191946_ed8zf57h.webp"
+  },
+  {
+    "q": "In Toy Story, what is Woody’s role among the toys?",
+    "options": [
+      "Leader",
+      "Troublemaker",
+      "Newcomer",
+      "Villain"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ed8zf57h.webp"
+  },
+  {
+    "q": "In Toy Story, what is written on the bottom of Woody’s boot?",
+    "options": [
+      "Andy",
+      "Buzz",
+      "Woody",
+      "Sid"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ed8zf57h.webp"
+  },
+  {
+    "q": "In Toy Story, what is the name of Woody’s rival toy?",
+    "options": [
+      "Buzz Lightyear",
+      "Zurg",
+      "Slinky",
+      "Rex"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_ed8zf57h.webp"
+  },
+  {
+    "q": "In Finding Nemo, what kind of fish is Nemo?",
+    "options": [
+      "Clownfish",
+      "Goldfish",
+      "Angelfish",
+      "Tuna"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_rb5u4kt4.webp"
+  },
+  {
+    "q": "In Finding Nemo, what is the name of Nemo’s overprotective father?",
+    "options": [
+      "Marlin",
+      "Bruce",
+      "Gill",
+      "Crush"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_rb5u4kt4.webp"
+  },
+  {
+    "q": "In Finding Nemo, what is written on the scuba diver’s mask?",
+    "options": [
+      "P. Sherman 42 Wallaby Way Sydney",
+      "Sydney Harbor Museum",
+      "Darling Harbour Aquarium",
+      "Aqua Marine Institute"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_rb5u4kt4.webp"
+  },
+  {
+    "q": "In Finding Nemo, what group raises Nemo before escaping?",
+    "options": [
+      "The Tank Gang",
+      "The Reef Club",
+      "The Bubble Crew",
+      "The Sea Buddies"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_rb5u4kt4.webp"
+  },
+  {
+    "q": "In Finding Nemo, what landmark do Marlin and Dory swim through?",
+    "options": [
+      "A jellyfish forest",
+      "A coral canyon",
+      "A shark tunnel",
+      "An underwater cave"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_rb5u4kt4.webp"
+  },
+  {
+    "q": "In Finding Nemo, what kind of fish is Nemo?",
+    "options": [
+      "Clownfish",
+      "Angelfish",
+      "Blue tang",
+      "Butterflyfish"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_rb5u4kt4.webp"
+  },
+  {
+    "q": "Who directed Jurassic Park?",
+    "options": [
+      "Steven Spielberg",
+      "James Cameron",
+      "Ron Howard",
+      "Peter Jackson"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_0mbkjwxl.webp"
+  },
+  {
+    "q": "In Jurassic Park, what is the name of the island where the park is located?",
+    "options": [
+      "Isla Nublar",
+      "Isla Sorna",
+      "Isla Fortuna",
+      "Isla Verde"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_0mbkjwxl.webp"
+  },
+  {
+    "q": "In Jurassic Park, what type of dinosaur is the first to be shown on screen?",
+    "options": [
+      "Velociraptor",
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Dilophosaurus"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_0mbkjwxl.webp"
+  },
+  {
+    "q": "In Jurassic Park, what kind of DNA is used to fill gaps in dinosaur genomes?",
+    "options": [
+      "Frog DNA",
+      "Lizard DNA",
+      "Fish DNA",
+      "Snake DNA"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191946_0mbkjwxl.webp"
+  },
+  {
+    "q": "In Frozen, what is the name of Elsa’s sister?",
+    "options": [
+      "Anna",
+      "Rapunzel",
+      "Merida",
+      "Ariel"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_dhu8aad9.webp"
+  },
+  {
+    "q": "In Frozen, what creates Elsa’s powers?",
+    "options": [
+      "She was born with them",
+      "A spell",
+      "A curse",
+      "A magical object"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_dhu8aad9.webp"
+  },
+  {
+    "q": "Which actor plays Tony Stark in the Marvel Cinematic Universe?",
+    "options": [
+      "Chris Evans",
+      "Robert Downey Jr.",
+      "Chris Hemsworth",
+      "Mark Ruffalo"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_0pk089c4.webp"
+  },
+  {
+    "q": "Who directed The Dark Knight?",
+    "options": [
+      "Christopher Nolan",
+      "Zack Snyder",
+      "Bryan Singer",
+      "Sam Raimi"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "Who plays the Joker in The Dark Knight?",
+    "options": [
+      "Heath Ledger",
+      "Jared Leto",
+      "Joaquin Phoenix",
+      "Jack Nicholson"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "In The Dark Knight, what does Joker burn to send a message?",
+    "options": [
+      "A pile of money",
+      "Gotham Bank",
+      "Wayne Tower",
+      "A police station"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "In The Dark Knight, what does Joker use to threaten the ferries?",
+    "options": [
+      "Explosives",
+      "Poison gas",
+      "Hostages",
+      "A virus"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "In The Dark Knight, what does Joker burn for symbolism?",
+    "options": [
+      "A huge pile of money",
+      "Wayne Tower",
+      "A police station",
+      "His own mask"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "In The Dark Knight, what kind of vehicle does Batman destroy during the chase?",
+    "options": [
+      "A garbage truck",
+      "A tank",
+      "A limo",
+      "A police bus"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "In The Dark Knight, what object does the Joker burn in a warehouse?",
+    "options": [
+      "A mountain of money",
+      "A pile of weapons",
+      "A shipment of drugs",
+      "A stack of documents"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_m41xdbo1.webp"
+  },
+  {
+    "q": "In Harry Potter and the Sorcerer’s Stone, what animal does Harry first talk to at the zoo?",
+    "options": [
+      "Snake",
+      "Owl",
+      "Spider",
+      "Cat"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_mxwu3sjj.webp"
+  },
+  {
+    "q": "In Harry Potter and the Sorcerer’s Stone, where does Harry first meet Hagrid?",
+    "options": [
+      "A hut on the rock",
+      "Diagon Alley",
+      "Hogwarts Express",
+      "The Leaky Cauldron"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_mxwu3sjj.webp"
+  },
+  {
+    "q": "Who directed Avatar?",
+    "options": [
+      "James Cameron",
+      "Peter Jackson",
+      "Ridley Scott",
+      "J.J. Abrams"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_mcuiztbl.webp"
+  },
+  {
+    "q": "In Avatar, what mineral is the humans’ primary objective on Pandora?",
+    "options": [
+      "Unobtanium",
+      "Helionite",
+      "Aetherstone",
+      "Pandorite"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_mcuiztbl.webp"
+  },
+  {
+    "q": "In The Avengers, what is the name of Thor’s hammer?",
+    "options": [
+      "Mjolnir",
+      "Stormbreaker",
+      "Gungnir",
+      "Anduril"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_trulqn0y.webp"
+  },
+  {
+    "q": "Which actor plays Jack Sparrow in the Pirates of the Caribbean films?",
+    "options": [
+      "Johnny Depp",
+      "Orlando Bloom",
+      "Hugh Jackman",
+      "Nicolas Cage"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_te71ille.webp"
+  },
+  {
+    "q": "In Pirates of the Caribbean, what animal is Jack Sparrow mistaken for drinking rum with?",
+    "options": [
+      "A goat",
+      "A pig",
+      "A donkey",
+      "A monkey"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_te71ille.webp"
+  },
+  {
+    "q": "In Shrek, what kind of creature is Donkey?",
+    "options": [
+      "Donkey",
+      "Horse",
+      "Goat",
+      "Mule"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_0zhfh0lv.webp"
+  },
+  {
+    "q": "Which actor voices Donkey in Shrek?",
+    "options": [
+      "Eddie Murphy",
+      "Chris Rock",
+      "Martin Lawrence",
+      "Will Smith"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_0zhfh0lv.webp"
+  },
+  {
+    "q": "In Shrek, what is Princess Fiona’s secret?",
+    "options": [
+      "She turns into an ogre",
+      "She is a witch",
+      "She can fly",
+      "She controls dragons"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_0zhfh0lv.webp"
+  },
+  {
+    "q": "In Shrek, what animal is Dragon in love with?",
+    "options": [
+      "Donkey",
+      "Puss in Boots",
+      "Shrek",
+      "Farquaad"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_0zhfh0lv.webp"
+  },
+  {
+    "q": "In Shrek, what animal is Donkey afraid of marrying?",
+    "options": [
+      "A dragon",
+      "A wolf",
+      "A bear",
+      "An ogre"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_0zhfh0lv.webp"
+  },
+  {
+    "q": "Who directed The Lord of the Rings film trilogy?",
+    "options": [
+      "Peter Jackson",
+      "Guillermo del Toro",
+      "Christopher Nolan",
+      "George Lucas"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_cpq5zcpk.webp"
+  },
+  {
+    "q": "In The Lord of the Rings, what is the name of the creature Gollum refers to as 'my precious'?",
+    "options": [
+      "The One Ring",
+      "The Palantir",
+      "The Arkenstone",
+      "The Mithril Shirt"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_cpq5zcpk.webp"
+  },
+  {
+    "q": "In Spider-Man (2002), what is the real name of the Green Goblin?",
+    "options": [
+      "Norman Osborn",
+      "Harry Osborn",
+      "Otto Octavius",
+      "Eddie Brock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_edzq0dd4.webp"
+  },
+  {
+    "q": "In Spider-Man (2002), what does Peter first test while learning his powers?",
+    "options": [
+      "Web shooting",
+      "Wall climbing",
+      "Spider sense",
+      "Super strength"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_edzq0dd4.webp"
+  },
+  {
+    "q": "Who plays Forrest in Forrest Gump?",
+    "options": [
+      "Tom Hanks",
+      "Kevin Costner",
+      "Bruce Willis",
+      "Mel Gibson"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_5jmmf9ca.webp"
+  },
+  {
+    "q": "In Forrest Gump, what snack does Forrest invest in?",
+    "options": [
+      "Shrimp company",
+      "Apple computers",
+      "Oil company",
+      "Chocolate factory"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_5jmmf9ca.webp"
+  },
+  {
+    "q": "In Forrest Gump, what snack does Forrest invest in that changes his life?",
+    "options": [
+      "Apples (Apple Computer)",
+      "Chocolate company",
+      "Peanut distributor",
+      "Cashew farms"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_5jmmf9ca.webp"
+  },
+  {
+    "q": "Who directed the film Jaws?",
+    "options": [
+      "Steven Spielberg",
+      "Francis Ford Coppola",
+      "Brian De Palma",
+      "Stanley Kubrick"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_37yrz9e3.webp"
+  },
+  {
+    "q": "Who directed E.T. the Extra-Terrestrial?",
+    "options": [
+      "Steven Spielberg",
+      "George Lucas",
+      "Robert Zemeckis",
+      "Ron Howard"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_zrrtjb7x.webp"
+  },
+  {
+    "q": "Who directed the original Star Wars (A New Hope)?",
+    "options": [
+      "George Lucas",
+      "Irvin Kershner",
+      "Richard Marquand",
+      "J.J. Abrams"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_f71cbnf2.webp"
+  },
+  {
+    "q": "In Guardians of the Galaxy, what is the name of the talking raccoon?",
+    "options": [
+      "Rocket",
+      "Groot",
+      "Drax",
+      "Yondu"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_byz0iqvc.webp"
+  },
+  {
+    "q": "Who directed the film The Social Network?",
+    "options": [
+      "David Fincher",
+      "Aaron Sorkin",
+      "Christopher Nolan",
+      "Sam Mendes"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, what does the chicken incident involve?",
+    "options": [
+      "Feeding it cocaine",
+      "Racing it",
+      "Freezing it",
+      "Stealing it"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, what school is the setting for the film?",
+    "options": [
+      "Harvard",
+      "Yale",
+      "MIT",
+      "Stanford"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, what company sues Mark Zuckerberg?",
+    "options": [
+      "Winklevoss twins",
+      "Microsoft",
+      "Google",
+      "Apple"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, what is Eduardo’s role?",
+    "options": [
+      "CFO",
+      "CEO",
+      "Lead programmer",
+      "Marketing lead"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, which website is central to the story?",
+    "options": [
+      "Facebook",
+      "Napster",
+      "MySpace",
+      "Twitter"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, what idea sparks the creation of Facebook?",
+    "options": [
+      "A college ranking site",
+      "A dating app",
+      "A photo sharing tool",
+      "A messaging board"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "In The Social Network, what legal dispute forms the central conflict?",
+    "options": [
+      "Ownership of Facebook",
+      "User privacy violations",
+      "Patent infringement",
+      "Hacking allegations"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_qkg6dgax.webp"
+  },
+  {
+    "q": "Who directed the film Fight Club?",
+    "options": [
+      "David Fincher",
+      "Guy Ritchie",
+      "Michael Mann",
+      "Ridley Scott"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_xe1qo6t4.webp"
+  },
+  {
+    "q": "In Fight Club, what chemical does Tyler use to burn the Narrator's hand?",
+    "options": [
+      "Lye",
+      "Acid",
+      "Bleach",
+      "Ammonia"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_xe1qo6t4.webp"
+  },
+  {
+    "q": "In Fight Club, what rule is repeated twice?",
+    "options": [
+      "The first rule",
+      "The second rule",
+      "The last rule",
+      "The middle rule"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_xe1qo6t4.webp"
+  },
+  {
+    "q": "In The Shawshank Redemption, what is the name of the prison?",
+    "options": [
+      "Shawshank State Prison",
+      "Green Mile Penitentiary",
+      "Fox River State Penitentiary",
+      "Blackgate Prison"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_y5fv1aez.webp"
+  },
+  {
+    "q": "In The Shawshank Redemption, what object does Andy hide in his Bible?",
+    "options": [
+      "A rock hammer",
+      "A map",
+      "A list of names",
+      "A key"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_y5fv1aez.webp"
+  },
+  {
+    "q": "In The Shawshank Redemption, what tool does Andy use to dig through the wall?",
+    "options": [
+      "A rock hammer",
+      "A metal spoon",
+      "A chisel",
+      "A nail file"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_y5fv1aez.webp"
+  },
+  {
+    "q": "Who directed the film Whiplash?",
+    "options": [
+      "Damien Chazelle",
+      "Denis Villeneuve",
+      "Christopher Nolan",
+      "Alejandro G. Iñárritu"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what tempo does Fletcher demand in the iconic scene?",
+    "options": [
+      "Not quite my tempo",
+      "Push the tempo",
+      "Beat the clock",
+      "Stay on time"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what song does Fletcher first demand?",
+    "options": [
+      "Whiplash",
+      "Caravan",
+      "Rush",
+      "Nightfall"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what instrument does Andrew play?",
+    "options": [
+      "Drums",
+      "Trumpet",
+      "Saxophone",
+      "Piano"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what phrase does Fletcher repeatedly use?",
+    "options": [
+      "Not my tempo",
+      "Again",
+      "Stay focused",
+      "Keep the rhythm"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what is the name of the jazz piece used for most rehearsals?",
+    "options": [
+      "Whiplash",
+      "Caravan",
+      "Double Swing",
+      "Rush Hour"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what phrase does Fletcher frequently yell?",
+    "options": [
+      "Not quite my tempo",
+      "Stay in the pocket",
+      "You drag like hell",
+      "Play it clean"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In Whiplash, what tempo term does Fletcher criticize constantly?",
+    "options": [
+      "Rushing",
+      "Dragging",
+      "Dragging then rushing",
+      "Dragging slightly"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_cij7tao4.webp"
+  },
+  {
+    "q": "In The Godfather, what is the first name of the character with the last name Corleone who becomes the new Don?",
+    "options": [
+      "Michael",
+      "Sonny",
+      "Fredo",
+      "Tom"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_rrhenrvt.webp"
+  },
+  {
+    "q": "In The Godfather, what animal’s head is left in Woltz’s bed?",
+    "options": [
+      "Horse",
+      "Cow",
+      "Goat",
+      "Pig"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_rrhenrvt.webp"
+  },
+  {
+    "q": "In The Godfather, what fruit appears as a symbol of death?",
+    "options": [
+      "Oranges",
+      "Apples",
+      "Pears",
+      "Bananas"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_rrhenrvt.webp"
+  },
+  {
+    "q": "In The Godfather, what does Don Corleone hold during the opening scene?",
+    "options": [
+      "A cat",
+      "A glass of wine",
+      "A rosary",
+      "A cigar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_rrhenrvt.webp"
+  },
+  {
+    "q": "In The Godfather, what gift does Vito refuse to give out on the Day of His Daughter’s Wedding?",
+    "options": [
+      "A murder contract",
+      "Money",
+      "Protection",
+      "Gambling favors"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_rrhenrvt.webp"
+  },
+  {
+    "q": "Who directed the film Interstellar?",
+    "options": [
+      "Christopher Nolan",
+      "Alfonso Cuarón",
+      "Denis Villeneuve",
+      "Ridley Scott"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In Interstellar, what kind of object is Gargantua?",
+    "options": [
+      "Black hole",
+      "Neutron star",
+      "White dwarf",
+      "Quasar"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In Interstellar, what planet does Dr. Mann falsely claim is habitable?",
+    "options": [
+      "His own planet",
+      "Miller’s planet",
+      "Edmund’s planet",
+      "Cooper’s planet"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In Interstellar, what is the name of the robot accompanying Cooper?",
+    "options": [
+      "TARS",
+      "RANGER",
+      "CASE",
+      "KIPP"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In Interstellar, what type of anomaly appears near Saturn?",
+    "options": [
+      "A wormhole",
+      "A black hole",
+      "A pulsar",
+      "A nebula"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In Interstellar, what shape is the robot TARS primarily composed of?",
+    "options": [
+      "Rectangular slabs",
+      "Spherical modules",
+      "Hexagonal plates",
+      "Flexible cables"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In Interstellar, what shape is the robot CASE primarily designed as?",
+    "options": [
+      "Rectangular blocks",
+      "A rotating sphere",
+      "A floating cube",
+      "A humanoid frame"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_9spycn49.webp"
+  },
+  {
+    "q": "In The Silence of the Lambs, what is the profession of Clarice Starling?",
+    "options": [
+      "FBI trainee",
+      "Journalist",
+      "Doctor",
+      "Lawyer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_v0jnrc06.webp"
+  },
+  {
+    "q": "Who plays the title character in Edward Scissorhands?",
+    "options": [
+      "Johnny Depp",
+      "Tom Cruise",
+      "Keanu Reeves",
+      "Brad Pitt"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_pghvwjir.webp"
+  },
+  {
+    "q": "In The Truman Show, what is Truman’s occupation?",
+    "options": [
+      "Insurance salesman",
+      "Journalist",
+      "Lawyer",
+      "Real estate agent"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "In The Truman Show, what product does Truman constantly see in disguised advertisements?",
+    "options": [
+      "Mococoa",
+      "CocoaStar",
+      "ChocoPro",
+      "LunaCocoa"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "In The Truman Show, what constant product placement annoys Truman?",
+    "options": [
+      "Mococoa",
+      "Sunburst Detergent",
+      "AllFresh Food",
+      "GoodLife Insurance"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "In The Truman Show, what is Truman’s job?",
+    "options": [
+      "Insurance salesman",
+      "Carpenter",
+      "News anchor",
+      "Mailman"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "In The Truman Show, what malfunctions that alerts Truman something is wrong?",
+    "options": [
+      "A studio light falls",
+      "A microphone crackles",
+      "A camera lens breaks",
+      "A monitor flashes"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "In The Truman Show, what product placement repeatedly appears in Truman’s kitchen?",
+    "options": [
+      "Cocoa drink",
+      "Cereal brand",
+      "Dish soap",
+      "Orange juice"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "In The Truman Show, what is the name of the town Truman lives in?",
+    "options": [
+      "Seahaven",
+      "Oceanview",
+      "Harbor Hills",
+      "Coastline"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_knoy2n9o.webp"
+  },
+  {
+    "q": "Who directed the film Gladiator?",
+    "options": [
+      "Ridley Scott",
+      "James Cameron",
+      "Peter Jackson",
+      "Michael Bay"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_hv6e0q86.webp"
+  },
+  {
+    "q": "In Gladiator, what nickname do the crowds give Maximus?",
+    "options": [
+      "The Spaniard",
+      "The Wolf",
+      "The Hammer",
+      "The Phoenix"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_hv6e0q86.webp"
+  },
+  {
+    "q": "In Gladiator, what phrase do the crowds chant after Maximus wins?",
+    "options": [
+      "Maximus the Merciful",
+      "Maximus the Gladiator",
+      "Maximus the Brave",
+      "Maximus the Spaniard"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_hv6e0q86.webp"
+  },
+  {
+    "q": "In Gladiator, what is Maximus’ profession before becoming a gladiator?",
+    "options": [
+      "General",
+      "Farmer",
+      "Blacksmith",
+      "Merchant"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_hv6e0q86.webp"
+  },
+  {
+    "q": "In The Dark Knight Rises, what is the name of the villain who breaks Batman’s back?",
+    "options": [
+      "Bane",
+      "Joker",
+      "Scarecrow",
+      "Ra's al Ghul"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_7w6o62pq.webp"
+  },
+  {
+    "q": "In The Dark Knight Rises, who repairs Bruce Wayne’s broken back?",
+    "options": [
+      "A prisoner doctor",
+      "Alfred",
+      "Lucius Fox",
+      "Miranda Tate"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_7w6o62pq.webp"
+  },
+  {
+    "q": "Who directed the film Blade Runner?",
+    "options": [
+      "Ridley Scott",
+      "James Cameron",
+      "Stanley Kubrick",
+      "George Lucas"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In Blade Runner, what term is used for bioengineered humans?",
+    "options": [
+      "Replicants",
+      "Synths",
+      "Constructs",
+      "Clones"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In Blade Runner, what test is used to identify replicants?",
+    "options": [
+      "Voight-Kampff test",
+      "Nexus exam",
+      "Empathy scan",
+      "Retina code"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In Blade Runner 2049, what does K find buried in the box?",
+    "options": [
+      "A replicant’s bones",
+      "A memory chip",
+      "A weapon",
+      "A child’s toy"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In Blade Runner 2049, what object hides a major clue buried under the tree?",
+    "options": [
+      "A hidden box",
+      "A metallic tube",
+      "A burnt notebook",
+      "A glass vial"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In Blade Runner, what term is used for the synthetic humans?",
+    "options": [
+      "Replicants",
+      "Synthetics",
+      "Mimics",
+      "Constructs"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In Blade Runner 2049, what object does K keep that hints at implanted memories?",
+    "options": [
+      "A wooden horse",
+      "A glass unicorn",
+      "A silver coin",
+      "A paper crane"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_gyd218ei.webp"
+  },
+  {
+    "q": "In The Big Lebowski, what nickname is Jeffrey Lebowski known by?",
+    "options": [
+      "The Dude",
+      "The King",
+      "The Boss",
+      "The Man"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_okz9zinc.webp"
+  },
+  {
+    "q": "In The Big Lebowski, what item gets ruined that angers The Dude?",
+    "options": [
+      "His rug",
+      "His car",
+      "His bowling ball",
+      "His wallet"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_okz9zinc.webp"
+  },
+  {
+    "q": "In The Big Lebowski, what sport dominates the film’s tone?",
+    "options": [
+      "Bowling",
+      "Baseball",
+      "Wrestling",
+      "Pool"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_okz9zinc.webp"
+  },
+  {
+    "q": "In The Big Lebowski, what drink does The Dude prefer?",
+    "options": [
+      "White Russian",
+      "Gin tonic",
+      "Old fashioned",
+      "Whiskey sour"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_okz9zinc.webp"
+  },
+  {
+    "q": "In The Big Lebowski, what item of clothing is the Dude particularly attached to?",
+    "options": [
+      "His bathrobe",
+      "His sunglasses",
+      "His bowling shoes",
+      "His hat"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_okz9zinc.webp"
+  },
+  {
+    "q": "Who directed the film No Country for Old Men?",
+    "options": [
+      "Coen brothers",
+      "Martin Scorsese",
+      "Clint Eastwood",
+      "Paul Thomas Anderson"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_2xc8qatw.webp"
+  },
+  {
+    "q": "In No Country for Old Men, what weapon does Chigurh famously use?",
+    "options": [
+      "Captive bolt pistol",
+      "Crossbow",
+      "Silenced revolver",
+      "Throwing knives"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_2xc8qatw.webp"
+  },
+  {
+    "q": "In No Country for Old Men, what decides who wins in Chigurh’s coin toss?",
+    "options": [
+      "Luck",
+      "Skill",
+      "Fear",
+      "Honesty"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_2xc8qatw.webp"
+  },
+  {
+    "q": "In No Country for Old Men, what game determines the fate of a gas station owner?",
+    "options": [
+      "A coin toss",
+      "A guessing game",
+      "A card draw",
+      "A dice roll"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_2xc8qatw.webp"
+  },
+  {
+    "q": "In No Country for Old Men, what device does Chigurh use to blow locks?",
+    "options": [
+      "A captive bolt gun",
+      "A dynamite stick",
+      "A crowbar",
+      "A laser tool"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_2xc8qatw.webp"
+  },
+  {
+    "q": "In No Country for Old Men, what weapon does Chigurh primarily use?",
+    "options": [
+      "A captive bolt pistol",
+      "A suppressed shotgun",
+      "A switchblade",
+      "A snub revolver"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_2xc8qatw.webp"
+  },
+  {
+    "q": "In the film Alien, what is the name of the ship where the crew encounters the creature?",
+    "options": [
+      "Nostromo",
+      "Serenity",
+      "Event Horizon",
+      "Discovery One"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_33e5ylzd.webp"
+  },
+  {
+    "q": "In Alien, what is the name of the android aboard the Nostromo?",
+    "options": [
+      "Ash",
+      "Bishop",
+      "David",
+      "Walter"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191947_33e5ylzd.webp"
+  },
+  {
+    "q": "Who directed the film Pan's Labyrinth?",
+    "options": [
+      "Guillermo del Toro",
+      "Alfonso Cuarón",
+      "Alejandro G. Iñárritu",
+      "Pedro Almodóvar"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_apynu1j6.webp"
+  },
+  {
+    "q": "In the film Taxi Driver, who plays Travis Bickle?",
+    "options": [
+      "Robert De Niro",
+      "Al Pacino",
+      "Harvey Keitel",
+      "Dustin Hoffman"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_vm1to0gs.webp"
+  },
+  {
+    "q": "Who directed the surreal mystery film Mulholland Drive?",
+    "options": [
+      "David Lynch",
+      "David Cronenberg",
+      "Brian De Palma",
+      "Roman Polanski"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, what object is key to unlocking the mystery?",
+    "options": [
+      "A blue box",
+      "A gold key",
+      "A red suitcase",
+      "A black diary"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, where is the mysterious blue key found?",
+    "options": [
+      "In a purse",
+      "Under a bed",
+      "In a mailbox",
+      "On the dashboard"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, what item unlocks the blue box?",
+    "options": [
+      "The blue key",
+      "The ring",
+      "The watch",
+      "The card"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, what color is the mysterious box?",
+    "options": [
+      "Blue",
+      "Red",
+      "Black",
+      "Gold"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, what nightclub hosts the “no hay banda” scene?",
+    "options": [
+      "Club Silencio",
+      "Blue Velvet",
+      "Red Room",
+      "The Crystal Room"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, where is the key object found?",
+    "options": [
+      "Inside the blue box",
+      "In the purse",
+      "Under the bed",
+      "In a coat pocket"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, what item is connected to the mysterious blue box?",
+    "options": [
+      "A blue key",
+      "A silver ring",
+      "A red ribbon",
+      "A glass marble"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Mulholland Drive, what object opens the mysterious box?",
+    "options": [
+      "A blue key",
+      "A red crystal",
+      "A silver locket",
+      "A brass button"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191947_hdqyfy8g.webp"
+  },
+  {
+    "q": "In Aladdin, what is Jafar's ultimate goal?",
+    "options": [
+      "Become the Sultan",
+      "Marry Jasmine",
+      "Destroy the Genie",
+      "Rule Agrabah with an army"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_ycartjo3.webp"
+  },
+  {
+    "q": "In Aladdin, what does the Genie hate being called?",
+    "options": [
+      "A slave",
+      "A wish machine",
+      "Blue boy",
+      "Magic man"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_ycartjo3.webp"
+  },
+  {
+    "q": "In Aladdin, how many wishes does the Genie offer?",
+    "options": [
+      "Three",
+      "Two",
+      "Unlimited",
+      "One"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191947_ycartjo3.webp"
+  },
+  {
+    "q": "In Back to the Future, what speed must the DeLorean reach to travel through time?",
+    "options": [
+      "88 mph",
+      "100 mph",
+      "77 mph",
+      "66 mph"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_opvyll2r.webp"
+  },
+  {
+    "q": "In Back to the Future, what device powers the time machine?",
+    "options": [
+      "Flux capacitor",
+      "Quantum coil",
+      "Temporal piston",
+      "Phase oscillator"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_opvyll2r.webp"
+  },
+  {
+    "q": "In Monsters, Inc., what substance is considered extremely toxic?",
+    "options": [
+      "Human children",
+      "Sock fabric",
+      "Scream energy",
+      "Human laughter"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_zr60m97k.webp"
+  },
+  {
+    "q": "In Monsters, Inc., what is Boo’s real name?",
+    "options": [
+      "Mary",
+      "Emma",
+      "Anna",
+      "Lucy"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_zr60m97k.webp"
+  },
+  {
+    "q": "In The Incredibles, what is the name of the villain who idolized Mr. Incredible as a child?",
+    "options": [
+      "Syndrome",
+      "Bomb Voyage",
+      "Underminer",
+      "Screenslaver"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_depw7s3e.webp"
+  },
+  {
+    "q": "In The Incredibles, what is Dash’s superpower?",
+    "options": [
+      "Super speed",
+      "Invisibility",
+      "Shape-shifting",
+      "Flight"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_depw7s3e.webp"
+  },
+  {
+    "q": "In The Incredibles, what job does Bob have before returning to superhero work?",
+    "options": [
+      "Insurance agent",
+      "Bank teller",
+      "Bus driver",
+      "Teacher"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_depw7s3e.webp"
+  },
+  {
+    "q": "In Up, what is the name of the explorer Carl idolizes as a child?",
+    "options": [
+      "Charles Muntz",
+      "Harrison Malone",
+      "Edmund Pierce",
+      "Walter Finsky"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_i46wycid.webp"
+  },
+  {
+    "q": "In Up, what color is the house’s main balloon cloud?",
+    "options": [
+      "Rainbow",
+      "Blue",
+      "Red",
+      "Yellow"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_i46wycid.webp"
+  },
+  {
+    "q": "In Up, what does Carl use to lift his house?",
+    "options": [
+      "Balloons",
+      "Hot air packs",
+      "Kites",
+      "Compressed helium tanks"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_i46wycid.webp"
+  },
+  {
+    "q": "In Inside Out, which emotion leads the headquarters at the beginning?",
+    "options": [
+      "Joy",
+      "Sadness",
+      "Anger",
+      "Fear"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_ommkp20n.webp"
+  },
+  {
+    "q": "In Inside Out, what color is the emotion Anger?",
+    "options": [
+      "Red",
+      "Blue",
+      "Purple",
+      "Green"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_ommkp20n.webp"
+  },
+  {
+    "q": "In Inside Out, what emotion takes over when Joy is gone?",
+    "options": [
+      "Sadness",
+      "Fear",
+      "Anger",
+      "Disgust"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_ommkp20n.webp"
+  },
+  {
+    "q": "In The Terminator, what is the model number of the first Terminator?",
+    "options": [
+      "T-800",
+      "T-1000",
+      "T-600",
+      "T-900"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_4r53dg2g.webp"
+  },
+  {
+    "q": "In The Terminator, what phrase does the T-800 famously say?",
+    "options": [
+      "I'll be back",
+      "Come with me",
+      "Trust me",
+      "Time to run"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_4r53dg2g.webp"
+  },
+  {
+    "q": "In The Wizard of Oz, what does Dorothy want more than anything?",
+    "options": [
+      "To return home",
+      "To become a witch",
+      "To stay in Oz",
+      "To find her parents"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_g6u4chzn.webp"
+  },
+  {
+    "q": "In The Hunger Games, what district is Katniss from?",
+    "options": [
+      "District 12",
+      "District 11",
+      "District 9",
+      "District 3"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_6qy0tfe1.webp"
+  },
+  {
+    "q": "In WALL-E, what is the name of the massive spaceship humans live on?",
+    "options": [
+      "Axiom",
+      "Aurora",
+      "Odyssey",
+      "Eden"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_y1eyrexm.webp"
+  },
+  {
+    "q": "In WALL-E, what plant is considered proof of Earth’s recovery?",
+    "options": [
+      "A sapling",
+      "A sunflower",
+      "A fern",
+      "A weed"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_y1eyrexm.webp"
+  },
+  {
+    "q": "In The Wolf of Wall Street, what animal appears in Jordan’s office?",
+    "options": [
+      "A chimpanzee",
+      "A lion",
+      "A snake",
+      "A parrot"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_y1eyrexm.webp"
+  },
+  {
+    "q": "In Wall-E, what plant represents hope for Earth’s return?",
+    "options": [
+      "A small green sprout",
+      "A cactus bud",
+      "A tiny flower",
+      "A vine leaf"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_y1eyrexm.webp"
+  },
+  {
+    "q": "In The Wolf of Wall Street, what animal appears in Jordan Belfort’s office fantasy?",
+    "options": [
+      "A chimpanzee",
+      "A tiger",
+      "A lion",
+      "A bear"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_y1eyrexm.webp"
+  },
+  {
+    "q": "In Ratatouille, what dish does Remy prepare for the critic Anton Ego?",
+    "options": [
+      "Ratatouille",
+      "Boeuf bourguignon",
+      "Duck confit",
+      "Escargot"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_4mkj2tdk.webp"
+  },
+  {
+    "q": "In Ratatouille, what profession does Linguini accidentally enter?",
+    "options": [
+      "Chef",
+      "Waiter",
+      "Manager",
+      "Critic"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_4mkj2tdk.webp"
+  },
+  {
+    "q": "In Ratatouille, what does Remy control Linguini with?",
+    "options": [
+      "Pulling his hair",
+      "Magic",
+      "A whistle",
+      "A secret earpiece"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_4mkj2tdk.webp"
+  },
+  {
+    "q": "In Coco, what is the name of Miguel’s great-great-grandmother?",
+    "options": [
+      "Mama Imelda",
+      "Mama Coco",
+      "Luisa Rivera",
+      "Elena Rivera"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_q9m13xjd.webp"
+  },
+  {
+    "q": "In Coco, what object does Miguel steal that triggers his trip to the afterlife?",
+    "options": [
+      "A guitar",
+      "A flower",
+      "A photo",
+      "A mask"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_q9m13xjd.webp"
+  },
+  {
+    "q": "In Coco, what object allows Miguel to enter the Land of the Dead?",
+    "options": [
+      "A marigold petal",
+      "A guitar chord",
+      "A candle flame",
+      "A mask"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_q9m13xjd.webp"
+  },
+  {
+    "q": "In Spider-Man: Into the Spider-Verse, what is the name of the villain who tries to open the collider?",
+    "options": [
+      "Kingpin",
+      "Green Goblin",
+      "Prowler",
+      "Doctor Octopus"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vm95bbhb.webp"
+  },
+  {
+    "q": "In Spirited Away, what must Chihiro do to free her parents?",
+    "options": [
+      "Remember her name",
+      "Break her contract",
+      "Defeat No-Face",
+      "Solve Yubaba’s riddle"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_kcgl7tea.webp"
+  },
+  {
+    "q": "In Spirited Away, what does Chihiro eat to stay connected to the human world?",
+    "options": [
+      "A small piece of human food",
+      "A moonberry seed",
+      "A river spirit’s herb",
+      "A rice charm"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_kcgl7tea.webp"
+  },
+  {
+    "q": "In The Sixth Sense, what does Cole famously say he sees?",
+    "options": [
+      "Dead people",
+      "Ghosts",
+      "Shadows",
+      "Demons"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_xtxteau8.webp"
+  },
+  {
+    "q": "In Mad Max: Fury Road, what is the name of the tyrant ruling the Citadel?",
+    "options": [
+      "Immortan Joe",
+      "Rictus Erectus",
+      "The People Eater",
+      "Bullet Farmer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vdq8b06l.webp"
+  },
+  {
+    "q": "In Mad Max: Fury Road, what title is given to the warlord?",
+    "options": [
+      "Immortan Joe",
+      "General Chromium",
+      "Lord Nitro",
+      "Wasteland King"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vdq8b06l.webp"
+  },
+  {
+    "q": "In Mad Max: Fury Road, what is Furiosa’s ultimate destination with the brides?",
+    "options": [
+      "The Green Place",
+      "The Citadel",
+      "Gas Town",
+      "Bullet Farm"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vdq8b06l.webp"
+  },
+  {
+    "q": "In Mad Max: Fury Road, what resource does Immortan Joe primarily control?",
+    "options": [
+      "Water",
+      "Fuel",
+      "Bullets",
+      "Food"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_vdq8b06l.webp"
+  },
+  {
+    "q": "In The Shining, what is written repeatedly in Jack Torrance’s manuscript?",
+    "options": [
+      "All work and no play makes Jack a dull boy",
+      "Redrum",
+      "Help me",
+      "I am losing my mind"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191948_wl0szvbo.webp"
+  },
+  {
+    "q": "In The Shining, what phrase does Jack repeatedly type?",
+    "options": [
+      "All work and no play makes Jack a dull boy",
+      "Redrum over and over",
+      "I can’t sleep",
+      "The winter is cold"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_wl0szvbo.webp"
+  },
+  {
+    "q": "In Her, what is the name of the AI operating system?",
+    "options": [
+      "Samantha",
+      "Eva",
+      "Luna",
+      "Ada"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Her, what does Theodore do for a living?",
+    "options": [
+      "Writes love letters",
+      "Edits videos",
+      "Designs games",
+      "Cleans apartments"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Her, how is Samantha’s voice generated?",
+    "options": [
+      "AI algorithm",
+      "Human simulation",
+      "Actor recording",
+      "Voice synthesizer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Her, what name does the AI choose for herself?",
+    "options": [
+      "Samantha",
+      "Eva",
+      "Ava",
+      "Luna"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Her, what operating system does Theodore fall in love with?",
+    "options": [
+      "Samantha",
+      "Eve-OS",
+      "Aurora",
+      "Lumen 5"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Her, what operating system does Theodore install?",
+    "options": [
+      "Samantha",
+      "Eleanor",
+      "Sonya",
+      "Marina"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Her, what profession does Theodore have?",
+    "options": [
+      "Letter writer",
+      "Tech programmer",
+      "Musician",
+      "Graphic designer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_rqhxqbwl.webp"
+  },
+  {
+    "q": "In Moana, who is the demigod that accompanies Moana?",
+    "options": [
+      "Maui",
+      "Hercules",
+      "Makoa",
+      "Tala"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_wu4n3yo1.webp"
+  },
+  {
+    "q": "In Moana, who does Moana need to return the heart to?",
+    "options": [
+      "Te Fiti",
+      "Te Ka",
+      "Maui",
+      "Tala"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_wu4n3yo1.webp"
+  },
+  {
+    "q": "In Moana, what animal is Heihei?",
+    "options": [
+      "Rooster",
+      "Pig",
+      "Goat",
+      "Crab"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_wu4n3yo1.webp"
+  },
+  {
+    "q": "In The Prestige, what is the name of the trick both magicians obsess over?",
+    "options": [
+      "The Transported Man",
+      "The Vanishing Lady",
+      "The Human Cannonball",
+      "The Mirror Cabinet"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191948_vjcgxeys.webp"
+  },
+  {
+    "q": "In The Prestige, what device does Tesla build?",
+    "options": [
+      "A duplication machine",
+      "A teleportation device",
+      "A shrinking ray",
+      "An invisibility box"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vjcgxeys.webp"
+  },
+  {
+    "q": "In The Prestige, what is Angier’s final trick called?",
+    "options": [
+      "The Real Transported Man",
+      "Disappear Act",
+      "The Twin Illusion",
+      "The Cloned Man"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vjcgxeys.webp"
+  },
+  {
+    "q": "In The Prestige, what natural phenomenon powers Tesla’s machine?",
+    "options": [
+      "Electricity",
+      "Lightning",
+      "Magnetism",
+      "Solar energy"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vjcgxeys.webp"
+  },
+  {
+    "q": "In The Prestige, what material is critical for Angier’s machine?",
+    "options": [
+      "Tesla coils",
+      "Liquid nitrogen tanks",
+      "Copper prisms",
+      "Mercury rails"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vjcgxeys.webp"
+  },
+  {
+    "q": "In The Prestige, what trick inspires Angier’s obsession?",
+    "options": [
+      "The Transported Man",
+      "The Shattering Birdcage",
+      "The Disappearing Box",
+      "The Floating Waltz"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_vjcgxeys.webp"
+  },
+  {
+    "q": "In The Princess Bride, what phrase does Westley repeat to Buttercup?",
+    "options": [
+      "As you wish",
+      "Forever yours",
+      "My sweet Buttercup",
+      "I shall return"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_315jz4yd.webp"
+  },
+  {
+    "q": "In The Iron Giant, what is the only word the Giant says before sacrificing himself?",
+    "options": [
+      "Superman",
+      "Friend",
+      "Peace",
+      "Love"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_kznyuq84.webp"
+  },
+  {
+    "q": "In The Iron Giant, what phrase does the Giant repeat as part of his identity struggle?",
+    "options": [
+      "I am not a gun",
+      "I control myself",
+      "I choose peace",
+      "I want to learn"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_kznyuq84.webp"
+  },
+  {
+    "q": "In The Iron Giant, what phrase becomes central to the robot’s identity?",
+    "options": [
+      "I am not a gun",
+      "I choose peace",
+      "I want to learn",
+      "I protect others"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_kznyuq84.webp"
+  },
+  {
+    "q": "In The Green Mile, what supernatural ability does John Coffey possess?",
+    "options": [
+      "Healing",
+      "Telepathy",
+      "Invisibility",
+      "Future sight"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_n2oyvkub.webp"
+  },
+  {
+    "q": "In The Green Mile, what animal symbolizes Coffey’s innocence?",
+    "options": [
+      "The mouse",
+      "The sparrow",
+      "The dog",
+      "The butterfly"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_n2oyvkub.webp"
+  },
+  {
+    "q": "In The Green Mile, what ability does John Coffey possess?",
+    "options": [
+      "Healing",
+      "Invisibility",
+      "Telepathy",
+      "Mind control"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_n2oyvkub.webp"
+  },
+  {
+    "q": "In Kill Bill, what is the name of the assassin squad?",
+    "options": [
+      "Deadly Viper Assassination Squad",
+      "Black Mamba Corps",
+      "White Lotus Assassins",
+      "Vengeance League"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_52pqv86y.webp"
+  },
+  {
+    "q": "In Kill Bill, what is the codename of the Bride?",
+    "options": [
+      "Black Mamba",
+      "Cottonmouth",
+      "Copperhead",
+      "Snake Eye"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_52pqv86y.webp"
+  },
+  {
+    "q": "In The Big Short, what crisis are the characters predicting?",
+    "options": [
+      "2008 housing collapse",
+      "Dot-com crash",
+      "European debt crisis",
+      "Asian financial crisis"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_e8zhqy1b.webp"
+  },
+  {
+    "q": "In The Big Short, what crisis is the film centered on?",
+    "options": [
+      "Housing market crash",
+      "Oil crisis",
+      "Dot-com bubble",
+      "Eurozone collapse"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_e8zhqy1b.webp"
+  },
+  {
+    "q": "In The Big Short, what financial instrument collapses?",
+    "options": [
+      "Mortgage-backed securities",
+      "Stock futures",
+      "Tech bonds",
+      "Commodity options"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_e8zhqy1b.webp"
+  },
+  {
+    "q": "In The Big Short, what personality trait defines Mark Baum?",
+    "options": [
+      "Constant anger",
+      "Optimism",
+      "Paranoia",
+      "Arrogance"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_e8zhqy1b.webp"
+  },
+  {
+    "q": "In The Big Short, what financial instrument becomes infamous?",
+    "options": [
+      "Mortgage-backed securities",
+      "Tech bubble stocks",
+      "Bond-yield swaps",
+      "Gold futures"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_e8zhqy1b.webp"
+  },
+  {
+    "q": "In The Big Short, what market do the protagonists bet against?",
+    "options": [
+      "The housing market",
+      "The tech sector",
+      "The oil market",
+      "The bond market in Europe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_e8zhqy1b.webp"
+  },
+  {
+    "q": "In La La Land, what type of music does Sebastian want to preserve?",
+    "options": [
+      "Jazz",
+      "Blues",
+      "Classical",
+      "Rock"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_5u3secng.webp"
+  },
+  {
+    "q": "In La La Land, what instrument does Sebastian specialize in?",
+    "options": [
+      "Piano",
+      "Saxophone",
+      "Trumpet",
+      "Guitar"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_5u3secng.webp"
+  },
+  {
+    "q": "In La La Land, what is Sebastian’s dream?",
+    "options": [
+      "To open a jazz club",
+      "To record a solo album",
+      "To conduct an orchestra",
+      "To teach music"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_5u3secng.webp"
+  },
+  {
+    "q": "In La La Land, what instrument does Sebastian play professionally?",
+    "options": [
+      "Piano",
+      "Trumpet",
+      "Saxophone",
+      "Guitar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191948_5u3secng.webp"
+  },
+  {
+    "q": "In Arrival, what do the aliens communicate with?",
+    "options": [
+      "Circular symbols",
+      "Clicks",
+      "Telepathy",
+      "Color flashes"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, what do the humans call the two heptapods?",
+    "options": [
+      "Abbott and Costello",
+      "Alpha and Omega",
+      "Light and Shadow",
+      "One and Two"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, how does Louise experience time?",
+    "options": [
+      "Non-linearly",
+      "Reversed",
+      "Fragmented",
+      "Frozen"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, what shape are the alien ships?",
+    "options": [
+      "Oval",
+      "Cylindrical",
+      "Pyramidal",
+      "Spherical"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, what do the aliens write in?",
+    "options": [
+      "Circular symbols",
+      "Lines",
+      "Dots",
+      "Color grids"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, what object do the aliens use to communicate?",
+    "options": [
+      "Circular ink symbols",
+      "Hand gestures",
+      "Vocal harmonics",
+      "Light patterns"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, what device helps communicate with the heptapods?",
+    "options": [
+      "A transparent chamber",
+      "A vibrating cylinder",
+      "A light grid",
+      "A mist projector"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Arrival, what shape do the aliens’ symbols take?",
+    "options": [
+      "Circular ink patterns",
+      "Linear scribbles",
+      "Geometric hexagons",
+      "Square glyphs"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191948_qeaj9gut.webp"
+  },
+  {
+    "q": "In Dune (2021), what substance is found on Arrakis?",
+    "options": [
+      "Spice",
+      "Lithium",
+      "Crystal dust",
+      "Black sand"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_nno0lff0.webp"
+  },
+  {
+    "q": "In Dune (2021), what power allows Paul to command others?",
+    "options": [
+      "The Voice",
+      "The Sight",
+      "The Chant",
+      "The Whisper"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_nno0lff0.webp"
+  },
+  {
+    "q": "In Dune, what substance is considered the most valuable in the universe?",
+    "options": [
+      "Spice",
+      "Void crystals",
+      "Sand iron",
+      "Star opal"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_nno0lff0.webp"
+  },
+  {
+    "q": "In The Revenant, what animal attacks Hugh Glass?",
+    "options": [
+      "Bear",
+      "Wolf",
+      "Cougar",
+      "Boar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Revenant, who abandons Glass to die?",
+    "options": [
+      "Fitzgerald",
+      "Bridger",
+      "Captain Henry",
+      "Powaqa"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Revenant, what item does Glass retrieve from his dead son?",
+    "options": [
+      "A shell necklace",
+      "A knife",
+      "A blanket",
+      "A bracelet"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Revenant, what animal brutally attacks Glass?",
+    "options": [
+      "A bear",
+      "A wolf",
+      "A buffalo",
+      "A cougar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Revenant, what tribe attacks Glass’s camp early in the film?",
+    "options": [
+      "Arikara",
+      "Pawnee",
+      "Sioux",
+      "Comanche"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Revenant, what is the primary motivation for Glass?",
+    "options": [
+      "Revenge",
+      "Money",
+      "Survival",
+      "Finding his tribe"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Revenant, what animal severely injures Hugh Glass?",
+    "options": [
+      "A bear",
+      "A wolf",
+      "A mountain lion",
+      "A boar"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_sqcqcju6.webp"
+  },
+  {
+    "q": "In The Little Mermaid, what does Ursula take from Ariel?",
+    "options": [
+      "Her voice",
+      "Her hair",
+      "Her vision",
+      "Her fins"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_mol6s901.webp"
+  },
+  {
+    "q": "In The Little Mermaid, what object fascinates Ariel?",
+    "options": [
+      "Human artifacts",
+      "Magic shells",
+      "Mermaid crowns",
+      "Ocean crystals"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_mol6s901.webp"
+  },
+  {
+    "q": "In Home Alone, what nickname do the burglars use for themselves?",
+    "options": [
+      "The Wet Bandits",
+      "The Ice Bandits",
+      "The House Crashers",
+      "The Burrow Brothers"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_xyefqnot.webp"
+  },
+  {
+    "q": "In Zootopia, what is Judy Hopps’ occupation?",
+    "options": [
+      "Police officer",
+      "Farmer",
+      "Detective",
+      "Taxi driver"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_ugpzte7t.webp"
+  },
+  {
+    "q": "In Zootopia, what animal is the mayor?",
+    "options": [
+      "Lion",
+      "Elephant",
+      "Tiger",
+      "Fox"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_ugpzte7t.webp"
+  },
+  {
+    "q": "In Monsters University, what is Mike Wazowski’s dream career?",
+    "options": [
+      "Scarer",
+      "Comedian",
+      "Teacher",
+      "Builder"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_vbw5v7hy.webp"
+  },
+  {
+    "q": "In Monsters University, what fraternity do Mike and Sully join?",
+    "options": [
+      "Oozma Kappa",
+      "Roar Omega Roar",
+      "Slug House",
+      "Delta Fang"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_vbw5v7hy.webp"
+  },
+  {
+    "q": "In Beauty and the Beast, what must the Beast learn to do?",
+    "options": [
+      "Love and earn love",
+      "Fight his enemies",
+      "Sing beautifully",
+      "Travel outside the castle"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_0292p2wu.webp"
+  },
+  {
+    "q": "In Tangled, what magical power does Rapunzel’s hair have?",
+    "options": [
+      "Healing",
+      "Invisibility",
+      "Telepathy",
+      "Time travel"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_8oasoatg.webp"
+  },
+  {
+    "q": "In Tangled, what weapon does Rapunzel use to defend herself?",
+    "options": [
+      "A frying pan",
+      "A broom",
+      "A shovel",
+      "A rope"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_8oasoatg.webp"
+  },
+  {
+    "q": "In Ralph Breaks the Internet, what website does Vanellope fall in love with?",
+    "options": [
+      "Slaughter Race",
+      "RaceHub",
+      "SpeedWorld",
+      "DriveTown"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_rn8o5zyh.webp"
+  },
+  {
+    "q": "In Finding Dory, what is Dory constantly struggling with?",
+    "options": [
+      "Short-term memory loss",
+      "Fear of the ocean",
+      "Poor eyesight",
+      "Lack of direction"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_gw3a5xyy.webp"
+  },
+  {
+    "q": "In The Lego Movie, what is Emmet’s job?",
+    "options": [
+      "Construction worker",
+      "Policeman",
+      "Chef",
+      "Teacher"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_f3e4gkzp.webp"
+  },
+  {
+    "q": "In Cars, what is Lightning McQueen’s racing number?",
+    "options": [
+      "95",
+      "20",
+      "11",
+      "43"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_u54x4n91.webp"
+  },
+  {
+    "q": "In The Jungle Book, what kind of animal is Baloo?",
+    "options": [
+      "Bear",
+      "Tiger",
+      "Panther",
+      "Wolf"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191949_l6wy7izx.webp"
+  },
+  {
+    "q": "In The Matrix Reloaded, what is the name of the program that controls the power plant?",
+    "options": [
+      "The Architect",
+      "The Merovingian",
+      "The Keymaker",
+      "The Source"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_g38ibq3l.webp"
+  },
+  {
+    "q": "In Children of Men, what illness made humanity infertile?",
+    "options": [
+      "Unknown cause",
+      "A virus",
+      "Radiation",
+      "Toxins"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_bdwj3wob.webp"
+  },
+  {
+    "q": "In Shutter Island, what is the true identity of Andrew Laeddis?",
+    "options": [
+      "Teddy Daniels",
+      "Dr. Cawley",
+      "George Noyce",
+      "Delores’ lover"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_vkvqri32.webp"
+  },
+  {
+    "q": "In Shutter Island, what is the true identity of Andrew Laeddis?",
+    "options": [
+      "Teddy Daniels",
+      "The Warden",
+      "A patient",
+      "A doctor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_vkvqri32.webp"
+  },
+  {
+    "q": "In Shutter Island, what natural feature isolates the facility?",
+    "options": [
+      "A stormy ocean",
+      "A desert canyon",
+      "A frozen lake",
+      "A dense jungle"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_vkvqri32.webp"
+  },
+  {
+    "q": "In Skyfall, what object from Bond’s past is destroyed?",
+    "options": [
+      "His childhood home",
+      "His first Aston Martin",
+      "His father's watch",
+      "His MI6 badge"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_senkxtnj.webp"
+  },
+  {
+    "q": "In Skyfall, where is the final confrontation set?",
+    "options": [
+      "Bond’s childhood home",
+      "Big Ben",
+      "MI6 headquarters",
+      "A London subway"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_senkxtnj.webp"
+  },
+  {
+    "q": "In Logan, what metal was used to replace Wolverine’s bone claws?",
+    "options": [
+      "Adamantium",
+      "Vibranium",
+      "Titanium",
+      "Carbon steel"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_s7ghi0dt.webp"
+  },
+  {
+    "q": "In Logan, what substance weakens Logan over time?",
+    "options": [
+      "Adamantium poisoning",
+      "Radiation exposure",
+      "Serum withdrawal",
+      "Accelerated aging"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191949_s7ghi0dt.webp"
+  },
+  {
+    "q": "In Heat, what rule does Neil McCauley live by?",
+    "options": [
+      "Never get attached",
+      "Trust nobody",
+      "Always carry cash",
+      "Travel light"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_wrzn7iyb.webp"
+  },
+  {
+    "q": "In Heat, what location is the site of the iconic shootout?",
+    "options": [
+      "Downtown Los Angeles",
+      "Chicago Loop",
+      "Miami Harbor",
+      "San Francisco Market Street"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191950_wrzn7iyb.webp"
+  },
+  {
+    "q": "In Heat, what hobby does Neil McCauley pursue?",
+    "options": [
+      "Reading",
+      "Painting",
+      "Swimming",
+      "Sailing"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_wrzn7iyb.webp"
+  },
+  {
+    "q": "In Heat, what rule does McCauley live by?",
+    "options": [
+      "Never have anything you can’t walk away from",
+      "Always work alone",
+      "Never trust informants",
+      "Avoid long jobs"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_wrzn7iyb.webp"
+  },
+  {
+    "q": "In Donnie Darko, what animal is Frank’s mask shaped like?",
+    "options": [
+      "A rabbit",
+      "A wolf",
+      "A deer",
+      "A crow"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_nr8fmldh.webp"
+  },
+  {
+    "q": "In Donnie Darko, what animal-shaped figure appears?",
+    "options": [
+      "A rabbit",
+      "A wolf",
+      "A cat",
+      "A fox"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_nr8fmldh.webp"
+  },
+  {
+    "q": "In District 9, what term is used for the alien species?",
+    "options": [
+      "Prawns",
+      "Squids",
+      "Claws",
+      "Crickets"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_csch4f41.webp"
+  },
+  {
+    "q": "In District 9, what substance begins Wikus’ transformation?",
+    "options": [
+      "Alien fuel fluid",
+      "Spore mist",
+      "Radiated dust",
+      "Black slime"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_csch4f41.webp"
+  },
+  {
+    "q": "In Prisoners, what object is used as a maze clue?",
+    "options": [
+      "Necklaces",
+      "Toy snakes",
+      "Labyrinth drawings",
+      "Puzzle boxes"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In Prisoners, what object hides the maze clue?",
+    "options": [
+      "A necklace",
+      "A photo",
+      "A book",
+      "A toy box"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In Prisoners, what recurring symbol appears throughout the case?",
+    "options": [
+      "Labyrinth drawings",
+      "Butterflies",
+      "Bird cages",
+      "Broken watches"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In Prisoners, what toy is repeatedly shown as a clue?",
+    "options": [
+      "A maze toy",
+      "A stuffed bear",
+      "A puzzle box",
+      "A spinning top"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In Prisoners, what object does Loki wear that symbolizes patience?",
+    "options": [
+      "A small tie clip",
+      "A necklace",
+      "A bracelet",
+      "A badge"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In Prisoners, what object does Loki frequently flick?",
+    "options": [
+      "A small coin",
+      "A folding knife",
+      "A pen",
+      "A keychain"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In Prisoners, what children’s item becomes a key clue?",
+    "options": [
+      "A maze drawing",
+      "A stuffed bear",
+      "A red balloon",
+      "A broken toy car"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_g9zq9h59.webp"
+  },
+  {
+    "q": "In The Witch, what is the family's goat called?",
+    "options": [
+      "Black Phillip",
+      "Nightshade",
+      "Dark Horn",
+      "Shadowhoof"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what animal is believed to be the devil?",
+    "options": [
+      "Black Phillip the goat",
+      "A wolf",
+      "A crow",
+      "A pig"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what food becomes spoiled early in the film?",
+    "options": [
+      "Corn",
+      "Milk",
+      "Bread",
+      "Berries"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what object disappears early, causing panic?",
+    "options": [
+      "A baby",
+      "A goat",
+      "A horse",
+      "A doll"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what pact seals the family’s fate?",
+    "options": [
+      "Signing Black Phillip’s book",
+      "Entering the forest",
+      "Eating spoiled food",
+      "Breaking the Sabbath"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what is Thomasin accused of after the twins go missing?",
+    "options": [
+      "Witchcraft",
+      "Poisoning the animals",
+      "Stealing food",
+      "Breaking the family's pact"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what animal becomes associated with the family's misfortune?",
+    "options": [
+      "A black goat",
+      "A raven",
+      "A fox",
+      "A wolf"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch (again unique question), what food item becomes scarce first?",
+    "options": [
+      "Corn",
+      "Milk",
+      "Grain",
+      "Eggs"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what family animal becomes a sinister omen?",
+    "options": [
+      "A black goat",
+      "A raven",
+      "A pig",
+      "A fox"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch, what food spoils early on in the film?",
+    "options": [
+      "Corn",
+      "Milk",
+      "Eggs",
+      "Bread"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In The Witch (unique again), what activity does the family struggle with on the farm?",
+    "options": [
+      "Growing crops",
+      "Milking goats",
+      "Building fences",
+      "Grinding flour"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_685buipb.webp"
+  },
+  {
+    "q": "In Hereditary, what symbol is tied to the cult?",
+    "options": [
+      "A sigil of Paimon",
+      "A goat skull",
+      "A crescent moon",
+      "A sun spiral"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what object decapitates Charlie?",
+    "options": [
+      "A telephone pole",
+      "A branch",
+      "A metal sign",
+      "A street light"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what disturbing figure appears in Annie’s miniatures?",
+    "options": [
+      "Her mother",
+      "Her daughter",
+      "Her husband",
+      "Her neighbor"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what does Annie find in the attic?",
+    "options": [
+      "Her mother’s body",
+      "A burned doll",
+      "A broken piano",
+      "A hidden diary"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what symbol is tied to Paimon?",
+    "options": [
+      "A unique sigil",
+      "A goat",
+      "A blue candle",
+      "A necklace"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what marks those chosen by the cult?",
+    "options": [
+      "A specific sigil",
+      "A ribbon",
+      "A necklace",
+      "A scar"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what marks those chosen by the cult?",
+    "options": [
+      "A specific sigil",
+      "A ribbon",
+      "A necklace",
+      "A scar"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Hereditary, what figure symbolizes the cult’s influence?",
+    "options": [
+      "A sigil",
+      "A small bell",
+      "A braided rope",
+      "A cracked mask"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_h7ev8r45.webp"
+  },
+  {
+    "q": "In Memento, what does Leonard use to remember important facts?",
+    "options": [
+      "Tattoos",
+      "Recorded tapes",
+      "Photographs",
+      "Carved wood"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_yj396s3u.webp"
+  },
+  {
+    "q": "In Memento, what does Leonard primarily rely on to remember clues?",
+    "options": [
+      "Tattoos",
+      "Phone calls",
+      "Notes",
+      "Recordings"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_yj396s3u.webp"
+  },
+  {
+    "q": "In Memento, what method does Leonard use to remember key clues?",
+    "options": [
+      "Tattoos",
+      "Photographs only",
+      "Voice recordings",
+      "Written diaries"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_yj396s3u.webp"
+  },
+  {
+    "q": "In The Lighthouse, what creature does Thomas repeatedly warn about?",
+    "options": [
+      "Seagulls",
+      "Wolves",
+      "Octopuses",
+      "Spiders"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what object drives Thomas to madness?",
+    "options": [
+      "The lantern room",
+      "The horn",
+      "The rope",
+      "The logbook"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what creature symbolizes the curse?",
+    "options": [
+      "The seagull",
+      "The octopus",
+      "The dogfish",
+      "The crow"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what lies at the top of the lighthouse?",
+    "options": [
+      "A mysterious light",
+      "A treasure",
+      "A diary",
+      "A weapon"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what creature is considered bad luck?",
+    "options": [
+      "A seagull",
+      "A raven",
+      "A fish",
+      "A dog"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what drives Ephraim mad?",
+    "options": [
+      "The forbidden light",
+      "Isolation",
+      "Food scarcity",
+      "Storms"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what strange phenomenon occurs at the lantern room?",
+    "options": [
+      "Blinding supernatural light",
+      "Time looping",
+      "Voices echoing from the sea",
+      "Mirrored doubles"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what food do the two keepers constantly argue over?",
+    "options": [
+      "Lobster",
+      "Bread",
+      "Potatoes",
+      "Fish stew"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what mythic figure is sometimes associated with Winslow’s visions?",
+    "options": [
+      "Proteus",
+      "Hermes",
+      "Triton",
+      "Pan"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In The Lighthouse, what emotion dominates Wake’s fixation on the lantern?",
+    "options": [
+      "Possessiveness",
+      "Fear",
+      "Guilt",
+      "Wonder"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dwywgspn.webp"
+  },
+  {
+    "q": "In Enemy, what animal symbolizes the protagonist’s fears?",
+    "options": [
+      "Spider",
+      "Snake",
+      "Crow",
+      "Rat"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, what creature appears symbolically throughout the film?",
+    "options": [
+      "A spider",
+      "A snake",
+      "A rat",
+      "A beetle"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, the protagonist repeatedly encounters what animal in visions?",
+    "options": [
+      "Spider",
+      "Dog",
+      "Rat",
+      "Snake"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, how is the theme of duality represented?",
+    "options": [
+      "Doppelgängers",
+      "Mirrors",
+      "Twins",
+      "Masks"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, what final shot terrifies Adam?",
+    "options": [
+      "A giant spider",
+      "His double",
+      "A burning room",
+      "A collapsing ceiling"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, what symbol represents fear and control?",
+    "options": [
+      "Spider imagery",
+      "Broken mirrors",
+      "Falling elevators",
+      "Mazes"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, what recurring motif appears throughout the film?",
+    "options": [
+      "Spiders",
+      "Masks",
+      "Tunnels",
+      "Birds"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, what occupation does Jake Gyllenhaal’s character have?",
+    "options": [
+      "History professor",
+      "Math teacher",
+      "Journalist",
+      "Theater actor"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In Enemy, what recurring motif symbolizes duplicity?",
+    "options": [
+      "Spiders",
+      "Mirrors",
+      "Keys",
+      "Phones"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_5zalnf1c.webp"
+  },
+  {
+    "q": "In The Babadook, where does the creature originate?",
+    "options": [
+      "A mysterious book",
+      "The attic",
+      "The basement",
+      "A dream"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_7p35xci3.webp"
+  },
+  {
+    "q": "In The Babadook, what book unleashes the monster?",
+    "options": [
+      "Mister Babadook",
+      "The Black Book",
+      "Night Visitors",
+      "The Shadow Pages"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_7p35xci3.webp"
+  },
+  {
+    "q": "In The Babadook, where is the monster first found?",
+    "options": [
+      "In a book",
+      "In the basement",
+      "In a closet",
+      "In a mirror"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_7p35xci3.webp"
+  },
+  {
+    "q": "In The Babadook, what form does the creature first appear as?",
+    "options": [
+      "A character in a pop-up book",
+      "A shadow in the hallway",
+      "A tall puppet",
+      "A masked intruder"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191950_7p35xci3.webp"
+  },
+  {
+    "q": "In The Babadook, what book haunts the mother?",
+    "options": [
+      "A sinister pop-up book",
+      "A cursed diary",
+      "A missing chapter book",
+      "A burned folktale"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_7p35xci3.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what does Caden Cotard build?",
+    "options": [
+      "A life-sized replica of New York",
+      "A moving stage",
+      "A giant camera",
+      "A rotating house"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, how long does Caden’s play run?",
+    "options": [
+      "His entire life",
+      "A decade",
+      "Five years",
+      "Two months"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what structure does Caden obsessively recreate?",
+    "options": [
+      "New York City",
+      "His childhood home",
+      "His first theater",
+      "His hospital room"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what overwhelms Caden?",
+    "options": [
+      "His massive stage play",
+      "His family life",
+      "His finances",
+      "His illness"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what overwhelms Caden’s actors?",
+    "options": [
+      "Never-ending rehearsal",
+      "Physical exhaustion",
+      "Conflicting scripts",
+      "Financial ruin"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what expansive project consumes Caden?",
+    "options": [
+      "A life-size replica of New York",
+      "A 12-hour opera",
+      "A rotating stage city",
+      "A massive puppet show"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what does Caden build inside the warehouse?",
+    "options": [
+      "A full-scale replica of the city",
+      "A massive clock tower",
+      "A never-ending playhouse",
+      "An underground district"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Synecdoche, New York, what massive project consumes Caden’s life?",
+    "options": [
+      "A life-size city recreation",
+      "A film trilogy",
+      "A 12-hour play",
+      "A historical opera"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_e5vm746k.webp"
+  },
+  {
+    "q": "In Stalker, what does the Zone supposedly grant?",
+    "options": [
+      "Inner desires",
+      "Wealth",
+      "Immortality",
+      "Knowledge"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In Stalker, what emotion stops most people from entering the Room?",
+    "options": [
+      "Fear",
+      "Greed",
+      "Hatred",
+      "Overconfidence"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In Stalker, what destination grants the visitor’s deepest desire?",
+    "options": [
+      "The Room",
+      "The Portal",
+      "The Chamber",
+      "The Circle"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In Stalker, what is the dangerous region called?",
+    "options": [
+      "The Zone",
+      "The Border",
+      "The Circle",
+      "The Hollow"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In Stalker, what do visitors fear most about the Room?",
+    "options": [
+      "It reveals true desires",
+      "It kills intruders",
+      "It traps them",
+      "It shows visions"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In Stalker, what test must visitors pass in the Zone?",
+    "options": [
+      "Following the correct path",
+      "Speaking truth",
+      "Offering a token",
+      "Holding still"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In Stalker (1979), what area must the trio navigate?",
+    "options": [
+      "The Zone",
+      "The Sector",
+      "The Ring",
+      "The Edge"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_od80uzx8.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what game does the knight play with Death?",
+    "options": [
+      "Chess",
+      "Checkers",
+      "Cards",
+      "Dice"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what plague ravages the land?",
+    "options": [
+      "The Black Death",
+      "Smallpox",
+      "Cholera",
+      "Tuberculosis"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what game does the knight use to negotiate with Death?",
+    "options": [
+      "Chess",
+      "Backgammon",
+      "Cards",
+      "Dice"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what is the knight seeking?",
+    "options": [
+      "Meaning of life",
+      "Redemption",
+      "Justice",
+      "Immortality"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what symbolism represents mortality?",
+    "options": [
+      "Death as a man",
+      "Shadows",
+      "A raven",
+      "An eclipse"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what game represents the struggle against death?",
+    "options": [
+      "Chess",
+      "Cards",
+      "Dice",
+      "Dominoes"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In The Seventh Seal, what game does the knight play with Death?",
+    "options": [
+      "Chess",
+      "Cards",
+      "Dice",
+      "Dominoes"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_dujlvcob.webp"
+  },
+  {
+    "q": "In Persona, what blurs between the two women?",
+    "options": [
+      "Identities",
+      "Memories",
+      "Dreams",
+      "Voices"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_64zg74x6.webp"
+  },
+  {
+    "q": "In Persona, what melts the divide between the two women?",
+    "options": [
+      "Identity merging",
+      "A ritual",
+      "A hypnosis",
+      "A fever dream"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_64zg74x6.webp"
+  },
+  {
+    "q": "In Persona, what breaks the boundary between the two women?",
+    "options": [
+      "Identity merging",
+      "Dream sequences",
+      "A ritual",
+      "A confession"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_64zg74x6.webp"
+  },
+  {
+    "q": "In Persona, what dissolves the boundary between Alma and Elisabet?",
+    "options": [
+      "Identity merging",
+      "Shared dreams",
+      "A ritual",
+      "A traumatic memory"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191950_64zg74x6.webp"
+  },
+  {
+    "q": "In Frozen II, what element does Elsa discover she is connected to?",
+    "options": [
+      "Ice",
+      "All elements",
+      "Air",
+      "Fire"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191950_o507ml9e.webp"
+  },
+  {
+    "q": "In Big Hero 6, what is Baymax originally designed for?",
+    "options": [
+      "Healthcare",
+      "Security",
+      "Construction",
+      "Piloting"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191950_31f39adj.webp"
+  },
+  {
+    "q": "In Luca, what do Luca and Alberto turn into when they get wet?",
+    "options": [
+      "Sea monsters",
+      "Fish",
+      "Merboys",
+      "Octopi"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191950_g8ydt0st.webp"
+  },
+  {
+    "q": "In Encanto, what gift does Mirabel receive?",
+    "options": [
+      "None",
+      "Strength",
+      "Healing",
+      "Super hearing"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191950_ryncdeew.webp"
+  },
+  {
+    "q": "In Parasite, what item symbolizes the poor family's hope?",
+    "options": [
+      "The scholar’s stone",
+      "A gold coin",
+      "A contract",
+      "A set of keys"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_39xkpmxg.webp"
+  },
+  {
+    "q": "In Parasite, where does the Kim family hide during the storm?",
+    "options": [
+      "Under the table",
+      "In the basement",
+      "Inside the bathroom",
+      "Behind the fridge"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_39xkpmxg.webp"
+  },
+  {
+    "q": "In Parasite, what item becomes a symbol of false hope?",
+    "options": [
+      "The scholar's rock",
+      "A gold coin",
+      "A framed promise",
+      "A business card"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_39xkpmxg.webp"
+  },
+  {
+    "q": "In Midsommar, what drug is repeatedly given to Dani and the others?",
+    "options": [
+      "Hallucinogens",
+      "Sedatives",
+      "Stimulants",
+      "Poison"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191951_r0usgpez.webp"
+  },
+  {
+    "q": "In Midsommar, what tragedy sends Dani into grief?",
+    "options": [
+      "Her family's death",
+      "Her breakup",
+      "Her job loss",
+      "Her illness"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191951_r0usgpez.webp"
+  },
+  {
+    "q": "In Midsommar, what ritual marks the community’s renewal cycle?",
+    "options": [
+      "A seasonal festival",
+      "A moonlit march",
+      "A harvest burial",
+      "A fire circle"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191951_r0usgpez.webp"
+  },
+  {
+    "q": "In Audition, what tool does Asami use in the final act?",
+    "options": [
+      "Wire saw",
+      "Syringe",
+      "Hammer",
+      "Knife"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191951_p3svlcdq.webp"
+  },
+  {
+    "q": "In Joker (2019), what job does Arthur Fleck have?",
+    "options": [
+      "Clown",
+      "Taxi driver",
+      "Bartender",
+      "Janitor"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191951_l5pmlep1.webp"
+  },
+  {
+    "q": "In Joker, what talk show does Arthur dream of appearing on?",
+    "options": [
+      "Murray Franklin’s show",
+      "Gotham Tonight",
+      "Late Night with Randall",
+      "City Lights Live"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_l5pmlep1.webp"
+  },
+  {
+    "q": "In John Wick, what event triggers Wick’s return to violence?",
+    "options": [
+      "His dog is killed",
+      "His car is stolen",
+      "His house is burned",
+      "His money is robbed"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191951_w88gwes2.webp"
+  },
+  {
+    "q": "In John Wick, what event brings Wick out of retirement?",
+    "options": [
+      "The killing of his dog",
+      "The theft of his car",
+      "A bounty placed on him",
+      "A kidnapped friend"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191951_w88gwes2.webp"
+  },
+  {
+    "q": "In Saving Private Ryan, what item identifies Private Ryan?",
+    "options": [
+      "His brothers' death letters",
+      "A medal",
+      "A photo",
+      "A dog tag"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_n790h71a.webp"
+  },
+  {
+    "q": "In Sicario, what tunnel does the team infiltrate?",
+    "options": [
+      "Mexico–US drug tunnel",
+      "San Diego harbor tunnel",
+      "Arizona cartel tunnel",
+      "Texas coyote tunnel"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_a09x8atw.webp"
+  },
+  {
+    "q": "In Sicario, what border is crossed during the tunnel raid?",
+    "options": [
+      "US–Mexico",
+      "US–Canada",
+      "Mexico–Guatemala",
+      "Texas–Mexico"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_a09x8atw.webp"
+  },
+  {
+    "q": "In Sicario, what bridge crossing becomes a critical scene?",
+    "options": [
+      "US-Mexico border",
+      "Texas-Louisiana line",
+      "California desert post",
+      "New Mexico checkpoint"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_a09x8atw.webp"
+  },
+  {
+    "q": "In Uncut Gems, what gem does Howard Ratner obsess over?",
+    "options": [
+      "Black opal",
+      "Diamond fragment",
+      "Emerald shard",
+      "Blue opal"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_n997an1w.webp"
+  },
+  {
+    "q": "In Se7en, what deadly sin represents the final victim?",
+    "options": [
+      "Envy",
+      "Wrath",
+      "Pride",
+      "Greed"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191951_o42w5kr4.webp"
+  },
+  {
+    "q": "In Se7en, where does the final sin take place?",
+    "options": [
+      "In a field",
+      "In a warehouse",
+      "In a diner",
+      "In a church"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191951_o42w5kr4.webp"
+  },
+  {
+    "q": "In Cast Away, what inanimate object does Chuck befriend?",
+    "options": [
+      "A volleyball",
+      "A coconut",
+      "A rock",
+      "A bag"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_ftvwbfg9.webp"
+  },
+  {
+    "q": "In The Pursuit of Happyness, what object does Chris sell?",
+    "options": [
+      "Bone scanners",
+      "Insurance contracts",
+      "Vacuum cleaners",
+      "Computers"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_lkq4tbdb.webp"
+  },
+  {
+    "q": "In Django Unchained, what is Django’s occupation before being freed?",
+    "options": [
+      "Slave",
+      "Farmer",
+      "Blacksmith",
+      "Soldier"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_pee4nzok.webp"
+  },
+  {
+    "q": "In Django Unchained, what weapon does Django famously use?",
+    "options": [
+      "A revolver",
+      "A shotgun",
+      "A whip",
+      "A sword"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_pee4nzok.webp"
+  },
+  {
+    "q": "In Inglourious Basterds, what drink does Hans Landa offer Shosanna?",
+    "options": [
+      "Milk",
+      "Wine",
+      "Water",
+      "Tea"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_8buyxjzw.webp"
+  },
+  {
+    "q": "In Inglourious Basterds, where is the final shootout?",
+    "options": [
+      "A movie theater",
+      "A café",
+      "A train station",
+      "A basement"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_8buyxjzw.webp"
+  },
+  {
+    "q": "In Inglourious Basterds, what dessert does Hans Landa insist Shosanna try?",
+    "options": [
+      "Strudel",
+      "Chocolate cake",
+      "Apple pie",
+      "Pudding"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_8buyxjzw.webp"
+  },
+  {
+    "q": "In Inglourious Basterds, what giveaway exposes the spy in the tavern?",
+    "options": [
+      "Incorrect hand gesture for 'three'",
+      "Mispronounced rank",
+      "Wrong cigarette brand",
+      "Wrong uniform badge"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_8buyxjzw.webp"
+  },
+  {
+    "q": "In The Hateful Eight, what poisoned item leads to chaos?",
+    "options": [
+      "The coffee",
+      "The stew",
+      "The whiskey",
+      "The bread"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_smkvvqil.webp"
+  },
+  {
+    "q": "In The Hateful Eight, what item is poisoned?",
+    "options": [
+      "The coffee",
+      "The stew",
+      "The whiskey",
+      "The biscuits"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_smkvvqil.webp"
+  },
+  {
+    "q": "In The Hateful Eight, what item reveals poisoning?",
+    "options": [
+      "Coffee",
+      "Bread",
+      "Whiskey",
+      "Stew"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_smkvvqil.webp"
+  },
+  {
+    "q": "In Collateral, what does Max dream of building?",
+    "options": [
+      "A limousine company",
+      "A restaurant",
+      "A music studio",
+      "A surf shop"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_25xa3r3n.webp"
+  },
+  {
+    "q": "In Collateral, what profession does Max have?",
+    "options": [
+      "Taxi driver",
+      "Mechanic",
+      "Chef",
+      "Bartender"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_25xa3r3n.webp"
+  },
+  {
+    "q": "In The Departed, what pet does Sullivan keep?",
+    "options": [
+      "A rat",
+      "A fish",
+      "A dog",
+      "A bird"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_9gmd024s.webp"
+  },
+  {
+    "q": "In The Departed, who secretly works for the mob?",
+    "options": [
+      "Colin Sullivan",
+      "Billy Costigan",
+      "Dignam",
+      "French"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_9gmd024s.webp"
+  },
+  {
+    "q": "In The Departed, what item does Sullivan keep hidden?",
+    "options": [
+      "A police envelope",
+      "A secret notebook",
+      "A golden badge",
+      "A coded USB"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_9gmd024s.webp"
+  },
+  {
+    "q": "In Looper, what body part is altered on Seth as punishment?",
+    "options": [
+      "His limbs",
+      "His eyes",
+      "His ears",
+      "His tongue"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191952_m4ytwvy7.webp"
+  },
+  {
+    "q": "In Possession (1981), what creature does Anna nurture?",
+    "options": [
+      "A grotesque tentacled being",
+      "A mutant dog",
+      "A shadow figure",
+      "A skinless human"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191952_7wxwvypi.webp"
+  },
+  {
+    "q": "In Possession (1981), what bizarre creature symbolizes the marriage breakdown?",
+    "options": [
+      "A transforming monster",
+      "A childlike specter",
+      "A giant moth",
+      "A faceless humanoid"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191952_7wxwvypi.webp"
+  },
+  {
+    "q": "In The Godfather Part II, what country does Michael visit for business?",
+    "options": [
+      "Cuba",
+      "Mexico",
+      "Brazil",
+      "Italy"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_ogo0awax.webp"
+  },
+  {
+    "q": "In Casino Royale, what game does Bond play against Le Chiffre?",
+    "options": [
+      "Poker",
+      "Blackjack",
+      "Baccarat",
+      "Roulette"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_wecpky5q.webp"
+  },
+  {
+    "q": "In The Martian, what crop does Mark Watney grow on Mars?",
+    "options": [
+      "Potatoes",
+      "Corn",
+      "Carrots",
+      "Beans"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191952_twx8hrp4.webp"
+  },
+  {
+    "q": "In Gone Girl, what day does Amy choose for her disappearance?",
+    "options": [
+      "Her wedding anniversary",
+      "Nick’s birthday",
+      "Her own birthday",
+      "Thanksgiving"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_7ywaz2jn.webp"
+  },
+  {
+    "q": "In Gone Girl, what profession does Amy pretend to have?",
+    "options": [
+      "Writer",
+      "Teacher",
+      "Journalist",
+      "Lawyer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_7ywaz2jn.webp"
+  },
+  {
+    "q": "In Gone Girl, what event begins the media frenzy?",
+    "options": [
+      "Amy’s disappearance",
+      "A discovered journal",
+      "Nick’s affair",
+      "A mysterious phone call"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_7ywaz2jn.webp"
+  },
+  {
+    "q": "In Moneyball, what strategy does Billy Beane focus on?",
+    "options": [
+      "On-base percentage",
+      "Home-run rate",
+      "Pitcher strikeouts",
+      "Steal attempts"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_dcu6lf1w.webp"
+  },
+  {
+    "q": "In Moneyball, what sport does the film focus on?",
+    "options": [
+      "Baseball",
+      "American football",
+      "Basketball",
+      "Soccer"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_dcu6lf1w.webp"
+  },
+  {
+    "q": "In Moneyball, what statistic does Billy Beane emphasize?",
+    "options": [
+      "On-base percentage",
+      "Batting average",
+      "Slugging percentage",
+      "Fielding percentage"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_dcu6lf1w.webp"
+  },
+  {
+    "q": "In Black Swan, what role is Nina desperate to embody?",
+    "options": [
+      "The Black Swan",
+      "The White Swan",
+      "The Queen",
+      "The Lover"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_p6knzwrr.webp"
+  },
+  {
+    "q": "In Black Swan, what destroys Nina’s stability?",
+    "options": [
+      "Her obsession",
+      "Her mother",
+      "Her rival",
+      "The director"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_p6knzwrr.webp"
+  },
+  {
+    "q": "In Black Swan, what role does Nina struggle to embody?",
+    "options": [
+      "The Black Swan",
+      "The White Queen",
+      "The Dark Lady",
+      "The Shadow Ballerina"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_p6knzwrr.webp"
+  },
+  {
+    "q": "In The Machinist, what condition affects Trevor?",
+    "options": [
+      "Severe insomnia",
+      "Schizophrenia",
+      "Amnesia",
+      "PTSD"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_97r416hk.webp"
+  },
+  {
+    "q": "In The Machinist, what object repeatedly appears in Trevor’s hallucinations?",
+    "options": [
+      "A hangman game",
+      "A broken meter",
+      "A chess board",
+      "A torn calendar"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_97r416hk.webp"
+  },
+  {
+    "q": "In The King’s Speech, what insecurities plague George VI?",
+    "options": [
+      "A stutter",
+      "Stage fright",
+      "Claustrophobia",
+      "A tremor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_odtr0obx.webp"
+  },
+  {
+    "q": "In The King’s Speech, what disability does George VI struggle with?",
+    "options": [
+      "Stuttering",
+      "Blindness",
+      "Hearing loss",
+      "Paralysis"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_odtr0obx.webp"
+  },
+  {
+    "q": "In The Imitation Game, what machine does Turing build?",
+    "options": [
+      "A code-breaking device",
+      "A cipher wheel",
+      "A number generator",
+      "A punch-card reader"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_tq1zzaii.webp"
+  },
+  {
+    "q": "In Zodiac, what profession is Robert Graysmith?",
+    "options": [
+      "Cartoonist",
+      "Reporter",
+      "Detective",
+      "Teacher"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_akyxilwb.webp"
+  },
+  {
+    "q": "In Zodiac, what type of code does the killer send?",
+    "options": [
+      "Ciphers",
+      "Binary",
+      "Braille",
+      "Runic symbols"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_akyxilwb.webp"
+  },
+  {
+    "q": "In Zodiac, what object does the killer use to taunt authorities?",
+    "options": [
+      "Coded letters",
+      "Polaroid photos",
+      "Audio tapes",
+      "Bloody symbols"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_akyxilwb.webp"
+  },
+  {
+    "q": "In Casino, what does Ace Rothstein run in Las Vegas?",
+    "options": [
+      "A casino",
+      "A nightclub",
+      "A hotel",
+      "A racetrack"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_jprrib1e.webp"
+  },
+  {
+    "q": "In The Irishman, what union is Frank Sheeran part of?",
+    "options": [
+      "Teamsters",
+      "Miners Union",
+      "Rail Workers",
+      "Auto Union"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_qpirdmkd.webp"
+  },
+  {
+    "q": "In The Irishman, what trade is Frank Sheeran initially involved in?",
+    "options": [
+      "Truck driving",
+      "Construction work",
+      "Dock labor",
+      "Butchery"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_qpirdmkd.webp"
+  },
+  {
+    "q": "In Goodfellas, what dish does Paulie make in prison?",
+    "options": [
+      "Pasta with garlic",
+      "Risotto",
+      "Chicken parmesan",
+      "Baked ziti"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_k5ln6i9p.webp"
+  },
+  {
+    "q": "In Goodfellas, what meal do the mobsters prepare in prison?",
+    "options": [
+      "Pasta with sauce",
+      "Pizza",
+      "Lemon chicken",
+      "Steak with wine"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_k5ln6i9p.webp"
+  },
+  {
+    "q": "In Once Upon a Time in Hollywood, what is Rick Dalton’s profession?",
+    "options": [
+      "Actor",
+      "Producer",
+      "Stuntman",
+      "Writer"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_nbifuuwi.webp"
+  },
+  {
+    "q": "In Once Upon a Time in Hollywood, what is Rick Dalton’s primary occupation?",
+    "options": [
+      "Television actor",
+      "Stuntman",
+      "Screenwriter",
+      "Director"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191953_nbifuuwi.webp"
+  },
+  {
+    "q": "In The Fighter, what sport does Micky Ward compete in?",
+    "options": [
+      "Boxing",
+      "MMA",
+      "Wrestling",
+      "Kickboxing"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191953_a5gl2xhu.webp"
+  },
+  {
+    "q": "In Nightcrawler, what crime does Lou first film?",
+    "options": [
+      "A car crash",
+      "A break-in",
+      "A stabbing",
+      "A robbery"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_aghq9dzn.webp"
+  },
+  {
+    "q": "In Nightcrawler, what job does Louis Bloom pursue?",
+    "options": [
+      "Freelance crime videographer",
+      "Private detective",
+      "Ambulance driver",
+      "Tabloid photographer"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_aghq9dzn.webp"
+  },
+  {
+    "q": "In Spotlight, what institution is being investigated?",
+    "options": [
+      "The Catholic Church",
+      "The FBI",
+      "A university",
+      "A pharmaceutical company"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_ifh149lu.webp"
+  },
+  {
+    "q": "In Baby Driver, what condition makes Baby rely on music?",
+    "options": [
+      "Tinnitus",
+      "Anxiety",
+      "Insomnia",
+      "ADHD"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_wdokciqi.webp"
+  },
+  {
+    "q": "In Baby Driver, what medical condition affects Baby?",
+    "options": [
+      "Tinnitus",
+      "Vertigo",
+      "Narcolepsy",
+      "Partial deafness"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_wdokciqi.webp"
+  },
+  {
+    "q": "In Baby Driver, what does Baby record and mix on his old iPods?",
+    "options": [
+      "Heist conversations",
+      "Police scanners",
+      "Radio adverts",
+      "Movie quotes"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_wdokciqi.webp"
+  },
+  {
+    "q": "In The Curious Case of Benjamin Button, what reverses Benjamin’s age?",
+    "options": [
+      "Nothing explained",
+      "A curse",
+      "A comet",
+      "A potion"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191958_oyipk2lj.webp"
+  },
+  {
+    "q": "In Mother! (2017), what represents Mother’s creation?",
+    "options": [
+      "Her crystal",
+      "Her house",
+      "Her notebook",
+      "Her paintings"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191959_p6pi512a.webp"
+  },
+  {
+    "q": "In Mother! (2017), what item embodies creation and destruction?",
+    "options": [
+      "The crystal",
+      "The furnace",
+      "The notebook",
+      "The sink"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191959_p6pi512a.webp"
+  },
+  {
+    "q": "In Mother!, what material the poet’s crystal seems to be made of?",
+    "options": [
+      "A translucent stone",
+      "A wooden relic",
+      "A glass charm",
+      "A molten shard"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191959_p6pi512a.webp"
+  },
+  {
+    "q": "In Eraserhead, what creature symbolizes Henry’s anxiety?",
+    "options": [
+      "The baby",
+      "The lady in the radiator",
+      "The chicken",
+      "The worm"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191959_t1sofi96.webp"
+  },
+  {
+    "q": "In Eraserhead, what object symbolizes Henry’s dread?",
+    "options": [
+      "The deformed baby",
+      "The radiator lady",
+      "The pencil machine",
+      "The tiny chicken"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191959_t1sofi96.webp"
+  },
+  {
+    "q": "In Superbad, what fake name does Fogell choose for his ID?",
+    "options": [
+      "McLovin",
+      "Don Vito",
+      "Johnny Rocket",
+      "Chaz Thunder"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_mezfrozu.webp"
+  },
+  {
+    "q": "In Superbad, what is the main goal of the high school boys for the evening?",
+    "options": [
+      "Get alcohol for a party",
+      "Win a football game",
+      "Sneak into a concert",
+      "Crash a wedding"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_mezfrozu.webp"
+  },
+  {
+    "q": "In The Hangover, where do the friends lose Doug?",
+    "options": [
+      "The roof",
+      "The desert",
+      "The basement",
+      "The hotel lobby"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_y7rifjpj.webp"
+  },
+  {
+    "q": "In The Hangover, which city does the bachelor party take place in?",
+    "options": [
+      "Las Vegas",
+      "Miami",
+      "Los Angeles",
+      "New Orleans"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_y7rifjpj.webp"
+  },
+  {
+    "q": "In Step Brothers, what instrument does Dale pretend to play professionally?",
+    "options": [
+      "Drums",
+      "Saxophone",
+      "Guitar",
+      "Piano"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_tar4iddz.webp"
+  },
+  {
+    "q": "In Step Brothers, what item do Brennan and Dale protect in the tree house?",
+    "options": [
+      "A drum set",
+      "A signed poster",
+      "A samurai sword",
+      "A boat paddle"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_tar4iddz.webp"
+  },
+  {
+    "q": "In Bridesmaids, what animal does Annie feed at the park?",
+    "options": [
+      "A giant cookie to raccoons",
+      "Bread to ducks",
+      "Leftovers to dogs",
+      "Candy to squirrels"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_4fh1jy74.webp"
+  },
+  {
+    "q": "In Bridesmaids, what event are the characters preparing for?",
+    "options": [
+      "A wedding",
+      "A graduation",
+      "A christening",
+      "A retirement party"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_4fh1jy74.webp"
+  },
+  {
+    "q": "In Tropic Thunder, what fake movie wins Tug Speedman acclaim?",
+    "options": [
+      "Simple Jack",
+      "Bullet Rain",
+      "Chopper Thunder",
+      "Hidden Valley"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_4tpvijq2.webp"
+  },
+  {
+    "q": "In Tropic Thunder, what prop becomes a real threat?",
+    "options": [
+      "Live explosives",
+      "A tank",
+      "A flamethrower",
+      "A helicopter"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_4tpvijq2.webp"
+  },
+  {
+    "q": "In Tropic Thunder, what type of movie are the characters trying to make?",
+    "options": [
+      "A war film",
+      "A sci-fi film",
+      "A western",
+      "A heist film"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_4tpvijq2.webp"
+  },
+  {
+    "q": "In Anchorman, what instrument does Ron Burgundy play?",
+    "options": [
+      "Jazz flute",
+      "Saxophone",
+      "Clarinet",
+      "Trumpet"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_uoh8mno9.webp"
+  },
+  {
+    "q": "In Anchorman: The Legend of Ron Burgundy, what animal does Ron say he is friends with?",
+    "options": [
+      "A bear",
+      "A dog",
+      "A whale",
+      "A falcon"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_uoh8mno9.webp"
+  },
+  {
+    "q": "In The 40-Year-Old Virgin, what hobby does Andy have?",
+    "options": [
+      "Collecting action figures",
+      "Building radios",
+      "Painting landscapes",
+      "Cooking pasta"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_0ni6r7ib.webp"
+  },
+  {
+    "q": "In The 40-Year-Old Virgin, where does Andy work?",
+    "options": [
+      "An electronics store",
+      "A comic book shop",
+      "A car dealership",
+      "A supermarket"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_0ni6r7ib.webp"
+  },
+  {
+    "q": "In Elf, what is Buddy’s favorite food category?",
+    "options": [
+      "Candy",
+      "Pasta",
+      "Pizza",
+      "Bread"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_hmavi6w0.webp"
+  },
+  {
+    "q": "In Dumb and Dumber, what animal does Harry care for?",
+    "options": [
+      "A blind kid’s parakeet",
+      "A pug",
+      "A sea turtle",
+      "A llama"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_d64xhk68.webp"
+  },
+  {
+    "q": "In Napoleon Dynamite, what dance does Napoleon perform?",
+    "options": [
+      "A freestyle routine",
+      "A line dance",
+      "A tango",
+      "A salsa"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_hhxeutk3.webp"
+  },
+  {
+    "q": "In The Nice Guys, what event are March and Healy investigating?",
+    "options": [
+      "A missing porn actress",
+      "A stolen shipment",
+      "An assassination attempt",
+      "A hit-and-run"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_7yw2z609.webp"
+  },
+  {
+    "q": "In The Nice Guys, what animal does Holly find in the mansion?",
+    "options": [
+      "A giant bee costume guy",
+      "A talking parrot",
+      "A dog wearing sunglasses",
+      "A pig statue"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_7yw2z609.webp"
+  },
+  {
+    "q": "In The Nice Guys, what decade is the film primarily set in?",
+    "options": [
+      "The 1970s",
+      "The 1960s",
+      "The 1980s",
+      "The 1990s"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_7yw2z609.webp"
+  },
+  {
+    "q": "In Burn After Reading, what item do the gym employees think is government intel?",
+    "options": [
+      "A memoir draft",
+      "A disc of passwords",
+      "A map",
+      "An encrypted drive"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_wtt27t5v.webp"
+  },
+  {
+    "q": "In The Grand Budapest Hotel, who is the concierge?",
+    "options": [
+      "M. Gustave",
+      "M. Jacques",
+      "Monsieur Beau",
+      "Mr. Leclerc"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_6hgs9i8v.webp"
+  },
+  {
+    "q": "In The Grand Budapest Hotel, what is the stolen painting called?",
+    "options": [
+      "Boy with Apple",
+      "Summer by the Lake",
+      "The Royal Son",
+      "Blue Peony"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_6hgs9i8v.webp"
+  },
+  {
+    "q": "In The Grand Budapest Hotel, what color is prominently associated with the hotel’s branding?",
+    "options": [
+      "Pink",
+      "Green",
+      "Yellow",
+      "Blue"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191959_6hgs9i8v.webp"
+  },
+  {
+    "q": "In Fargo, what object gets disposed in the wood chipper?",
+    "options": [
+      "A body",
+      "A gun",
+      "A briefcase",
+      "A coat"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_rz7693xv.webp"
+  },
+  {
+    "q": "In Fargo, what object is used to dispose of a body in a famous scene?",
+    "options": [
+      "A wood chipper",
+      "An ice auger",
+      "A snow plow",
+      "A lake hole"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_rz7693xv.webp"
+  },
+  {
+    "q": "In American Psycho, what item does Patrick obsess over in business meetings?",
+    "options": [
+      "Business cards",
+      "Watches",
+      "Ties",
+      "Shoes"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_mg1un7yj.webp"
+  },
+  {
+    "q": "In American Psycho, what item does Patrick meticulously maintain?",
+    "options": [
+      "A business card",
+      "A stereo system",
+      "A hair product kit",
+      "A watch collection"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_mg1un7yj.webp"
+  },
+  {
+    "q": "In The Menu, what is Slowik known for?",
+    "options": [
+      "Extreme conceptual dishes",
+      "Seafood mastery",
+      "Dessert innovations",
+      "Aged meats"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_igifwnco.webp"
+  },
+  {
+    "q": "In Knives Out, what game does Marta’s family play that she avoids?",
+    "options": [
+      "Go",
+      "Mahjong",
+      "Chess",
+      "Poker"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_pmavadu4.webp"
+  },
+  {
+    "q": "In Knives Out, what is Harlan Thrombey’s profession?",
+    "options": [
+      "Mystery novelist",
+      "Film director",
+      "Playwright",
+      "Magazine editor"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_pmavadu4.webp"
+  },
+  {
+    "q": "In The Holdovers, what holiday are the boys stuck during?",
+    "options": [
+      "Christmas break",
+      "Thanksgiving",
+      "Easter recess",
+      "Midterm week"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_hgjstrca.webp"
+  },
+  {
+    "q": "In Birdman, what is Riggan trying to achieve?",
+    "options": [
+      "Broadway legitimacy",
+      "A superhero comeback",
+      "A TV reboot",
+      "A film adaptation"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_uonfifsn.webp"
+  },
+  {
+    "q": "In Birdman, what does Riggan struggle to escape?",
+    "options": [
+      "His superhero persona",
+      "His past marriage",
+      "His agent’s control",
+      "His fear of flying"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_uonfifsn.webp"
+  },
+  {
+    "q": "In Borat, what object does Borat carry that confuses Americans?",
+    "options": [
+      "A chicken in a bag",
+      "A goat on a leash",
+      "A suitcase full of sand",
+      "A jar of pickles"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_cg1nbiwe.webp"
+  },
+  {
+    "q": "In The Death of Stalin, what triggers mass confusion?",
+    "options": [
+      "Stalin’s sudden death",
+      "A fake invasion",
+      "A coup rumor",
+      "Missing documents"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_ffugvt0e.webp"
+  },
+  {
+    "q": "In Logan Lucky, what item is used to break into the vault?",
+    "options": [
+      "Gummy bears and explosives",
+      "Thermal drill",
+      "Fake fingerprints",
+      "A magnet"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_z2k29wwp.webp"
+  },
+  {
+    "q": "In The Favourite, what illness afflicts Queen Anne?",
+    "options": [
+      "Gout",
+      "Blindness",
+      "Migraines",
+      "Asthma"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_pmelbzqf.webp"
+  },
+  {
+    "q": "In Amélie, what object does Amélie return to its owner?",
+    "options": [
+      "A childhood treasure box",
+      "A toy train",
+      "A scrapbook",
+      "A necklace"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191959_du6wuuch.webp"
+  },
+  {
+    "q": "In Spider-Man 2, what energy source powers Doc Ock’s fusion reactor?",
+    "options": [
+      "Tritium",
+      "Plutonium",
+      "Solar plasma",
+      "Arc particles"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191960_n9wuw15r.webp"
+  },
+  {
+    "q": "In Get Out, what everyday object is used to trigger hypnosis?",
+    "options": [
+      "A tea cup and spoon",
+      "A pocket watch",
+      "A metronome",
+      "A cigarette lighter"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191960_g89i6cj9.webp"
+  },
+  {
+    "q": "In Get Out, what household room is used for the surgical procedures?",
+    "options": [
+      "The basement",
+      "The attic",
+      "The garage",
+      "The guest house"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191960_g89i6cj9.webp"
+  },
+  {
+    "q": "In The Fountain, what substance extends the life of the characters across timelines?",
+    "options": [
+      "Sap from the Tree of Life",
+      "A golden elixir",
+      "Starlight essence",
+      "Crystal water"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191960_qxtrpexh.webp"
+  },
+  {
+    "q": "In Under the Skin, what happens to the victims inside the black void?",
+    "options": [
+      "They dissolve into liquid",
+      "They crystallize",
+      "They float endlessly",
+      "They turn into dust"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191960_va7q8fvx.webp"
+  },
+  {
+    "q": "In The Killing of a Sacred Deer, what must Steven ultimately choose?",
+    "options": [
+      "A family member to sacrifice",
+      "A truth to confess",
+      "A rival to forgive",
+      "A secret to reveal"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191960_sv1n4y97.webp"
+  },
+  {
+    "q": "In The Killing of a Sacred Deer, what uncanny symptom first appears in the children?",
+    "options": [
+      "Paralysis of legs",
+      "Sudden blindness",
+      "Uncontrolled laughter",
+      "Sleepwalking"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191960_sv1n4y97.webp"
+  },
+  {
+    "q": "In The Killing of a Sacred Deer, what symptom appears first in the children?",
+    "options": [
+      "Leg paralysis",
+      "Blindness",
+      "Fainting fits",
+      "Emotional detachment"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191960_sv1n4y97.webp"
+  },
+  {
+    "q": "In Pirates of the Caribbean, what object is cursed in the first film?",
+    "options": [
+      "Aztec gold coins",
+      "A pirate medallion",
+      "A ruby dagger",
+      "A bone compass"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191960_zisgfjgh.webp"
+  },
+  {
+    "q": "In The Shape of Water, where is the creature housed?",
+    "options": [
+      "A government research facility",
+      "A naval submarine",
+      "A zoological lab",
+      "A cold-storage vault"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_k43tzus4.webp"
+  },
+  {
+    "q": "In The Shape of Water, what is Elisa’s job at the facility?",
+    "options": [
+      "Cleaner",
+      "Secretary",
+      "Nurse",
+      "Cook"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_k43tzus4.webp"
+  },
+  {
+    "q": "In Annihilation, what strange natural phenomenon surrounds Area X?",
+    "options": [
+      "The Shimmer",
+      "The Sphere",
+      "The Mist",
+      "The Halo"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_9w0ln3nw.webp"
+  },
+  {
+    "q": "In Annihilation, what object refracts and mutates DNA?",
+    "options": [
+      "The Shimmer’s boundary",
+      "A core meteor shard",
+      "A lighthouse residue pool",
+      "A prism field"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_9w0ln3nw.webp"
+  },
+  {
+    "q": "In Annihilation, what material surrounds the mysterious region?",
+    "options": [
+      "The Shimmer",
+      "The Halo",
+      "The Fringe",
+      "The Nebula"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_9w0ln3nw.webp"
+  },
+  {
+    "q": "In Mother! (2017), what does the crystal in the poet’s study represent?",
+    "options": [
+      "Creation renewal",
+      "Time freezing",
+      "Memory fusion",
+      "Emotional cleansing"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_38usdu1l.webp"
+  },
+  {
+    "q": "In Melancholia, what celestial body threatens Earth?",
+    "options": [
+      "A rogue planet",
+      "An incoming comet",
+      "A dying star",
+      "A massive asteroid"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_out0506v.webp"
+  },
+  {
+    "q": "In The Florida Project, where do Moonee and her mother live?",
+    "options": [
+      "A budget motel",
+      "A relative’s garage",
+      "A tent near the highway",
+      "An abandoned apartment"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_2o1cq09d.webp"
+  },
+  {
+    "q": "In The Northman, what weapon is known as the Night Blade?",
+    "options": [
+      "A cursed sword",
+      "A volcanic spear",
+      "A rune axe",
+      "A frost dagger"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_rpmtclu6.webp"
+  },
+  {
+    "q": "In Nope, what object falling from the sky injures Otis Sr.?",
+    "options": [
+      "A coin",
+      "A key",
+      "A metal bolt",
+      "A screw"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_yvb8r0yg.webp"
+  },
+  {
+    "q": "In The Lobster, what happens to single people in the hotel?",
+    "options": [
+      "They’re transformed into animals",
+      "They’re erased from memory",
+      "They’re relocated underground",
+      "They’re hypnotized"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_98czwtg9.webp"
+  },
+  {
+    "q": "In The Green Knight, what challenge does the Green Knight offer?",
+    "options": [
+      "Exchange of blows",
+      "Trial of riddles",
+      "Labyrinth duel",
+      "Firewalk test"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_xmgsfxxt.webp"
+  },
+  {
+    "q": "In Pi (1998), what does Max obsessively search for?",
+    "options": [
+      "A numerical pattern",
+      "A lost formula",
+      "A forgotten theorem",
+      "A cosmic ratio"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_vjeppy9x.webp"
+  },
+  {
+    "q": "In Solaris (1972), what manifests the visitors’ hallucinations?",
+    "options": [
+      "The planet’s ocean",
+      "A gas cloud",
+      "A broken reactor",
+      "A radio signal"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_f8umy5gw.webp"
+  },
+  {
+    "q": "In A Ghost Story, what item does the ghost watch deteriorate over decades?",
+    "options": [
+      "A house",
+      "A piano",
+      "A photograph",
+      "A diary"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_wfaaql73.webp"
+  },
+  {
+    "q": "In Kill List, what disturbing phrase is associated with the final ritual?",
+    "options": [
+      "Thank you",
+      "Reborn",
+      "Complete",
+      "Witness"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_bdxye94z.webp"
+  },
+  {
+    "q": "In The Handmaiden, what book becomes crucial to the plot?",
+    "options": [
+      "A fake erotic novel",
+      "A forged ledger",
+      "A coded family diary",
+      "A political manifesto"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_v00ossgy.webp"
+  },
+  {
+    "q": "In The Handmaiden, what deception drives the plot?",
+    "options": [
+      "A forged inheritance scheme",
+      "A false marriage plan",
+      "A fake illness plot",
+      "A secret identity swap"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_v00ossgy.webp"
+  },
+  {
+    "q": "In Tinker Tailor Soldier Spy, what item Smiley analyzes to uncover the mole?",
+    "options": [
+      "A classified notebook",
+      "A voice recording",
+      "A coded postcard",
+      "A false report"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_iycs0x7w.webp"
+  },
+  {
+    "q": "In Primer, what device causes the loop complications?",
+    "options": [
+      "A time box",
+      "A vibrating coil",
+      "A sealed tank",
+      "A kinetic chamber"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191961_xxgyskjv.webp"
+  },
+  {
+    "q": "In The Master, what homemade drink does Lancaster Dodd give followers?",
+    "options": [
+      "A potent fermented brew",
+      "A herbal tonic",
+      "A spiced milk mixture",
+      "A psychedelic tea"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_1d1o6vsz.webp"
+  },
+  {
+    "q": "In The Road, what object does the father give the boy to protect?",
+    "options": [
+      "A pistol with two bullets",
+      "A silver knife",
+      "A flare gun",
+      "A compass"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_rbq1zdnw.webp"
+  },
+  {
+    "q": "In Mandy, what substance gives the cult supernatural perceptions?",
+    "options": [
+      "A tainted psychedelic",
+      "Black honey",
+      "Forest venom",
+      "Crushed crystals"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191961_j1nzjrif.webp"
+  },
+  {
+    "q": "In Roma, what household task does Cleo perform constantly?",
+    "options": [
+      "Cleaning the courtyard floor",
+      "Polishing furniture",
+      "Preparing bread dough",
+      "Ironing uniforms"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_mx65zx5h.webp"
+  },
+  {
+    "q": "In The Witcher: Nightmare of the Wolf, what monster attacks early in the film?",
+    "options": [
+      "A leshy",
+      "A wraith",
+      "A basilisk",
+      "A drownling"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_907360ku.webp"
+  },
+  {
+    "q": "In The Wrestler, what move injures Randy severely?",
+    "options": [
+      "A heart attack during a hardcore match",
+      "A chair shot gone wrong",
+      "A ladder fall",
+      "A rope snap"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_cae6svaw.webp"
+  },
+  {
+    "q": "In The Wrestler, what food product Randy works with at his job?",
+    "options": [
+      "Deli meat",
+      "Frozen fish",
+      "Canned soup",
+      "Bakery dough"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_cae6svaw.webp"
+  },
+  {
+    "q": "In Before Sunrise, where do Jesse and Céline wander during the night?",
+    "options": [
+      "Vienna",
+      "Paris",
+      "Budapest",
+      "Rome"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_1wlfadut.webp"
+  },
+  {
+    "q": "In The Witch Who Came from the Sea, what symbolic object recurs?",
+    "options": [
+      "A mermaid tattoo",
+      "A red seashell",
+      "A silver anchor",
+      "A storm lantern"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_48z2gkop.webp"
+  },
+  {
+    "q": "In Antichrist, what animal speaks to the protagonist?",
+    "options": [
+      "A fox",
+      "A deer",
+      "A crow",
+      "A wolf"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_fq3g6bh7.webp"
+  },
+  {
+    "q": "In Holy Motors, what unusual profession does the main character have?",
+    "options": [
+      "Performs identities for assignments",
+      "Travels through dreams",
+      "Acts in invisible films",
+      "Documents personal memories"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_r34dauf4.webp"
+  },
+  {
+    "q": "In The Turin Horse, what force slowly abandons the characters?",
+    "options": [
+      "The wind",
+      "The livestock",
+      "The sunlight",
+      "The well water"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_bfut7x1d.webp"
+  },
+  {
+    "q": "In The Endless, what phenomenon traps the brothers?",
+    "options": [
+      "Time loops",
+      "Magnetic storms",
+      "Mind erasure",
+      "Astral shifts"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_ho49f0dt.webp"
+  },
+  {
+    "q": "In A Field in England, what does the group search for?",
+    "options": [
+      "Treasure hidden in the field",
+      "A deserter leader",
+      "A lost cannon",
+      "A sacred relic"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_88nh8q6q.webp"
+  },
+  {
+    "q": "In Cure (1997), what method does the killer use to manipulate victims?",
+    "options": [
+      "Hypnosis",
+      "Toxic fumes",
+      "Sound pulses",
+      "Flash images"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_fmkoynya.webp"
+  },
+  {
+    "q": "In Brazil (1985), what object symbolizes bureaucratic failure?",
+    "options": [
+      "Pneumatic tubes",
+      "Stamping machines",
+      "Ceiling ducts",
+      "Endless forms"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_ydxuuwuh.webp"
+  },
+  {
+    "q": "In Onibaba, what object causes disfigurement?",
+    "options": [
+      "A demon mask",
+      "A ritual dagger",
+      "A wooden cage",
+      "A metal trap"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_qgljvdbf.webp"
+  },
+  {
+    "q": "In Hour of the Wolf, what creatures torment the artist?",
+    "options": [
+      "Nightmarish demons",
+      "Talking ravens",
+      "Frozen spirits",
+      "Shadow insects"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_km9252ht.webp"
+  },
+  {
+    "q": "In Drive, what item symbolizes the Driver’s persona?",
+    "options": [
+      "A scorpion jacket",
+      "A silver toothpick",
+      "A leather glove",
+      "A pink mask"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_cw9n4hve.webp"
+  },
+  {
+    "q": "In Drive, what object does the Driver carry for his stunt work?",
+    "options": [
+      "A stunt mask",
+      "A flare gun",
+      "A harness",
+      "A stopwatch"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_cw9n4hve.webp"
+  },
+  {
+    "q": "In 1917, what mission are the protagonists given?",
+    "options": [
+      "Deliver a message to stop an attack",
+      "Retrieve aerial photos",
+      "Capture a German officer",
+      "Destroy a bridge"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191962_3gv3a3ep.webp"
+  },
+  {
+    "q": "In Raw, what taboo act marks Justine’s transformation?",
+    "options": [
+      "Eating human flesh",
+      "Drinking animal blood",
+      "Devouring insects",
+      "Burning her own skin"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191962_a1i5tp1d.webp"
+  },
+  {
+    "q": "In Hacksaw Ridge, what vow does Desmond Doss uphold during the war?",
+    "options": [
+      "Refusing to carry a weapon",
+      "Never removing his helmet",
+      "Fasting before battle",
+      "Rejecting military pay"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191963_56gwnwqe.webp"
+  },
+  {
+    "q": "In Hacksaw Ridge, where does the climactic battle take place?",
+    "options": [
+      "Okinawa escarpment",
+      "Iwo Jima beach",
+      "Guadalcanal ridge",
+      "Leyte jungle"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191963_56gwnwqe.webp"
+  },
+  {
+    "q": "In 12 Angry Men, what key detail is questioned about the murder weapon?",
+    "options": [
+      "Whether it was truly unique",
+      "Whether fingerprints existed",
+      "Whether it was sharpened",
+      "Whether it was purchased legally"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191965_ws5u6nlr.webp"
+  },
+  {
+    "q": "In The Pianist, what everyday object Władysław hides under the floorboards?",
+    "options": [
+      "A can of food",
+      "A pistol",
+      "A diary",
+      "A violin string"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_qa5k43kz.webp"
+  },
+  {
+    "q": "In Ex Machina, what test does Caleb administer to Ava?",
+    "options": [
+      "A Turing test",
+      "A memory sequence test",
+      "A perception loop",
+      "A linguistic calibration"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_434gpt9m.webp"
+  },
+  {
+    "q": "In Seven, what sin corresponds to the final victim?",
+    "options": [
+      "Envy",
+      "Pride",
+      "Wrath",
+      "Gluttony"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191966_wxann3jp.webp"
+  },
+  {
+    "q": "In Se7en, what object is delivered to Mills near the end?",
+    "options": [
+      "A box",
+      "A suitcase",
+      "A folder",
+      "A briefcase"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_wxann3jp.webp"
+  },
+  {
+    "q": "In The Usual Suspects, what item helps identify Keyser Söze’s deception?",
+    "options": [
+      "A bulletin board",
+      "A photo album",
+      "A police badge",
+      "A coffee mug"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191966_eifjd5y9.webp"
+  },
+  {
+    "q": "In Memories of Murder, what clothing item links multiple cases?",
+    "options": [
+      "A red underwear piece",
+      "A child’s shoe",
+      "A striped scarf",
+      "A school badge"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191966_xubg5c4g.webp"
+  },
+  {
+    "q": "In The Mist, what creature type first appears at the supermarket?",
+    "options": [
+      "Tentacled monster",
+      "Winged insect",
+      "Crustacean beast",
+      "Shadow crawler"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191966_2a0b6hot.webp"
+  },
+  {
+    "q": "In Enemy at the Gates, what duel dominates the film?",
+    "options": [
+      "Sniper duel",
+      "Tank duel",
+      "Dogfight",
+      "Knife duel"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191966_3sgg23qj.webp"
+  },
+  {
+    "q": "In Black Hawk Down, what mission spirals out of control?",
+    "options": [
+      "Capturing a militia leader",
+      "Evacuating a diplomat",
+      "Rescuing trapped soldiers",
+      "Destroying a weapons convoy"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_zyvuczqf.webp"
+  },
+  {
+    "q": "In Dunkirk, what three timelines intersect?",
+    "options": [
+      "Land, sea, and air",
+      "Night, dawn, and day",
+      "Past, present, future",
+      "Front lines, hospitals, bunkers"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_s3hj5a00.webp"
+  },
+  {
+    "q": "In Fury, what vehicle forms the crew’s home?",
+    "options": [
+      "A Sherman tank",
+      "A Panzer tank",
+      "An armored jeep",
+      "A half-track"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_mifhqxao.webp"
+  },
+  {
+    "q": "In Soul, what activity helps Joe reconnect with life?",
+    "options": [
+      "Playing piano",
+      "Teaching students",
+      "Meditating",
+      "Walking outdoors"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191966_1rl20zwr.webp"
+  },
+  {
+    "q": "In Requiem for a Dream, what device Ellen Burstyn’s character becomes obsessed with?",
+    "options": [
+      "A TV game show",
+      "A radio sermon",
+      "A diet tape",
+      "A phone hotline"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191966_nrwniaad.webp"
+  },
+  {
+    "q": "In Oldboy, what food does the protagonist eat repeatedly in captivity?",
+    "options": [
+      "Dumplings",
+      "Rice cakes",
+      "Noodles",
+      "Miso soup"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191966_iertmhnl.webp"
+  },
+  {
+    "q": "In The Hunt, what accusation isolates the main character?",
+    "options": [
+      "Child misconduct",
+      "Embezzlement",
+      "Forgery",
+      "Assault"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191966_iv8t08yw.webp"
+  },
+  {
+    "q": "In Chinatown, what essential resource is exploited?",
+    "options": [
+      "Water",
+      "Oil",
+      "Electricity",
+      "Land rights"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_yo3qkt8a.webp"
+  },
+  {
+    "q": "In The Conversation, what device does Harry Caul master?",
+    "options": [
+      "Audio surveillance",
+      "Camera surveillance",
+      "Lie detection",
+      "Typewriter ciphering"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_k6906hp8.webp"
+  },
+  {
+    "q": "In The Thing, what test does MacReady invent to identify the creature?",
+    "options": [
+      "A heated blood test",
+      "A DNA sample",
+      "A saliva test",
+      "A skin biopsy"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_0m9c8h1u.webp"
+  },
+  {
+    "q": "In The Fly, what accident merges Seth with another organism?",
+    "options": [
+      "Telepod malfunction",
+      "Radiation burst",
+      "Gene splicer error",
+      "Nanobot escape"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_5pq41j11.webp"
+  },
+  {
+    "q": "In Videodrome, what device plays disturbing broadcasts?",
+    "options": [
+      "A VHS tape",
+      "A radio signal",
+      "A satellite feed",
+      "A laser disc"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_250z0qs7.webp"
+  },
+  {
+    "q": "In The Brood, what emotion triggers the brood creatures’ appearance?",
+    "options": [
+      "Rage",
+      "Fear",
+      "Jealousy",
+      "Panic"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_rh3fkfn0.webp"
+  },
+  {
+    "q": "In It Follows, how does the entity pursue its victims?",
+    "options": [
+      "By walking steadily toward them",
+      "By appearing in mirrors",
+      "By traveling through dreams",
+      "By attaching to their shadows"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_h2ehtx9z.webp"
+  },
+  {
+    "q": "In Akira, what triggers Tetsuo’s transformation?",
+    "options": [
+      "Psychic overload",
+      "Chemical exposure",
+      "Nuclear residue",
+      "Mechanical implants"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_57wsecy7.webp"
+  },
+  {
+    "q": "In Princess Mononoke, what creature leads Ashitaka to the forest spirit?",
+    "options": [
+      "A white elk",
+      "A red wolf",
+      "A silver horse",
+      "A black boar"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_tva19sbx.webp"
+  },
+  {
+    "q": "In Perfect Blue, what item symbolizes Mima’s fractured identity?",
+    "options": [
+      "A bedroom shrine",
+      "A pink notebook",
+      "A glass figurine",
+      "A recorded tape"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_rhdz20g8.webp"
+  },
+  {
+    "q": "In Paprika, what device allows entry into dreams?",
+    "options": [
+      "DC Mini",
+      "Dream Box",
+      "Neuro Key",
+      "Mind Dial"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_67496myj.webp"
+  },
+  {
+    "q": "In Ghost in the Shell, what term refers to total cybernetic conversion?",
+    "options": [
+      "Cyberization",
+      "Shell drift",
+      "Mecha infusion",
+      "Neuro armor"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_3htj3wq6.webp"
+  },
+  {
+    "q": "In Grave of the Fireflies, what item becomes a symbol of the siblings’ innocence?",
+    "options": [
+      "Fruit drops tin",
+      "A paper kite",
+      "A cloth bag",
+      "A red comb"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_ohg1yedm.webp"
+  },
+  {
+    "q": "In The Girl Who Leapt Through Time, what commodity does Makoto quickly run out of?",
+    "options": [
+      "Time leaps",
+      "Memory patches",
+      "Energy charges",
+      "Anchor points"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_jsjnslt2.webp"
+  },
+  {
+    "q": "In Weathering With You, what ability does Hina possess?",
+    "options": [
+      "Controlling the weather",
+      "Predicting disasters",
+      "Calming storms",
+      "Summoning sunlight"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_pgpxwxxz.webp"
+  },
+  {
+    "q": "In Your Name, what natural phenomenon connects the two protagonists?",
+    "options": [
+      "A comet",
+      "A lunar eclipse",
+      "A meteor shower",
+      "A solar flare"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_s61amtw4.webp"
+  },
+  {
+    "q": "In The Exorcist, what object is linked to the demon’s earliest appearance?",
+    "options": [
+      "An ancient medallion",
+      "A carved idol",
+      "A dusty scroll",
+      "A broken jewel"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_069zh0zy.webp"
+  },
+  {
+    "q": "In Rosemary’s Baby, what dessert is used to drug Rosemary?",
+    "options": [
+      "Chocolate mousse",
+      "Lemon custard",
+      "Cherry pie",
+      "Black pudding"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_vn7bfqui.webp"
+  },
+  {
+    "q": "In The Omen, what animal becomes aggressive near Damien?",
+    "options": [
+      "Dogs",
+      "Horses",
+      "Crows",
+      "Snakes"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_9j3n1r7g.webp"
+  },
+  {
+    "q": "In Jacob’s Ladder, what visual distortion is frequently used?",
+    "options": [
+      "Vibrating heads",
+      "Double shadows",
+      "Color bleeding",
+      "Stretching limbs"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191967_6qns0i75.webp"
+  },
+  {
+    "q": "In The Ring, what object reveals the curse’s origin?",
+    "options": [
+      "A videotape",
+      "A mirror shard",
+      "A water well",
+      "A lighthouse lens"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_8il7ta4z.webp"
+  },
+  {
+    "q": "In It (2017), what fear does Pennywise exploit in Eddie?",
+    "options": [
+      "Disease",
+      "Claustrophobia",
+      "Clowns",
+      "Birds"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_0y93hglz.webp"
+  },
+  {
+    "q": "In The Conjuring, what object claps during the hide-and-seek game?",
+    "options": [
+      "Hands from a wardrobe",
+      "A porcelain doll",
+      "A music box",
+      "A toy soldier"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_5gg4rxtg.webp"
+  },
+  {
+    "q": "In Sinister, what media format does the protagonist discover?",
+    "options": [
+      "Super 8 films",
+      "VHS tapes",
+      "Audio reels",
+      "Photo slides"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_kea2utmd.webp"
+  },
+  {
+    "q": "In The Blair Witch Project, what object is found outside the tent?",
+    "options": [
+      "A bundle of sticks",
+      "A torn notebook",
+      "A bloodied map",
+      "A broken charm"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_weja7zuk.webp"
+  },
+  {
+    "q": "In The Descent, what creatures stalk the group underground?",
+    "options": [
+      "Crawlers",
+      "Pale demons",
+      "Rock fiends",
+      "Blind hunters"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191967_pzburcg8.webp"
+  },
+  {
+    "q": "In Moonlight, what nickname does Juan give to the main character as a child?",
+    "options": [
+      "Little",
+      "Blue",
+      "Shorty",
+      "Kiddo"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191968_82i2bdag.webp"
+  },
+  {
+    "q": "In Jojo Rabbit, what imaginary friend does Jojo have?",
+    "options": [
+      "A playful version of Hitler",
+      "A talking rabbit",
+      "A famous actor",
+      "A superhero soldier"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191968_1kxcx3rk.webp"
+  },
+  {
+    "q": "In Eternal Sunshine of the Spotless Mind, where do Joel and Clementine first meet in chronological order?",
+    "options": [
+      "On a train",
+      "At a beach party",
+      "In a bookstore",
+      "In a café"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "img": "../img/img_1764764191968_3cbbhvbc.webp"
+  },
+  {
+    "q": "In Scott Pilgrim vs. the World, how many evil exes must Scott defeat?",
+    "options": [
+      "Seven",
+      "Five",
+      "Six",
+      "Eight"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191968_jvefu3ci.webp"
+  },
+  {
+    "q": "In Hot Fuzz, what small town does Nicholas Angel get transferred to?",
+    "options": [
+      "Sandford",
+      "Newton",
+      "Marlowe",
+      "Broadford"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191968_1x1as2by.webp"
+  },
+  {
+    "q": "In Shaun of the Dead, where do the main characters decide to wait out the zombie apocalypse?",
+    "options": [
+      "At the Winchester pub",
+      "At Shaun’s flat",
+      "At Liz’s apartment",
+      "At Shaun’s mum’s house"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191968_bylwy5an.webp"
+  },
+  {
+    "q": "In Groundhog Day, what profession does Phil Connors have?",
+    "options": [
+      "Weatherman",
+      "Doctor",
+      "Lawyer",
+      "Chef"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191968_5jgs2cdc.webp"
+  },
+  {
+    "q": "In Inside Llewyn Davis, what animal keeps reappearing with Llewyn?",
+    "options": [
+      "A cat",
+      "A dog",
+      "A bird",
+      "A rabbit"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191968_gla82mhp.webp"
+  },
+  {
+    "q": "In Lost in Translation, in which city do the main characters meet?",
+    "options": [
+      "Tokyo",
+      "Kyoto",
+      "Seoul",
+      "Hong Kong"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191968_esxi1ob3.webp"
+  },
+  {
+    "q": "In The Fighter, what relationship do Micky Ward and Dicky Eklund share?",
+    "options": [
+      "Half brothers",
+      "Cousins",
+      "Father and son",
+      "Uncle and nephew"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191974_rxyttkpv.webp"
+  },
+  {
+    "q": "In Creed, who trains Adonis Johnson for his big fight?",
+    "options": [
+      "Rocky Balboa",
+      "Apollo’s old coach",
+      "A new trainer named Duke",
+      "His stepfather"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191974_bpzvubcn.webp"
+  },
+  {
+    "q": "In Rocky, what city is the story primarily set in?",
+    "options": [
+      "Philadelphia",
+      "New York",
+      "Boston",
+      "Chicago"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "img": "../img/img_1764764191974_zcdv61rh.webp"
+  },
+  {
+    "q": "In Ford v Ferrari, what race are the characters preparing for?",
+    "options": [
+      "24 Hours of Le Mans",
+      "Indy 500",
+      "Monaco Grand Prix",
+      "Daytona 500"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191974_urw0x8qu.webp"
+  },
+  {
+    "q": "In Rush, what rivalry does the film focus on?",
+    "options": [
+      "Hunt vs Lauda",
+      "Senna vs Prost",
+      "Schumacher vs Hill",
+      "Hamilton vs Rosberg"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "img": "../img/img_1764764191974_0rcqeumq.webp"
+  }
+]

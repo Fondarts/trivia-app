@@ -17,13 +17,10 @@ import AuthSystem from '../auth/auth_v2.js';
 export function getPlayerNameForGame() {
   const user = AuthSystem.getCurrentUser();
   if (user && !user.isGuest) {
-    // Si está logueado, usar el nickname guardado
     const savedNickname = Storage.get('user_nickname_' + user.id);
     return savedNickname || user.name?.split(' ')[0] || 'Jugador';
-  } else {
-    // Si no está logueado, usar el valor del input
-    return DOMUtils.getElement('playerName')?.value?.trim() || 'Anónimo';
   }
+  return 'Anónimo';
 }
 
 /**
@@ -34,15 +31,12 @@ export function getPlayerNameForGame() {
 export async function updateAuthUI(user, options = {}) {
   const {
     supabase = window.supabaseClient,
-    unifiedBanner = null,
     updatePlayerXPBar = window.updatePlayerXPBar
   } = options;
   
   // Obtener elementos usando DOMUtils para caché
   const authSection = DOMUtils.getElement('authSection');
   const welcomeSection = DOMUtils.getElement('welcomeSection');
-  const guestNameSection = DOMUtils.getElement('guestNameSection');
-  const playerNameInput = DOMUtils.getElement('playerName');
   const profileNicknameSection = DOMUtils.getElement('profileNicknameSection');
   const profileNicknameMain = DOMUtils.getElement('profileNicknameMain');
   const profileNicknameText = DOMUtils.getElement('profileNicknameText');
@@ -54,9 +48,7 @@ export async function updateAuthUI(user, options = {}) {
   const profileXpText = DOMUtils.getElement('profileXpText');
   
   if (user && !user.isGuest) {
-    // Usuario logueado con Google - OCULTAR sección de auth y nombre
     DOMUtils.hide(authSection);
-    DOMUtils.hide(guestNameSection);
     
     // Cargar nickname desde el servidor o localmente
     let savedNickname = Storage.get('user_nickname_' + user.id);
@@ -97,7 +89,7 @@ export async function updateAuthUI(user, options = {}) {
               if (profileXpText) profileXpText.textContent = `${currentLevelXP} / ${xpForNextLevel} XP`;
             }
           } else {
-            console.log('📊 Usando datos locales en lugar de servidor');
+
             // Usar la función de actualización que lee de localStorage
             if (typeof updatePlayerXPBar === 'function') {
               updatePlayerXPBar();
@@ -105,7 +97,7 @@ export async function updateAuthUI(user, options = {}) {
           }
         }
       } catch (error) {
-        console.log('No se pudo cargar el perfil del servidor, usando datos locales');
+
       }
     }
     
@@ -132,29 +124,23 @@ export async function updateAuthUI(user, options = {}) {
     
     // Actualizar avatar
     if (profileAvatar) {
-      console.log('🖼️ ===== DEBUG AVATAR =====');
-      console.log('🖼️ Usuario completo:', user);
-      console.log('🖼️ Avatar URL:', user.avatar);
-      console.log('🖼️ Metadata completa:', user.metadata);
-      console.log('🖼️ Elemento avatar encontrado:', !!profileAvatar);
-      console.log('🖼️ ========================');
-      
+
       if (user.avatar && user.avatar !== 'img/avatar_placeholder.svg' && user.avatar !== 'img/avatarman.webp' && !user.avatar.startsWith('img/')) {
-        console.log('🖼️ Intentando cargar avatar de Google:', user.avatar);
+
         // Intentar cargar el avatar del usuario
         const avatarImg = new Image();
         avatarImg.onload = () => {
-          console.log('✅ Avatar de Google cargado correctamente:', user.avatar);
+
           profileAvatar.src = user.avatar;
         };
         avatarImg.onerror = () => {
-          console.log('⚠️ Avatar de Google falló, usando placeholder');
+
           profileAvatar.src = './img/avatarman.webp';
         };
         avatarImg.src = user.avatar;
       } else {
         // Usar placeholder por defecto
-        console.log('🖼️ No hay avatar de Google, usando placeholder por defecto');
+
         profileAvatar.src = './img/avatarman.webp';
       }
     }
@@ -164,46 +150,41 @@ export async function updateAuthUI(user, options = {}) {
     // Inicializar sistema de amigos si tiene nickname
     if (savedNickname && supabase) {
       try {
-        console.log('Inicializando sistema de amigos para:', savedNickname);
+
         // IMPORTANTE: Primero inicializar el sistema social básico
         const socialManager = initFriendsSystem(supabase, user.id, savedNickname);
         
         // Solo inicializar la UI si el sistema social se creó correctamente
         if (socialManager) {
-          console.log('Sistema social creado, inicializando UI...');
+
           // Esperar un momento para asegurar que window.socialManager esté disponible
           setTimeout(() => {
             initFriendsUI(supabase, user.id, savedNickname);
           }, 100);
         } else {
-          console.error('No se pudo crear el sistema social');
+
         }
       } catch (error) {
-        console.error('Error iniciando sistema de amigos:', error);
+
       }
     }
     
     // Inicializar sincronización de perfil
     if (supabase && user.id) {
       try {
-        console.log('🔄 Inicializando sincronización de perfil para:', user.id);
+
         initProfileSync(supabase, user.id);
         
-        // En Android, usar sincronización forzada después de un delay mayor
-        const isAndroid = window.Capacitor && window.Capacitor.getPlatform() === 'android';
-        const delay = isAndroid ? 3000 : 2000;
+        const delay = 2000;
         
         setTimeout(() => {
-          if (isAndroid && window.forceFullSync) {
-            console.log('🔄 Forzando sincronización completa en Android...');
-            window.forceFullSync().catch(e => console.error('Error en sync completa:', e));
-          } else if (window.forceSyncProfile) {
-            console.log('🔄 Forzando sincronización inmediata...');
+          if (window.forceSyncProfile) {
+
             window.forceSyncProfile().catch(e => console.error('Error en sync forzada:', e));
           }
         }, delay);
       } catch (error) {
-        console.error('❌ Error iniciando sincronización de perfil:', error);
+
       }
     }
     
@@ -215,35 +196,12 @@ export async function updateAuthUI(user, options = {}) {
       headerAvatar.src = './img/avatarman.webp';
     }
     
-    // Actualizar el input oculto de playerName con el nickname
-    if (playerNameInput) {
-      playerNameInput.value = savedNickname || user.name?.split(' ')[0] || 'Jugador';
-    }
-    
-    // Mostrar banner en menú principal (Android + Web)
-    if (unifiedBanner) {
-      // Delay para asegurar que la UI esté lista
-      setTimeout(async () => {
-        console.log('🔄 Intentando mostrar banner en menú principal...');
-        const success = await unifiedBanner.showBanner();
-        if (success) {
-          console.log('✅ Banner mostrado en menú principal');
-        } else {
-          console.log('❌ Fallo al mostrar banner en menú principal');
-        }
-      }, 1000);
-    }
-    
+
   } else if (user && user.isGuest) {
-    // Usuario invitado
+    // Usuario invitado (juega anónimo)
     DOMUtils.show(authSection);
     DOMUtils.hide(welcomeSection);
-    DOMUtils.show(guestNameSection);
     DOMUtils.hide(profileNicknameSection);
-    if (playerNameInput) {
-      playerNameInput.value = user.name || 'Invitado';
-      playerNameInput.disabled = false;
-    }
     DOMUtils.show(profileAuthSection);
     DOMUtils.hide(profileActionsSection);
     
@@ -256,15 +214,10 @@ export async function updateAuthUI(user, options = {}) {
     if (profileXpText) profileXpText.textContent = '0 / 100 XP';
     
   } else {
-    // No logueado
+    // No logueado: solo opción de registrarse/loguearse o jugar anónimo
     DOMUtils.show(authSection);
     DOMUtils.hide(welcomeSection);
-    DOMUtils.show(guestNameSection);
     DOMUtils.hide(profileNicknameSection);
-    if (playerNameInput) {
-      playerNameInput.value = '';
-      playerNameInput.disabled = false;
-    }
     DOMUtils.show(profileAuthSection);
     DOMUtils.hide(profileActionsSection);
     

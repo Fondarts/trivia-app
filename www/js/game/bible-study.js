@@ -1,4 +1,4 @@
-// js/game/bible-study.js - Estudio de la Biblia: selector de libros y área de lectura
+// js/game/bible-study.js - Estudio de la Biblia: lista de libros clicable, lectura directa
 
 import { t, getLanguage } from '../core/i18n.js';
 
@@ -91,8 +91,137 @@ const BOOK_REF = {
 
 const LANG = () => (getLanguage && getLanguage()) === 'en' ? 'en' : 'es';
 
+/** Ruta base para datos de la Biblia (offline, relativa al documento) */
+function getBibleDataPath(bookId) {
+  const lang = LANG();
+  return `data/bible/${lang}/${bookId}.json`;
+}
+
+function escapeHtml(text) {
+  if (text == null) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 /**
- * Rellena el selector de libros de la Biblia con AT y NT.
+ * Carga el texto de un libro desde JSON local (offline).
+ */
+async function loadBookData(bookId) {
+  const path = getBibleDataPath(bookId);
+  try {
+    const res = await fetch(path, { cache: 'default' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+/** Estado del lector: libro actual y capítulos */
+let readerBookData = null;
+let readerBookName = '';
+let readerBookId = '';
+
+/**
+ * Rellena el selector de capítulos dentro del overlay y muestra el capítulo actual.
+ */
+function fillReaderChapterSelect(chapters) {
+  const sel = document.getElementById('bibleReaderChapterSel');
+  if (!sel) return;
+  sel.innerHTML = '';
+  (chapters || []).forEach((ch, i) => {
+    const opt = document.createElement('option');
+    opt.value = ch.chapter;
+    opt.textContent = ch.chapter;
+    opt.selected = i === 0;
+    sel.appendChild(opt);
+  });
+}
+
+/**
+ * Renderiza el contenido del capítulo en el overlay.
+ */
+function renderReaderChapter(chapterNum) {
+  const contentEl = document.getElementById('bibleReaderContent');
+  const titleEl = document.getElementById('bibleReaderTitle');
+  if (!contentEl || !readerBookData || !readerBookData.chapters) return;
+
+  const ch = readerBookData.chapters.find(c => String(c.chapter) === String(chapterNum));
+  const displayName = readerBookData.book || readerBookName;
+  const chapterLabel = LANG() === 'en' ? 'Chapter' : 'Capítulo';
+
+  if (titleEl) titleEl.textContent = `${displayName} — ${chapterLabel} ${chapterNum}`;
+
+  if (!ch || !ch.verses || !ch.verses.length) {
+    contentEl.innerHTML = `<p class="bible-reader-verse">${escapeHtml(LANG() === 'en' ? 'No verses for this chapter.' : 'No hay versículos para este capítulo.')}</p>`;
+    return;
+  }
+
+  const versesHtml = ch.verses
+    .map(v => `<p class="bible-reader-verse"><span class="bible-reader-verse-num">${escapeHtml(String(v.verse))}</span> <span class="bible-reader-verse-text">${escapeHtml(v.text || '')}</span></p>`)
+    .join('');
+  contentEl.innerHTML = `<div class="bible-reader-verses">${versesHtml}</div>`;
+}
+
+/**
+ * Abre la ventana de lectura con el libro cargado y el capítulo indicado (por defecto el primero).
+ */
+function openReaderWindow(bookName, bookId, data, chapterNum) {
+  if (!data || !data.chapters || !data.chapters.length) return;
+
+  readerBookData = data;
+  readerBookName = bookName;
+  readerBookId = bookId;
+
+  const overlay = document.getElementById('bibleReaderOverlay');
+  const chapterSel = document.getElementById('bibleReaderChapterSel');
+  if (!overlay) return;
+
+  const firstChapter = data.chapters[0] && data.chapters[0].chapter;
+  const openChapter = chapterNum != null ? String(chapterNum) : firstChapter;
+
+  fillReaderChapterSelect(data.chapters);
+  renderReaderChapter(openChapter);
+  if (chapterSel) {
+    chapterSel.value = openChapter;
+    chapterSel.style.display = '';
+  }
+
+  overlay.style.display = 'block';
+  document.body.classList.add('bible-reader-open');
+
+  const closeBtn = document.getElementById('bibleReaderClose');
+  if (closeBtn) closeBtn.focus();
+}
+
+/**
+ * Cierra la ventana de lectura.
+ */
+function closeReaderWindow() {
+  const overlay = document.getElementById('bibleReaderOverlay');
+  if (overlay) overlay.style.display = 'none';
+  document.body.classList.remove('bible-reader-open');
+  readerBookData = null;
+  readerBookName = '';
+  readerBookId = '';
+}
+
+/**
+ * Muestra mensaje "no disponible offline" en un overlay temporal o abre enlace externo.
+ * Aquí abrimos directamente el enlace en nueva pestaña (no tenemos overlay intermedio).
+ */
+function openBookOnline(bookId, bookName) {
+  const ref = BOOK_REF[bookId];
+  const baseUrl = 'https://www.bible.com/bible';
+  const langCode = LANG() === 'en' ? '59' : '146';
+  const readUrl = ref ? `${baseUrl}/${langCode}/${ref}.1.1` : baseUrl;
+  window.open(readUrl, '_blank', 'noopener,noreferrer');
+}
+
+/**
+ * Rellena el menú desplegable de libros (Antiguo y Nuevo Testamento).
+ * Al elegir un libro se abre directamente el lector o enlace externo.
  */
 export function populateBibleBookSelector() {
   const sel = document.getElementById('bibleBookSel');
@@ -128,73 +257,47 @@ export function populateBibleBookSelector() {
 }
 
 /**
- * Muestra en el área de lectura el libro seleccionado (placeholder + enlace externo).
- */
-function renderReadingArea(bookId, bookName) {
-  const area = document.getElementById('bibleReadingArea');
-  if (!area) return;
-
-  const ref = BOOK_REF[bookId];
-  const baseUrl = 'https://www.bible.com/bible';
-  const langCode = LANG() === 'en' ? '59' : '146'; // 59 = NIV English, 146 = RVR1960 Spanish
-  const readUrl = ref ? `${baseUrl}/${langCode}/${ref}.1.1` : baseUrl;
-
-  const isEn = LANG() === 'en';
-  const comingSoon = isEn
-    ? 'Full text of this book will be available here soon.'
-    : 'El texto completo de este libro estará disponible aquí pronto.';
-  const readOnline = isEn ? 'Read online' : 'Leer en línea';
-
-  area.innerHTML = `
-    <div class="bible-reading-content">
-      <h2 class="bible-book-title">${escapeHtml(bookName)}</h2>
-      <p class="bible-reading-placeholder-text">${comingSoon}</p>
-      <a href="${readUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-bible-link">${readOnline}</a>
-    </div>
-  `;
-}
-
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
-
-/**
- * Muestra el placeholder inicial cuando no hay libro seleccionado.
- */
-function showPlaceholder() {
-  const area = document.getElementById('bibleReadingArea');
-  if (!area) return;
-  area.innerHTML = `
-    <p class="bible-reading-placeholder" data-i18n="bibleSelectBookToRead">${t('bibleSelectBookToRead')}</p>
-  `;
-}
-
-/**
- * Inicializa el modo Estudio de la Biblia: rellena selector y enlaza el cambio.
+ * Inicializa el modo Estudio de la Biblia: menú desplegable de libros y lector con selector de capítulo.
  */
 export function initBibleStudy() {
   populateBibleBookSelector();
 
   const sel = document.getElementById('bibleBookSel');
-  const wrap = document.getElementById('bibleStudyWrap');
+  const chapterSel = document.getElementById('bibleReaderChapterSel');
   if (!sel) return;
 
-  sel.addEventListener('change', () => {
-    const value = sel.value;
-    if (!value) {
-      showPlaceholder();
-      return;
-    }
+  sel.addEventListener('change', async () => {
+    const bookId = sel.value;
+    if (!bookId) return;
+
     const option = sel.options[sel.selectedIndex];
-    const bookName = option ? option.textContent : value;
-    renderReadingArea(value, bookName);
+    const bookName = option ? option.textContent : bookId;
+
+    const data = await loadBookData(bookId);
+    if (data && data.chapters && data.chapters.length) {
+      openReaderWindow(bookName, bookId, data, data.chapters[0].chapter);
+    } else {
+      openBookOnline(bookId, bookName);
+    }
+    sel.value = '';
   });
 
-  // Si al mostrar la sección ya hay un libro seleccionado, renderizar
-  if (wrap && sel.value) {
-    const option = sel.options[sel.selectedIndex];
-    if (option) renderReadingArea(sel.value, option.textContent);
+  if (chapterSel) {
+    chapterSel.addEventListener('change', () => {
+      if (readerBookData) renderReaderChapter(chapterSel.value);
+    });
+  }
+
+  const closeBtn = document.getElementById('bibleReaderClose');
+  if (closeBtn) closeBtn.addEventListener('click', closeReaderWindow);
+
+  const readerOverlay = document.getElementById('bibleReaderOverlay');
+  if (readerOverlay) {
+    readerOverlay.addEventListener('click', (e) => {
+      if (e.target === readerOverlay) closeReaderWindow();
+    });
+    readerOverlay.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeReaderWindow();
+    });
   }
 }

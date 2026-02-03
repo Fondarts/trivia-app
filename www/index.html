@@ -345,8 +345,14 @@
             <option value="" data-i18n="bibleSelectBookPlaceholder">Selecciona un libro</option>
           </select>
         </div>
-        <div id="bibleReadingArea" class="bible-reading-area">
-          <p class="bible-reading-placeholder" data-i18n="bibleSelectBookToRead">Selecciona un libro para leer.</p>
+        <div class="section bible-pdf-section" id="biblePdfSection">
+          <label data-i18n="biblePdfSelect">Leer PDF</label>
+          <div class="row bible-pdf-row">
+            <select id="biblePdfSel" class="input">
+              <option value="" data-i18n="bibleSelectBookPlaceholder">Selecciona un PDF</option>
+            </select>
+            <button type="button" class="btn btn-bible-pdf" id="btnOpenPdf" data-i18n="biblePdfOpen">Abrir PDF</button>
+          </div>
         </div>
       </div>
 
@@ -401,6 +407,32 @@
       </div>
     </div>
     </main>
+  </div>
+
+  <div class="fs bible-reader-fs" id="bibleReaderOverlay" style="display:none;" aria-modal="true" role="dialog" aria-label="Lectura de la Biblia">
+    <div class="bible-reader-wrap">
+      <div class="bible-reader-titlebar">
+        <h1 class="bible-reader-title" id="bibleReaderTitle">—</h1>
+        <div class="bible-reader-chapter-wrap">
+          <label for="bibleReaderChapterSel" class="sr-only" data-i18n="bibleChapter">Capítulo</label>
+          <select id="bibleReaderChapterSel" class="bible-reader-chapter-sel" aria-label="Capítulo"></select>
+        </div>
+        <button type="button" class="bible-reader-close" id="bibleReaderClose" aria-label="Cerrar">✖</button>
+      </div>
+      <div class="bible-reader-content" id="bibleReaderContent"></div>
+    </div>
+  </div>
+
+  <div class="fs pdf-reader-fs" id="pdfReaderOverlay" style="display:none;" aria-modal="true" role="dialog" aria-label="Lector de PDF">
+    <div class="pdf-reader-wrap">
+      <div class="pdf-reader-titlebar">
+        <h1 class="pdf-reader-title" id="pdfReaderTitle">—</h1>
+        <button type="button" class="pdf-reader-close" id="pdfReaderClose" aria-label="Cerrar">✖</button>
+      </div>
+      <div class="pdf-reader-content" id="pdfReaderContent">
+        <object id="pdfReaderObject" type="application/pdf" data="" class="pdf-embed" title="PDF"></object>
+      </div>
+    </div>
   </div>
 
   <div class="fs" id="fsStats" style="display:none;">

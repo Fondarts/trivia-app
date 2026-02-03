@@ -100,6 +100,10 @@ const translations = {
     bibleSelectBook: 'Libro de la Biblia',
     bibleSelectBookPlaceholder: 'Selecciona un libro',
     bibleSelectBookToRead: 'Selecciona un libro para leer.',
+    bibleChapter: 'Capítulo',
+    bibleNotAvailableOffline: 'Este libro no está disponible para lectura offline. Puedes leerlo en línea.',
+    biblePdfSelect: 'Leer PDF',
+    biblePdfOpen: 'Abrir PDF',
     
     // Profile
     yourProfile: 'Tu Perfil',
@@ -387,6 +391,10 @@ const translations = {
     bibleSelectBook: 'Bible book',
     bibleSelectBookPlaceholder: 'Select a book',
     bibleSelectBookToRead: 'Select a book to read.',
+    bibleChapter: 'Chapter',
+    bibleNotAvailableOffline: 'This book is not available for offline reading. You can read it online.',
+    biblePdfSelect: 'Read PDF',
+    biblePdfOpen: 'Open PDF',
     
     // Profile
     yourProfile: 'Your Profile',

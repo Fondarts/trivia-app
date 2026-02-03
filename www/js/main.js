@@ -25,6 +25,7 @@ import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, bindLeaderboardsOpen,
 import { startSolo, nextQuestion, endGame, renderQuestion, openSingleResult, showGame } from './game/solo.js';
 import { bindWordSearchButtons } from './game/wordsearch-ui.js';
 import { initBibleStudy } from './game/bible-study.js';
+import { initPdfReader } from './game/pdf-reader.js';
 import { STATE } from './core/store.js';
 
 // Player modules
@@ -668,6 +669,7 @@ window.addEventListener('load', async ()=>{
 
   bindWordSearchButtons();
   initBibleStudy();
+  initPdfReader();
   
   // Vincular botón de logout en el perfil (específico, no en bindings genéricos)
   DOMUtils.getElement('profileBtnLogout')?.addEventListener('click', async () => {

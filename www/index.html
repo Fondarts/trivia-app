@@ -345,15 +345,6 @@
             <option value="" data-i18n="bibleSelectBookPlaceholder">Selecciona un libro</option>
           </select>
         </div>
-        <div class="section bible-pdf-section" id="biblePdfSection">
-          <label data-i18n="biblePdfSelect">Leer PDF</label>
-          <div class="row bible-pdf-row">
-            <select id="biblePdfSel" class="input">
-              <option value="" data-i18n="bibleSelectBookPlaceholder">Selecciona un PDF</option>
-            </select>
-            <button type="button" class="btn btn-bible-pdf" id="btnOpenPdf" data-i18n="biblePdfOpen">Abrir PDF</button>
-          </div>
-        </div>
       </div>
 
       <div class="section" id="catSection">
@@ -419,18 +410,49 @@
         </div>
         <button type="button" class="bible-reader-close" id="bibleReaderClose" aria-label="Cerrar">✖</button>
       </div>
+      <div class="bible-reader-toolbar">
+        <button type="button" class="bible-reader-btn" id="bibleReaderMyPassagesNotes" data-i18n="bibleMyPassagesNotes">Mis versículos y notas</button>
+      </div>
       <div class="bible-reader-content" id="bibleReaderContent"></div>
     </div>
-  </div>
-
-  <div class="fs pdf-reader-fs" id="pdfReaderOverlay" style="display:none;" aria-modal="true" role="dialog" aria-label="Lector de PDF">
-    <div class="pdf-reader-wrap">
-      <div class="pdf-reader-titlebar">
-        <h1 class="pdf-reader-title" id="pdfReaderTitle">—</h1>
-        <button type="button" class="pdf-reader-close" id="pdfReaderClose" aria-label="Cerrar">✖</button>
+    <div class="bible-reader-context-menu" id="bibleContextMenu" aria-hidden="true" role="menu">
+      <button type="button" class="bible-context-menu-item" id="bibleContextSave" data-i18n="bibleSaveVerses" role="menuitem">Guardar versículo(s)</button>
+      <button type="button" class="bible-context-menu-item" id="bibleContextNote" data-i18n="bibleAddNote" role="menuitem">Añadir nota</button>
+      <div class="bible-context-menu-divider"></div>
+      <div class="bible-context-menu-label" id="bibleContextHighlightLabel" data-i18n="bibleHighlight">Resaltar</div>
+      <div class="bible-context-menu-colors" id="bibleContextColors" role="group" aria-label="Color de resaltado">
+        <button type="button" class="bible-context-color bible-highlight-yellow" data-color="yellow" title="Amarillo" aria-label="Amarillo"></button>
+        <button type="button" class="bible-context-color bible-highlight-green" data-color="green" title="Verde" aria-label="Verde"></button>
+        <button type="button" class="bible-context-color bible-highlight-blue" data-color="blue" title="Azul" aria-label="Azul"></button>
+        <button type="button" class="bible-context-color bible-highlight-pink" data-color="pink" title="Rosa" aria-label="Rosa"></button>
+        <button type="button" class="bible-context-color bible-highlight-orange" data-color="orange" title="Naranja" aria-label="Naranja"></button>
+        <button type="button" class="bible-context-color bible-highlight-none" data-color="" title="Quitar resaltado" aria-label="Quitar resaltado">✕</button>
       </div>
-      <div class="pdf-reader-content" id="pdfReaderContent">
-        <object id="pdfReaderObject" type="application/pdf" data="" class="pdf-embed" title="PDF"></object>
+    </div>
+    <div class="bible-reader-sidepanel" id="bibleReaderSidepanel" aria-hidden="true">
+      <div class="bible-reader-sidepanel-header">
+        <h2 class="bible-reader-sidepanel-title" id="bibleReaderSidepanelTitle" data-i18n="bibleMyPassagesNotes">Mis pasajes y notas</h2>
+        <button type="button" class="bible-reader-sidepanel-close" id="bibleReaderSidepanelClose" aria-label="Cerrar">✖</button>
+      </div>
+      <div class="bible-reader-sidepanel-tabs">
+        <button type="button" class="bible-reader-tab active" id="bibleTabPassages" data-i18n="bibleTabPassages">Pasajes</button>
+        <button type="button" class="bible-reader-tab" id="bibleTabNotes" data-i18n="bibleTabNotes">Notas</button>
+      </div>
+      <div class="bible-reader-sidepanel-content">
+        <div class="bible-reader-list" id="biblePassagesList"></div>
+        <div class="bible-reader-list" id="bibleNotesList" style="display:none"></div>
+      </div>
+    </div>
+    <div class="bible-reader-note-modal" id="bibleNoteModal" aria-hidden="true">
+      <div class="bible-reader-note-modal-inner">
+        <h3 class="bible-reader-note-modal-title" id="bibleNoteModalTitle" data-i18n="bibleAddNote">Añadir nota</h3>
+        <p class="bible-reader-note-ref" id="bibleNoteRef"></p>
+        <label for="bibleNoteText" class="sr-only" data-i18n="bibleNoteTextLabel">Texto de la nota</label>
+        <textarea id="bibleNoteText" class="bible-reader-note-textarea" rows="4" placeholder="" data-i18n-placeholder="bibleNotePlaceholder"></textarea>
+        <div class="bible-reader-note-modal-actions">
+          <button type="button" class="bible-reader-btn secondary" id="bibleNoteCancel" data-i18n="cancel">Cancelar</button>
+          <button type="button" class="bible-reader-btn" id="bibleNoteSave" data-i18n="bibleNoteSave">Guardar nota</button>
+        </div>
       </div>
     </div>
   </div>

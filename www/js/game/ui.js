@@ -334,7 +334,7 @@ export async function refreshCategorySelect(){
     // Grupo packs disponibles según idioma (desde manifest.json)
     try {
       const currentLang = getLanguage();
-      const lang = SUPPORTED_LANGS.includes(currentLang) ? currentLang : 'es';
+      const lang = SUPPORTED_LANGS.includes(currentLang) ? currentLang : 'en';
       const manifestUrl = `${PACKS_BASE}/${lang}/manifest.json`;
       
       const res = await fetch(manifestUrl);

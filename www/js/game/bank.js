@@ -22,7 +22,7 @@ export const PACKS_BASE = 'packs';
 export const SUPPORTED_LANGS = ['es', 'en'];
 
 export function getCurrentLanguage() {
-  return Storage.get(K.lang, 'es');
+  return Storage.get(K.lang, 'en');
 }
 
 export function getBank() {
@@ -68,8 +68,8 @@ export function getBankCount() {
   return n;
 }
 
-export async function warmLocalBank(lang = 'es') {
-  if (!SUPPORTED_LANGS.includes(lang)) lang = 'es';
+export async function warmLocalBank(lang = 'en') {
+  if (!SUPPORTED_LANGS.includes(lang)) lang = 'en';
 
   const base = `${PACKS_BASE}/${lang}`;
   const manifestUrl = `${base}/manifest.json`;
@@ -312,14 +312,14 @@ export function categoryCounts() {
   return out;
 }
 
-export async function ensureBankReady(lang = 'es', { force = false } = {}) {
+export async function ensureBankReady(lang = 'en', { force = false } = {}) {
   const existing = getBankCount();
   if (existing > 0 && !force) return getBank();
   return await warmLocalBank(lang);
 }
 
 // Backwards-compat alias expected by game_solo.js
-export async function ensureInitial60(lang = 'es') {
+export async function ensureInitial60(lang = 'en') {
   // Warm the bank if needed; keep behavior minimal
   return await ensureBankReady(lang);
 }

@@ -19,7 +19,7 @@
     // Inicializar el banco automáticamente
 
     try {
-      await module.ensureBankReady('es');
+      await module.ensureBankReady('en');
       const count = module.getBankCount();
 
       // Disparar evento para indicar que el banco está listo

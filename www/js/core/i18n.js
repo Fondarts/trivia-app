@@ -102,8 +102,23 @@ const translations = {
     bibleSelectBookToRead: 'Selecciona un libro para leer.',
     bibleChapter: 'Capítulo',
     bibleNotAvailableOffline: 'Este libro no está disponible para lectura offline. Puedes leerlo en línea.',
-    biblePdfSelect: 'Leer PDF',
-    biblePdfOpen: 'Abrir PDF',
+    bibleSaveVerses: 'Guardar versículo(s)',
+    bibleAddNote: 'Añadir nota',
+    bibleMyPassagesNotes: 'Mis versículos y notas',
+    bibleTabPassages: 'Versículos',
+    bibleTabNotes: 'Notas',
+    bibleSelectVerses: 'Selecciona uno o más versículos y pulsa Guardar.',
+    bibleNotePlaceholder: 'Escribe tu nota aquí...',
+    bibleNoteSave: 'Guardar nota',
+    bibleNoteTextLabel: 'Texto de la nota',
+    bibleVersesSaved: 'Versículo(s) guardado(s)',
+    bibleNoteSaved: 'Nota guardada',
+    bibleNoVerses: 'Aún no has guardado ningún versículo.',
+    bibleSelectAtLeastOne: 'Selecciona al menos un versículo.',
+    bibleHighlight: 'Resaltar',
+    bibleNoNotes: 'Aún no tienes notas.',
+    bibleDelete: 'Eliminar',
+    cancel: 'Cancelar',
     
     // Profile
     yourProfile: 'Tu Perfil',
@@ -393,8 +408,23 @@ const translations = {
     bibleSelectBookToRead: 'Select a book to read.',
     bibleChapter: 'Chapter',
     bibleNotAvailableOffline: 'This book is not available for offline reading. You can read it online.',
-    biblePdfSelect: 'Read PDF',
-    biblePdfOpen: 'Open PDF',
+    bibleSaveVerses: 'Save verse(s)',
+    bibleAddNote: 'Add note',
+    bibleMyPassagesNotes: 'My verses & notes',
+    bibleTabPassages: 'Verses',
+    bibleTabNotes: 'Notes',
+    bibleSelectVerses: 'Select one or more verses and press Save.',
+    bibleNotePlaceholder: 'Write your note here...',
+    bibleNoteSave: 'Save note',
+    bibleNoteTextLabel: 'Note text',
+    bibleVersesSaved: 'Verse(s) saved',
+    bibleNoteSaved: 'Note saved',
+    bibleNoVerses: 'You have not saved any verses yet.',
+    bibleSelectAtLeastOne: 'Select at least one verse.',
+    bibleHighlight: 'Highlight',
+    bibleNoNotes: 'You have no notes yet.',
+    bibleDelete: 'Delete',
+    cancel: 'Cancel',
     
     // Profile
     yourProfile: 'Your Profile',
@@ -574,7 +604,7 @@ const translations = {
   }
 };
 
-let currentLang = 'es';
+let currentLang = 'en';
 
 export function setLanguage(lang) {
   if (translations[lang]) {
@@ -590,12 +620,12 @@ export function getLanguage() {
 }
 
 export function t(key) {
-  return translations[currentLang][key] || translations['es'][key] || key;
+  return translations[currentLang][key] || translations['en'][key] || key;
 }
 
 export function initI18n() {
   // Cargar idioma guardado
-  const savedLang = localStorage.getItem('trivia_lang') || 'es';
+  const savedLang = localStorage.getItem('trivia_lang') || 'en';
   currentLang = savedLang;
   document.documentElement.setAttribute('data-lang', savedLang);
 }

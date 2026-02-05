@@ -7,14 +7,9 @@
    1. VARIABLES GLOBALES Y TEMAS
    =========================================== */
 :root {
-  /* Transiciones */
   --transition-fast: 0.2s cubic-bezier(0.4,0,0.2,1);
   --transition-base: 0.3s cubic-bezier(0.4,0,0.2,1);
   --transition-slow: 0.5s cubic-bezier(0.4,0,0.2,1);
-}
-
-/* Tema único - Modo claro */
-:root {
   --bg1: #f0f9ff;
   --bg2: #e0f2fe;
   --accent: #3b82f6;
@@ -25,14 +20,10 @@
   --muted: rgba(30, 41, 59, 0.6);
   --good: #16a34a;
   --bad: #dc2626;
-  
-  /* Sombras */
   --shadow-sm: 0 2px 8px rgba(59, 130, 246, 0.08);
   --shadow-md: 0 8px 24px rgba(59, 130, 246, 0.12);
   --shadow-lg: 0 16px 48px rgba(59, 130, 246, 0.16);
   --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.2);
-  
-  /* Imagen de fondo */
   --bg-image: url('../assets/backgrounds/BG_01.png');
   --bg-overlay: linear-gradient(180deg, rgba(240, 249, 255, 0.2) 0%, rgba(240, 249, 255, 0.5) 100%);
 }
@@ -75,21 +66,21 @@ body {
   background-image: 
     var(--bg-overlay),
     var(--bg-image);
-  background-size: cover, cover;
   background-position: center center, center center;
   background-attachment: scroll, scroll;
   background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  -webkit-background-size: cover, cover;
+  -moz-background-size: cover, cover;
+  -o-background-size: cover, cover;
   transition: all var(--transition-slow);
   line-height: 1.5;
   position: relative;
   will-change: background-image;
   image-rendering: -webkit-optimize-contrast;
   background-clip: border-box;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   overflow-x: hidden;
-  overflow-y: auto; /* Scroll en body en lugar del container */
+  overflow-y: auto;
 }
 
 /* Efecto de partículas flotantes sutil para fondo espiritual */
@@ -142,6 +133,26 @@ body::before {
   margin-bottom: 12px;
 }
 
+.header .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .row .iconbtn {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .app-title {
   display: flex;
   align-items: center;
@@ -169,11 +180,6 @@ body::before {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
-.app-logo:hover {
-  /* Sin efecto de escala, solo cambio de sombra */
-  /* box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5); */ /* Eliminado el efecto hover */
-}
-
 .app-title span {
   display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -193,16 +199,18 @@ body::before {
   border: 2px solid rgba(139, 92, 246, 0.3);
   border-radius: 24px;
   padding: 24px;
-  padding-bottom: 24px;
   backdrop-filter: blur(10px) saturate(100%);
   -webkit-backdrop-filter: blur(10px) saturate(100%);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(139, 92, 246, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all var(--transition-base);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
   min-height: fit-content;
 }
 
@@ -225,20 +233,6 @@ body::before {
   pointer-events: none;
 }
 
-.card:hover::before {
-  transform: rotate(45deg) translateY(100%);
-}
-
-.card:hover {
-  box-shadow: 
-    0 12px 48px rgba(139, 92, 246, 0.25),
-    0 0 0 1px rgba(139, 92, 246, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(139, 92, 246, 0.5);
-  /* Reducir el transform para evitar overflow */
-  transform: translateY(-1px);
-}
-
 /* Secciones */
 .section {
   display: flex;
@@ -246,8 +240,40 @@ body::before {
   gap: 10px;
   margin-bottom: 16px;
   overflow: visible;
+  overflow-x: hidden;
   min-width: 0;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenedor específico para el select de categoría para evitar desbordes */
+#catSection {
+  overflow-x: hidden !important;
+  overflow: hidden !important;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Regla específica y agresiva para el select de categoría - eliminar cualquier desbordamiento */
+#categorySel {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 44px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  border: 2px solid rgba(139, 92, 246, 0.4) !important;
+  border-right-width: 2px !important;
+  outline: none !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
 }
 
 /* Asegurar que la última sección tenga espacio suficiente */
@@ -312,22 +338,30 @@ label {
 /* Selects - con chevron personalizado. Transición corta para evitar vibración al abrir el desplegable */
 select,
 select.input {
-  padding-right: 40px; /* Espacio para el chevron */
+  padding-right: 44px; /* Espacio para el chevron */
   appearance: none; /* Elimina el estilo nativo del select */
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 999px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e293b' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 12 12'%3E%3Cpath fill='%238b5cf6' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 12px;
-  background-color: rgba(255, 220, 150, 0.4);
+  background-position: right 16px center;
+  background-size: 14px;
+  background-color: rgba(255, 220, 150, 0.5);
   color: #1e293b;
   font-size: 17px;
   font-weight: 600;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  outline: none;
 }
 
 /* Extender inputs de texto dentro de cards para ocupar todo el ancho (excepto en selects-row) */
@@ -361,16 +395,34 @@ select.input {
   margin-right: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
-  border: 2px solid var(--cardBorder) !important;
-  background: rgba(255, 220, 150, 0.4) !important;
+  min-width: 0 !important;
+  border: 2px solid rgba(139, 92, 246, 0.4) !important;
+  border-right: 2px solid rgba(139, 92, 246, 0.4) !important;
+  background: rgba(255, 220, 150, 0.5) !important;
   color: #1e293b !important;
-  border-left: 2px solid var(--cardBorder) !important;
-  border-right: 2px solid var(--cardBorder) !important;
-  border-top: 2px solid var(--cardBorder) !important;
-  border-bottom: 2px solid var(--cardBorder) !important;
   border-radius: 999px !important;
   box-sizing: border-box !important;
-  overflow: visible !important;
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding-left: 20px !important;
+  padding-right: 44px !important;
+  position: relative !important;
+  outline: none !important;
+  clip-path: inset(0 0 0 0) !important;
+}
+
+/* Forzar que el dropdown nativo respete el ancho del contenedor */
+.card .section select.input:not(.selects-row select):focus,
+.card .section > select.input:not(.selects-row select):focus,
+.card .section #categorySel:focus,
+.card .section select:not(.selects-row select):not(.selects-row *):focus {
+  width: calc(100% - 0px) !important;
+  max-width: 100% !important;
+  outline: none !important;
 }
 
 /* Restaurar border-radius en los bordes del card para inputs (no selects individuales) */
@@ -423,17 +475,48 @@ select.input {
 select option {
   color: #1e293b;
   background: #fff;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  outline: none;
 }
 
+select optgroup {
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(139, 92, 246, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border: none;
+  outline: none;
+}
+
+select optgroup option {
+  padding-left: 24px;
+  font-weight: 500;
+  color: #1e293b;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+/* Select abierto / focus */
+select:active,
 select:focus {
   outline: none;
-  border-color: rgba(139, 92, 246, 0.7);
-  background: rgba(255, 220, 150, 0.5);
+  border-color: rgba(139, 92, 246, 0.8) !important;
+  background: rgba(255, 220, 150, 0.6) !important;
   color: #ffffff;
-  box-shadow: 
-    0 0 0 4px rgba(139, 92, 246, 0.2),
-    0 4px 16px rgba(139, 92, 246, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2), 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+select option:checked {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(124, 58, 237, 0.2));
+  color: #1e293b;
+  font-weight: 600;
 }
 
 /* Selects en fila (cantidad de preguntas y dificultad) */
@@ -480,7 +563,6 @@ select:focus {
 /* Selects pequeños también necesitan espacio para el chevron */
 select.input-small {
   padding-right: 32px;
-}
 }
 
 /* ===========================================
@@ -563,24 +645,6 @@ button#btnNext {
   transition: left 0.5s ease;
 }
 
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn:hover,
-button.btn:hover,
-#btnStart:hover,
-#btnShowAuth:hover,
-#profileBtnAuth:hover,
-#btnNext:hover,
-.card .section .btn:hover {
-  transform: translateY(-2px) !important;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 1), rgba(124, 58, 237, 1)) !important;
-  box-shadow: 
-    0 6px 12px rgba(139, 92, 246, 0.35),
-    0 12px 32px rgba(139, 92, 246, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-}
 
 .btn:active,
 button.btn:active,
@@ -915,42 +979,6 @@ button#btnReportQuestion {
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-#btnFriends svg {
-  color: #fff;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-}
-
-#btnFriends:hover {
-  background: linear-gradient(135deg, #0891b2, #0e7490);
-  transform: translateY(-2px);
-  box-shadow: 
-    0 6px 12px rgba(6, 182, 212, 0.4),
-    0 12px 32px rgba(6, 182, 212, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-#btnFriends:active {
-  transform: translateY(0);
-  box-shadow: 
-    0 2px 4px rgba(6, 182, 212, 0.3),
-    0 4px 12px rgba(6, 182, 212, 0.2),
-    inset 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Botón de crear pack con color especial */
-#btnCreatePack {
-  background: linear-gradient(135deg, #10b981, #059669);
-}
-
-#btnCreatePack svg {
-  color: #fff;
-}
-
-#btnCreatePack:hover {
-  background: linear-gradient(135deg, #059669, #047857);
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
-}
-
 /* Descripción de modo de juego */
 .section-description {
   margin: 0 0 16px 0;
@@ -1000,22 +1028,25 @@ button#btnReportQuestion {
   line-height: 1.4;
 }
 
-#btnFriends svg {
-  color: #fff;
-}
-
-#btnFriends:hover {
-  background: linear-gradient(135deg, #0891b2, #0e7490);
-  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
-}
-
 /* Botón de estadísticas con color especial */
 #btnOpenStats {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  border: 2px solid rgba(139, 92, 246, 0.5);
 }
 
-#btnOpenStats svg {
+#btnOpenStats svg,
+#btnOpenStats svg path {
   color: #fff;
+  fill: currentColor;
 }
 
 #btnOpenStats:hover {
@@ -1023,17 +1054,22 @@ button#btnReportQuestion {
   box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
 }
 
-/* Botón avatar */
+/* Botón avatar - redondo, misma línea que estadísticas */
 .avatar-btn {
-  padding: 0;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  padding: 0 !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  border-radius: 50% !important;
   overflow: hidden;
   border: 2px solid var(--accent);
   box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
   transition: all var(--transition-fast);
   background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .avatar-btn:hover {
@@ -1042,14 +1078,14 @@ button#btnReportQuestion {
   border-color: var(--accent2);
 }
 
-.avatar-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.avatar-btn svg,
+.avatar-btn svg path {
+  color: #fff;
+  fill: currentColor;
   transition: all var(--transition-fast);
 }
 
-.avatar-btn:hover img {
+.avatar-btn:hover svg {
   transform: scale(1.1);
 }
 
@@ -1284,31 +1320,9 @@ button#btnReportQuestion {
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
-.mode-btn[data-val="timed"]:hover {
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-}
-
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-}
-
-.mode-btn[data-val="adventure"]:hover {
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-}
-
 /* Active específico con brillo interior */
 .mode-btn[data-val="rounds"].active {
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
-}
-
-.mode-btn[data-val="timed"].active {
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
-}
-
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
-}
-
-.mode-btn[data-val="adventure"].active {
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
 /* Segmentos normales (no modos) */
@@ -1337,15 +1351,6 @@ button#btnReportQuestion {
 }
 
 
-.segment:not(.mode-segment) .seg:hover {
-  transform: translateY(-2px);
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 
-    0 4px 12px rgba(139, 92, 246, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  filter: brightness(1.1);
-}
-
 .segment:not(.mode-segment) .seg.active {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(124, 58, 237, 0.95));
   color: #fff;
@@ -1370,69 +1375,6 @@ button#btnReportQuestion {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
   overflow-x: visible;
-}
-
-/* Lista de partidas asíncronas */
-.matches-container {
-  max-height: 300px;
-  overflow-y: auto;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 8px;
-  margin-top: 8px;
-}
-
-.match-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-  margin-bottom: 8px;
-  background: #2a2a2a;
-  border-radius: 6px;
-  border: 1px solid #444;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: white;
-}
-
-.match-item:hover {
-  background: #3a3a3a;
-  border-color: #6c5ce7;
-}
-
-.match-item:last-child {
-  margin-bottom: 0;
-}
-
-.match-info {
-  flex: 1;
-}
-
-.match-category {
-  font-weight: 600;
-  color: #6c5ce7;
-  margin-bottom: 4px;
-}
-
-.match-details {
-  font-size: 0.9em;
-  color: #ccc;
-}
-
-.match-join {
-  background: #6c5ce7;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s ease;
-}
-
-.match-join:hover {
-  background: #5a4fcf;
 }
 
 .pill {
@@ -1528,14 +1470,6 @@ button#btnReportQuestion {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.option:hover:not(.disabled) {
-  transform: scale(1.02) translateY(-2px);
-  background: rgb(255 223 147 / 55%);
-  border-color: rgba(139, 92, 246, 0.6);
-  box-shadow: 
-    0 4px 12px rgba(139, 92, 246, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
 
 .option.correct {
   background: linear-gradient(135deg, var(--good), #10b981);
@@ -1755,10 +1689,6 @@ button#btnReportQuestion {
   transition: all var(--transition-fast);
 }
 
-.fs .back:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
 
 /* ===========================================
    9. MODALES
@@ -1932,9 +1862,6 @@ button#btnReportQuestion {
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent2);
-}
 
 /* ===========================================
    13. LOGO EN RESULTADOS
@@ -1985,6 +1912,18 @@ button#btnReportQuestion {
   align-items: center;
 }
 
+.results-header .row .iconbtn {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 /* Los botones heredan los estilos de .iconbtn ya definidos */
 
 /* Mejorar centrado del logo principal con la Q */
@@ -2017,19 +1956,14 @@ button#btnReportQuestion {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
-/* Sin efectos en hover para el logo */
-.app-logo:hover {
-  /* Sin efectos */
-}
-
 .app-title span {
   display: inline-block;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  vertical-align: middle; /* Añadido para mejor alineación */
-  line-height: 36px; /* Igual a la altura del logo */
+  vertical-align: middle;
+  line-height: 36px;
 }
 
 /* ===========================================
@@ -2284,7 +2218,6 @@ button#btnReportQuestion {
 .friends-group { margin-bottom: 16px; }
 .group-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(229, 231, 235, 0.75); margin-bottom: 8px; padding-left: 4px; font-weight: 600; }
 .friend-item, .search-result-item, .ranking-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(255, 255, 255, 0.95); border-radius: 12px; transition: all var(--transition-fast); backdrop-filter: blur(8px); border: 1px solid rgba(0, 0, 0, 0.1); }
-.friend-item:hover, .search-result-item:hover, .ranking-item:hover { background: rgba(139, 92, 246, 0.15); transform: translateX(2px); border-color: var(--accent); }
 .friend-status { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
 .friend-status.online { background: var(--good); animation: pulse 2s infinite; }
 .friend-status.offline { background: var(--bad); opacity: 0.5; }
@@ -2337,11 +2270,9 @@ button#btnReportQuestion {
 #fsStats::-webkit-scrollbar { width: 8px; }
 #fsStats::-webkit-scrollbar-track { background: var(--cardBorder); }
 #fsStats::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
-#fsStats::-webkit-scrollbar-thumb:hover { background: var(--accent2); }
 #fsStats .titlebar { background: transparent; border: none; padding: 0 0 16px; margin-bottom: 0; }
 #fsStats .fs-titlebar-title { font-size: 26px; font-weight: 800; color: var(--text); }
 #fsStats .back { background: transparent; border: none; color: var(--text); font-size: 24px; padding: 8px; cursor: pointer; border-radius: 10px; transition: transform var(--transition-fast), opacity var(--transition-fast); }
-#fsStats .back:hover { transform: scale(1.1); opacity: 0.7; }
 #fsStats .card { background: transparent; border: none; box-shadow: none; padding: 0; overflow: visible; }
 #fsStats .stats-tab-content { overflow: visible; }
 #fsStats #statsTabContent { overflow: visible; }
@@ -2591,9 +2522,6 @@ button#btnReportQuestion {
   -webkit-tap-highlight-color: transparent;
 }
 
-.ws-cell:hover {
-  background: rgb(255 223 147 / 60%);
-}
 
 .ws-cell.selected {
   background: rgba(139, 92, 246, 0.5);
@@ -2787,15 +2715,6 @@ button#btnReportQuestion {
 }
 
 #btnWsPlayAgain:hover,
-.ws-complete .btn:hover {
-  transform: translateY(-2px) !important;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 1), rgba(124, 58, 237, 1)) !important;
-  box-shadow: 
-    0 6px 16px rgba(139, 92, 246, 0.4),
-    0 12px 32px rgba(139, 92, 246, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-  border-color: rgba(139, 92, 246, 0.7) !important;
-}
 
 #btnWsPlayAgain:active,
 .ws-complete .btn:active {

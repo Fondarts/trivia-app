@@ -1,0 +1,842 @@
+[
+  {
+    "id": 2821,
+    "book": "Hechos",
+    "question": "To whom did Jesus show Himself alive for forty days after His passion?",
+    "options": [
+      "The apostles",
+      "The Pharisees",
+      "Pilate",
+      "The people of Galilee"
+    ],
+    "answer": "The apostles",
+    "reference": "Acts 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2822,
+    "book": "Hechos",
+    "question": "What was the name of the place from which Jesus ascended into heaven?",
+    "options": [
+      "Mount of Olives",
+      "Mount Sinai",
+      "Mount Tabor",
+      "Golgotha"
+    ],
+    "answer": "Mount of Olives",
+    "reference": "Acts 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2823,
+    "book": "Hechos",
+    "question": "Who stood up in the midst of the disciples to propose a successor for Judas?",
+    "options": [
+      "Peter",
+      "John",
+      "James",
+      "Andrew"
+    ],
+    "answer": "Peter",
+    "reference": "Acts 1:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2824,
+    "book": "Hechos",
+    "question": "At what time of day did the Holy Spirit descend on the Day of Pentecost?",
+    "options": [
+      "The third hour (9 AM)",
+      "Noon",
+      "The ninth hour (3 PM)",
+      "Midnight"
+    ],
+    "answer": "The third hour (9 AM)",
+    "reference": "Acts 2:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2825,
+    "book": "Hechos",
+    "question": "Which prophet did Peter quote in his sermon on Pentecost to explain the pouring out of the Spirit?",
+    "options": [
+      "Joel",
+      "Isaiah",
+      "Jeremiah",
+      "Ezekiel"
+    ],
+    "answer": "Joel",
+    "reference": "Acts 2:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2826,
+    "book": "Hechos",
+    "question": "How many souls were added to the church on the Day of Pentecost?",
+    "options": [
+      "About 3,000",
+      "About 5,000",
+      "About 500",
+      "About 120"
+    ],
+    "answer": "About 3,000",
+    "reference": "Acts 2:41",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2827,
+    "book": "Hechos",
+    "question": "What was the name of the gate where the lame man was healed by Peter and John?",
+    "options": [
+      "Beautiful",
+      "Golden",
+      "Sheep",
+      "East"
+    ],
+    "answer": "Beautiful",
+    "reference": "Acts 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2828,
+    "book": "Hechos",
+    "question": "Who was the Pharisee and teacher of the law who advised the council to leave the apostles alone?",
+    "options": [
+      "Gamaliel",
+      "Nicodemus",
+      "Caiaphas",
+      "Annas"
+    ],
+    "answer": "Gamaliel",
+    "reference": "Acts 5:34",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2829,
+    "book": "Hechos",
+    "question": "How many men were chosen to serve as deacons to help the widows in Acts 6?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Three",
+      "Ten"
+    ],
+    "answer": "Seven",
+    "reference": "Acts 6:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2830,
+    "book": "Hechos",
+    "question": "What was the name of the first Christian martyr?",
+    "options": [
+      "Stephen",
+      "James",
+      "Peter",
+      "Paul"
+    ],
+    "answer": "Stephen",
+    "reference": "Acts 7:59-60",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2831,
+    "book": "Hechos",
+    "question": "Who was the sorcerer in Samaria who tried to buy the gift of the Holy Spirit with money?",
+    "options": [
+      "Simon",
+      "Elymas",
+      "Alexander",
+      "Philetus"
+    ],
+    "answer": "Simon",
+    "reference": "Acts 8:18-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2832,
+    "book": "Hechos",
+    "question": "To which city was Saul traveling when he saw the great light from heaven?",
+    "options": [
+      "Damascus",
+      "Jerusalem",
+      "Antioch",
+      "Tarsus"
+    ],
+    "answer": "Damascus",
+    "reference": "Acts 9:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2833,
+    "book": "Hechos",
+    "question": "Who was the Roman centurion in Caesarea who was the first Gentile convert?",
+    "options": [
+      "Cornelius",
+      "Julius",
+      "Gallio",
+      "Lysias"
+    ],
+    "answer": "Cornelius",
+    "reference": "Acts 10:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2834,
+    "book": "Hechos",
+    "question": "In which city were the disciples first called 'Christians'?",
+    "options": [
+      "Antioch",
+      "Jerusalem",
+      "Rome",
+      "Corinth"
+    ],
+    "answer": "Antioch",
+    "reference": "Acts 11:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2835,
+    "book": "Hechos",
+    "question": "Which apostle was killed by Herod the King with the sword?",
+    "options": [
+      "James (brother of John)",
+      "Peter",
+      "Matthew",
+      "John"
+    ],
+    "answer": "James (brother of John)",
+    "reference": "Acts 12:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2836,
+    "book": "Hechos",
+    "question": "Who was Paul's companion on his first missionary journey?",
+    "options": [
+      "Barnabas",
+      "Silas",
+      "Timothy",
+      "Luke"
+    ],
+    "answer": "Barnabas",
+    "reference": "Acts 13:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2837,
+    "book": "Hechos",
+    "question": "In which city did Paul preach at the Areopagus (Mars Hill)?",
+    "options": [
+      "Athens",
+      "Corinth",
+      "Rome",
+      "Ephesus"
+    ],
+    "answer": "Athens",
+    "reference": "Acts 17:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2838,
+    "book": "Hechos",
+    "question": "Who was the young man who fell from a third-story window while Paul was preaching?",
+    "options": [
+      "Eutychus",
+      "Timothy",
+      "Titus",
+      "Mark"
+    ],
+    "answer": "Eutychus",
+    "reference": "Acts 20:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2839,
+    "book": "Hechos",
+    "question": "What happened to Paul on the island of Malta while he was gathering sticks?",
+    "options": [
+      "A viper bit his hand",
+      "He was arrested",
+      "He saw a vision",
+      "He was hungry"
+    ],
+    "answer": "A viper bit his hand",
+    "reference": "Acts 28:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2840,
+    "book": "Hechos",
+    "question": "How long did Paul live in his own rented house in Rome preaching the kingdom of God?",
+    "options": [
+      "Two years",
+      "One year",
+      "Six months",
+      "Three years"
+    ],
+    "answer": "Two years",
+    "reference": "Acts 28:30",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2921,
+    "book": "Hechos",
+    "question": "In Acts 1, what did the two men in white apparel say Jesus would do?",
+    "options": [
+      "Come back in the same way He left",
+      "Stay in heaven forever",
+      "Destroy Rome",
+      "Send more prophets"
+    ],
+    "answer": "Come back in the same way He left",
+    "reference": "Acts 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2922,
+    "book": "Hechos",
+    "question": "What was the occupation of Tabitha (Dorcas), whom Peter raised from the dead?",
+    "options": [
+      "She made tunics and garments",
+      "She was a merchant",
+      "She was a servant",
+      "She was a teacher"
+    ],
+    "answer": "She made tunics and garments",
+    "reference": "Acts 9:39",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2923,
+    "book": "Hechos",
+    "question": "Who was the first person to reach Peter at the door after he was released from prison by an angel?",
+    "options": [
+      "A girl named Rhoda",
+      "Mary the mother of John Mark",
+      "Barnabas",
+      "James"
+    ],
+    "answer": "A girl named Rhoda",
+    "reference": "Acts 12:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2924,
+    "book": "Hechos",
+    "question": "Paul was born in which city, making him a citizen of Rome?",
+    "options": [
+      "Tarsus",
+      "Antioch",
+      "Jerusalem",
+      "Ephesus"
+    ],
+    "answer": "Tarsus",
+    "reference": "Acts 22:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2925,
+    "book": "Hechos",
+    "question": "What happened to the jailer in Philippi after the earthquake opened the prison doors?",
+    "options": [
+      "He and his whole household were baptized",
+      "He fled in fear",
+      "He was executed",
+      "He attacked Paul"
+    ],
+    "answer": "He and his whole household were baptized",
+    "reference": "Acts 16:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2926,
+    "book": "Hechos",
+    "question": "Which couple died after lying to Peter (and the Holy Spirit) about the price of their land?",
+    "options": [
+      "Ananias and Sapphira",
+      "Aquila and Priscilla",
+      "Felix and Drusilla",
+      "Agrippa and Bernice"
+    ],
+    "answer": "Ananias and Sapphira",
+    "reference": "Acts 5:1-10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2927,
+    "book": "Hechos",
+    "question": "To whom did Philip preach the gospel while traveling on the road to Gaza?",
+    "options": [
+      "An Ethiopian eunuch",
+      "A Roman centurion",
+      "A group of fishermen",
+      "A Pharisee"
+    ],
+    "answer": "An Ethiopian eunuch",
+    "reference": "Acts 8:27",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2928,
+    "book": "Hechos",
+    "question": "Who was the 'son of encouragement' who sold his land and gave the money to the apostles?",
+    "options": [
+      "Barnabas",
+      "Stephen",
+      "Silas",
+      "Timothy"
+    ],
+    "answer": "Barnabas",
+    "reference": "Acts 4:36-37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2929,
+    "book": "Hechos",
+    "question": "What did Paul and Silas do at midnight while they were in prison in Philippi?",
+    "options": [
+      "Prayed and sang hymns",
+      "Planned an escape",
+      "Slept",
+      "Argued with the guards"
+    ],
+    "answer": "Prayed and sang hymns",
+    "reference": "Acts 16:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2930,
+    "book": "Hechos",
+    "question": "What was the name of the goddess whose followers rioted against Paul in Ephesus?",
+    "options": [
+      "Artemis (Diana)",
+      "Athena",
+      "Venus",
+      "Hera"
+    ],
+    "answer": "Artemis (Diana)",
+    "reference": "Acts 19:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2931,
+    "book": "Hechos",
+    "question": "Who was the Roman governor of Judea before whom Paul made his defense in Acts 24?",
+    "options": [
+      "Felix",
+      "Festus",
+      "Pilate",
+      "Gallio"
+    ],
+    "answer": "Felix",
+    "reference": "Acts 24:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2932,
+    "book": "Hechos",
+    "question": "On what island was Paul shipwrecked while being taken to Rome?",
+    "options": [
+      "Malta",
+      "Crete",
+      "Cyprus",
+      "Sicily"
+    ],
+    "answer": "Malta",
+    "reference": "Acts 28:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2933,
+    "book": "Hechos",
+    "question": "Who was the king who told Paul: 'You almost persuade me to become a Christian'?",
+    "options": [
+      "Agrippa",
+      "Herod",
+      "Felix",
+      "Festus"
+    ],
+    "answer": "Agrippa",
+    "reference": "Acts 26:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2934,
+    "book": "Hechos",
+    "question": "What was the name of the sorcerer Paul blinded on the island of Cyprus?",
+    "options": [
+      "Elymas (Bar-Jesus)",
+      "Simon",
+      "Demetrius",
+      "Alexander"
+    ],
+    "answer": "Elymas (Bar-Jesus)",
+    "reference": "Acts 13:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2935,
+    "book": "Hechos",
+    "question": "Which city's believers 'searched the Scriptures daily' to see if Paul's words were true?",
+    "options": [
+      "Berea",
+      "Thessalonica",
+      "Corinth",
+      "Athens"
+    ],
+    "answer": "Berea",
+    "reference": "Acts 17:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2936,
+    "book": "Hechos",
+    "question": "What trade did Paul share with Aquila and Priscilla?",
+    "options": [
+      "Tentmaking",
+      "Fishing",
+      "Pottery",
+      "Farming"
+    ],
+    "answer": "Tentmaking",
+    "reference": "Acts 18:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2937,
+    "book": "Hechos",
+    "question": "Who was the eloquent Jew from Alexandria who was instructed by Priscilla and Aquila?",
+    "options": [
+      "Apollos",
+      "Barnabas",
+      "Timothy",
+      "Silas"
+    ],
+    "answer": "Apollos",
+    "reference": "Acts 18:24-26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2938,
+    "book": "Hechos",
+    "question": "How many years did Paul spend teaching in the school of Tyrannus in Ephesus?",
+    "options": [
+      "Two years",
+      "One year",
+      "Three years",
+      "Six months"
+    ],
+    "answer": "Two years",
+    "reference": "Acts 19:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2939,
+    "book": "Hechos",
+    "question": "What prophet warned Paul that he would be bound if he went to Jerusalem?",
+    "options": [
+      "Agabus",
+      "Philip",
+      "John",
+      "Silas"
+    ],
+    "answer": "Agabus",
+    "reference": "Acts 21:10-11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2940,
+    "book": "Hechos",
+    "question": "Who was the High Priest when Paul appeared before the council in Acts 23?",
+    "options": [
+      "Ananias",
+      "Caiaphas",
+      "Annas",
+      "Jonathan"
+    ],
+    "answer": "Ananias",
+    "reference": "Acts 23:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3021,
+    "book": "Hechos",
+    "question": "How many days did Jesus remain with the disciples between His resurrection and ascension?",
+    "options": [
+      "Forty days",
+      "Seven days",
+      "Twelve days",
+      "Fifty days"
+    ],
+    "answer": "Forty days",
+    "reference": "Acts 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3022,
+    "book": "Hechos",
+    "question": "Who was chosen by lot to replace Judas Iscariot?",
+    "options": [
+      "Matthias",
+      "Barsabas",
+      "Barnabas",
+      "Silas"
+    ],
+    "answer": "Matthias",
+    "reference": "Acts 1:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3023,
+    "book": "Hechos",
+    "question": "What was the name of the man who sold a possession but kept back part of the proceeds, lying to the Holy Spirit?",
+    "options": [
+      "Ananias",
+      "Sapphira",
+      "Simon",
+      "Elymas"
+    ],
+    "answer": "Ananias",
+    "reference": "Acts 5:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3024,
+    "book": "Hechos",
+    "question": "Where was Peter when he had the vision of the great sheet descending from heaven?",
+    "options": [
+      "Joppa",
+      "Caesarea",
+      "Jerusalem",
+      "Lydda"
+    ],
+    "answer": "Joppa",
+    "reference": "Acts 10:5-9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3025,
+    "book": "Hechos",
+    "question": "What was the name of the man from Joppa who died but was raised back to life by Peter?",
+    "options": [
+      "Tabitha / Dorcas",
+      "Lydia",
+      "Rhoda",
+      "Mary"
+    ],
+    "answer": "Tabitha / Dorcas",
+    "reference": "Acts 9:36-40",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3026,
+    "book": "Hechos",
+    "question": "Which apostle did Herod Agrippa I have executed with the sword?",
+    "options": [
+      "James",
+      "Peter",
+      "John",
+      "Andrew"
+    ],
+    "answer": "James",
+    "reference": "Acts 12:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3027,
+    "book": "Hechos",
+    "question": "To whom was Paul referring when he said: 'I am a Pharisee, the son of a Pharisee'?",
+    "options": [
+      "The Sanhedrin",
+      "King Agrippa",
+      "Felix",
+      "Festus"
+    ],
+    "answer": "The Sanhedrin",
+    "reference": "Acts 23:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3028,
+    "book": "Hechos",
+    "question": "Who was the 'beloved physician' who traveled with Paul and wrote the book of Acts?",
+    "options": [
+      "Luke",
+      "Timothy",
+      "Silas",
+      "Titus"
+    ],
+    "answer": "Luke",
+    "reference": "Acts 16:10 / Colossians 4:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3029,
+    "book": "Hechos",
+    "question": "What was the name of the man who fell asleep during Paul's sermon and fell from a window?",
+    "options": [
+      "Eutychus",
+      "Timothy",
+      "Mark",
+      "Stephen"
+    ],
+    "answer": "Eutychus",
+    "reference": "Acts 20:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3030,
+    "book": "Hechos",
+    "question": "Which couple from Rome became fellow tentmakers and companions of Paul in Corinth?",
+    "options": [
+      "Aquila and Priscilla",
+      "Ananias and Sapphira",
+      "Felix and Drusilla",
+      "Agrippa and Bernice"
+    ],
+    "answer": "Aquila and Priscilla",
+    "reference": "Acts 18:2-3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3031,
+    "book": "Hechos",
+    "question": "Who was the Roman centurion whom Peter visited in Caesarea after a divine vision?",
+    "options": [
+      "Cornelius",
+      "Julius",
+      "Longinus",
+      "Gallio"
+    ],
+    "answer": "Cornelius",
+    "reference": "Acts 10:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3032,
+    "book": "Hechos",
+    "question": "In which city did the Jews incite a riot against Paul and Silas, claiming they were 'turning the world upside down'?",
+    "options": [
+      "Thessalonica",
+      "Berea",
+      "Philippi",
+      "Athens"
+    ],
+    "answer": "Thessalonica",
+    "reference": "Acts 17:5-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3033,
+    "book": "Hechos",
+    "question": "On the road to which city did Paul encounter the light from heaven and the voice of Jesus?",
+    "options": [
+      "Damascus",
+      "Antioch",
+      "Jerusalem",
+      "Tarsus"
+    ],
+    "answer": "Damascus",
+    "reference": "Acts 9:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3034,
+    "book": "Hechos",
+    "question": "Who was the Roman governor of Judea who left Paul in prison for two years to please the Jews?",
+    "options": [
+      "Felix",
+      "Festus",
+      "Pilate",
+      "Agrippa"
+    ],
+    "answer": "Felix",
+    "reference": "Acts 24:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3035,
+    "book": "Hechos",
+    "question": "What did Paul and Barnabas disagree about, causing them to separate before their second journey?",
+    "options": [
+      "Whether to take John Mark",
+      "Where to travel next",
+      "Who should lead",
+      "How much money to spend"
+    ],
+    "answer": "Whether to take John Mark",
+    "reference": "Acts 15:37-39",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3036,
+    "book": "Hechos",
+    "question": "What was the name of the woman in Philippi, a seller of purple, who was Paul's first convert in Europe?",
+    "options": [
+      "Lydia",
+      "Damaris",
+      "Chloe",
+      "Phoebe"
+    ],
+    "answer": "Lydia",
+    "reference": "Acts 16:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3037,
+    "book": "Hechos",
+    "question": "Who was the orator (lawyer) brought by the high priest to accuse Paul before Felix?",
+    "options": [
+      "Tertullus",
+      "Gamaliel",
+      "Alexander",
+      "Demas"
+    ],
+    "answer": "Tertullus",
+    "reference": "Acts 24:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3038,
+    "book": "Hechos",
+    "question": "Which city did Paul see was 'given over to idols', prompting him to preach at the Areopagus?",
+    "options": [
+      "Athens",
+      "Rome",
+      "Corinth",
+      "Ephesus"
+    ],
+    "answer": "Athens",
+    "reference": "Acts 17:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3039,
+    "book": "Hechos",
+    "question": "What was the name of the man in Damascus who was sent to restore Paul's sight?",
+    "options": [
+      "Ananias",
+      "Simon",
+      "Barnabas",
+      "Judas"
+    ],
+    "answer": "Ananias",
+    "reference": "Acts 9:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3040,
+    "book": "Hechos",
+    "question": "Where was Paul when he said 'I appeal to Caesar'?",
+    "options": [
+      "Caesarea",
+      "Jerusalem",
+      "Rome",
+      "Malta"
+    ],
+    "answer": "Caesarea",
+    "reference": "Acts 25:11",
+    "difficulty": "medium"
+  }
+]

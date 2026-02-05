@@ -12,13 +12,7 @@ import { nextQuestion } from '../game/solo.js';
 export function bindAllEventListeners(options = {}) {
   const {
     onStartGame = () => {},
-    onHost = () => {},
-    onCancelSearch = () => {},
-    onJoin = () => {},
-    onShowFriends = () => {},
-    onExitGame = () => {},
-    onShareResult = () => {},
-    lastResultShareText = ''
+    onExitGame = () => {}
   } = options;
   
   // Botones de juego

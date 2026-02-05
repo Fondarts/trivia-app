@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1781,
+    "book": "Luke",
+    "question": "To whom is the Gospel of Luke addressed?",
+    "options": [
+      "Theophilus",
+      "Timothy",
+      "Titus",
+      "The Church"
+    ],
+    "answer": "Theophilus",
+    "reference": "Luke 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1782,
+    "book": "Luke",
+    "question": "Who were the parents of John the Baptist?",
+    "options": [
+      "Zacharias and Elizabeth",
+      "Joseph and Mary",
+      "Elkanah and Hannah",
+      "Abraham and Sarah"
+    ],
+    "answer": "Zacharias and Elizabeth",
+    "reference": "Luke 1:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1783,
+    "book": "Luke",
+    "question": "What happened to Zacharias because he did not believe the angel Gabriel's message?",
+    "options": [
+      "He was unable to speak (mute)",
+      "He became blind",
+      "He died",
+      "He was imprisoned"
+    ],
+    "answer": "He was unable to speak (mute)",
+    "reference": "Luke 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1784,
+    "book": "Luke",
+    "question": "Which angel visited Mary to announce the birth of Jesus?",
+    "options": [
+      "Gabriel",
+      "Michael",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Gabriel",
+    "reference": "Luke 1:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1785,
+    "book": "Luke",
+    "question": "What is Mary's song of praise (Luke 1:46-55) commonly called?",
+    "options": [
+      "The Magnificat",
+      "The Benedictus",
+      "The Nunc Dimittis",
+      "The Gloria"
+    ],
+    "answer": "The Magnificat",
+    "reference": "Luke 1:46",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1786,
+    "book": "Luke",
+    "question": "Why did Joseph and Mary travel to Bethlehem before Jesus' birth?",
+    "options": [
+      "For a census decreed by Caesar Augustus",
+      "To visit family",
+      "To escape Herod",
+      "For a religious festival"
+    ],
+    "answer": "For a census decreed by Caesar Augustus",
+    "reference": "Luke 2:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1787,
+    "book": "Luke",
+    "question": "Who were the first people to be told of Jesus' birth by angels?",
+    "options": [
+      "Shepherds in the fields",
+      "The Wise Men",
+      "The High Priest",
+      "King Herod"
+    ],
+    "answer": "Shepherds in the fields",
+    "reference": "Luke 2:8-9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1788,
+    "book": "Luke",
+    "question": "Who was the righteous man in the temple who had been told he would not die until he saw the Lord's Christ?",
+    "options": [
+      "Simeon",
+      "Anna",
+      "Zacharias",
+      "Nicodemus"
+    ],
+    "answer": "Simeon",
+    "reference": "Luke 2:25-26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1789,
+    "book": "Luke",
+    "question": "What was the name of the 84-year-old prophetess who served in the temple day and night?",
+    "options": [
+      "Anna",
+      "Elizabeth",
+      "Miriam",
+      "Deborah"
+    ],
+    "answer": "Anna",
+    "reference": "Luke 2:36-37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1790,
+    "book": "Luke",
+    "question": "How old was Jesus when He was left behind in the temple talking to the teachers?",
+    "options": [
+      "12",
+      "8",
+      "10",
+      "13"
+    ],
+    "answer": "12",
+    "reference": "Luke 2:42",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1791,
+    "book": "Luke",
+    "question": "In Luke's genealogy, Jesus' ancestry is traced back to whom?",
+    "options": [
+      "Adam",
+      "Abraham",
+      "David",
+      "Noah"
+    ],
+    "answer": "Adam",
+    "reference": "Luke 3:38",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1792,
+    "book": "Luke",
+    "question": "From which scroll did Jesus read in the synagogue at Nazareth?",
+    "options": [
+      "Isaiah",
+      "Jeremiah",
+      "The Psalms",
+      "Genesis"
+    ],
+    "answer": "Isaiah",
+    "reference": "Luke 4:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1793,
+    "book": "Luke",
+    "question": "After the miraculous catch of fish, what did Jesus say to Simon?",
+    "options": [
+      "From now on you will catch men",
+      "Follow Me",
+      "You have great faith",
+      "Feed My sheep"
+    ],
+    "answer": "From now on you will catch men",
+    "reference": "Luke 5:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1794,
+    "book": "Luke",
+    "question": "Luke's version of the 'Sermon on the Mount' (Luke 6) is often called the...",
+    "options": [
+      "Sermon on the Plain",
+      "Beatitudes",
+      "Great Commandment",
+      "Parable of the Kingdom"
+    ],
+    "answer": "Sermon on the Plain",
+    "reference": "Luke 6:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1795,
+    "book": "Luke",
+    "question": "Whose servant did Jesus heal by just saying a word, without entering the house?",
+    "options": [
+      "A centurion's",
+      "A Pharisee's",
+      "The High Priest's",
+      "Herod's"
+    ],
+    "answer": "A centurion's",
+    "reference": "Luke 7:2-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1796,
+    "book": "Luke",
+    "question": "What did Jesus do for the widow of Nain?",
+    "options": [
+      "Raised her only son from the dead",
+      "Healed her blindness",
+      "Multiplied her bread",
+      "Gave her money"
+    ],
+    "answer": "Raised her only son from the dead",
+    "reference": "Luke 7:12-15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1797,
+    "book": "Luke",
+    "question": "Who was the woman from whom seven demons had gone out?",
+    "options": [
+      "Mary Magdalene",
+      "Mary of Bethany",
+      "Joanna",
+      "Susanna"
+    ],
+    "answer": "Mary Magdalene",
+    "reference": "Luke 8:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1798,
+    "book": "Luke",
+    "question": "When the disciples were in the storm, they woke Jesus saying, 'Master, Master, we are ____!'",
+    "options": [
+      "Perishing",
+      "Drowning",
+      "Afraid",
+      "Sinking"
+    ],
+    "answer": "Perishing",
+    "reference": "Luke 8:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1799,
+    "book": "Luke",
+    "question": "How many disciples did Jesus send out in Luke 10 to every city He was about to visit?",
+    "options": [
+      "Seventy (or Seventy-two)",
+      "Twelve",
+      "Five hundred",
+      "Three"
+    ],
+    "answer": "Seventy (or Seventy-two)",
+    "reference": "Luke 10:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1800,
+    "book": "Luke",
+    "question": "In the Parable of the Good Samaritan, who were the first two people to pass by the wounded man?",
+    "options": [
+      "A priest and a Levite",
+      "Two soldiers",
+      "A Pharisee and a scribe",
+      "Two merchants"
+    ],
+    "answer": "A priest and a Levite",
+    "reference": "Luke 10:31-32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1801,
+    "book": "Luke",
+    "question": "Which sister sat at Jesus' feet listening to His word while the other was distracted by serving?",
+    "options": [
+      "Mary",
+      "Martha",
+      "Lydia",
+      "Tabitha"
+    ],
+    "answer": "Mary",
+    "reference": "Luke 10:39-40",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1802,
+    "book": "Luke",
+    "question": "In the Parable of the Rich Fool, what did the man decide to build to store his surplus grain?",
+    "options": [
+      "Greater barns",
+      "A stone tower",
+      "A palace",
+      "An underground vault"
+    ],
+    "answer": "Greater barns",
+    "reference": "Luke 12:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1803,
+    "book": "Luke",
+    "question": "Which three parables of 'lost' things are found in Luke 15?",
+    "options": [
+      "Lost Sheep, Lost Coin, Lost Son",
+      "Lost Key, Lost Sheep, Lost Servant",
+      "Lost Pearl, Lost Coin, Lost Son",
+      "Lost Talent, Lost Sheep, Lost Way"
+    ],
+    "answer": "Lost Sheep, Lost Coin, Lost Son",
+    "reference": "Luke 15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1804,
+    "book": "Luke",
+    "question": "In the Parable of the Prodigal Son, what did the father give his son upon his return?",
+    "options": [
+      "The best robe, a ring, and sandals",
+      "A bag of gold",
+      "A lecture and a chore",
+      "A small tent"
+    ],
+    "answer": "The best robe, a ring, and sandals",
+    "reference": "Luke 15:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1805,
+    "book": "Luke",
+    "question": "What was the name of the beggar who sat at the rich man's gate in Luke 16?",
+    "options": [
+      "Lazarus",
+      "Bartimaeus",
+      "Malchus",
+      "Simon"
+    ],
+    "answer": "Lazarus",
+    "reference": "Luke 16:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1806,
+    "book": "Luke",
+    "question": "How many lepers did Jesus heal at once, and how many returned to thank Him?",
+    "options": [
+      "10 healed, 1 returned",
+      "12 healed, 3 returned",
+      "10 healed, 5 returned",
+      "7 healed, 1 returned"
+    ],
+    "answer": "10 healed, 1 returned",
+    "reference": "Luke 17:12-18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1807,
+    "book": "Luke",
+    "question": "What was the nationality of the one leper who returned to thank Jesus?",
+    "options": [
+      "Samaritan",
+      "Jew",
+      "Roman",
+      "Greek"
+    ],
+    "answer": "Samaritan",
+    "reference": "Luke 17:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1808,
+    "book": "Luke",
+    "question": "What was Zacchaeus's profession?",
+    "options": [
+      "Chief tax collector",
+      "Fisherman",
+      "Pharisee",
+      "Centurion"
+    ],
+    "answer": "Chief tax collector",
+    "reference": "Luke 19:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1809,
+    "book": "Luke",
+    "question": "What kind of tree did Zacchaeus climb to see Jesus?",
+    "options": [
+      "Sycamore-fig tree",
+      "Olive tree",
+      "Oak tree",
+      "Palm tree"
+    ],
+    "answer": "Sycamore-fig tree",
+    "reference": "Luke 19:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1810,
+    "book": "Luke",
+    "question": "What did Jesus sweat like in the Garden of Gethsemane?",
+    "options": [
+      "Great drops of blood",
+      "Rain",
+      "Water",
+      "Ice"
+    ],
+    "answer": "Great drops of blood",
+    "reference": "Luke 22:44",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1811,
+    "book": "Luke",
+    "question": "Which Roman official did Pilate send Jesus to after learning He was a Galilean?",
+    "options": [
+      "Herod Antipas",
+      "Felix",
+      "Festus",
+      "Agrippa"
+    ],
+    "answer": "Herod Antipas",
+    "reference": "Luke 23:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1812,
+    "book": "Luke",
+    "question": "What did the 'thief on the cross' ask Jesus?",
+    "options": [
+      "Lord, remember me when You come into Your kingdom",
+      "Save Yourself and us",
+      "Forgive my sins",
+      "Help my family"
+    ],
+    "answer": "Lord, remember me when You come into Your kingdom",
+    "reference": "Luke 23:42",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1813,
+    "book": "Luke",
+    "question": "On the day of the Resurrection, two disciples were walking to which village when Jesus joined them?",
+    "options": [
+      "Emmaus",
+      "Bethany",
+      "Nazareth",
+      "Jericho"
+    ],
+    "answer": "Emmaus",
+    "reference": "Luke 24:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1814,
+    "book": "Luke",
+    "question": "At what point did the two disciples on the road to Emmaus recognize Jesus?",
+    "options": [
+      "When He broke bread",
+      "When He first spoke",
+      "When they reached the house",
+      "When He showed His hands"
+    ],
+    "answer": "When He broke bread",
+    "reference": "Luke 24:30-31",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1815,
+    "book": "Luke",
+    "question": "What did Jesus eat in the presence of the disciples to prove He was not a spirit?",
+    "options": [
+      "Broiled fish and some honeycomb",
+      "Bread and wine",
+      "Grapes",
+      "Meat"
+    ],
+    "answer": "Broiled fish and some honeycomb",
+    "reference": "Luke 24:42",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1816,
+    "book": "Luke",
+    "question": "From which location did Jesus ascend into heaven in Luke?",
+    "options": [
+      "Bethany / Mount of Olives",
+      "Golgotha",
+      "Temple courts",
+      "Galilee"
+    ],
+    "answer": "Bethany / Mount of Olives",
+    "reference": "Luke 24:50",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1817,
+    "book": "Luke",
+    "question": "According to Luke 18, what did the Pharisee thank God for in his prayer?",
+    "options": [
+      "That he was not like other men",
+      "For his wealth",
+      "For the temple",
+      "For the law"
+    ],
+    "answer": "That he was not like other men",
+    "reference": "Luke 18:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1818,
+    "book": "Luke",
+    "question": "What was the prayer of the tax collector in Luke 18?",
+    "options": [
+      "God, be merciful to me a sinner!",
+      "Lord, bless my family",
+      "I will give to the poor",
+      "Help me find the way"
+    ],
+    "answer": "God, be merciful to me a sinner!",
+    "reference": "Luke 18:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1819,
+    "book": "Luke",
+    "question": "Who was the High Priest when John the Baptist began his ministry?",
+    "options": [
+      "Annas and Caiaphas",
+      "Zadok",
+      "Eleazar",
+      "Eli"
+    ],
+    "answer": "Annas and Caiaphas",
+    "reference": "Luke 3:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1820,
+    "book": "Luke",
+    "question": "In the Parable of the Sower, what does the seed represent?",
+    "options": [
+      "The word of God",
+      "Money",
+      "Faith",
+      "Love"
+    ],
+    "answer": "The word of God",
+    "reference": "Luke 8:11",
+    "difficulty": "easy"
+  }
+]

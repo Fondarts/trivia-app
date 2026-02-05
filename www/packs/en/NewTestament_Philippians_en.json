@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2101,
+    "book": "Philippians",
+    "question": "Paul and Timothy identify themselves at the start of Philippians as ______ of Jesus Christ.",
+    "options": [
+      "Bondservants",
+      "Apostles",
+      "Prophets",
+      "Ambassadors"
+    ],
+    "answer": "Bondservants",
+    "reference": "Philippians 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2102,
+    "book": "Philippians",
+    "question": "Paul is confident that He who began a good work in you will ______ it until the day of Jesus Christ.",
+    "options": [
+      "Complete",
+      "Watch",
+      "Remember",
+      "Bless"
+    ],
+    "answer": "Complete",
+    "reference": "Philippians 1:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2103,
+    "book": "Philippians",
+    "question": "Where was Paul when he wrote the letter to the Philippians?",
+    "options": [
+      "In prison (chains)",
+      "In a ship",
+      "In Jerusalem",
+      "In Arabia"
+    ],
+    "answer": "In prison (chains)",
+    "reference": "Philippians 1:13-14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2104,
+    "book": "Philippians",
+    "question": "Complete the verse: 'For to me, to live is Christ, and to die is ______.'",
+    "options": [
+      "Gain",
+      "Loss",
+      "Peace",
+      "Glory"
+    ],
+    "answer": "Gain",
+    "reference": "Philippians 1:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2105,
+    "book": "Philippians",
+    "question": "Paul says he is in a 'strait betwixt two', having a desire to depart and be with Christ, which is ______ ______.",
+    "options": [
+      "Far better",
+      "Not good",
+      "Somewhat better",
+      "His only wish"
+    ],
+    "answer": "Far better",
+    "reference": "Philippians 1:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2106,
+    "book": "Philippians",
+    "question": "Let this ______ be in you which was also in Christ Jesus.",
+    "options": [
+      "Mind",
+      "Spirit",
+      "Heart",
+      "Love"
+    ],
+    "answer": "Mind",
+    "reference": "Philippians 2:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2107,
+    "book": "Philippians",
+    "question": "Christ made Himself of no reputation, taking the form of a ______.",
+    "options": [
+      "Bondservant",
+      "King",
+      "Angel",
+      "Child"
+    ],
+    "answer": "Bondservant",
+    "reference": "Philippians 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2108,
+    "book": "Philippians",
+    "question": "At the name of Jesus every ______ should bow.",
+    "options": [
+      "Knee",
+      "Head",
+      "Person",
+      "Soul"
+    ],
+    "answer": "Knee",
+    "reference": "Philippians 2:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2109,
+    "book": "Philippians",
+    "question": "Work out your own ______ with fear and trembling.",
+    "options": [
+      "Salvation",
+      "Life",
+      "Way",
+      "Destiny"
+    ],
+    "answer": "Salvation",
+    "reference": "Philippians 2:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2110,
+    "book": "Philippians",
+    "question": "Do all things without ______ and disputing.",
+    "options": [
+      "Complaining / Murmuring",
+      "Talking",
+      "Waiting",
+      "Fearing"
+    ],
+    "answer": "Complaining / Murmuring",
+    "reference": "Philippians 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2111,
+    "book": "Philippians",
+    "question": "Who was the 'brother and fellow soldier' who became sick almost to death while serving Paul?",
+    "options": [
+      "Epaphroditus",
+      "Tychicus",
+      "Silas",
+      "Luke"
+    ],
+    "answer": "Epaphroditus",
+    "reference": "Philippians 2:25-27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2112,
+    "book": "Philippians",
+    "question": "Paul warns the Philippians to 'Beware of ______'.",
+    "options": [
+      "Dogs",
+      "Lions",
+      "Thieves",
+      "The King"
+    ],
+    "answer": "Dogs",
+    "reference": "Philippians 3:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2113,
+    "book": "Philippians",
+    "question": "Paul says he was circumcised the eighth day, of the stock of Israel, of the tribe of ______.",
+    "options": [
+      "Benjamin",
+      "Judah",
+      "Levi",
+      "Reuben"
+    ],
+    "answer": "Benjamin",
+    "reference": "Philippians 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2114,
+    "book": "Philippians",
+    "question": "Concerning the law, Paul was a ______.",
+    "options": [
+      "Pharisee",
+      "Sadducee",
+      "Scribe",
+      "Priest"
+    ],
+    "answer": "Pharisee",
+    "reference": "Philippians 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2115,
+    "book": "Philippians",
+    "question": "But what things were gain to me, these I have counted ______ for Christ.",
+    "options": [
+      "Loss",
+      "Dross",
+      "Nothing",
+      "Rubbish"
+    ],
+    "answer": "Loss",
+    "reference": "Philippians 3:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2116,
+    "book": "Philippians",
+    "question": "That I may know Him and the ______ of His resurrection.",
+    "options": [
+      "Power",
+      "Glory",
+      "Peace",
+      "Light"
+    ],
+    "answer": "Power",
+    "reference": "Philippians 3:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2117,
+    "book": "Philippians",
+    "question": "Forgetting those things which are behind and ______ forward to those things which are ahead.",
+    "options": [
+      "Reaching",
+      "Running",
+      "Walking",
+      "Looking"
+    ],
+    "answer": "Reaching",
+    "reference": "Philippians 3:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2118,
+    "book": "Philippians",
+    "question": "I press toward the goal for the ______ of the upward call of God in Christ Jesus.",
+    "options": [
+      "Prize",
+      "Crown",
+      "Honor",
+      "Rest"
+    ],
+    "answer": "Prize",
+    "reference": "Philippians 3:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2119,
+    "book": "Philippians",
+    "question": "For our ______ is in heaven, from which we also eagerly wait for the Savior.",
+    "options": [
+      "Citizenship",
+      "Home",
+      "House",
+      "Wealth"
+    ],
+    "answer": "Citizenship",
+    "reference": "Philippians 3:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2120,
+    "book": "Philippians",
+    "question": "Which two women did Paul implore to be of the same mind in the Lord?",
+    "options": [
+      "Euodia and Syntyche",
+      "Mary and Martha",
+      "Lydia and Damaris",
+      "Priscilla and Phoebe"
+    ],
+    "answer": "Euodia and Syntyche",
+    "reference": "Philippians 4:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2121,
+    "book": "Philippians",
+    "question": "Rejoice in the Lord ______; and again I will say, rejoice!",
+    "options": [
+      "Always",
+      "Sometimes",
+      "Often",
+      "Daily"
+    ],
+    "answer": "Always",
+    "reference": "Philippians 4:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2122,
+    "book": "Philippians",
+    "question": "Be ______ for nothing, but in everything by prayer... let your requests be made known to God.",
+    "options": [
+      "Anxious",
+      "Afraid",
+      "Sad",
+      "Eager"
+    ],
+    "answer": "Anxious",
+    "reference": "Philippians 4:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2123,
+    "book": "Philippians",
+    "question": "The ______ of God, which surpasses all understanding, will guard your hearts and minds.",
+    "options": [
+      "Peace",
+      "Love",
+      "Power",
+      "Grace"
+    ],
+    "answer": "Peace",
+    "reference": "Philippians 4:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2124,
+    "book": "Philippians",
+    "question": "Paul gives a list of things to meditate on. Which of these is NOT on the list in 4:8?",
+    "options": [
+      "Whatever is expensive",
+      "Whatever is true",
+      "Whatever is noble",
+      "Whatever is pure"
+    ],
+    "answer": "Whatever is expensive",
+    "reference": "Philippians 4:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2125,
+    "book": "Philippians",
+    "question": "I have learned in whatever state I am, to be ______.",
+    "options": [
+      "Content",
+      "Happy",
+      "Strong",
+      "Patient"
+    ],
+    "answer": "Content",
+    "reference": "Philippians 4:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2126,
+    "book": "Philippians",
+    "question": "I can do all things through ______ who strengthens me.",
+    "options": [
+      "Christ",
+      "Faith",
+      "God",
+      "Spirit"
+    ],
+    "answer": "Christ",
+    "reference": "Philippians 4:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2127,
+    "book": "Philippians",
+    "question": "And my God shall supply all your ______ according to His riches in glory.",
+    "options": [
+      "Need",
+      "Wants",
+      "Dreams",
+      "Debts"
+    ],
+    "answer": "Need",
+    "reference": "Philippians 4:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2128,
+    "book": "Philippians",
+    "question": "In the closing of the letter, Paul sends greetings from those who are of ______ household.",
+    "options": [
+      "Caesar's",
+      "Herod's",
+      "The High Priest's",
+      "The Governor's"
+    ],
+    "answer": "Caesar's",
+    "reference": "Philippians 4:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2129,
+    "book": "Philippians",
+    "question": "Paul calls the Philippians his 'joy and ______'.",
+    "options": [
+      "Crown",
+      "Life",
+      "People",
+      "Glory"
+    ],
+    "answer": "Crown",
+    "reference": "Philippians 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2130,
+    "book": "Philippians",
+    "question": "Let your ______ be known to all men. The Lord is at hand.",
+    "options": [
+      "Gentleness / Moderation",
+      "Faith",
+      "Good works",
+      "Truth"
+    ],
+    "answer": "Gentleness / Moderation",
+    "reference": "Philippians 4:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2131,
+    "book": "Philippians",
+    "question": "Philippi was a leading city of that part of ______, a Roman colony.",
+    "options": [
+      "Macedonia",
+      "Galatia",
+      "Achaia",
+      "Asia"
+    ],
+    "answer": "Macedonia",
+    "reference": "Acts 16:12 (Context)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2132,
+    "book": "Philippians",
+    "question": "Paul says that some preach Christ even from ______ and strife, and some also from goodwill.",
+    "options": [
+      "Envy",
+      "Hatred",
+      "Anger",
+      "Pride"
+    ],
+    "answer": "Envy",
+    "reference": "Philippians 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2133,
+    "book": "Philippians",
+    "question": "Only let your ______ be worthy of the gospel of Christ.",
+    "options": [
+      "Conduct",
+      "Words",
+      "Prayer",
+      "Faith"
+    ],
+    "answer": "Conduct",
+    "reference": "Philippians 1:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2134,
+    "book": "Philippians",
+    "question": "Let nothing be done through selfish ______ or conceit.",
+    "options": [
+      "Ambition",
+      "Pride",
+      "Greed",
+      "Thoughts"
+    ],
+    "answer": "Ambition",
+    "reference": "Philippians 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2135,
+    "book": "Philippians",
+    "question": "Let each of you look out not only for his own interests, but also for the interests of ______.",
+    "options": [
+      "Others",
+      "The Church",
+      "Christ",
+      "God"
+    ],
+    "answer": "Others",
+    "reference": "Philippians 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2136,
+    "book": "Philippians",
+    "question": "Every tongue should ______ that Jesus Christ is Lord.",
+    "options": [
+      "Confess",
+      "Sing",
+      "Cry",
+      "Speak"
+    ],
+    "answer": "Confess",
+    "reference": "Philippians 2:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2137,
+    "book": "Philippians",
+    "question": "That you may become blameless and harmless... in the midst of a crooked and ______ generation.",
+    "options": [
+      "Perverse",
+      "Evil",
+      "Dark",
+      "Blind"
+    ],
+    "answer": "Perverse",
+    "reference": "Philippians 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2138,
+    "book": "Philippians",
+    "question": "Paul says he counted all things as '______' that he may gain Christ.",
+    "options": [
+      "Rubbish / Dung",
+      "Loss",
+      "Nothing",
+      "Shadows"
+    ],
+    "answer": "Rubbish / Dung",
+    "reference": "Philippians 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2139,
+    "book": "Philippians",
+    "question": "Paul calls a certain unnamed person his '______ ______' in 4:3.",
+    "options": [
+      "True companion / Yokefellow",
+      "Beloved son",
+      "Faithful brother",
+      "Fellow soldier"
+    ],
+    "answer": "True companion / Yokefellow",
+    "reference": "Philippians 4:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2140,
+    "book": "Philippians",
+    "question": "What does Paul say about the names of his fellow workers?",
+    "options": [
+      "They are in the Book of Life",
+      "They will be remembered forever",
+      "He has forgotten them",
+      "They are written in the Temple"
+    ],
+    "answer": "They are in the Book of Life",
+    "reference": "Philippians 4:3",
+    "difficulty": "medium"
+  }
+]

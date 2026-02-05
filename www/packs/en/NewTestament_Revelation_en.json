@@ -1,0 +1,1122 @@
+[
+  {
+    "id": 2721,
+    "book": "Revelation",
+    "question": "The Revelation is of whom?",
+    "options": [
+      "Jesus Christ",
+      "John",
+      "The Angel",
+      "The Church"
+    ],
+    "answer": "Jesus Christ",
+    "reference": "Revelation 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2722,
+    "book": "Revelation",
+    "question": "On which island was John when he received the vision?",
+    "options": [
+      "Patmos",
+      "Cyprus",
+      "Crete",
+      "Malta"
+    ],
+    "answer": "Patmos",
+    "reference": "Revelation 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2723,
+    "book": "Revelation",
+    "question": "Who is the 'Alpha and the Omega'?",
+    "options": [
+      "The Lord God (Almighty)",
+      "John",
+      "Michael",
+      "The Prophet"
+    ],
+    "answer": "The Lord God (Almighty)",
+    "reference": "Revelation 1:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2724,
+    "book": "Revelation",
+    "question": "What did John see in the midst of the seven golden lampstands?",
+    "options": [
+      "One like the Son of Man",
+      "A Great Dragon",
+      "An empty throne",
+      "Four living creatures"
+    ],
+    "answer": "One like the Son of Man",
+    "reference": "Revelation 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2725,
+    "book": "Revelation",
+    "question": "What was in the right hand of the Son of Man?",
+    "options": [
+      "Seven stars",
+      "A sword",
+      "A scroll",
+      "A key"
+    ],
+    "answer": "Seven stars",
+    "reference": "Revelation 1:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2726,
+    "book": "Revelation",
+    "question": "What comes out of the mouth of the Son of Man?",
+    "options": [
+      "A sharp two-edged sword",
+      "A flame",
+      "Living water",
+      "A trumpet sound"
+    ],
+    "answer": "A sharp two-edged sword",
+    "reference": "Revelation 1:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2727,
+    "book": "Revelation",
+    "question": "What do the seven lampstands represent?",
+    "options": [
+      "The seven churches",
+      "The seven spirits",
+      "The seven stars",
+      "The seven days"
+    ],
+    "answer": "The seven churches",
+    "reference": "Revelation 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2728,
+    "book": "Revelation",
+    "question": "To which church did Jesus say, 'You have left your first love'?",
+    "options": [
+      "Ephesus",
+      "Smyrna",
+      "Pergamum",
+      "Thyatira"
+    ],
+    "answer": "Ephesus",
+    "reference": "Revelation 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2729,
+    "book": "Revelation",
+    "question": "Which church was told, 'Be faithful until death, and I will give you the crown of life'?",
+    "options": [
+      "Smyrna",
+      "Philadelphia",
+      "Laodicea",
+      "Sardis"
+    ],
+    "answer": "Smyrna",
+    "reference": "Revelation 2:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2730,
+    "book": "Revelation",
+    "question": "In the letter to Pergamum, whose 'throne' (or seat) is located in that city?",
+    "options": [
+      "Satan's",
+      "Caesar's",
+      "The Beast's",
+      "Antipas's"
+    ],
+    "answer": "Satan's",
+    "reference": "Revelation 2:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2731,
+    "book": "Revelation",
+    "question": "Which church was rebuked for allowing a woman named Jezebel to teach?",
+    "options": [
+      "Thyatira",
+      "Ephesus",
+      "Sardis",
+      "Laodicea"
+    ],
+    "answer": "Thyatira",
+    "reference": "Revelation 2:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2732,
+    "book": "Revelation",
+    "question": "Which church has a name that they are alive, but they are dead?",
+    "options": [
+      "Sardis",
+      "Smyrna",
+      "Pergamum",
+      "Philadelphia"
+    ],
+    "answer": "Sardis",
+    "reference": "Revelation 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2733,
+    "book": "Revelation",
+    "question": "To which church did God say He would set before them an open door which no one can shut?",
+    "options": [
+      "Philadelphia",
+      "Smyrna",
+      "Ephesus",
+      "Thyatira"
+    ],
+    "answer": "Philadelphia",
+    "reference": "Revelation 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2734,
+    "book": "Revelation",
+    "question": "Which church was called 'lukewarm', neither cold nor hot?",
+    "options": [
+      "Laodicea",
+      "Sardis",
+      "Philadelphia",
+      "Ephesus"
+    ],
+    "answer": "Laodicea",
+    "reference": "Revelation 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2735,
+    "book": "Revelation",
+    "question": "Jesus said: 'Behold, I stand at the ______ and knock.'",
+    "options": [
+      "Door",
+      "Gate",
+      "Temple",
+      "Wall"
+    ],
+    "answer": "Door",
+    "reference": "Revelation 3:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2736,
+    "book": "Revelation",
+    "question": "How many elders were sitting on thrones around the main throne in Chapter 4?",
+    "options": [
+      "Twenty-four",
+      "Twelve",
+      "Seven",
+      "Four"
+    ],
+    "answer": "Twenty-four",
+    "reference": "Revelation 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2737,
+    "book": "Revelation",
+    "question": "How many living creatures were in the midst of the throne, full of eyes?",
+    "options": [
+      "Four",
+      "Seven",
+      "Twenty-four",
+      "One"
+    ],
+    "answer": "Four",
+    "reference": "Revelation 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2738,
+    "book": "Revelation",
+    "question": "What do the living creatures cry out day and night?",
+    "options": [
+      "Holy, holy, holy, Lord God Almighty",
+      "Worthy is the Lamb",
+      "Hallelujah",
+      "Amen"
+    ],
+    "answer": "Holy, holy, holy, Lord God Almighty",
+    "reference": "Revelation 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2739,
+    "book": "Revelation",
+    "question": "The scroll in the right hand of Him who sat on the throne had how many seals?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Four",
+      "One"
+    ],
+    "answer": "Seven",
+    "reference": "Revelation 5:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2740,
+    "book": "Revelation",
+    "question": "Who was found worthy to open the scroll and its seals?",
+    "options": [
+      "The Lion of the tribe of Judah (the Lamb)",
+      "John",
+      "An angel",
+      "One of the elders"
+    ],
+    "answer": "The Lion of the tribe of Judah (the Lamb)",
+    "reference": "Revelation 5:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2741,
+    "book": "Revelation",
+    "question": "What animal did Jesus appear as when He took the scroll?",
+    "options": [
+      "A Lamb (as though it had been slain)",
+      "A Lion",
+      "An Eagle",
+      "A Dove"
+    ],
+    "answer": "A Lamb (as though it had been slain)",
+    "reference": "Revelation 5:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2742,
+    "book": "Revelation",
+    "question": "What color was the horse of the first seal?",
+    "options": [
+      "White",
+      "Red",
+      "Black",
+      "Pale"
+    ],
+    "answer": "White",
+    "reference": "Revelation 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2743,
+    "book": "Revelation",
+    "question": "What did the rider of the black horse hold in his hand?",
+    "options": [
+      "A pair of scales",
+      "A sword",
+      "A bow",
+      "A scythe"
+    ],
+    "answer": "A pair of scales",
+    "reference": "Revelation 6:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2744,
+    "book": "Revelation",
+    "question": "Who was the rider of the pale horse?",
+    "options": [
+      "Death",
+      "Famine",
+      "War",
+      "Conquest"
+    ],
+    "answer": "Death",
+    "reference": "Revelation 6:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2745,
+    "book": "Revelation",
+    "question": "When the fifth seal was opened, where were the souls of the martyrs?",
+    "options": [
+      "Under the altar",
+      "On the sea of glass",
+      "At the gates",
+      "In the clouds"
+    ],
+    "answer": "Under the altar",
+    "reference": "Revelation 6:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2746,
+    "book": "Revelation",
+    "question": "How many people were sealed from the tribes of Israel?",
+    "options": [
+      "144,000",
+      "12,000",
+      "7,000",
+      "A great multitude"
+    ],
+    "answer": "144,000",
+    "reference": "Revelation 7:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2747,
+    "book": "Revelation",
+    "question": "What were the great multitude in white robes holding in their hands?",
+    "options": [
+      "Palm branches",
+      "Swords",
+      "Harp",
+      "Golden bowls"
+    ],
+    "answer": "Palm branches",
+    "reference": "Revelation 7:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2748,
+    "book": "Revelation",
+    "question": "When the seventh seal was opened, what happened in heaven for about half an hour?",
+    "options": [
+      "Silence",
+      "Singing",
+      "Thunder",
+      "Earthquake"
+    ],
+    "answer": "Silence",
+    "reference": "Revelation 8:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2749,
+    "book": "Revelation",
+    "question": "What did the seven angels stand ready to sound?",
+    "options": [
+      "Trumpets",
+      "Drums",
+      "Shouts",
+      "Gongs"
+    ],
+    "answer": "Trumpets",
+    "reference": "Revelation 8:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2750,
+    "book": "Revelation",
+    "question": "What was the name of the great star that fell on the third part of the rivers?",
+    "options": [
+      "Wormwood",
+      "Lucifer",
+      "Morning Star",
+      "Orion"
+    ],
+    "answer": "Wormwood",
+    "reference": "Revelation 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2751,
+    "book": "Revelation",
+    "question": "The bottomless pit was opened when which trumpet sounded?",
+    "options": [
+      "Fifth",
+      "Seventh",
+      "First",
+      "Third"
+    ],
+    "answer": "Fifth",
+    "reference": "Revelation 9:1-2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2752,
+    "book": "Revelation",
+    "question": "What came out of the smoke from the bottomless pit to strike men?",
+    "options": [
+      "Locusts",
+      "Frogs",
+      "Scorpions",
+      "Snakes"
+    ],
+    "answer": "Locusts",
+    "reference": "Revelation 9:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2753,
+    "book": "Revelation",
+    "question": "Who is the king over the locusts of the pit?",
+    "options": [
+      "Abaddon / Apollyon",
+      "Satan",
+      "Beelzebub",
+      "The Beast"
+    ],
+    "answer": "Abaddon / Apollyon",
+    "reference": "Revelation 9:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2754,
+    "book": "Revelation",
+    "question": "What did John do with the little book given to him by the angel in Chapter 10?",
+    "options": [
+      "Ate it",
+      "Buried it",
+      "Read it to the people",
+      "Threw it in the sea"
+    ],
+    "answer": "Ate it",
+    "reference": "Revelation 10:9-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2755,
+    "book": "Revelation",
+    "question": "For how long will the two witnesses prophesy?",
+    "options": [
+      "1,260 days",
+      "40 days",
+      "7 years",
+      "1,000 years"
+    ],
+    "answer": "1,260 days",
+    "reference": "Revelation 11:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2756,
+    "book": "Revelation",
+    "question": "The woman in Chapter 12 was clothed with the ____, with the ____ under her feet.",
+    "options": [
+      "Sun; moon",
+      "Stars; sun",
+      "Clouds; earth",
+      "Light; shadow"
+    ],
+    "answer": "Sun; moon",
+    "reference": "Revelation 12:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2757,
+    "book": "Revelation",
+    "question": "What animal stood before the woman to devour her child as soon as it was born?",
+    "options": [
+      "A great fiery red dragon",
+      "A lion",
+      "A bear",
+      "A leopard"
+    ],
+    "answer": "A great fiery red dragon",
+    "reference": "Revelation 12:3-4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2758,
+    "book": "Revelation",
+    "question": "Who led the angels in war against the dragon in heaven?",
+    "options": [
+      "Michael",
+      "Gabriel",
+      "The Lamb",
+      "John"
+    ],
+    "answer": "Michael",
+    "reference": "Revelation 12:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2759,
+    "book": "Revelation",
+    "question": "They overcame him (the dragon) by the ______ of the Lamb and the ______ of their testimony.",
+    "options": [
+      "Blood; word",
+      "Spirit; power",
+      "Name; faith",
+      "Cross; truth"
+    ],
+    "answer": "Blood; word",
+    "reference": "Revelation 12:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2760,
+    "book": "Revelation",
+    "question": "How many beasts did John see rising in Chapter 13?",
+    "options": [
+      "Two",
+      "One",
+      "Seven",
+      "Four"
+    ],
+    "answer": "Two",
+    "reference": "Revelation 13:1, 11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2761,
+    "book": "Revelation",
+    "question": "The first beast had how many heads and how many horns?",
+    "options": [
+      "7 heads and 10 horns",
+      "10 heads and 7 horns",
+      "1 head and 2 horns",
+      "4 heads and 4 horns"
+    ],
+    "answer": "7 heads and 10 horns",
+    "reference": "Revelation 13:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2762,
+    "book": "Revelation",
+    "question": "What is the number of the beast?",
+    "options": [
+      "666",
+      "777",
+      "144",
+      "1000"
+    ],
+    "answer": "666",
+    "reference": "Revelation 13:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2763,
+    "book": "Revelation",
+    "question": "Where is the mark of the beast placed?",
+    "options": [
+      "Right hand or forehead",
+      "Left hand or back",
+      "Forehead or neck",
+      "Anywhere on the body"
+    ],
+    "answer": "Right hand or forehead",
+    "reference": "Revelation 13:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2764,
+    "book": "Revelation",
+    "question": "What song did the 144,000 sing before the throne?",
+    "options": [
+      "A new song",
+      "The Song of Moses",
+      "The Song of David",
+      "Hallelujah Chorus"
+    ],
+    "answer": "A new song",
+    "reference": "Revelation 14:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2765,
+    "book": "Revelation",
+    "question": "What was the first angel in Chapter 14 carrying to preach to those on earth?",
+    "options": [
+      "The everlasting gospel",
+      "The law",
+      "A warning of fire",
+      "A scroll of names"
+    ],
+    "answer": "The everlasting gospel",
+    "reference": "Revelation 14:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2766,
+    "book": "Revelation",
+    "question": "Which city is declared 'fallen' by the second angel in Chapter 14?",
+    "options": [
+      "Babylon",
+      "Rome",
+      "Jerusalem",
+      "Nineveh"
+    ],
+    "answer": "Babylon",
+    "reference": "Revelation 14:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2767,
+    "book": "Revelation",
+    "question": "The seven angels in Chapter 15 had the seven last ______.",
+    "options": [
+      "Plagues",
+      "Trumpets",
+      "Seals",
+      "Words"
+    ],
+    "answer": "Plagues",
+    "reference": "Revelation 15:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2768,
+    "book": "Revelation",
+    "question": "What were the seven angels holding that contained the wrath of God?",
+    "options": [
+      "Golden bowls / vials",
+      "Silver cups",
+      "Iron jars",
+      "Glass lamps"
+    ],
+    "answer": "Golden bowls / vials",
+    "reference": "Revelation 15:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2769,
+    "book": "Revelation",
+    "question": "When the sixth bowl was poured out, which river was dried up?",
+    "options": [
+      "Euphrates",
+      "Nile",
+      "Jordan",
+      "Tigris"
+    ],
+    "answer": "Euphrates",
+    "reference": "Revelation 16:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2770,
+    "book": "Revelation",
+    "question": "What is the name of the place where the kings of the earth gather for battle?",
+    "options": [
+      "Armageddon",
+      "Golgotha",
+      "Zion",
+      "Babylon"
+    ],
+    "answer": "Armageddon",
+    "reference": "Revelation 16:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2771,
+    "book": "Revelation",
+    "question": "The woman in Chapter 17 was sitting on a scarlet beast and was called...?",
+    "options": [
+      "Mystery, Babylon the Great",
+      "The Queen of Heaven",
+      "Jezebel",
+      "The Mother of Earth"
+    ],
+    "answer": "Mystery, Babylon the Great",
+    "reference": "Revelation 17:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2772,
+    "book": "Revelation",
+    "question": "The ten horns on the scarlet beast represent ten ______.",
+    "options": [
+      "Kings",
+      "Nations",
+      "Prophets",
+      "Mountains"
+    ],
+    "answer": "Kings",
+    "reference": "Revelation 17:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2773,
+    "book": "Revelation",
+    "question": "In Chapter 19, what event is celebrated with 'Hallelujah'?",
+    "options": [
+      "The Marriage Supper of the Lamb",
+      "The birth of a king",
+      "The end of time",
+      "A great harvest"
+    ],
+    "answer": "The Marriage Supper of the Lamb",
+    "reference": "Revelation 19:7-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2774,
+    "book": "Revelation",
+    "question": "What color was the horse the 'Faithful and True' rider sat upon?",
+    "options": [
+      "White",
+      "Black",
+      "Red",
+      "Pale"
+    ],
+    "answer": "White",
+    "reference": "Revelation 19:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2775,
+    "book": "Revelation",
+    "question": "What name was written on the robe and thigh of the rider on the white horse?",
+    "options": [
+      "King of Kings and Lord of Lords",
+      "The Word of God",
+      "The Alpha and Omega",
+      "Jesus Christ"
+    ],
+    "answer": "King of Kings and Lord of Lords",
+    "reference": "Revelation 19:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2776,
+    "book": "Revelation",
+    "question": "For how many years was the dragon (Satan) bound in the bottomless pit?",
+    "options": [
+      "1,000 years",
+      "7 years",
+      "100 years",
+      "Forever"
+    ],
+    "answer": "1,000 years",
+    "reference": "Revelation 20:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2777,
+    "book": "Revelation",
+    "question": "What is the 'second death'?",
+    "options": [
+      "The lake of fire",
+      "The grave",
+      "Old age",
+      "Sorrow"
+    ],
+    "answer": "The lake of fire",
+    "reference": "Revelation 20:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2778,
+    "book": "Revelation",
+    "question": "Anyone not found written in what book was cast into the lake of fire?",
+    "options": [
+      "The Book of Life",
+      "The Book of the Law",
+      "The Book of Remembrance",
+      "The Book of Truth"
+    ],
+    "answer": "The Book of Life",
+    "reference": "Revelation 20:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2779,
+    "book": "Revelation",
+    "question": "What came down out of heaven from God in Chapter 21?",
+    "options": [
+      "The Holy City, New Jerusalem",
+      "A great sword",
+      "A rain of fire",
+      "Twelve angels"
+    ],
+    "answer": "The Holy City, New Jerusalem",
+    "reference": "Revelation 21:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2780,
+    "book": "Revelation",
+    "question": "How many gates did the New Jerusalem have?",
+    "options": [
+      "Twelve",
+      "Seven",
+      "Four",
+      "Twenty-four"
+    ],
+    "answer": "Twelve",
+    "reference": "Revelation 21:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2781,
+    "book": "Revelation",
+    "question": "The city of New Jerusalem was built as a perfect ______.",
+    "options": [
+      "Cube (foursquare)",
+      "Circle",
+      "Pyramid",
+      "Triangle"
+    ],
+    "answer": "Cube (foursquare)",
+    "reference": "Revelation 21:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2782,
+    "book": "Revelation",
+    "question": "What were the twelve gates of the city made of?",
+    "options": [
+      "Pearls",
+      "Gold",
+      "Jasper",
+      "Emerald"
+    ],
+    "answer": "Pearls",
+    "reference": "Revelation 21:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2783,
+    "book": "Revelation",
+    "question": "What was the street of the city made of?",
+    "options": [
+      "Pure gold, like transparent glass",
+      "Silver",
+      "Crystal",
+      "White stone"
+    ],
+    "answer": "Pure gold, like transparent glass",
+    "reference": "Revelation 21:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2784,
+    "book": "Revelation",
+    "question": "Why was there no temple in the New Jerusalem?",
+    "options": [
+      "The Lord God and the Lamb are its temple",
+      "It was destroyed",
+      "The city was too small",
+      "Temples were forbidden"
+    ],
+    "answer": "The Lord God and the Lamb are its temple",
+    "reference": "Revelation 21:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2785,
+    "book": "Revelation",
+    "question": "What flows from the throne of God and of the Lamb?",
+    "options": [
+      "The river of water of life",
+      "A river of wine",
+      "A river of gold",
+      "A river of light"
+    ],
+    "answer": "The river of water of life",
+    "reference": "Revelation 22:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2786,
+    "book": "Revelation",
+    "question": "What tree stands on either side of the river of life?",
+    "options": [
+      "The tree of life",
+      "The olive tree",
+      "The fig tree",
+      "The cedar tree"
+    ],
+    "answer": "The tree of life",
+    "reference": "Revelation 22:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2787,
+    "book": "Revelation",
+    "question": "The leaves of the tree of life were for the ______ of the nations.",
+    "options": [
+      "Healing",
+      "Feeding",
+      "Shading",
+      "Clothing"
+    ],
+    "answer": "Healing",
+    "reference": "Revelation 22:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2788,
+    "book": "Revelation",
+    "question": "John was told: 'Do not ______ the words of the prophecy of this book, for the time is at hand.'",
+    "options": [
+      "Seal",
+      "Change",
+      "Write",
+      "Forget"
+    ],
+    "answer": "Seal",
+    "reference": "Revelation 22:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2789,
+    "book": "Revelation",
+    "question": "What is the final invitation of the Bible? 'And let him who ______ come.'",
+    "options": [
+      "Thirsts",
+      "Prays",
+      "Believes",
+      "Wins"
+    ],
+    "answer": "Thirsts",
+    "reference": "Revelation 22:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2790,
+    "book": "Revelation",
+    "question": "What is the warning at the end of Revelation for anyone who adds to the words of the book?",
+    "options": [
+      "God will add to him the plagues written in the book",
+      "He will be exiled",
+      "He will lose his wealth",
+      "He will be silenced"
+    ],
+    "answer": "God will add to him the plagues written in the book",
+    "reference": "Revelation 22:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2791,
+    "book": "Revelation",
+    "question": "What are the very last words of the Bible?",
+    "options": [
+      "The grace of our Lord Jesus Christ be with you all. Amen.",
+      "Even so, come Lord Jesus.",
+      "Hallelujah.",
+      "Amen."
+    ],
+    "answer": "The grace of our Lord Jesus Christ be with you all. Amen.",
+    "reference": "Revelation 22:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2792,
+    "book": "Revelation",
+    "question": "In Chapter 1, John heard a voice behind him like a ______.",
+    "options": [
+      "Trumpet",
+      "Thunder",
+      "Lion",
+      "Rushing wind"
+    ],
+    "answer": "Trumpet",
+    "reference": "Revelation 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2793,
+    "book": "Revelation",
+    "question": "Jesus says: 'I am He who lives, and was dead, and behold, I am alive forevermore... and I have the ______ of Hades and of Death.'",
+    "options": [
+      "Keys",
+      "Sword",
+      "Power",
+      "Seal"
+    ],
+    "answer": "Keys",
+    "reference": "Revelation 1:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2794,
+    "book": "Revelation",
+    "question": "To the church in Smyrna, Jesus mentions a 'synagogue of ______'.",
+    "options": [
+      "Satan",
+      "Evil",
+      "Lies",
+      "The World"
+    ],
+    "answer": "Satan",
+    "reference": "Revelation 2:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2795,
+    "book": "Revelation",
+    "question": "What hidden food is promised to the overcomer in the letter to Pergamum?",
+    "options": [
+      "Manna",
+      "Bread",
+      "Honey",
+      "Fruit"
+    ],
+    "answer": "Manna",
+    "reference": "Revelation 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2796,
+    "book": "Revelation",
+    "question": "In Sardis, Jesus says there are a few names who have not ______ their garments.",
+    "options": [
+      "Defiled",
+      "Lost",
+      "Torn",
+      "Sold"
+    ],
+    "answer": "Defiled",
+    "reference": "Revelation 3:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2797,
+    "book": "Revelation",
+    "question": "In the throne room, there were seven lamps of fire burning which are the ______ ______ of God.",
+    "options": [
+      "Seven Spirits",
+      "Seven Angels",
+      "Seven Seals",
+      "Seven Words"
+    ],
+    "answer": "Seven Spirits",
+    "reference": "Revelation 4:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2798,
+    "book": "Revelation",
+    "question": "The four living creatures were like a lion, a calf, a man, and a ______.",
+    "options": [
+      "Flying eagle",
+      "Dove",
+      "Serpent",
+      "Lamb"
+    ],
+    "answer": "Flying eagle",
+    "reference": "Revelation 4:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2799,
+    "book": "Revelation",
+    "question": "When the Lamb opened the fourth seal, John heard the voice of the fourth living creature say, '______ ______ ______.'",
+    "options": [
+      "Come and see",
+      "Woe",
+      "Holy",
+      "Amen"
+    ],
+    "answer": "Come and see",
+    "reference": "Revelation 6:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2800,
+    "book": "Revelation",
+    "question": "Under the sixth seal, the sun became black as ______ of hair and the moon became like blood.",
+    "options": [
+      "Sackcloth",
+      "Cloud",
+      "Night",
+      "Smoke"
+    ],
+    "answer": "Sackcloth",
+    "reference": "Revelation 6:12",
+    "difficulty": "hard"
+  }
+]

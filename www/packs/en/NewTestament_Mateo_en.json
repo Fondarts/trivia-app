@@ -1,0 +1,842 @@
+[
+  {
+    "id": 2801,
+    "book": "Mateo",
+    "question": "In the genealogy of Jesus in Matthew, how many generations are listed from Abraham to David?",
+    "options": [
+      "14",
+      "12",
+      "7",
+      "40"
+    ],
+    "answer": "14",
+    "reference": "Matthew 1:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2802,
+    "book": "Mateo",
+    "question": "Which prophet did Matthew quote when describing the flight to Egypt: 'Out of Egypt I called My Son'?",
+    "options": [
+      "Hosea",
+      "Isaiah",
+      "Jeremiah",
+      "Micah"
+    ],
+    "answer": "Hosea",
+    "reference": "Matthew 2:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2803,
+    "book": "Mateo",
+    "question": "In the Sermon on the Mount, what does Jesus say is the lamp of the body?",
+    "options": [
+      "The eye",
+      "The heart",
+      "The soul",
+      "The tongue"
+    ],
+    "answer": "The eye",
+    "reference": "Matthew 6:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2804,
+    "book": "Mateo",
+    "question": "To which city did Jesus refer as the 'city of the great King'?",
+    "options": [
+      "Jerusalem",
+      "Bethlehem",
+      "Nazareth",
+      "Capernaum"
+    ],
+    "answer": "Jerusalem",
+    "reference": "Matthew 5:35",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2805,
+    "book": "Mateo",
+    "question": "What was the name of the high priest's servant whose ear was cut off (though unnamed in Matthew, what happened to the person who did it)?",
+    "options": [
+      "Jesus told him to put his sword away",
+      "Jesus healed him immediately",
+      "He was arrested",
+      "He fled to Galilee"
+    ],
+    "answer": "Jesus told him to put his sword away",
+    "reference": "Matthew 26:52",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2806,
+    "book": "Mateo",
+    "question": "In the parable of the talents, how many talents did the first servant receive?",
+    "options": [
+      "Five",
+      "Two",
+      "One",
+      "Ten"
+    ],
+    "answer": "Five",
+    "reference": "Matthew 25:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2807,
+    "book": "Mateo",
+    "question": "Who was the father of Zebedee's sons (James and John)?",
+    "options": [
+      "Zebedee",
+      "Jonas",
+      "Alphaeus",
+      "Jacob"
+    ],
+    "answer": "Zebedee",
+    "reference": "Matthew 4:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2808,
+    "book": "Mateo",
+    "question": "Which religious group in Matthew did not believe in the resurrection?",
+    "options": [
+      "Sadducees",
+      "Pharisees",
+      "Essenes",
+      "Zealots"
+    ],
+    "answer": "Sadducees",
+    "reference": "Matthew 22:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2809,
+    "book": "Mateo",
+    "question": "What did the Roman centurion say when he saw the earthquake at Jesus' crucifixion?",
+    "options": [
+      "Truly this was the Son of God!",
+      "He was innocent",
+      "Save us!",
+      "Lord, remember me"
+    ],
+    "answer": "Truly this was the Son of God!",
+    "reference": "Matthew 27:54",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2810,
+    "book": "Mateo",
+    "question": "In the Great Commission, in whose name are the disciples to be baptized?",
+    "options": [
+      "The Father, the Son, and the Holy Spirit",
+      "The Lord Jesus",
+      "The God of Abraham",
+      "The Holy Trinity"
+    ],
+    "answer": "The Father, the Son, and the Holy Spirit",
+    "reference": "Matthew 28:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2811,
+    "book": "Mateo",
+    "question": "What did Jesus say would not pass away until all things are fulfilled?",
+    "options": [
+      "One jot or one tittle of the law",
+      "The Temple",
+      "The earth",
+      "The stars"
+    ],
+    "answer": "One jot or one tittle of the law",
+    "reference": "Matthew 5:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2812,
+    "book": "Mateo",
+    "question": "How many times did the devil quote scripture to Jesus during the temptation?",
+    "options": [
+      "Two",
+      "One",
+      "Three",
+      "None"
+    ],
+    "answer": "Two",
+    "reference": "Matthew 4:1-11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2813,
+    "book": "Mateo",
+    "question": "Who was the king of Judea when Jesus was born?",
+    "options": [
+      "Herod the Great",
+      "Herod Antipas",
+      "Agrippa",
+      "Archelaus"
+    ],
+    "answer": "Herod the Great",
+    "reference": "Matthew 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2814,
+    "book": "Mateo",
+    "question": "What was the 'Field of Blood' (Akeldama) bought with?",
+    "options": [
+      "The thirty pieces of silver Judas returned",
+      "A gift from a Pharisee",
+      "The Temple tax",
+      "Joseph of Arimathea's money"
+    ],
+    "answer": "The thirty pieces of silver Judas returned",
+    "reference": "Matthew 27:7-8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2815,
+    "book": "Mateo",
+    "question": "In Matthew 11, Jesus says His yoke is ______ and His burden is ______.",
+    "options": [
+      "Easy; light",
+      "Heavy; hard",
+      "Humble; quiet",
+      "Holy; great"
+    ],
+    "answer": "Easy; light",
+    "reference": "Matthew 11:30",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2816,
+    "book": "Mateo",
+    "question": "Which disciple found a coin in a fish's mouth to pay the temple tax?",
+    "options": [
+      "Peter",
+      "Matthew",
+      "John",
+      "Andrew"
+    ],
+    "answer": "Peter",
+    "reference": "Matthew 17:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2817,
+    "book": "Mateo",
+    "question": "In the Parable of the Weeds, who sowed the good seed?",
+    "options": [
+      "The Son of Man",
+      "An angel",
+      "A prophet",
+      "A servant"
+    ],
+    "answer": "The Son of Man",
+    "reference": "Matthew 13:37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2818,
+    "book": "Mateo",
+    "question": "Jesus said: 'For where two or three are gathered together in My name, ______.'",
+    "options": [
+      "I am there in the midst of them",
+      "I will hear them",
+      "God is praised",
+      "Peace will follow"
+    ],
+    "answer": "I am there in the midst of them",
+    "reference": "Matthew 18:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2819,
+    "book": "Mateo",
+    "question": "What did the soldiers put on Jesus' head during His mockery?",
+    "options": [
+      "A crown of thorns",
+      "A golden crown",
+      "A linen cloth",
+      "A helmet"
+    ],
+    "answer": "A crown of thorns",
+    "reference": "Matthew 27:29",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2820,
+    "book": "Mateo",
+    "question": "In Matthew's account of the resurrection, who rolled back the stone from the door of the tomb?",
+    "options": [
+      "An angel of the Lord",
+      "Peter and John",
+      "The Roman guards",
+      "Mary Magdalene"
+    ],
+    "answer": "An angel of the Lord",
+    "reference": "Matthew 28:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2901,
+    "book": "Mateo",
+    "question": "In the Parable of the Ten Virgins, at what time did the cry go out: 'Behold, the bridegroom is coming'?",
+    "options": [
+      "At midnight",
+      "At sunset",
+      "At dawn",
+      "At the ninth hour"
+    ],
+    "answer": "At midnight",
+    "reference": "Matthew 25:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2902,
+    "book": "Mateo",
+    "question": "According to Matthew 5, Jesus said we should love our enemies and pray for those who ______ us.",
+    "options": [
+      "Persecute",
+      "Hate",
+      "Ignore",
+      "Rob"
+    ],
+    "answer": "Persecute",
+    "reference": "Matthew 5:44",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2903,
+    "book": "Mateo",
+    "question": "Which specific animal does Jesus say is easier to go through the eye of a needle than for a rich man to enter heaven?",
+    "options": [
+      "A camel",
+      "A donkey",
+      "An ox",
+      "A sheep"
+    ],
+    "answer": "A camel",
+    "reference": "Matthew 19:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2904,
+    "book": "Mateo",
+    "question": "Who was the father of the apostle Matthew (Levi)?",
+    "options": [
+      "Alphaeus",
+      "Zebedee",
+      "Jonas",
+      "Jacob"
+    ],
+    "answer": "Alphaeus",
+    "reference": "Matthew 9:9 / Mark 2:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2905,
+    "book": "Mateo",
+    "question": "In the Beatitudes, who does Jesus say shall be called 'sons of God'?",
+    "options": [
+      "The peacemakers",
+      "The pure in heart",
+      "The merciful",
+      "The meek"
+    ],
+    "answer": "The peacemakers",
+    "reference": "Matthew 5:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2906,
+    "book": "Mateo",
+    "question": "When Peter asked how many times he should forgive his brother, what was Jesus' mathematical answer?",
+    "options": [
+      "Seventy times seven",
+      "Seven times",
+      "Seven times seventy",
+      "Seventy times"
+    ],
+    "answer": "Seventy times seven",
+    "reference": "Matthew 18:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2907,
+    "book": "Mateo",
+    "question": "What kind of tree did Jesus wither after finding no fruit on it near Bethany?",
+    "options": [
+      "Fig tree",
+      "Olive tree",
+      "Sycamore",
+      "Vine"
+    ],
+    "answer": "Fig tree",
+    "reference": "Matthew 21:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2908,
+    "book": "Mateo",
+    "question": "In the Parable of the Wedding Feast, what was missing from the guest who was cast out into outer darkness?",
+    "options": [
+      "A wedding garment",
+      "A gift",
+      "An invitation",
+      "His shoes"
+    ],
+    "answer": "A wedding garment",
+    "reference": "Matthew 22:11-12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2909,
+    "book": "Mateo",
+    "question": "Jesus said: 'Heaven and earth will pass away, but My ______ will by no means pass away.'",
+    "options": [
+      "Words",
+      "Laws",
+      "Spirit",
+      "Kingdom"
+    ],
+    "answer": "Words",
+    "reference": "Matthew 24:35",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2910,
+    "book": "Mateo",
+    "question": "Who did the crowd choose to release instead of Jesus when Pilate gave them the choice?",
+    "options": [
+      "Barabbas",
+      "Barnabas",
+      "Silas",
+      "Malchus"
+    ],
+    "answer": "Barabbas",
+    "reference": "Matthew 27:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2911,
+    "book": "Mateo",
+    "question": "In the Lord's Prayer, we ask to be delivered from ______.",
+    "options": [
+      "The evil one",
+      "The world",
+      "The enemy",
+      "The law"
+    ],
+    "answer": "The evil one",
+    "reference": "Matthew 6:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2912,
+    "book": "Mateo",
+    "question": "Jesus said: 'Take My yoke upon you and learn from Me, for I am ______ and ______ in heart.'",
+    "options": [
+      "Gentle; lowly",
+      "Kind; quiet",
+      "Strong; holy",
+      "Wise; patient"
+    ],
+    "answer": "Gentle; lowly",
+    "reference": "Matthew 11:29",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2913,
+    "book": "Mateo",
+    "question": "How many baskets of leftovers were collected after Jesus fed the four thousand?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Five",
+      "Three"
+    ],
+    "answer": "Seven",
+    "reference": "Matthew 15:37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2914,
+    "book": "Mateo",
+    "question": "Which of the apostles was the first to answer Jesus' question: 'Who do you say that I am?'",
+    "options": [
+      "Simon Peter",
+      "John",
+      "Andrew",
+      "James"
+    ],
+    "answer": "Simon Peter",
+    "reference": "Matthew 16:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2915,
+    "book": "Mateo",
+    "question": "On the Mount of Transfiguration, whose face 'shone like the sun'?",
+    "options": [
+      "Jesus",
+      "Moses",
+      "Elijah",
+      "Peter"
+    ],
+    "answer": "Jesus",
+    "reference": "Matthew 17:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2916,
+    "book": "Mateo",
+    "question": "What did Judas do with the thirty pieces of silver before he went and hanged himself?",
+    "options": [
+      "Threw them down in the temple",
+      "Gave them to the poor",
+      "Bought a field",
+      "Hid them in a cave"
+    ],
+    "answer": "Threw them down in the temple",
+    "reference": "Matthew 27:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2917,
+    "book": "Mateo",
+    "question": "Who carried Jesus' cross on the way to Golgotha?",
+    "options": [
+      "Simon of Cyrene",
+      "Joseph of Arimathea",
+      "Peter",
+      "The Roman soldiers"
+    ],
+    "answer": "Simon of Cyrene",
+    "reference": "Matthew 27:32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2918,
+    "book": "Mateo",
+    "question": "Jesus said: 'Seek first the ______ of God and His righteousness.'",
+    "options": [
+      "Kingdom",
+      "Word",
+      "Glory",
+      "Way"
+    ],
+    "answer": "Kingdom",
+    "reference": "Matthew 6:33",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2919,
+    "book": "Mateo",
+    "question": "What did the soldiers do to decide who would get Jesus' tunic?",
+    "options": [
+      "Cast lots",
+      "Fought for it",
+      "Cut it in pieces",
+      "Sold it"
+    ],
+    "answer": "Cast lots",
+    "reference": "Matthew 27:35",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2920,
+    "book": "Mateo",
+    "question": "Which two disciples were the first that Jesus called by the Sea of Galilee?",
+    "options": [
+      "Peter and Andrew",
+      "James and John",
+      "Philip and Bartholomew",
+      "Matthew and Thomas"
+    ],
+    "answer": "Peter and Andrew",
+    "reference": "Matthew 4:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3001,
+    "book": "Mateo",
+    "question": "What was the name of the man who helped Jesus carry the cross, according to Matthew?",
+    "options": [
+      "Simon of Cyrene",
+      "Joseph of Arimathea",
+      "Nicodemus",
+      "Malchus"
+    ],
+    "answer": "Simon of Cyrene",
+    "reference": "Matthew 27:32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3002,
+    "book": "Mateo",
+    "question": "In the Sermon on the Mount, Jesus said: 'You are the ______ of the earth.'",
+    "options": [
+      "Salt",
+      "Light",
+      "Water",
+      "Seed"
+    ],
+    "answer": "Salt",
+    "reference": "Matthew 5:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3003,
+    "book": "Mateo",
+    "question": "Which king of Judea ordered the execution of all male children in Bethlehem aged two and under?",
+    "options": [
+      "Herod the Great",
+      "Herod Antipas",
+      "Herod Agrippa",
+      "Archelaus"
+    ],
+    "answer": "Herod the Great",
+    "reference": "Matthew 2:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3004,
+    "book": "Mateo",
+    "question": "In the Parable of the Sower, what happened to the seed that fell on stony places?",
+    "options": [
+      "It withered because it had no root",
+      "The birds ate it",
+      "Thorns choked it",
+      "It grew well"
+    ],
+    "answer": "It withered because it had no root",
+    "reference": "Matthew 13:5-6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3005,
+    "book": "Mateo",
+    "question": "To which city did Jesus go when He heard that John the Baptist had been put in prison?",
+    "options": [
+      "Capernaum",
+      "Nazareth",
+      "Jerusalem",
+      "Bethany"
+    ],
+    "answer": "Capernaum",
+    "reference": "Matthew 4:12-13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3006,
+    "book": "Mateo",
+    "question": "Which of the Beatitudes promises that they 'shall see God'?",
+    "options": [
+      "The pure in heart",
+      "The merciful",
+      "The peacemakers",
+      "The poor in spirit"
+    ],
+    "answer": "The pure in heart",
+    "reference": "Matthew 5:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3007,
+    "book": "Mateo",
+    "question": "What did Jesus say would be the sign of His coming and of the end of the age?",
+    "options": [
+      "The gospel will be preached in all the world",
+      "A great flood",
+      "The Temple will be rebuilt",
+      "The stars will fall"
+    ],
+    "answer": "The gospel will be preached in all the world",
+    "reference": "Matthew 24:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3008,
+    "book": "Mateo",
+    "question": "In the Parable of the Talents, how many talents did the man who hid his money receive?",
+    "options": [
+      "One",
+      "Two",
+      "Five",
+      "Ten"
+    ],
+    "answer": "One",
+    "reference": "Matthew 25:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3009,
+    "book": "Mateo",
+    "question": "Who was the mother of James and Joseph (not the mother of Jesus) mentioned at the crucifixion?",
+    "options": [
+      "Mary",
+      "Salome",
+      "Martha",
+      "Joanna"
+    ],
+    "answer": "Mary",
+    "reference": "Matthew 27:56",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3010,
+    "book": "Mateo",
+    "question": "What was the name of the place where Jesus was crucified, which means 'Place of a Skull'?",
+    "options": [
+      "Golgotha",
+      "Gethsemane",
+      "Gabatha",
+      "Zion"
+    ],
+    "answer": "Golgotha",
+    "reference": "Matthew 27:33",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3011,
+    "book": "Mateo",
+    "question": "In the Lord's Prayer, what is the petition following 'Give us this day our daily bread'?",
+    "options": [
+      "Forgive us our debts",
+      "Lead us not into temptation",
+      "Deliver us from evil",
+      "Your kingdom come"
+    ],
+    "answer": "Forgive us our debts",
+    "reference": "Matthew 6:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3012,
+    "book": "Mateo",
+    "question": "Jesus told the rich young ruler to sell his possessions and give to the ______.",
+    "options": [
+      "Poor",
+      "Temple",
+      "Disciples",
+      "Sick"
+    ],
+    "answer": "Poor",
+    "reference": "Matthew 19:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3013,
+    "book": "Mateo",
+    "question": "What did the disciples think they saw when Jesus was walking on the water?",
+    "options": [
+      "A ghost",
+      "An angel",
+      "A boat",
+      "A fish"
+    ],
+    "answer": "A ghost",
+    "reference": "Matthew 14:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3014,
+    "book": "Mateo",
+    "question": "Who was the father of Simon Peter and Andrew?",
+    "options": [
+      "Jonah / John",
+      "Zebedee",
+      "Alphaeus",
+      "Jacob"
+    ],
+    "answer": "Jonah / John",
+    "reference": "Matthew 16:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3015,
+    "book": "Mateo",
+    "question": "Jesus said: 'Where your treasure is, there your ______ will be also.'",
+    "options": [
+      "Heart",
+      "Soul",
+      "Mind",
+      "Spirit"
+    ],
+    "answer": "Heart",
+    "reference": "Matthew 6:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3016,
+    "book": "Mateo",
+    "question": "In the Parable of the Net, what happens to the 'bad' fish after the net is drawn to shore?",
+    "options": [
+      "They are thrown away",
+      "They are sold",
+      "They are returned to the sea",
+      "They are kept for later"
+    ],
+    "answer": "They are thrown away",
+    "reference": "Matthew 13:48",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3017,
+    "book": "Mateo",
+    "question": "Which apostle was a tax collector before being called by Jesus?",
+    "options": [
+      "Matthew",
+      "Peter",
+      "Thomas",
+      "Andrew"
+    ],
+    "answer": "Matthew",
+    "reference": "Matthew 9:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3018,
+    "book": "Mateo",
+    "question": "What was the name of the garden where Jesus prayed before His arrest?",
+    "options": [
+      "Gethsemane",
+      "Eden",
+      "Carmel",
+      "Paradise"
+    ],
+    "answer": "Gethsemane",
+    "reference": "Matthew 26:36",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3019,
+    "book": "Mateo",
+    "question": "In Matthew 1, who was the husband of Mary, of whom was born Jesus?",
+    "options": [
+      "Joseph",
+      "Jacob",
+      "Joachim",
+      "Jonas"
+    ],
+    "answer": "Joseph",
+    "reference": "Matthew 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3020,
+    "book": "Mateo",
+    "question": "Who did Jesus say was the greatest 'among those born of women'?",
+    "options": [
+      "John the Baptist",
+      "Moses",
+      "Abraham",
+      "David"
+    ],
+    "answer": "John the Baptist",
+    "reference": "Matthew 11:11",
+    "difficulty": "medium"
+  }
+]

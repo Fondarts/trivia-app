@@ -2,43 +2,57 @@
 (function() {
   'use strict';
 
+  // Función helper para disparar el evento bankReady de forma segura
+  function dispatchBankReady() {
+    try {
+      window.dispatchEvent(new Event('bankReady'));
+    } catch (e) {
+      // Si dispatchEvent falla, usar setTimeout como fallback
+      setTimeout(() => {
+        if (window.dispatchEvent) {
+          window.dispatchEvent(new Event('bankReady'));
+        }
+      }, 100);
+    }
+  }
+
   // Importar las funciones necesarias de bank.js
   import('./bank.js').then(async function(module) {
-
-    // Exponer todas las funciones necesarias globalmente
-    window.buildDeckSingle = module.buildDeckSingle;
-    window.getBank = module.getBank;
-    window.setBank = module.setBank;
-    window.getBankCount = module.getBankCount;
-    window.ensureInitial60 = module.ensureInitial60;
-    window.warmLocalBank = module.warmLocalBank;
-    window.ensureBankReady = module.ensureBankReady;
-    
-    // Inicializar el banco automáticamente
-
     try {
+      // Exponer todas las funciones necesarias globalmente
+      window.buildDeckSingle = module.buildDeckSingle;
+      window.getBank = module.getBank;
+      window.setBank = module.setBank;
+      window.getBankCount = module.getBankCount;
+      window.ensureInitial60 = module.ensureInitial60;
+      window.warmLocalBank = module.warmLocalBank;
+      window.ensureBankReady = module.ensureBankReady;
+      
+      // Inicializar el banco automáticamente
       await module.ensureBankReady('en');
       const count = module.getBankCount();
 
       // Disparar evento para indicar que el banco está listo
-      window.dispatchEvent(new Event('bankReady'));
+      dispatchBankReady();
       
     } catch (error) {
-
       // Crear banco de fallback vacío (solo categoría bible)
       const fallbackBank = {
         bible: []
       };
       
       // Guardar banco de fallback
-      localStorage.setItem('trivia_bank', JSON.stringify(fallbackBank));
+      try {
+        localStorage.setItem('trivia_bank', JSON.stringify(fallbackBank));
+      } catch (e) {
+        // Ignorar errores de localStorage
+      }
 
-      // Disparar evento
-      window.dispatchEvent(new Event('bankReady'));
+      // Disparar evento incluso si hay error
+      dispatchBankReady();
     }
     
-  }).catch(function(error) {
-
+  }).catch(function() {
     // Fallback completo: crear funciones básicas
 
     // Crear banco de fallback vacío (solo categoría bible)
@@ -96,9 +110,13 @@
     };
     
     // Guardar banco de fallback
-    window.setBank(fallbackBank);
+    try {
+      window.setBank(fallbackBank);
+    } catch (e) {
+      // Ignorar errores
+    }
     
-    // Disparar evento
-    window.dispatchEvent(new Event('bankReady'));
+    // Disparar evento siempre, incluso si hay errores
+    dispatchBankReady();
   });
 })();

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2301,
+    "book": "2 Timothy",
+    "question": "Who does Paul mention as having a 'genuine faith' that also dwelt in Timothy's mother and grandmother?",
+    "options": [
+      "Eunice and Lois",
+      "Mary and Martha",
+      "Lydia and Phoebe",
+      "Priscilla and Junia"
+    ],
+    "answer": "Eunice and Lois",
+    "reference": "2 Timothy 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2302,
+    "book": "2 Timothy",
+    "question": "For God has not given us a spirit of ______, but of power and of love and of a sound mind.",
+    "options": [
+      "Fear",
+      "Weakness",
+      "Doubt",
+      "Anger"
+    ],
+    "answer": "Fear",
+    "reference": "2 Timothy 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2303,
+    "book": "2 Timothy",
+    "question": "Paul tells Timothy: 'Do not be ashamed of the ______ of our Lord.'",
+    "options": [
+      "Testimony",
+      "Name",
+      "Cross",
+      "Gospel"
+    ],
+    "answer": "Testimony",
+    "reference": "2 Timothy 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2304,
+    "book": "2 Timothy",
+    "question": "Who was the man who 'often refreshed' Paul and was not ashamed of his chains in Rome?",
+    "options": [
+      "Onesiphorus",
+      "Philetus",
+      "Demas",
+      "Crescens"
+    ],
+    "answer": "Onesiphorus",
+    "reference": "2 Timothy 1:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2305,
+    "book": "2 Timothy",
+    "question": "Paul tells Timothy to be strong in the ______ that is in Christ Jesus.",
+    "options": [
+      "Grace",
+      "Faith",
+      "Truth",
+      "Power"
+    ],
+    "answer": "Grace",
+    "reference": "2 Timothy 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2306,
+    "book": "2 Timothy",
+    "question": "Paul uses three metaphors for the Christian life in chapter 2. What are they?",
+    "options": [
+      "Soldier, Athlete, Farmer",
+      "Shepherd, King, Priest",
+      "Fisherman, Builder, Sower",
+      "Merchant, Servant, Guard"
+    ],
+    "answer": "Soldier, Athlete, Farmer",
+    "reference": "2 Timothy 2:3-6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2307,
+    "book": "2 Timothy",
+    "question": "No one engaged in warfare entangles himself with the affairs of ______.",
+    "options": [
+      "This life",
+      "The king",
+      "The enemy",
+      "The law"
+    ],
+    "answer": "This life",
+    "reference": "2 Timothy 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2308,
+    "book": "2 Timothy",
+    "question": "An athlete is not crowned unless he competes according to the ______.",
+    "options": [
+      "Rules",
+      "Time",
+      "Strength",
+      "Will"
+    ],
+    "answer": "Rules",
+    "reference": "2 Timothy 2:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2309,
+    "book": "2 Timothy",
+    "question": "If we endure, we shall also ______ with Him.",
+    "options": [
+      "Reign",
+      "Live",
+      "Rest",
+      "Win"
+    ],
+    "answer": "Reign",
+    "reference": "2 Timothy 2:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2310,
+    "book": "2 Timothy",
+    "question": "If we are faithless, He remains ______; He cannot deny Himself.",
+    "options": [
+      "Faithful",
+      "Just",
+      "Mighty",
+      "Holy"
+    ],
+    "answer": "Faithful",
+    "reference": "2 Timothy 2:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2311,
+    "book": "2 Timothy",
+    "question": "Be diligent to present yourself approved to God, a worker who does not need to be ashamed, rightly ______ the word of truth.",
+    "options": [
+      "Dividing",
+      "Reading",
+      "Teaching",
+      "Hearing"
+    ],
+    "answer": "Dividing",
+    "reference": "2 Timothy 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2312,
+    "book": "2 Timothy",
+    "question": "Who were the two men saying that the resurrection is already past?",
+    "options": [
+      "Hymenaeus and Philetus",
+      "Alexander and Demas",
+      "Philetus and Hermogenes",
+      "Phygellus and Hermogenes"
+    ],
+    "answer": "Hymenaeus and Philetus",
+    "reference": "2 Timothy 2:17-18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2313,
+    "book": "2 Timothy",
+    "question": "In a great house there are vessels of gold and silver, but also of ______ and clay.",
+    "options": [
+      "Wood",
+      "Iron",
+      "Stone",
+      "Bronze"
+    ],
+    "answer": "Wood",
+    "reference": "2 Timothy 2:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2314,
+    "book": "2 Timothy",
+    "question": "Flee also youthful ______, but pursue righteousness, faith, love, and peace.",
+    "options": [
+      "Lusts",
+      "Dreams",
+      "Desires",
+      "Follies"
+    ],
+    "answer": "Lusts",
+    "reference": "2 Timothy 2:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2315,
+    "book": "2 Timothy",
+    "question": "A servant of the Lord must not ______, but be gentle to all.",
+    "options": [
+      "Quarrel",
+      "Speak",
+      "Sleep",
+      "Rule"
+    ],
+    "answer": "Quarrel",
+    "reference": "2 Timothy 2:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2316,
+    "book": "2 Timothy",
+    "question": "In the last days, ______ times will come.",
+    "options": [
+      "Perilous",
+      "Glorious",
+      "Quiet",
+      "Short"
+    ],
+    "answer": "Perilous",
+    "reference": "2 Timothy 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2317,
+    "book": "2 Timothy",
+    "question": "Paul warns about people having a form of ______ but denying its power.",
+    "options": [
+      "Godliness",
+      "Faith",
+      "Knowledge",
+      "Strength"
+    ],
+    "answer": "Godliness",
+    "reference": "2 Timothy 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2318,
+    "book": "2 Timothy",
+    "question": "Who were the two men who resisted Moses, according to 3:8?",
+    "options": [
+      "Jannes and Jambres",
+      "Dathan and Abiram",
+      "Korah and Levi",
+      "Balak and Balaam"
+    ],
+    "answer": "Jannes and Jambres",
+    "reference": "2 Timothy 3:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2319,
+    "book": "2 Timothy",
+    "question": "All who desire to live godly in Christ Jesus will suffer ______.",
+    "options": [
+      "Persecution",
+      "Famine",
+      "Loss",
+      "Sadness"
+    ],
+    "answer": "Persecution",
+    "reference": "2 Timothy 3:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2320,
+    "book": "2 Timothy",
+    "question": "All Scripture is given by ______ of God.",
+    "options": [
+      "Inspiration",
+      "Word",
+      "Command",
+      "Will"
+    ],
+    "answer": "Inspiration",
+    "reference": "2 Timothy 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2321,
+    "book": "2 Timothy",
+    "question": "Scripture is profitable for doctrine, reproof, correction, and ______ in righteousness.",
+    "options": [
+      "Instruction",
+      "Knowledge",
+      "Growth",
+      "Peace"
+    ],
+    "answer": "Instruction",
+    "reference": "2 Timothy 3:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2322,
+    "book": "2 Timothy",
+    "question": "Paul charges Timothy to 'Preach the ______!'",
+    "options": [
+      "Word",
+      "Gospel",
+      "Truth",
+      "Cross"
+    ],
+    "answer": "Word",
+    "reference": "2 Timothy 4:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2323,
+    "book": "2 Timothy",
+    "question": "Be ready in season and out of ______.",
+    "options": [
+      "Season",
+      "Time",
+      "Place",
+      "Mind"
+    ],
+    "answer": "Season",
+    "reference": "2 Timothy 4:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2324,
+    "book": "2 Timothy",
+    "question": "For the time will come when they will not endure sound ______.",
+    "options": [
+      "Doctrine",
+      "Speech",
+      "Truth",
+      "Advice"
+    ],
+    "answer": "Doctrine",
+    "reference": "2 Timothy 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2325,
+    "book": "2 Timothy",
+    "question": "People with 'itching ears' will heap up for themselves ______.",
+    "options": [
+      "Teachers",
+      "Gold",
+      "Secrets",
+      "Books"
+    ],
+    "answer": "Teachers",
+    "reference": "2 Timothy 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2326,
+    "book": "2 Timothy",
+    "question": "Paul tells Timothy to do the work of an ______.",
+    "options": [
+      "Evangelist",
+      "Apostle",
+      "Elder",
+      "Scribe"
+    ],
+    "answer": "Evangelist",
+    "reference": "2 Timothy 4:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2327,
+    "book": "2 Timothy",
+    "question": "Paul says: 'I have fought the good ______, I have finished the ______, I have kept the ______.'",
+    "options": [
+      "Fight; race; faith",
+      "War; work; law",
+      "Battle; path; truth",
+      "Race; fight; word"
+    ],
+    "answer": "Fight; race; faith",
+    "reference": "2 Timothy 4:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2328,
+    "book": "2 Timothy",
+    "question": "Finally, there is laid up for me the crown of ______.",
+    "options": [
+      "Righteousness",
+      "Life",
+      "Glory",
+      "Gold"
+    ],
+    "answer": "Righteousness",
+    "reference": "2 Timothy 4:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2329,
+    "book": "2 Timothy",
+    "question": "Who had forsaken Paul because he loved this present world?",
+    "options": [
+      "Demas",
+      "Crescens",
+      "Titus",
+      "Tychicus"
+    ],
+    "answer": "Demas",
+    "reference": "2 Timothy 4:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2330,
+    "book": "2 Timothy",
+    "question": "Who was the only person with Paul during his final days?",
+    "options": [
+      "Luke",
+      "Mark",
+      "Timothy",
+      "Silas"
+    ],
+    "answer": "Luke",
+    "reference": "2 Timothy 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2331,
+    "book": "2 Timothy",
+    "question": "Who did Paul ask Timothy to bring with him because he was 'useful for ministry'?",
+    "options": [
+      "Mark",
+      "Barnabas",
+      "John",
+      "Luke"
+    ],
+    "answer": "Mark",
+    "reference": "2 Timothy 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2332,
+    "book": "2 Timothy",
+    "question": "What items did Paul ask Timothy to bring from Troas?",
+    "options": [
+      "Cloak, books, and parchments",
+      "Sword and shield",
+      "Food and wine",
+      "Money and scrolls"
+    ],
+    "answer": "Cloak, books, and parchments",
+    "reference": "2 Timothy 4:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2333,
+    "book": "2 Timothy",
+    "question": "Who was the coppersmith who did Paul much harm?",
+    "options": [
+      "Alexander",
+      "Demetrius",
+      "Hymenaeus",
+      "Philetus"
+    ],
+    "answer": "Alexander",
+    "reference": "2 Timothy 4:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2334,
+    "book": "2 Timothy",
+    "question": "Paul says the Lord stood with him and he was delivered out of the mouth of the ______.",
+    "options": [
+      "Lion",
+      "Serpent",
+      "Dragon",
+      "Pit"
+    ],
+    "answer": "Lion",
+    "reference": "2 Timothy 4:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2335,
+    "book": "2 Timothy",
+    "question": "Where did Paul leave Trophimus sick?",
+    "options": [
+      "Miletus",
+      "Corinth",
+      "Ephesus",
+      "Rome"
+    ],
+    "answer": "Miletus",
+    "reference": "2 Timothy 4:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2336,
+    "book": "2 Timothy",
+    "question": "Paul mentions that Erastus stayed in which city?",
+    "options": [
+      "Corinth",
+      "Athens",
+      "Philippi",
+      "Rome"
+    ],
+    "answer": "Corinth",
+    "reference": "2 Timothy 4:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2337,
+    "book": "2 Timothy",
+    "question": "Paul tells Timothy to come before which season?",
+    "options": [
+      "Winter",
+      "Summer",
+      "Spring",
+      "Harvest"
+    ],
+    "answer": "Winter",
+    "reference": "2 Timothy 4:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2338,
+    "book": "2 Timothy",
+    "question": "Paul notes that at his 'first defense'...?",
+    "options": [
+      "No one stood with him",
+      "Luke was there",
+      "Timothy arrived",
+      "The king listened"
+    ],
+    "answer": "No one stood with him",
+    "reference": "2 Timothy 4:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2339,
+    "book": "2 Timothy",
+    "question": "The name 'Timothy' means what?",
+    "options": [
+      "Honoring God",
+      "Gift of God",
+      "Strong man",
+      "Faithful son"
+    ],
+    "answer": "Honoring God",
+    "reference": "Etymology",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2340,
+    "book": "2 Timothy",
+    "question": "According to 3:15, Timothy had known the Holy Scriptures since...?",
+    "options": [
+      "Childhood",
+      "His baptism",
+      "Meeting Paul",
+      "Last year"
+    ],
+    "answer": "Childhood",
+    "reference": "2 Timothy 3:15",
+    "difficulty": "easy"
+  }
+]

@@ -33,7 +33,8 @@ function normalizeQuestion(q, category, book = null) {
   let diff = String(q.difficulty || 'medium').toLowerCase();
   if (!['easy', 'medium', 'hard'].includes(diff)) diff = 'medium';
   const bookVal = book != null ? String(book).trim() : (q.book != null ? String(q.book).trim() : null);
-  return { q: text, options: opts, answer: ans, difficulty: diff, category: category || q.category || 'misc', book: bookVal || null };
+  const reference = q.reference ? String(q.reference).trim() : null;
+  return { q: text, options: opts, answer: ans, difficulty: diff, category: category || q.category || 'misc', book: bookVal || null, reference: reference };
 }
 
 export function getCurrentLanguage() {
@@ -191,7 +192,7 @@ async function loadAndNormalizeFile(lang, fileName) {
           }
         }
       }
-      return { ...normalized, img: imgUrl };
+      return { ...normalized, img: imgUrl, reference: q.reference || normalized.reference || null };
     }).filter(q => q !== null);
     
     filePackCache.set(cacheKey, pool);

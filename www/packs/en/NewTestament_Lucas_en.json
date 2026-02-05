@@ -1,0 +1,842 @@
+[
+  {
+    "id": 2841,
+    "book": "Lucas",
+    "question": "To whom did Luke address his Gospel and the book of Acts?",
+    "options": [
+      "Theophilus",
+      "Timothy",
+      "Titus",
+      "The Church"
+    ],
+    "answer": "Theophilus",
+    "reference": "Luke 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2842,
+    "book": "Lucas",
+    "question": "What was the name of the angel who appeared to Mary to announce Jesus' birth?",
+    "options": [
+      "Gabriel",
+      "Michael",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Gabriel",
+    "reference": "Luke 1:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2843,
+    "book": "Lucas",
+    "question": "In the town of Nain, what did Jesus do for a widow?",
+    "options": [
+      "Raised her son from the dead",
+      "Healed her blindness",
+      "Multiplied her food",
+      "Gave her gold"
+    ],
+    "answer": "Raised her son from the dead",
+    "reference": "Luke 7:11-15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2844,
+    "book": "Lucas",
+    "question": "In the Parable of the Good Samaritan, where was the man traveling from and to?",
+    "options": [
+      "Jerusalem to Jericho",
+      "Jericho to Jerusalem",
+      "Galilee to Samaria",
+      "Nazareth to Bethlehem"
+    ],
+    "answer": "Jerusalem to Jericho",
+    "reference": "Luke 10:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2845,
+    "book": "Lucas",
+    "question": "Which sister complained to Jesus that her sister was not helping with the serving?",
+    "options": [
+      "Martha",
+      "Mary",
+      "Lydia",
+      "Tabitha"
+    ],
+    "answer": "Martha",
+    "reference": "Luke 10:40",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2846,
+    "book": "Lucas",
+    "question": "How many lepers were healed by Jesus, of whom only one returned to give thanks?",
+    "options": [
+      "Ten",
+      "Seven",
+      "Twelve",
+      "Five"
+    ],
+    "answer": "Ten",
+    "reference": "Luke 17:12-17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2847,
+    "book": "Lucas",
+    "question": "What was the occupation of Zacchaeus?",
+    "options": [
+      "Chief tax collector",
+      "Fisherman",
+      "Centurion",
+      "Pharisee"
+    ],
+    "answer": "Chief tax collector",
+    "reference": "Luke 19:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2848,
+    "book": "Lucas",
+    "question": "In the Parable of the Lost Coin, how many silver coins did the woman have originally?",
+    "options": [
+      "Ten",
+      "One hundred",
+      "Twelve",
+      "Seven"
+    ],
+    "answer": "Ten",
+    "reference": "Luke 15:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2849,
+    "book": "Lucas",
+    "question": "What did the father give his 'prodigal' son as soon as he returned?",
+    "options": [
+      "The best robe",
+      "A bag of gold",
+      "A lecture",
+      "A new job"
+    ],
+    "answer": "The best robe",
+    "reference": "Luke 15:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2850,
+    "book": "Lucas",
+    "question": "Who was the high priest's servant whose ear was healed by Jesus in the garden?",
+    "options": [
+      "Unnamed in Luke (Malchus in John)",
+      "Malchus",
+      "Simon",
+      "Caiaphas"
+    ],
+    "answer": "Unnamed in Luke (Malchus in John)",
+    "reference": "Luke 22:50-51",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2851,
+    "book": "Lucas",
+    "question": "To whom did Jesus say: 'Today you will be with Me in Paradise'?",
+    "options": [
+      "The criminal on the cross",
+      "Peter",
+      "John",
+      "The centurion"
+    ],
+    "answer": "The criminal on the cross",
+    "reference": "Luke 23:43",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2852,
+    "book": "Lucas",
+    "question": "On the road to which village did two disciples meet the resurrected Jesus?",
+    "options": [
+      "Emmaus",
+      "Bethany",
+      "Jericho",
+      "Galilee"
+    ],
+    "answer": "Emmaus",
+    "reference": "Luke 24:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2853,
+    "book": "Lucas",
+    "question": "How many disciples did Jesus send out in Luke 10 to preach the kingdom?",
+    "options": [
+      "Seventy (or Seventy-two)",
+      "Twelve",
+      "One hundred",
+      "Five hundred"
+    ],
+    "answer": "Seventy (or Seventy-two)",
+    "reference": "Luke 10:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2854,
+    "book": "Lucas",
+    "question": "Who was the father of John the Baptist?",
+    "options": [
+      "Zacharias",
+      "Joseph",
+      "Abraham",
+      "Eli"
+    ],
+    "answer": "Zacharias",
+    "reference": "Luke 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2855,
+    "book": "Lucas",
+    "question": "What was the decree that Caesar Augustus made?",
+    "options": [
+      "That all the world should be registered (census)",
+      "To kill the babies",
+      "To build a temple",
+      "To release the Jews"
+    ],
+    "answer": "That all the world should be registered (census)",
+    "reference": "Luke 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2856,
+    "book": "Lucas",
+    "question": "How many days was Jesus lost in Jerusalem before His parents found Him in the temple?",
+    "options": [
+      "Three days",
+      "Seven days",
+      "One day",
+      "Forty days"
+    ],
+    "answer": "Three days",
+    "reference": "Luke 2:46",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2857,
+    "book": "Lucas",
+    "question": "In Luke's genealogy, who is the very first human ancestor listed (at the end)?",
+    "options": [
+      "Adam",
+      "Abraham",
+      "David",
+      "Seth"
+    ],
+    "answer": "Adam",
+    "reference": "Luke 3:38",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2858,
+    "book": "Lucas",
+    "question": "Which prophet did Jesus quote in the synagogue at Nazareth: 'The Spirit of the Lord is upon Me'?",
+    "options": [
+      "Isaiah",
+      "Ezekiel",
+      "Joel",
+      "Malachi"
+    ],
+    "answer": "Isaiah",
+    "reference": "Luke 4:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2859,
+    "book": "Lucas",
+    "question": "What animal did Jesus tell the disciples to find and bring for His entry into Jerusalem?",
+    "options": [
+      "A colt",
+      "A horse",
+      "A camel",
+      "A lamb"
+    ],
+    "answer": "A colt",
+    "reference": "Luke 19:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2860,
+    "book": "Lucas",
+    "question": "At the Last Supper, what did the cup represent?",
+    "options": [
+      "The new covenant in His blood",
+      "The wine of the feast",
+      "The joy of salvation",
+      "The fruit of the vine"
+    ],
+    "answer": "The new covenant in His blood",
+    "reference": "Luke 22:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2941,
+    "book": "Lucas",
+    "question": "In the Magnificat, Mary says her soul 'doth ______ the Lord'.",
+    "options": [
+      "Magnify",
+      "Praise",
+      "Love",
+      "Fear"
+    ],
+    "answer": "Magnify",
+    "reference": "Luke 1:46",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2942,
+    "book": "Lucas",
+    "question": "Who was the Roman governor of Syria during the first census mentioned by Luke?",
+    "options": [
+      "Quirinius",
+      "Pilate",
+      "Felix",
+      "Festus"
+    ],
+    "answer": "Quirinius",
+    "reference": "Luke 2:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2943,
+    "book": "Lucas",
+    "question": "What did the angels sing to the shepherds in the fields?",
+    "options": [
+      "Glory to God in the highest, and on earth peace",
+      "Holy, Holy, Holy",
+      "Hallelujah",
+      "The King is born"
+    ],
+    "answer": "Glory to God in the highest, and on earth peace",
+    "reference": "Luke 2:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2944,
+    "book": "Lucas",
+    "question": "Who was the elderly woman, a prophetess, who never left the temple and saw the baby Jesus?",
+    "options": [
+      "Anna",
+      "Elizabeth",
+      "Mary",
+      "Miriam"
+    ],
+    "answer": "Anna",
+    "reference": "Luke 2:36",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2945,
+    "book": "Lucas",
+    "question": "How many temptations did the devil present to Jesus in the wilderness in Luke's account?",
+    "options": [
+      "Three",
+      "Seven",
+      "One",
+      "Two"
+    ],
+    "answer": "Three",
+    "reference": "Luke 4:1-13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2946,
+    "book": "Lucas",
+    "question": "In the Parable of the Sower, what does the seed that fell among thorns represent?",
+    "options": [
+      "Those choked by cares, riches, and pleasures of life",
+      "Those who have no root",
+      "Those who don't understand",
+      "The faithful"
+    ],
+    "answer": "Those choked by cares, riches, and pleasures of life",
+    "reference": "Luke 8:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2947,
+    "book": "Lucas",
+    "question": "Who appeared with Jesus on the Mount of Transfiguration?",
+    "options": [
+      "Moses and Elijah",
+      "Abraham and Isaac",
+      "David and Solomon",
+      "Noah and Enoch"
+    ],
+    "answer": "Moses and Elijah",
+    "reference": "Luke 9:30",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2948,
+    "book": "Lucas",
+    "question": "In the Parable of the Good Samaritan, who were the two people who passed by the wounded man first?",
+    "options": [
+      "A priest and a Levite",
+      "Two soldiers",
+      "A merchant and a king",
+      "A Pharisee and a Sadducee"
+    ],
+    "answer": "A priest and a Levite",
+    "reference": "Luke 10:31-32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2949,
+    "book": "Lucas",
+    "question": "What did the younger son in the Parable of the Prodigal Son waste his inheritance on?",
+    "options": [
+      "Prodigal / Riotous living",
+      "Building a house",
+      "Buying land",
+      "Bad investments"
+    ],
+    "answer": "Prodigal / Riotous living",
+    "reference": "Luke 15:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2950,
+    "book": "Lucas",
+    "question": "In the story of the Rich Man and Lazarus, where did Lazarus go after he died?",
+    "options": [
+      "Abraham's bosom",
+      "Hades",
+      "Paradise",
+      "The Temple"
+    ],
+    "answer": "Abraham's bosom",
+    "reference": "Luke 16:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2951,
+    "book": "Lucas",
+    "question": "What did Zacchaeus promise to give to the poor?",
+    "options": [
+      "Half of his goods",
+      "All of his wealth",
+      "A tenth of his income",
+      "His house"
+    ],
+    "answer": "Half of his goods",
+    "reference": "Luke 19:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2952,
+    "book": "Lucas",
+    "question": "Jesus said: 'The Son of Man has come to seek and to ______ that which was lost.'",
+    "options": [
+      "Save",
+      "Find",
+      "Teach",
+      "Help"
+    ],
+    "answer": "Save",
+    "reference": "Luke 19:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2953,
+    "book": "Lucas",
+    "question": "During the Last Supper, Jesus said the bread was His ______.",
+    "options": [
+      "Body",
+      "Word",
+      "Spirit",
+      "Life"
+    ],
+    "answer": "Body",
+    "reference": "Luke 22:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2954,
+    "book": "Lucas",
+    "question": "Who was the Roman governor of Judea who sentenced Jesus to death in Luke?",
+    "options": [
+      "Pontius Pilate",
+      "Herod",
+      "Felix",
+      "Festus"
+    ],
+    "answer": "Pontius Pilate",
+    "reference": "Luke 23:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2955,
+    "book": "Lucas",
+    "question": "What were Jesus' last words on the cross according to Luke?",
+    "options": [
+      "Father, into Your hands I commit My spirit",
+      "It is finished",
+      "My God, why have You forsaken Me?",
+      "I thirst"
+    ],
+    "answer": "Father, into Your hands I commit My spirit",
+    "reference": "Luke 23:46",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2956,
+    "book": "Lucas",
+    "question": "Who requested Jesus' body from Pilate and buried Him in a tomb?",
+    "options": [
+      "Joseph of Arimathea",
+      "Nicodemus",
+      "Peter",
+      "John"
+    ],
+    "answer": "Joseph of Arimathea",
+    "reference": "Luke 23:50-52",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2957,
+    "book": "Lucas",
+    "question": "What did the resurrected Jesus eat to show the disciples He was not a spirit?",
+    "options": [
+      "Broiled fish and honeycomb",
+      "Bread and wine",
+      "Grapes",
+      "Meat"
+    ],
+    "answer": "Broiled fish and honeycomb",
+    "reference": "Luke 24:42",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2958,
+    "book": "Lucas",
+    "question": "From what place did Jesus ascend to heaven at the end of Luke?",
+    "options": [
+      "Bethany",
+      "Nazareth",
+      "Jerusalem",
+      "Galilee"
+    ],
+    "answer": "Bethany",
+    "reference": "Luke 24:50",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2959,
+    "book": "Lucas",
+    "question": "How old was Jesus when he was found in the Temple among the teachers?",
+    "options": [
+      "Twelve",
+      "Eight",
+      "Ten",
+      "Thirteen"
+    ],
+    "answer": "Twelve",
+    "reference": "Luke 2:42",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2960,
+    "book": "Lucas",
+    "question": "Which Roman official was the Gospel of Luke and Acts written for?",
+    "options": [
+      "Most excellent Theophilus",
+      "Caesar",
+      "Pilate",
+      "Cornelius"
+    ],
+    "answer": "Most excellent Theophilus",
+    "reference": "Luke 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3041,
+    "book": "Lucas",
+    "question": "In the Parable of the Good Samaritan, who were the two men who passed the injured man without helping?",
+    "options": [
+      "A priest and a Levite",
+      "A soldier and a merchant",
+      "A Pharisee and a Sadducee",
+      "Two fishermen"
+    ],
+    "answer": "A priest and a Levite",
+    "reference": "Luke 10:31-32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3042,
+    "book": "Lucas",
+    "question": "To which city did Mary and Joseph travel for the census, as it was the city of David?",
+    "options": [
+      "Bethlehem",
+      "Nazareth",
+      "Jerusalem",
+      "Hebron"
+    ],
+    "answer": "Bethlehem",
+    "reference": "Luke 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3043,
+    "book": "Lucas",
+    "question": "Which archangel appeared to Zacharias to announce the birth of John the Baptist?",
+    "options": [
+      "Gabriel",
+      "Michael",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Gabriel",
+    "reference": "Luke 1:11-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3044,
+    "book": "Lucas",
+    "question": "What did Zacharias lose after doubting the angel's message, only to regain it at John's naming?",
+    "options": [
+      "His speech",
+      "His sight",
+      "His hearing",
+      "His memory"
+    ],
+    "answer": "His speech",
+    "reference": "Luke 1:20-64",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3045,
+    "book": "Lucas",
+    "question": "In the Parable of the Prodigal Son, what was the son doing when he 'came to himself' and decided to return?",
+    "options": [
+      "Feeding swine (pigs)",
+      "Working in a mine",
+      "Sailing a ship",
+      "Begging on the street"
+    ],
+    "answer": "Feeding swine (pigs)",
+    "reference": "Luke 15:15-17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3046,
+    "book": "Lucas",
+    "question": "What was the occupation of Zacchaeus, the man who climbed a sycamore tree?",
+    "options": [
+      "Chief tax collector",
+      "Fisherman",
+      "Centurion",
+      "Merchant"
+    ],
+    "answer": "Chief tax collector",
+    "reference": "Luke 19:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3047,
+    "book": "Lucas",
+    "question": "Who was the Roman emperor when John the Baptist began his ministry?",
+    "options": [
+      "Tiberius Caesar",
+      "Augustus Caesar",
+      "Nero",
+      "Claudius"
+    ],
+    "answer": "Tiberius Caesar",
+    "reference": "Luke 3:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3048,
+    "book": "Lucas",
+    "question": "In the Parable of the Lost Sheep, how many sheep did the man have originally?",
+    "options": [
+      "One hundred",
+      "Twelve",
+      "Seventy",
+      "Ten"
+    ],
+    "answer": "One hundred",
+    "reference": "Luke 15:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3049,
+    "book": "Lucas",
+    "question": "Which religious group in Luke did not believe in the resurrection of the dead?",
+    "options": [
+      "Sadducees",
+      "Pharisees",
+      "Essenes",
+      "Zealots"
+    ],
+    "answer": "Sadducees",
+    "reference": "Luke 20:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3050,
+    "book": "Lucas",
+    "question": "Who was the king of Galilee during the ministry of Jesus who also questioned Him during His trial?",
+    "options": [
+      "Herod Antipas",
+      "Herod the Great",
+      "Philip",
+      "Lysanias"
+    ],
+    "answer": "Herod Antipas",
+    "reference": "Luke 3:1 / 23:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3051,
+    "book": "Lucas",
+    "question": "In the account of the Ten Lepers, what was the nationality of the one who returned to thank Jesus?",
+    "options": [
+      "Samaritan",
+      "Jewish",
+      "Roman",
+      "Greek"
+    ],
+    "answer": "Samaritan",
+    "reference": "Luke 17:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3052,
+    "book": "Lucas",
+    "question": "Who was the man who was 'just and devout' and was waiting for the 'Consolation of Israel' in the temple?",
+    "options": [
+      "Simeon",
+      "Anna",
+      "Joseph",
+      "Theophilus"
+    ],
+    "answer": "Simeon",
+    "reference": "Luke 2:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3053,
+    "book": "Lucas",
+    "question": "According to Luke 10, what is the 'one thing needed' that Mary chose while Martha was distracted?",
+    "options": [
+      "Listening to Jesus' word",
+      "Praying to God",
+      "Serving others",
+      "Reading the law"
+    ],
+    "answer": "Listening to Jesus' word",
+    "reference": "Luke 10:42",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3054,
+    "book": "Lucas",
+    "question": "What did Jesus sweat like while praying in the Garden of Gethsemane?",
+    "options": [
+      "Great drops of blood",
+      "Rain",
+      "River water",
+      "Ice"
+    ],
+    "answer": "Great drops of blood",
+    "reference": "Luke 22:44",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3055,
+    "book": "Lucas",
+    "question": "On the day of the resurrection, which two disciples were walking towards Emmaus?",
+    "options": [
+      "Cleopas and another unnamed disciple",
+      "Peter and John",
+      "James and Andrew",
+      "Philip and Thomas"
+    ],
+    "answer": "Cleopas and another unnamed disciple",
+    "reference": "Luke 24:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3056,
+    "book": "Lucas",
+    "question": "What did Jesus say to the thief on the cross who asked to be remembered?",
+    "options": [
+      "Today you will be with Me in Paradise",
+      "Your sins are forgiven",
+      "Go in peace",
+      "Behold your mother"
+    ],
+    "answer": "Today you will be with Me in Paradise",
+    "reference": "Luke 23:43",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3057,
+    "book": "Lucas",
+    "question": "In Luke 16, who was the beggar at the rich man's gate?",
+    "options": [
+      "Lazarus",
+      "Simon",
+      "Matthew",
+      "John"
+    ],
+    "answer": "Lazarus",
+    "reference": "Luke 16:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3058,
+    "book": "Lucas",
+    "question": "How many talents (minas) did the nobleman give to each of his ten servants in the parable in Luke 19?",
+    "options": [
+      "One",
+      "Five",
+      "Ten",
+      "Two"
+    ],
+    "answer": "One",
+    "reference": "Luke 19:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3059,
+    "book": "Lucas",
+    "question": "Where did Jesus tell the disciples to stay until they were endued with power from on high?",
+    "options": [
+      "Jerusalem",
+      "Galilee",
+      "Nazareth",
+      "Bethany"
+    ],
+    "answer": "Jerusalem",
+    "reference": "Luke 24:49",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3060,
+    "book": "Lucas",
+    "question": "Which gospel author was a physician and the author of Luke?",
+    "options": [
+      "Luke",
+      "Mark",
+      "Matthew",
+      "John"
+    ],
+    "answer": "Luke",
+    "reference": "Colossians 4:14",
+    "difficulty": "easy"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2141,
+    "book": "Colossians",
+    "question": "Who is the author of Colossians?",
+    "options": [
+      "Paul",
+      "Timothy",
+      "Peter",
+      "Epaphras"
+    ],
+    "answer": "Paul",
+    "reference": "Colossians 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2142,
+    "book": "Colossians",
+    "question": "Who was the 'dear fellow servant' who likely founded the church at Colossae and brought the report to Paul?",
+    "options": [
+      "Epaphras",
+      "Tychicus",
+      "Onesimus",
+      "Philemon"
+    ],
+    "answer": "Epaphras",
+    "reference": "Colossians 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2143,
+    "book": "Colossians",
+    "question": "He has delivered us from the power of ______ and conveyed us into the kingdom of the Son of His love.",
+    "options": [
+      "Darkness",
+      "Sin",
+      "Death",
+      "Satan"
+    ],
+    "answer": "Darkness",
+    "reference": "Colossians 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2144,
+    "book": "Colossians",
+    "question": "Christ is the ______ of the invisible God, the firstborn over all creation.",
+    "options": [
+      "Image",
+      "Reflection",
+      "Word",
+      "Shadow"
+    ],
+    "answer": "Image",
+    "reference": "Colossians 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2145,
+    "book": "Colossians",
+    "question": "For by Him ______ things were created that are in heaven and that are on earth.",
+    "options": [
+      "All",
+      "Many",
+      "Holy",
+      "Spiritual"
+    ],
+    "answer": "All",
+    "reference": "Colossians 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2146,
+    "book": "Colossians",
+    "question": "He is the head of the body, the ______.",
+    "options": [
+      "Church",
+      "Creation",
+      "Nations",
+      "Prophets"
+    ],
+    "answer": "Church",
+    "reference": "Colossians 1:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2147,
+    "book": "Colossians",
+    "question": "In Him all the ______ should dwell.",
+    "options": [
+      "Fullness",
+      "Power",
+      "Spirit",
+      "Light"
+    ],
+    "answer": "Fullness",
+    "reference": "Colossians 1:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2148,
+    "book": "Colossians",
+    "question": "Paul mentions a mystery that was hidden from ages but now revealed. What is it summarized as in 1:27?",
+    "options": [
+      "Christ in you, the hope of glory",
+      "The end of the law",
+      "Salvation by grace",
+      "The return of Jesus"
+    ],
+    "answer": "Christ in you, the hope of glory",
+    "reference": "Colossians 1:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2149,
+    "book": "Colossians",
+    "question": "In whom are hidden all the treasures of ______ and knowledge.",
+    "options": [
+      "Wisdom",
+      "Faith",
+      "Truth",
+      "Wealth"
+    ],
+    "answer": "Wisdom",
+    "reference": "Colossians 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2150,
+    "book": "Colossians",
+    "question": "Beware lest anyone cheat you through philosophy and ______ ______.",
+    "options": [
+      "Empty deceit",
+      "Lies",
+      "False hope",
+      "Worldly wealth"
+    ],
+    "answer": "Empty deceit",
+    "reference": "Colossians 2:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2151,
+    "book": "Colossians",
+    "question": "For in Him dwells all the fullness of the ______ bodily.",
+    "options": [
+      "Godhead",
+      "Spirit",
+      "Father",
+      "Law"
+    ],
+    "answer": "Godhead",
+    "reference": "Colossians 2:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2152,
+    "book": "Colossians",
+    "question": "What did Christ do with the 'handwriting of requirements' that was against us?",
+    "options": [
+      "Nailed it to the cross",
+      "Burned it",
+      "Hid it",
+      "Rewrote it"
+    ],
+    "answer": "Nailed it to the cross",
+    "reference": "Colossians 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2153,
+    "book": "Colossians",
+    "question": "Paul warns against the worship of ______ in chapter 2.",
+    "options": [
+      "Angels",
+      "Idols",
+      "Ancestors",
+      "The Sun"
+    ],
+    "answer": "Angels",
+    "reference": "Colossians 2:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2154,
+    "book": "Colossians",
+    "question": "If then you were raised with Christ, seek those things which are ______.",
+    "options": [
+      "Above",
+      "Below",
+      "Holy",
+      "Future"
+    ],
+    "answer": "Above",
+    "reference": "Colossians 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2155,
+    "book": "Colossians",
+    "question": "Set your ______ on things above, not on things on the earth.",
+    "options": [
+      "Mind / Affection",
+      "Heart",
+      "Eyes",
+      "Wealth"
+    ],
+    "answer": "Mind / Affection",
+    "reference": "Colossians 3:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2156,
+    "book": "Colossians",
+    "question": "For you died, and your life is ______ with Christ in God.",
+    "options": [
+      "Hidden",
+      "Saved",
+      "Kept",
+      "Risen"
+    ],
+    "answer": "Hidden",
+    "reference": "Colossians 3:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2157,
+    "book": "Colossians",
+    "question": "Therefore put to death your members which are on the earth: fornication, uncleanness, passion... and ______, which is idolatry.",
+    "options": [
+      "Covetousness",
+      "Anger",
+      "Pride",
+      "Gluttony"
+    ],
+    "answer": "Covetousness",
+    "reference": "Colossians 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2158,
+    "book": "Colossians",
+    "question": "But now you must also put off all these: anger, wrath, malice, blasphemy, and ______ ______ out of your mouth.",
+    "options": [
+      "Filthy language",
+      "Lies",
+      "Loud words",
+      "False promises"
+    ],
+    "answer": "Filthy language",
+    "reference": "Colossians 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2159,
+    "book": "Colossians",
+    "question": "Let the ______ of God rule in your hearts.",
+    "options": [
+      "Peace",
+      "Word",
+      "Love",
+      "Spirit"
+    ],
+    "answer": "Peace",
+    "reference": "Colossians 3:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2160,
+    "book": "Colossians",
+    "question": "And be ______.",
+    "options": [
+      "Thankful",
+      "Holy",
+      "Kind",
+      "Ready"
+    ],
+    "answer": "Thankful",
+    "reference": "Colossians 3:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2161,
+    "book": "Colossians",
+    "question": "Let the ______ of Christ dwell in you richly in all wisdom.",
+    "options": [
+      "Word",
+      "Spirit",
+      "Law",
+      "Light"
+    ],
+    "answer": "Word",
+    "reference": "Colossians 3:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2162,
+    "book": "Colossians",
+    "question": "Teaching and admonishing one another in psalms and ______ and spiritual songs.",
+    "options": [
+      "Hymns",
+      "Prayers",
+      "Proverbs",
+      "Verses"
+    ],
+    "answer": "Hymns",
+    "reference": "Colossians 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2163,
+    "book": "Colossians",
+    "question": "Whatever you do, do it heartily, as to the ______, and not to men.",
+    "options": [
+      "Lord",
+      "King",
+      "Master",
+      "Church"
+    ],
+    "answer": "Lord",
+    "reference": "Colossians 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2164,
+    "book": "Colossians",
+    "question": "Continue earnestly in prayer, being ______ in it with thanksgiving.",
+    "options": [
+      "Vigilant",
+      "Humble",
+      "Patient",
+      "Quiet"
+    ],
+    "answer": "Vigilant",
+    "reference": "Colossians 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2165,
+    "book": "Colossians",
+    "question": "Let your speech always be with grace, seasoned with ______.",
+    "options": [
+      "Salt",
+      "Honey",
+      "Oil",
+      "Truth"
+    ],
+    "answer": "Salt",
+    "reference": "Colossians 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2166,
+    "book": "Colossians",
+    "question": "Who was the 'beloved brother and faithful minister' carrying the letter to the Colossians?",
+    "options": [
+      "Tychicus",
+      "Timothy",
+      "Barnabas",
+      "Silas"
+    ],
+    "answer": "Tychicus",
+    "reference": "Colossians 4:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2167,
+    "book": "Colossians",
+    "question": "Who was the runaway slave Paul sends back with Tychicus, calling him a 'faithful and beloved brother'?",
+    "options": [
+      "Onesimus",
+      "Philemon",
+      "Archippus",
+      "Mark"
+    ],
+    "answer": "Onesimus",
+    "reference": "Colossians 4:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2168,
+    "book": "Colossians",
+    "question": "Which relative of Barnabas sends greetings in Colossians 4?",
+    "options": [
+      "Mark",
+      "Luke",
+      "Aristarchus",
+      "Jesus called Justus"
+    ],
+    "answer": "Mark",
+    "reference": "Colossians 4:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2169,
+    "book": "Colossians",
+    "question": "Who is identified as the 'beloved physician'?",
+    "options": [
+      "Luke",
+      "Mark",
+      "Epaphras",
+      "Demas"
+    ],
+    "answer": "Luke",
+    "reference": "Colossians 4:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2170,
+    "book": "Colossians",
+    "question": "Paul mentions a person who eventually deserted him in 2 Timothy, but here is still with him. Who is it?",
+    "options": [
+      "Demas",
+      "Aristarchus",
+      "Tychicus",
+      "Onesimus"
+    ],
+    "answer": "Demas",
+    "reference": "Colossians 4:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2171,
+    "book": "Colossians",
+    "question": "Paul instructs them to exchange letters with the church in which other city?",
+    "options": [
+      "Laodicea",
+      "Hierapolis",
+      "Ephesus",
+      "Philippi"
+    ],
+    "answer": "Laodicea",
+    "reference": "Colossians 4:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2172,
+    "book": "Colossians",
+    "question": "What message does Paul have for Archippus?",
+    "options": [
+      "Take heed to the ministry you have received... that you may fulfill it",
+      "Come to me quickly",
+      "Stop preaching",
+      "Help the poor"
+    ],
+    "answer": "Take heed to the ministry you have received... that you may fulfill it",
+    "reference": "Colossians 4:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2173,
+    "book": "Colossians",
+    "question": "In 1:24, Paul says he rejoices in his ______ for them.",
+    "options": [
+      "Sufferings",
+      "Works",
+      "Prayers",
+      "Travels"
+    ],
+    "answer": "Sufferings",
+    "reference": "Colossians 1:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2174,
+    "book": "Colossians",
+    "question": "By Him all things ______ (are held together).",
+    "options": [
+      "Consist",
+      "Exist",
+      "Live",
+      "Stand"
+    ],
+    "answer": "Consist",
+    "reference": "Colossians 1:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2175,
+    "book": "Colossians",
+    "question": "Paul warns against the 'tradition of ______'.",
+    "options": [
+      "Men",
+      "The Elders",
+      "The World",
+      "Idols"
+    ],
+    "answer": "Men",
+    "reference": "Colossians 2:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2176,
+    "book": "Colossians",
+    "question": "Paul says the festivals, new moons, and Sabbaths were a ______ of things to come.",
+    "options": [
+      "Shadow",
+      "Light",
+      "Warning",
+      "Rule"
+    ],
+    "answer": "Shadow",
+    "reference": "Colossians 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2177,
+    "book": "Colossians",
+    "question": "But the ______ is of Christ.",
+    "options": [
+      "Substance / Body",
+      "Spirit",
+      "Truth",
+      "Law"
+    ],
+    "answer": "Substance / Body",
+    "reference": "Colossians 2:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2178,
+    "book": "Colossians",
+    "question": "Where is Christ sitting in Colossians 3:1?",
+    "options": [
+      "At the right hand of God",
+      "On a throne of gold",
+      "In the Temple",
+      "In heaven"
+    ],
+    "answer": "At the right hand of God",
+    "reference": "Colossians 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2179,
+    "book": "Colossians",
+    "question": "What is 'the bond of perfection' that Paul says to put on above all things?",
+    "options": [
+      "Love",
+      "Faith",
+      "Peace",
+      "Hope"
+    ],
+    "answer": "Love",
+    "reference": "Colossians 3:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2180,
+    "book": "Colossians",
+    "question": "Paul writes: 'Remember my ______.' at the very end.",
+    "options": [
+      "Chains",
+      "Words",
+      "Prayer",
+      "Teaching"
+    ],
+    "answer": "Chains",
+    "reference": "Colossians 4:18",
+    "difficulty": "medium"
+  }
+]

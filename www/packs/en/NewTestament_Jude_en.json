@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2681,
+    "book": "Jude",
+    "question": "How does Jude identify himself in the opening of his letter?",
+    "options": [
+      "A bondservant of Jesus Christ and brother of James",
+      "An apostle of Jesus",
+      "A prophet of the Lord",
+      "A servant of the Church"
+    ],
+    "answer": "A bondservant of Jesus Christ and brother of James",
+    "reference": "Jude 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2682,
+    "book": "Jude",
+    "question": "To whom is the letter of Jude addressed?",
+    "options": [
+      "To those who are called, sanctified and preserved",
+      "To the Galatians",
+      "To Timothy",
+      "To the Twelve"
+    ],
+    "answer": "To those who are called, sanctified and preserved",
+    "reference": "Jude 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2683,
+    "book": "Jude",
+    "question": "Jude says he found it necessary to write to exhort them to '______ earnestly for the faith'.",
+    "options": [
+      "Contend",
+      "Pray",
+      "Wait",
+      "Search"
+    ],
+    "answer": "Contend",
+    "reference": "Jude 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2684,
+    "book": "Jude",
+    "question": "Jude warns against certain men who have ______ ______ unnoticed.",
+    "options": [
+      "Crept in",
+      "Walked in",
+      "Run in",
+      "Flown in"
+    ],
+    "answer": "Crept in",
+    "reference": "Jude 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2685,
+    "book": "Jude",
+    "question": "These ungodly men turn the ______ of our God into lewdness.",
+    "options": [
+      "Grace",
+      "Word",
+      "Law",
+      "Temple"
+    ],
+    "answer": "Grace",
+    "reference": "Jude 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2686,
+    "book": "Jude",
+    "question": "Jude reminds them that the Lord, having saved the people out of Egypt, afterward ______ those who did not believe.",
+    "options": [
+      "Destroyed",
+      "Saved",
+      "Forgave",
+      "Exiled"
+    ],
+    "answer": "Destroyed",
+    "reference": "Jude 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2687,
+    "book": "Jude",
+    "question": "What happened to the angels who did not keep their proper domain?",
+    "options": [
+      "Reserved in everlasting chains under darkness",
+      "Destroyed",
+      "Sent to earth",
+      "Forgiven"
+    ],
+    "answer": "Reserved in everlasting chains under darkness",
+    "reference": "Jude 1:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2688,
+    "book": "Jude",
+    "question": "Sodom and Gomorrah are set forth as an example, suffering the vengeance of ______ ______.",
+    "options": [
+      "Eternal fire",
+      "A great flood",
+      "Total darkness",
+      "A mighty sword"
+    ],
+    "answer": "Eternal fire",
+    "reference": "Jude 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2689,
+    "book": "Jude",
+    "question": "Who is the archangel mentioned who disputed with the devil about the body of Moses?",
+    "options": [
+      "Michael",
+      "Gabriel",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Michael",
+    "reference": "Jude 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2690,
+    "book": "Jude",
+    "question": "What did Michael the archangel say to the devil when disputing about Moses?",
+    "options": [
+      "The Lord rebuke you!",
+      "Go away!",
+      "I am stronger!",
+      "You are a liar!"
+    ],
+    "answer": "The Lord rebuke you!",
+    "reference": "Jude 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2691,
+    "book": "Jude",
+    "question": "Jude says these false teachers have gone in the way of ______, run greedily in the error of ______, and perished in the rebellion of ______.",
+    "options": [
+      "Cain; Balaam; Korah",
+      "Adam; Noah; David",
+      "Saul; Solomon; Herod",
+      "Esau; Ishmael; Lot"
+    ],
+    "answer": "Cain; Balaam; Korah",
+    "reference": "Jude 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2692,
+    "book": "Jude",
+    "question": "False teachers are described as 'clouds without ______'.",
+    "options": [
+      "Water",
+      "Rain",
+      "Shape",
+      "Size"
+    ],
+    "answer": "Water",
+    "reference": "Jude 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2693,
+    "book": "Jude",
+    "question": "Jude describes them as 'late autumn trees without ______'.",
+    "options": [
+      "Fruit",
+      "Leaves",
+      "Roots",
+      "Branches"
+    ],
+    "answer": "Fruit",
+    "reference": "Jude 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2694,
+    "book": "Jude",
+    "question": "Who was the 'seventh from Adam' that prophesied about the Lord coming with ten thousands of His saints?",
+    "options": [
+      "Enoch",
+      "Seth",
+      "Methuselah",
+      "Noah"
+    ],
+    "answer": "Enoch",
+    "reference": "Jude 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2695,
+    "book": "Jude",
+    "question": "Jude says these men are ______ and complainers, walking according to their own lusts.",
+    "options": [
+      "Murmurers",
+      "Liar",
+      "Singers",
+      "Drunkards"
+    ],
+    "answer": "Murmurers",
+    "reference": "Jude 1:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2696,
+    "book": "Jude",
+    "question": "The apostles told you that there would be ______ in the last time.",
+    "options": [
+      "Mockers",
+      "Kings",
+      "Famines",
+      "Wars"
+    ],
+    "answer": "Mockers",
+    "reference": "Jude 1:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2697,
+    "book": "Jude",
+    "question": "But you, beloved, building yourselves up on your most ______ ______.",
+    "options": [
+      "Holy faith",
+      "Great word",
+      "True life",
+      "Humble spirit"
+    ],
+    "answer": "Holy faith",
+    "reference": "Jude 1:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2698,
+    "book": "Jude",
+    "question": "In what should you keep yourselves, according to Jude 1:21?",
+    "options": [
+      "The love of God",
+      "The city",
+      "The church",
+      "The law"
+    ],
+    "answer": "The love of God",
+    "reference": "Jude 1:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2699,
+    "book": "Jude",
+    "question": "On some have compassion, making a distinction; but others save with ______.",
+    "options": [
+      "Fear",
+      "Money",
+      "Strength",
+      "Words"
+    ],
+    "answer": "Fear",
+    "reference": "Jude 1:22-23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2700,
+    "book": "Jude",
+    "question": "Pulling them out of the ______ , hating even the garment defiled by the flesh.",
+    "options": [
+      "Fire",
+      "Water",
+      "Pit",
+      "Mud"
+    ],
+    "answer": "Fire",
+    "reference": "Jude 1:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2701,
+    "book": "Jude",
+    "question": "Now to Him who is able to keep you from ______.",
+    "options": [
+      "Stumbling / Falling",
+      "Sin",
+      "Fear",
+      "Death"
+    ],
+    "answer": "Stumbling / Falling",
+    "reference": "Jude 1:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2702,
+    "book": "Jude",
+    "question": "And to present you ______ before the presence of His glory.",
+    "options": [
+      "Faultless",
+      "Humble",
+      "Ready",
+      "Clean"
+    ],
+    "answer": "Faultless",
+    "reference": "Jude 1:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2703,
+    "book": "Jude",
+    "question": "To God our Savior, who alone is ______, be glory and majesty.",
+    "options": [
+      "Wise",
+      "Mighty",
+      "Holy",
+      "Great"
+    ],
+    "answer": "Wise",
+    "reference": "Jude 1:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2704,
+    "book": "Jude",
+    "question": "Jude mentions that the ungodly men 'speak ______ ______ words'.",
+    "options": [
+      "Great swelling",
+      "Evil",
+      "Loud",
+      "Foolish"
+    ],
+    "answer": "Great swelling",
+    "reference": "Jude 1:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2705,
+    "book": "Jude",
+    "question": "False teachers are described as 'wandering ______ for whom is reserved the blackness of darkness forever'.",
+    "options": [
+      "Stars",
+      "Clouds",
+      "Sheep",
+      "Birds"
+    ],
+    "answer": "Stars",
+    "reference": "Jude 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2706,
+    "book": "Jude",
+    "question": "Jude describes these men as 'raging ______ of the sea, foaming out their own shame'.",
+    "options": [
+      "Waves",
+      "Storms",
+      "Whales",
+      "Winds"
+    ],
+    "answer": "Waves",
+    "reference": "Jude 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2707,
+    "book": "Jude",
+    "question": "What is the 'way of Cain' mentioned in Jude 1:11?",
+    "options": [
+      "The way of hatred and murder",
+      "The way of greed",
+      "The way of rebellion",
+      "The way of lies"
+    ],
+    "answer": "The way of hatred and murder",
+    "reference": "Jude 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2708,
+    "book": "Jude",
+    "question": "The 'error of Balaam' refers to what specific sin?",
+    "options": [
+      "Greed for profit / financial gain",
+      "Murder",
+      "Idolatry",
+      "Pride"
+    ],
+    "answer": "Greed for profit / financial gain",
+    "reference": "Jude 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2709,
+    "book": "Jude",
+    "question": "What happened in the 'rebellion of Korah'?",
+    "options": [
+      "They rebelled against God's appointed leadership",
+      "They built an idol",
+      "They fled to Egypt",
+      "They refused to fight"
+    ],
+    "answer": "They rebelled against God's appointed leadership",
+    "reference": "Jude 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2710,
+    "book": "Jude",
+    "question": "Jude calls these men 'spots in your ______ ______'.",
+    "options": [
+      "Love feasts",
+      "Prayers",
+      "Meetings",
+      "Homes"
+    ],
+    "answer": "Love feasts",
+    "reference": "Jude 1:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2711,
+    "book": "Jude",
+    "question": "How many times does Jude use the word 'ungodly' or 'ungodliness' in 1:15?",
+    "options": [
+      "Four",
+      "One",
+      "Two",
+      "Three"
+    ],
+    "answer": "Four",
+    "reference": "Jude 1:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2712,
+    "book": "Jude",
+    "question": "Jude describes the false teachers as 'sensual persons, who cause divisions, not having the ______.'",
+    "options": [
+      "Spirit",
+      "Law",
+      "Faith",
+      "Truth"
+    ],
+    "answer": "Spirit",
+    "reference": "Jude 1:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2713,
+    "book": "Jude",
+    "question": "Praying in the ______ ______ is mentioned as a way to build up faith.",
+    "options": [
+      "Holy Spirit",
+      "Church",
+      "Truth",
+      "Name of Jesus"
+    ],
+    "answer": "Holy Spirit",
+    "reference": "Jude 1:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2714,
+    "book": "Jude",
+    "question": "According to Jude 1:21, we should look for the ______ of our Lord Jesus Christ unto eternal life.",
+    "options": [
+      "Mercy",
+      "Power",
+      "Return",
+      "Judgment"
+    ],
+    "answer": "Mercy",
+    "reference": "Jude 1:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2715,
+    "book": "Jude",
+    "question": "What is the 'faith which was once for all delivered to the saints'?",
+    "options": [
+      "The body of Christian teaching / the Gospel",
+      "Belief in Moses",
+      "The gift of tongues",
+      "Knowledge of angels"
+    ],
+    "answer": "The body of Christian teaching / the Gospel",
+    "reference": "Jude 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2716,
+    "book": "Jude",
+    "question": "Jude states that certain men were 'long ago marked out for this ______.'",
+    "options": [
+      "Condemnation",
+      "Work",
+      "Life",
+      "Path"
+    ],
+    "answer": "Condemnation",
+    "reference": "Jude 1:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2717,
+    "book": "Jude",
+    "question": "Jude warns about those who 'defile the flesh, reject authority, and speak evil of ______.'",
+    "options": [
+      "Dignitaries / Majestic beings",
+      "The Poor",
+      "The King",
+      "Apostles"
+    ],
+    "answer": "Dignitaries / Majestic beings",
+    "reference": "Jude 1:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2718,
+    "book": "Jude",
+    "question": "According to the doxology, God has majesty, dominion and ______ both now and forever.",
+    "options": [
+      "Power",
+      "Strength",
+      "Peace",
+      "Love"
+    ],
+    "answer": "Power",
+    "reference": "Jude 1:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2719,
+    "book": "Jude",
+    "question": "Which specific book of the Old Testament contains the story of Michael disputing with the devil (though Jude likely cites a non-canonical source)?",
+    "options": [
+      "None (Canonical OT doesn't have it)",
+      "Daniel",
+      "Zechariah",
+      "Exodus"
+    ],
+    "answer": "None (Canonical OT doesn't have it)",
+    "reference": "Jude 1:9 / Biblical History",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2720,
+    "book": "Jude",
+    "question": "How many chapters are in the book of Jude?",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Five"
+    ],
+    "answer": "One",
+    "reference": "Structure",
+    "difficulty": "easy"
+  }
+]

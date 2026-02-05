@@ -242,7 +242,9 @@
             </svg>
         </button>
         <button class="iconbtn avatar-btn" id="btnProfile" aria-label="Perfil de Usuario">
-          <img src="img/avatar_placeholder.svg" alt="Avatar del usuario" role="img"/>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
         </button>
       </div>
     </header>
@@ -467,24 +469,48 @@
   <div class="fs" id="fsSingleResult" style="display:none">
     <div class="wrap">
       <div class="titlebar">
-        <div class="fs-titlebar-title">Resultados</div>
+        <div class="fs-titlebar-title">Results</div>
         <button class="back" id="backSingleResult">✖</button>
       </div>
-      <div class="card">
+      <div class="card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
         <div class="hero">
           <div class="big-title" id="srTitle">—</div>
           <div class="big-title" id="srSubtitle" style="margin-top: 0.5em;">—</div>
           <div class="subtitle" id="srDetails" style="margin-top: 1em; font-size: 1em;">—</div>
           <div class="bigscore" id="srScore">—</div>
-          <div class="actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn secondary small" id="srShare" type="button" style="flex: 1; min-width: 100px;">Compartir</button>
-            <button class="btn secondary small" id="srHome" type="button" style="flex: 1; min-width: 100px;">Salir</button>
+          <div id="srWrongAnswers" style="display: none; margin-top: 8px;"></div>
+          <div class="actions" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px;">
+            <button class="btn secondary small" id="srShare" type="button" style="flex: 1; min-width: 100px;">Share</button>
+            <button class="btn secondary small" id="srHome" type="button" style="flex: 1; min-width: 100px;">Exit</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+
+  <!-- Modal para mostrar versículo -->
+  <div class="fs" id="verseModal" style="display:none;">
+    <div class="wrap">
+      <div class="titlebar">
+        <div class="fs-titlebar-title" id="verseModalTitle">Bible Verse</div>
+        <button class="back" id="closeVerseModal">✖</button>
+      </div>
+      <div class="card">
+        <div style="padding: 20px;">
+          <div style="margin-bottom: 16px;">
+            <h3 id="verseReference" style="font-size: 1.2em; font-weight: 600; margin-bottom: 12px;"></h3>
+            <div id="verseText" style="font-size: 1.1em; line-height: 1.6; color: rgba(255, 255, 255, 0.9); margin-bottom: 16px;"></div>
+            <div style="margin-top: 20px;">
+              <a id="verseLink" href="#" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none; font-weight: 500;">
+                📖 Read full passage on Bible Gateway
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal" id="profileModal">
     <div class="panel">
@@ -493,7 +519,7 @@
         <button class="iconbtn" id="btnCloseProfile" type="button">✖</button>
       </div>
       <div class="profile-header-horizontal">
-        <img src="img/avatar_placeholder.svg" alt="Avatar" class="profile-avatar-large" id="profileAvatar"/>
+        <img src="assets/icons/avatar_placeholder.svg" alt="Avatar" class="profile-avatar-large" id="profileAvatar"/>
         <div class="profile-info">
           <div class="profile-nickname" id="profileNicknameText">—</div>
           <div class="level-badge" id="profileLevelBadge"><span data-i18n="level">Nivel</span> 1</div>
@@ -606,6 +632,8 @@
 
 
   <!-- Módulos ES6 -->
+  
+  <!-- Banco de preguntas (debe cargarse primero) -->
   <script type="module" src="./js/game/bank_bridge.js"></script>
   
   <!-- Módulos de efectos visuales -->
@@ -614,21 +642,12 @@
   <!-- Módulo de traducciones para estadísticas -->
   <script type="module" src="./js/game/ui_stats_translated.js"></script>
   
-  <!-- Logo interactions y easter eggs -->
-  <script src="./js/logo-interactions.js?v=1.0"></script>
-  
   <!-- Core utilities (deben cargarse antes de main.js) -->
   <script type="module" src="./js/core/storage.js"></script>
   <script type="module" src="./js/core/dom-utils.js"></script>
-  <script type="module" src="./js/core/state-manager.js"></script>
-  <script type="module" src="./js/core/debounce.js"></script>
   
   <!-- Módulo principal que carga todo lo demás -->
   <script type="module" src="./js/main.js?v=4.0"></script>
-  
-  
-  <!-- Test Storage (solo para desarrollo) -->
-  <script type="module" src="./js/test-storage.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2181,
+    "book": "1 Thessalonians",
+    "question": "Who are the three authors listed in the opening of 1 Thessalonians?",
+    "options": [
+      "Paul, Silvanus (Silas), and Timothy",
+      "Paul, Luke, and Barnabas",
+      "Paul, Peter, and John",
+      "Paul, Titus, and Apollos"
+    ],
+    "answer": "Paul, Silvanus (Silas), and Timothy",
+    "reference": "1 Thessalonians 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2182,
+    "book": "1 Thessalonians",
+    "question": "Paul remembers their work of faith, labor of ______, and patience of hope.",
+    "options": [
+      "Love",
+      "Mercy",
+      "Peace",
+      "Truth"
+    ],
+    "answer": "Love",
+    "reference": "1 Thessalonians 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2183,
+    "book": "1 Thessalonians",
+    "question": "For our gospel did not come to you in word only, but also in ______.",
+    "options": [
+      "Power",
+      "Fear",
+      "Secret",
+      "Books"
+    ],
+    "answer": "Power",
+    "reference": "1 Thessalonians 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2184,
+    "book": "1 Thessalonians",
+    "question": "The Thessalonians became examples to all in Macedonia and ______ who believe.",
+    "options": [
+      "Achaia",
+      "Galatia",
+      "Rome",
+      "Asia"
+    ],
+    "answer": "Achaia",
+    "reference": "1 Thessalonians 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2185,
+    "book": "1 Thessalonians",
+    "question": "How did they turn to God, according to 1:9?",
+    "options": [
+      "From idols",
+      "From the law",
+      "From the Romans",
+      "From sleep"
+    ],
+    "answer": "From idols",
+    "reference": "1 Thessalonians 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2186,
+    "book": "1 Thessalonians",
+    "question": "Paul says his entrance to them was not in ______.",
+    "options": [
+      "Vain",
+      "Secret",
+      "Fear",
+      "Pride"
+    ],
+    "answer": "Vain",
+    "reference": "1 Thessalonians 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2187,
+    "book": "1 Thessalonians",
+    "question": "Where had Paul been 'spitefully treated' before coming to Thessalonica?",
+    "options": [
+      "Philippi",
+      "Athens",
+      "Corinth",
+      "Jerusalem"
+    ],
+    "answer": "Philippi",
+    "reference": "1 Thessalonians 2:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2188,
+    "book": "1 Thessalonians",
+    "question": "Paul says they were as ______ among them, even as a nurse cherishes her children.",
+    "options": [
+      "Gentle",
+      "Kind",
+      "Strong",
+      "Wise"
+    ],
+    "answer": "Gentle",
+    "reference": "1 Thessalonians 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2189,
+    "book": "1 Thessalonians",
+    "question": "Paul also compares his exhortation of them to a ______ with his own children.",
+    "options": [
+      "Father",
+      "Master",
+      "King",
+      "Teacher"
+    ],
+    "answer": "Father",
+    "reference": "1 Thessalonians 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2190,
+    "book": "1 Thessalonians",
+    "question": "Paul labored night and day because he did not want to be a ______ to any of them.",
+    "options": [
+      "Burden",
+      "Stranger",
+      "Problem",
+      "Master"
+    ],
+    "answer": "Burden",
+    "reference": "1 Thessalonians 2:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2191,
+    "book": "1 Thessalonians",
+    "question": "What does Paul call the crown he will wear when Jesus returns?",
+    "options": [
+      "The crown of rejoicing",
+      "The crown of life",
+      "The crown of gold",
+      "The crown of righteousness"
+    ],
+    "answer": "The crown of rejoicing",
+    "reference": "1 Thessalonians 2:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2192,
+    "book": "1 Thessalonians",
+    "question": "Who did Paul send to them when he could 'no longer endure it'?",
+    "options": [
+      "Timothy",
+      "Silas",
+      "Luke",
+      "Titus"
+    ],
+    "answer": "Timothy",
+    "reference": "1 Thessalonians 3:1-2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2193,
+    "book": "1 Thessalonians",
+    "question": "For now we ______, if you stand fast in the Lord.",
+    "options": [
+      "Live",
+      "Rejoice",
+      "Win",
+      "Hope"
+    ],
+    "answer": "Live",
+    "reference": "1 Thessalonians 3:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2194,
+    "book": "1 Thessalonians",
+    "question": "For this is the ______ of God, your sanctification.",
+    "options": [
+      "Will",
+      "Law",
+      "Plan",
+      "Word"
+    ],
+    "answer": "Will",
+    "reference": "1 Thessalonians 4:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2195,
+    "book": "1 Thessalonians",
+    "question": "That you should abstain from sexual ______.",
+    "options": [
+      "Immorality",
+      "Sins",
+      "Thoughts",
+      "Desires"
+    ],
+    "answer": "Immorality",
+    "reference": "1 Thessalonians 4:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2196,
+    "book": "1 Thessalonians",
+    "question": "Aspire to lead a ______ life, to mind your own business, and to work with your own hands.",
+    "options": [
+      "Quiet",
+      "Holy",
+      "Simple",
+      "Busy"
+    ],
+    "answer": "Quiet",
+    "reference": "1 Thessalonians 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2197,
+    "book": "1 Thessalonians",
+    "question": "Paul doesn't want them to be ignorant concerning those who have ______ ______.",
+    "options": [
+      "Fallen asleep (died)",
+      "Fallen away",
+      "Left town",
+      "Forgotten him"
+    ],
+    "answer": "Fallen asleep (died)",
+    "reference": "1 Thessalonians 4:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2198,
+    "book": "1 Thessalonians",
+    "question": "For the Lord Himself will descend from heaven with a ______.",
+    "options": [
+      "Shout",
+      "Song",
+      "Light",
+      "Storm"
+    ],
+    "answer": "Shout",
+    "reference": "1 Thessalonians 4:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2199,
+    "book": "1 Thessalonians",
+    "question": "The voice of an ______ and the trumpet of God will sound.",
+    "options": [
+      "Archangel",
+      "Angel",
+      "Apostle",
+      "Elder"
+    ],
+    "answer": "Archangel",
+    "reference": "1 Thessalonians 4:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2200,
+    "book": "1 Thessalonians",
+    "question": "Who will rise first when Jesus returns?",
+    "options": [
+      "The dead in Christ",
+      "The apostles",
+      "The living",
+      "The children"
+    ],
+    "answer": "The dead in Christ",
+    "reference": "1 Thessalonians 4:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2201,
+    "book": "1 Thessalonians",
+    "question": "For you yourselves know perfectly that the day of the Lord so comes as a ______ in the night.",
+    "options": [
+      "Thief",
+      "Light",
+      "Storm",
+      "Lion"
+    ],
+    "answer": "Thief",
+    "reference": "1 Thessalonians 5:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2202,
+    "book": "1 Thessalonians",
+    "question": "But you, brethren, are not in ______, so that this Day should overtake you as a thief.",
+    "options": [
+      "Darkness",
+      "Fear",
+      "Sin",
+      "Sleep"
+    ],
+    "answer": "Darkness",
+    "reference": "1 Thessalonians 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2203,
+    "book": "1 Thessalonians",
+    "question": "Therefore let us not ______ , as others do, but let us watch and be sober.",
+    "options": [
+      "Sleep",
+      "Worry",
+      "Fight",
+      "Eat"
+    ],
+    "answer": "Sleep",
+    "reference": "1 Thessalonians 5:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2204,
+    "book": "1 Thessalonians",
+    "question": "Putting on the breastplate of faith and love, and as a ______ the hope of salvation.",
+    "options": [
+      "Helmet",
+      "Shield",
+      "Sword",
+      "Belt"
+    ],
+    "answer": "Helmet",
+    "reference": "1 Thessalonians 5:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2205,
+    "book": "1 Thessalonians",
+    "question": "Comfort each other and ______ one another up.",
+    "options": [
+      "Edify / Build",
+      "Lift",
+      "Help",
+      "Keep"
+    ],
+    "answer": "Edify / Build",
+    "reference": "1 Thessalonians 5:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2206,
+    "book": "1 Thessalonians",
+    "question": "See that no one renders ______ for ______ to anyone.",
+    "options": [
+      "Evil; evil",
+      "Good; good",
+      "Pain; pain",
+      "Sin; sin"
+    ],
+    "answer": "Evil; evil",
+    "reference": "1 Thessalonians 5:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2207,
+    "book": "1 Thessalonians",
+    "question": "Rejoice ______.",
+    "options": [
+      "Always",
+      "Sometimes",
+      "Daily",
+      "In the Lord"
+    ],
+    "answer": "Always",
+    "reference": "1 Thessalonians 5:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2208,
+    "book": "1 Thessalonians",
+    "question": "Pray without ______.",
+    "options": [
+      "Ceasing",
+      "Fear",
+      "Doubt",
+      "Words"
+    ],
+    "answer": "Ceasing",
+    "reference": "1 Thessalonians 5:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2209,
+    "book": "1 Thessalonians",
+    "question": "In ______ give thanks; for this is the will of God.",
+    "options": [
+      "Everything",
+      "Most things",
+      "Peace",
+      "Abundance"
+    ],
+    "answer": "Everything",
+    "reference": "1 Thessalonians 5:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2210,
+    "book": "1 Thessalonians",
+    "question": "Do not quench the ______.",
+    "options": [
+      "Spirit",
+      "Fire",
+      "Light",
+      "Flame"
+    ],
+    "answer": "Spirit",
+    "reference": "1 Thessalonians 5:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2211,
+    "book": "1 Thessalonians",
+    "question": "Test all things; hold fast what is ______.",
+    "options": [
+      "Good",
+      "True",
+      "Right",
+      "Holy"
+    ],
+    "answer": "Good",
+    "reference": "1 Thessalonians 5:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2212,
+    "book": "1 Thessalonians",
+    "question": "Abstain from every form of ______.",
+    "options": [
+      "Evil",
+      "Sin",
+      "Idolatry",
+      "Pride"
+    ],
+    "answer": "Evil",
+    "reference": "1 Thessalonians 5:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2213,
+    "book": "1 Thessalonians",
+    "question": "He who ______ you is faithful, who also will do it.",
+    "options": [
+      "Calls",
+      "Saves",
+      "Knows",
+      "Guards"
+    ],
+    "answer": "Calls",
+    "reference": "1 Thessalonians 5:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2214,
+    "book": "1 Thessalonians",
+    "question": "Greet all the brethren with a holy ______.",
+    "options": [
+      "Kiss",
+      "Handshake",
+      "Hug",
+      "Word"
+    ],
+    "answer": "Kiss",
+    "reference": "1 Thessalonians 5:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2215,
+    "book": "1 Thessalonians",
+    "question": "Paul charges them by the Lord that this epistle be ______ to all the holy brethren.",
+    "options": [
+      "Read",
+      "Sent",
+      "Copied",
+      "Hidden"
+    ],
+    "answer": "Read",
+    "reference": "1 Thessalonians 5:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2216,
+    "book": "1 Thessalonians",
+    "question": "According to 4:17, where will we meet the Lord in the air?",
+    "options": [
+      "In the clouds",
+      "On the mountain",
+      "In the Temple",
+      "In Jerusalem"
+    ],
+    "answer": "In the clouds",
+    "reference": "1 Thessalonians 4:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2217,
+    "book": "1 Thessalonians",
+    "question": "Who does Paul say 'hindered' him from coming to visit the Thessalonians?",
+    "options": [
+      "Satan",
+      "The Romans",
+      "The Jews",
+      "His sickness"
+    ],
+    "answer": "Satan",
+    "reference": "1 Thessalonians 2:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2218,
+    "book": "1 Thessalonians",
+    "question": "Paul says they are his 'glory and ______'.",
+    "options": [
+      "Joy",
+      "Crown",
+      "Peace",
+      "Hope"
+    ],
+    "answer": "Joy",
+    "reference": "1 Thessalonians 2:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2219,
+    "book": "1 Thessalonians",
+    "question": "How did Paul work while among them so he wouldn't be a burden?",
+    "options": [
+      "Night and day",
+      "Only at night",
+      "Only by day",
+      "He didn't work"
+    ],
+    "answer": "Night and day",
+    "reference": "1 Thessalonians 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2220,
+    "book": "1 Thessalonians",
+    "question": "What kind of affection did Paul have for them, saying he was willing to impart his own life?",
+    "options": [
+      "Affectionate longing",
+      "Brotherly love",
+      "Duty",
+      "Pity"
+    ],
+    "answer": "Affectionate longing",
+    "reference": "1 Thessalonians 2:8",
+    "difficulty": "hard"
+  }
+]

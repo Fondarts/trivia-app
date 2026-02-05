@@ -1,0 +1,282 @@
+[
+  {
+    "id": 2381,
+    "book": "Philemon",
+    "question": "Who is the primary recipient of this letter?",
+    "options": [
+      "Philemon",
+      "Onesimus",
+      "Timothy",
+      "Apphia"
+    ],
+    "answer": "Philemon",
+    "reference": "Philemon 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2382,
+    "book": "Philemon",
+    "question": "Who was the runaway slave the letter is about?",
+    "options": [
+      "Onesimus",
+      "Philemon",
+      "Archippus",
+      "Epaphras"
+    ],
+    "answer": "Onesimus",
+    "reference": "Philemon 1:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2383,
+    "book": "Philemon",
+    "question": "Paul calls Philemon our 'beloved ______ and fellow laborer'.",
+    "options": [
+      "Friend",
+      "Brother",
+      "Servant",
+      "Partner"
+    ],
+    "answer": "Friend",
+    "reference": "Philemon 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2384,
+    "book": "Philemon",
+    "question": "Who was 'the sister' mentioned in the greeting?",
+    "options": [
+      "Apphia",
+      "Lydia",
+      "Phoebe",
+      "Mary"
+    ],
+    "answer": "Apphia",
+    "reference": "Philemon 1:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2385,
+    "book": "Philemon",
+    "question": "Paul addresses 'the ______ in your house'.",
+    "options": [
+      "Church",
+      "Family",
+      "Servants",
+      "Group"
+    ],
+    "answer": "Church",
+    "reference": "Philemon 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2386,
+    "book": "Philemon",
+    "question": "Paul calls himself 'Paul, the ______'.",
+    "options": [
+      "Aged",
+      "Strong",
+      "Wise",
+      "Prophet"
+    ],
+    "answer": "Aged",
+    "reference": "Philemon 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2387,
+    "book": "Philemon",
+    "question": "Paul is writing this letter while he is a '______ of Christ Jesus'.",
+    "options": [
+      "Prisoner",
+      "Soldier",
+      "King",
+      "Servant"
+    ],
+    "answer": "Prisoner",
+    "reference": "Philemon 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2388,
+    "book": "Philemon",
+    "question": "The name 'Onesimus' means what?",
+    "options": [
+      "Useful / Profitable",
+      "Free",
+      "Saved",
+      "Returning"
+    ],
+    "answer": "Useful / Profitable",
+    "reference": "Philemon 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2389,
+    "book": "Philemon",
+    "question": "Onesimus had become Paul's '______' in the faith while in chains.",
+    "options": [
+      "Son",
+      "Brother",
+      "Servant",
+      "Partner"
+    ],
+    "answer": "Son",
+    "reference": "Philemon 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2390,
+    "book": "Philemon",
+    "question": "Paul says Onesimus was once 'unprofitable' to Philemon, but now he is ______.",
+    "options": [
+      "Profitable",
+      "Better",
+      "Free",
+      "A Saint"
+    ],
+    "answer": "Profitable",
+    "reference": "Philemon 1:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2391,
+    "book": "Philemon",
+    "question": "Paul wanted to keep Onesimus with him, but he did nothing without Philemon's ______.",
+    "options": [
+      "Consent",
+      "Money",
+      "Order",
+      "Prayer"
+    ],
+    "answer": "Consent",
+    "reference": "Philemon 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2392,
+    "book": "Philemon",
+    "question": "Paul suggests Onesimus left for a while so Philemon might receive him ______.",
+    "options": [
+      "Forever",
+      "Happily",
+      "Daily",
+      "Again"
+    ],
+    "answer": "Forever",
+    "reference": "Philemon 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2393,
+    "book": "Philemon",
+    "question": "Paul asks Philemon to receive Onesimus no longer as a slave but as a ______ ______.",
+    "options": [
+      "Beloved brother",
+      "Guest",
+      "Free man",
+      "Son"
+    ],
+    "answer": "Beloved brother",
+    "reference": "Philemon 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2394,
+    "book": "Philemon",
+    "question": "If Onesimus has wronged Philemon or owes him anything, what does Paul say?",
+    "options": [
+      "Put that on my account",
+      "Forget it",
+      "Let him work it off",
+      "Philemon should pay"
+    ],
+    "answer": "Put that on my account",
+    "reference": "Philemon 1:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2395,
+    "book": "Philemon",
+    "question": "Paul reminds Philemon: 'you ______ to me even your own self besides.'",
+    "options": [
+      "Owe",
+      "Gave",
+      "Sent",
+      "Showed"
+    ],
+    "answer": "Owe",
+    "reference": "Philemon 1:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2396,
+    "book": "Philemon",
+    "question": "Paul asks Philemon to 'refresh my ______ in the Lord.'",
+    "options": [
+      "Heart",
+      "Spirit",
+      "Mind",
+      "Soul"
+    ],
+    "answer": "Heart",
+    "reference": "Philemon 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2397,
+    "book": "Philemon",
+    "question": "What does Paul ask Philemon to prepare for him?",
+    "options": [
+      "A guest room",
+      "A feast",
+      "A ship",
+      "A new book"
+    ],
+    "answer": "A guest room",
+    "reference": "Philemon 1:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2398,
+    "book": "Philemon",
+    "question": "Who was Paul's 'fellow prisoner' mentioned in Philemon?",
+    "options": [
+      "Epaphras",
+      "Mark",
+      "Aristarchus",
+      "Demas"
+    ],
+    "answer": "Epaphras",
+    "reference": "Philemon 1:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2399,
+    "book": "Philemon",
+    "question": "Which of these men also send greetings in Philemon? (Same group as Colossians)",
+    "options": [
+      "Mark, Aristarchus, Demas, Luke",
+      "Timothy, Titus, Silas",
+      "Peter and John",
+      "Barnabas and Matthias"
+    ],
+    "answer": "Mark, Aristarchus, Demas, Luke",
+    "reference": "Philemon 1:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2400,
+    "book": "Philemon",
+    "question": "Philemon was a resident of which city?",
+    "options": [
+      "Colossae",
+      "Ephesus",
+      "Rome",
+      "Philippi"
+    ],
+    "answer": "Colossae",
+    "reference": "Historical context / Colossians 4",
+    "difficulty": "medium"
+  }
+]

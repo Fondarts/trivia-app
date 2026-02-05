@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2061,
+    "book": "Ephesians",
+    "question": "Who wrote the book of Ephesians?",
+    "options": [
+      "Paul",
+      "Timothy",
+      "John",
+      "Luke"
+    ],
+    "answer": "Paul",
+    "reference": "Ephesians 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2062,
+    "book": "Ephesians",
+    "question": "God chose us in Christ before the ______ of the world.",
+    "options": [
+      "Foundation",
+      "Creation",
+      "Start",
+      "Beginning"
+    ],
+    "answer": "Foundation",
+    "reference": "Ephesians 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2063,
+    "book": "Ephesians",
+    "question": "In Him we have ______ through His blood, the forgiveness of sins.",
+    "options": [
+      "Redemption",
+      "Salvation",
+      "Access",
+      "Wisdom"
+    ],
+    "answer": "Redemption",
+    "reference": "Ephesians 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2064,
+    "book": "Ephesians",
+    "question": "The Holy Spirit is the ______ (guarantee) of our inheritance.",
+    "options": [
+      "Guarantee / Earnest",
+      "Seal",
+      "Sign",
+      "Gift"
+    ],
+    "answer": "Guarantee / Earnest",
+    "reference": "Ephesians 1:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2065,
+    "book": "Ephesians",
+    "question": "God made Christ head over all things to the ______, which is His body.",
+    "options": [
+      "Church",
+      "World",
+      "Temple",
+      "Nations"
+    ],
+    "answer": "Church",
+    "reference": "Ephesians 1:22-23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2066,
+    "book": "Ephesians",
+    "question": "Paul says we were once dead in ______ and sins.",
+    "options": [
+      "Trespasses",
+      "Doubt",
+      "Fear",
+      "Pride"
+    ],
+    "answer": "Trespasses",
+    "reference": "Ephesians 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2067,
+    "book": "Ephesians",
+    "question": "By ______ you have been saved through faith, and that not of yourselves.",
+    "options": [
+      "Grace",
+      "Mercy",
+      "Works",
+      "Wisdom"
+    ],
+    "answer": "Grace",
+    "reference": "Ephesians 2:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2068,
+    "book": "Ephesians",
+    "question": "Salvation is the ______ of God, not of works, lest anyone should boast.",
+    "options": [
+      "Gift",
+      "Reward",
+      "Law",
+      "Secret"
+    ],
+    "answer": "Gift",
+    "reference": "Ephesians 2:8-9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2069,
+    "book": "Ephesians",
+    "question": "For we are His ______, created in Christ Jesus for good works.",
+    "options": [
+      "Workmanship",
+      "Servants",
+      "Soldiers",
+      "Children"
+    ],
+    "answer": "Workmanship",
+    "reference": "Ephesians 2:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2070,
+    "book": "Ephesians",
+    "question": "Christ has broken down the middle ______ of separation between Jew and Gentile.",
+    "options": [
+      "Wall",
+      "Fence",
+      "Gate",
+      "Veil"
+    ],
+    "answer": "Wall",
+    "reference": "Ephesians 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2071,
+    "book": "Ephesians",
+    "question": "Christ Himself is the chief ______ of the spiritual building.",
+    "options": [
+      "Cornerstone",
+      "Pillar",
+      "Foundation",
+      "Gate"
+    ],
+    "answer": "Cornerstone",
+    "reference": "Ephesians 2:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2072,
+    "book": "Ephesians",
+    "question": "What is the 'mystery' Paul discusses in chapter 3?",
+    "options": [
+      "That Gentiles should be fellow heirs with Jews",
+      "The end of the world",
+      "The name of God",
+      "The return of Elijah"
+    ],
+    "answer": "That Gentiles should be fellow heirs with Jews",
+    "reference": "Ephesians 3:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2073,
+    "book": "Ephesians",
+    "question": "Paul calls himself the '______ of Jesus Christ for you Gentiles.'",
+    "options": [
+      "Prisoner",
+      "King",
+      "Prophet",
+      "Brother"
+    ],
+    "answer": "Prisoner",
+    "reference": "Ephesians 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2074,
+    "book": "Ephesians",
+    "question": "Paul prays that they may know the love of Christ which passes ______.",
+    "options": [
+      "Knowledge",
+      "Understanding",
+      "Time",
+      "Death"
+    ],
+    "answer": "Knowledge",
+    "reference": "Ephesians 3:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2075,
+    "book": "Ephesians",
+    "question": "I beseech you to walk worthy of the ______ with which you were called.",
+    "options": [
+      "Calling",
+      "Spirit",
+      "Gospel",
+      "Law"
+    ],
+    "answer": "Calling",
+    "reference": "Ephesians 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2076,
+    "book": "Ephesians",
+    "question": "Complete the sequence: One Lord, one faith, one ______.",
+    "options": [
+      "Baptism",
+      "God",
+      "Spirit",
+      "Hope"
+    ],
+    "answer": "Baptism",
+    "reference": "Ephesians 4:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2077,
+    "book": "Ephesians",
+    "question": "Paul says God gave gifts to men. Which of these is NOT in the 4:11 list?",
+    "options": [
+      "Deacons",
+      "Apostles",
+      "Prophets",
+      "Evangelists"
+    ],
+    "answer": "Deacons",
+    "reference": "Ephesians 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2078,
+    "book": "Ephesians",
+    "question": "The purpose of these gifts (Apostles, Teachers, etc.) is for the equipping of the ______.",
+    "options": [
+      "Saints",
+      "World",
+      "Priests",
+      "Children"
+    ],
+    "answer": "Saints",
+    "reference": "Ephesians 4:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2079,
+    "book": "Ephesians",
+    "question": "Speaking the truth in ______, we may grow up in all things into Him.",
+    "options": [
+      "Love",
+      "Peace",
+      "Power",
+      "Faith"
+    ],
+    "answer": "Love",
+    "reference": "Ephesians 4:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2080,
+    "book": "Ephesians",
+    "question": "You should put off the ______ man and be renewed in the spirit of your mind.",
+    "options": [
+      "Old",
+      "Evil",
+      "Outer",
+      "Natural"
+    ],
+    "answer": "Old",
+    "reference": "Ephesians 4:22-23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2081,
+    "book": "Ephesians",
+    "question": "Be angry, and do not ____.",
+    "options": [
+      "Sin",
+      "Cry",
+      "Fight",
+      "Speak"
+    ],
+    "answer": "Sin",
+    "reference": "Ephesians 4:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2082,
+    "book": "Ephesians",
+    "question": "Do not let the ______ go down on your wrath.",
+    "options": [
+      "Sun",
+      "Moon",
+      "Day",
+      "Stars"
+    ],
+    "answer": "Sun",
+    "reference": "Ephesians 4:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2083,
+    "book": "Ephesians",
+    "question": "And do not ______ the Holy Spirit of God.",
+    "options": [
+      "Grieve",
+      "Anger",
+      "Forget",
+      "Hide"
+    ],
+    "answer": "Grieve",
+    "reference": "Ephesians 4:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2084,
+    "book": "Ephesians",
+    "question": "Be ______ to one another, tenderhearted, forgiving one another.",
+    "options": [
+      "Kind",
+      "Patient",
+      "True",
+      "Loyal"
+    ],
+    "answer": "Kind",
+    "reference": "Ephesians 4:32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2085,
+    "book": "Ephesians",
+    "question": "Therefore be ______ of God as dear children.",
+    "options": [
+      "Imitators",
+      "Servants",
+      "Soldiers",
+      "Prophets"
+    ],
+    "answer": "Imitators",
+    "reference": "Ephesians 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2086,
+    "book": "Ephesians",
+    "question": "For you were once darkness, but now you are ______ in the Lord.",
+    "options": [
+      "Light",
+      "Clean",
+      "Risen",
+      "Free"
+    ],
+    "answer": "Light",
+    "reference": "Ephesians 5:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2087,
+    "book": "Ephesians",
+    "question": "Redeeming the ______, because the days are evil.",
+    "options": [
+      "Time",
+      "Sinners",
+      "World",
+      "Church"
+    ],
+    "answer": "Time",
+    "reference": "Ephesians 5:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2088,
+    "book": "Ephesians",
+    "question": "And do not be drunk with wine... but be filled with the ______.",
+    "options": [
+      "Spirit",
+      "Word",
+      "Truth",
+      "Love"
+    ],
+    "answer": "Spirit",
+    "reference": "Ephesians 5:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2089,
+    "book": "Ephesians",
+    "question": "Wives, submit to your own husbands, as to the ______.",
+    "options": [
+      "Lord",
+      "King",
+      "Law",
+      "Church"
+    ],
+    "answer": "Lord",
+    "reference": "Ephesians 5:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2090,
+    "book": "Ephesians",
+    "question": "Husbands, love your wives, just as ______ also loved the church.",
+    "options": [
+      "Christ",
+      "David",
+      "God",
+      "The Apostles"
+    ],
+    "answer": "Christ",
+    "reference": "Ephesians 5:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2091,
+    "book": "Ephesians",
+    "question": "Children, obey your parents in the Lord, for this is ______.",
+    "options": [
+      "Right",
+      "Good",
+      "The Law",
+      "Necessary"
+    ],
+    "answer": "Right",
+    "reference": "Ephesians 6:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2092,
+    "book": "Ephesians",
+    "question": "What is the 'first commandment with promise'?",
+    "options": [
+      "Honor your father and mother",
+      "You shall not steal",
+      "Love God",
+      "Remember the Sabbath"
+    ],
+    "answer": "Honor your father and mother",
+    "reference": "Ephesians 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2093,
+    "book": "Ephesians",
+    "question": "Fathers, do not provoke your children to wrath, but bring them up in the training and ______ of the Lord.",
+    "options": [
+      "Admonition",
+      "Fear",
+      "Grace",
+      "Strength"
+    ],
+    "answer": "Admonition",
+    "reference": "Ephesians 6:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2094,
+    "book": "Ephesians",
+    "question": "Finally, my brethren, be ______ in the Lord and in the power of His might.",
+    "options": [
+      "Strong",
+      "Brave",
+      "Ready",
+      "Humble"
+    ],
+    "answer": "Strong",
+    "reference": "Ephesians 6:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2095,
+    "book": "Ephesians",
+    "question": "Put on the whole ______ of God.",
+    "options": [
+      "Armor",
+      "Garment",
+      "Shield",
+      "Sword"
+    ],
+    "answer": "Armor",
+    "reference": "Ephesians 6:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2096,
+    "book": "Ephesians",
+    "question": "For we do not wrestle against ______ and blood.",
+    "options": [
+      "Flesh",
+      "Nations",
+      "Men",
+      "Kings"
+    ],
+    "answer": "Flesh",
+    "reference": "Ephesians 6:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2097,
+    "book": "Ephesians",
+    "question": "What piece of armor is used to quench all the fiery darts of the wicked one?",
+    "options": [
+      "Shield of faith",
+      "Breastplate of righteousness",
+      "Helmet of salvation",
+      "Belt of truth"
+    ],
+    "answer": "Shield of faith",
+    "reference": "Ephesians 6:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2098,
+    "book": "Ephesians",
+    "question": "What is the 'Sword of the Spirit'?",
+    "options": [
+      "The Word of God",
+      "Prayer",
+      "Faith",
+      "Truth"
+    ],
+    "answer": "The Word of God",
+    "reference": "Ephesians 6:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2099,
+    "book": "Ephesians",
+    "question": "Paul mentions that he is an 'ambassador in ______.'",
+    "options": [
+      "Chains",
+      "Rome",
+      "The Spirit",
+      "Power"
+    ],
+    "answer": "Chains",
+    "reference": "Ephesians 6:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2100,
+    "book": "Ephesians",
+    "question": "Who was the 'beloved brother and faithful minister' who was carrying the letter to the Ephesians?",
+    "options": [
+      "Tychicus",
+      "Timothy",
+      "Epaphroditus",
+      "Titus"
+    ],
+    "answer": "Tychicus",
+    "reference": "Ephesians 6:21",
+    "difficulty": "hard"
+  }
+]

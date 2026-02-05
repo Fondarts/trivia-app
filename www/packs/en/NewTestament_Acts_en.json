@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1861,
+    "book": "Acts",
+    "question": "Who wrote the book of Acts?",
+    "options": [
+      "Luke",
+      "Paul",
+      "Peter",
+      "John"
+    ],
+    "answer": "Luke",
+    "reference": "Acts 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1862,
+    "book": "Acts",
+    "question": "How many days did Jesus appear to the disciples after His resurrection?",
+    "options": [
+      "40 days",
+      "50 days",
+      "7 days",
+      "12 days"
+    ],
+    "answer": "40 days",
+    "reference": "Acts 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1863,
+    "book": "Acts",
+    "question": "Who was chosen to replace Judas Iscariot as an apostle?",
+    "options": [
+      "Matthias",
+      "Barsabas",
+      "Barnabas",
+      "Stephen"
+    ],
+    "answer": "Matthias",
+    "reference": "Acts 1:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1864,
+    "book": "Acts",
+    "question": "On what day did the Holy Spirit descend upon the believers in the upper room?",
+    "options": [
+      "Pentecost",
+      "Passover",
+      "Sabbath",
+      "Day of Atonement"
+    ],
+    "answer": "Pentecost",
+    "reference": "Acts 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1865,
+    "book": "Acts",
+    "question": "What appeared over the heads of the believers when they were filled with the Spirit?",
+    "options": [
+      "Divided tongues as of fire",
+      "Doves",
+      "Clouds",
+      "Halos"
+    ],
+    "answer": "Divided tongues as of fire",
+    "reference": "Acts 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1866,
+    "book": "Acts",
+    "question": "How many people were added to the church after Peter's sermon on Pentecost?",
+    "options": [
+      "About 3,000",
+      "About 5,000",
+      "About 120",
+      "About 500"
+    ],
+    "answer": "About 3,000",
+    "reference": "Acts 2:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1867,
+    "book": "Acts",
+    "question": "What was the name of the temple gate where Peter healed a lame man?",
+    "options": [
+      "Beautiful Gate",
+      "Golden Gate",
+      "Sheep Gate",
+      "East Gate"
+    ],
+    "answer": "Beautiful Gate",
+    "reference": "Acts 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1868,
+    "book": "Acts",
+    "question": "Which couple died after lying to the Holy Spirit about the price of their land?",
+    "options": [
+      "Ananias and Sapphira",
+      "Aquila and Priscilla",
+      "Felix and Drusilla",
+      "Andronicus and Junia"
+    ],
+    "answer": "Ananias and Sapphira",
+    "reference": "Acts 5:1-10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1869,
+    "book": "Acts",
+    "question": "Who was the first Christian martyr?",
+    "options": [
+      "Stephen",
+      "James",
+      "Peter",
+      "Paul"
+    ],
+    "answer": "Stephen",
+    "reference": "Acts 7:54-60",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1870,
+    "book": "Acts",
+    "question": "Who was watching the clothes of those who stoned Stephen?",
+    "options": [
+      "Saul (Paul)",
+      "Peter",
+      "Gamaliel",
+      "Cornelius"
+    ],
+    "answer": "Saul (Paul)",
+    "reference": "Acts 7:58",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1871,
+    "book": "Acts",
+    "question": "Who preached to the Ethiopian eunuch on the road to Gaza?",
+    "options": [
+      "Philip the Evangelist",
+      "Peter",
+      "John",
+      "Barnabas"
+    ],
+    "answer": "Philip the Evangelist",
+    "reference": "Acts 8:26-35",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1872,
+    "book": "Acts",
+    "question": "On the road to which city did Saul have his encounter with Jesus?",
+    "options": [
+      "Damascus",
+      "Jerusalem",
+      "Tarsus",
+      "Antioch"
+    ],
+    "answer": "Damascus",
+    "reference": "Acts 9:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1873,
+    "book": "Acts",
+    "question": "Who was sent by God to restore Saul's sight?",
+    "options": [
+      "Ananias",
+      "Peter",
+      "Barnabas",
+      "Silas"
+    ],
+    "answer": "Ananias",
+    "reference": "Acts 9:10-17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1874,
+    "book": "Acts",
+    "question": "What was the name of the woman Peter raised from the dead in Joppa?",
+    "options": [
+      "Tabitha (Dorcas)",
+      "Lydia",
+      "Mary",
+      "Rhoda"
+    ],
+    "answer": "Tabitha (Dorcas)",
+    "reference": "Acts 9:36-41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1875,
+    "book": "Acts",
+    "question": "Who was the Roman centurion in Caesarea who received a vision to call for Peter?",
+    "options": [
+      "Cornelius",
+      "Julius",
+      "Gallio",
+      "Lysias"
+    ],
+    "answer": "Cornelius",
+    "reference": "Acts 10:1-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1876,
+    "book": "Acts",
+    "question": "What did Peter see in his vision while on a housetop in Joppa?",
+    "options": [
+      "A sheet full of animals",
+      "A ladder to heaven",
+      "A burning bush",
+      "The Temple destroyed"
+    ],
+    "answer": "A sheet full of animals",
+    "reference": "Acts 10:11-12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1877,
+    "book": "Acts",
+    "question": "In which city were the disciples first called 'Christians'?",
+    "options": [
+      "Antioch",
+      "Jerusalem",
+      "Rome",
+      "Corinth"
+    ],
+    "answer": "Antioch",
+    "reference": "Acts 11:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1878,
+    "book": "Acts",
+    "question": "Which apostle was put to death by the sword by King Herod?",
+    "options": [
+      "James (brother of John)",
+      "Peter",
+      "John",
+      "Philip"
+    ],
+    "answer": "James (brother of John)",
+    "reference": "Acts 12:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1879,
+    "book": "Acts",
+    "question": "Who led Peter out of prison while he was chained between two soldiers?",
+    "options": [
+      "An angel",
+      "Barnabas",
+      "John Mark",
+      "Rhoda"
+    ],
+    "answer": "An angel",
+    "reference": "Acts 12:7-8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1880,
+    "book": "Acts",
+    "question": "Who was the servant girl who was so surprised to see Peter at the door that she didn't open it?",
+    "options": [
+      "Rhoda",
+      "Lydia",
+      "Damaris",
+      "Drusilla"
+    ],
+    "answer": "Rhoda",
+    "reference": "Acts 12:13-14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1881,
+    "book": "Acts",
+    "question": "Who accompanied Paul on his first missionary journey?",
+    "options": [
+      "Barnabas",
+      "Silas",
+      "Timothy",
+      "Luke"
+    ],
+    "answer": "Barnabas",
+    "reference": "Acts 13:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1882,
+    "book": "Acts",
+    "question": "What was the name of the sorcerer Paul blinded on Cyprus?",
+    "options": [
+      "Elymas (Bar-Jesus)",
+      "Simon Magus",
+      "Alexander",
+      "Demetrius"
+    ],
+    "answer": "Elymas (Bar-Jesus)",
+    "reference": "Acts 13:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1883,
+    "book": "Acts",
+    "question": "In Lystra, who did the people think Paul and Barnabas were after they healed a lame man?",
+    "options": [
+      "Hermes and Zeus",
+      "Ares and Apollo",
+      "Prophets",
+      "Angels"
+    ],
+    "answer": "Hermes and Zeus",
+    "reference": "Acts 14:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1884,
+    "book": "Acts",
+    "question": "Why did Paul and Barnabas separate before the second journey?",
+    "options": [
+      "A disagreement over John Mark",
+      "They ran out of money",
+      "One got sick",
+      "God told them to"
+    ],
+    "answer": "A disagreement over John Mark",
+    "reference": "Acts 15:37-39",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1885,
+    "book": "Acts",
+    "question": "Who was Paul's main companion on the second missionary journey?",
+    "options": [
+      "Silas",
+      "Barnabas",
+      "Peter",
+      "Mark"
+    ],
+    "answer": "Silas",
+    "reference": "Acts 15:40",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1886,
+    "book": "Acts",
+    "question": "What was the occupation of Lydia, the first convert in Europe?",
+    "options": [
+      "Seller of purple cloth",
+      "Tentmaker",
+      "Servant",
+      "Merchant"
+    ],
+    "answer": "Seller of purple cloth",
+    "reference": "Acts 16:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1887,
+    "book": "Acts",
+    "question": "What were Paul and Silas doing in prison at midnight before the earthquake?",
+    "options": [
+      "Praying and singing hymns",
+      "Sleeping",
+      "Planning an escape",
+      "Crying"
+    ],
+    "answer": "Praying and singing hymns",
+    "reference": "Acts 16:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1888,
+    "book": "Acts",
+    "question": "In which city did the people search the Scriptures daily to see if what Paul said was true?",
+    "options": [
+      "Berea",
+      "Thessalonica",
+      "Athens",
+      "Corinth"
+    ],
+    "answer": "Berea",
+    "reference": "Acts 17:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1889,
+    "book": "Acts",
+    "question": "On what hill in Athens did Paul preach to the philosophers?",
+    "options": [
+      "Areopagus (Mars Hill)",
+      "Mount Zion",
+      "Mount Sinai",
+      "Mount Olympus"
+    ],
+    "answer": "Areopagus (Mars Hill)",
+    "reference": "Acts 17:19-22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1890,
+    "book": "Acts",
+    "question": "What trade did Paul share with Aquila and Priscilla?",
+    "options": [
+      "Tentmaking",
+      "Fishing",
+      "Pottery",
+      "Farming"
+    ],
+    "answer": "Tentmaking",
+    "reference": "Acts 18:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1891,
+    "book": "Acts",
+    "question": "Who was the eloquent Jew from Alexandria who was mighty in the Scriptures but only knew the baptism of John?",
+    "options": [
+      "Apollos",
+      "Barnabas",
+      "Silas",
+      "Agabus"
+    ],
+    "answer": "Apollos",
+    "reference": "Acts 18:24-25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1892,
+    "book": "Acts",
+    "question": "Which goddess was the center of a riot in Ephesus?",
+    "options": [
+      "Artemis (Diana)",
+      "Athena",
+      "Venus",
+      "Hera"
+    ],
+    "answer": "Artemis (Diana)",
+    "reference": "Acts 19:24-28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1893,
+    "book": "Acts",
+    "question": "What was the name of the young man who fell from a third-story window while Paul was preaching?",
+    "options": [
+      "Eutychus",
+      "Timothy",
+      "Titus",
+      "Trophimus"
+    ],
+    "answer": "Eutychus",
+    "reference": "Acts 20:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1894,
+    "book": "Acts",
+    "question": "Which prophet bound his own hands and feet with Paul's belt to predict Paul's arrest?",
+    "options": [
+      "Agabus",
+      "Philip",
+      "Silas",
+      "John"
+    ],
+    "answer": "Agabus",
+    "reference": "Acts 21:10-11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1895,
+    "book": "Acts",
+    "question": "Paul was a citizen of which empire, giving him certain legal rights?",
+    "options": [
+      "Roman",
+      "Greek",
+      "Persian",
+      "Egyptian"
+    ],
+    "answer": "Roman",
+    "reference": "Acts 22:25-28",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1896,
+    "book": "Acts",
+    "question": "To which island was Paul shipwrecked while on his way to Rome?",
+    "options": [
+      "Malta",
+      "Crete",
+      "Cyprus",
+      "Sicily"
+    ],
+    "answer": "Malta",
+    "reference": "Acts 28:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1897,
+    "book": "Acts",
+    "question": "What happened to Paul while he was gathering wood on Malta?",
+    "options": [
+      "A viper bit his hand",
+      "He was attacked by a lion",
+      "He found gold",
+      "He was arrested again"
+    ],
+    "answer": "A viper bit his hand",
+    "reference": "Acts 28:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1898,
+    "book": "Acts",
+    "question": "How did Paul spend his first two years in Rome?",
+    "options": [
+      "In his own rented house under guard",
+      "In a dungeon",
+      "In the Emperor's palace",
+      "Free"
+    ],
+    "answer": "In his own rented house under guard",
+    "reference": "Acts 28:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1899,
+    "book": "Acts",
+    "question": "Before whom did Paul say 'I appeal to Caesar'?",
+    "options": [
+      "Festus",
+      "Felix",
+      "Agrippa",
+      "Gallio"
+    ],
+    "answer": "Festus",
+    "reference": "Acts 25:11-12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1900,
+    "book": "Acts",
+    "question": "Who was the High Priest when Paul appeared before the council in Acts 23?",
+    "options": [
+      "Ananias",
+      "Caiaphas",
+      "Annas",
+      "Jonathan"
+    ],
+    "answer": "Ananias",
+    "reference": "Acts 23:2",
+    "difficulty": "hard"
+  }
+]

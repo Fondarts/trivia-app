@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2561,
+    "book": "1 John",
+    "question": "That which was from the beginning, which we have ______... we declare to you.",
+    "options": [
+      "Heard",
+      "Read",
+      "Known",
+      "Dreamt"
+    ],
+    "answer": "Heard",
+    "reference": "1 John 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2562,
+    "book": "1 John",
+    "question": "God is ______, and in Him is no darkness at all.",
+    "options": [
+      "Light",
+      "Love",
+      "Spirit",
+      "Truth"
+    ],
+    "answer": "Light",
+    "reference": "1 John 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2563,
+    "book": "1 John",
+    "question": "If we walk in the light as He is in the light, the ______ of Jesus Christ cleanses us from all sin.",
+    "options": [
+      "Blood",
+      "Name",
+      "Spirit",
+      "Word"
+    ],
+    "answer": "Blood",
+    "reference": "1 John 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2564,
+    "book": "1 John",
+    "question": "If we say that we have no ______, we deceive ourselves.",
+    "options": [
+      "Sin",
+      "Fault",
+      "Hope",
+      "Fear"
+    ],
+    "answer": "Sin",
+    "reference": "1 John 1:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2565,
+    "book": "1 John",
+    "question": "If we ______ our sins, He is faithful and just to forgive us our sins.",
+    "options": [
+      "Confess",
+      "Hide",
+      "Remember",
+      "Hate"
+    ],
+    "answer": "Confess",
+    "reference": "1 John 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2566,
+    "book": "1 John",
+    "question": "If anyone sins, we have an ______ with the Father, Jesus Christ the righteous.",
+    "options": [
+      "Advocate",
+      "Angel",
+      "Elder",
+      "Scribe"
+    ],
+    "answer": "Advocate",
+    "reference": "1 John 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2567,
+    "book": "1 John",
+    "question": "He Himself is the ______ (atoning sacrifice) for our sins.",
+    "options": [
+      "Propitiation",
+      "Priest",
+      "End",
+      "Law"
+    ],
+    "answer": "Propitiation",
+    "reference": "1 John 2:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2568,
+    "book": "1 John",
+    "question": "He who says, 'I know Him', and does not keep His ______, is a liar.",
+    "options": [
+      "Commandments",
+      "Word",
+      "Secrets",
+      "House"
+    ],
+    "answer": "Commandments",
+    "reference": "1 John 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2569,
+    "book": "1 John",
+    "question": "He who ______ his brother is in darkness.",
+    "options": [
+      "Hates",
+      "Loves",
+      "Helps",
+      "Knows"
+    ],
+    "answer": "Hates",
+    "reference": "1 John 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2570,
+    "book": "1 John",
+    "question": "Do not love the ______ or the things in the ______.",
+    "options": [
+      "World; world",
+      "Money; city",
+      "Sinner; world",
+      "Life; past"
+    ],
+    "answer": "World; world",
+    "reference": "1 John 2:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2571,
+    "book": "1 John",
+    "question": "For all that is in the world—the lust of the flesh, the lust of the ______, and the pride of life.",
+    "options": [
+      "Eyes",
+      "Mind",
+      "Heart",
+      "Gold"
+    ],
+    "answer": "Eyes",
+    "reference": "1 John 2:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2572,
+    "book": "1 John",
+    "question": "The world is passing away... but he who does the ______ of God abides forever.",
+    "options": [
+      "Will",
+      "Work",
+      "Word",
+      "Law"
+    ],
+    "answer": "Will",
+    "reference": "1 John 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2573,
+    "book": "1 John",
+    "question": "John says it is the last hour, and they have heard that the ______ is coming.",
+    "options": [
+      "Antichrist",
+      "Day of Lord",
+      "Flood",
+      "Storm"
+    ],
+    "answer": "Antichrist",
+    "reference": "1 John 2:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2574,
+    "book": "1 John",
+    "question": "But you have an ______ (anointing) from the Holy One.",
+    "options": [
+      "Anointing / Unction",
+      "Aura",
+      "Gift",
+      "Angel"
+    ],
+    "answer": "Anointing / Unction",
+    "reference": "1 John 2:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2575,
+    "book": "1 John",
+    "question": "Behold what manner of ______ the Father has bestowed on us, that we should be called children of God.",
+    "options": [
+      "Love",
+      "Grace",
+      "Mercy",
+      "Peace"
+    ],
+    "answer": "Love",
+    "reference": "1 John 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2576,
+    "book": "1 John",
+    "question": "We know that when He is revealed, we shall be ______ Him.",
+    "options": [
+      "Like",
+      "With",
+      "Near",
+      "Behind"
+    ],
+    "answer": "Like",
+    "reference": "1 John 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2577,
+    "book": "1 John",
+    "question": "Whoever commits sin also commits ______.",
+    "options": [
+      "Lawlessness",
+      "Evil",
+      "A crime",
+      "Folly"
+    ],
+    "answer": "Lawlessness",
+    "reference": "1 John 3:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2578,
+    "book": "1 John",
+    "question": "For this purpose the Son of God was manifested, that He might destroy the ______ of the devil.",
+    "options": [
+      "Works",
+      "Kingdom",
+      "People",
+      "Power"
+    ],
+    "answer": "Works",
+    "reference": "1 John 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2579,
+    "book": "1 John",
+    "question": "In this the children of God and the children of the devil are manifest: whoever does not practice ______ is not of God.",
+    "options": [
+      "Righteousness",
+      "Faith",
+      "Prayer",
+      "Silence"
+    ],
+    "answer": "Righteousness",
+    "reference": "1 John 3:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2580,
+    "book": "1 John",
+    "question": "John reminds them of the message they heard from the beginning: that we should ______ one another.",
+    "options": [
+      "Love",
+      "Forgive",
+      "Teach",
+      "Help"
+    ],
+    "answer": "Love",
+    "reference": "1 John 3:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2581,
+    "book": "1 John",
+    "question": "Do not be like ______, who was of the wicked one and murdered his brother.",
+    "options": [
+      "Cain",
+      "Abel",
+      "Esau",
+      "Judas"
+    ],
+    "answer": "Cain",
+    "reference": "1 John 3:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2582,
+    "book": "1 John",
+    "question": "We know that we have passed from death to life, because we love the ______.",
+    "options": [
+      "Brethren",
+      "Sinner",
+      "World",
+      "God"
+    ],
+    "answer": "Brethren",
+    "reference": "1 John 3:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2583,
+    "book": "1 John",
+    "question": "Whoever hates his brother is a ______.",
+    "options": [
+      "Murderer",
+      "Thief",
+      "Liar",
+      "Stranger"
+    ],
+    "answer": "Murderer",
+    "reference": "1 John 3:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2584,
+    "book": "1 John",
+    "question": "By this we know love, because He ______ ______ ______ ______ for us.",
+    "options": [
+      "Laid down His life",
+      "Gave His gold",
+      "Sent His word",
+      "Died for sin"
+    ],
+    "answer": "Laid down His life",
+    "reference": "1 John 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2585,
+    "book": "1 John",
+    "question": "My little children, let us not love in word or in tongue, but in ______ and in truth.",
+    "options": [
+      "Deed",
+      "Thought",
+      "Prayer",
+      "Hope"
+    ],
+    "answer": "Deed",
+    "reference": "1 John 3:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2586,
+    "book": "1 John",
+    "question": "And this is His commandment: that we should believe on the name of His Son Jesus Christ and ______ one another.",
+    "options": [
+      "Love",
+      "Teach",
+      "Know",
+      "Help"
+    ],
+    "answer": "Love",
+    "reference": "1 John 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2587,
+    "book": "1 John",
+    "question": "Beloved, do not believe every spirit, but ______ the spirits.",
+    "options": [
+      "Test",
+      "Watch",
+      "Fear",
+      "Follow"
+    ],
+    "answer": "Test",
+    "reference": "1 John 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2588,
+    "book": "1 John",
+    "question": "Every spirit that confesses that Jesus Christ has come in the ______ is of God.",
+    "options": [
+      "Flesh",
+      "Spirit",
+      "Light",
+      "Cloud"
+    ],
+    "answer": "Flesh",
+    "reference": "1 John 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2589,
+    "book": "1 John",
+    "question": "He who is in you is ______ than he who is in the world.",
+    "options": [
+      "Greater",
+      "Stronger",
+      "Wiser",
+      "Higher"
+    ],
+    "answer": "Greater",
+    "reference": "1 John 4:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2590,
+    "book": "1 John",
+    "question": "Beloved, let us love one another, for love is of ______.",
+    "options": [
+      "God",
+      "The Spirit",
+      "Man",
+      "Life"
+    ],
+    "answer": "God",
+    "reference": "1 John 4:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2591,
+    "book": "1 John",
+    "question": "He who does not love does not know God, for God is ______.",
+    "options": [
+      "Love",
+      "Light",
+      "Spirit",
+      "Holy"
+    ],
+    "answer": "Love",
+    "reference": "1 John 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2592,
+    "book": "1 John",
+    "question": "No one has seen God at any time. If we ______ one another, God abides in us.",
+    "options": [
+      "Love",
+      "Help",
+      "Forgive",
+      "Trust"
+    ],
+    "answer": "Love",
+    "reference": "1 John 4:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2593,
+    "book": "1 John",
+    "question": "And we have seen and testify that the Father has sent the Son as ______ of the world.",
+    "options": [
+      "Savior",
+      "King",
+      "Lord",
+      "Prophet"
+    ],
+    "answer": "Savior",
+    "reference": "1 John 4:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2594,
+    "book": "1 John",
+    "question": "There is no ______ in love; but perfect love casts out ______.",
+    "options": [
+      "Fear; fear",
+      "Sin; sin",
+      "Doubt; doubt",
+      "Pride; pride"
+    ],
+    "answer": "Fear; fear",
+    "reference": "1 John 4:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2595,
+    "book": "1 John",
+    "question": "We love Him because He first ______ ______.",
+    "options": [
+      "Loved us",
+      "Called us",
+      "Saw us",
+      "Saved us"
+    ],
+    "answer": "Loved us",
+    "reference": "1 John 4:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2596,
+    "book": "1 John",
+    "question": "If someone says, 'I love God', and hates his brother, he is a ______.",
+    "options": [
+      "Liar",
+      "Sinner",
+      "Fool",
+      "Stranger"
+    ],
+    "answer": "Liar",
+    "reference": "1 John 4:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2597,
+    "book": "1 John",
+    "question": "Whoever is born of God ______ the world.",
+    "options": [
+      "Overcomes",
+      "Hates",
+      "Rules",
+      "Leaves"
+    ],
+    "answer": "Overcomes",
+    "reference": "1 John 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2598,
+    "book": "1 John",
+    "question": "And this is the victory that has overcome the world—our ______.",
+    "options": [
+      "Faith",
+      "Love",
+      "Hope",
+      "Power"
+    ],
+    "answer": "Faith",
+    "reference": "1 John 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2599,
+    "book": "1 John",
+    "question": "He who has the Son has ______; he who does not have the Son... does not have ______.",
+    "options": [
+      "Life; life",
+      "Truth; truth",
+      "Hope; hope",
+      "Spirit; spirit"
+    ],
+    "answer": "Life; life",
+    "reference": "1 John 5:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2600,
+    "book": "1 John",
+    "question": "Little children, keep yourselves from ______.",
+    "options": [
+      "Idols",
+      "Sin",
+      "The world",
+      "Lies"
+    ],
+    "answer": "Idols",
+    "reference": "1 John 5:21",
+    "difficulty": "medium"
+  }
+]

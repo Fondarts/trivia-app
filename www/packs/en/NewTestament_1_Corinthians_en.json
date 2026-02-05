@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1941,
+    "book": "1 Corinthians",
+    "question": "To which city was this letter written?",
+    "options": [
+      "Corinth",
+      "Ephesus",
+      "Philippi",
+      "Colossae"
+    ],
+    "answer": "Corinth",
+    "reference": "1 Corinthians 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1942,
+    "book": "1 Corinthians",
+    "question": "Paul was distressed because the church was divided. They were following different leaders. Which of these was NOT one mentioned?",
+    "options": [
+      "Barnabas",
+      "Paul",
+      "Apollos",
+      "Cephas (Peter)"
+    ],
+    "answer": "Barnabas",
+    "reference": "1 Corinthians 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1943,
+    "book": "1 Corinthians",
+    "question": "For the message of the cross is ______ to those who are perishing.",
+    "options": [
+      "Foolishness",
+      "Stumbling block",
+      "Power",
+      "Mystery"
+    ],
+    "answer": "Foolishness",
+    "reference": "1 Corinthians 1:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1944,
+    "book": "1 Corinthians",
+    "question": "God has chosen the ______ things of the world to put to shame the wise.",
+    "options": [
+      "Foolish",
+      "Small",
+      "Weak",
+      "Poor"
+    ],
+    "answer": "Foolish",
+    "reference": "1 Corinthians 1:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1945,
+    "book": "1 Corinthians",
+    "question": "Paul says he determined not to know anything among them except Jesus Christ and Him ______.",
+    "options": [
+      "Crucified",
+      "Risen",
+      "The King",
+      "The Word"
+    ],
+    "answer": "Crucified",
+    "reference": "1 Corinthians 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1946,
+    "book": "1 Corinthians",
+    "question": "Eye has not seen, nor ear heard... the things which God has ______ for those who love Him.",
+    "options": [
+      "Prepared",
+      "Given",
+      "Hidden",
+      "Shown"
+    ],
+    "answer": "Prepared",
+    "reference": "1 Corinthians 2:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1947,
+    "book": "1 Corinthians",
+    "question": "Paul says: 'I planted, ______ watered, but God gave the increase.'",
+    "options": [
+      "Apollos",
+      "Peter",
+      "Timothy",
+      "Silas"
+    ],
+    "answer": "Apollos",
+    "reference": "1 Corinthians 3:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1948,
+    "book": "1 Corinthians",
+    "question": "For no other ______ can anyone lay than that which is laid, which is Jesus Christ.",
+    "options": [
+      "Foundation",
+      "Stone",
+      "Wall",
+      "Rock"
+    ],
+    "answer": "Foundation",
+    "reference": "1 Corinthians 3:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1949,
+    "book": "1 Corinthians",
+    "question": "Do you not know that you are the ______ of God and that the Spirit of God dwells in you?",
+    "options": [
+      "Temple",
+      "House",
+      "Children",
+      "Servants"
+    ],
+    "answer": "Temple",
+    "reference": "1 Corinthians 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1950,
+    "book": "1 Corinthians",
+    "question": "Paul tells them it is required in stewards that one be found ______.",
+    "options": [
+      "Faithful",
+      "Wise",
+      "Humble",
+      "Wealthy"
+    ],
+    "answer": "Faithful",
+    "reference": "1 Corinthians 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1951,
+    "book": "1 Corinthians",
+    "question": "Paul advises the church to deliver a man who was living in sexual immorality to ______ for the destruction of the flesh.",
+    "options": [
+      "Satan",
+      "The authorities",
+      "The wilderness",
+      "The grave"
+    ],
+    "answer": "Satan",
+    "reference": "1 Corinthians 5:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1952,
+    "book": "1 Corinthians",
+    "question": "Do you not know that a little ______ leavens the whole lump?",
+    "options": [
+      "Leaven / Yeast",
+      "Salt",
+      "Sin",
+      "Sugar"
+    ],
+    "answer": "Leaven / Yeast",
+    "reference": "1 Corinthians 5:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1953,
+    "book": "1 Corinthians",
+    "question": "Paul instructs the believers not to go to law (sue) against each other before...?",
+    "options": [
+      "Unbelievers / The unjust",
+      "The elders",
+      "The King",
+      "The Bishop"
+    ],
+    "answer": "Unbelievers / The unjust",
+    "reference": "1 Corinthians 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1954,
+    "book": "1 Corinthians",
+    "question": "For you were bought at a ______; therefore glorify God in your body.",
+    "options": [
+      "Price",
+      "Risk",
+      "Loss",
+      "Sacrifice"
+    ],
+    "answer": "Price",
+    "reference": "1 Corinthians 6:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1955,
+    "book": "1 Corinthians",
+    "question": "Regarding marriage, Paul says it is better to marry than to ______ with passion.",
+    "options": [
+      "Burn",
+      "Sin",
+      "Live",
+      "Wander"
+    ],
+    "answer": "Burn",
+    "reference": "1 Corinthians 7:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1956,
+    "book": "1 Corinthians",
+    "question": "Knowledge puffs up, but ______ edifies.",
+    "options": [
+      "Love",
+      "Wisdom",
+      "Faith",
+      "Truth"
+    ],
+    "answer": "Love",
+    "reference": "1 Corinthians 8:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1957,
+    "book": "1 Corinthians",
+    "question": "Paul says he has become all things to all men, that he might by all means...?",
+    "options": [
+      "Save some",
+      "Teach all",
+      "Win the world",
+      "Find peace"
+    ],
+    "answer": "Save some",
+    "reference": "1 Corinthians 9:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1958,
+    "book": "1 Corinthians",
+    "question": "Do you not know that those who run in a race all run, but one receives the ______?",
+    "options": [
+      "Prize",
+      "Crown",
+      "Gold",
+      "Reward"
+    ],
+    "answer": "Prize",
+    "reference": "1 Corinthians 9:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1959,
+    "book": "1 Corinthians",
+    "question": "No temptation has overtaken you except such as is common to man; but God is ______.",
+    "options": [
+      "Faithful",
+      "Just",
+      "Mighty",
+      "Good"
+    ],
+    "answer": "Faithful",
+    "reference": "1 Corinthians 10:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1960,
+    "book": "1 Corinthians",
+    "question": "Whether you eat or drink, or whatever you do, do all to the ______ of God.",
+    "options": [
+      "Glory",
+      "Praise",
+      "Honor",
+      "Will"
+    ],
+    "answer": "Glory",
+    "reference": "1 Corinthians 10:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1961,
+    "book": "1 Corinthians",
+    "question": "In chapter 11, Paul discusses the proper conduct for what church practice?",
+    "options": [
+      "The Lord's Supper",
+      "Baptism",
+      "Marriage",
+      "Tithing"
+    ],
+    "answer": "The Lord's Supper",
+    "reference": "1 Corinthians 11:23-26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1962,
+    "book": "1 Corinthians",
+    "question": "There are diversities of ______, but the same Spirit.",
+    "options": [
+      "Gifts",
+      "Laws",
+      "People",
+      "Worlds"
+    ],
+    "answer": "Gifts",
+    "reference": "1 Corinthians 12:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1963,
+    "book": "1 Corinthians",
+    "question": "Paul compares the church to a ______ with many members.",
+    "options": [
+      "Body",
+      "Building",
+      "Army",
+      "Vineyard"
+    ],
+    "answer": "Body",
+    "reference": "1 Corinthians 12:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1964,
+    "book": "1 Corinthians",
+    "question": "1 Corinthians 13 is famously known as the ______ chapter.",
+    "options": [
+      "Love",
+      "Faith",
+      "Wisdom",
+      "Hope"
+    ],
+    "answer": "Love",
+    "reference": "1 Corinthians 13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1965,
+    "book": "1 Corinthians",
+    "question": "Though I speak with the tongues of men and of angels, but have not love, I am like a...?",
+    "options": [
+      "Sounding brass or clanging cymbal",
+      "Broken pot",
+      "Empty house",
+      "Fading shadow"
+    ],
+    "answer": "Sounding brass or clanging cymbal",
+    "reference": "1 Corinthians 13:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1966,
+    "book": "1 Corinthians",
+    "question": "Love suffers long and is ______.",
+    "options": [
+      "Kind",
+      "Patient",
+      "Sweet",
+      "Holy"
+    ],
+    "answer": "Kind",
+    "reference": "1 Corinthians 13:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1967,
+    "book": "1 Corinthians",
+    "question": "And now abide faith, hope, love, these three; but the greatest of these is...?",
+    "options": [
+      "Love",
+      "Faith",
+      "Hope",
+      "Wisdom"
+    ],
+    "answer": "Love",
+    "reference": "1 Corinthians 13:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1968,
+    "book": "1 Corinthians",
+    "question": "In chapter 14, Paul says he who speaks in a tongue edifies himself, but he who ______ edifies the church.",
+    "options": [
+      "Prophesies",
+      "Prays",
+      "Sings",
+      "Gives"
+    ],
+    "answer": "Prophesies",
+    "reference": "1 Corinthians 14:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1969,
+    "book": "1 Corinthians",
+    "question": "For God is not the author of ______, but of peace.",
+    "options": [
+      "Confusion",
+      "Evil",
+      "War",
+      "Fear"
+    ],
+    "answer": "Confusion",
+    "reference": "1 Corinthians 14:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1970,
+    "book": "1 Corinthians",
+    "question": "Chapter 15 focuses on which major Christian doctrine?",
+    "options": [
+      "The Resurrection",
+      "The Ascension",
+      "The Incarnation",
+      "The Trinity"
+    ],
+    "answer": "The Resurrection",
+    "reference": "1 Corinthians 15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1971,
+    "book": "1 Corinthians",
+    "question": "If Christ is not risen, then our preaching is ______.",
+    "options": [
+      "Empty / Vain",
+      "False",
+      "Useless",
+      "Evil"
+    ],
+    "answer": "Empty / Vain",
+    "reference": "1 Corinthians 15:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1972,
+    "book": "1 Corinthians",
+    "question": "The last enemy that will be destroyed is ______.",
+    "options": [
+      "Death",
+      "Satan",
+      "Sin",
+      "The world"
+    ],
+    "answer": "Death",
+    "reference": "1 Corinthians 15:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1973,
+    "book": "1 Corinthians",
+    "question": "Do not be deceived: 'Evil company corrupts good ______.'",
+    "options": [
+      "Habits / Morals",
+      "Thoughts",
+      "Actions",
+      "Words"
+    ],
+    "answer": "Habits / Morals",
+    "reference": "1 Corinthians 15:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1974,
+    "book": "1 Corinthians",
+    "question": "O Death, where is your ______? O Hades, where is your victory?",
+    "options": [
+      "Sting",
+      "Power",
+      "Arrow",
+      "Sword"
+    ],
+    "answer": "Sting",
+    "reference": "1 Corinthians 15:55",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1975,
+    "book": "1 Corinthians",
+    "question": "What instructions did Paul give regarding the collection for the saints?",
+    "options": [
+      "On the first day of the week, let each one lay something aside",
+      "Give all to the poor",
+      "Send it to Rome",
+      "Do not give anything"
+    ],
+    "answer": "On the first day of the week, let each one lay something aside",
+    "reference": "1 Corinthians 16:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1976,
+    "book": "1 Corinthians",
+    "question": "Watch, stand fast in the faith, be brave, be ______.",
+    "options": [
+      "Strong",
+      "Patient",
+      "Humble",
+      "Holy"
+    ],
+    "answer": "Strong",
+    "reference": "1 Corinthians 16:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1977,
+    "book": "1 Corinthians",
+    "question": "Let all that you do be done with ______.",
+    "options": [
+      "Love",
+      "Joy",
+      "Fear",
+      "Speed"
+    ],
+    "answer": "Love",
+    "reference": "1 Corinthians 16:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1978,
+    "book": "1 Corinthians",
+    "question": "What does the word 'Maranatha' mean?",
+    "options": [
+      "O Lord, come!",
+      "God is with us",
+      "Amen",
+      "Holy is the Lord"
+    ],
+    "answer": "O Lord, come!",
+    "reference": "1 Corinthians 16:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1979,
+    "book": "1 Corinthians",
+    "question": "Paul mentions that he stayed in which city until Pentecost because a great door of opportunity opened?",
+    "options": [
+      "Ephesus",
+      "Athens",
+      "Rome",
+      "Corinth"
+    ],
+    "answer": "Ephesus",
+    "reference": "1 Corinthians 16:8-9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1980,
+    "book": "1 Corinthians",
+    "question": "Paul warns that if anyone does not love the Lord Jesus Christ, let him be...?",
+    "options": [
+      "Accursed",
+      "Exiled",
+      "Silent",
+      "Ignored"
+    ],
+    "answer": "Accursed",
+    "reference": "1 Corinthians 16:22",
+    "difficulty": "hard"
+  }
+]

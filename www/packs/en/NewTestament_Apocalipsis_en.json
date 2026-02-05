@@ -1,0 +1,842 @@
+[
+  {
+    "id": 2881,
+    "book": "Apocalipsis",
+    "question": "Who is the author of the book of Revelation?",
+    "options": [
+      "John",
+      "Paul",
+      "Peter",
+      "Luke"
+    ],
+    "answer": "John",
+    "reference": "Revelation 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2882,
+    "book": "Apocalipsis",
+    "question": "Where was John when he wrote Revelation?",
+    "options": [
+      "The island of Patmos",
+      "Rome",
+      "Ephesus",
+      "Jerusalem"
+    ],
+    "answer": "The island of Patmos",
+    "reference": "Revelation 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2883,
+    "book": "Apocalipsis",
+    "question": "How many churches were the messages in Chapters 2 and 3 addressed to?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Four",
+      "Three"
+    ],
+    "answer": "Seven",
+    "reference": "Revelation 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2884,
+    "book": "Apocalipsis",
+    "question": "Which church was called 'lukewarm'?",
+    "options": [
+      "Laodicea",
+      "Smyrna",
+      "Ephesus",
+      "Sardis"
+    ],
+    "answer": "Laodicea",
+    "reference": "Revelation 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2885,
+    "book": "Apocalipsis",
+    "question": "How many elders were around the throne in Chapter 4?",
+    "options": [
+      "Twenty-four",
+      "Twelve",
+      "Seven",
+      "Four"
+    ],
+    "answer": "Twenty-four",
+    "reference": "Revelation 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2886,
+    "book": "Apocalipsis",
+    "question": "How many seals was the scroll sealed with in Chapter 5?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Ten",
+      "Four"
+    ],
+    "answer": "Seven",
+    "reference": "Revelation 5:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2887,
+    "book": "Apocalipsis",
+    "question": "Who was found worthy to open the seals of the scroll?",
+    "options": [
+      "The Lamb (the Lion of Judah)",
+      "An angel",
+      "John",
+      "One of the elders"
+    ],
+    "answer": "The Lamb (the Lion of Judah)",
+    "reference": "Revelation 5:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2888,
+    "book": "Apocalipsis",
+    "question": "What was the color of the horse of the first seal?",
+    "options": [
+      "White",
+      "Red",
+      "Black",
+      "Pale"
+    ],
+    "answer": "White",
+    "reference": "Revelation 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2889,
+    "book": "Apocalipsis",
+    "question": "Who was the rider on the pale horse?",
+    "options": [
+      "Death",
+      "Famine",
+      "War",
+      "Conquest"
+    ],
+    "answer": "Death",
+    "reference": "Revelation 6:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2890,
+    "book": "Apocalipsis",
+    "question": "How many people were sealed from the tribes of Israel in Chapter 7?",
+    "options": [
+      "144,000",
+      "12,000",
+      "1,000",
+      "7,000"
+    ],
+    "answer": "144,000",
+    "reference": "Revelation 7:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2891,
+    "book": "Apocalipsis",
+    "question": "How many trumpets were sounded by the seven angels in Chapters 8 and 9?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Four",
+      "Three"
+    ],
+    "answer": "Seven",
+    "reference": "Revelation 8:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2892,
+    "book": "Apocalipsis",
+    "question": "What was the name of the great star that fell from heaven when the third trumpet sounded?",
+    "options": [
+      "Wormwood",
+      "Lucifer",
+      "Morning Star",
+      "Orion"
+    ],
+    "answer": "Wormwood",
+    "reference": "Revelation 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2893,
+    "book": "Apocalipsis",
+    "question": "Who led the war in heaven against the dragon in Chapter 12?",
+    "options": [
+      "Michael",
+      "Gabriel",
+      "The Lamb",
+      "John"
+    ],
+    "answer": "Michael",
+    "reference": "Revelation 12:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2894,
+    "book": "Apocalipsis",
+    "question": "What is the number of the beast mentioned in Chapter 13?",
+    "options": [
+      "666",
+      "777",
+      "144",
+      "1000"
+    ],
+    "answer": "666",
+    "reference": "Revelation 13:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2895,
+    "book": "Apocalipsis",
+    "question": "What is the name of the place where the kings of the world gather for battle in Chapter 16?",
+    "options": [
+      "Armageddon",
+      "Babylon",
+      "Zion",
+      "Golgotha"
+    ],
+    "answer": "Armageddon",
+    "reference": "Revelation 16:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2896,
+    "book": "Apocalipsis",
+    "question": "For how many years was the dragon (Satan) bound in the abyss in Chapter 20?",
+    "options": [
+      "One thousand",
+      "Seven",
+      "One hundred",
+      "Forty"
+    ],
+    "answer": "One thousand",
+    "reference": "Revelation 20:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2897,
+    "book": "Apocalipsis",
+    "question": "What is the name of the city that came down from heaven in Chapter 21?",
+    "options": [
+      "New Jerusalem",
+      "New Babylon",
+      "New Zion",
+      "New Eden"
+    ],
+    "answer": "New Jerusalem",
+    "reference": "Revelation 21:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2898,
+    "book": "Apocalipsis",
+    "question": "How many gates did the New Jerusalem have?",
+    "options": [
+      "Twelve",
+      "Seven",
+      "Four",
+      "Twenty-four"
+    ],
+    "answer": "Twelve",
+    "reference": "Revelation 21:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2899,
+    "book": "Apocalipsis",
+    "question": "What flowed from the throne of God in the new city?",
+    "options": [
+      "The river of the water of life",
+      "A river of gold",
+      "A river of wine",
+      "A river of fire"
+    ],
+    "answer": "The river of the water of life",
+    "reference": "Revelation 22:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2900,
+    "book": "Apocalipsis",
+    "question": "What are the final words of the book of Revelation?",
+    "options": [
+      "The grace of our Lord Jesus Christ be with you all. Amen.",
+      "Even so, come Lord Jesus.",
+      "Hallelujah.",
+      "Amen."
+    ],
+    "answer": "The grace of our Lord Jesus Christ be with you all. Amen.",
+    "reference": "Revelation 22:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2981,
+    "book": "Apocalipsis",
+    "question": "What title does Jesus use for Himself in Revelation 1:17 and 22:13?",
+    "options": [
+      "The First and the Last",
+      "The King",
+      "The Prophet",
+      "The Savior"
+    ],
+    "answer": "The First and the Last",
+    "reference": "Revelation 1:17, 22:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2982,
+    "book": "Apocalipsis",
+    "question": "What was the color of the horse of the second seal?",
+    "options": [
+      "Red",
+      "White",
+      "Black",
+      "Pale"
+    ],
+    "answer": "Red",
+    "reference": "Revelation 6:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2983,
+    "book": "Apocalipsis",
+    "question": "What was the color of the horse of the third seal?",
+    "options": [
+      "Black",
+      "Red",
+      "White",
+      "Pale"
+    ],
+    "answer": "Black",
+    "reference": "Revelation 6:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2984,
+    "book": "Apocalipsis",
+    "question": "In the New Jerusalem, what is the wall made of?",
+    "options": [
+      "Jasper",
+      "Gold",
+      "Pearl",
+      "Emerald"
+    ],
+    "answer": "Jasper",
+    "reference": "Revelation 21:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2985,
+    "book": "Apocalipsis",
+    "question": "What are the names written on the twelve foundations of the wall of the New Jerusalem?",
+    "options": [
+      "The names of the twelve apostles of the Lamb",
+      "The names of the twelve tribes",
+      "The names of the prophets",
+      "The names of the kings"
+    ],
+    "answer": "The names of the twelve apostles of the Lamb",
+    "reference": "Revelation 21:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2986,
+    "book": "Apocalipsis",
+    "question": "In Revelation 22, what tree's leaves were for the healing of the nations?",
+    "options": [
+      "The Tree of Life",
+      "The Olive Tree",
+      "The Fig Tree",
+      "The Palm Tree"
+    ],
+    "answer": "The Tree of Life",
+    "reference": "Revelation 22:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2987,
+    "book": "Apocalipsis",
+    "question": "What is the name of the place where the battle between God and the dragon's forces happens?",
+    "options": [
+      "Armageddon",
+      "Babylon",
+      "Zion",
+      "Gethsemane"
+    ],
+    "answer": "Armageddon",
+    "reference": "Revelation 16:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2988,
+    "book": "Apocalipsis",
+    "question": "Who is the 'bright and morning star'?",
+    "options": [
+      "Jesus",
+      "Gabriel",
+      "Michael",
+      "John"
+    ],
+    "answer": "Jesus",
+    "reference": "Revelation 22:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2989,
+    "book": "Apocalipsis",
+    "question": "What did the angel tell John not to do when John fell at his feet to worship him?",
+    "options": [
+      "Do not do that, for I am your fellow servant",
+      "Go away",
+      "Continue worshipping",
+      "Close your eyes"
+    ],
+    "answer": "Do not do that, for I am your fellow servant",
+    "reference": "Revelation 19:10, 22:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2990,
+    "book": "Apocalipsis",
+    "question": "How many months do the leaves of the tree of life produce fruit?",
+    "options": [
+      "Every month (twelve times a year)",
+      "Once a year",
+      "Every seven years",
+      "Only in summer"
+    ],
+    "answer": "Every month (twelve times a year)",
+    "reference": "Revelation 22:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2991,
+    "book": "Apocalipsis",
+    "question": "Which of the seven churches was promised 'hidden manna' and a 'white stone'?",
+    "options": [
+      "Pergamum",
+      "Ephesus",
+      "Smyrna",
+      "Thyatira"
+    ],
+    "answer": "Pergamum",
+    "reference": "Revelation 2:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2992,
+    "book": "Apocalipsis",
+    "question": "In Chapter 1, John saw Jesus holding how many stars in His right hand?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Ten",
+      "Four"
+    ],
+    "answer": "Seven",
+    "reference": "Revelation 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2993,
+    "book": "Apocalipsis",
+    "question": "What flowed from the throne of God and of the Lamb in Chapter 22?",
+    "options": [
+      "A pure river of water of life",
+      "A river of fire",
+      "A river of blood",
+      "A river of wine"
+    ],
+    "answer": "A pure river of water of life",
+    "reference": "Revelation 22:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2994,
+    "book": "Apocalipsis",
+    "question": "In the throne room, the four living creatures were full of what, both inside and out?",
+    "options": [
+      "Eyes",
+      "Wings",
+      "Stars",
+      "Words"
+    ],
+    "answer": "Eyes",
+    "reference": "Revelation 4:6, 8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2995,
+    "book": "Apocalipsis",
+    "question": "How many angels stood at the twelve gates of the New Jerusalem?",
+    "options": [
+      "Twelve",
+      "Seven",
+      "Twenty-four",
+      "One"
+    ],
+    "answer": "Twelve",
+    "reference": "Revelation 21:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2996,
+    "book": "Apocalipsis",
+    "question": "What will God wipe away from the eyes of His people in the new heaven and earth?",
+    "options": [
+      "Every tear",
+      "All dust",
+      "All sin",
+      "Every memory"
+    ],
+    "answer": "Every tear",
+    "reference": "Revelation 21:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2997,
+    "book": "Apocalipsis",
+    "question": "What is the name of the angel of the bottomless pit in Hebrew?",
+    "options": [
+      "Abaddon",
+      "Apollyon",
+      "Satan",
+      "Lucifer"
+    ],
+    "answer": "Abaddon",
+    "reference": "Revelation 9:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2998,
+    "book": "Apocalipsis",
+    "question": "Which tribe of Israel was NOT included in the list of the 144,000 sealed (Chapter 7)?",
+    "options": [
+      "Dan (and Ephraim, though Dan is specifically absent)",
+      "Judah",
+      "Reuben",
+      "Levi"
+    ],
+    "answer": "Dan (and Ephraim, though Dan is specifically absent)",
+    "reference": "Revelation 7:5-8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2999,
+    "book": "Apocalipsis",
+    "question": "How many horns did the Lamb have in the vision in Chapter 5?",
+    "options": [
+      "Seven",
+      "Twelve",
+      "Two",
+      "Ten"
+    ],
+    "answer": "Seven",
+    "reference": "Revelation 5:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2000,
+    "book": "Apocalipsis",
+    "question": "What was the final message Jesus gave at the end of the book: 'Surely I am coming ______.'",
+    "options": [
+      "Quickly",
+      "Soon",
+      "Tomorrow",
+      "Later"
+    ],
+    "answer": "Quickly",
+    "reference": "Revelation 22:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3081,
+    "book": "Apocalipsis",
+    "question": "What are the seven messages in Revelation 2 and 3 addressed to?",
+    "options": [
+      "Seven churches in Asia",
+      "Seven kings",
+      "Seven cities in Judea",
+      "The seven tribes"
+    ],
+    "answer": "Seven churches in Asia",
+    "reference": "Revelation 1:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3082,
+    "book": "Apocalipsis",
+    "question": "Who is the 'Alpha and the Omega, the Beginning and the End'?",
+    "options": [
+      "Jesus Christ (the Lord)",
+      "John",
+      "The Angel",
+      "The Father"
+    ],
+    "answer": "Jesus Christ (the Lord)",
+    "reference": "Revelation 1:8 / 22:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3083,
+    "book": "Apocalipsis",
+    "question": "What color was the horse of the first seal, whose rider had a bow and a crown?",
+    "options": [
+      "White",
+      "Red",
+      "Black",
+      "Pale"
+    ],
+    "answer": "White",
+    "reference": "Revelation 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3084,
+    "book": "Apocalipsis",
+    "question": "Which church was told: 'Behold, I stand at the door and knock'?",
+    "options": [
+      "Laodicea",
+      "Ephesus",
+      "Sardis",
+      "Smyrna"
+    ],
+    "answer": "Laodicea",
+    "reference": "Revelation 3:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3085,
+    "book": "Apocalipsis",
+    "question": "How many living creatures were around the throne, full of eyes and having six wings?",
+    "options": [
+      "Four",
+      "Seven",
+      "Twenty-four",
+      "Twelve"
+    ],
+    "answer": "Four",
+    "reference": "Revelation 4:6-8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3086,
+    "book": "Apocalipsis",
+    "question": "What was the name of the place where the kings of the earth gather for the final battle?",
+    "options": [
+      "Armageddon",
+      "Babylon",
+      "Zion",
+      "Patmos"
+    ],
+    "answer": "Armageddon",
+    "reference": "Revelation 16:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3087,
+    "book": "Apocalipsis",
+    "question": "How many gates did the New Jerusalem have, each made of a single pearl?",
+    "options": [
+      "Twelve",
+      "Seven",
+      "Twenty-four",
+      "Four"
+    ],
+    "answer": "Twelve",
+    "reference": "Revelation 21:12-21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3088,
+    "book": "Apocalipsis",
+    "question": "Who was the angel who fought against the dragon in heaven and cast him out?",
+    "options": [
+      "Michael",
+      "Gabriel",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Michael",
+    "reference": "Revelation 12:7-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3089,
+    "book": "Apocalipsis",
+    "question": "What is the number of the Beast, mentioned in Revelation 13?",
+    "options": [
+      "666",
+      "777",
+      "144",
+      "1000"
+    ],
+    "answer": "666",
+    "reference": "Revelation 13:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3090,
+    "book": "Apocalipsis",
+    "question": "What was the name of the great star that fell on the third part of the rivers, making them bitter?",
+    "options": [
+      "Wormwood",
+      "Morning Star",
+      "Lucifer",
+      "Absinth"
+    ],
+    "answer": "Wormwood",
+    "reference": "Revelation 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3091,
+    "book": "Apocalipsis",
+    "question": "In the New Jerusalem, what flows from the throne of God and the Lamb?",
+    "options": [
+      "The river of the water of life",
+      "A river of gold",
+      "A river of fire",
+      "A river of wine"
+    ],
+    "answer": "The river of the water of life",
+    "reference": "Revelation 22:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3092,
+    "book": "Apocalipsis",
+    "question": "How many elders were sitting on thrones around the throne of God in the vision?",
+    "options": [
+      "Twenty-four",
+      "Twelve",
+      "Seven",
+      "Forty"
+    ],
+    "answer": "Twenty-four",
+    "reference": "Revelation 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3093,
+    "book": "Apocalipsis",
+    "question": "What did John see coming down out of heaven from God, prepared as a bride for her husband?",
+    "options": [
+      "The New Jerusalem",
+      "A great sword",
+      "A chariot of fire",
+      "A golden temple"
+    ],
+    "answer": "The New Jerusalem",
+    "reference": "Revelation 21:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3094,
+    "book": "Apocalipsis",
+    "question": "Which church was told it had 'left its first love'?",
+    "options": [
+      "Ephesus",
+      "Smyrna",
+      "Pergamum",
+      "Thyatira"
+    ],
+    "answer": "Ephesus",
+    "reference": "Revelation 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3095,
+    "book": "Apocalipsis",
+    "question": "For how many years was the dragon (Satan) bound in the bottomless pit?",
+    "options": [
+      "One thousand years",
+      "Seven years",
+      "One hundred years",
+      "Twelve years"
+    ],
+    "answer": "One thousand years",
+    "reference": "Revelation 20:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3096,
+    "book": "Apocalipsis",
+    "question": "In the vision of the seven seals, what did the rider of the black horse hold in his hand?",
+    "options": [
+      "A pair of scales",
+      "A sword",
+      "A bow",
+      "A sickle"
+    ],
+    "answer": "A pair of scales",
+    "reference": "Revelation 6:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3097,
+    "book": "Apocalipsis",
+    "question": "What was the name written on the white horse rider's robe and thigh?",
+    "options": [
+      "King of Kings and Lord of Lords",
+      "The Word of God",
+      "Faithful and True",
+      "Jesus Christ"
+    ],
+    "answer": "King of Kings and Lord of Lords",
+    "reference": "Revelation 19:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3098,
+    "book": "Apocalipsis",
+    "question": "What was the name of the woman in Revelation 17 who was drunk with the blood of the saints?",
+    "options": [
+      "Babylon the Great",
+      "Jezebel",
+      "The Harlot",
+      "Both Babylon the Great and The Harlot"
+    ],
+    "answer": "Both Babylon the Great and The Harlot",
+    "reference": "Revelation 17:5-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3099,
+    "book": "Apocalipsis",
+    "question": "How many months was the locust plague allowed to torment those who did not have the seal of God?",
+    "options": [
+      "Five months",
+      "Three months",
+      "Seven months",
+      "One month"
+    ],
+    "answer": "Five months",
+    "reference": "Revelation 9:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3100,
+    "book": "Apocalipsis",
+    "question": "What did the angel do with the incense in the golden censer after filling it with fire from the altar?",
+    "options": [
+      "Threw it to the earth",
+      "Cast it into the sea",
+      "Hid it in the temple",
+      "Gave it to John"
+    ],
+    "answer": "Threw it to the earth",
+    "reference": "Revelation 8:5",
+    "difficulty": "hard"
+  }
+]

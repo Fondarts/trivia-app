@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1901,
+    "book": "Romans",
+    "question": "Who is the author of the book of Romans?",
+    "options": [
+      "Paul",
+      "Peter",
+      "Luke",
+      "James"
+    ],
+    "answer": "Paul",
+    "reference": "Romans 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1902,
+    "book": "Romans",
+    "question": "Paul says he is not ashamed of the ______ of Christ, for it is the power of God for salvation.",
+    "options": [
+      "Gospel",
+      "Cross",
+      "Law",
+      "Name"
+    ],
+    "answer": "Gospel",
+    "reference": "Romans 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1903,
+    "book": "Romans",
+    "question": "In Romans 1:17, it is written: 'The just shall live by ____.'",
+    "options": [
+      "Faith",
+      "Works",
+      "The Law",
+      "Love"
+    ],
+    "answer": "Faith",
+    "reference": "Romans 1:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1904,
+    "book": "Romans",
+    "question": "For all have ______ and fall short of the glory of God.",
+    "options": [
+      "Sinned",
+      "Failed",
+      "Forgotten",
+      "Doubted"
+    ],
+    "answer": "Sinned",
+    "reference": "Romans 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1905,
+    "book": "Romans",
+    "question": "Which Old Testament figure does Paul use in chapter 4 as an example of justification by faith?",
+    "options": [
+      "Abraham",
+      "Moses",
+      "David",
+      "Elijah"
+    ],
+    "answer": "Abraham",
+    "reference": "Romans 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1906,
+    "book": "Romans",
+    "question": "But God demonstrates His own love toward us, in that while we were still ____, Christ died for us.",
+    "options": [
+      "Sinners",
+      "Enemies",
+      "Lost",
+      "Sleeping"
+    ],
+    "answer": "Sinners",
+    "reference": "Romans 5:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1907,
+    "book": "Romans",
+    "question": "Paul contrasts the sin of one man, Adam, with the free gift of one Man, who is...?",
+    "options": [
+      "Jesus Christ",
+      "John the Baptist",
+      "Melchizedek",
+      "Abraham"
+    ],
+    "answer": "Jesus Christ",
+    "reference": "Romans 5:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1908,
+    "book": "Romans",
+    "question": "What is the 'wages of sin' according to Romans 6:23?",
+    "options": [
+      "Death",
+      "Hell",
+      "Sorrow",
+      "Judgment"
+    ],
+    "answer": "Death",
+    "reference": "Romans 6:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1909,
+    "book": "Romans",
+    "question": "Romans 6:23 concludes: '...but the gift of God is ______ ______ in Christ Jesus our Lord.'",
+    "options": [
+      "Eternal life",
+      "Great wealth",
+      "Total peace",
+      "Divine wisdom"
+    ],
+    "answer": "Eternal life",
+    "reference": "Romans 6:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1910,
+    "book": "Romans",
+    "question": "Paul says in Romans 7 that the Law is holy, and the commandment is holy and just and...?",
+    "options": [
+      "Good",
+      "Right",
+      "Perfect",
+      "Eternal"
+    ],
+    "answer": "Good",
+    "reference": "Romans 7:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1911,
+    "book": "Romans",
+    "question": "In Romans 8, Paul says there is now no ______ to those who are in Christ Jesus.",
+    "options": [
+      "Condemnation",
+      "Sin",
+      "Fear",
+      "Death"
+    ],
+    "answer": "Condemnation",
+    "reference": "Romans 8:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1912,
+    "book": "Romans",
+    "question": "The Spirit Himself bears witness with our spirit that we are ______ of God.",
+    "options": [
+      "Children",
+      "Servants",
+      "Soldiers",
+      "Friends"
+    ],
+    "answer": "Children",
+    "reference": "Romans 8:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1913,
+    "book": "Romans",
+    "question": "Romans 8:28 says that all things work together for ______ to those who love God.",
+    "options": [
+      "Good",
+      "Peace",
+      "Success",
+      "Profit"
+    ],
+    "answer": "Good",
+    "reference": "Romans 8:28",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1914,
+    "book": "Romans",
+    "question": "If God is for us, who can be ______ us?",
+    "options": [
+      "Against",
+      "Beside",
+      "With",
+      "Beyond"
+    ],
+    "answer": "Against",
+    "reference": "Romans 8:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1915,
+    "book": "Romans",
+    "question": "Paul lists several things that cannot separate us from the love of God. Which is NOT one of them?",
+    "options": [
+      "Our own sin",
+      "Death",
+      "Angels",
+      "Height or depth"
+    ],
+    "answer": "Our own sin",
+    "reference": "Romans 8:38-39",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1916,
+    "book": "Romans",
+    "question": "Who did God choose over Esau before they were even born, according to Romans 9?",
+    "options": [
+      "Jacob",
+      "Joseph",
+      "Isaac",
+      "Judah"
+    ],
+    "answer": "Jacob",
+    "reference": "Romans 9:11-13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1917,
+    "book": "Romans",
+    "question": "Paul says that Christ is the ______ of the law for righteousness to everyone who believes.",
+    "options": [
+      "End",
+      "Beginning",
+      "Center",
+      "Master"
+    ],
+    "answer": "End",
+    "reference": "Romans 10:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1918,
+    "book": "Romans",
+    "question": "Romans 10:9 says if you confess with your mouth the Lord Jesus and believe in your ______ that God raised Him, you will be saved.",
+    "options": [
+      "Heart",
+      "Mind",
+      "Spirit",
+      "Soul"
+    ],
+    "answer": "Heart",
+    "reference": "Romans 10:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1919,
+    "book": "Romans",
+    "question": "So then faith comes by ______, and ______ by the word of God.",
+    "options": [
+      "Hearing",
+      "Seeing",
+      "Doing",
+      "Praying"
+    ],
+    "answer": "Hearing",
+    "reference": "Romans 10:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1920,
+    "book": "Romans",
+    "question": "To what tree does Paul compare the Gentiles being grafted into God's plan?",
+    "options": [
+      "Wild olive tree",
+      "Fig tree",
+      "Vine",
+      "Oak tree"
+    ],
+    "answer": "Wild olive tree",
+    "reference": "Romans 11:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1921,
+    "book": "Romans",
+    "question": "Paul beseeches the brothers to present their bodies as a ______ sacrifice.",
+    "options": [
+      "Living",
+      "Perfect",
+      "Holy",
+      "Daily"
+    ],
+    "answer": "Living",
+    "reference": "Romans 12:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1922,
+    "book": "Romans",
+    "question": "And do not be conformed to this world, but be ______ by the renewing of your mind.",
+    "options": [
+      "Transformed",
+      "Changed",
+      "Replaced",
+      "Restored"
+    ],
+    "answer": "Transformed",
+    "reference": "Romans 12:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1923,
+    "book": "Romans",
+    "question": "Romans 12:19 says: 'Vengeance is Mine, I will repay,' says the...?",
+    "options": [
+      "Lord",
+      "King",
+      "Judge",
+      "Spirit"
+    ],
+    "answer": "Lord",
+    "reference": "Romans 12:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1924,
+    "book": "Romans",
+    "question": "Do not be overcome by evil, but overcome evil with ____.",
+    "options": [
+      "Good",
+      "Love",
+      "Prayer",
+      "Patience"
+    ],
+    "answer": "Good",
+    "reference": "Romans 12:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1925,
+    "book": "Romans",
+    "question": "In Romans 13, Paul says let every soul be subject to the governing...?",
+    "options": [
+      "Authorities",
+      "Kings",
+      "Laws",
+      "Soldiers"
+    ],
+    "answer": "Authorities",
+    "reference": "Romans 13:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1926,
+    "book": "Romans",
+    "question": "Owe no one anything except to ______ one another.",
+    "options": [
+      "Love",
+      "Help",
+      "Forgive",
+      "Serve"
+    ],
+    "answer": "Love",
+    "reference": "Romans 13:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1927,
+    "book": "Romans",
+    "question": "Love is the ______ of the law.",
+    "options": [
+      "Fulfillment",
+      "Beginning",
+      "Center",
+      "End"
+    ],
+    "answer": "Fulfillment",
+    "reference": "Romans 13:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1928,
+    "book": "Romans",
+    "question": "For the kingdom of God is not eating and drinking, but righteousness and peace and ______ in the Holy Spirit.",
+    "options": [
+      "Joy",
+      "Love",
+      "Faith",
+      "Hope"
+    ],
+    "answer": "Joy",
+    "reference": "Romans 14:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1929,
+    "book": "Romans",
+    "question": "Who was the woman Paul commends in Romans 16 as a 'servant (deacon) of the church in Cenchrea'?",
+    "options": [
+      "Phoebe",
+      "Priscilla",
+      "Mary",
+      "Junia"
+    ],
+    "answer": "Phoebe",
+    "reference": "Romans 16:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1930,
+    "book": "Romans",
+    "question": "Which couple does Paul thank for risking their necks for his life?",
+    "options": [
+      "Priscilla and Aquila",
+      "Andronicus and Junia",
+      "Tryphena and Tryphosa",
+      "Rufus and his mother"
+    ],
+    "answer": "Priscilla and Aquila",
+    "reference": "Romans 16:3-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1931,
+    "book": "Romans",
+    "question": "Who was the scribe that actually wrote down the letter as Paul dictated it?",
+    "options": [
+      "Tertius",
+      "Timothy",
+      "Luke",
+      "Erastus"
+    ],
+    "answer": "Tertius",
+    "reference": "Romans 16:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1932,
+    "book": "Romans",
+    "question": "Paul writes that 'the God of peace will crush ______ under your feet shortly.'",
+    "options": [
+      "Satan",
+      "Your enemies",
+      "The law",
+      "Death"
+    ],
+    "answer": "Satan",
+    "reference": "Romans 16:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1933,
+    "book": "Romans",
+    "question": "Romans 1:20 says that God's invisible attributes are clearly seen through...?",
+    "options": [
+      "The things that are made (creation)",
+      "The law of Moses",
+      "The prophets",
+      "Dreams"
+    ],
+    "answer": "The things that are made (creation)",
+    "reference": "Romans 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1934,
+    "book": "Romans",
+    "question": "Paul says that the ______ of God leads you to repentance.",
+    "options": [
+      "Goodness / Kindness",
+      "Judgment",
+      "Power",
+      "Wrath"
+    ],
+    "answer": "Goodness / Kindness",
+    "reference": "Romans 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1935,
+    "book": "Romans",
+    "question": "In Romans 2, Paul says that God shows no ______.",
+    "options": [
+      "Partiality / Favoritism",
+      "Mercy to the wicked",
+      "Anger",
+      "Weakness"
+    ],
+    "answer": "Partiality / Favoritism",
+    "reference": "Romans 2:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1936,
+    "book": "Romans",
+    "question": "According to Romans 3, what is the purpose of the Law?",
+    "options": [
+      "The knowledge of sin",
+      "To make us holy",
+      "To save us",
+      "To rule the nations"
+    ],
+    "answer": "The knowledge of sin",
+    "reference": "Romans 3:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1937,
+    "book": "Romans",
+    "question": "Romans 5:1 says 'Therefore, having been justified by faith, we have ______ with God.'",
+    "options": [
+      "Peace",
+      "Favor",
+      "Access",
+      "Joy"
+    ],
+    "answer": "Peace",
+    "reference": "Romans 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1938,
+    "book": "Romans",
+    "question": "In Romans 8, Paul describes the whole creation as...?",
+    "options": [
+      "Groaning and laboring with birth pangs",
+      "Singing praises",
+      "Falling apart",
+      "Silent"
+    ],
+    "answer": "Groaning and laboring with birth pangs",
+    "reference": "Romans 8:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1939,
+    "book": "Romans",
+    "question": "What is the 'root' that supports the branches in Romans 11?",
+    "options": [
+      "Israel / The Jewish foundation",
+      "The Church",
+      "Paul's teaching",
+      "Rome"
+    ],
+    "answer": "Israel / The Jewish foundation",
+    "reference": "Romans 11:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1940,
+    "book": "Romans",
+    "question": "Who was the city treasurer of Corinth mentioned in the closing of Romans?",
+    "options": [
+      "Erastus",
+      "Quartus",
+      "Gaius",
+      "Jason"
+    ],
+    "answer": "Erastus",
+    "reference": "Romans 16:23",
+    "difficulty": "hard"
+  }
+]

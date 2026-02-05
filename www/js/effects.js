@@ -116,30 +116,6 @@ export function addAnswerEffect(element, isCorrect) {
   }
 }
 
-// Función de transición de tema eliminada - solo hay un tema ahora
-
-// Función para pre-cargar fondos
-function preloadBackgrounds() {
-  const backgrounds = [
-    './assets/backgrounds/BG_01.png'
-  ];
-  
-  backgrounds.forEach(src => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {};
-    img.onerror = () => {};
-  });
-}
-
-// Función para efectos de hover mejorados
-export function enhanceHoverEffects() {
-  // Agregar clase hover-float a elementos específicos
-  document.querySelectorAll('.iconbtn, .badge, .pill').forEach(el => {
-    el.classList.add('hover-float');
-  });
-}
-
 // Función para mostrar tooltips mejorados
 export function addTooltip(element, text) {
   const tooltip = document.createElement('div');
@@ -182,58 +158,6 @@ export function addTooltip(element, text) {
   });
 }
 
-// Función para animación de carga mejorada
-export function showLoadingAnimation(show = true) {
-  const existingLoader = document.getElementById('loading-overlay');
-  
-  if (show) {
-    if (existingLoader) return;
-    
-    const loader = document.createElement('div');
-    loader.id = 'loading-overlay';
-    loader.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(4px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        animation: fadeIn 0.3s ease;
-      ">
-        <div style="
-          background: var(--card);
-          padding: 24px;
-          border-radius: 16px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
-          animation: slideUp 0.3s ease;
-        ">
-          <div class="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div style="color: var(--text); font-weight: 600;">Cargando...</div>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(loader);
-  } else {
-    if (existingLoader) {
-      existingLoader.style.animation = 'fadeOut 0.3s ease';
-      setTimeout(() => existingLoader.remove(), 300);
-    }
-  }
-}
-
 // Función para efectos de sonido
 export function playSound(type) {
   if (!document.getElementById('optSounds')?.checked) return;
@@ -262,9 +186,6 @@ export function initVisualEffects() {
   
   // Animar elementos al aparecer
   animateElements();
-  
-  // Mejorar efectos de hover
-  enhanceHoverEffects();
   
   // Agregar tooltips (excluir elementos que ya tienen tooltips CSS como .mode-btn)
   document.querySelectorAll('[title]').forEach(el => {

@@ -54,6 +54,39 @@
         "OldTestament_2_Maccabees_en.json",
         "OldTestament_General_OT_en.json"
       ]
+    },
+    {
+      "id": "New Testament",
+      "category": "bible",
+      "files": [
+        "NewTestament_Matthew_en.json",
+        "NewTestament_Mark_en.json",
+        "NewTestament_Luke_en.json",
+        "NewTestament_John_en.json",
+        "NewTestament_Acts_en.json",
+        "NewTestament_Romans_en.json",
+        "NewTestament_1_Corinthians_en.json",
+        "NewTestament_2_Corinthians_en.json",
+        "NewTestament_Galatians_en.json",
+        "NewTestament_Ephesians_en.json",
+        "NewTestament_Philippians_en.json",
+        "NewTestament_Colossians_en.json",
+        "NewTestament_1_Thessalonians_en.json",
+        "NewTestament_2_Thessalonians_en.json",
+        "NewTestament_1_Timothy_en.json",
+        "NewTestament_2_Timothy_en.json",
+        "NewTestament_Titus_en.json",
+        "NewTestament_Philemon_en.json",
+        "NewTestament_Hebrews_en.json",
+        "NewTestament_James_en.json",
+        "NewTestament_1_Peter_en.json",
+        "NewTestament_2_Peter_en.json",
+        "NewTestament_1_John_en.json",
+        "NewTestament_2_John_en.json",
+        "NewTestament_3_John_en.json",
+        "NewTestament_Jude_en.json",
+        "NewTestament_Revelation_en.json"
+      ]
     }
   ]
 }

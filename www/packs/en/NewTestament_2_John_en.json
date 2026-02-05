@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2601,
+    "book": "2 John",
+    "question": "How does the author identify himself in the opening of 2 John?",
+    "options": [
+      "The Elder",
+      "The Apostle",
+      "John the Beloved",
+      "The Servant"
+    ],
+    "answer": "The Elder",
+    "reference": "2 John 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2602,
+    "book": "2 John",
+    "question": "To whom is the letter of 2 John addressed?",
+    "options": [
+      "The elect lady and her children",
+      "The seven churches",
+      "Gaius",
+      "The scattered tribes"
+    ],
+    "answer": "The elect lady and her children",
+    "reference": "2 John 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2603,
+    "book": "2 John",
+    "question": "John says he loves the recipients 'in ______'.",
+    "options": [
+      "Truth",
+      "Spirit",
+      "Faith",
+      "The Lord"
+    ],
+    "answer": "Truth",
+    "reference": "2 John 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2604,
+    "book": "2 John",
+    "question": "What caused John to rejoice greatly regarding the lady's children?",
+    "options": [
+      "That they were walking in truth",
+      "That they were healthy",
+      "That they visited him",
+      "That they were wealthy"
+    ],
+    "answer": "That they were walking in truth",
+    "reference": "2 John 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2605,
+    "book": "2 John",
+    "question": "What is the commandment that we have had from the beginning?",
+    "options": [
+      "That we love one another",
+      "That we keep the Sabbath",
+      "That we sacrifice",
+      "That we fast"
+    ],
+    "answer": "That we love one another",
+    "reference": "2 John 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2606,
+    "book": "2 John",
+    "question": "John defines 'love' as walking according to His ______.",
+    "options": [
+      "Commandments",
+      "Ways",
+      "Will",
+      "Word"
+    ],
+    "answer": "Commandments",
+    "reference": "2 John 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2607,
+    "book": "2 John",
+    "question": "How many 'deceivers' does John say have gone out into the world?",
+    "options": [
+      "Many",
+      "Two",
+      "Seven",
+      "A few"
+    ],
+    "answer": "Many",
+    "reference": "2 John 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2608,
+    "book": "2 John",
+    "question": "What do the deceivers mentioned in 2 John refuse to confess?",
+    "options": [
+      "Jesus Christ as coming in the flesh",
+      "The Resurrection",
+      "The Law of Moses",
+      "The Holy Spirit"
+    ],
+    "answer": "Jesus Christ as coming in the flesh",
+    "reference": "2 John 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2609,
+    "book": "2 John",
+    "question": "What title does John give to those who do not confess Jesus in the flesh?",
+    "options": [
+      "A deceiver and an antichrist",
+      "A sinner",
+      "A false prophet",
+      "A wolf"
+    ],
+    "answer": "A deceiver and an antichrist",
+    "reference": "2 John 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2610,
+    "book": "2 John",
+    "question": "John warns the recipients to look to themselves so they do not lose 'the things we ______ ______'.",
+    "options": [
+      "Worked for",
+      "Heard",
+      "Saw",
+      "Believed"
+    ],
+    "answer": "Worked for",
+    "reference": "2 John 1:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2611,
+    "book": "2 John",
+    "question": "Whoever transgresses and does not abide in the ______ of Christ does not have God.",
+    "options": [
+      "Doctrine",
+      "Spirit",
+      "Love",
+      "Presence"
+    ],
+    "answer": "Doctrine",
+    "reference": "2 John 1:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2612,
+    "book": "2 John",
+    "question": "If someone comes and does not bring this doctrine, what should a believer NOT do?",
+    "options": [
+      "Receive him into your house or greet him",
+      "Feed him",
+      "Talk to him",
+      "Listen to him"
+    ],
+    "answer": "Receive him into your house or greet him",
+    "reference": "2 John 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2613,
+    "book": "2 John",
+    "question": "According to 2 John 1:11, greeting a false teacher makes one a sharer in his ______ ______.",
+    "options": [
+      "Evil deeds",
+      "Sin",
+      "Judgment",
+      "Lies"
+    ],
+    "answer": "Evil deeds",
+    "reference": "2 John 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2614,
+    "book": "2 John",
+    "question": "Why did John not want to write the rest of his message with paper and ink?",
+    "options": [
+      "He hoped to come and speak face to face",
+      "He ran out of paper",
+      "He was too old to write",
+      "The message was a secret"
+    ],
+    "answer": "He hoped to come and speak face to face",
+    "reference": "2 John 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2615,
+    "book": "2 John",
+    "question": "What was the purpose of John wanting to speak face to face?",
+    "options": [
+      "That our joy may be full",
+      "To judge them",
+      "To collect money",
+      "To see their house"
+    ],
+    "answer": "That our joy may be full",
+    "reference": "2 John 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2616,
+    "book": "2 John",
+    "question": "Who sends greetings at the very end of 2 John?",
+    "options": [
+      "The children of your elect sister",
+      "The church in Rome",
+      "Timothy and Titus",
+      "Peter and James"
+    ],
+    "answer": "The children of your elect sister",
+    "reference": "2 John 1:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2617,
+    "book": "2 John",
+    "question": "How many verses are in the book of 2 John?",
+    "options": [
+      "13",
+      "15",
+      "10",
+      "20"
+    ],
+    "answer": "13",
+    "reference": "Structure",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2618,
+    "book": "2 John",
+    "question": "True or False: 2 John is the shortest book in the Bible by verse count.",
+    "options": [
+      "True",
+      "False (Obadiah is shorter)",
+      "False (3 John is shorter)",
+      "False (Philemon is shorter)"
+    ],
+    "answer": "True",
+    "reference": "Fact",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2619,
+    "book": "2 John",
+    "question": "John mentions that the truth 'dwells in us and will be with us ______'.",
+    "options": [
+      "Forever",
+      "Now",
+      "For a time",
+      "Always"
+    ],
+    "answer": "Forever",
+    "reference": "2 John 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2620,
+    "book": "2 John",
+    "question": "The greeting in 2 John includes: 'Grace, mercy, and ______...'",
+    "options": [
+      "Peace",
+      "Hope",
+      "Love",
+      "Joy"
+    ],
+    "answer": "Peace",
+    "reference": "2 John 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2621,
+    "book": "2 John",
+    "question": "2 John emphasizes the balance between which two Christian concepts?",
+    "options": [
+      "Love and Truth",
+      "Faith and Works",
+      "Law and Grace",
+      "Prayer and Fasting"
+    ],
+    "answer": "Love and Truth",
+    "reference": "Themes",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2622,
+    "book": "2 John",
+    "question": "John says he rejoiced because 'some' of the children were walking in truth. Does it mean all were?",
+    "options": [
+      "It only specifies 'some'",
+      "Yes, all were",
+      "No, none were",
+      "He didn't know them all"
+    ],
+    "answer": "It only specifies 'some'",
+    "reference": "2 John 1:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2623,
+    "book": "2 John",
+    "question": "The 'commandment' in 2 John is something we have had from...?",
+    "options": [
+      "The beginning",
+      "The law",
+      "Last year",
+      "The prophets"
+    ],
+    "answer": "The beginning",
+    "reference": "2 John 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2624,
+    "book": "2 John",
+    "question": "What is the specific Greek word for 'The Elder' used by John?",
+    "options": [
+      "Ho Presbyteros",
+      "Ho Episkopos",
+      "Ho Diakonos",
+      "Ho Apostolos"
+    ],
+    "answer": "Ho Presbyteros",
+    "reference": "2 John 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2625,
+    "book": "2 John",
+    "question": "John says that deceivers 'do not confess Jesus Christ as ______ in the flesh'.",
+    "options": [
+      "Coming",
+      "Born",
+      "Living",
+      "Dying"
+    ],
+    "answer": "Coming",
+    "reference": "2 John 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2626,
+    "book": "2 John",
+    "question": "In 1:8, John says they should look to themselves so they receive a ______ ______.",
+    "options": [
+      "Full reward",
+      "Crown",
+      "Blessing",
+      "Prophecy"
+    ],
+    "answer": "Full reward",
+    "reference": "2 John 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2627,
+    "book": "2 John",
+    "question": "He who abides in the doctrine of Christ has both the Father and the ______.",
+    "options": [
+      "Son",
+      "Holy Spirit",
+      "Church",
+      "Word"
+    ],
+    "answer": "Son",
+    "reference": "2 John 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2628,
+    "book": "2 John",
+    "question": "A key theme of 2 John is 'hospitality'. To whom should it NOT be shown?",
+    "options": [
+      "False teachers",
+      "Strangers",
+      "The poor",
+      "Enemies"
+    ],
+    "answer": "False teachers",
+    "reference": "2 John 1:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2629,
+    "book": "2 John",
+    "question": "John says that he has 'many things to ______ to you'.",
+    "options": [
+      "Write",
+      "Say",
+      "Give",
+      "Teach"
+    ],
+    "answer": "Write",
+    "reference": "2 John 1:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2630,
+    "book": "2 John",
+    "question": "The term 'elect lady' is often debated. It could refer to a specific woman or...?",
+    "options": [
+      "A local church",
+      "The Virgin Mary",
+      "The city of Jerusalem",
+      "Wisdom"
+    ],
+    "answer": "A local church",
+    "reference": "Commentary",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2631,
+    "book": "2 John",
+    "question": "In 1:3, John states that the grace, mercy, and peace are from God the Father and from the ______.",
+    "options": [
+      "Lord Jesus Christ",
+      "Holy Spirit",
+      "Apostles",
+      "Angel"
+    ],
+    "answer": "Lord Jesus Christ",
+    "reference": "2 John 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2632,
+    "book": "2 John",
+    "question": "According to 2 John, truth and love are...?",
+    "options": [
+      "Inseparable",
+      "Different things",
+      "Hard to find",
+      "Only for apostles"
+    ],
+    "answer": "Inseparable",
+    "reference": "Theme",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2633,
+    "book": "2 John",
+    "question": "Does 2 John mention the Holy Spirit specifically in the greeting?",
+    "options": [
+      "No",
+      "Yes",
+      "Only in the end",
+      "Twice"
+    ],
+    "answer": "No",
+    "reference": "2 John 1:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2634,
+    "book": "2 John",
+    "question": "The 'children of your elect sister' greeting suggests what about the author's location?",
+    "options": [
+      "He was with another church group",
+      "He was alone",
+      "He was in prison",
+      "He was in heaven"
+    ],
+    "answer": "He was with another church group",
+    "reference": "2 John 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2635,
+    "book": "2 John",
+    "question": "John uses the phrase 'walking in truth' which is a metaphor for...?",
+    "options": [
+      "Living a life of obedience",
+      "Literally walking",
+      "Going to the temple",
+      "Speaking correctly"
+    ],
+    "answer": "Living a life of obedience",
+    "reference": "2 John 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2636,
+    "book": "2 John",
+    "question": "What is 'not a new commandment'?",
+    "options": [
+      "That we love one another",
+      "The Ten Commandments",
+      "Tithing",
+      "Circumcision"
+    ],
+    "answer": "That we love one another",
+    "reference": "2 John 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2637,
+    "book": "2 John",
+    "question": "To 'abide in the doctrine' means to...?",
+    "options": [
+      "Remain faithful to the teachings",
+      "Read the bible",
+      "Memorize the law",
+      "Stay in the house"
+    ],
+    "answer": "Remain faithful to the teachings",
+    "reference": "2 John 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2638,
+    "book": "2 John",
+    "question": "John warns about 'antichrists'. In his context, these were likely related to which heresy?",
+    "options": [
+      "Docetism/Gnosticism",
+      "Arianism",
+      "Pelagianism",
+      "Pharisaism"
+    ],
+    "answer": "Docetism/Gnosticism",
+    "reference": "Historical Context",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2639,
+    "book": "2 John",
+    "question": "What is the final word of 2 John in the NKJV/KJV?",
+    "options": [
+      "Amen",
+      "Joy",
+      "Truth",
+      "Farewell"
+    ],
+    "answer": "Amen",
+    "reference": "2 John 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2640,
+    "book": "2 John",
+    "question": "Who is the 'Son of the Father' in 2 John?",
+    "options": [
+      "Jesus Christ",
+      "John",
+      "The Elder",
+      "Timothy"
+    ],
+    "answer": "Jesus Christ",
+    "reference": "2 John 1:3",
+    "difficulty": "easy"
+  }
+]

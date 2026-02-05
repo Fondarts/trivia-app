@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2261,
+    "book": "1 Timothy",
+    "question": "To whom is this letter addressed?",
+    "options": [
+      "Timothy",
+      "Titus",
+      "Philemon",
+      "The Church"
+    ],
+    "answer": "Timothy",
+    "reference": "1 Timothy 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2262,
+    "book": "1 Timothy",
+    "question": "Where did Paul urge Timothy to remain when he went into Macedonia?",
+    "options": [
+      "Ephesus",
+      "Corinth",
+      "Philippi",
+      "Rome"
+    ],
+    "answer": "Ephesus",
+    "reference": "1 Timothy 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2263,
+    "book": "1 Timothy",
+    "question": "Paul warns against giving heed to fables and endless ______.",
+    "options": [
+      "Genealogies",
+      "Stories",
+      "Songs",
+      "Wars"
+    ],
+    "answer": "Genealogies",
+    "reference": "1 Timothy 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2264,
+    "book": "1 Timothy",
+    "question": "What is the purpose of the commandment, according to 1:5?",
+    "options": [
+      "Love from a pure heart",
+      "Obedience",
+      "Fear of God",
+      "Wealth"
+    ],
+    "answer": "Love from a pure heart",
+    "reference": "1 Timothy 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2265,
+    "book": "1 Timothy",
+    "question": "Paul says the law is not made for a ______ man.",
+    "options": [
+      "Righteous",
+      "Strong",
+      "Weak",
+      "Poor"
+    ],
+    "answer": "Righteous",
+    "reference": "1 Timothy 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2266,
+    "book": "1 Timothy",
+    "question": "Paul says Christ Jesus came into the world to save ______.",
+    "options": [
+      "Sinners",
+      "The Jews",
+      "The righteous",
+      "The kings"
+    ],
+    "answer": "Sinners",
+    "reference": "1 Timothy 1:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2267,
+    "book": "1 Timothy",
+    "question": "How does Paul describe himself in relation to sinners?",
+    "options": [
+      "The chief / worst",
+      "A saint",
+      "Better than most",
+      "A prophet"
+    ],
+    "answer": "The chief / worst",
+    "reference": "1 Timothy 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2268,
+    "book": "1 Timothy",
+    "question": "Paul mentions two men who made 'shipwreck' of their faith. Who were they?",
+    "options": [
+      "Hymenaeus and Alexander",
+      "Philetus and Demas",
+      "Alexander and Demas",
+      "Hermogenes and Philetus"
+    ],
+    "answer": "Hymenaeus and Alexander",
+    "reference": "1 Timothy 1:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2269,
+    "book": "1 Timothy",
+    "question": "What does Paul want for all men, and for those in authority?",
+    "options": [
+      "Supplications, prayers, and intercessions",
+      "Taxes",
+      "Honor only",
+      "Fear"
+    ],
+    "answer": "Supplications, prayers, and intercessions",
+    "reference": "1 Timothy 2:1-2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2270,
+    "book": "1 Timothy",
+    "question": "For there is one God and one ______ between God and men.",
+    "options": [
+      "Mediator",
+      "Prophet",
+      "Angel",
+      "Priest"
+    ],
+    "answer": "Mediator",
+    "reference": "1 Timothy 2:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2271,
+    "book": "1 Timothy",
+    "question": "Who is the one mediator between God and men?",
+    "options": [
+      "The Man Christ Jesus",
+      "Moses",
+      "Mary",
+      "Peter"
+    ],
+    "answer": "The Man Christ Jesus",
+    "reference": "1 Timothy 2:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2272,
+    "book": "1 Timothy",
+    "question": "In chapter 2, Paul says women should adorn themselves in ______ apparel.",
+    "options": [
+      "Modest",
+      "Rich",
+      "Fine",
+      "New"
+    ],
+    "answer": "Modest",
+    "reference": "1 Timothy 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2273,
+    "book": "1 Timothy",
+    "question": "Chapter 3 lists the qualifications for which church office?",
+    "options": [
+      "Bishop / Overseer",
+      "Prophet",
+      "King",
+      "Apostle"
+    ],
+    "answer": "Bishop / Overseer",
+    "reference": "1 Timothy 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2274,
+    "book": "1 Timothy",
+    "question": "A bishop must be the husband of ______ ______.",
+    "options": [
+      "One wife",
+      "Many wives",
+      "A queen",
+      "A virgin"
+    ],
+    "answer": "One wife",
+    "reference": "1 Timothy 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2275,
+    "book": "1 Timothy",
+    "question": "Besides Bishops, what other church office does Paul list qualifications for in chapter 3?",
+    "options": [
+      "Deacons",
+      "Priests",
+      "Scribes",
+      "Singers"
+    ],
+    "answer": "Deacons",
+    "reference": "1 Timothy 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2276,
+    "book": "1 Timothy",
+    "question": "Paul calls the church 'the ______ and ground of the truth'.",
+    "options": [
+      "Pillar",
+      "Wall",
+      "House",
+      "Light"
+    ],
+    "answer": "Pillar",
+    "reference": "1 Timothy 3:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2277,
+    "book": "1 Timothy",
+    "question": "In the latter times some will depart from the faith, giving heed to ______ spirits.",
+    "options": [
+      "Deceiving / Seducing",
+      "Holy",
+      "Many",
+      "Old"
+    ],
+    "answer": "Deceiving / Seducing",
+    "reference": "1 Timothy 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2278,
+    "book": "1 Timothy",
+    "question": "False teachers in the latter times will forbid what?",
+    "options": [
+      "Marrying and certain foods",
+      "Praying",
+      "Giving",
+      "Travel"
+    ],
+    "answer": "Marrying and certain foods",
+    "reference": "1 Timothy 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2279,
+    "book": "1 Timothy",
+    "question": "For ______ exercise profits a little, but godliness is profitable for all things.",
+    "options": [
+      "Bodily",
+      "Mental",
+      "Secret",
+      "Daily"
+    ],
+    "answer": "Bodily",
+    "reference": "1 Timothy 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2280,
+    "book": "1 Timothy",
+    "question": "Let no one despise your ______, but be an example to the believers.",
+    "options": [
+      "Youth",
+      "Words",
+      "Wealth",
+      "Name"
+    ],
+    "answer": "Youth",
+    "reference": "1 Timothy 4:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2281,
+    "book": "1 Timothy",
+    "question": "Paul tells Timothy to give attention to reading, to exhortation, and to ______.",
+    "options": [
+      "Doctrine / Teaching",
+      "Music",
+      "Money",
+      "Travel"
+    ],
+    "answer": "Doctrine / Teaching",
+    "reference": "1 Timothy 4:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2282,
+    "book": "1 Timothy",
+    "question": "Do not neglect the ______ that is in you, given by prophecy.",
+    "options": [
+      "Gift",
+      "Spirit",
+      "Life",
+      "Work"
+    ],
+    "answer": "Gift",
+    "reference": "1 Timothy 4:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2283,
+    "book": "1 Timothy",
+    "question": "Paul says do not rebuke an ______ man, but exhort him as a father.",
+    "options": [
+      "Older",
+      "Evil",
+      "Younger",
+      "Strong"
+    ],
+    "answer": "Older",
+    "reference": "1 Timothy 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2284,
+    "book": "1 Timothy",
+    "question": "Honor ______ who are ______ indeed.",
+    "options": [
+      "Widows; widows",
+      "Kings; kings",
+      "Priests; priests",
+      "Fathers; fathers"
+    ],
+    "answer": "Widows; widows",
+    "reference": "1 Timothy 5:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2285,
+    "book": "1 Timothy",
+    "question": "If anyone does not provide for his own, especially those of his household, he is worse than an ______.",
+    "options": [
+      "Unbeliever / Infidel",
+      "Enemy",
+      "Animal",
+      "Sinner"
+    ],
+    "answer": "Unbeliever / Infidel",
+    "reference": "1 Timothy 5:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2286,
+    "book": "1 Timothy",
+    "question": "What is the minimum age for a widow to be 'taken into the number' for support?",
+    "options": [
+      "Sixty",
+      "Fifty",
+      "Forty",
+      "Seventy"
+    ],
+    "answer": "Sixty",
+    "reference": "1 Timothy 5:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2287,
+    "book": "1 Timothy",
+    "question": "The elders who rule well should be counted worthy of double ______.",
+    "options": [
+      "Honor",
+      "Wealth",
+      "Work",
+      "Life"
+    ],
+    "answer": "Honor",
+    "reference": "1 Timothy 5:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2288,
+    "book": "1 Timothy",
+    "question": "What quote from the law does Paul use regarding elders? 'You shall not muzzle an ox while it...'",
+    "options": [
+      "Treads out the grain",
+      "Eats",
+      "Sleeps",
+      "Works"
+    ],
+    "answer": "Treads out the grain",
+    "reference": "1 Timothy 5:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2289,
+    "book": "1 Timothy",
+    "question": "Do not receive an accusation against an elder except from two or three ______.",
+    "options": [
+      "Witnesses",
+      "Priests",
+      "Enemies",
+      "Leaders"
+    ],
+    "answer": "Witnesses",
+    "reference": "1 Timothy 5:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2290,
+    "book": "1 Timothy",
+    "question": "Paul tells Timothy to 'no longer drink only ______'.",
+    "options": [
+      "Water",
+      "Wine",
+      "Milk",
+      "Juice"
+    ],
+    "answer": "Water",
+    "reference": "1 Timothy 5:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2291,
+    "book": "1 Timothy",
+    "question": "What does Paul suggest Timothy use a little of for his stomach's sake?",
+    "options": [
+      "Wine",
+      "Oil",
+      "Honey",
+      "Bread"
+    ],
+    "answer": "Wine",
+    "reference": "1 Timothy 5:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2292,
+    "book": "1 Timothy",
+    "question": "Godliness with ______ is great gain.",
+    "options": [
+      "Contentment",
+      "Wealth",
+      "Faith",
+      "Power"
+    ],
+    "answer": "Contentment",
+    "reference": "1 Timothy 6:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2293,
+    "book": "1 Timothy",
+    "question": "For we brought ______ into this world, and it is certain we can carry ______ out.",
+    "options": [
+      "Nothing; nothing",
+      "Sin; sin",
+      "Life; life",
+      "Love; love"
+    ],
+    "answer": "Nothing; nothing",
+    "reference": "1 Timothy 6:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2294,
+    "book": "1 Timothy",
+    "question": "For the ______ ______ ______ is a root of all kinds of evil.",
+    "options": [
+      "Love of money",
+      "Greed of power",
+      "Pride of man",
+      "Fear of death"
+    ],
+    "answer": "Love of money",
+    "reference": "1 Timothy 6:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2295,
+    "book": "1 Timothy",
+    "question": "Fight the good ______ of faith.",
+    "options": [
+      "Fight",
+      "Race",
+      "War",
+      "Battle"
+    ],
+    "answer": "Fight",
+    "reference": "1 Timothy 6:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2296,
+    "book": "1 Timothy",
+    "question": "Who did Jesus witness a good confession before?",
+    "options": [
+      "Pontius Pilate",
+      "Herod",
+      "Caiaphas",
+      "Nero"
+    ],
+    "answer": "Pontius Pilate",
+    "reference": "1 Timothy 6:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2297,
+    "book": "1 Timothy",
+    "question": "God is described as the 'King of ______ and Lord of ______'.",
+    "options": [
+      "Kings; lords",
+      "Heaven; earth",
+      "Peace; glory",
+      "Israel; nations"
+    ],
+    "answer": "Kings; lords",
+    "reference": "1 Timothy 6:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2298,
+    "book": "1 Timothy",
+    "question": "Paul warns Timothy to avoid 'profane and idle babblings' and ______ of what is falsely called knowledge.",
+    "options": [
+      "Contradictions / Oppositions",
+      "Secrets",
+      "Books",
+      "Songs"
+    ],
+    "answer": "Contradictions / Oppositions",
+    "reference": "1 Timothy 6:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2299,
+    "book": "1 Timothy",
+    "question": "A deacon must be tested first, and if found ______, let them serve.",
+    "options": [
+      "Blameless",
+      "Ready",
+      "Strong",
+      "Humble"
+    ],
+    "answer": "Blameless",
+    "reference": "1 Timothy 3:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2300,
+    "book": "1 Timothy",
+    "question": "Paul says he was formerly a blasphemer, a persecutor, and an ______ man.",
+    "options": [
+      "Insolent / Violent",
+      "Angry",
+      "Ignorant",
+      "Evil"
+    ],
+    "answer": "Insolent / Violent",
+    "reference": "1 Timothy 1:13",
+    "difficulty": "hard"
+  }
+]

@@ -1,0 +1,560 @@
+[
+  {
+    "id": 2341,
+    "book": "Titus",
+    "question": "To which island did Paul send Titus to 'set in order the things that are lacking'?",
+    "options": [
+      "Crete",
+      "Cyprus",
+      "Malta",
+      "Sicily"
+    ],
+    "answer": "Crete",
+    "reference": "Titus 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2342,
+    "book": "Titus",
+    "question": "What church office's qualifications does Paul list in chapter 1?",
+    "options": [
+      "Elders / Bishops",
+      "Deacons",
+      "Prophets",
+      "Evangelists"
+    ],
+    "answer": "Elders / Bishops",
+    "reference": "Titus 1:5-7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2343,
+    "book": "Titus",
+    "question": "Paul quotes a Cretan prophet saying: 'Cretans are always ____, evil beasts, lazy gluttons.'",
+    "options": [
+      "Liar",
+      "Fools",
+      "Angry",
+      "Strong"
+    ],
+    "answer": "Liar",
+    "reference": "Titus 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2344,
+    "book": "Titus",
+    "question": "To the ______ all things are ______.",
+    "options": [
+      "Pure; pure",
+      "Faithful; good",
+      "Holy; holy",
+      "Wise; simple"
+    ],
+    "answer": "Pure; pure",
+    "reference": "Titus 1:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2345,
+    "book": "Titus",
+    "question": "Paul instructs older women to be teachers of ______ things.",
+    "options": [
+      "Good",
+      "Old",
+      "Lawful",
+      "Holy"
+    ],
+    "answer": "Good",
+    "reference": "Titus 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2346,
+    "book": "Titus",
+    "question": "Older women should admonish young women to love their ______ and children.",
+    "options": [
+      "Husbands",
+      "Neighbors",
+      "Parents",
+      "Sisters"
+    ],
+    "answer": "Husbands",
+    "reference": "Titus 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2347,
+    "book": "Titus",
+    "question": "Exhort young men to be ______.",
+    "options": [
+      "Sober-minded",
+      "Strong",
+      "Wealthy",
+      "Famous"
+    ],
+    "answer": "Sober-minded",
+    "reference": "Titus 2:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2348,
+    "book": "Titus",
+    "question": "For the ______ of God that brings salvation has appeared to all men.",
+    "options": [
+      "Grace",
+      "Word",
+      "Law",
+      "Light"
+    ],
+    "answer": "Grace",
+    "reference": "Titus 2:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2349,
+    "book": "Titus",
+    "question": "Grace teaches us to deny ungodliness and worldly ______, and live soberly.",
+    "options": [
+      "Lusts",
+      "Doubt",
+      "Fear",
+      "Pride"
+    ],
+    "answer": "Lusts",
+    "reference": "Titus 2:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2350,
+    "book": "Titus",
+    "question": "We are looking for the 'blessed ______' and glorious appearing of our great God.",
+    "options": [
+      "Hope",
+      "Peace",
+      "Day",
+      "King"
+    ],
+    "answer": "Hope",
+    "reference": "Titus 2:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2351,
+    "book": "Titus",
+    "question": "Jesus gave Himself to purify for Himself His own ______ people.",
+    "options": [
+      "Special / Peculiar",
+      "Holy",
+      "Many",
+      "Chosen"
+    ],
+    "answer": "Special / Peculiar",
+    "reference": "Titus 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2352,
+    "book": "Titus",
+    "question": "Remind them to be subject to ______ and authorities.",
+    "options": [
+      "Rulers",
+      "Elders",
+      "Kings",
+      "Soldiers"
+    ],
+    "answer": "Rulers",
+    "reference": "Titus 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2353,
+    "book": "Titus",
+    "question": "Paul says we should speak ______ of no one.",
+    "options": [
+      "Evil",
+      "Loudly",
+      "Truth",
+      "Often"
+    ],
+    "answer": "Evil",
+    "reference": "Titus 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2354,
+    "book": "Titus",
+    "question": "Not by works of ______ which we have done, but according to His mercy He saved us.",
+    "options": [
+      "Righteousness",
+      "Law",
+      "Gold",
+      "Faith"
+    ],
+    "answer": "Righteousness",
+    "reference": "Titus 3:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2355,
+    "book": "Titus",
+    "question": "God saved us through the washing of regeneration and ______ of the Holy Spirit.",
+    "options": [
+      "Renewing",
+      "Gift",
+      "Power",
+      "Baptism"
+    ],
+    "answer": "Renewing",
+    "reference": "Titus 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2356,
+    "book": "Titus",
+    "question": "Avoid foolish disputes, genealogies, and ______ about the law.",
+    "options": [
+      "Strivings / Quarrels",
+      "Questions",
+      "Stories",
+      "Songs"
+    ],
+    "answer": "Strivings / Quarrels",
+    "reference": "Titus 3:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2357,
+    "book": "Titus",
+    "question": "Reject a ______ man after the first and second admonition.",
+    "options": [
+      "Divisive / Heretic",
+      "Angry",
+      "Lazy",
+      "Weak"
+    ],
+    "answer": "Divisive / Heretic",
+    "reference": "Titus 3:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2358,
+    "book": "Titus",
+    "question": "Where was Paul planning to spend the winter, and wanted Titus to meet him there?",
+    "options": [
+      "Nicopolis",
+      "Rome",
+      "Corinth",
+      "Athens"
+    ],
+    "answer": "Nicopolis",
+    "reference": "Titus 3:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2359,
+    "book": "Titus",
+    "question": "Who was the lawyer Paul mentioned in Titus 3?",
+    "options": [
+      "Zenas",
+      "Apollos",
+      "Artemas",
+      "Tychicus"
+    ],
+    "answer": "Zenas",
+    "reference": "Titus 3:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2360,
+    "book": "Titus",
+    "question": "Paul says Titus is his 'true ______' in our common faith.",
+    "options": [
+      "Son",
+      "Brother",
+      "Servant",
+      "Partner"
+    ],
+    "answer": "Son",
+    "reference": "Titus 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2361,
+    "book": "Titus",
+    "question": "An elder must be blameless, not self-willed, not quick-tempered, and not given to ______.",
+    "options": [
+      "Wine",
+      "Money",
+      "Sleep",
+      "Food"
+    ],
+    "answer": "Wine",
+    "reference": "Titus 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2362,
+    "book": "Titus",
+    "question": "An elder should be a lover of ______.",
+    "options": [
+      "What is good",
+      "Money",
+      "The law",
+      "Fame"
+    ],
+    "answer": "What is good",
+    "reference": "Titus 1:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2363,
+    "book": "Titus",
+    "question": "Whose mouths must be stopped because they subvert whole households?",
+    "options": [
+      "False teachers / Those of the circumcision",
+      "The Romans",
+      "The fishermen",
+      "The young"
+    ],
+    "answer": "False teachers / Those of the circumcision",
+    "reference": "Titus 1:10-11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2364,
+    "book": "Titus",
+    "question": "False teachers teach things they ought not, for the sake of ______ gain.",
+    "options": [
+      "Dishonest / Filthy",
+      "Many",
+      "Small",
+      "Daily"
+    ],
+    "answer": "Dishonest / Filthy",
+    "reference": "Titus 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2365,
+    "book": "Titus",
+    "question": "The grace of God teaches us to live ______ in this present age.",
+    "options": [
+      "Soberly, righteously, and godly",
+      "Richly and happily",
+      "Quietly and secretly",
+      "Fast and strong"
+    ],
+    "answer": "Soberly, righteously, and godly",
+    "reference": "Titus 2:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2366,
+    "book": "Titus",
+    "question": "What did Paul want Titus to be a 'pattern' of?",
+    "options": [
+      "Good works",
+      "Strength",
+      "Old age",
+      "Wealth"
+    ],
+    "answer": "Good works",
+    "reference": "Titus 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2367,
+    "book": "Titus",
+    "question": "Paul tells Titus to 'Exhort and rebuke with all ______.'",
+    "options": [
+      "Authority",
+      "Love",
+      "Fear",
+      "Patience"
+    ],
+    "answer": "Authority",
+    "reference": "Titus 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2368,
+    "book": "Titus",
+    "question": "Paul says we ourselves were once foolish, disobedient, deceived, serving various ______.",
+    "options": [
+      "Lusts and pleasures",
+      "Kings",
+      "Idols",
+      "Laws"
+    ],
+    "answer": "Lusts and pleasures",
+    "reference": "Titus 3:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2369,
+    "book": "Titus",
+    "question": "According to Titus 3:7, we have been justified by His grace to become ______.",
+    "options": [
+      "Heirs",
+      "Kings",
+      "Prophets",
+      "Soldiers"
+    ],
+    "answer": "Heirs",
+    "reference": "Titus 3:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2370,
+    "book": "Titus",
+    "question": "Which preacher did Paul want Titus to send on his journey with Zenas?",
+    "options": [
+      "Apollos",
+      "Timothy",
+      "Mark",
+      "Silas"
+    ],
+    "answer": "Apollos",
+    "reference": "Titus 3:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2371,
+    "book": "Titus",
+    "question": "Paul mentions that he has decided to winter in Nicopolis. Where is Titus at that time?",
+    "options": [
+      "Crete",
+      "Ephesus",
+      "Rome",
+      "Dalmatia"
+    ],
+    "answer": "Crete",
+    "reference": "Titus 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2372,
+    "book": "Titus",
+    "question": "Paul says God 'cannot ____' in the opening verses of Titus.",
+    "options": [
+      "Lie",
+      "Die",
+      "Fail",
+      "Change"
+    ],
+    "answer": "Lie",
+    "reference": "Titus 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2373,
+    "book": "Titus",
+    "question": "According to Titus 1:1, Paul is a '______ of God'.",
+    "options": [
+      "Bondservant / Servant",
+      "Apostle",
+      "Son",
+      "Prophet"
+    ],
+    "answer": "Bondservant / Servant",
+    "reference": "Titus 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2374,
+    "book": "Titus",
+    "question": "Young women should be 'homemakers, good, obedient to their own husbands, that the ______ be not blasphemed.'",
+    "options": [
+      "Word of God",
+      "Church",
+      "Name of Paul",
+      "Law"
+    ],
+    "answer": "Word of God",
+    "reference": "Titus 2:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2375,
+    "book": "Titus",
+    "question": "Who was the 'Artemas' mentioned in Titus 3?",
+    "options": [
+      "One of Paul's companions",
+      "The king of Crete",
+      "A false teacher",
+      "A Roman soldier"
+    ],
+    "answer": "One of Paul's companions",
+    "reference": "Titus 3:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2376,
+    "book": "Titus",
+    "question": "What should believers be 'careful to maintain'?",
+    "options": [
+      "Good works",
+      "Their wealth",
+      "The law",
+      "Silence"
+    ],
+    "answer": "Good works",
+    "reference": "Titus 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2377,
+    "book": "Titus",
+    "question": "Paul says we were once 'living in ______ and envy'.",
+    "options": [
+      "Malice",
+      "Fear",
+      "Lies",
+      "Darkness"
+    ],
+    "answer": "Malice",
+    "reference": "Titus 3:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2378,
+    "book": "Titus",
+    "question": "Paul sends greetings to those who 'love us in the ______'.",
+    "options": [
+      "Faith",
+      "Lord",
+      "Church",
+      "Truth"
+    ],
+    "answer": "Faith",
+    "reference": "Titus 3:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2379,
+    "book": "Titus",
+    "question": "Titus 2:1 refers to 'sound ______'.",
+    "options": [
+      "Doctrine",
+      "Speech",
+      "Mind",
+      "Sleep"
+    ],
+    "answer": "Doctrine",
+    "reference": "Titus 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2380,
+    "book": "Titus",
+    "question": "Titus was likely a convert through Paul's ministry. (True/False)",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "reference": "Titus 1:4",
+    "difficulty": "easy"
+  }
+]

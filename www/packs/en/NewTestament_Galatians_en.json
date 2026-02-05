@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2021,
+    "book": "Galatians",
+    "question": "Who wrote the book of Galatians?",
+    "options": [
+      "Paul",
+      "Peter",
+      "James",
+      "John"
+    ],
+    "answer": "Paul",
+    "reference": "Galatians 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2022,
+    "book": "Galatians",
+    "question": "Paul expresses astonishment that the Galatians are so quickly turning to a '______ ______'.",
+    "options": [
+      "Different gospel",
+      "New religion",
+      "New king",
+      "False idol"
+    ],
+    "answer": "Different gospel",
+    "reference": "Galatians 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2023,
+    "book": "Galatians",
+    "question": "If anyone, even an angel from heaven, preaches any other gospel, Paul says they should be...?",
+    "options": [
+      "Accursed",
+      "Ignored",
+      "Corrected",
+      "Exiled"
+    ],
+    "answer": "Accursed",
+    "reference": "Galatians 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2024,
+    "book": "Galatians",
+    "question": "Where did Paul go immediately after his conversion, before going to Jerusalem?",
+    "options": [
+      "Arabia",
+      "Rome",
+      "Egypt",
+      "Tarsus"
+    ],
+    "answer": "Arabia",
+    "reference": "Galatians 1:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2025,
+    "book": "Galatians",
+    "question": "How many years was it before Paul went up to Jerusalem for the second time?",
+    "options": [
+      "Fourteen years",
+      "Three years",
+      "Seven years",
+      "One year"
+    ],
+    "answer": "Fourteen years",
+    "reference": "Galatians 2:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2026,
+    "book": "Galatians",
+    "question": "Who accompanied Paul on his second trip to Jerusalem mentioned in Galatians 2?",
+    "options": [
+      "Barnabas and Titus",
+      "Peter and John",
+      "Luke and Silas",
+      "Timothy and Mark"
+    ],
+    "answer": "Barnabas and Titus",
+    "reference": "Galatians 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2027,
+    "book": "Galatians",
+    "question": "Paul confronted which apostle to his face in Antioch for hypocrisy?",
+    "options": [
+      "Peter (Cephas)",
+      "John",
+      "James",
+      "Andrew"
+    ],
+    "answer": "Peter (Cephas)",
+    "reference": "Galatians 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2028,
+    "book": "Galatians",
+    "question": "Why did Paul confront Peter in Antioch?",
+    "options": [
+      "Because Peter stopped eating with Gentiles when Jews arrived",
+      "Because Peter was preaching a different gospel",
+      "Because Peter was tired",
+      "Because Peter left for Rome"
+    ],
+    "answer": "Because Peter stopped eating with Gentiles when Jews arrived",
+    "reference": "Galatians 2:12-13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2029,
+    "book": "Galatians",
+    "question": "A person is not justified by the works of the law but by ______ in Jesus Christ.",
+    "options": [
+      "Faith",
+      "Works",
+      "Wisdom",
+      "Baptism"
+    ],
+    "answer": "Faith",
+    "reference": "Galatians 2:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2030,
+    "book": "Galatians",
+    "question": "Complete the verse: 'I have been ______ with Christ; it is no longer I who live...'",
+    "options": [
+      "Crucified",
+      "Buried",
+      "Risen",
+      "Hidden"
+    ],
+    "answer": "Crucified",
+    "reference": "Galatians 2:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2031,
+    "book": "Galatians",
+    "question": "Paul calls the Galatians by what sharp name in chapter 3?",
+    "options": [
+      "O foolish Galatians!",
+      "O slow Galatians!",
+      "O wicked Galatians!",
+      "O blind Galatians!"
+    ],
+    "answer": "O foolish Galatians!",
+    "reference": "Galatians 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2032,
+    "book": "Galatians",
+    "question": "Did the Galatians receive the Spirit by the works of the law or by the ______ of faith?",
+    "options": [
+      "Hearing",
+      "Doing",
+      "Power",
+      "Love"
+    ],
+    "answer": "Hearing",
+    "reference": "Galatians 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2033,
+    "book": "Galatians",
+    "question": "Which OT figure 'believed God, and it was accounted to him for righteousness'?",
+    "options": [
+      "Abraham",
+      "David",
+      "Moses",
+      "Noah"
+    ],
+    "answer": "Abraham",
+    "reference": "Galatians 3:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2034,
+    "book": "Galatians",
+    "question": "Christ has redeemed us from the curse of the law, having become a ______ for us.",
+    "options": [
+      "Curse",
+      "Blessing",
+      "Prophet",
+      "King"
+    ],
+    "answer": "Curse",
+    "reference": "Galatians 3:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2035,
+    "book": "Galatians",
+    "question": "The Law was our ______ (or tutor) to bring us to Christ.",
+    "options": [
+      "Schoolmaster / Guardian",
+      "Enemy",
+      "End",
+      "Master"
+    ],
+    "answer": "Schoolmaster / Guardian",
+    "reference": "Galatians 3:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2036,
+    "book": "Galatians",
+    "question": "There is neither Jew nor Greek... male nor female; for you are all ______ in Christ Jesus.",
+    "options": [
+      "One",
+      "Equal",
+      "Many",
+      "Chosen"
+    ],
+    "answer": "One",
+    "reference": "Galatians 3:28",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2037,
+    "book": "Galatians",
+    "question": "Because we are sons, God has sent forth the Spirit of His Son into our hearts, crying '____, Father!'",
+    "options": [
+      "Abba",
+      "Holy",
+      "Mighty",
+      "Hear"
+    ],
+    "answer": "Abba",
+    "reference": "Galatians 4:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2038,
+    "book": "Galatians",
+    "question": "Paul uses an allegory of two women to represent two covenants. Who are they?",
+    "options": [
+      "Hagar and Sarah",
+      "Rachel and Leah",
+      "Mary and Martha",
+      "Ruth and Naomi"
+    ],
+    "answer": "Hagar and Sarah",
+    "reference": "Galatians 4:22-24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2039,
+    "book": "Galatians",
+    "question": "Stand fast therefore in the ______ by which Christ has made us free.",
+    "options": [
+      "Liberty",
+      "Law",
+      "Grace",
+      "Faith"
+    ],
+    "answer": "Liberty",
+    "reference": "Galatians 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2040,
+    "book": "Galatians",
+    "question": "For in Christ Jesus neither circumcision nor uncircumcision avails anything, but ______ working through love.",
+    "options": [
+      "Faith",
+      "Peace",
+      "Law",
+      "Grace"
+    ],
+    "answer": "Faith",
+    "reference": "Galatians 5:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2041,
+    "book": "Galatians",
+    "question": "You ran well. Who ______ you from obeying the truth?",
+    "options": [
+      "Hindered",
+      "Tricked",
+      "Stopped",
+      "Forbidden"
+    ],
+    "answer": "Hindered",
+    "reference": "Galatians 5:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2042,
+    "book": "Galatians",
+    "question": "For all the law is fulfilled in one word: 'You shall love your ______ as yourself.'",
+    "options": [
+      "Neighbor",
+      "Enemy",
+      "Brother",
+      "God"
+    ],
+    "answer": "Neighbor",
+    "reference": "Galatians 5:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2043,
+    "book": "Galatians",
+    "question": "Walk in the ______, and you shall not fulfill the lust of the flesh.",
+    "options": [
+      "Spirit",
+      "Light",
+      "Law",
+      "Way"
+    ],
+    "answer": "Spirit",
+    "reference": "Galatians 5:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2044,
+    "book": "Galatians",
+    "question": "The flesh lusts against the Spirit, and the Spirit against the ______.",
+    "options": [
+      "Flesh",
+      "World",
+      "Devil",
+      "Heart"
+    ],
+    "answer": "Flesh",
+    "reference": "Galatians 5:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2045,
+    "book": "Galatians",
+    "question": "How many 'fruits of the Spirit' does Paul list in Galatians 5?",
+    "options": [
+      "Nine",
+      "Seven",
+      "Twelve",
+      "Five"
+    ],
+    "answer": "Nine",
+    "reference": "Galatians 5:22-23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2046,
+    "book": "Galatians",
+    "question": "Which of these is NOT a fruit of the Spirit listed in Galatians 5?",
+    "options": [
+      "Fortitude",
+      "Longsuffering",
+      "Gentleness",
+      "Self-control"
+    ],
+    "answer": "Fortitude",
+    "reference": "Galatians 5:22-23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2047,
+    "book": "Galatians",
+    "question": "If a man is overtaken in any trespass, you who are spiritual should ______ such a one in a spirit of gentleness.",
+    "options": [
+      "Restore",
+      "Judge",
+      "Exile",
+      "Forgive"
+    ],
+    "answer": "Restore",
+    "reference": "Galatians 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2048,
+    "book": "Galatians",
+    "question": "Bear one another's ______, and so fulfill the law of Christ.",
+    "options": [
+      "Burdens",
+      "Crosses",
+      "Taxes",
+      "Children"
+    ],
+    "answer": "Burdens",
+    "reference": "Galatians 6:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2049,
+    "book": "Galatians",
+    "question": "Do not be deceived, God is not mocked; for whatever a man ______, that he will also reap.",
+    "options": [
+      "Sows",
+      "Does",
+      "Thinks",
+      "Says"
+    ],
+    "answer": "Sows",
+    "reference": "Galatians 6:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2050,
+    "book": "Galatians",
+    "question": "And let us not grow ______ while doing good.",
+    "options": [
+      "Weary",
+      "Proud",
+      "Angry",
+      "Rich"
+    ],
+    "answer": "Weary",
+    "reference": "Galatians 6:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2051,
+    "book": "Galatians",
+    "question": "As we have opportunity, let us do good to all, especially to those of the ______ of faith.",
+    "options": [
+      "Household",
+      "Temple",
+      "Nation",
+      "City"
+    ],
+    "answer": "Household",
+    "reference": "Galatians 6:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2052,
+    "book": "Galatians",
+    "question": "Paul says: 'God forbid that I should boast except in the ______ of our Lord Jesus Christ.'",
+    "options": [
+      "Cross",
+      "Wisdom",
+      "Resurrection",
+      "Name"
+    ],
+    "answer": "Cross",
+    "reference": "Galatians 6:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2053,
+    "book": "Galatians",
+    "question": "From now on let no one trouble me, for I bear in my body the ______ of the Lord Jesus.",
+    "options": [
+      "Marks",
+      "Spirit",
+      "Cloak",
+      "Strength"
+    ],
+    "answer": "Marks",
+    "reference": "Galatians 6:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2054,
+    "book": "Galatians",
+    "question": "Paul mentions that he was entrusted with the gospel for the uncircumcised, while ______ was for the circumcised.",
+    "options": [
+      "Peter",
+      "John",
+      "James",
+      "Timothy"
+    ],
+    "answer": "Peter",
+    "reference": "Galatians 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2055,
+    "book": "Galatians",
+    "question": "Who was Titus, mentioned in Galatians 2, that Paul refused to have circumcised?",
+    "options": [
+      "A Greek",
+      "A Roman",
+      "A Jew",
+      "A Syrian"
+    ],
+    "answer": "A Greek",
+    "reference": "Galatians 2:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2056,
+    "book": "Galatians",
+    "question": "Paul mentions 'false brethren' who came in to spy on their ______ in Christ Jesus.",
+    "options": [
+      "Liberty",
+      "Wealth",
+      "Plans",
+      "Faith"
+    ],
+    "answer": "Liberty",
+    "reference": "Galatians 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2057,
+    "book": "Galatians",
+    "question": "Paul says the law was added because of ______.",
+    "options": [
+      "Transgressions",
+      "Sin",
+      "Weakness",
+      "The Gentiles"
+    ],
+    "answer": "Transgressions",
+    "reference": "Galatians 3:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2058,
+    "book": "Galatians",
+    "question": "God sent forth His Son, born of a woman, born under the ______.",
+    "options": [
+      "Law",
+      "Star",
+      "Sun",
+      "Spirit"
+    ],
+    "answer": "Law",
+    "reference": "Galatians 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2059,
+    "book": "Galatians",
+    "question": "Paul says he is in ______ until Christ is formed in the Galatians.",
+    "options": [
+      "Labor / Birth pangs",
+      "Chains",
+      "Prayer",
+      "Sorrow"
+    ],
+    "answer": "Labor / Birth pangs",
+    "reference": "Galatians 4:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2060,
+    "book": "Galatians",
+    "question": "What is the 'leaven' Paul refers to in chapter 5:9?",
+    "options": [
+      "A little leaven leavens the whole lump",
+      "Yeast for bread",
+      "Sin",
+      "False teaching"
+    ],
+    "answer": "A little leaven leavens the whole lump",
+    "reference": "Galatians 5:9",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2221,
+    "book": "2 Thessalonians",
+    "question": "Who are the three authors of 2 Thessalonians?",
+    "options": [
+      "Paul, Silvanus, and Timothy",
+      "Paul, Luke, and Silas",
+      "Paul, Peter, and John",
+      "Paul, Apollos, and Titus"
+    ],
+    "answer": "Paul, Silvanus, and Timothy",
+    "reference": "2 Thessalonians 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2222,
+    "book": "2 Thessalonians",
+    "question": "Paul thanks God because their faith ______ exceedingly.",
+    "options": [
+      "Grows",
+      "Fails",
+      "Stands",
+      "Waver"
+    ],
+    "answer": "Grows",
+    "reference": "2 Thessalonians 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2223,
+    "book": "2 Thessalonians",
+    "question": "What is increasing among every one of them toward each other?",
+    "options": [
+      "Love / Charity",
+      "Peace",
+      "Fear",
+      "Anger"
+    ],
+    "answer": "Love / Charity",
+    "reference": "2 Thessalonians 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2224,
+    "book": "2 Thessalonians",
+    "question": "When the Lord Jesus is revealed from heaven, what will be with Him?",
+    "options": [
+      "His mighty angels",
+      "A cloud of fire",
+      "Twelve apostles",
+      "The prophets"
+    ],
+    "answer": "His mighty angels",
+    "reference": "2 Thessalonians 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2225,
+    "book": "2 Thessalonians",
+    "question": "In what will the Lord take vengeance on those who do not know God?",
+    "options": [
+      "Flaming fire",
+      "A great flood",
+      "Total darkness",
+      "A mighty sword"
+    ],
+    "answer": "Flaming fire",
+    "reference": "2 Thessalonians 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2226,
+    "book": "2 Thessalonians",
+    "question": "What is the punishment for those who do not obey the gospel?",
+    "options": [
+      "Everlasting destruction",
+      "A short prison",
+      "Loss of wealth",
+      "Earthly sorrow"
+    ],
+    "answer": "Everlasting destruction",
+    "reference": "2 Thessalonians 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2227,
+    "book": "2 Thessalonians",
+    "question": "Paul tells them not to be soon ______ in mind or troubled as though the day of Christ had come.",
+    "options": [
+      "Shaken",
+      "Happy",
+      "Changed",
+      "Ready"
+    ],
+    "answer": "Shaken",
+    "reference": "2 Thessalonians 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2228,
+    "book": "2 Thessalonians",
+    "question": "The Day will not come unless the ______ ______ comes first.",
+    "options": [
+      "Falling away / Apostasy",
+      "Third Temple",
+      "Great harvest",
+      "New King"
+    ],
+    "answer": "Falling away / Apostasy",
+    "reference": "2 Thessalonians 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2229,
+    "book": "2 Thessalonians",
+    "question": "What title does Paul give the figure who will be revealed before the Day of the Lord?",
+    "options": [
+      "Man of sin / Lawlessness",
+      "The False Prophet",
+      "The Dragon",
+      "The Wicked King"
+    ],
+    "answer": "Man of sin / Lawlessness",
+    "reference": "2 Thessalonians 2:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2230,
+    "book": "2 Thessalonians",
+    "question": "The man of sin is also called the 'son of ______'.",
+    "options": [
+      "Perdition",
+      "Darkness",
+      "Evil",
+      "Satan"
+    ],
+    "answer": "Perdition",
+    "reference": "2 Thessalonians 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2231,
+    "book": "2 Thessalonians",
+    "question": "The man of sin opposes and exalts himself above all that is called ______.",
+    "options": [
+      "God",
+      "King",
+      "Lord",
+      "Holy"
+    ],
+    "answer": "God",
+    "reference": "2 Thessalonians 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2232,
+    "book": "2 Thessalonians",
+    "question": "Where does the man of sin sit, showing himself that he is God?",
+    "options": [
+      "In the temple of God",
+      "On the mountain",
+      "In the palace",
+      "On the sea"
+    ],
+    "answer": "In the temple of God",
+    "reference": "2 Thessalonians 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2233,
+    "book": "2 Thessalonians",
+    "question": "Paul says the 'mystery of ______' is already at work.",
+    "options": [
+      "Lawlessness / Iniquity",
+      "Faith",
+      "God",
+      "The Gospel"
+    ],
+    "answer": "Lawlessness / Iniquity",
+    "reference": "2 Thessalonians 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2234,
+    "book": "2 Thessalonians",
+    "question": "How will the Lord consume the lawless one?",
+    "options": [
+      "With the breath of His mouth",
+      "With a great sword",
+      "With a flood",
+      "With an earthquake"
+    ],
+    "answer": "With the breath of His mouth",
+    "reference": "2 Thessalonians 2:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2235,
+    "book": "2 Thessalonians",
+    "question": "The coming of the lawless one is according to the working of ______.",
+    "options": [
+      "Satan",
+      "Man",
+      "The Law",
+      "The world"
+    ],
+    "answer": "Satan",
+    "reference": "2 Thessalonians 2:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2236,
+    "book": "2 Thessalonians",
+    "question": "The lawless one will come with all power, signs, and ______ ______.",
+    "options": [
+      "Lying wonders",
+      "Great riches",
+      "Truth",
+      "Peace"
+    ],
+    "answer": "Lying wonders",
+    "reference": "2 Thessalonians 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2237,
+    "book": "2 Thessalonians",
+    "question": "God will send them a ______ ______ that they should believe the lie.",
+    "options": [
+      "Strong delusion",
+      "Great spirit",
+      "New law",
+      "Vision"
+    ],
+    "answer": "Strong delusion",
+    "reference": "2 Thessalonians 2:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2238,
+    "book": "2 Thessalonians",
+    "question": "Stand fast and hold the ______ which you were taught.",
+    "options": [
+      "Traditions",
+      "Laws",
+      "Songs",
+      "Gifts"
+    ],
+    "answer": "Traditions",
+    "reference": "2 Thessalonians 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2239,
+    "book": "2 Thessalonians",
+    "question": "Pray for us, that the ______ of the Lord may run swiftly and be glorified.",
+    "options": [
+      "Word",
+      "Spirit",
+      "Gospel",
+      "Power"
+    ],
+    "answer": "Word",
+    "reference": "2 Thessalonians 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2240,
+    "book": "2 Thessalonians",
+    "question": "The Lord is faithful, who will establish you and ______ you from the evil one.",
+    "options": [
+      "Guard",
+      "Save",
+      "Hide",
+      "Lead"
+    ],
+    "answer": "Guard",
+    "reference": "2 Thessalonians 3:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2241,
+    "book": "2 Thessalonians",
+    "question": "Withdraw from every brother who walks ______ and not according to tradition.",
+    "options": [
+      "Disorderly",
+      "Quickly",
+      "Secretly",
+      "In fear"
+    ],
+    "answer": "Disorderly",
+    "reference": "2 Thessalonians 3:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2242,
+    "book": "2 Thessalonians",
+    "question": "Paul says we did not eat anyone's ______ free of charge.",
+    "options": [
+      "Bread",
+      "Meat",
+      "Wine",
+      "Fruit"
+    ],
+    "answer": "Bread",
+    "reference": "2 Thessalonians 3:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2243,
+    "book": "2 Thessalonians",
+    "question": "What command did Paul give: 'If anyone will not ______, neither shall he ______.'",
+    "options": [
+      "Work; eat",
+      "Pray; live",
+      "Give; receive",
+      "Obey; rule"
+    ],
+    "answer": "Work; eat",
+    "reference": "2 Thessalonians 3:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2244,
+    "book": "2 Thessalonians",
+    "question": "Some walk disorderly, not working at all, but are ______.",
+    "options": [
+      "Busybodies",
+      "Thieves",
+      "Angry",
+      "Sleeping"
+    ],
+    "answer": "Busybodies",
+    "reference": "2 Thessalonians 3:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2245,
+    "book": "2 Thessalonians",
+    "question": "Do not grow ______ in doing good.",
+    "options": [
+      "Weary",
+      "Proud",
+      "Angry",
+      "Rich"
+    ],
+    "answer": "Weary",
+    "reference": "2 Thessalonians 3:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2246,
+    "book": "2 Thessalonians",
+    "question": "If anyone does not obey our word, do not keep ______ with him.",
+    "options": [
+      "Company",
+      "Secrets",
+      "Wealth",
+      "Silence"
+    ],
+    "answer": "Company",
+    "reference": "2 Thessalonians 3:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2247,
+    "book": "2 Thessalonians",
+    "question": "Do not count a disobedient brother as an enemy, but ______ him as a brother.",
+    "options": [
+      "Admonish / Warn",
+      "Forgive",
+      "Love",
+      "Ignore"
+    ],
+    "answer": "Admonish / Warn",
+    "reference": "2 Thessalonians 3:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2248,
+    "book": "2 Thessalonians",
+    "question": "Now may the Lord of ______ Himself give you ______ always.",
+    "options": [
+      "Peace; peace",
+      "Love; love",
+      "Power; power",
+      "Grace; grace"
+    ],
+    "answer": "Peace; peace",
+    "reference": "2 Thessalonians 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2249,
+    "book": "2 Thessalonians",
+    "question": "Paul writes the salutation with his own ______, which is his sign in every epistle.",
+    "options": [
+      "Hand",
+      "Pen",
+      "Seal",
+      "Blood"
+    ],
+    "answer": "Hand",
+    "reference": "2 Thessalonians 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2250,
+    "book": "2 Thessalonians",
+    "question": "The 'mystery of lawlessness' is currently being ______ until the one who restrains is taken out of the way.",
+    "options": [
+      "Restrained",
+      "Forgotten",
+      "Hidden",
+      "Revealed"
+    ],
+    "answer": "Restrained",
+    "reference": "2 Thessalonians 2:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2251,
+    "book": "2 Thessalonians",
+    "question": "What should the Thessalonians do while waiting for the Lord's return?",
+    "options": [
+      "Work quietly and eat their own bread",
+      "Stop working",
+      "Hide in caves",
+      "Travel to Jerusalem"
+    ],
+    "answer": "Work quietly and eat their own bread",
+    "reference": "2 Thessalonians 3:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2252,
+    "book": "2 Thessalonians",
+    "question": "Paul mentions that they were chosen for salvation through ______ by the Spirit and belief in the truth.",
+    "options": [
+      "Sanctification",
+      "Power",
+      "Wealth",
+      "History"
+    ],
+    "answer": "Sanctification",
+    "reference": "2 Thessalonians 2:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2253,
+    "book": "2 Thessalonians",
+    "question": "Who does Paul say 'boasts' of the Thessalonians' patience and faith in all their persecutions?",
+    "options": [
+      "We ourselves (the authors)",
+      "The Romans",
+      "The Angels",
+      "The Jews"
+    ],
+    "answer": "We ourselves (the authors)",
+    "reference": "2 Thessalonians 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2254,
+    "book": "2 Thessalonians",
+    "question": "Paul says God will repay with ______ those who trouble the Thessalonians.",
+    "options": [
+      "Tribulation",
+      "Mercy",
+      "Nothing",
+      "Wealth"
+    ],
+    "answer": "Tribulation",
+    "reference": "2 Thessalonians 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2255,
+    "book": "2 Thessalonians",
+    "question": "Paul notes that some among them were not working but were '______'.",
+    "options": [
+      "Busybodies",
+      "Thieves",
+      "Drunkards",
+      "Prophets"
+    ],
+    "answer": "Busybodies",
+    "reference": "2 Thessalonians 3:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2256,
+    "book": "2 Thessalonians",
+    "question": "What did Paul use as a pattern for the Thessalonians to follow?",
+    "options": [
+      "His own example of hard work",
+      "The Law of Moses",
+      "The life of John the Baptist",
+      "The Roman soldiers"
+    ],
+    "answer": "His own example of hard work",
+    "reference": "2 Thessalonians 3:7-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2257,
+    "book": "2 Thessalonians",
+    "question": "Paul mentions they should not be troubled by a ______ as if from them, saying the Day had come.",
+    "options": [
+      "Letter",
+      "Dream",
+      "Song",
+      "Voice"
+    ],
+    "answer": "Letter",
+    "reference": "2 Thessalonians 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2258,
+    "book": "2 Thessalonians",
+    "question": "Paul asks for prayer to be delivered from ______ and wicked men.",
+    "options": [
+      "Unreasonable",
+      "Strong",
+      "Many",
+      "The Roman"
+    ],
+    "answer": "Unreasonable",
+    "reference": "2 Thessalonians 3:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2259,
+    "book": "2 Thessalonians",
+    "question": "Who directs their hearts into the love of God?",
+    "options": [
+      "The Lord",
+      "The Apostle",
+      "The Law",
+      "The world"
+    ],
+    "answer": "The Lord",
+    "reference": "2 Thessalonians 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2260,
+    "book": "2 Thessalonians",
+    "question": "Paul concludes by saying the grace of our Lord Jesus Christ be with you ______.",
+    "options": [
+      "All",
+      "Always",
+      "Now",
+      "Forever"
+    ],
+    "answer": "All",
+    "reference": "2 Thessalonians 3:18",
+    "difficulty": "easy"
+  }
+]

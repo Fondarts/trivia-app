@@ -18,6 +18,7 @@ export const STATE = {
   total: 0,
   mode: 'rounds',
   deck: [],
+  wrongAnswers: [], // Array para rastrear preguntas incorrectas
 };
 
 export function persistSettings() {

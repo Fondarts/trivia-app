@@ -172,8 +172,6 @@ export function bindProfileModal(){
       });
     });
     
-    // Theme selector removed - only one theme now
-
     // Sounds checkbox
     let chkSounds = document.getElementById('optSounds');
     if (chkSounds) {
@@ -564,10 +562,7 @@ export function renderStatsPage() {
     if (!statsContainer || !achievementsContainer) return;
     
     const accuracy = stats.questionsAnswered > 0 ? ((stats.questionsCorrect / stats.questionsAnswered) * 100).toFixed(1) : 0;
-    
-    // Calcular estadísticas adicionales
     const totalGames = stats.totalGamesPlayed || 0;
-    const winRate = totalGames > 0 ? ((stats.vsGamesWon / totalGames) * 100).toFixed(1) : 0;
     
     statsContainer.innerHTML = `
         <div class="stats-grid">
@@ -645,7 +640,7 @@ export function renderStatsPage() {
         <div class="achievements-grid-icons">
             ${ACHIEVEMENTS_LIST.map(ach => {
                 const isUnlocked = unlocked.has(ach.id);
-                const iconPath = ach.icon ? `Icons/${ach.icon}` : '';
+                const iconPath = ach.icon ? `assets/icons/${ach.icon}` : '';
                 return `
                     <div class="achievement-icon-item ${isUnlocked ? 'unlocked' : 'locked'}" data-tooltip="${ach.description}">
                         <div class="achievement-icon-wrapper">

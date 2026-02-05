@@ -4,7 +4,6 @@ import { buildDeckSingle, ensureInitial60 } from './bank.js';
 import { trackEvent } from '../player/stats.js';
 import { toast, updatePlayerXPBar } from './ui.js';
 import { t } from '../core/i18n.js';
-// Sistema de amigos removido
 
 let audioCtx = null;
 let audioInitialized = false;
@@ -99,12 +98,7 @@ function hud(){
   const displayIndex = Math.min(currentState.index, currentState.total - 1);
   el.textContent = `${displayIndex + 1}/${currentState.total} · ${currentState.score} pts`;
   
-  // Cambiar color cuando quedan 5 segundos o menos
-  if (false) {
-    el.classList.add('urgent');
-  } else {
-    el.classList.remove('urgent');
-  }
+  el.classList.remove('urgent');
 }
 function setProgress(p){
   const el = document.getElementById('progressBar');
@@ -139,10 +133,19 @@ function setQuestionMedia(u){
 }
 
 
-export function openSingleResult({title, subtitle, scoreText, details}){
+export function openSingleResult({title, subtitle, scoreText, details, wrongAnswers = []}){
   const fs = document.getElementById('fsSingleResult');
-  document.getElementById('srTitle').textContent   = title;
-  document.getElementById('srSubtitle').textContent= subtitle;
+  const titleEl = document.getElementById('srTitle');
+  const subtitleEl = document.getElementById('srSubtitle');
+  
+  if (titleEl) {
+    titleEl.textContent = title;
+    titleEl.style.cssText = 'font-size: 1.1em; font-weight: 600; margin-bottom: 0.1em; line-height: 1.2;';
+  }
+  if (subtitleEl) {
+    subtitleEl.textContent = subtitle;
+    subtitleEl.style.cssText = 'font-size: 0.9em; font-weight: 400; margin-bottom: 1em; opacity: 0.7; line-height: 1.2; margin-top: 0.1em;';
+  }
   document.getElementById('srScore').textContent   = scoreText;
   
   // Mostrar detalles si están disponibles
@@ -153,6 +156,84 @@ export function openSingleResult({title, subtitle, scoreText, details}){
       detailsEl.style.display = 'block';
     } else {
       detailsEl.style.display = 'none';
+    }
+  }
+  
+  // Mostrar listado de preguntas incorrectas
+  const wrongAnswersEl = document.getElementById('srWrongAnswers');
+  if (wrongAnswersEl) {
+    if (wrongAnswers && wrongAnswers.length > 0) {
+      wrongAnswersEl.innerHTML = '';
+      wrongAnswersEl.style.display = 'block';
+      
+      const titleEl = document.createElement('h3');
+      titleEl.textContent = 'Incorrect Answers:';
+      titleEl.style.cssText = 'margin-top: 0; margin-bottom: 12px; font-size: 1.2em; font-weight: 600;';
+      wrongAnswersEl.appendChild(titleEl);
+      
+      const listEl = document.createElement('div');
+      listEl.style.cssText = 'margin-top: 12px; max-height: 400px; overflow-y: auto;';
+      
+      wrongAnswers.forEach((item, index) => {
+        const itemEl = document.createElement('div');
+        itemEl.style.cssText = 'margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; cursor: pointer;';
+        
+        // Hacer clickeable para mostrar el versículo
+        if (item.book && item.reference) {
+          itemEl.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            const showModal = window.showVerseModal || showVerseModal;
+            if (showModal) {
+              showModal(item.book, item.reference);
+            }
+          });
+        }
+        
+        const questionEl = document.createElement('div');
+        questionEl.textContent = `${index + 1}. ${item.question}`;
+        questionEl.style.cssText = 'margin-bottom: 4px; font-weight: 500; line-height: 1.3; pointer-events: none;';
+        itemEl.appendChild(questionEl);
+        
+        const answerEl = document.createElement('div');
+        answerEl.innerHTML = `<strong>Correct answer:</strong> ${item.correctAnswer || 'N/A'}`;
+        answerEl.style.cssText = 'margin-bottom: 4px; color: #4ade80; line-height: 1.3; pointer-events: none;';
+        itemEl.appendChild(answerEl);
+        
+        if (item.book && item.reference) {
+          const bookLinkEl = document.createElement('div');
+          bookLinkEl.style.cssText = 'margin-top: 4px; pointer-events: none;';
+          
+          const link = document.createElement('a');
+          // Crear enlace a Bible Gateway
+          const bookName = item.book.replace(/\s+/g, '+');
+          const refParts = item.reference.match(/(\d+):(\d+)/);
+          if (refParts) {
+            const chapter = refParts[1];
+            const verse = refParts[2];
+            link.href = `https://www.biblegateway.com/passage/?search=${bookName}+${chapter}:${verse}&version=NIV`;
+          } else {
+            link.href = `https://www.biblegateway.com/passage/?search=${bookName}&version=NIV`;
+          }
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = `📖 Read ${item.book} ${item.reference}`;
+          link.style.cssText = 'color: #60a5fa; text-decoration: none; font-weight: 500; line-height: 1.3; pointer-events: auto;';
+          link.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Permitir que el enlace funcione normalmente
+          });
+          
+          bookLinkEl.appendChild(link);
+          itemEl.appendChild(bookLinkEl);
+        }
+        
+        listEl.appendChild(itemEl);
+      });
+      
+      wrongAnswersEl.appendChild(listEl);
+    } else {
+      wrongAnswersEl.style.display = 'none';
     }
   }
   
@@ -168,7 +249,7 @@ export function openSingleResult({title, subtitle, scoreText, details}){
         </div>
         <div class="row">
           <button class="iconbtn avatar-btn" id="btnProfileResults" aria-label="Perfil de Usuario">
-            <img src="img/avatar_placeholder.svg" alt="Avatar"/>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
           </button>
         </div>
       `;
@@ -231,6 +312,193 @@ export function openSingleResult({title, subtitle, scoreText, details}){
       window.showConfigUI();
     }
   };
+}
+
+// Función para mostrar el modal con el versículo
+export function showVerseModal(book, reference) {
+  const modal = document.getElementById('verseModal');
+  const titleEl = document.getElementById('verseModalTitle');
+  const referenceEl = document.getElementById('verseReference');
+  const textEl = document.getElementById('verseText');
+  const linkEl = document.getElementById('verseLink');
+  const closeBtn = document.getElementById('closeVerseModal');
+  
+  if (!modal) return;
+  
+  // Configurar referencia
+  if (referenceEl) {
+    referenceEl.textContent = `${book} ${reference}`;
+  }
+  
+  // Configurar título del modal
+  if (titleEl) {
+    titleEl.textContent = 'Bible Verse';
+  }
+  
+  // Mostrar mensaje de carga
+  if (textEl) {
+    textEl.textContent = 'Loading verse...';
+  }
+  
+  // Configurar enlace
+  if (linkEl) {
+    const bookName = book.replace(/\s+/g, '+');
+    const refParts = reference.match(/(\d+):(\d+)/);
+    if (refParts) {
+      const chapter = refParts[1];
+      const verse = refParts[2];
+      linkEl.href = `https://www.biblegateway.com/passage/?search=${bookName}+${chapter}:${verse}&version=NIV`;
+    } else {
+      linkEl.href = `https://www.biblegateway.com/passage/?search=${bookName}&version=NIV`;
+    }
+  }
+  
+  // Mostrar modal
+  modal.style.display = 'block';
+  // Asegurar que el modal esté visible
+  const wrap = modal.querySelector('.wrap');
+  if (wrap) {
+    wrap.style.display = 'block';
+  }
+  window.scrollTo(0, 0);
+  
+  // Cargar versículo desde archivo local
+  async function loadVerseFromFile() {
+    try {
+      const refParts = reference.match(/(\d+):(\d+)/);
+      if (!refParts) {
+        if (textEl) {
+          textEl.innerHTML = `Click the link below to read <strong>${book} ${reference}</strong> on Bible Gateway.`;
+        }
+        return;
+      }
+      
+      const chapter = refParts[1];
+      const verse = refParts[2];
+      
+      // Mapear nombre del libro a nombre de archivo (Antiguo Testamento completo)
+      const bookFileMap = {
+        // Pentateuco
+        'Genesis': 'gen',
+        'Exodus': 'exod',
+        'Leviticus': 'lev',
+        'Numbers': 'num',
+        'Deuteronomy': 'deut',
+        // Libros históricos
+        'Joshua': 'josh',
+        'Judges': 'judg',
+        'Ruth': 'ruth',
+        '1 Samuel': '1sam',
+        '2 Samuel': '2sam',
+        '1 Kings': '1kgs',
+        '2 Kings': '2kgs',
+        '1 Chronicles': '1chr',
+        '2 Chronicles': '2chr',
+        'Ezra': 'ezra',
+        'Nehemiah': 'neh',
+        'Esther': 'esth',
+        // Libros poéticos
+        'Job': 'job',
+        'Psalms': 'ps',
+        'Psalm': 'ps',
+        'Proverbs': 'prov',
+        'Ecclesiastes': 'eccl',
+        'Song of Solomon': 'song',
+        'Song of Songs': 'song',
+        // Profetas mayores
+        'Isaiah': 'isa',
+        'Jeremiah': 'jer',
+        'Lamentations': 'lam',
+        'Ezekiel': 'ezek',
+        'Daniel': 'dan',
+        // Profetas menores
+        'Hosea': 'hos',
+        'Joel': 'joel',
+        'Amos': 'amos',
+        'Obadiah': 'obad',
+        'Jonah': 'jonah',
+        'Micah': 'mic',
+        'Nahum': 'nah',
+        'Habakkuk': 'hab',
+        'Zephaniah': 'zeph',
+        'Haggai': 'hag',
+        'Zechariah': 'zech',
+        'Malachi': 'mal'
+      };
+      
+      const fileName = bookFileMap[book] || book.toLowerCase().replace(/\s+/g, '');
+      const filePath = `./data/bible/en/${fileName}.json`;
+      
+      try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+          throw new Error('File not found');
+        }
+        
+        const data = await response.json();
+        const chapterData = data.chapters?.find(ch => ch.chapter === chapter);
+        const verseData = chapterData?.verses?.find(v => v.verse === verse);
+        
+        if (verseData && textEl) {
+          textEl.innerHTML = `
+            <p style="margin-bottom: 12px; line-height: 1.8; font-size: 1.1em;">
+              ${verseData.text}
+            </p>
+          `;
+        } else {
+          throw new Error('Verse not found');
+        }
+      } catch (fileError) {
+        // Si no se encuentra el archivo, mostrar mensaje con enlace
+        if (textEl) {
+          textEl.innerHTML = `
+            <p style="margin-bottom: 12px;">Click the link below to read the full passage on Bible Gateway.</p>
+            <p style="font-style: italic; color: rgba(255, 255, 255, 0.7);">
+              Reference: <strong>${book} ${chapter}:${verse}</strong>
+            </p>
+          `;
+        }
+      }
+    } catch (error) {
+      if (textEl) {
+        const refParts = reference.match(/(\d+):(\d+)/);
+        if (refParts) {
+          textEl.innerHTML = `
+            <p style="margin-bottom: 12px;">Click the link below to read the full passage on Bible Gateway.</p>
+            <p style="font-style: italic; color: rgba(255, 255, 255, 0.7);">
+              Reference: <strong>${book} ${reference}</strong>
+            </p>
+          `;
+        } else {
+          textEl.innerHTML = `Click the link below to read <strong>${book} ${reference}</strong> on Bible Gateway.`;
+        }
+      }
+    }
+  }
+  
+  // Cargar versículo
+  loadVerseFromFile();
+  
+  // Botón de cerrar
+  if (closeBtn) {
+    // Remover listeners anteriores si existen
+    closeBtn.replaceWith(closeBtn.cloneNode(true));
+    const newCloseBtn = document.getElementById('closeVerseModal');
+    newCloseBtn.onclick = () => {
+      modal.style.display = 'none';
+    };
+  }
+  
+  // Cerrar al hacer clic fuera del modal
+  const closeHandler = (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modal.removeEventListener('click', closeHandler);
+    }
+  };
+  // Remover listener anterior si existe
+  modal.removeEventListener('click', closeHandler);
+  modal.addEventListener('click', closeHandler);
 }
 
 export function showGame(show){
@@ -302,6 +570,8 @@ export function renderQuestion(q){
   const optionsEl = document.getElementById('options');
   optionsEl.innerHTML = '';
   let locked = false;
+  let alreadyAnswered = false;
+  let myAnswerIndex = null;
   
   const currentState = STATE;
 
@@ -371,6 +641,10 @@ export function renderQuestion(q){
       // Convertir el índice seleccionado (aleatorizado) al índice original
       const originalIndex = indexMap[i];
       
+      // Marcar que ya se respondió
+      alreadyAnswered = true;
+      myAnswerIndex = originalIndex;
+      
       let results = {};
       if(originalIndex === q._originalAnswer){
         div.classList.add('correct');
@@ -383,6 +657,20 @@ export function renderQuestion(q){
         // Mostrar la respuesta correcta
         const corr = optionsEl.children[correctAnswerIndex];
         if (corr) corr.classList.add('correct');
+        // Guardar pregunta incorrecta para mostrar al final
+        if (!currentState.wrongAnswers) {
+          currentState.wrongAnswers = [];
+        }
+        // Usar el objeto question original del deck, no q que puede estar modificado
+        // Obtener la respuesta correcta usando el índice original de la pregunta
+        const originalAnswerIndex = question.answer !== undefined ? question.answer : q._originalAnswer;
+        const correctAnswer = question.options && question.options[originalAnswerIndex] ? question.options[originalAnswerIndex] : null;
+        currentState.wrongAnswers.push({
+          question: question.q || question.question,
+          book: question.book,
+          reference: question.reference,
+          correctAnswer: correctAnswer
+        });
         results = await trackEvent('answer_wrong');
       }
       
@@ -393,9 +681,9 @@ export function renderQuestion(q){
       });
 
       updatePlayerXPBar();
-      if(results.leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
+      if(results.leveledUp) toast("🎉 Level Up! 🎉");
       if(results.bonusToast) toast(results.bonusToast);
-      results.newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+      results.newAchievements.forEach(ach => toast(`🏆 Achievement unlocked: ${ach.title}!`));
 
       if (SETTINGS.autoNextRounds) {
         setTimeout(()=> nextQuestion(), 800);
@@ -453,15 +741,22 @@ export async function endGame(){
   results = await trackEvent('game_finish', { mode: 'solo', won, isPerfect });
   
   let title, sub;
-  if (isPerfect) { title='¡Perfecto!'; sub='¡Ningún error!'; }
-  else if (won){ title='¡Muy bien!'; sub='¡Gran partida!'; }
-  else { title='¡No te rindas!'; sub='La próxima será mejor.'; }
-  openSingleResult({ title, subtitle: sub, scoreText: `${currentState.score} / ${currentState.total}` });
+  if (isPerfect) { title='Perfect!'; sub='No mistakes!'; }
+  else if (won){ title='Great job!'; sub='Excellent game!'; }
+  else { title='Keep trying!'; sub='Next time will be better.'; }
+  
+  const wrongAnswers = currentState.wrongAnswers || [];
+  openSingleResult({ 
+    title, 
+    subtitle: sub, 
+    scoreText: `${currentState.score} / ${currentState.total}`,
+    wrongAnswers: wrongAnswers
+  });
   
   updatePlayerXPBar();
-  if(results.leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
+  if(results.leveledUp) toast("🎉 Level Up! 🎉");
   if(results.bonusToast) toast(results.bonusToast);
-  results.newAchievements.forEach(ach => setTimeout(() => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`), 500));
+  results.newAchievements.forEach(ach => setTimeout(() => toast(`🏆 Achievement unlocked: ${ach.title}!`), 500));
 
   showGame(false);
 }
@@ -473,16 +768,7 @@ function getActiveMode(){
 }
 
 function getActiveDifficulty(){
-  // Verificar el select de dificultad según el modo activo
-  const mode = getActiveMode();
-  let diffSelect = null;
-  
-  if (false) {
-    diffSelect = null;
-  } else {
-    diffSelect = document.getElementById('difficulty');
-  }
-  
+  const diffSelect = document.getElementById('difficulty');
   return diffSelect?.value || 'easy';
 }
 // --- FIN DE FUNCIONES RESTAURADAS ---
@@ -500,12 +786,13 @@ export async function startSolo(){
 
     const { newAchievements, leveledUp } = await trackEvent('game_start');
     updatePlayerXPBar();
-    if(leveledUp) toast("🎉 ¡Subiste de Nivel! 🎉");
-    newAchievements.forEach(ach => toast(`🏆 ¡Logro desbloqueado: ${ach.title}!`));
+    if(leveledUp) toast("🎉 Level Up! 🎉");
+    newAchievements.forEach(ach => toast(`🏆 Achievement unlocked: ${ach.title}!`));
     
     currentState.score = 0;
     currentState.index = 0;
     currentState.mode  = segActive;
+    currentState.wrongAnswers = []; // Reset wrong answers array
 
     await ensureInitial60();
 

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1821,
+    "book": "John",
+    "question": "In the beginning was the ____, and the ____ was with God.",
+    "options": [
+      "Word",
+      "Light",
+      "Spirit",
+      "Life"
+    ],
+    "answer": "Word",
+    "reference": "John 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1822,
+    "book": "John",
+    "question": "What was Jesus' first miracle in the Gospel of John?",
+    "options": [
+      "Turning water into wine",
+      "Healing a blind man",
+      "Raising Lazarus",
+      "Walking on water"
+    ],
+    "answer": "Turning water into wine",
+    "reference": "John 2:1-11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1823,
+    "book": "John",
+    "question": "Who came to Jesus by night to ask about being 'born again'?",
+    "options": [
+      "Nicodemus",
+      "Joseph of Arimathea",
+      "Caiaphas",
+      "Gamaliel"
+    ],
+    "answer": "Nicodemus",
+    "reference": "John 3:1-3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1824,
+    "book": "John",
+    "question": "John 3:16 says: 'For God so loved the ____...'",
+    "options": [
+      "World",
+      "Church",
+      "People",
+      "Nation"
+    ],
+    "answer": "World",
+    "reference": "John 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1825,
+    "book": "John",
+    "question": "Where did Jesus meet the woman at the well?",
+    "options": [
+      "Samaria (Sychar)",
+      "Nazareth",
+      "Jerusalem",
+      "Bethlehem"
+    ],
+    "answer": "Samaria (Sychar)",
+    "reference": "John 4:4-7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1826,
+    "book": "John",
+    "question": "What was the name of the pool in Jerusalem where Jesus healed a man who had been infirm for 38 years?",
+    "options": [
+      "Bethesda",
+      "Siloam",
+      "Hezekiah",
+      "Gihon"
+    ],
+    "answer": "Bethesda",
+    "reference": "John 5:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1827,
+    "book": "John",
+    "question": "Which 'I Am' statement did Jesus make after feeding the five thousand?",
+    "options": [
+      "I am the bread of life",
+      "I am the light of the world",
+      "I am the way",
+      "I am the door"
+    ],
+    "answer": "I am the bread of life",
+    "reference": "John 6:35",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1828,
+    "book": "John",
+    "question": "What did Jesus say to the woman caught in adultery?",
+    "options": [
+      "Neither do I condemn you; go and sin no more",
+      "You are forgiven",
+      "Repent",
+      "Where are your accusers?"
+    ],
+    "answer": "Neither do I condemn you; go and sin no more",
+    "reference": "John 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1829,
+    "book": "John",
+    "question": "What did Jesus use to heal the man born blind?",
+    "options": [
+      "Mud made from saliva and dust",
+      "A spoken word",
+      "Water from Bethesda",
+      "Oil"
+    ],
+    "answer": "Mud made from saliva and dust",
+    "reference": "John 9:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1830,
+    "book": "John",
+    "question": "Jesus said, 'I am the good ____. The good ____ gives His life for the sheep.'",
+    "options": [
+      "Shepherd",
+      "King",
+      "Friend",
+      "Master"
+    ],
+    "answer": "Shepherd",
+    "reference": "John 10:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1831,
+    "book": "John",
+    "question": "How many days had Lazarus been in the tomb when Jesus arrived?",
+    "options": [
+      "Four days",
+      "Three days",
+      "Two days",
+      "Seven days"
+    ],
+    "answer": "Four days",
+    "reference": "John 11:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1832,
+    "book": "John",
+    "question": "What is the shortest verse in the Bible (John 11:35)?",
+    "options": [
+      "Jesus wept",
+      "He is risen",
+      "God is love",
+      "Pray without ceasing"
+    ],
+    "answer": "Jesus wept",
+    "reference": "John 11:35",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1833,
+    "book": "John",
+    "question": "Who anointed Jesus' feet with costly oil and wiped them with her hair at Bethany?",
+    "options": [
+      "Mary (sister of Lazarus)",
+      "Martha",
+      "Mary Magdalene",
+      "The mother of Jesus"
+    ],
+    "answer": "Mary (sister of Lazarus)",
+    "reference": "John 12:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1834,
+    "book": "John",
+    "question": "What humble act did Jesus perform for His disciples during the Last Supper?",
+    "options": [
+      "Washed their feet",
+      "Cooked for them",
+      "Gave them gold",
+      "Anointed their heads"
+    ],
+    "answer": "Washed their feet",
+    "reference": "John 13:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1835,
+    "book": "John",
+    "question": "Jesus said: 'I am the way, the ____, and the life.'",
+    "options": [
+      "Truth",
+      "Light",
+      "Door",
+      "Gate"
+    ],
+    "answer": "Truth",
+    "reference": "John 14:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1836,
+    "book": "John",
+    "question": "What title does Jesus use for the Holy Spirit in John 14-16?",
+    "options": [
+      "Helper / Comforter / Advocate",
+      "Spirit of Power",
+      "Wind of God",
+      "Holy Flame"
+    ],
+    "answer": "Helper / Comforter / Advocate",
+    "reference": "John 14:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1837,
+    "book": "John",
+    "question": "I am the ____, you are the branches.",
+    "options": [
+      "Vine",
+      "Tree",
+      "Root",
+      "Stem"
+    ],
+    "answer": "Vine",
+    "reference": "John 15:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1838,
+    "book": "John",
+    "question": "Whose ear did Peter cut off in the Garden of Gethsemane?",
+    "options": [
+      "Malchus",
+      "Caiaphas",
+      "Pilate",
+      "Barabbas"
+    ],
+    "answer": "Malchus",
+    "reference": "John 18:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1839,
+    "book": "John",
+    "question": "What was written on the sign Pilate placed on the cross?",
+    "options": [
+      "Jesus of Nazareth, the King of the Jews",
+      "This is the Christ",
+      "King of Israel",
+      "The Prophet"
+    ],
+    "answer": "Jesus of Nazareth, the King of the Jews",
+    "reference": "John 19:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1840,
+    "book": "John",
+    "question": "Which disciple refused to believe Jesus was risen until he saw the nail marks?",
+    "options": [
+      "Thomas",
+      "Philip",
+      "Matthew",
+      "Andrew"
+    ],
+    "answer": "Thomas",
+    "reference": "John 20:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1841,
+    "book": "John",
+    "question": "Where did the resurrected Jesus appear to the disciples while they were fishing?",
+    "options": [
+      "Sea of Galilee (Tiberias)",
+      "Dead Sea",
+      "Nile",
+      "Jordan River"
+    ],
+    "answer": "Sea of Galilee (Tiberias)",
+    "reference": "John 21:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1842,
+    "book": "John",
+    "question": "How many times did Jesus ask Peter, 'Do you love Me?'",
+    "options": [
+      "Three times",
+      "Seven times",
+      "Two times",
+      "Once"
+    ],
+    "answer": "Three times",
+    "reference": "John 21:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1843,
+    "book": "John",
+    "question": "Who was the 'disciple whom Jesus loved'?",
+    "options": [
+      "John",
+      "Peter",
+      "James",
+      "Lazarus"
+    ],
+    "answer": "John",
+    "reference": "John 21:20-24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1844,
+    "book": "John",
+    "question": "In John 1, who did Andrew first bring to Jesus?",
+    "options": [
+      "His brother Simon Peter",
+      "Philip",
+      "Nathanael",
+      "John"
+    ],
+    "answer": "His brother Simon Peter",
+    "reference": "John 1:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1845,
+    "book": "John",
+    "question": "What did Nathanael say when Philip told him about Jesus?",
+    "options": [
+      "Can anything good come out of Nazareth?",
+      "He is the Christ!",
+      "I don't believe you",
+      "Where is He?"
+    ],
+    "answer": "Can anything good come out of Nazareth?",
+    "reference": "John 1:46",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1846,
+    "book": "John",
+    "question": "How many stone water jars were at the wedding in Cana?",
+    "options": [
+      "Six",
+      "Twelve",
+      "Seven",
+      "Three"
+    ],
+    "answer": "Six",
+    "reference": "John 2:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1847,
+    "book": "John",
+    "question": "Jesus said: 'Destroy this temple, and in ____ days I will raise it up.'",
+    "options": [
+      "Three",
+      "Seven",
+      "Forty",
+      "One"
+    ],
+    "answer": "Three",
+    "reference": "John 2:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1848,
+    "book": "John",
+    "question": "What did the Samaritan woman leave behind when she went back to town?",
+    "options": [
+      "Her water jar",
+      "Her sandals",
+      "Her money",
+      "Her cloak"
+    ],
+    "answer": "Her water jar",
+    "reference": "John 4:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1849,
+    "book": "John",
+    "question": "Who said, 'Lord, to whom shall we go? You have the words of eternal life.'?",
+    "options": [
+      "Peter",
+      "John",
+      "Andrew",
+      "Thomas"
+    ],
+    "answer": "Peter",
+    "reference": "John 6:68",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1850,
+    "book": "John",
+    "question": "Which feast was Jesus attending when He stood and cried, 'If anyone thirsts, let him come to Me and drink'?",
+    "options": [
+      "Feast of Tabernacles",
+      "Passover",
+      "Pentecost",
+      "Purim"
+    ],
+    "answer": "Feast of Tabernacles",
+    "reference": "John 7:37",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1851,
+    "book": "John",
+    "question": "Jesus said, 'If you abide in My word... you shall know the truth, and the truth shall ____.'",
+    "options": [
+      "Make you free",
+      "Save you",
+      "Protect you",
+      "Guide you"
+    ],
+    "answer": "Make you free",
+    "reference": "John 8:32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1852,
+    "book": "John",
+    "question": "Before ____ was, I AM.",
+    "options": [
+      "Abraham",
+      "Adam",
+      "Moses",
+      "David"
+    ],
+    "answer": "Abraham",
+    "reference": "John 8:58",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1853,
+    "book": "John",
+    "question": "The man born blind was told to wash in the pool of ____.",
+    "options": [
+      "Siloam",
+      "Bethesda",
+      "Jordan",
+      "Gihon"
+    ],
+    "answer": "Siloam",
+    "reference": "John 9:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1854,
+    "book": "John",
+    "question": "Who was Lazarus's sisters?",
+    "options": [
+      "Mary and Martha",
+      "Mary and Elizabeth",
+      "Rachel and Leah",
+      "Anna and Sarah"
+    ],
+    "answer": "Mary and Martha",
+    "reference": "John 11:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1855,
+    "book": "John",
+    "question": "Which High Priest prophesied that Jesus would die for the nation?",
+    "options": [
+      "Caiaphas",
+      "Annas",
+      "Zadok",
+      "Melchizedek"
+    ],
+    "answer": "Caiaphas",
+    "reference": "John 11:49-51",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1856,
+    "book": "John",
+    "question": "Who complained about the waste of the oil used to anoint Jesus?",
+    "options": [
+      "Judas Iscariot",
+      "Peter",
+      "The Pharisees",
+      "Martha"
+    ],
+    "answer": "Judas Iscariot",
+    "reference": "John 12:4-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1857,
+    "book": "John",
+    "question": "A new commandment I give to you, that you ____ one another.",
+    "options": [
+      "Love",
+      "Serve",
+      "Forgive",
+      "Teach"
+    ],
+    "answer": "Love",
+    "reference": "John 13:34",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1858,
+    "book": "John",
+    "question": "Jesus said: 'In My Father's house are many ____.'",
+    "options": [
+      "Mansions / Rooms",
+      "Angels",
+      "Gold",
+      "Crowns"
+    ],
+    "answer": "Mansions / Rooms",
+    "reference": "John 14:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1859,
+    "book": "John",
+    "question": "Who was the first person to Annas take Jesus to after His arrest?",
+    "options": [
+      "Annas",
+      "Caiaphas",
+      "Pilate",
+      "Herod"
+    ],
+    "answer": "Annas",
+    "reference": "John 18:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1860,
+    "book": "John",
+    "question": "After the catch of 153 fish, what was waiting on the shore?",
+    "options": [
+      "A charcoal fire with fish and bread",
+      "Nothing",
+      "A crowd",
+      "The Pharisees"
+    ],
+    "answer": "A charcoal fire with fish and bread",
+    "reference": "John 21:9",
+    "difficulty": "hard"
+  }
+]

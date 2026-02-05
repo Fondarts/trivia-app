@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2481,
+    "book": "1 Peter",
+    "question": "Peter addresses his letter to the ______ of the Dispersion.",
+    "options": [
+      "Pilgrims / Strangers",
+      "Kings",
+      "Soldiers",
+      "Priests"
+    ],
+    "answer": "Pilgrims / Strangers",
+    "reference": "1 Peter 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2482,
+    "book": "1 Peter",
+    "question": "God has begotten us again to a living ______ through the resurrection of Jesus Christ.",
+    "options": [
+      "Hope",
+      "Faith",
+      "Life",
+      "Soul"
+    ],
+    "answer": "Hope",
+    "reference": "1 Peter 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2483,
+    "book": "1 Peter",
+    "question": "Our inheritance is incorruptible, undefiled, and does not ______ ______.",
+    "options": [
+      "Fade away",
+      "End",
+      "Change",
+      "Fail"
+    ],
+    "answer": "Fade away",
+    "reference": "1 Peter 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2484,
+    "book": "1 Peter",
+    "question": "The genuineness of your ______ is much more precious than gold that perishes.",
+    "options": [
+      "Faith",
+      "Heart",
+      "Love",
+      "Spirit"
+    ],
+    "answer": "Faith",
+    "reference": "1 Peter 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2485,
+    "book": "1 Peter",
+    "question": "Whom having not ______, you love.",
+    "options": [
+      "Seen",
+      "Known",
+      "Heard",
+      "Met"
+    ],
+    "answer": "Seen",
+    "reference": "1 Peter 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2486,
+    "book": "1 Peter",
+    "question": "Gird up the ______ of your mind, be sober.",
+    "options": [
+      "Loins",
+      "Gates",
+      "Doors",
+      "Walls"
+    ],
+    "answer": "Loins",
+    "reference": "1 Peter 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2487,
+    "book": "1 Peter",
+    "question": "As He who called you is holy, you also be ______ in all your conduct.",
+    "options": [
+      "Holy",
+      "Kind",
+      "Strong",
+      "Wise"
+    ],
+    "answer": "Holy",
+    "reference": "1 Peter 1:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2488,
+    "book": "1 Peter",
+    "question": "You were not redeemed with corruptible things, like silver or gold, but with the precious ______ of Christ.",
+    "options": [
+      "Blood",
+      "Name",
+      "Word",
+      "Spirit"
+    ],
+    "answer": "Blood",
+    "reference": "1 Peter 1:18-19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2489,
+    "book": "1 Peter",
+    "question": "The grass withers, and its flower falls away, but the ______ of the Lord endures forever.",
+    "options": [
+      "Word",
+      "Love",
+      "Name",
+      "Grace"
+    ],
+    "answer": "Word",
+    "reference": "1 Peter 1:24-25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2490,
+    "book": "1 Peter",
+    "question": "As newborn babes, desire the pure ______ of the word.",
+    "options": [
+      "Milk",
+      "Water",
+      "Honey",
+      "Bread"
+    ],
+    "answer": "Milk",
+    "reference": "1 Peter 2:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2491,
+    "book": "1 Peter",
+    "question": "Coming to Him as to a ______ stone, rejected indeed by men, but chosen by God.",
+    "options": [
+      "Living",
+      "Great",
+      "Corner",
+      "Strong"
+    ],
+    "answer": "Living",
+    "reference": "1 Peter 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2492,
+    "book": "1 Peter",
+    "question": "You are a chosen generation, a ______ priesthood, a holy nation.",
+    "options": [
+      "Royal",
+      "Great",
+      "New",
+      "Final"
+    ],
+    "answer": "Royal",
+    "reference": "1 Peter 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2493,
+    "book": "1 Peter",
+    "question": "Abstain from fleshly ______, which war against the soul.",
+    "options": [
+      "Lusts",
+      "Desires",
+      "Thoughts",
+      "Actions"
+    ],
+    "answer": "Lusts",
+    "reference": "1 Peter 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2494,
+    "book": "1 Peter",
+    "question": "Submit yourselves to every ______ of man for the Lord's sake.",
+    "options": [
+      "Ordinance / Authority",
+      "Word",
+      "Law",
+      "King"
+    ],
+    "answer": "Ordinance / Authority",
+    "reference": "1 Peter 2:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2495,
+    "book": "1 Peter",
+    "question": "Honor all people. Love the ______.",
+    "options": [
+      "Brotherhood",
+      "King",
+      "Poor",
+      "Church"
+    ],
+    "answer": "Brotherhood",
+    "reference": "1 Peter 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2496,
+    "book": "1 Peter",
+    "question": "Fear God. Honor the ______.",
+    "options": [
+      "King",
+      "Priest",
+      "Law",
+      "Elder"
+    ],
+    "answer": "King",
+    "reference": "1 Peter 2:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2497,
+    "book": "1 Peter",
+    "question": "For to this you were called, because Christ also suffered for us, leaving us an ______.",
+    "options": [
+      "Example",
+      "Injunction",
+      "Inspiration",
+      "Law"
+    ],
+    "answer": "Example",
+    "reference": "1 Peter 2:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2498,
+    "book": "1 Peter",
+    "question": "Christ committed no sin, nor was ______ (deceit) found in His mouth.",
+    "options": [
+      "Guile",
+      "Anger",
+      "Pride",
+      "Lies"
+    ],
+    "answer": "Guile",
+    "reference": "1 Peter 2:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2499,
+    "book": "1 Peter",
+    "question": "Wives, likewise, be submissive to your own husbands... even without a word, they may be won by the ______ of their wives.",
+    "options": [
+      "Conduct",
+      "Silence",
+      "Prayer",
+      "Beauty"
+    ],
+    "answer": "Conduct",
+    "reference": "1 Peter 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2500,
+    "book": "1 Peter",
+    "question": "Your beauty should not come from outward adornment, but from the hidden person of the ______.",
+    "options": [
+      "Heart",
+      "Soul",
+      "Spirit",
+      "Mind"
+    ],
+    "answer": "Heart",
+    "reference": "1 Peter 3:3-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2501,
+    "book": "1 Peter",
+    "question": "Husbands, likewise, dwell with your wives with understanding, giving ______ to the wife, as to the weaker vessel.",
+    "options": [
+      "Honor",
+      "Love",
+      "Money",
+      "Guidance"
+    ],
+    "answer": "Honor",
+    "reference": "1 Peter 3:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2502,
+    "book": "1 Peter",
+    "question": "Always be ready to give a ______ to everyone who asks you a reason for the hope that is in you.",
+    "options": [
+      "Defense / Answer",
+      "Sermon",
+      "Gift",
+      "Smile"
+    ],
+    "answer": "Defense / Answer",
+    "reference": "1 Peter 3:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2503,
+    "book": "1 Peter",
+    "question": "For Christ also suffered once for sins, the just for the unjust, that He might bring us to ______.",
+    "options": [
+      "God",
+      "Heaven",
+      "Peace",
+      "Life"
+    ],
+    "answer": "God",
+    "reference": "1 Peter 3:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2504,
+    "book": "1 Peter",
+    "question": "According to 3:20, how many souls were saved through water in the ark?",
+    "options": [
+      "Eight",
+      "Seven",
+      "Twelve",
+      "Forty"
+    ],
+    "answer": "Eight",
+    "reference": "1 Peter 3:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2505,
+    "book": "1 Peter",
+    "question": "But the end of all things is at hand; therefore be serious and ______ in your prayers.",
+    "options": [
+      "Watchful",
+      "Loud",
+      "Fast",
+      "Humble"
+    ],
+    "answer": "Watchful",
+    "reference": "1 Peter 4:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2506,
+    "book": "1 Peter",
+    "question": "And above all things have fervent ______ for one another, for it will cover a multitude of sins.",
+    "options": [
+      "Love",
+      "Peace",
+      "Patience",
+      "Grace"
+    ],
+    "answer": "Love",
+    "reference": "1 Peter 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2507,
+    "book": "1 Peter",
+    "question": "Be ______ to one another without grumbling.",
+    "options": [
+      "Hospitable",
+      "Kind",
+      "Generous",
+      "Helpful"
+    ],
+    "answer": "Hospitable",
+    "reference": "1 Peter 4:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2508,
+    "book": "1 Peter",
+    "question": "Beloved, do not think it strange concerning the ______ trial which is to try you.",
+    "options": [
+      "Fiery",
+      "Great",
+      "Hard",
+      "Last"
+    ],
+    "answer": "Fiery",
+    "reference": "1 Peter 4:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2509,
+    "book": "1 Peter",
+    "question": "If you are reproached for the name of Christ, ______ are you.",
+    "options": [
+      "Blessed",
+      "Strong",
+      "Sad",
+      "Ready"
+    ],
+    "answer": "Blessed",
+    "reference": "1 Peter 4:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2510,
+    "book": "1 Peter",
+    "question": "For the time has come for ______ to begin at the house of God.",
+    "options": [
+      "Judgment",
+      "Peace",
+      "War",
+      "Fire"
+    ],
+    "answer": "Judgment",
+    "reference": "1 Peter 4:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2511,
+    "book": "1 Peter",
+    "question": "The elders who are among you I exhort... ______ the flock of God.",
+    "options": [
+      "Shepherd / Feed",
+      "Rule",
+      "Teach",
+      "Watch"
+    ],
+    "answer": "Shepherd / Feed",
+    "reference": "1 Peter 5:1-2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2512,
+    "book": "1 Peter",
+    "question": "Elders should serve not for 'dishonest gain' but ______.",
+    "options": [
+      "Eagerly",
+      "Slowly",
+      "For gold",
+      "Always"
+    ],
+    "answer": "Eagerly",
+    "reference": "1 Peter 5:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2513,
+    "book": "1 Peter",
+    "question": "When the ______ ______ appears, you will receive the crown of glory that does not fade away.",
+    "options": [
+      "Chief Shepherd",
+      "King",
+      "Lord",
+      "Apostle"
+    ],
+    "answer": "Chief Shepherd",
+    "reference": "1 Peter 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2514,
+    "book": "1 Peter",
+    "question": "God resists the proud, but gives grace to the ______.",
+    "options": [
+      "Humble",
+      "Poor",
+      "Saints",
+      "Weak"
+    ],
+    "answer": "Humble",
+    "reference": "1 Peter 5:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2515,
+    "book": "1 Peter",
+    "question": "Casting all your ______ upon Him, for He cares for you.",
+    "options": [
+      "Care / Anxiety",
+      "Sins",
+      "Doubts",
+      "Prayers"
+    ],
+    "answer": "Care / Anxiety",
+    "reference": "1 Peter 5:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2516,
+    "book": "1 Peter",
+    "question": "Be sober, be vigilant; because your adversary the ______ walks about like a roaring lion.",
+    "options": [
+      "Devil",
+      "Enemy",
+      "King",
+      "Wolf"
+    ],
+    "answer": "Devil",
+    "reference": "1 Peter 5:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2517,
+    "book": "1 Peter",
+    "question": "Whom resist, ______ in the faith.",
+    "options": [
+      "Steadfast",
+      "Strong",
+      "Fast",
+      "Always"
+    ],
+    "answer": "Steadfast",
+    "reference": "1 Peter 5:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2518,
+    "book": "1 Peter",
+    "question": "Who was the 'faithful brother' Peter used to write this short letter?",
+    "options": [
+      "Silvanus (Silas)",
+      "Mark",
+      "Timothy",
+      "Luke"
+    ],
+    "answer": "Silvanus (Silas)",
+    "reference": "1 Peter 5:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2519,
+    "book": "1 Peter",
+    "question": "Peter sends greetings from 'she who is in ______'.",
+    "options": [
+      "Babylon",
+      "Rome",
+      "Jerusalem",
+      "Ephesus"
+    ],
+    "answer": "Babylon",
+    "reference": "1 Peter 5:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2520,
+    "book": "1 Peter",
+    "question": "Who does Peter call 'my son' in the closing of the letter?",
+    "options": [
+      "Mark",
+      "Timothy",
+      "Titus",
+      "Stephen"
+    ],
+    "answer": "Mark",
+    "reference": "1 Peter 5:13",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1701,
+    "book": "Matthew",
+    "question": "Who was the father of Joseph, the husband of Mary, according to Matthew's genealogy?",
+    "options": [
+      "Jacob",
+      "Heli",
+      "Matthan",
+      "Eleazar"
+    ],
+    "answer": "Jacob",
+    "reference": "Matthew 1:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1702,
+    "book": "Matthew",
+    "question": "What does the name 'Immanuel' mean?",
+    "options": [
+      "God with us",
+      "God is my Savior",
+      "Praise God",
+      "God is King"
+    ],
+    "answer": "God with us",
+    "reference": "Matthew 1:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1703,
+    "book": "Matthew",
+    "question": "In which town was Jesus born?",
+    "options": [
+      "Bethlehem",
+      "Nazareth",
+      "Jerusalem",
+      "Capernaum"
+    ],
+    "answer": "Bethlehem",
+    "reference": "Matthew 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1704,
+    "book": "Matthew",
+    "question": "How did the Wise Men know that the King of the Jews had been born?",
+    "options": [
+      "They saw His star in the East",
+      "An angel appeared to them",
+      "They read it in a scroll",
+      "Herod told them"
+    ],
+    "answer": "They saw His star in the East",
+    "reference": "Matthew 2:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1705,
+    "book": "Matthew",
+    "question": "To which country did Joseph flee with Mary and Jesus to escape Herod?",
+    "options": [
+      "Egypt",
+      "Syria",
+      "Rome",
+      "Jordan"
+    ],
+    "answer": "Egypt",
+    "reference": "Matthew 2:13-14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1706,
+    "book": "Matthew",
+    "question": "What was John the Baptist's clothing made of?",
+    "options": [
+      "Camel's hair",
+      "Sheep's wool",
+      "Linen",
+      "Silk"
+    ],
+    "answer": "Camel's hair",
+    "reference": "Matthew 3:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1707,
+    "book": "Matthew",
+    "question": "What did John the Baptist eat in the wilderness?",
+    "options": [
+      "Locusts and wild honey",
+      "Bread and wine",
+      "Figs and grapes",
+      "Fish"
+    ],
+    "answer": "Locusts and wild honey",
+    "reference": "Matthew 3:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1708,
+    "book": "Matthew",
+    "question": "In what river did John baptize Jesus?",
+    "options": [
+      "Jordan River",
+      "Nile River",
+      "Tigris River",
+      "Euphrates River"
+    ],
+    "answer": "Jordan River",
+    "reference": "Matthew 3:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1709,
+    "book": "Matthew",
+    "question": "What happened immediately after Jesus was baptized?",
+    "options": [
+      "The heavens opened and the Spirit of God descended like a dove",
+      "A great storm arose",
+      "Jesus began to preach",
+      "John the Baptist bowed down"
+    ],
+    "answer": "The heavens opened and the Spirit of God descended like a dove",
+    "reference": "Matthew 3:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1710,
+    "book": "Matthew",
+    "question": "How many days and nights did Jesus fast in the wilderness?",
+    "options": [
+      "40 days and 40 nights",
+      "7 days",
+      "12 days",
+      "30 days"
+    ],
+    "answer": "40 days and 40 nights",
+    "reference": "Matthew 4:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1711,
+    "book": "Matthew",
+    "question": "What was the first temptation the devil presented to Jesus?",
+    "options": [
+      "Turn stones into bread",
+      "Jump off the temple",
+      "Worship him",
+      "Heal the sick"
+    ],
+    "answer": "Turn stones into bread",
+    "reference": "Matthew 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1712,
+    "book": "Matthew",
+    "question": "Who were the first two disciples Jesus called?",
+    "options": [
+      "Simon Peter and Andrew",
+      "James and John",
+      "Philip and Bartholomew",
+      "Matthew and Thomas"
+    ],
+    "answer": "Simon Peter and Andrew",
+    "reference": "Matthew 4:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1713,
+    "book": "Matthew",
+    "question": "Which famous sermon begins with the Beatitudes?",
+    "options": [
+      "The Sermon on the Mount",
+      "The Olivet Discourse",
+      "The Last Supper",
+      "The Pentecost Sermon"
+    ],
+    "answer": "The Sermon on the Mount",
+    "reference": "Matthew 5:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1714,
+    "book": "Matthew",
+    "question": "Jesus told His disciples they were the 'salt of the ____'.",
+    "options": [
+      "Earth",
+      "Sea",
+      "Land",
+      "World"
+    ],
+    "answer": "Earth",
+    "reference": "Matthew 5:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1715,
+    "book": "Matthew",
+    "question": "In the Lord's Prayer, what comes after 'Give us this day our daily bread'?",
+    "options": [
+      "And forgive us our debts",
+      "Hallowed be Thy name",
+      "Thy kingdom come",
+      "Lead us not into temptation"
+    ],
+    "answer": "And forgive us our debts",
+    "reference": "Matthew 6:11-12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1716,
+    "book": "Matthew",
+    "question": "Jesus said, 'No one can serve two masters.' Who were the two mentioned?",
+    "options": [
+      "God and Mammon (Money)",
+      "God and King",
+      "Life and Death",
+      "Truth and Lies"
+    ],
+    "answer": "God and Mammon (Money)",
+    "reference": "Matthew 6:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1717,
+    "book": "Matthew",
+    "question": "What animal does Jesus say not to throw pearls before?",
+    "options": [
+      "Swine (Pigs)",
+      "Dogs",
+      "Lions",
+      "Snakes"
+    ],
+    "answer": "Swine (Pigs)",
+    "reference": "Matthew 7:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1718,
+    "book": "Matthew",
+    "question": "Jesus compares the one who hears His words and does them to a man who built his house on what?",
+    "options": [
+      "The rock",
+      "The sand",
+      "The grass",
+      "The hill"
+    ],
+    "answer": "The rock",
+    "reference": "Matthew 7:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1719,
+    "book": "Matthew",
+    "question": "What was Matthew's occupation before following Jesus?",
+    "options": [
+      "Tax collector",
+      "Fisherman",
+      "Carpenter",
+      "Shepherd"
+    ],
+    "answer": "Tax collector",
+    "reference": "Matthew 9:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1720,
+    "book": "Matthew",
+    "question": "Jesus said, 'Those who are well have no need of a physician, but those who are ____.'",
+    "options": [
+      "Sick",
+      "Sinners",
+      "Lost",
+      "Weak"
+    ],
+    "answer": "Sick",
+    "reference": "Matthew 9:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1721,
+    "book": "Matthew",
+    "question": "Who was the ruler of the synagogue whose daughter Jesus raised from the dead?",
+    "options": [
+      "Jairus",
+      "Nicodemus",
+      "Joseph of Arimathea",
+      "Cornelius"
+    ],
+    "answer": "Jairus",
+    "reference": "Matthew 9:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1722,
+    "book": "Matthew",
+    "question": "Which disciple walked on water toward Jesus before becoming afraid and sinking?",
+    "options": [
+      "Peter",
+      "John",
+      "James",
+      "Andrew"
+    ],
+    "answer": "Peter",
+    "reference": "Matthew 14:29",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1723,
+    "book": "Matthew",
+    "question": "How many baskets of fragments were left over after Jesus fed the five thousand?",
+    "options": [
+      "12",
+      "7",
+      "5",
+      "3"
+    ],
+    "answer": "12",
+    "reference": "Matthew 14:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1724,
+    "book": "Matthew",
+    "question": "When Jesus asked the disciples, 'Who do you say that I am?', what was Peter's reply?",
+    "options": [
+      "You are the Christ, the Son of the living God",
+      "You are the Prophet",
+      "You are the King of Israel",
+      "You are Elijah"
+    ],
+    "answer": "You are the Christ, the Son of the living God",
+    "reference": "Matthew 16:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1725,
+    "book": "Matthew",
+    "question": "Who appeared with Jesus during the Transfiguration?",
+    "options": [
+      "Moses and Elijah",
+      "Abraham and Isaac",
+      "David and Solomon",
+      "John the Baptist"
+    ],
+    "answer": "Moses and Elijah",
+    "reference": "Matthew 17:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1726,
+    "book": "Matthew",
+    "question": "How many times did Jesus tell Peter he should forgive his brother?",
+    "options": [
+      "Seventy times seven",
+      "Seven times",
+      "Three times",
+      "Once"
+    ],
+    "answer": "Seventy times seven",
+    "reference": "Matthew 18:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1727,
+    "book": "Matthew",
+    "question": "Jesus said it is easier for a camel to go through the eye of a needle than for a ____ to enter the kingdom of God.",
+    "options": [
+      "Rich man",
+      "Sinner",
+      "Pharisee",
+      "Soldier"
+    ],
+    "answer": "Rich man",
+    "reference": "Matthew 19:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1728,
+    "book": "Matthew",
+    "question": "What animal did Jesus ride into Jerusalem on Palm Sunday?",
+    "options": [
+      "A donkey (and a colt)",
+      "A horse",
+      "A camel",
+      "He walked"
+    ],
+    "answer": "A donkey (and a colt)",
+    "reference": "Matthew 21:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1729,
+    "book": "Matthew",
+    "question": "In the Parable of the Ten Virgins, what did the five foolish virgins forget to bring?",
+    "options": [
+      "Extra oil for their lamps",
+      "Their lamps",
+      "Wick",
+      "Matches"
+    ],
+    "answer": "Extra oil for their lamps",
+    "reference": "Matthew 25:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1730,
+    "book": "Matthew",
+    "question": "For how many pieces of silver did Judas Iscariot betray Jesus?",
+    "options": [
+      "30",
+      "50",
+      "100",
+      "10"
+    ],
+    "answer": "30",
+    "reference": "Matthew 26:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1731,
+    "book": "Matthew",
+    "question": "What was the name of the garden where Jesus prayed before His arrest?",
+    "options": [
+      "Gethsemane",
+      "Eden",
+      "Olives",
+      "Sharon"
+    ],
+    "answer": "Gethsemane",
+    "reference": "Matthew 26:36",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1732,
+    "book": "Matthew",
+    "question": "How many times did Peter deny Jesus before the rooster crowed?",
+    "options": [
+      "3",
+      "7",
+      "2",
+      "4"
+    ],
+    "answer": "3",
+    "reference": "Matthew 26:75",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1733,
+    "book": "Matthew",
+    "question": "Who was the Roman governor who washed his hands and sentenced Jesus to be crucified?",
+    "options": [
+      "Pontius Pilate",
+      "Herod",
+      "Felix",
+      "Festus"
+    ],
+    "answer": "Pontius Pilate",
+    "reference": "Matthew 27:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1734,
+    "book": "Matthew",
+    "question": "What was the name of the prisoner the crowd chose to release instead of Jesus?",
+    "options": [
+      "Barabbas",
+      "Barnabas",
+      "Silas",
+      "Malchus"
+    ],
+    "answer": "Barabbas",
+    "reference": "Matthew 27:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1735,
+    "book": "Matthew",
+    "question": "Where was Jesus crucified?",
+    "options": [
+      "Golgotha (Place of a Skull)",
+      "Mount of Olives",
+      "Bethel",
+      "Zion"
+    ],
+    "answer": "Golgotha (Place of a Skull)",
+    "reference": "Matthew 27:33",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1736,
+    "book": "Matthew",
+    "question": "What happened to the curtain of the temple when Jesus died?",
+    "options": [
+      "It was torn in two from top to bottom",
+      "It caught fire",
+      "It turned black",
+      "It disappeared"
+    ],
+    "answer": "It was torn in two from top to bottom",
+    "reference": "Matthew 27:51",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1737,
+    "book": "Matthew",
+    "question": "Who provided the tomb where Jesus was buried?",
+    "options": [
+      "Joseph of Arimathea",
+      "Nicodemus",
+      "Simon of Cyrene",
+      "Lazarus"
+    ],
+    "answer": "Joseph of Arimathea",
+    "reference": "Matthew 27:57",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1738,
+    "book": "Matthew",
+    "question": "What did the chief priests give the soldiers to say that the disciples stole Jesus' body?",
+    "options": [
+      "A large sum of money",
+      "Food and wine",
+      "Protection",
+      "Promotion"
+    ],
+    "answer": "A large sum of money",
+    "reference": "Matthew 28:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1739,
+    "book": "Matthew",
+    "question": "The command in Matthew 28:19-20 to 'go and make disciples of all nations' is known as the...",
+    "options": [
+      "Great Commission",
+      "Great Commandment",
+      "Golden Rule",
+      "Last Supper"
+    ],
+    "answer": "Great Commission",
+    "reference": "Matthew 28:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1740,
+    "book": "Matthew",
+    "question": "Jesus said He would be with His disciples always, even to the ____.",
+    "options": [
+      "End of the age",
+      "Ends of the earth",
+      "End of the year",
+      "End of time"
+    ],
+    "answer": "End of the age",
+    "reference": "Matthew 28:20",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1741,
+    "book": "Mark",
+    "question": "How does the Gospel of Mark begin?",
+    "options": [
+      "The preaching of John the Baptist",
+      "The genealogy of Jesus",
+      "The birth of Jesus",
+      "The creation of the world"
+    ],
+    "answer": "The preaching of John the Baptist",
+    "reference": "Mark 1:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1742,
+    "book": "Mark",
+    "question": "What did John the Baptist preach?",
+    "options": [
+      "A baptism of repentance for the remission of sins",
+      "The end of the world",
+      "Obedience to the law",
+      "The fall of Rome"
+    ],
+    "answer": "A baptism of repentance for the remission of sins",
+    "reference": "Mark 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1743,
+    "book": "Mark",
+    "question": "When Jesus was in the wilderness, which group of animals was He with?",
+    "options": [
+      "Wild beasts",
+      "Sheep",
+      "Lions",
+      "Camels"
+    ],
+    "answer": "Wild beasts",
+    "reference": "Mark 1:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1744,
+    "book": "Mark",
+    "question": "Who was the father of James and John?",
+    "options": [
+      "Zebedee",
+      "Alphaeus",
+      "Jonas",
+      "Joseph"
+    ],
+    "answer": "Zebedee",
+    "reference": "Mark 1:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1745,
+    "book": "Mark",
+    "question": "Whose mother-in-law did Jesus heal of a fever?",
+    "options": [
+      "Simon Peter's",
+      "Andrew's",
+      "James's",
+      "John's"
+    ],
+    "answer": "Simon Peter's",
+    "reference": "Mark 1:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1746,
+    "book": "Mark",
+    "question": "How did the four men get the paralytic man to Jesus when the house was crowded?",
+    "options": [
+      "Through the roof",
+      "Through the window",
+      "By pushing through the crowd",
+      "They waited outside"
+    ],
+    "answer": "Through the roof",
+    "reference": "Mark 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1747,
+    "book": "Mark",
+    "question": "Jesus said, 'The Sabbath was made for ____, and not ____ for the Sabbath.'",
+    "options": [
+      "Man",
+      "God",
+      "The King",
+      "The Church"
+    ],
+    "answer": "Man",
+    "reference": "Mark 2:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1748,
+    "book": "Mark",
+    "question": "What nickname did Jesus give to James and John, the sons of Zebedee?",
+    "options": [
+      "Boanerges (Sons of Thunder)",
+      "Cephas",
+      "The Twins",
+      "The Zealots"
+    ],
+    "answer": "Boanerges (Sons of Thunder)",
+    "reference": "Mark 3:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1749,
+    "book": "Mark",
+    "question": "In the Parable of the Sower, what happened to the seed that fell on rocky ground?",
+    "options": [
+      "It sprang up quickly but withered because it had no root",
+      "The birds ate it",
+      "Thorns choked it",
+      "It produced a great crop"
+    ],
+    "answer": "It sprang up quickly but withered because it had no root",
+    "reference": "Mark 4:5-6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1750,
+    "book": "Mark",
+    "question": "What was Jesus doing when the great windstorm arose on the Sea of Galilee?",
+    "options": [
+      "Sleeping on a pillow",
+      "Praying",
+      "Eating",
+      "Fishing"
+    ],
+    "answer": "Sleeping on a pillow",
+    "reference": "Mark 4:38",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1751,
+    "book": "Mark",
+    "question": "What did Jesus say to the wind and the waves?",
+    "options": [
+      "Peace, be still!",
+      "Be quiet!",
+      "Go away!",
+      "Stop!"
+    ],
+    "answer": "Peace, be still!",
+    "reference": "Mark 4:39",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1752,
+    "book": "Mark",
+    "question": "What was the name of the demon-possessed man in the region of the Gadarenes?",
+    "options": [
+      "Legion",
+      "Beelzebub",
+      "Asmodeus",
+      "Abaddon"
+    ],
+    "answer": "Legion",
+    "reference": "Mark 5:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1753,
+    "book": "Mark",
+    "question": "What happened to the herd of swine after the demons entered them?",
+    "options": [
+      "They ran down a steep bank into the sea and drowned",
+      "They ran into the woods",
+      "They attacked the people",
+      "They disappeared"
+    ],
+    "answer": "They ran down a steep bank into the sea and drowned",
+    "reference": "Mark 5:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1754,
+    "book": "Mark",
+    "question": "How long had the woman with the flow of blood suffered before she touched Jesus' garment?",
+    "options": [
+      "12 years",
+      "7 years",
+      "10 years",
+      "5 years"
+    ],
+    "answer": "12 years",
+    "reference": "Mark 5:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1755,
+    "book": "Mark",
+    "question": "What did Jesus say to the daughter of Jairus? (Talitha, cumi)",
+    "options": [
+      "Little girl, I say to you, arise",
+      "Be healed",
+      "Wake up",
+      "Come forth"
+    ],
+    "answer": "Little girl, I say to you, arise",
+    "reference": "Mark 5:41",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1756,
+    "book": "Mark",
+    "question": "Why did Herodias want John the Baptist dead?",
+    "options": [
+      "He said it was not lawful for Herod to have his brother's wife",
+      "He called her a sinner",
+      "He was more popular than her",
+      "He wouldn't baptize her"
+    ],
+    "answer": "He said it was not lawful for Herod to have his brother's wife",
+    "reference": "Mark 6:18-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1757,
+    "book": "Mark",
+    "question": "What did the daughter of Herodias ask for on a platter?",
+    "options": [
+      "The head of John the Baptist",
+      "Gold",
+      "A crown",
+      "Half the kingdom"
+    ],
+    "answer": "The head of John the Baptist",
+    "reference": "Mark 6:24-25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1758,
+    "book": "Mark",
+    "question": "With how many loaves and fish did Jesus feed the five thousand in Mark?",
+    "options": [
+      "Five loaves and two fish",
+      "Seven loaves",
+      "Ten loaves and five fish",
+      "Twelve loaves"
+    ],
+    "answer": "Five loaves and two fish",
+    "reference": "Mark 6:38",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1759,
+    "book": "Mark",
+    "question": "When the Pharisees complained about the disciples eating with unwashed hands, Jesus said that nothing from ____ a man can defile him.",
+    "options": [
+      "Outside",
+      "Inside",
+      "Beside",
+      "Under"
+    ],
+    "answer": "Outside",
+    "reference": "Mark 7:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1760,
+    "book": "Mark",
+    "question": "How did Jesus heal the deaf man with a speech impediment in Decapolis?",
+    "options": [
+      "He put His fingers in his ears and spat and touched his tongue",
+      "He just spoke a word",
+      "He used mud",
+      "He sent him to the pool of Siloam"
+    ],
+    "answer": "He put His fingers in his ears and spat and touched his tongue",
+    "reference": "Mark 7:33",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1761,
+    "book": "Mark",
+    "question": "How many loaves were used to feed the four thousand?",
+    "options": [
+      "7",
+      "5",
+      "12",
+      "3"
+    ],
+    "answer": "7",
+    "reference": "Mark 8:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1762,
+    "book": "Mark",
+    "question": "How many baskets were collected after feeding the four thousand?",
+    "options": [
+      "7",
+      "12",
+      "5",
+      "10"
+    ],
+    "answer": "7",
+    "reference": "Mark 8:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1763,
+    "book": "Mark",
+    "question": "Where was Jesus when Peter confessed Him as the Christ?",
+    "options": [
+      "Caesarea Philippi",
+      "Jerusalem",
+      "Galilee",
+      "Jericho"
+    ],
+    "answer": "Caesarea Philippi",
+    "reference": "Mark 8:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1764,
+    "book": "Mark",
+    "question": "Jesus said, 'Whoever desires to come after Me, let him deny himself, and take up his ____.'",
+    "options": [
+      "Cross",
+      "Sword",
+      "Cloak",
+      "Bag"
+    ],
+    "answer": "Cross",
+    "reference": "Mark 8:34",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1765,
+    "book": "Mark",
+    "question": "On the Mount of Transfiguration, Peter offered to build how many tabernacles?",
+    "options": [
+      "3",
+      "1",
+      "12",
+      "7"
+    ],
+    "answer": "3",
+    "reference": "Mark 9:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1766,
+    "book": "Mark",
+    "question": "A father brought his son with a mute spirit to Jesus, saying, 'Lord, I believe; help my ____!'",
+    "options": [
+      "Unbelief",
+      "Doubts",
+      "Weakness",
+      "Sin"
+    ],
+    "answer": "Unbelief",
+    "reference": "Mark 9:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1767,
+    "book": "Mark",
+    "question": "Jesus said it is better to enter life maimed than to go to ____.",
+    "options": [
+      "Hell (Gehenna)",
+      "Prison",
+      "The grave",
+      "Rome"
+    ],
+    "answer": "Hell (Gehenna)",
+    "reference": "Mark 9:43",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1768,
+    "book": "Mark",
+    "question": "What did the rich young ruler lack when he asked about eternal life?",
+    "options": [
+      "Selling his possessions and giving to the poor",
+      "Fasting",
+      "Knowledge of the law",
+      "Baptism"
+    ],
+    "answer": "Selling his possessions and giving to the poor",
+    "reference": "Mark 10:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1769,
+    "book": "Mark",
+    "question": "Which two disciples asked to sit on Jesus' right and left in His glory?",
+    "options": [
+      "James and John",
+      "Peter and Andrew",
+      "Philip and Bartholomew",
+      "Thomas and Matthew"
+    ],
+    "answer": "James and John",
+    "reference": "Mark 10:35-37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1770,
+    "book": "Mark",
+    "question": "What was the name of the blind beggar Jesus healed outside Jericho?",
+    "options": [
+      "Bartimaeus",
+      "Zacchaeus",
+      "Lazarus",
+      "Malchus"
+    ],
+    "answer": "Bartimaeus",
+    "reference": "Mark 10:46",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1771,
+    "book": "Mark",
+    "question": "What type of tree did Jesus curse for having no fruit?",
+    "options": [
+      "Fig tree",
+      "Olive tree",
+      "Sycamore tree",
+      "Oak tree"
+    ],
+    "answer": "Fig tree",
+    "reference": "Mark 11:13-14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1772,
+    "book": "Mark",
+    "question": "Jesus said, 'My house shall be called a house of ____ for all nations.'",
+    "options": [
+      "Prayer",
+      "Worship",
+      "Gold",
+      "Peace"
+    ],
+    "answer": "Prayer",
+    "reference": "Mark 11:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1773,
+    "book": "Mark",
+    "question": "In the Parable of the Wicked Vinedressers, whom did the vinedressers kill last?",
+    "options": [
+      "The son of the owner",
+      "A servant",
+      "A prophet",
+      "The owner"
+    ],
+    "answer": "The son of the owner",
+    "reference": "Mark 12:6-8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1774,
+    "book": "Mark",
+    "question": "When asked about taxes, Jesus said, 'Render to ____ the things that are ____.'",
+    "options": [
+      "Caesar",
+      "Herod",
+      "The High Priest",
+      "God"
+    ],
+    "answer": "Caesar",
+    "reference": "Mark 12:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1775,
+    "book": "Mark",
+    "question": "What did the poor widow put into the treasury that Jesus said was more than all the others?",
+    "options": [
+      "Two mites (small copper coins)",
+      "A silver shekel",
+      "A piece of gold",
+      "Bread"
+    ],
+    "answer": "Two mites (small copper coins)",
+    "reference": "Mark 12:42",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1776,
+    "book": "Mark",
+    "question": "Who anointed Jesus with expensive ointment of spikenard at Bethany?",
+    "options": [
+      "A woman (unnamed in Mark)",
+      "Mary Magdalene",
+      "Martha",
+      "The disciples"
+    ],
+    "answer": "A woman (unnamed in Mark)",
+    "reference": "Mark 14:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1777,
+    "book": "Mark",
+    "question": "Who was the man from Cyrene forced to carry Jesus' cross?",
+    "options": [
+      "Simon",
+      "Alexander",
+      "Rufus",
+      "Lucius"
+    ],
+    "answer": "Simon",
+    "reference": "Mark 15:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1778,
+    "book": "Mark",
+    "question": "At what hour was Jesus crucified according to Mark?",
+    "options": [
+      "The third hour",
+      "The sixth hour",
+      "The ninth hour",
+      "The first hour"
+    ],
+    "answer": "The third hour",
+    "reference": "Mark 15:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1779,
+    "book": "Mark",
+    "question": "What were Jesus' last words on the cross in Mark? (Eloi, Eloi, lama sabachthani?)",
+    "options": [
+      "My God, My God, why have You forsaken Me?",
+      "It is finished",
+      "Father, forgive them",
+      "Into Your hands I commit My spirit"
+    ],
+    "answer": "My God, My God, why have You forsaken Me?",
+    "reference": "Mark 15:34",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1780,
+    "book": "Mark",
+    "question": "Who was the first person Jesus appeared to after His resurrection?",
+    "options": [
+      "Mary Magdalene",
+      "Peter",
+      "The twelve",
+      "His mother Mary"
+    ],
+    "answer": "Mary Magdalene",
+    "reference": "Mark 16:9",
+    "difficulty": "medium"
+  }
+]

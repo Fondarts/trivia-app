@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2441,
+    "book": "James",
+    "question": "My brethren, count it all ______ when you fall into various trials.",
+    "options": [
+      "Joy",
+      "Sorrow",
+      "Peace",
+      "Glory"
+    ],
+    "answer": "Joy",
+    "reference": "James 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2442,
+    "book": "James",
+    "question": "If any of you lacks ______, let him ask of God, who gives to all liberally.",
+    "options": [
+      "Wisdom",
+      "Faith",
+      "Money",
+      "Strength"
+    ],
+    "answer": "Wisdom",
+    "reference": "James 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2443,
+    "book": "James",
+    "question": "But let him ask in ______, with no doubting.",
+    "options": [
+      "Faith",
+      "Prayer",
+      "Hope",
+      "Fear"
+    ],
+    "answer": "Faith",
+    "reference": "James 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2444,
+    "book": "James",
+    "question": "A ______ man is unstable in all his ways.",
+    "options": [
+      "Double-minded",
+      "Sinful",
+      "Weak",
+      "Foolish"
+    ],
+    "answer": "Double-minded",
+    "reference": "James 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2445,
+    "book": "James",
+    "question": "Every good gift and every perfect gift is from ______, and comes down from the Father of lights.",
+    "options": [
+      "Above",
+      "God",
+      "Heaven",
+      "Nature"
+    ],
+    "answer": "Above",
+    "reference": "James 1:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2446,
+    "book": "James",
+    "question": "Let every man be swift to hear, ______ to speak, ______ to wrath.",
+    "options": [
+      "Slow; slow",
+      "Fast; fast",
+      "Ready; slow",
+      "Slow; fast"
+    ],
+    "answer": "Slow; slow",
+    "reference": "James 1:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2447,
+    "book": "James",
+    "question": "But be ______ of the word, and not hearers only, deceiving yourselves.",
+    "options": [
+      "Doers",
+      "Keepers",
+      "Speakers",
+      "Believers"
+    ],
+    "answer": "Doers",
+    "reference": "James 1:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2448,
+    "book": "James",
+    "question": "Pure and undefiled religion before God is this: to visit ______ and ______ in their trouble.",
+    "options": [
+      "Orphans; widows",
+      "The sick; the poor",
+      "Prisoners; sinners",
+      "Strangers; enemies"
+    ],
+    "answer": "Orphans; widows",
+    "reference": "James 1:27",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2449,
+    "book": "James",
+    "question": "James warns against showing ______ (partiality) to the rich over the poor.",
+    "options": [
+      "Favoritism",
+      "Anger",
+      "Honor",
+      "Respect"
+    ],
+    "answer": "Favoritism",
+    "reference": "James 2:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2450,
+    "book": "James",
+    "question": "If you really fulfill the royal law according to the Scripture, what is it?",
+    "options": [
+      "You shall love your neighbor as yourself",
+      "You shall not kill",
+      "Honor your father",
+      "Fear God"
+    ],
+    "answer": "You shall love your neighbor as yourself",
+    "reference": "James 2:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2451,
+    "book": "James",
+    "question": "For whoever shall keep the whole law, and yet stumble in one point, he is ______ of all.",
+    "options": [
+      "Guilty",
+      "Free",
+      "Clean",
+      "Ashamed"
+    ],
+    "answer": "Guilty",
+    "reference": "James 2:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2452,
+    "book": "James",
+    "question": "Faith by itself, if it does not have ______, is dead.",
+    "options": [
+      "Works",
+      "Love",
+      "Proof",
+      "Power"
+    ],
+    "answer": "Works",
+    "reference": "James 2:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2453,
+    "book": "James",
+    "question": "Even the ______ believe—and tremble!",
+    "options": [
+      "Demons",
+      "Wicked",
+      "Gentiles",
+      "Kings"
+    ],
+    "answer": "Demons",
+    "reference": "James 2:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2454,
+    "book": "James",
+    "question": "Was not ______ our father justified by works when he offered Isaac his son on the altar?",
+    "options": [
+      "Abraham",
+      "Jacob",
+      "David",
+      "Moses"
+    ],
+    "answer": "Abraham",
+    "reference": "James 2:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2455,
+    "book": "James",
+    "question": "James says that Abraham was called the ______ of God.",
+    "options": [
+      "Friend",
+      "Servant",
+      "Son",
+      "Prophet"
+    ],
+    "answer": "Friend",
+    "reference": "James 2:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2456,
+    "book": "James",
+    "question": "For as the ______ without the spirit is dead, so faith without works is dead also.",
+    "options": [
+      "Body",
+      "Tree",
+      "Lamp",
+      "House"
+    ],
+    "answer": "Body",
+    "reference": "James 2:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2457,
+    "book": "James",
+    "question": "James 3 warns that ______ receive a stricter judgment.",
+    "options": [
+      "Teachers",
+      "Kings",
+      "Rich men",
+      "Sinners"
+    ],
+    "answer": "Teachers",
+    "reference": "James 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2458,
+    "book": "James",
+    "question": "What small part of the body does James compare to a small fire that sets a great forest ablaze?",
+    "options": [
+      "The tongue",
+      "The eye",
+      "The hand",
+      "The heart"
+    ],
+    "answer": "The tongue",
+    "reference": "James 3:5-6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2459,
+    "book": "James",
+    "question": "No man can tame the ______; it is an unruly evil, full of deadly poison.",
+    "options": [
+      "Tongue",
+      "Lion",
+      "Wild ox",
+      "Mind"
+    ],
+    "answer": "Tongue",
+    "reference": "James 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2460,
+    "book": "James",
+    "question": "The wisdom that is from above is first ______, then peaceable, gentle.",
+    "options": [
+      "Pure",
+      "Strong",
+      "Secret",
+      "Old"
+    ],
+    "answer": "Pure",
+    "reference": "James 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2461,
+    "book": "James",
+    "question": "Where do wars and fights come from among you? Do they not come from your ______?",
+    "options": [
+      "Desires / Lusts",
+      "Enemies",
+      "Leaders",
+      "History"
+    ],
+    "answer": "Desires / Lusts",
+    "reference": "James 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2462,
+    "book": "James",
+    "question": "You ask and do not receive, because you ask ______.",
+    "options": [
+      "Amiss / With wrong motives",
+      "Quietly",
+      "Too much",
+      "Late"
+    ],
+    "answer": "Amiss / With wrong motives",
+    "reference": "James 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2463,
+    "book": "James",
+    "question": "Friendship with the ______ is enmity with God.",
+    "options": [
+      "World",
+      "Sinner",
+      "Rich",
+      "Enemy"
+    ],
+    "answer": "World",
+    "reference": "James 4:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2464,
+    "book": "James",
+    "question": "God resists the proud, but gives grace to the ______.",
+    "options": [
+      "Humble",
+      "Poor",
+      "Faithful",
+      "Weak"
+    ],
+    "answer": "Humble",
+    "reference": "James 4:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2465,
+    "book": "James",
+    "question": "______ to God. Resist the devil and he will flee from you.",
+    "options": [
+      "Submit",
+      "Pray",
+      "Listen",
+      "Call"
+    ],
+    "answer": "Submit",
+    "reference": "James 4:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2466,
+    "book": "James",
+    "question": "Draw ______ to God and He will draw ______ to you.",
+    "options": [
+      "Near; near",
+      "Fast; fast",
+      "Humbly; humbly",
+      "Quietly; quietly"
+    ],
+    "answer": "Near; near",
+    "reference": "James 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2467,
+    "book": "James",
+    "question": "Cleanse your ______ , you sinners; and purify your hearts, you double-minded.",
+    "options": [
+      "Hands",
+      "Feet",
+      "Clothes",
+      "House"
+    ],
+    "answer": "Hands",
+    "reference": "James 4:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2468,
+    "book": "James",
+    "question": "What is your life? It is even a ______ that appears for a little time and then vanishes away.",
+    "options": [
+      "Vapor / Mist",
+      "Shadow",
+      "Breath",
+      "Flower"
+    ],
+    "answer": "Vapor / Mist",
+    "reference": "James 4:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2469,
+    "book": "James",
+    "question": "Instead you ought to say, 'If the ______ ______ , we shall live and do this or that.'",
+    "options": [
+      "Lord wills",
+      "Sun rises",
+      "King allows",
+      "Faith stands"
+    ],
+    "answer": "Lord wills",
+    "reference": "James 4:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2470,
+    "book": "James",
+    "question": "To him who knows to do good and does not do it, to him it is ______.",
+    "options": [
+      "Sin",
+      "Waste",
+      "Folly",
+      "Loss"
+    ],
+    "answer": "Sin",
+    "reference": "James 4:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2471,
+    "book": "James",
+    "question": "James 5 warns ______ men to weep and howl for the miseries coming upon them.",
+    "options": [
+      "Rich",
+      "Wicked",
+      "Proud",
+      "Lazy"
+    ],
+    "answer": "Rich",
+    "reference": "James 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2472,
+    "book": "James",
+    "question": "Your gold and silver are ______.",
+    "options": [
+      "Corroded / Rusted",
+      "Gained",
+      "Lost",
+      "Useless"
+    ],
+    "answer": "Corroded / Rusted",
+    "reference": "James 5:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2473,
+    "book": "James",
+    "question": "The wages of the ______ which you kept back by fraud cry out.",
+    "options": [
+      "Laborers",
+      "Soldiers",
+      "Priests",
+      "Servants"
+    ],
+    "answer": "Laborers",
+    "reference": "James 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2474,
+    "book": "James",
+    "question": "Therefore be ______, brethren, until the coming of the Lord.",
+    "options": [
+      "Patient",
+      "Ready",
+      "Strong",
+      "Holy"
+    ],
+    "answer": "Patient",
+    "reference": "James 5:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2475,
+    "book": "James",
+    "question": "James uses the ______ as an example of waiting for the precious fruit of the earth.",
+    "options": [
+      "Farmer / Husbandman",
+      "Shepherd",
+      "Merchant",
+      "King"
+    ],
+    "answer": "Farmer / Husbandman",
+    "reference": "James 5:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2476,
+    "book": "James",
+    "question": "You have heard of the perseverance (patience) of ______, and seen the end intended by the Lord.",
+    "options": [
+      "Job",
+      "David",
+      "Abraham",
+      "Joseph"
+    ],
+    "answer": "Job",
+    "reference": "James 5:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2477,
+    "book": "James",
+    "question": "Above all, do not ______ , either by heaven or by earth.",
+    "options": [
+      "Swear",
+      "Sin",
+      "Fight",
+      "Worry"
+    ],
+    "answer": "Swear",
+    "reference": "James 5:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2478,
+    "book": "James",
+    "question": "Is anyone among you sick? Let him call for the ______ of the church.",
+    "options": [
+      "Elders",
+      "Deacons",
+      "Prophets",
+      "Members"
+    ],
+    "answer": "Elders",
+    "reference": "James 5:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2479,
+    "book": "James",
+    "question": "The effective, fervent ______ of a righteous man avails much.",
+    "options": [
+      "Prayer",
+      "Work",
+      "Faith",
+      "Song"
+    ],
+    "answer": "Prayer",
+    "reference": "James 5:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2480,
+    "book": "James",
+    "question": "Which prophet did James use as an example of a man with a nature like ours who prayed and it did not rain?",
+    "options": [
+      "Elijah",
+      "Elisha",
+      "Isaiah",
+      "Jeremiah"
+    ],
+    "answer": "Elijah",
+    "reference": "James 5:17",
+    "difficulty": "medium"
+  }
+]

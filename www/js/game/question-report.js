@@ -229,15 +229,6 @@ async function sendReport(reason, otherDescription) {
     })
   };
   
-  console.log('[report] Enviando reporte con datos:', {
-    question: questionText,
-    category,
-    difficulty,
-    options: formattedOptions,
-    correctAnswer: `${String.fromCharCode(65 + correctAnswerIndex)}. ${correctAnswer}`,
-    image: imageUrl
-  });
-  
   try {
     btnSend.disabled = true;
     btnSend.textContent = 'Enviando...';

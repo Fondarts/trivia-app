@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2641,
+    "book": "3 John",
+    "question": "How does the author identify himself in 3 John?",
+    "options": [
+      "The Elder",
+      "The Apostle",
+      "John",
+      "The Servant"
+    ],
+    "answer": "The Elder",
+    "reference": "3 John 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2642,
+    "book": "3 John",
+    "question": "To whom is the letter of 3 John addressed?",
+    "options": [
+      "Gaius",
+      "Diotrephes",
+      "Demetrius",
+      "The Elect Lady"
+    ],
+    "answer": "Gaius",
+    "reference": "3 John 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2643,
+    "book": "3 John",
+    "question": "John prays that Gaius may prosper and be in ______.",
+    "options": [
+      "Health",
+      "Wealth",
+      "Power",
+      "Spirit"
+    ],
+    "answer": "Health",
+    "reference": "3 John 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2644,
+    "book": "3 John",
+    "question": "John says: 'I have no greater ______ than to hear that my children walk in truth.'",
+    "options": [
+      "Joy",
+      "Peace",
+      "Hope",
+      "Reward"
+    ],
+    "answer": "Joy",
+    "reference": "3 John 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2645,
+    "book": "3 John",
+    "question": "John commends Gaius for his ______ to the brethren and to strangers.",
+    "options": [
+      "Faithfulness",
+      "Money",
+      "Strength",
+      "Words"
+    ],
+    "answer": "Faithfulness",
+    "reference": "3 John 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2646,
+    "book": "3 John",
+    "question": "John says we ought to receive such people (traveling ministers), that we may become ______ for the truth.",
+    "options": [
+      "Fellow workers",
+      "Servants",
+      "Soldiers",
+      "Leaders"
+    ],
+    "answer": "Fellow workers",
+    "reference": "3 John 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2647,
+    "book": "3 John",
+    "question": "Who is the man mentioned who 'loves to have the preeminence' among the church?",
+    "options": [
+      "Diotrephes",
+      "Demetrius",
+      "Gaius",
+      "Alexander"
+    ],
+    "answer": "Diotrephes",
+    "reference": "3 John 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2648,
+    "book": "3 John",
+    "question": "What did Diotrephes do regarding John's previous letter?",
+    "options": [
+      "He did not receive John/the letter",
+      "He burned it",
+      "He read it aloud",
+      "He obeyed it"
+    ],
+    "answer": "He did not receive John/the letter",
+    "reference": "3 John 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2649,
+    "book": "3 John",
+    "question": "What specific action did Diotrephes take against those who wanted to receive the brethren?",
+    "options": [
+      "He put them out of the church",
+      "He fined them",
+      "He prayed for them",
+      "He silenced them"
+    ],
+    "answer": "He put them out of the church",
+    "reference": "3 John 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2650,
+    "book": "3 John",
+    "question": "John says: 'Beloved, do not imitate what is evil, but what is ______.'",
+    "options": [
+      "Good",
+      "Holy",
+      "True",
+      "Faithful"
+    ],
+    "answer": "Good",
+    "reference": "3 John 1:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2651,
+    "book": "3 John",
+    "question": "He who does good is of God, but he who does evil has not ______ God.",
+    "options": [
+      "Seen",
+      "Known",
+      "Heard",
+      "Met"
+    ],
+    "answer": "Seen",
+    "reference": "3 John 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2652,
+    "book": "3 John",
+    "question": "Which man in 3 John has a 'good testimony from all' and from the truth itself?",
+    "options": [
+      "Demetrius",
+      "Diotrephes",
+      "Gaius",
+      "Onesimus"
+    ],
+    "answer": "Demetrius",
+    "reference": "3 John 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2653,
+    "book": "3 John",
+    "question": "How many verses are in the book of 3 John?",
+    "options": [
+      "14",
+      "13",
+      "15",
+      "12"
+    ],
+    "answer": "14",
+    "reference": "Structure",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2654,
+    "book": "3 John",
+    "question": "John writes: 'Peace to you. Our ______ greet you.'",
+    "options": [
+      "Friends",
+      "Brethren",
+      "Saints",
+      "Apostles"
+    ],
+    "answer": "Friends",
+    "reference": "3 John 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2655,
+    "book": "3 John",
+    "question": "John ends by telling Gaius to 'Greet the friends ______ ______'.",
+    "options": [
+      "By name",
+      "Quietly",
+      "Always",
+      "In the Lord"
+    ],
+    "answer": "By name",
+    "reference": "3 John 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2656,
+    "book": "3 John",
+    "question": "Traveling ministers in 3 John were going out for the sake of 'The ______'.",
+    "options": [
+      "Name",
+      "Gospel",
+      "Truth",
+      "Way"
+    ],
+    "answer": "Name",
+    "reference": "3 John 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2657,
+    "book": "3 John",
+    "question": "From whom did the traveling brethren take nothing?",
+    "options": [
+      "The Gentiles",
+      "The Church",
+      "Gaius",
+      "John"
+    ],
+    "answer": "The Gentiles",
+    "reference": "3 John 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2658,
+    "book": "3 John",
+    "question": "John says he wrote to the ______ , but Diotrephes resisted.",
+    "options": [
+      "Church",
+      "Elders",
+      "Kings",
+      "Saints"
+    ],
+    "answer": "Church",
+    "reference": "3 John 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2659,
+    "book": "3 John",
+    "question": "How does John describe the words Diotrephes used against him?",
+    "options": [
+      "Prating / Malicious words",
+      "Wise words",
+      "Hidden words",
+      "Loud words"
+    ],
+    "answer": "Prating / Malicious words",
+    "reference": "3 John 1:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2660,
+    "book": "3 John",
+    "question": "Gaius is praised for his soul ______.",
+    "options": [
+      "Prospering",
+      "Being saved",
+      "Suffering",
+      "Waiting"
+    ],
+    "answer": "Prospering",
+    "reference": "3 John 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2661,
+    "book": "3 John",
+    "question": "True or False: 3 John is the only book in the Bible that doesn't mention the name of Jesus or Christ directly.",
+    "options": [
+      "True (It uses 'The Name')",
+      "False",
+      "Only in the greeting",
+      "Only in the end"
+    ],
+    "answer": "True (It uses 'The Name')",
+    "reference": "Fact/3 John 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2662,
+    "book": "3 John",
+    "question": "3 John is addressed to a 'beloved' friend. How many times is the word 'beloved' used in this short book?",
+    "options": [
+      "Four times",
+      "One time",
+      "Seven times",
+      "Three times"
+    ],
+    "answer": "Four times",
+    "reference": "3 John 1:1, 2, 5, 11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2663,
+    "book": "3 John",
+    "question": "What was Gaius' reputation among the brethren who arrived?",
+    "options": [
+      "That he walked in truth",
+      "That he was wealthy",
+      "That he was a bishop",
+      "That he was sick"
+    ],
+    "answer": "That he walked in truth",
+    "reference": "3 John 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2664,
+    "book": "3 John",
+    "question": "John says he 'would not write with pen and ______'.",
+    "options": [
+      "Ink",
+      "Paper",
+      "Blood",
+      "Oil"
+    ],
+    "answer": "Ink",
+    "reference": "3 John 1:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2665,
+    "book": "3 John",
+    "question": "In 3 John, John expresses a desire to see Gaius '______ ______'.",
+    "options": [
+      "Shortly",
+      "Next year",
+      "In heaven",
+      "Never"
+    ],
+    "answer": "Shortly",
+    "reference": "3 John 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2666,
+    "book": "3 John",
+    "question": "The conflict in 3 John is primarily about church ______.",
+    "options": [
+      "Authority and Hospitality",
+      "Tithing",
+      "Baptism",
+      "Music"
+    ],
+    "answer": "Authority and Hospitality",
+    "reference": "Theme",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2667,
+    "book": "3 John",
+    "question": "John says Diotrephes prates against us with ______ words.",
+    "options": [
+      "Malicious",
+      "Foolish",
+      "Evil",
+      "Dirty"
+    ],
+    "answer": "Malicious",
+    "reference": "3 John 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2668,
+    "book": "3 John",
+    "question": "Gaius is told to help travelers on their way 'in a manner ______ of God'.",
+    "options": [
+      "Worthy",
+      "Suitable",
+      "True",
+      "Holy"
+    ],
+    "answer": "Worthy",
+    "reference": "3 John 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2669,
+    "book": "3 John",
+    "question": "Diotrephes not only rejects the brethren but also ______ others from receiving them.",
+    "options": [
+      "Forbids",
+      "Helps",
+      "Warns",
+      "Ignores"
+    ],
+    "answer": "Forbids",
+    "reference": "3 John 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2670,
+    "book": "3 John",
+    "question": "Demetrius is a contrast to whom in this letter?",
+    "options": [
+      "Diotrephes",
+      "Gaius",
+      "John",
+      "The Gentiles"
+    ],
+    "answer": "Diotrephes",
+    "reference": "Analysis",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2671,
+    "book": "3 John",
+    "question": "The 'friends' mentioned in 3 John 1:14 refer to...?",
+    "options": [
+      "Fellow believers",
+      "Apostles",
+      "Family",
+      "Neighbors"
+    ],
+    "answer": "Fellow believers",
+    "reference": "3 John 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2672,
+    "book": "3 John",
+    "question": "Gaius is called 'Beloved Gaius, whom I love in ______'.",
+    "options": [
+      "Truth",
+      "Spirit",
+      "Faith",
+      "The Lord"
+    ],
+    "answer": "Truth",
+    "reference": "3 John 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2673,
+    "book": "3 John",
+    "question": "John notes that the brethren 'bore witness of your ______' before the church.",
+    "options": [
+      "Love",
+      "Wealth",
+      "House",
+      "Power"
+    ],
+    "answer": "Love",
+    "reference": "3 John 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2674,
+    "book": "3 John",
+    "question": "John says: 'If I come, I will ______ his deeds' (referring to Diotrephes).",
+    "options": [
+      "Call to mind / Bring up",
+      "Forgive",
+      "Ignore",
+      "Record"
+    ],
+    "answer": "Call to mind / Bring up",
+    "reference": "3 John 1:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2675,
+    "book": "3 John",
+    "question": "In 3 John 1:2, the soul's prosperity is the ______ for physical prosperity.",
+    "options": [
+      "Measure / standard",
+      "Enemy",
+      "Result",
+      "Alternative"
+    ],
+    "answer": "Measure / standard",
+    "reference": "3 John 1:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2676,
+    "book": "3 John",
+    "question": "Walking in the truth involves both doctrine and ______.",
+    "options": [
+      "Lifestyle / Conduct",
+      "Wealth",
+      "Singing",
+      "Fasting"
+    ],
+    "answer": "Lifestyle / Conduct",
+    "reference": "Theme",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2677,
+    "book": "3 John",
+    "question": "John says he 'had many things to write', but he used which medium to finish the letter?",
+    "options": [
+      "Pen and ink",
+      "Blood",
+      "A scribe",
+      "Memory"
+    ],
+    "answer": "Pen and ink",
+    "reference": "3 John 1:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2678,
+    "book": "3 John",
+    "question": "Gaius is praised for his work being 'done ______'.",
+    "options": [
+      "Faithfully",
+      "Quickly",
+      "Secretly",
+      "Loudly"
+    ],
+    "answer": "Faithfully",
+    "reference": "3 John 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2679,
+    "book": "3 John",
+    "question": "Diotrephes 'does not ______ us'.",
+    "options": [
+      "Receive",
+      "Like",
+      "Know",
+      "Hear"
+    ],
+    "answer": "Receive",
+    "reference": "3 John 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2680,
+    "book": "3 John",
+    "question": "3 John is the only book in the Bible addressed to...?",
+    "options": [
+      "An individual named Gaius",
+      "A king",
+      "A city in Egypt",
+      "A woman"
+    ],
+    "answer": "An individual named Gaius",
+    "reference": "Context",
+    "difficulty": "medium"
+  }
+]

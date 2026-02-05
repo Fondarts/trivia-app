@@ -1,0 +1,562 @@
+[
+  {
+    "id": 2521,
+    "book": "2 Peter",
+    "question": "Simon Peter describes himself as a bondservant and ______ of Jesus Christ.",
+    "options": [
+      "Apostle",
+      "Prophet",
+      "Witness",
+      "Brother"
+    ],
+    "answer": "Apostle",
+    "reference": "2 Peter 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2522,
+    "book": "2 Peter",
+    "question": "His divine power has given to us all things that pertain to ______ and godliness.",
+    "options": [
+      "Life",
+      "Wealth",
+      "Faith",
+      "Truth"
+    ],
+    "answer": "Life",
+    "reference": "2 Peter 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2523,
+    "book": "2 Peter",
+    "question": "Through these great and precious promises, you may be partakers of the ______ ______.",
+    "options": [
+      "Divine nature",
+      "Holy Spirit",
+      "Eternal kingdom",
+      "Heavenly bread"
+    ],
+    "answer": "Divine nature",
+    "reference": "2 Peter 1:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2524,
+    "book": "2 Peter",
+    "question": "To your faith, add virtue; to virtue, ______.",
+    "options": [
+      "Knowledge",
+      "Patience",
+      "Love",
+      "Temperance"
+    ],
+    "answer": "Knowledge",
+    "reference": "2 Peter 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2525,
+    "book": "2 Peter",
+    "question": "What is the final quality Peter says to add to your faith in 1:7?",
+    "options": [
+      "Love / Charity",
+      "Peace",
+      "Hope",
+      "Kindness"
+    ],
+    "answer": "Love / Charity",
+    "reference": "2 Peter 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2526,
+    "book": "2 Peter",
+    "question": "If someone lacks these things (faith, virtue, knowledge, etc.), Peter says they are ______.",
+    "options": [
+      "Short-sighted / Blind",
+      "Lost",
+      "Foolish",
+      "Weak"
+    ],
+    "answer": "Short-sighted / Blind",
+    "reference": "2 Peter 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2527,
+    "book": "2 Peter",
+    "question": "Be even more diligent to make your ______ and ______ sure.",
+    "options": [
+      "Call; election",
+      "Faith; hope",
+      "Work; word",
+      "Life; path"
+    ],
+    "answer": "Call; election",
+    "reference": "2 Peter 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2528,
+    "book": "2 Peter",
+    "question": "Peter says he will soon 'put off his ______' as the Lord showed him.",
+    "options": [
+      "Tabernacle (Tent/Body)",
+      "Cloak",
+      "Crown",
+      "Name"
+    ],
+    "answer": "Tabernacle (Tent/Body)",
+    "reference": "2 Peter 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2529,
+    "book": "2 Peter",
+    "question": "For we did not follow cunningly devised ______ when we made known the power of our Lord.",
+    "options": [
+      "Fables",
+      "Stories",
+      "Laws",
+      "Plans"
+    ],
+    "answer": "Fables",
+    "reference": "2 Peter 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2530,
+    "book": "2 Peter",
+    "question": "Peter says they were ______ of His majesty on the holy mountain.",
+    "options": [
+      "Eyewitnesses",
+      "Hearers",
+      "Servants",
+      "Prophets"
+    ],
+    "answer": "Eyewitnesses",
+    "reference": "2 Peter 1:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2531,
+    "book": "2 Peter",
+    "question": "We have the ______ ______ ______ more confirmed, which you do well to heed.",
+    "options": [
+      "Prophetic word",
+      "Holy law",
+      "Ancient scroll",
+      "Apostolic voice"
+    ],
+    "answer": "Prophetic word",
+    "reference": "2 Peter 1:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2532,
+    "book": "2 Peter",
+    "question": "No prophecy of Scripture is of any ______ interpretation.",
+    "options": [
+      "Private",
+      "Easy",
+      "Hard",
+      "Wrong"
+    ],
+    "answer": "Private",
+    "reference": "2 Peter 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2533,
+    "book": "2 Peter",
+    "question": "Holy men of God spoke as they were moved by the ______ ______.",
+    "options": [
+      "Holy Spirit",
+      "Angels",
+      "Lord",
+      "Spirit of Truth"
+    ],
+    "answer": "Holy Spirit",
+    "reference": "2 Peter 1:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2534,
+    "book": "2 Peter",
+    "question": "Peter warns that there will be ______ ______ among the people, just as there were false prophets.",
+    "options": [
+      "False teachers",
+      "False kings",
+      "Enemy soldiers",
+      "Greedy men"
+    ],
+    "answer": "False teachers",
+    "reference": "2 Peter 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2535,
+    "book": "2 Peter",
+    "question": "What did God do to the angels who sinned?",
+    "options": [
+      "Cast them down to Hell (Tartarus) in chains of darkness",
+      "Destroyed them",
+      "Forgave them",
+      "Sent them to earth"
+    ],
+    "answer": "Cast them down to Hell (Tartarus) in chains of darkness",
+    "reference": "2 Peter 2:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2536,
+    "book": "2 Peter",
+    "question": "God did not spare the ancient world, but saved ______, a preacher of righteousness.",
+    "options": [
+      "Noah",
+      "Lot",
+      "Abraham",
+      "Enoch"
+    ],
+    "answer": "Noah",
+    "reference": "2 Peter 2:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2537,
+    "book": "2 Peter",
+    "question": "Which two cities did God turn into ashes as an example to the ungodly?",
+    "options": [
+      "Sodom and Gomorrah",
+      "Tyre and Sidon",
+      "Nineveh and Babylon",
+      "Jerusalem and Samaria"
+    ],
+    "answer": "Sodom and Gomorrah",
+    "reference": "2 Peter 2:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2538,
+    "book": "2 Peter",
+    "question": "Who was the 'righteous man' tormented by the filthy conduct of the wicked in Sodom?",
+    "options": [
+      "Lot",
+      "Noah",
+      "Abraham",
+      "Isaac"
+    ],
+    "answer": "Lot",
+    "reference": "2 Peter 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2539,
+    "book": "2 Peter",
+    "question": "Which prophet was rebuked by a dumb donkey speaking with a man's voice?",
+    "options": [
+      "Balaam",
+      "Elijah",
+      "Jonah",
+      "Elisha"
+    ],
+    "answer": "Balaam",
+    "reference": "2 Peter 2:15-16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2540,
+    "book": "2 Peter",
+    "question": "False teachers are described as 'wells without ______'.",
+    "options": [
+      "Water",
+      "Depth",
+      "Walls",
+      "Ends"
+    ],
+    "answer": "Water",
+    "reference": "2 Peter 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2541,
+    "book": "2 Peter",
+    "question": "For of whom a man is ______, by him also is he brought into bondage.",
+    "options": [
+      "Overcome",
+      "Served",
+      "Loved",
+      "Known"
+    ],
+    "answer": "Overcome",
+    "reference": "2 Peter 2:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2542,
+    "book": "2 Peter",
+    "question": "It would have been better for them not to have known the way of righteousness than to turn from the ______ ______.",
+    "options": [
+      "Holy commandment",
+      "Church",
+      "Faith",
+      "Truth"
+    ],
+    "answer": "Holy commandment",
+    "reference": "2 Peter 2:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2543,
+    "book": "2 Peter",
+    "question": "A proverb says: 'A dog returns to his own ______.'",
+    "options": [
+      "Vomit",
+      "House",
+      "Master",
+      "Food"
+    ],
+    "answer": "Vomit",
+    "reference": "2 Peter 2:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2544,
+    "book": "2 Peter",
+    "question": "Scoffers will come in the last days, asking: 'Where is the ______ of His coming?'",
+    "options": [
+      "Promise",
+      "Sign",
+      "Proof",
+      "Power"
+    ],
+    "answer": "Promise",
+    "reference": "2 Peter 3:3-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2545,
+    "book": "2 Peter",
+    "question": "Scoffers willfully forget that by the ______ of God the heavens were of old.",
+    "options": [
+      "Word",
+      "Spirit",
+      "Will",
+      "Power"
+    ],
+    "answer": "Word",
+    "reference": "2 Peter 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2546,
+    "book": "2 Peter",
+    "question": "The world that then existed perished, being flooded with ______.",
+    "options": [
+      "Water",
+      "Sin",
+      "Rain",
+      "Ice"
+    ],
+    "answer": "Water",
+    "reference": "2 Peter 3:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2547,
+    "book": "2 Peter",
+    "question": "The heavens and earth which are now preserved are reserved for ______.",
+    "options": [
+      "Fire",
+      "Water",
+      "The end",
+      "Eternity"
+    ],
+    "answer": "Fire",
+    "reference": "2 Peter 3:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2548,
+    "book": "2 Peter",
+    "question": "With the Lord one day is as a ______ years.",
+    "options": [
+      "Thousand",
+      "Hundred",
+      "Million",
+      "Seven"
+    ],
+    "answer": "Thousand",
+    "reference": "2 Peter 3:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2549,
+    "book": "2 Peter",
+    "question": "The Lord is not slack concerning His promise, but is ______ toward us.",
+    "options": [
+      "Longsuffering / Patient",
+      "Angry",
+      "Watching",
+      "Waiting"
+    ],
+    "answer": "Longsuffering / Patient",
+    "reference": "2 Peter 3:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2550,
+    "book": "2 Peter",
+    "question": "The Lord is not willing that any should ______.",
+    "options": [
+      "Perish",
+      "Sin",
+      "Fail",
+      "Doubt"
+    ],
+    "answer": "Perish",
+    "reference": "2 Peter 3:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2551,
+    "book": "2 Peter",
+    "question": "But the day of the Lord will come as a ______ in the night.",
+    "options": [
+      "Thief",
+      "Light",
+      "King",
+      "Lion"
+    ],
+    "answer": "Thief",
+    "reference": "2 Peter 3:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2552,
+    "book": "2 Peter",
+    "question": "In that Day, the ______ will melt with fervent heat.",
+    "options": [
+      "Elements",
+      "Nations",
+      "Mountains",
+      "Saints"
+    ],
+    "answer": "Elements",
+    "reference": "2 Peter 3:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2553,
+    "book": "2 Peter",
+    "question": "We look for new heavens and a new earth in which ______ dwells.",
+    "options": [
+      "Righteousness",
+      "Peace",
+      "Love",
+      "Light"
+    ],
+    "answer": "Righteousness",
+    "reference": "2 Peter 3:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2554,
+    "book": "2 Peter",
+    "question": "Peter refers to 'our beloved brother ______' and his epistles.",
+    "options": [
+      "Paul",
+      "Timothy",
+      "John",
+      "James"
+    ],
+    "answer": "Paul",
+    "reference": "2 Peter 3:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2555,
+    "book": "2 Peter",
+    "question": "Peter says some things in Paul's epistles are ______ to understand.",
+    "options": [
+      "Hard",
+      "Impossible",
+      "Easy",
+      "Wrong"
+    ],
+    "answer": "Hard",
+    "reference": "2 Peter 3:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2556,
+    "book": "2 Peter",
+    "question": "Grow in the grace and ______ of our Lord and Savior Jesus Christ.",
+    "options": [
+      "Knowledge",
+      "Truth",
+      "Faith",
+      "Love"
+    ],
+    "answer": "Knowledge",
+    "reference": "2 Peter 3:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2557,
+    "book": "2 Peter",
+    "question": "To Him be the ______ both now and forever. Amen.",
+    "options": [
+      "Glory",
+      "Honor",
+      "Praise",
+      "Kingdom"
+    ],
+    "answer": "Glory",
+    "reference": "2 Peter 3:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2558,
+    "book": "2 Peter",
+    "question": "Untaught and unstable people twist Paul's letters to their own ______.",
+    "options": [
+      "Destruction",
+      "Benefit",
+      "Profit",
+      "End"
+    ],
+    "answer": "Destruction",
+    "reference": "2 Peter 3:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2559,
+    "book": "2 Peter",
+    "question": "Peter wrote this second epistle to stir up their 'pure ______' by way of reminder.",
+    "options": [
+      "Minds",
+      "Hearts",
+      "Souls",
+      "Faith"
+    ],
+    "answer": "Minds",
+    "reference": "2 Peter 3:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2560,
+    "book": "2 Peter",
+    "question": "What is the theme of 2 Peter 2?",
+    "options": [
+      "Warning against false teachers",
+      "The love of God",
+      "The history of Israel",
+      "Instructions for marriage"
+    ],
+    "answer": "Warning against false teachers",
+    "reference": "Chapter Theme",
+    "difficulty": "medium"
+  }
+]

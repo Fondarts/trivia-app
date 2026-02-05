@@ -44,22 +44,23 @@ export function updateGameModeDescription(mode) {
   
   if (!iconEl || !textEl) return;
   
+  // Solo modos disponibles: rounds, wordsearch, bible
   const descriptions = {
-    'random': {
-      icon: '⚡',
-      text: 'Partidas rápidas con respuestas en tiempo real'
+    'rounds': {
+      icon: '📖',
+      text: 'Test your Bible knowledge'
     },
-    'random_async': {
-      icon: '⏰',
-      text: 'Juega a tu ritmo - tienes 2 horas para cada respuesta'
+    'wordsearch': {
+      icon: '🔍',
+      text: 'Find Bible words'
     },
-    'friend': {
-      icon: '👥',
-      text: 'Desafía a tus amigos y compite contra ellos'
+    'bible': {
+      icon: '📚',
+      text: 'Study the Bible'
     }
   };
   
-  const desc = descriptions[mode] || descriptions['random'];
+  const desc = descriptions[mode] || descriptions['rounds'];
   iconEl.textContent = desc.icon;
   textEl.textContent = desc.text;
 }

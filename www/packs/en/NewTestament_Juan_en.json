@@ -1,0 +1,842 @@
+[
+  {
+    "id": 2861,
+    "book": "Juan",
+    "question": "In the beginning was the ______, and the ______ was with God.",
+    "options": [
+      "Word",
+      "Spirit",
+      "Light",
+      "King"
+    ],
+    "answer": "Word",
+    "reference": "John 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2862,
+    "book": "Juan",
+    "question": "In what city did Jesus perform His first miracle of turning water into wine?",
+    "options": [
+      "Cana",
+      "Capernaum",
+      "Nazareth",
+      "Jerusalem"
+    ],
+    "answer": "Cana",
+    "reference": "John 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2863,
+    "book": "Juan",
+    "question": "Who was the Pharisee who came to Jesus by night?",
+    "options": [
+      "Nicodemus",
+      "Caiaphas",
+      "Gamaliel",
+      "Joseph of Arimathea"
+    ],
+    "answer": "Nicodemus",
+    "reference": "John 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2864,
+    "book": "Juan",
+    "question": "Where did Jesus meet the Samaritan woman?",
+    "options": [
+      "Jacob's well",
+      "The Pool of Bethesda",
+      "The Temple",
+      "The Jordan River"
+    ],
+    "answer": "Jacob's well",
+    "reference": "John 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2865,
+    "book": "Juan",
+    "question": "What was the name of the pool where the man who had been infirm for 38 years was healed?",
+    "options": [
+      "Bethesda",
+      "Siloam",
+      "Hezekiah",
+      "Gihon"
+    ],
+    "answer": "Bethesda",
+    "reference": "John 5:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2866,
+    "book": "Juan",
+    "question": "After feeding the 5,000, how many baskets of fragments were gathered?",
+    "options": [
+      "Twelve",
+      "Seven",
+      "Five",
+      "Ten"
+    ],
+    "answer": "Twelve",
+    "reference": "John 6:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2867,
+    "book": "Juan",
+    "question": "Complete the 'I Am' statement: 'I am the ______ of the world.'",
+    "options": [
+      "Light",
+      "King",
+      "Door",
+      "Bread"
+    ],
+    "answer": "Light",
+    "reference": "John 8:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2868,
+    "book": "Juan",
+    "question": "In which pool did Jesus tell the man born blind to wash?",
+    "options": [
+      "Siloam",
+      "Bethesda",
+      "Jordan",
+      "Gihon"
+    ],
+    "answer": "Siloam",
+    "reference": "John 9:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2869,
+    "book": "Juan",
+    "question": "How many days had Lazarus been in the tomb when Jesus arrived?",
+    "options": [
+      "Four days",
+      "Three days",
+      "Two days",
+      "Seven days"
+    ],
+    "answer": "Four days",
+    "reference": "John 11:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2870,
+    "book": "Juan",
+    "question": "What is the shortest verse in the Bible (John 11:35)?",
+    "options": [
+      "Jesus wept",
+      "Pray without ceasing",
+      "He is risen",
+      "God is love"
+    ],
+    "answer": "Jesus wept",
+    "reference": "John 11:35",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2871,
+    "book": "Juan",
+    "question": "What act of humility did Jesus perform for His disciples at the Last Supper?",
+    "options": [
+      "Washed their feet",
+      "Cooked for them",
+      "Anointed their heads",
+      "Gave them money"
+    ],
+    "answer": "Washed their feet",
+    "reference": "John 13:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2872,
+    "book": "Juan",
+    "question": "Complete the 'I Am' statement: 'I am the way, the ______, and the life.'",
+    "options": [
+      "Truth",
+      "Light",
+      "Door",
+      "Resurrection"
+    ],
+    "answer": "Truth",
+    "reference": "John 14:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2873,
+    "book": "Juan",
+    "question": "What title did Jesus use for the Holy Spirit in John 14 and 16?",
+    "options": [
+      "The Helper / Comforter",
+      "The Mighty Wind",
+      "The Flame",
+      "The Dove"
+    ],
+    "answer": "The Helper / Comforter",
+    "reference": "John 14:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2874,
+    "book": "Juan",
+    "question": "Complete the 'I Am' statement: 'I am the ______ vine.'",
+    "options": [
+      "True",
+      "Holy",
+      "Living",
+      "Great"
+    ],
+    "answer": "True",
+    "reference": "John 15:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2875,
+    "book": "Juan",
+    "question": "What was the name of the high priest's servant whose ear Peter cut off?",
+    "options": [
+      "Malchus",
+      "Simon",
+      "John",
+      "Judas"
+    ],
+    "answer": "Malchus",
+    "reference": "John 18:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2876,
+    "book": "Juan",
+    "question": "To which high priest was Jesus first taken after His arrest?",
+    "options": [
+      "Annas",
+      "Caiaphas",
+      "Zadok",
+      "Eleazar"
+    ],
+    "answer": "Annas",
+    "reference": "John 18:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2877,
+    "book": "Juan",
+    "question": "What was written on the sign Pilate put on the cross?",
+    "options": [
+      "Jesus of Nazareth, the King of the Jews",
+      "This is the Christ",
+      "The Son of God",
+      "The Prophet"
+    ],
+    "answer": "Jesus of Nazareth, the King of the Jews",
+    "reference": "John 19:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2878,
+    "book": "Juan",
+    "question": "Which disciple was not present when Jesus first appeared to the group after His resurrection?",
+    "options": [
+      "Thomas",
+      "Philip",
+      "Andrew",
+      "Matthew"
+    ],
+    "answer": "Thomas",
+    "reference": "John 20:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2879,
+    "book": "Juan",
+    "question": "How many fish were in the net when the disciples caught them in John 21?",
+    "options": [
+      "153",
+      "120",
+      "5,000",
+      "70"
+    ],
+    "answer": "153",
+    "reference": "John 21:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2880,
+    "book": "Juan",
+    "question": "How many times did Jesus ask Peter, 'Do you love Me?'",
+    "options": [
+      "Three times",
+      "Seven times",
+      "Once",
+      "Twice"
+    ],
+    "answer": "Three times",
+    "reference": "John 21:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2961,
+    "book": "Juan",
+    "question": "What did John the Baptist call Jesus when he saw Him coming?",
+    "options": [
+      "The Lamb of God",
+      "The King of Israel",
+      "The Prophet",
+      "The Lion of Judah"
+    ],
+    "answer": "The Lamb of God",
+    "reference": "John 1:29",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2962,
+    "book": "Juan",
+    "question": "Jesus said: 'God is ______, and those who worship Him must worship in ______ and ______.'",
+    "options": [
+      "Spirit; spirit; truth",
+      "Love; love; faith",
+      "Light; light; word",
+      "Holy; power; fear"
+    ],
+    "answer": "Spirit; spirit; truth",
+    "reference": "John 4:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2963,
+    "book": "Juan",
+    "question": "Complete the 'I Am' statement: 'I am the ______ shepherd.'",
+    "options": [
+      "Good",
+      "True",
+      "Holy",
+      "Living"
+    ],
+    "answer": "Good",
+    "reference": "John 10:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2964,
+    "book": "Juan",
+    "question": "How did Jesus describe the 'many mansions' at the Last Supper?",
+    "options": [
+      "In My Father's house",
+      "In the Temple",
+      "In the new city",
+      "In heaven"
+    ],
+    "answer": "In My Father's house",
+    "reference": "John 14:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2965,
+    "book": "Juan",
+    "question": "Which of the sisters of Lazarus said: 'Lord, if You had been here, my brother would not have died'?",
+    "options": [
+      "Martha (and Mary)",
+      "Only Martha",
+      "Only Mary",
+      "Elizabeth"
+    ],
+    "answer": "Martha (and Mary)",
+    "reference": "John 11:21, 32",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2966,
+    "book": "Juan",
+    "question": "Who helped Joseph of Arimathea bury Jesus, bringing a mixture of myrrh and aloes?",
+    "options": [
+      "Nicodemus",
+      "John",
+      "Peter",
+      "Lazarus"
+    ],
+    "answer": "Nicodemus",
+    "reference": "John 19:39",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2967,
+    "book": "Juan",
+    "question": "Who was the first person to see the resurrected Jesus in the garden?",
+    "options": [
+      "Mary Magdalene",
+      "Peter",
+      "John",
+      "His mother Mary"
+    ],
+    "answer": "Mary Magdalene",
+    "reference": "John 20:14-16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2968,
+    "book": "Juan",
+    "question": "Jesus said: 'For God so ______ the world that He gave His only begotten Son.'",
+    "options": [
+      "Loved",
+      "Pity",
+      "Saved",
+      "Helped"
+    ],
+    "answer": "Loved",
+    "reference": "John 3:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2969,
+    "book": "Juan",
+    "question": "What did Jesus say to Thomas after He showed him His wounds?",
+    "options": [
+      "Blessed are those who have not seen and yet have believed",
+      "Why did you doubt?",
+      "Follow Me",
+      "Do not be afraid"
+    ],
+    "answer": "Blessed are those who have not seen and yet have believed",
+    "reference": "John 20:29",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2970,
+    "book": "Juan",
+    "question": "What was the reason John gave for writing his Gospel?",
+    "options": [
+      "That you may believe that Jesus is the Christ, and have life in His name",
+      "To record history",
+      "To correct other gospels",
+      "To explain the law"
+    ],
+    "answer": "That you may believe that Jesus is the Christ, and have life in His name",
+    "reference": "John 20:31",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2971,
+    "book": "Juan",
+    "question": "Which 'I Am' statement did Jesus use after feeding the five thousand?",
+    "options": [
+      "I am the bread of life",
+      "I am the living water",
+      "I am the light",
+      "I am the way"
+    ],
+    "answer": "I am the bread of life",
+    "reference": "John 6:35",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2972,
+    "book": "Juan",
+    "question": "Jesus said: 'If you abide in My word... you shall know the ______, and the ______ shall make you free.'",
+    "options": [
+      "Truth; truth",
+      "Law; law",
+      "Spirit; spirit",
+      "Word; word"
+    ],
+    "answer": "Truth; truth",
+    "reference": "John 8:31-32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2973,
+    "book": "Juan",
+    "question": "Before which feast did Jesus wash the feet of His disciples?",
+    "options": [
+      "Passover",
+      "Pentecost",
+      "Tabernacles",
+      "Dedication"
+    ],
+    "answer": "Passover",
+    "reference": "John 13:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2974,
+    "book": "Juan",
+    "question": "Complete the 'I Am' statement: 'I am the ______ and the ______.'",
+    "options": [
+      "Resurrection; life",
+      "Beginning; end",
+      "Alpha; Omega",
+      "First; last"
+    ],
+    "answer": "Resurrection; life",
+    "reference": "John 11:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2975,
+    "book": "Juan",
+    "question": "Jesus said: 'A new ______ I give to you, that you love one another.'",
+    "options": [
+      "Commandment",
+      "Law",
+      "Spirit",
+      "Word"
+    ],
+    "answer": "Commandment",
+    "reference": "John 13:34",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2976,
+    "book": "Juan",
+    "question": "What did Jesus say to the woman caught in adultery after her accusers left?",
+    "options": [
+      "Neither do I condemn you; go and sin no more",
+      "You are forgiven",
+      "Go in peace",
+      "Believe in Me"
+    ],
+    "answer": "Neither do I condemn you; go and sin no more",
+    "reference": "John 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2977,
+    "book": "Juan",
+    "question": "Which miracle is only recorded in the Gospel of John?",
+    "options": [
+      "Turning water into wine",
+      "Feeding the 5,000",
+      "Walking on water",
+      "Healing a leper"
+    ],
+    "answer": "Turning water into wine",
+    "reference": "John 2:1-11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 2978,
+    "book": "Juan",
+    "question": "What did Jesus say while hanging on the cross in John's account?",
+    "options": [
+      "It is finished",
+      "Father forgive them",
+      "I am thirsty",
+      "Both 'It is finished' and 'I thirst'"
+    ],
+    "answer": "Both 'It is finished' and 'I thirst'",
+    "reference": "John 19:28, 30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2979,
+    "book": "Juan",
+    "question": "What did the soldiers do to the two men crucified with Jesus that they did not do to Jesus?",
+    "options": [
+      "Broke their legs",
+      "Pierced their sides",
+      "Cast lots",
+      "Gave them vinegar"
+    ],
+    "answer": "Broke their legs",
+    "reference": "John 19:32-33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2980,
+    "book": "Juan",
+    "question": "Jesus said: 'Greater love has no one than this, than to ______.'",
+    "options": [
+      "Lay down one’s life for his friends",
+      "Give to the poor",
+      "Follow the law",
+      "Forgive enemies"
+    ],
+    "answer": "Lay down one’s life for his friends",
+    "reference": "John 15:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3061,
+    "book": "Juan",
+    "question": "What was the name of the man who came to Jesus by night to ask about being born again?",
+    "options": [
+      "Nicodemus",
+      "Joseph of Arimathea",
+      "Zacchaeus",
+      "Gamaliel"
+    ],
+    "answer": "Nicodemus",
+    "reference": "John 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3062,
+    "book": "Juan",
+    "question": "Jesus said: 'I am the ______ of the world. He who follows Me shall not walk in darkness.'",
+    "options": [
+      "Light",
+      "Bread",
+      "Door",
+      "Way"
+    ],
+    "answer": "Light",
+    "reference": "John 8:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3063,
+    "book": "Juan",
+    "question": "Which friend of Jesus did He raise from the dead after he had been in the tomb for four days?",
+    "options": [
+      "Lazarus",
+      "Simon",
+      "John",
+      "Peter"
+    ],
+    "answer": "Lazarus",
+    "reference": "John 11:43-44",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3064,
+    "book": "Juan",
+    "question": "What did Jesus do for His disciples during the Last Supper to show them how to serve?",
+    "options": [
+      "Washed their feet",
+      "Gave them money",
+      "Cooked a meal",
+      "Anointed their heads"
+    ],
+    "answer": "Washed their feet",
+    "reference": "John 13:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3065,
+    "book": "Juan",
+    "question": "Who was the 'disciple whom Jesus loved' and who stood by the cross during the crucifixion?",
+    "options": [
+      "John",
+      "Peter",
+      "Andrew",
+      "James"
+    ],
+    "answer": "John",
+    "reference": "John 19:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3066,
+    "book": "Juan",
+    "question": "To which pool did Jesus send the man born blind to wash his eyes?",
+    "options": [
+      "Siloam",
+      "Bethesda",
+      "Jordan",
+      "Gihon"
+    ],
+    "answer": "Siloam",
+    "reference": "John 9:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3067,
+    "book": "Juan",
+    "question": "In John 1, what did Andrew say to his brother Simon after meeting Jesus?",
+    "options": [
+      "We have found the Messiah",
+      "We have found the King",
+      "We have found the Prophet",
+      "Come and see"
+    ],
+    "answer": "We have found the Messiah",
+    "reference": "John 1:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3068,
+    "book": "Juan",
+    "question": "What was Jesus' first miracle, performed at a wedding in Cana?",
+    "options": [
+      "Turning water into wine",
+      "Healing a blind man",
+      "Multiplying bread",
+      "Raising the dead"
+    ],
+    "answer": "Turning water into wine",
+    "reference": "John 2:1-11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3069,
+    "book": "Juan",
+    "question": "Who was the first person to see the resurrected Jesus at the tomb in John's account?",
+    "options": [
+      "Mary Magdalene",
+      "Peter",
+      "John",
+      "His mother Mary"
+    ],
+    "answer": "Mary Magdalene",
+    "reference": "John 20:14-16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3070,
+    "book": "Juan",
+    "question": "What did Jesus say to the woman at the well about the water He would give?",
+    "options": [
+      "It would become a fountain of water springing up into everlasting life",
+      "It was very cold",
+      "It was holy water",
+      "It would never run out"
+    ],
+    "answer": "It would become a fountain of water springing up into everlasting life",
+    "reference": "John 4:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3071,
+    "book": "Juan",
+    "question": "How many times did Jesus ask Peter, 'Do you love Me?' on the shore of the Sea of Galilee?",
+    "options": [
+      "Three times",
+      "Once",
+      "Two times",
+      "Seven times"
+    ],
+    "answer": "Three times",
+    "reference": "John 21:15-17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3072,
+    "book": "Juan",
+    "question": "Which apostle refused to believe Jesus had risen until he saw the nail marks and touched His side?",
+    "options": [
+      "Thomas",
+      "Philip",
+      "Andrew",
+      "James"
+    ],
+    "answer": "Thomas",
+    "reference": "John 20:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3073,
+    "book": "Juan",
+    "question": "Jesus said: 'I am the ______ vine, and My Father is the vinedresser.'",
+    "options": [
+      "True",
+      "Good",
+      "Holy",
+      "Living"
+    ],
+    "answer": "True",
+    "reference": "John 15:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3074,
+    "book": "Juan",
+    "question": "What was the name of the place (the Pavement) where Pilate sat to judge Jesus?",
+    "options": [
+      "Gabbatha",
+      "Golgotha",
+      "Gethsemane",
+      "Zion"
+    ],
+    "answer": "Gabbatha",
+    "reference": "John 19:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3075,
+    "book": "Juan",
+    "question": "In John 6, what did Jesus call Himself after feeding the 5,000?",
+    "options": [
+      "The Bread of Life",
+      "The Living Water",
+      "The Light of the World",
+      "The Good Shepherd"
+    ],
+    "answer": "The Bread of Life",
+    "reference": "John 6:35",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3076,
+    "book": "Juan",
+    "question": "Who was the father of the disciple Philip?",
+    "options": [
+      "Unnamed in John",
+      "Zebedee",
+      "Alphaeus",
+      "Jonas"
+    ],
+    "answer": "Unnamed in John",
+    "reference": "John 1:44",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3077,
+    "book": "Juan",
+    "question": "What did Jesus say to Mary Magdalene when she first recognized Him at the tomb?",
+    "options": [
+      "Do not cling to Me",
+      "Go tell the others",
+      "Why are you weeping?",
+      "Peace be with you"
+    ],
+    "answer": "Do not cling to Me",
+    "reference": "John 20:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3078,
+    "book": "Juan",
+    "question": "How many stone water jars were used during the miracle at Cana?",
+    "options": [
+      "Six",
+      "Seven",
+      "Twelve",
+      "Three"
+    ],
+    "answer": "Six",
+    "reference": "John 2:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3079,
+    "book": "Juan",
+    "question": "Jesus said: 'I am the ______, and the ______.' (to Martha before raising Lazarus)",
+    "options": [
+      "Resurrection; life",
+      "Beginning; end",
+      "Way; truth",
+      "Alpha; Omega"
+    ],
+    "answer": "Resurrection; life",
+    "reference": "John 11:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3080,
+    "book": "Juan",
+    "question": "What did the soldiers do to Jesus' side to ensure He was dead?",
+    "options": [
+      "Pierced it with a spear",
+      "Broke His legs",
+      "Struck Him",
+      "Washed it"
+    ],
+    "answer": "Pierced it with a spear",
+    "reference": "John 19:34",
+    "difficulty": "medium"
+  }
+]

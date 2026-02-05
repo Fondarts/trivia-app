@@ -50,7 +50,7 @@ export function renderStatsPageTranslated() {
                 <div class="stat-info">
                     <div class="stat-value">${totalGames}</div>
                     <div class="stat-label">${t('totalGames')}</div>
-                    <div class="stat-detail">${stats.soloGamesPlayed || 0} ${t('soloGames')}, ${stats.vsGamesWon || 0} ${t('vsGames')}</div>
+                    <div class="stat-detail">${stats.soloGamesPlayed || 0} ${t('soloGames')}</div>
                 </div>
             </div>
             
@@ -185,7 +185,7 @@ export function renderStatsPageTranslated() {
         <div class="achievements-grid-icons">
             ${ACHIEVEMENTS_LIST.map(ach => {
                 const isUnlocked = unlocked.has(ach.id);
-                const iconPath = ach.icon ? `Icons/${ach.icon}` : '';
+                const iconPath = ach.icon ? `assets/icons/${ach.icon}` : '';
                 
                 // Usar traducción si existe, sino usar el original
                 const title = achievementNameKeys[ach.id] ? t(achievementNameKeys[ach.id]) : ach.title;

@@ -4,8 +4,14 @@
 import { generateWordSearch } from './wordsearch.js';
 import { t } from '../core/i18n.js';
 import { showConfigUI } from '../ui/game-ui.js';
+import { openReaderWithBook } from './bible-study.js';
 
 let wsState = null;
+
+function onCompleteVerseClick() {
+  if (!wsState?.verse?.bookId) return;
+  openReaderWithBook(wsState.verse.bookId, wsState.verse.chapter, wsState.verse.verse);
+}
 
 function normalize(s) {
   return (s || '').normalize('NFD').replace(/\u0300/g, '').toUpperCase();
@@ -32,17 +38,125 @@ function renderGrid(grid, words) {
   }
 }
 
-function renderWordList(words) {
+function renderVerse(verse) {
   const wrap = document.getElementById('wsWordList');
   if (!wrap) return;
-  wrap.innerHTML = '';
-  words.forEach(({ word }) => {
-    const span = document.createElement('span');
-    span.className = 'ws-word-item';
-    span.dataset.word = normalize(word);
-    span.textContent = word;
-    wrap.appendChild(span);
+  
+  if (!verse) {
+    wrap.innerHTML = '';
+    return;
+  }
+
+  // Crear estructura para mostrar el versículo con palabras ocultas
+  // El HTML ya viene con los spans con ancho fijo desde createHiddenText
+  wrap.innerHTML = `
+    <div class="ws-verse-ref">${escapeHtml(verse.ref)}</div>
+    <div class="ws-verse-text" id="wsVerseText">${verse.hiddenText}</div>
+  `;
+}
+
+function escapeHtml(text) {
+  if (text == null) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function revealWordInVerse(word, originalText, hiddenWords) {
+  const verseTextEl = document.getElementById('wsVerseText');
+  if (!verseTextEl || !wsState.verse) return;
+
+  const wordNorm = normalize(word);
+  const currentFound = Array.from(wsState.foundWords).map(w => normalize(w));
+  
+  // Buscar todos los spans de palabras ocultas que coincidan con esta palabra
+  const blankSpans = verseTextEl.querySelectorAll('.ws-word-blank');
+  let foundNewWord = false;
+  
+  blankSpans.forEach(span => {
+    const spanWordNorm = span.getAttribute('data-word-norm');
+    if (spanWordNorm === wordNorm && currentFound.includes(wordNorm)) {
+      // Revelar la palabra - cambiar la clase para mostrar la palabra invisible
+      if (!foundNewWord) {
+        span.className = 'ws-word-blank ws-word-revealed';
+        foundNewWord = true;
+        
+        // Animación
+        const invisibleSpan = span.querySelector('.ws-word-invisible');
+        if (invisibleSpan) {
+          invisibleSpan.style.animation = 'wsRevealWord 0.5s ease-out';
+          setTimeout(() => {
+            span.classList.remove('ws-word-revealed');
+            span.classList.add('ws-word-found');
+            if (invisibleSpan) invisibleSpan.style.animation = '';
+          }, 500);
+        }
+      } else {
+        // Otras ocurrencias de la misma palabra
+        span.className = 'ws-word-blank ws-word-found';
+      }
+    }
   });
+  
+  // Actualizar todas las palabras ya encontradas
+  blankSpans.forEach(span => {
+    const spanWordNorm = span.getAttribute('data-word-norm');
+    if (spanWordNorm && currentFound.includes(spanWordNorm) && 
+        !span.classList.contains('ws-word-found') && 
+        !span.classList.contains('ws-word-revealed') &&
+        !span.classList.contains('ws-word-hint')) {
+      span.className = 'ws-word-blank ws-word-found';
+    }
+  });
+}
+
+let hintTimeout = null;
+let hintWordElement = null;
+
+function showHint() {
+  if (!wsState || !wsState.verse) return;
+  
+  const verseTextEl = document.getElementById('wsVerseText');
+  if (!verseTextEl) return;
+  
+  const currentFound = Array.from(wsState.foundWords).map(w => normalize(w));
+  const hiddenWords = wsState.verse.hiddenWords || [];
+  
+  // Encontrar una palabra que aún no ha sido encontrada
+  const notFoundWords = hiddenWords.filter(w => !currentFound.includes(normalize(w)));
+  if (notFoundWords.length === 0) return;
+  
+  // Seleccionar una palabra aleatoria de las no encontradas
+  const hintWordNorm = notFoundWords[Math.floor(Math.random() * notFoundWords.length)];
+  
+  // Buscar el span correspondiente y mostrar el hint
+  const blankSpans = verseTextEl.querySelectorAll('.ws-word-blank');
+  blankSpans.forEach(span => {
+    const spanWordNorm = span.getAttribute('data-word-norm');
+    if (spanWordNorm === hintWordNorm && !currentFound.includes(hintWordNorm) &&
+        !span.classList.contains('ws-word-found') && 
+        !span.classList.contains('ws-word-revealed')) {
+      span.className = 'ws-word-blank ws-word-hint';
+      hintWordElement = span;
+    }
+  });
+}
+
+function hideHint() {
+  if (!wsState || !wsState.verse) return;
+  
+  // Restaurar solo el span del hint a su estado oculto
+  if (hintWordElement) {
+    const wordNorm = hintWordElement.getAttribute('data-word-norm');
+    const currentFound = Array.from(wsState.foundWords).map(w => normalize(w));
+    
+    if (wordNorm && !currentFound.includes(wordNorm)) {
+      // Solo ocultar si no ha sido encontrada - remover la clase hint
+      hintWordElement.className = 'ws-word-blank';
+    }
+  }
+  
+  hintWordElement = null;
 }
 
 function updateFoundCount(found, total) {
@@ -143,7 +257,29 @@ function bindSelection(grid, words) {
       wsState.foundWords.add(foundEntry.word);
       markWordAndCellsAsFound(normalize(foundEntry.word), foundEntry.positions);
       updateFoundCount(wsState.foundWords.size, words.length);
+      
+      // Revelar palabra en el versículo si existe
+      if (wsState.verse) {
+        revealWordInVerse(foundEntry.word, wsState.verse.originalText, wsState.verse.hiddenWords);
+      }
+      
       if (wsState.foundWords.size === words.length) {
+        // Mostrar versículo completo cuando todas las palabras están encontradas
+        if (wsState.verse) {
+          const verseTextEl = document.getElementById('wsVerseText');
+          if (verseTextEl) {
+            verseTextEl.innerHTML = escapeHtml(wsState.verse.originalText);
+            verseTextEl.classList.add('ws-verse-complete');
+            verseTextEl.setAttribute('role', 'button');
+            verseTextEl.setAttribute('tabindex', '0');
+            verseTextEl.setAttribute('title', t('wsOpenInReader') || 'Ver en el lector');
+            verseTextEl.removeEventListener('click', onCompleteVerseClick);
+            verseTextEl.addEventListener('click', onCompleteVerseClick);
+            verseTextEl.removeEventListener('keydown', verseTextEl._wsKeyHandler);
+            verseTextEl._wsKeyHandler = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onCompleteVerseClick(); } };
+            verseTextEl.addEventListener('keydown', verseTextEl._wsKeyHandler);
+          }
+        }
         document.getElementById('wsComplete').style.display = 'block';
       }
     }
@@ -161,11 +297,19 @@ function hideComplete() {
   if (el) el.style.display = 'none';
 }
 
-export function startWordSearchGame() {
+export async function startWordSearchGame() {
   const diffEl = document.getElementById('wsDifficulty');
   const difficulty = (diffEl && diffEl.value) || 'medium';
-  const { grid, words } = generateWordSearch(difficulty);
-  wsState = { grid, words, foundWords: new Set(), difficulty };
+  const result = await generateWordSearch(difficulty);
+  const { grid, words, verse } = result;
+  
+  wsState = { 
+    grid, 
+    words, 
+    foundWords: new Set(), 
+    difficulty,
+    verse: verse || null
+  };
 
   const configCard = document.getElementById('configCard');
   const gameArea = document.getElementById('gameArea');
@@ -176,7 +320,12 @@ export function startWordSearchGame() {
 
   hideComplete();
   renderGrid(grid, words);
-  renderWordList(words);
+  if (verse) {
+    renderVerse(verse);
+  } else {
+    // Fallback a lista de palabras si no hay versículo
+    renderWordList(words);
+  }
   updateFoundCount(0, words.length);
   bindSelection(grid, words);
 }
@@ -200,4 +349,25 @@ export function bindWordSearchButtons() {
   document.getElementById('btnWsPlayAgain')?.addEventListener('click', () => {
     startWordSearchGame();
   });
+  
+  // Botón Hint - mostrar palabra mientras se mantiene presionado
+  const hintBtn = document.getElementById('btnHintWordSearch');
+  if (hintBtn) {
+    hintBtn.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      showHint();
+    });
+    
+    hintBtn.addEventListener('pointerup', () => {
+      hideHint();
+    });
+    
+    hintBtn.addEventListener('pointerleave', () => {
+      hideHint();
+    });
+    
+    hintBtn.addEventListener('pointercancel', () => {
+      hideHint();
+    });
+  }
 }

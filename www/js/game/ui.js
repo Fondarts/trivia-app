@@ -1,5 +1,5 @@
 import { SETTINGS, persistSettings } from '../core/store.js';
-import { getBank, getBankCount, warmLocalBank, BASE_LABELS, PACKS_BASE, SUPPORTED_LANGS } from './bank.js';
+import { getBank, getBankCount, warmLocalBank, PACKS_BASE, SUPPORTED_LANGS, getBooksInFilePack } from './bank.js';
 import { getStats, getUnlockedAchievements } from '../player/stats.js';
 import { getLevelProgress } from '../player/experience.js';
 import { ACHIEVEMENTS_LIST } from '../player/achievements.js';
@@ -319,19 +319,10 @@ export async function refreshCategorySelect(){
     optAll.textContent = (typeof t === 'function' ? t('categoryAll') : 'Todas las categorías');
     sel.appendChild(optAll);
 
-    // Grupo base
-    const groupBase = document.createElement('optgroup');
-    groupBase.label = (typeof t === 'function' ? t('base') : 'Base');
-    const labels = BASE_LABELS || { movies:'Películas y series', geography:'Geografía', history:'Historia', science:'Ciencia', sports:'Deporte', anime:'Anime y Manga' };
-    Object.keys(labels).forEach(k => {
-      const o = document.createElement('option');
-      o.value = k;
-      o.textContent = (typeof t === 'function' ? t(k) : labels[k]);
-      groupBase.appendChild(o);
-    });
-    sel.appendChild(groupBase);
+    // Etiquetas para grupos del manifest (ej. Bible -> Old Testament; luego New Testament)
+    const labels = { bible: 'Bible' };
 
-    // Grupo packs disponibles según idioma (desde manifest.json)
+    // Grupo packs disponibles según idioma (desde manifest.json): solo Old Testament, luego New Testament
     try {
       const currentLang = getLanguage();
       const lang = SUPPORTED_LANGS.includes(currentLang) ? currentLang : 'en';
@@ -475,26 +466,63 @@ export async function refreshCategorySelect(){
     }
   } catch (e) {
 
-    // Fallback absoluto si algo explota
-    const optAll = document.createElement('option'); optAll.value = 'all'; optAll.textContent = 'Todas las categorías'; sel.appendChild(optAll);
-    ;['movies','geography','history','science','sports','anime'].forEach(k => {
-      const o = document.createElement('option'); o.value = k; o.textContent = k; sel.appendChild(o);
-    });
+    // Fallback absoluto si algo explota (solo opción todas)
+    const optAllFallback = document.createElement('option'); optAllFallback.value = 'all'; optAllFallback.textContent = 'Todas las categorías'; sel.appendChild(optAllFallback);
   }
 
   if (prev && [...sel.options].some(o=>o.value===prev)) sel.value = prev;
   else sel.value = 'all';
   
-  // Vincular evento para actualizar selector de cantidad cuando cambie la categoría
+  // Vincular evento para actualizar selector de cantidad y de libro cuando cambie la categoría
   if (!sel._hasCategoryListener) {
     sel.addEventListener('change', () => {
       updateRoundsSelectorForCategory();
+      refreshBookSelect();
     });
     sel._hasCategoryListener = true;
   }
   
-  // Actualizar selector de cantidad inicialmente
+  // Actualizar selector de cantidad y de libro inicialmente
   updateRoundsSelectorForCategory();
+  refreshBookSelect();
+}
+
+/** Rellena el selector de libro; siempre visible. Con filepack muestra libros del pack; si no, solo "Todos los libros". */
+export async function refreshBookSelect() {
+  const categorySel = document.getElementById('categorySel');
+  const bookSel = document.getElementById('bookSel');
+  if (!categorySel || !bookSel) return;
+  const val = categorySel.value || '';
+  if (val.startsWith('filepack:')) {
+    const parts = val.split(':');
+    if (parts.length >= 3) {
+      const lang = parts[1];
+      const fileName = parts.slice(2).join(':');
+      const books = await getBooksInFilePack(lang, fileName);
+      const prev = bookSel.value;
+      bookSel.innerHTML = '';
+      const optAll = document.createElement('option');
+      optAll.value = '';
+      optAll.textContent = typeof t === 'function' ? t('bookAll') : 'Todos los libros';
+      bookSel.appendChild(optAll);
+      books.forEach(book => {
+        const o = document.createElement('option');
+        o.value = book;
+        o.textContent = book;
+        bookSel.appendChild(o);
+      });
+      if (prev && books.includes(prev)) bookSel.value = prev;
+      else bookSel.value = '';
+      return;
+    }
+  }
+  // Sin filepack: solo opción "Todos los libros"
+  bookSel.innerHTML = '';
+  const optAll = document.createElement('option');
+  optAll.value = '';
+  optAll.textContent = typeof t === 'function' ? t('bookAll') : 'Todos los libros';
+  bookSel.appendChild(optAll);
+  bookSel.value = '';
 }
 
 // Exponer globalmente para que pueda ser llamada desde otros módulos
@@ -751,48 +779,19 @@ export function bindStatsOpen(renderLB) {
     const fsStats = document.getElementById('fsStats');
     const openBtn = document.getElementById('btnOpenStats');
     const backBtn = document.getElementById('backStats');
-    
-    // Manejar tabs de Estadísticas y Leaderboards
-    const statsTab = document.querySelector('.stats-tab[data-tab="stats"]');
-    const leaderboardsTab = document.querySelector('.stats-tab[data-tab="leaderboards"]');
     const statsTabContent = document.getElementById('statsTabContent');
-    const leaderboardsTabContent = document.getElementById('leaderboardsTabContent');
-    
-    function switchTab(activeTab) {
-        if (activeTab === 'stats') {
-            if (statsTab) statsTab.classList.add('active');
-            if (leaderboardsTab) leaderboardsTab.classList.remove('active');
-            if (statsTabContent) statsTabContent.style.display = 'block';
-            if (leaderboardsTabContent) leaderboardsTabContent.style.display = 'none';
-            renderStatsPage();
-        } else if (activeTab === 'leaderboards') {
-            if (statsTab) statsTab.classList.remove('active');
-            if (leaderboardsTab) leaderboardsTab.classList.add('active');
-            if (statsTabContent) statsTabContent.style.display = 'none';
-            if (leaderboardsTabContent) leaderboardsTabContent.style.display = 'block';
-            if (renderLB) renderLB();
-        }
-    }
-    
-    if (statsTab) {
-        statsTab.addEventListener('click', () => switchTab('stats'));
-    }
-    
-    if (leaderboardsTab) {
-        leaderboardsTab.addEventListener('click', () => switchTab('leaderboards'));
-    }
-    
+
     if (openBtn) {
         openBtn.addEventListener('click', () => {
             if (fsStats) {
                 fsStats.style.display = 'block';
                 window.scrollTo(0, 0);
-                // Por defecto mostrar Estadísticas
-                switchTab('stats');
+                if (statsTabContent) statsTabContent.style.display = 'block';
+                renderStatsPage();
             }
         });
     }
-    
+
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             if (fsStats) fsStats.style.display = 'none';

@@ -153,14 +153,16 @@ body::before {
   animation: titleGlow 3s ease-in-out infinite;
 }
 
-/* Logo en el header */
+/* Logo en el header - contain para que no se corte */
 .app-logo {
-  width: 36px;
-  height: 36px;
+  height: 52px;
+  width: auto;
+  max-width: 200px;
   border-radius: 8px;
-  /* box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); */ /* Eliminado el recuadro */
   transition: all var(--transition-base);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 .app-logo:hover {
@@ -249,6 +251,11 @@ body::before {
   padding-bottom: 0;
 }
 
+/* Word search: misma separación entre dificultad y Start que en modo solo (16px) */
+#wordsearchWrap .ws-start-wrap {
+  margin-top: 6px;
+}
+
 /* Labels */
 label {
   font-size: 14px;
@@ -305,13 +312,14 @@ select.input {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 999px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e293b' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 12px;
   background-color: rgba(255, 220, 150, 0.4);
-  color: #ffffff;
+  color: #1e293b;
   font-size: 17px;
+  font-weight: 600;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
@@ -350,7 +358,7 @@ select.input {
   max-width: 100% !important;
   border: 2px solid var(--cardBorder) !important;
   background: rgba(255, 220, 150, 0.4) !important;
-  color: #ffffff !important;
+  color: #1e293b !important;
   border-left: 2px solid var(--cardBorder) !important;
   border-right: 2px solid var(--cardBorder) !important;
   border-top: 2px solid var(--cardBorder) !important;
@@ -407,6 +415,11 @@ select.input {
 }
 
 /* select:focus sin transform ni transición fuerte para evitar vibración al abrir el desplegable nativo */
+select option {
+  color: #1e293b;
+  background: #fff;
+}
+
 select:focus {
   outline: none;
   border-color: rgba(139, 92, 246, 0.7);
@@ -934,6 +947,18 @@ button#btnReportQuestion {
 }
 
 /* Descripción de modo de juego */
+.section-description {
+  margin: 0 0 16px 0;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(124, 58, 237, 0.08));
+  border: 2px solid rgba(139, 92, 246, 0.15);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+}
+
 .game-mode-description {
   margin-top: 12px;
   padding: 14px 18px;
@@ -1937,14 +1962,16 @@ button#btnReportQuestion {
 }
 
 .results-header .app-logo {
-  width: 36px;
-  height: 36px;
+  height: 52px;
+  width: auto;
+  max-width: 200px;
   border-radius: 8px;
-  /* box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); */ /* Eliminado el recuadro */
   transition: all var(--transition-base);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left center;
   vertical-align: middle;
   display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 .results-header .row {
@@ -1973,14 +2000,16 @@ button#btnReportQuestion {
 
 /* Ajuste para alinear mejor el logo con el texto */
 .app-logo {
-  width: 36px;
-  height: 36px;
+  height: 52px;
+  width: auto;
+  max-width: 200px;
   border-radius: 8px;
-  /* box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3); */ /* Eliminado el recuadro */
   transition: all var(--transition-base);
-  object-fit: cover;
-  vertical-align: middle; /* Añadido para mejor alineación */
+  object-fit: contain;
+  object-position: left center;
+  vertical-align: middle;
   display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 /* Sin efectos en hover para el logo */
@@ -2013,8 +2042,10 @@ button#btnReportQuestion {
   }
   
   .app-logo {
-    width: 28px;
-    height: 28px;
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
   }
   
   .app-title span {
@@ -2028,8 +2059,10 @@ button#btnReportQuestion {
   }
   
   .app-logo-results {
-    width: 32px;
-    height: 32px;
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
   }
 }
 
@@ -2088,7 +2121,7 @@ button#btnReportQuestion {
    ============================================= */
 /* Keep only key parts; the header logo hover is already defined */
 #initial-loader .logo-container { animation: fadeInUp .8s ease-out; }
-#initial-loader .logo-splash { width:150px; height:150px; margin-bottom:30px; animation: fadeInScale .8s ease-out; object-fit:cover; }
+#initial-loader .logo-splash { max-width: 200px; width: auto; height: 120px; margin-bottom:30px; animation: fadeInScale .8s ease-out; object-fit: contain; }
 @keyframes fadeInScale { 0%{ transform:scale(.8); opacity:0;} 100%{ transform:scale(1); opacity:1; } }
 .dots-loader { display:flex; gap:12px; justify-content:center; margin-top:20px; }
 .dot { width:14px; height:14px; border-radius:50%; animation: dotPulse 1.5s ease-in-out infinite; }
@@ -2603,35 +2636,137 @@ button#btnReportQuestion {
   background: rgba(34, 197, 94, 0.3);
 }
 
+.ws-verse-ref {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.ws-verse-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  background: rgb(255 223 147 / 20%);
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  min-height: 60px;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.ws-verse-text * {
+  display: inline;
+}
+
+.ws-verse-text.ws-verse-complete {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+  cursor: pointer;
+}
+
+.ws-word-blank {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+.ws-word-placeholder {
+  display: inline-block;
+}
+
+.ws-word-invisible {
+  position: absolute;
+  visibility: hidden;
+  white-space: nowrap;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.ws-word-blank.ws-word-revealed .ws-word-placeholder,
+.ws-word-blank.ws-word-found .ws-word-placeholder,
+.ws-word-blank.ws-word-hint .ws-word-placeholder {
+  display: none;
+}
+
+.ws-word-blank.ws-word-revealed .ws-word-invisible,
+.ws-word-blank.ws-word-found .ws-word-invisible,
+.ws-word-blank.ws-word-hint .ws-word-invisible {
+  position: static;
+  visibility: visible;
+}
+
+.ws-word-revealed {
+  color: #22c55e;
+  font-weight: 700;
+  animation: wsRevealWord 0.5s ease-out;
+}
+
+.ws-word-found {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.ws-word-hint {
+  color: #fbbf24;
+  font-weight: 700;
+  background: rgba(251, 191, 36, 0.2);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+@keyframes wsRevealWord {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .ws-complete {
   text-align: center;
-  padding: 24px 16px;
-  margin-top: 16px;
+  padding: 12px 14px;
+  margin-top: 12px;
   background: rgb(255 223 147 / 30%);
   border: 2px solid var(--good);
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .ws-complete-title {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 700;
   color: #ffffff;
-  margin: 0 0 8px;
+  margin: 0 0 4px;
 }
 
 .ws-complete-text {
-  font-size: 16px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 16px;
+  margin: 0 0 10px;
 }
 
 .ws-complete .btn,
+.ws-complete .btn-small,
 #btnWsPlayAgain {
-  margin-top: 12px;
-  padding: 16px 28px !important;
-  font-size: 17px !important;
-  font-weight: 700 !important;
-  min-height: 48px !important;
+  margin-top: 6px;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  min-height: 40px !important;
   border-radius: 999px !important;
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(124, 58, 237, 0.95)) !important;
   color: #ffffff !important;
@@ -2821,6 +2956,7 @@ a.btn-bible-link:hover {
   background: linear-gradient(135deg, #2d5016, #1e3d0f);
   color: #fff;
   flex-shrink: 0;
+  position: relative;
 }
 
 .bible-reader-title {
@@ -2830,37 +2966,105 @@ a.btn-bible-link:hover {
   letter-spacing: 0.02em;
   flex: 1;
   min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
-.bible-reader-chapter-wrap {
-  flex-shrink: 0;
-}
-
-.bible-reader-chapter-sel {
-  padding: 8px 32px 8px 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1e293b !important;
-  background-color: #fefcf5 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e293b' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 999px;
+.bible-reader-title-book,
+.bible-reader-title-chapter {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: 6px;
   cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  transition: background 0.2s, opacity 0.2s;
+  position: relative;
 }
 
-.bible-reader-chapter-sel option {
+.bible-reader-title-book:hover,
+.bible-reader-title-chapter:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.bible-reader-title-book:active,
+.bible-reader-title-chapter:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.bible-reader-title-separator {
+  opacity: 0.7;
+  margin: 0 4px;
+}
+
+.bible-reader-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+}
+
+.bible-reader-dropdown-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.bible-reader-dropdown-content {
+  padding: 8px 0;
+  max-height: inherit;
+  overflow-y: auto;
+}
+
+.bible-reader-dropdown-label {
+  padding: 8px 16px 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.bible-reader-dropdown-label:first-child {
+  margin-top: 0;
+}
+
+.bible-reader-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
   color: #1e293b;
-  background: #fefcf5;
-  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
 }
 
-.bible-reader-chapter-sel:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+.bible-reader-dropdown-item:hover {
+  background: rgba(45, 80, 22, 0.08);
+}
+
+.bible-reader-dropdown-item:active {
+  background: rgba(45, 80, 22, 0.15);
 }
 
 .bible-reader-close {

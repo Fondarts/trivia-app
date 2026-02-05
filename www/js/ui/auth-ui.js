@@ -198,11 +198,11 @@ export async function updateAuthUI(user, options = {}) {
     
 
   } else if (user && user.isGuest) {
-    // Usuario invitado (juega anónimo)
-    DOMUtils.show(authSection);
+    // Usuario invitado (juega anónimo) — sin UI de login/registro
+    DOMUtils.hide(authSection);
     DOMUtils.hide(welcomeSection);
     DOMUtils.hide(profileNicknameSection);
-    DOMUtils.show(profileAuthSection);
+    DOMUtils.hide(profileAuthSection);
     DOMUtils.hide(profileActionsSection);
     
     // Mostrar "Invitado" como nickname
@@ -214,11 +214,11 @@ export async function updateAuthUI(user, options = {}) {
     if (profileXpText) profileXpText.textContent = '0 / 100 XP';
     
   } else {
-    // No logueado: solo opción de registrarse/loguearse o jugar anónimo
-    DOMUtils.show(authSection);
+    // No logueado — sin UI de login/registro
+    DOMUtils.hide(authSection);
     DOMUtils.hide(welcomeSection);
     DOMUtils.hide(profileNicknameSection);
-    DOMUtils.show(profileAuthSection);
+    DOMUtils.hide(profileAuthSection);
     DOMUtils.hide(profileActionsSection);
     
     // Sin nickname

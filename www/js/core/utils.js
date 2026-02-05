@@ -2,9 +2,9 @@
 
 // Logger simple
 export const Logger = {
-  log: (...args) => console.log('[Quizlo]', ...args),
-  error: (...args) => console.error('[Quizlo Error]', ...args),
-  warn: (...args) => console.warn('[Quizlo Warning]', ...args)
+  log: (...args) => console.log('[Bible Trivia]', ...args),
+  error: (...args) => console.error('[Bible Trivia Error]', ...args),
+  warn: (...args) => console.warn('[Bible Trivia Warning]', ...args)
 };
 
 // Detección de plataforma

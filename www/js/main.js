@@ -50,14 +50,6 @@ async function loginWithGoogleNative() {
     }
   }
 }
-// Vincular botón de Google login (modal y perfil)
-document.getElementById('btnGoogleLogin')?.addEventListener('click', async () => {
-  showSimpleAuthModal();
-});
-document.getElementById('profileBtnAuth')?.addEventListener('click', async () => {
-  showSimpleAuthModal();
-});
-import { injectSimpleAuthStyles, showSimpleAuthModal } from './auth/modal_v2.js';
 import { injectNicknameModalStyles, checkAndShowNicknameModal } from './auth/nickname_modal.js';
 import { initFriendsSystem } from './player/social.js';
 import { initFriendsSystem as initFriendsUI } from './player/friends_ui.js';
@@ -153,7 +145,6 @@ window.addEventListener('load', async ()=>{
   window.getCurrentUser = AuthSystem.getCurrentUser;
   window.signOut = AuthSystem.signOut;
   window.initGoogleAuth = AuthSystem.initAuth;
-  window.showSimpleAuthModal = showSimpleAuthModal;
   window.checkAndShowNicknameModal = checkAndShowNicknameModal;
   window.AuthSystem = AuthSystem;
   window.initFriendsSystem = initFriendsSystem;
@@ -196,9 +187,6 @@ window.addEventListener('load', async ()=>{
     window.ACHIEVEMENTS_LIST = module.ACHIEVEMENTS_LIST || [];
   }).catch(err => {
   });
-  
-  // Inyectar estilos del modal simple
-  injectSimpleAuthStyles();
   
   // Inyectar estilos del modal de nickname
   injectNicknameModalStyles();
@@ -291,149 +279,6 @@ window.addEventListener('load', async ()=>{
     }
   };
 
-  // Sistema de amigos simplificado - funciona para todos los usuarios
-  function createSimpleFriendsPanel() {
-    if (document.getElementById('simpleFriendsPanel')) return;
-    
-    const panel = document.createElement('div');
-    panel.id = 'simpleFriendsPanel';
-    panel.style.cssText = `
-      position: fixed;
-      top: 70px;
-      right: 10px;
-      width: 340px;
-      max-height: 500px;
-      background: var(--card);
-      border: 2px solid var(--cardBorder);
-      border-radius: 16px;
-      box-shadow: var(--shadow-lg);
-      z-index: 9999;
-      display: none;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
-    `;
-    
-    const user = getCurrentUser();
-    const isLoggedIn = user && !user.isGuest;
-    
-    panel.innerHTML = `
-      <div style="padding: 16px; border-bottom: 1px solid var(--cardBorder); background: rgba(139, 92, 246, 0.1);">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="margin: 0; font-size: 18px; font-weight: 800;">Sistema de Amigos</h3>
-          <button id="closeFriendsPanel" style="
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: var(--text);
-            padding: 0;
-            transition: all 0.2s;
-          ">✖</button>
-        </div>
-      </div>
-      
-      <div id="friendsPanelContent" style="
-        padding: 20px;
-        max-height: 400px;
-        overflow-y: auto;
-      ">
-        ${isLoggedIn ? `
-          <div style="text-align: center; padding: 20px;">
-            <div style="font-size: 48px; margin-bottom: 16px;">🚀</div>
-            <p style="color: var(--text); font-weight: 600; margin-bottom: 8px;">¡Próximamente!</p>
-            <p style="color: var(--muted); font-size: 14px; line-height: 1.6;">
-              El sistema de amigos está en desarrollo.<br>
-              Pronto podrás:
-            </p>
-            <ul style="text-align: left; display: inline-block; color: var(--muted); font-size: 14px; margin-top: 12px; list-style: none; padding: 0;">
-              <li style="margin: 6px 0;">✨ Agregar amigos por nickname</li>
-              <li style="margin: 6px 0;">⚔️ Desafiar a partidas en vivo</li>
-              <li style="margin: 6px 0;">🏆 Ver rankings entre amigos</li>
-              <li style="margin: 6px 0;">📊 Comparar estadísticas</li>
-              <li style="margin: 6px 0;">🎯 Enviar desafíos de 24 horas</li>
-            </ul>
-          </div>
-        ` : `
-          <div style="text-align: center; padding: 20px;">
-            <div style="font-size: 48px; margin-bottom: 16px;">👥</div>
-            <p style="color: var(--text); font-weight: 600; margin-bottom: 12px;">¡Únete a la comunidad!</p>
-            <p style="color: var(--muted); font-size: 14px; margin-bottom: 16px;">
-              Inicia sesión para desbloquear el sistema de amigos y competir con otros jugadores.
-            </p>
-            <button class="btn accent" id="btnLoginFromFriends" style="width: 100%;">
-              Iniciar Sesión / Registrarse
-            </button>
-          </div>
-        `}
-      </div>
-    `;
-    
-    document.body.appendChild(panel);
-    
-    // Eventos - SIN listener global de click
-    setTimeout(() => {
-      document.getElementById('closeFriendsPanel')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        panel.style.display = 'none';
-      });
-      
-      document.getElementById('btnLoginFromFriends')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        panel.style.display = 'none';
-        showSimpleAuthModal();
-      });
-    }, 100);
-  }
-  
-  // Crear el panel al inicio
-  createSimpleFriendsPanel();
-  
-  // Variable para controlar el estado del panel
-  let friendsPanelOpen = false;
-  
-  // Manejador del botón de amigos - Simplificado
-  document.getElementById('btnFriends')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-
-    // Si hay panel del sistema completo y está activo, usarlo
-    const fullPanel = document.getElementById('friendsPanel');
-    if (fullPanel && window.socialManager) {
-      fullPanel.classList.toggle('open');
-      return;
-    }
-    
-    // Si no, usar el panel simple
-    let panel = document.getElementById('simpleFriendsPanel');
-    if (!panel) {
-      createSimpleFriendsPanel();
-      panel = document.getElementById('simpleFriendsPanel');
-    }
-    
-    if (panel) {
-      // Toggle simple del panel
-      friendsPanelOpen = !friendsPanelOpen;
-      panel.style.display = friendsPanelOpen ? 'block' : 'none';
-    }
-  });
-  
-  // Cerrar panel al hacer click fuera (con delay para evitar conflictos)
-  document.addEventListener('click', (e) => {
-    const panel = document.getElementById('simpleFriendsPanel');
-    const btn = document.getElementById('btnFriends');
-    
-    if (panel && friendsPanelOpen) {
-      // Si el click no fue en el panel ni en el botón
-      if (!panel.contains(e.target) && !btn.contains(e.target)) {
-        setTimeout(() => {
-          panel.style.display = 'none';
-          friendsPanelOpen = false;
-        }, 50);
-      }
-    }
-  });
-  
   // Indicador del modo seleccionado
   function updateModeIndicator() {
     const activeMode = document.querySelector('#modeSeg .seg.active');

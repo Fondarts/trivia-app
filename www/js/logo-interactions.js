@@ -40,15 +40,6 @@
                     clickCount = 0;
                 }, 500);
             });
-            
-            // Efecto de hover mejorado
-            headerLogo.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1) rotate(5deg)';
-            });
-            
-            headerLogo.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
         }
         
         // Mejorar la pantalla de carga
@@ -122,7 +113,7 @@
         const showEasterEggMessage = () => {
             const messages = [
                 '🎉 ¡Encontraste el modo arcoíris!',
-                '🌈 ¡Quizlo! te saluda!',
+                '🌈 ¡Bible Trivia te saluda!',
                 '✨ ¡Eres increíble!',
                 '🎮 ¡Modo fiesta activado!',
                 '🦄 ¡Unicornios por todas partes!'

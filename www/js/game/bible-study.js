@@ -299,19 +299,161 @@ function applyHighlightToSelection(color) {
 }
 
 /**
- * Rellena el selector de capítulos dentro del overlay y muestra el capítulo actual.
+ * Rellena el menú desplegable de capítulos.
  */
-function fillReaderChapterSelect(chapters) {
-  const sel = document.getElementById('bibleReaderChapterSel');
-  if (!sel) return;
-  sel.innerHTML = '';
-  (chapters || []).forEach((ch, i) => {
-    const opt = document.createElement('option');
-    opt.value = ch.chapter;
-    opt.textContent = ch.chapter;
-    opt.selected = i === 0;
-    sel.appendChild(opt);
+function fillReaderChapterDropdown(chapters) {
+  const dropdownContent = document.getElementById('bibleReaderChapterDropdownContent');
+  if (!dropdownContent) return;
+  dropdownContent.innerHTML = '';
+  (chapters || []).forEach((ch) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'bible-reader-dropdown-item';
+    btn.textContent = ch.chapter;
+    btn.setAttribute('data-chapter', String(ch.chapter));
+    btn.addEventListener('click', () => {
+      renderReaderChapter(ch.chapter);
+      hideChapterDropdown();
+    });
+    dropdownContent.appendChild(btn);
   });
+}
+
+/**
+ * Rellena el menú desplegable de libros.
+ */
+function fillReaderBookDropdown() {
+  const dropdownContent = document.getElementById('bibleReaderBookDropdownContent');
+  if (!dropdownContent) return;
+  dropdownContent.innerHTML = '';
+  
+  const isEn = LANG() === 'en';
+  const otLabel = document.createElement('div');
+  otLabel.className = 'bible-reader-dropdown-label';
+  otLabel.textContent = isEn ? 'Old Testament' : 'Antiguo Testamento';
+  dropdownContent.appendChild(otLabel);
+  
+  BIBLE_BOOKS_OT.forEach(([id, nameEs, nameEn]) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'bible-reader-dropdown-item';
+    btn.textContent = isEn ? nameEn : nameEs;
+    btn.setAttribute('data-book-id', id);
+    btn.addEventListener('click', async () => {
+      const data = await loadBookData(id);
+      if (data && data.chapters && data.chapters.length) {
+        const bookName = isEn ? nameEn : nameEs;
+        openReaderWindow(bookName, id, data, data.chapters[0].chapter);
+      } else {
+        openBookOnline(id, isEn ? nameEn : nameEs);
+      }
+      hideBookDropdown();
+    });
+    dropdownContent.appendChild(btn);
+  });
+  
+  const ntLabel = document.createElement('div');
+  ntLabel.className = 'bible-reader-dropdown-label';
+  ntLabel.textContent = isEn ? 'New Testament' : 'Nuevo Testamento';
+  dropdownContent.appendChild(ntLabel);
+  
+  BIBLE_BOOKS_NT.forEach(([id, nameEs, nameEn]) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'bible-reader-dropdown-item';
+    btn.textContent = isEn ? nameEn : nameEs;
+    btn.setAttribute('data-book-id', id);
+    btn.addEventListener('click', async () => {
+      const data = await loadBookData(id);
+      if (data && data.chapters && data.chapters.length) {
+        const bookName = isEn ? nameEn : nameEs;
+        openReaderWindow(bookName, id, data, data.chapters[0].chapter);
+      } else {
+        openBookOnline(id, isEn ? nameEn : nameEs);
+      }
+      hideBookDropdown();
+    });
+    dropdownContent.appendChild(btn);
+  });
+}
+
+/**
+ * Muestra/oculta el menú desplegable de libros.
+ */
+function toggleBookDropdown() {
+  const dropdown = document.getElementById('bibleReaderBookDropdown');
+  const bookBtn = document.getElementById('bibleReaderTitleBook');
+  const chapterDropdown = document.getElementById('bibleReaderChapterDropdown');
+  if (!dropdown || !bookBtn) return;
+  
+  const isVisible = dropdown.getAttribute('aria-hidden') === 'false';
+  if (isVisible) {
+    hideBookDropdown();
+  } else {
+    hideChapterDropdown();
+    const rect = bookBtn.getBoundingClientRect();
+    const titlebar = bookBtn.closest('.bible-reader-titlebar');
+    const titlebarRect = titlebar?.getBoundingClientRect();
+    if (titlebarRect) {
+      // Alinear con el inicio del texto del botón (sin el padding izquierdo del botón)
+      const computedStyle = window.getComputedStyle(bookBtn);
+      const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
+      dropdown.style.left = `${rect.left - titlebarRect.left - paddingLeft}px`;
+      dropdown.style.right = 'auto';
+      dropdown.style.width = 'auto';
+      dropdown.style.minWidth = '200px';
+      dropdown.style.maxWidth = `${titlebarRect.width - 40}px`;
+    }
+    dropdown.setAttribute('aria-hidden', 'false');
+    dropdown.classList.add('bible-reader-dropdown-visible');
+    fillReaderBookDropdown();
+  }
+}
+
+function hideBookDropdown() {
+  const dropdown = document.getElementById('bibleReaderBookDropdown');
+  if (!dropdown) return;
+  dropdown.setAttribute('aria-hidden', 'true');
+  dropdown.classList.remove('bible-reader-dropdown-visible');
+}
+
+/**
+ * Muestra/oculta el menú desplegable de capítulos.
+ */
+function toggleChapterDropdown() {
+  const dropdown = document.getElementById('bibleReaderChapterDropdown');
+  const chapterBtn = document.getElementById('bibleReaderTitleChapter');
+  const bookDropdown = document.getElementById('bibleReaderBookDropdown');
+  if (!dropdown || !chapterBtn) return;
+  
+  const isVisible = dropdown.getAttribute('aria-hidden') === 'false';
+  if (isVisible) {
+    hideChapterDropdown();
+  } else {
+    hideBookDropdown();
+    const rect = chapterBtn.getBoundingClientRect();
+    const titlebar = chapterBtn.closest('.bible-reader-titlebar');
+    const titlebarRect = titlebar?.getBoundingClientRect();
+    if (titlebarRect) {
+      // Alinear con el inicio del texto del botón (sin el padding izquierdo del botón)
+      const computedStyle = window.getComputedStyle(chapterBtn);
+      const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
+      dropdown.style.left = `${rect.left - titlebarRect.left - paddingLeft}px`;
+      dropdown.style.right = 'auto';
+      dropdown.style.width = 'auto';
+      dropdown.style.minWidth = '120px';
+      dropdown.style.maxWidth = `${titlebarRect.width - 40}px`;
+    }
+    dropdown.setAttribute('aria-hidden', 'false');
+    dropdown.classList.add('bible-reader-dropdown-visible');
+  }
+}
+
+function hideChapterDropdown() {
+  const dropdown = document.getElementById('bibleReaderChapterDropdown');
+  if (!dropdown) return;
+  dropdown.setAttribute('aria-hidden', 'true');
+  dropdown.classList.remove('bible-reader-dropdown-visible');
 }
 
 /**
@@ -319,7 +461,8 @@ function fillReaderChapterSelect(chapters) {
  */
 function renderReaderChapter(chapterNum) {
   const contentEl = document.getElementById('bibleReaderContent');
-  const titleEl = document.getElementById('bibleReaderTitle');
+  const bookBtn = document.getElementById('bibleReaderTitleBook');
+  const chapterBtn = document.getElementById('bibleReaderTitleChapter');
   if (!contentEl || !readerBookData || !readerBookData.chapters) return;
 
   readerCurrentChapter = String(chapterNum);
@@ -327,7 +470,8 @@ function renderReaderChapter(chapterNum) {
   const displayName = readerBookData.book || readerBookName;
   const chapterLabel = LANG() === 'en' ? 'Chapter' : 'Capítulo';
 
-  if (titleEl) titleEl.textContent = `${displayName} — ${chapterLabel} ${chapterNum}`;
+  if (bookBtn) bookBtn.textContent = displayName;
+  if (chapterBtn) chapterBtn.textContent = `${chapterLabel} ${chapterNum}`;
 
   if (!ch || !ch.verses || !ch.verses.length) {
     contentEl.innerHTML = `<p class="bible-reader-verse">${escapeHtml(LANG() === 'en' ? 'No verses for this chapter.' : 'No hay versículos para este capítulo.')}</p>`;
@@ -474,8 +618,9 @@ function setupVerseContextMenu(verseEl, contentEl) {
 
 /**
  * Abre la ventana de lectura con el libro cargado y el capítulo indicado (por defecto el primero).
+ * Si se pasa verseNum, después de renderizar se hace scroll hasta ese versículo.
  */
-function openReaderWindow(bookName, bookId, data, chapterNum) {
+function openReaderWindow(bookName, bookId, data, chapterNum, verseNum) {
   if (!data || !data.chapters || !data.chapters.length) return;
 
   readerBookData = data;
@@ -483,24 +628,28 @@ function openReaderWindow(bookName, bookId, data, chapterNum) {
   readerBookId = bookId;
 
   const overlay = document.getElementById('bibleReaderOverlay');
-  const chapterSel = document.getElementById('bibleReaderChapterSel');
   if (!overlay) return;
 
   const firstChapter = data.chapters[0] && data.chapters[0].chapter;
   const openChapter = chapterNum != null ? String(chapterNum) : firstChapter;
 
-  fillReaderChapterSelect(data.chapters);
+  fillReaderChapterDropdown(data.chapters);
   renderReaderChapter(openChapter);
-  if (chapterSel) {
-    chapterSel.value = openChapter;
-    chapterSel.style.display = '';
-  }
 
   overlay.style.display = 'block';
   document.body.classList.add('bible-reader-open');
 
   const closeBtn = document.getElementById('bibleReaderClose');
   if (closeBtn) closeBtn.focus();
+
+  if (verseNum != null && verseNum !== '') {
+    const verseStr = String(verseNum);
+    requestAnimationFrame(() => {
+      const contentEl = document.getElementById('bibleReaderContent');
+      const verseEl = contentEl?.querySelector(`.bible-reader-verse[data-verse="${verseStr}"]`);
+      if (verseEl) verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
 }
 
 /**
@@ -513,6 +662,8 @@ function closeReaderWindow() {
   closeSidepanel();
   closeNoteModal();
   hideContextMenu();
+  hideBookDropdown();
+  hideChapterDropdown();
   clearLongPress();
   readerBookData = null;
   readerBookName = '';
@@ -570,6 +721,19 @@ function getVersesText(nums) {
   return sorted.map(n => getVerseText(n)).filter(Boolean).join(' ');
 }
 
+/** Texto de varios versículos con referencia completa en negrita (Markdown) antes de cada pasaje para compartir. */
+function getVersesTextWithNumbers(nums) {
+  const sorted = [...nums].map(String).sort((a, b) => Number(a) - Number(b));
+  return sorted
+    .map(n => {
+      const txt = getVerseText(n);
+      const ref = getCurrentRef(n);
+      return txt && ref ? `**${ref}** ${txt}` : '';
+    })
+    .filter(Boolean)
+    .join('\n\n');
+}
+
 /** Guarda los versículos actualmente seleccionados como una sola entrada (ej. 1-4). */
 function saveSelectedVerses() {
   if (!readerBookId || !readerCurrentChapter) return;
@@ -600,6 +764,51 @@ function saveSelectedVerses() {
   });
   setSavedVerses(saved);
   showToast(t('bibleVersesSaved') || 'Versículo(s) guardado(s).');
+}
+
+/** Comparte los versículos seleccionados: Web Share API si está disponible, si no copia al portapapeles. */
+function shareSelectedVerses() {
+  if (!readerBookId || !readerCurrentChapter) return;
+  if (!selectedVerseNumbers.size) {
+    showToast(t('bibleSelectAtLeastOne') || 'Selecciona al menos un versículo.');
+    return;
+  }
+  const nums = [...selectedVerseNumbers];
+  const ref = getRefForVerseRange(nums);
+  const text = getVersesTextWithNumbers(nums);
+  const shareText = `${ref}\n\n${text}`;
+
+  if (typeof navigator !== 'undefined' && navigator.share) {
+    navigator.share({
+      title: ref,
+      text: text
+    }).then(() => {
+      showToast(t('bibleVerseShared') || 'Compartido');
+    }).catch(() => {
+      copyToClipboard(shareText);
+      showToast(t('bibleVerseCopied') || 'Copiado al portapapeles');
+    });
+  } else {
+    copyToClipboard(shareText);
+    showToast(t('bibleVerseCopied') || 'Copiado al portapapeles');
+  }
+}
+
+function copyToClipboard(str) {
+  if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(str).catch(() => {});
+  } else {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = str;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    } catch (_) {}
+  }
 }
 
 function showToast(msg) {
@@ -860,6 +1069,21 @@ function openBookOnline(bookId, bookName) {
 }
 
 /**
+ * Abre el lector de la Biblia con un libro y capítulo (para uso desde sopa de letras u otros).
+ * verseNum opcional: si se pasa, el lector hace scroll hasta ese versículo.
+ */
+export async function openReaderWithBook(bookId, chapterNum, verseNum) {
+  const data = await loadBookData(bookId);
+  if (!data || !data.chapters || !data.chapters.length) return;
+  const isEn = LANG() === 'en';
+  const allBooks = [...BIBLE_BOOKS_OT, ...BIBLE_BOOKS_NT];
+  const entry = allBooks.find(([id]) => id === bookId);
+  const bookName = entry ? (isEn ? entry[2] : entry[1]) : (data.book || bookId);
+  const chapter = chapterNum != null ? String(chapterNum) : (data.chapters[0] && data.chapters[0].chapter);
+  openReaderWindow(bookName, bookId, data, chapter, verseNum);
+}
+
+/**
  * Rellena el menú desplegable de libros (Antiguo y Nuevo Testamento).
  * Al elegir un libro se abre directamente el lector o enlace externo.
  */
@@ -903,7 +1127,6 @@ export function initBibleStudy() {
   populateBibleBookSelector();
 
   const sel = document.getElementById('bibleBookSel');
-  const chapterSel = document.getElementById('bibleReaderChapterSel');
   if (!sel) return;
 
   sel.addEventListener('change', async () => {
@@ -922,11 +1145,34 @@ export function initBibleStudy() {
     sel.value = '';
   });
 
-  if (chapterSel) {
-    chapterSel.addEventListener('change', () => {
-      if (readerBookData) renderReaderChapter(chapterSel.value);
+  const bookBtn = document.getElementById('bibleReaderTitleBook');
+  const chapterBtn = document.getElementById('bibleReaderTitleChapter');
+  if (bookBtn) {
+    bookBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleBookDropdown();
     });
   }
+  if (chapterBtn) {
+    chapterBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (readerBookData && readerBookData.chapters) {
+        toggleChapterDropdown();
+      }
+    });
+  }
+
+  // Cerrar menús al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    const bookDropdown = document.getElementById('bibleReaderBookDropdown');
+    const chapterDropdown = document.getElementById('bibleReaderChapterDropdown');
+    if (bookDropdown && !bookDropdown.contains(e.target) && !bookBtn?.contains(e.target)) {
+      hideBookDropdown();
+    }
+    if (chapterDropdown && !chapterDropdown.contains(e.target) && !chapterBtn?.contains(e.target)) {
+      hideChapterDropdown();
+    }
+  });
 
   const closeBtn = document.getElementById('bibleReaderClose');
   if (closeBtn) closeBtn.addEventListener('click', closeReaderWindow);
@@ -971,6 +1217,8 @@ export function initBibleStudy() {
     readerOverlay.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (contextMenuVisible()) hideContextMenu();
+        else if (document.getElementById('bibleReaderBookDropdown')?.getAttribute('aria-hidden') === 'false') hideBookDropdown();
+        else if (document.getElementById('bibleReaderChapterDropdown')?.getAttribute('aria-hidden') === 'false') hideChapterDropdown();
         else if (document.getElementById('bibleReaderSidepanel')?.classList.contains('bible-reader-sidepanel-visible')) closeSidepanel();
         else if (document.getElementById('bibleNoteModal')?.classList.contains('bible-reader-note-modal-visible')) closeNoteModal();
         else closeReaderWindow();
@@ -988,6 +1236,8 @@ export function initBibleStudy() {
     if (ctxSave) ctxSave.addEventListener('click', () => { saveSelectedVerses(); hideContextMenu(); });
     const ctxNote = document.getElementById('bibleContextNote');
     if (ctxNote) ctxNote.addEventListener('click', () => { openNoteModalForSelection(); hideContextMenu(); });
+    const ctxShare = document.getElementById('bibleContextShare');
+    if (ctxShare) ctxShare.addEventListener('click', () => { shareSelectedVerses(); hideContextMenu(); });
     const colors = contextMenu.querySelectorAll('.bible-context-color[data-color]');
     colors.forEach(btn => {
       btn.addEventListener('click', (e) => {

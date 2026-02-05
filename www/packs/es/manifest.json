@@ -2,12 +2,10 @@
   "version": "1.0.0",
   "language": "es",
   "packs": [
-    { "id": "Movies1", "category": "movies", "files": ["movies_pack1.json"] },
-    { "id": "Geography1", "category": "geography", "files": ["geography_pack1.json"] },
-    { "id": "History1", "category": "history", "files": ["history_pack1.json"] },
-    { "id": "Science1", "category": "science", "files": ["science_pack1.json"] },
-    { "id": "Sports1", "category": "sports", "files": ["sports_pack1.json"] },
-    { "id": "Anime1", "category": "anime", "files": ["anime_pack1.json"] },
-    { "id": "0001 Movies Es", "category": "movies", "files": ["6815_movies_es.json"] }
+    {
+      "id": "Antiguo Testamento",
+      "category": "bible",
+      "files": ["OldTestament01_en.json"]
+    }
   ]
 }

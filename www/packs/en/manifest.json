@@ -3,39 +3,9 @@
   "language": "en",
   "packs": [
     {
-      "id": "Movies1",
-      "category": "movies",
-      "files": ["movies1.json"]
-    },
-    {
-      "id": "Geography1",
-      "category": "geography",
-      "files": ["geography1.json"]
-    },
-    {
-      "id": "History1",
-      "category": "history",
-      "files": ["history1.json"]
-    },
-    {
-      "id": "Science1",
-      "category": "science",
-      "files": ["science1.json"]
-    },
-    {
-      "id": "Sports1",
-      "category": "sports",
-      "files": ["sports1.json"]
-    },
-    {
-      "id": "Movie pack 001",
-      "category": "movies and tv",
-      "files": ["0001_movies_en.json"]
-    },
-    {
-      "id": "Tv Pack 001",
-      "category": "movies and tv",
-      "files": ["0002_television_en.json"]
+      "id": "Old Testament",
+      "category": "bible",
+      "files": ["OldTestament01_en.json"]
     }
   ]
 }

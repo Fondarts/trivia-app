@@ -5,9 +5,6 @@ import { DOMUtils } from '../core/dom-utils.js';
 import { showConfigUI } from '../ui/game-ui.js';
 // VS handlers removido
 import { nextQuestion } from '../game/solo.js';
-import AuthSystem from '../auth/auth_v2.js';
-import { showSimpleAuthModal } from '../auth/modal_v2.js';
-
 /**
  * Vincular todos los event listeners
  * @param {Object} options - Opciones con funciones y dependencias
@@ -23,17 +20,6 @@ export function bindAllEventListeners(options = {}) {
     onShareResult = () => {},
     lastResultShareText = ''
   } = options;
-  
-  // Botones de autenticación
-  DOMUtils.getElement('btnShowAuth')?.addEventListener('click', () => {
-    showSimpleAuthModal();
-  });
-  
-  DOMUtils.getElement('profileBtnAuth')?.addEventListener('click', () => {
-    const profileModal = DOMUtils.getElement('profileModal');
-    if (profileModal) profileModal.classList.remove('open');
-    showSimpleAuthModal();
-  });
   
   // Botones de juego
   DOMUtils.getElement('btnStart')?.addEventListener('click', onStartGame);
@@ -56,9 +42,6 @@ export function bindAllEventListeners(options = {}) {
     if (fsSingleResult) DOMUtils.hide(fsSingleResult);
     showConfigUI();
   });
-  
-  // Botón de amigos
-  DOMUtils.getElement('btnFriends')?.addEventListener('click', onShowFriends);
   
   // Botón de salir del juego
   DOMUtils.getElement('btnExitGame')?.addEventListener('click', onExitGame);

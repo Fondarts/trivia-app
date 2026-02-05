@@ -2,12 +2,7 @@
 import { Storage } from '../core/storage.js';
 
 export const BASE_LABELS = {
-  movies:    'Películas y series',
-  geography: 'Geografía',
-  history:   'Historia',
-  science:   'Ciencia',
-  sports:    'Deporte',
-  anime:     'Anime y Manga'
+  bible: 'Bible'
 };
 export const BASE_KEYS = Object.keys(BASE_LABELS);
 
@@ -20,6 +15,26 @@ export const K = {
 
 export const PACKS_BASE = 'packs';
 export const SUPPORTED_LANGS = ['es', 'en'];
+
+/** Normaliza una pregunta desde formato q/answer (índice) o question/answer (texto). */
+function normalizeQuestion(q, category, book = null) {
+  if (!q || !Array.isArray(q.options) || q.options.length !== 4) return null;
+  const text = String(q.question || q.q || '').trim();
+  if (!text) return null;
+  const opts = q.options.slice(0, 4);
+  let ans = 0;
+  if (Number.isInteger(q.answer) && q.answer >= 0 && q.answer <= 3) {
+    ans = q.answer;
+  } else if (typeof q.answer === 'string') {
+    const want = q.answer.trim();
+    const idx = opts.findIndex(o => String(o).trim() === want);
+    if (idx >= 0) ans = idx; else return null;
+  } else return null;
+  let diff = String(q.difficulty || 'medium').toLowerCase();
+  if (!['easy', 'medium', 'hard'].includes(diff)) diff = 'medium';
+  const bookVal = book != null ? String(book).trim() : (q.book != null ? String(q.book).trim() : null);
+  return { q: text, options: opts, answer: ans, difficulty: diff, category: category || q.category || 'misc', book: bookVal || null };
+}
 
 export function getCurrentLanguage() {
   return Storage.get(K.lang, 'en');
@@ -101,18 +116,8 @@ export async function warmLocalBank(lang = 'en') {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const arr = await res.json();
         for (const q of arr) {
-          if (!q || !Array.isArray(q.options) || q.options.length !== 4) continue;
-          const ans = Number.isInteger(q.answer) ? q.answer : 0;
-          if (ans < 0 || ans > 3) continue;
-          let diff = String(q.difficulty || 'medium').toLowerCase();
-          if (!['easy', 'medium', 'hard'].includes(diff)) diff = 'medium';
-          bank[category].push({
-            q: String(q.q || '').trim(),
-            options: q.options.slice(0, 4),
-            answer: ans,
-            difficulty: diff,
-            category,
-          });
+          const normalized = normalizeQuestion(q, category);
+          if (normalized) bank[category].push(normalized);
         }
       } catch (e) {
 
@@ -133,7 +138,27 @@ export function difficultyFilter(arr, diff) {
 // Cache para packs de archivos cargados
 const filePackCache = new Map();
 
-export async function buildDeckSingle(categoryKey, count, diff = 'any', customPool = null) {
+/** Devuelve la lista única de libros en un pack por archivo (para el submenú Book). */
+export async function getBooksInFilePack(lang, fileName) {
+  const cacheKey = `${lang}:${fileName}`;
+  if (filePackCache.has(cacheKey)) {
+    const pool = filePackCache.get(cacheKey);
+    const books = [...new Set(pool.map(q => q.book).filter(Boolean))].sort();
+    return books;
+  }
+  const url = `${PACKS_BASE}/${lang}/${fileName}`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return [];
+    const arr = await res.json();
+    if (!Array.isArray(arr)) return [];
+    return [...new Set(arr.map(q => q.book).filter(b => b != null && String(b).trim()))].sort();
+  } catch (e) {
+    return [];
+  }
+}
+
+export async function buildDeckSingle(categoryKey, count, diff = 'any', customPool = null, bookFilter = null) {
   const bank = getBank();
   let pool = [];
   
@@ -162,46 +187,24 @@ export async function buildDeckSingle(categoryKey, count, diff = 'any', customPo
               const base = url.substring(0, url.lastIndexOf('/') + 1);
               
               pool = arr.map(q => {
-                if (!q || !Array.isArray(q.options) || q.options.length !== 4) return null;
-                const ans = Number.isInteger(q.answer) ? q.answer : 0;
-                if (ans < 0 || ans > 3) return null;
-                let difficulty = String(q.difficulty || 'medium').toLowerCase();
-                if (!['easy', 'medium', 'hard'].includes(difficulty)) difficulty = 'medium';
-                
+                const normalized = normalizeQuestion(q, q.category || 'misc', q.book);
+                if (!normalized) return null;
                 // Resolver ruta de imagen: si es URL absoluta, usarla; si es relativa, resolver desde base
                 let imgUrl = null;
                 if (q.img && typeof q.img === 'string') {
                   if (/^https?:\/\//.test(q.img)) {
-                    // URL absoluta (http/https)
                     imgUrl = q.img;
                   } else {
-                    // Ruta relativa: resolver desde la base del archivo JSON
-                    // Remover ./ si existe
                     let imgPath = q.img.replace(/^\.\//, '');
-                    
-                    // Resolver rutas relativas como ../img/ desde packs/es/
-                    // Desde packs/es/, ../ sube a packs/, luego img/ va a packs/img/
                     if (imgPath.startsWith('../')) {
-                      // Remover ../ y construir ruta desde PACKS_BASE
                       const resolvedPath = imgPath.replace(/^\.\.\//, '');
-                      // La ruta resultante (ej: img/archivo.webp) se concatena con PACKS_BASE
-                      // Construir ruta relativa: packs/img/archivo.webp
                       imgUrl = `${PACKS_BASE}/${resolvedPath}`.replace(/\/+/g, '/');
                     } else {
-                      // Ruta relativa simple: concatenar con base (packs/es/)
                       imgUrl = base + imgPath;
                     }
                   }
                 }
-                
-                return {
-                  q: String(q.q || '').trim(),
-                  options: q.options.slice(0, 4),
-                  answer: ans,
-                  difficulty: difficulty,
-                  category: q.category || 'misc',
-                  img: imgUrl
-                };
+                return { ...normalized, img: imgUrl };
               }).filter(q => q !== null);
               
               // Guardar en cache
@@ -210,6 +213,9 @@ export async function buildDeckSingle(categoryKey, count, diff = 'any', customPo
           } else {
 
           }
+        }
+        if (bookFilter && pool.length) {
+          pool = pool.filter(q => q && q.book === bookFilter);
         }
       }
     } catch(e) {

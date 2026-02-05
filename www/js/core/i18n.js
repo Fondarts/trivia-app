@@ -3,7 +3,7 @@
 const translations = {
   es: {
     // Header
-    appTitle: 'Quizlo!',
+    appTitle: 'Bible Trivia',
     friends: 'Amigos',
     store: 'Tienda',
     
@@ -12,7 +12,7 @@ const translations = {
     loginRegister: 'Iniciar Sesión / Registrarse',
     logout: 'Cerrar Sesión',
     welcomeMessage: '🎮 crea tu cuenta para llevar tu progreso a todos lados',
-    welcomeToQuizle: '🎮 ¡Bienvenido a Quizlo!',
+    welcomeToQuizle: '🎮 ¡Bienvenido a Bible Trivia!',
     configureNickname: 'Configura tu nickname en tu perfil para empezar a jugar',
     loginWithGoogle: 'Continuar con Google',
     loginToSaveProgress: 'Inicia sesión con Google para guardar tu progreso, competir con amigos y desbloquear logros.',
@@ -30,7 +30,7 @@ const translations = {
     saving: 'Guardando...',
     
     // Mode indicators
-    modeSoloFull: 'Modo Solo',
+    modeSoloFull: 'Pon a prueba tus conocimientos',
     modeSopaFull: 'Sopa de letras',
     modeSopa: 'SOPA',
     selectMode: 'Selecciona un modo',
@@ -53,18 +53,20 @@ const translations = {
     yourName: 'Tu nombre',
     yourNamePlaceholder: 'Tu nombre',
     mode: 'Modo',
-    modeSolo: 'SOLO',
+    modeSolo: 'TEST',
     modeSopa: 'SOPA',
     modeVS: 'VS',
     questionsCount: 'Cantidad de preguntas',
     time: 'Tiempo',
     difficulty: 'Dificultad',
     difficultyAny: 'Cualquiera',
-    difficultyEasy: 'Fácil',
-    difficultyMedium: 'Medio',
-    difficultyHard: 'Difícil',
+    difficultyEasy: 'Principiante',
+    difficultyMedium: 'Intermedio',
+    difficultyHard: 'Experto',
     category: 'Categoría',
     categoryAll: 'Todas las categorías',
+    book: 'Libro',
+    bookAll: 'Todos los libros',
     start: 'EMPEZAR',
     create: 'CREAR',
     join: 'UNIRSE',
@@ -89,10 +91,13 @@ const translations = {
     pts: 'pts',
     
     // Sopa de letras
+    wsDescription: 'Encuentra palabras bíblicas ocultas en la sopa de letras. Arrastra el cursor o toca las letras para seleccionar palabras en cualquier dirección: horizontal, vertical o diagonal.',
     wsFindWords: 'Encontrar palabras',
+    wsHint: 'Hint',
     wsCongratulations: '¡Felicitaciones!',
     wsAllFound: 'Encontraste todas las palabras.',
     wsPlayAgain: 'Jugar de nuevo',
+    wsNextVerse: 'Siguiente versículo',
     
     // Estudio de la Biblia
     modeBibleFull: 'Estudio de la Biblia',
@@ -104,6 +109,9 @@ const translations = {
     bibleNotAvailableOffline: 'Este libro no está disponible para lectura offline. Puedes leerlo en línea.',
     bibleSaveVerses: 'Guardar versículo(s)',
     bibleAddNote: 'Añadir nota',
+    bibleShareVerses: 'Compartir versículo(s)',
+    bibleVerseCopied: 'Copiado al portapapeles',
+    bibleVerseShared: 'Compartido',
     bibleMyPassagesNotes: 'Mis versículos y notas',
     bibleTabPassages: 'Versículos',
     bibleTabNotes: 'Notas',
@@ -127,7 +135,7 @@ const translations = {
     purchases: 'Compras',
     purchasesEmpty: 'Aquí aparecerán los packs que compres.',
     plan: 'Plan',
-    planFree: 'Actualmente usas el plan Gratuito. ¡Pronto podrás quitar la publicidad!',
+    planFree: 'Plan gratuito',
     settings: 'Ajustes',
     sounds: 'Sonidos',
     soundsActivate: 'Activar',
@@ -299,7 +307,7 @@ const translations = {
   
   en: {
     // Header
-    appTitle: 'Quizlo!',
+    appTitle: 'Bible Trivia',
     friends: 'Friends',
     store: 'Store',
     
@@ -326,7 +334,7 @@ const translations = {
     saving: 'Saving...',
     
     // Mode indicators
-    modeSoloFull: 'Solo Mode',
+    modeSoloFull: 'Test your knowledge',
     modeSopaFull: 'Word search',
     modeSopa: 'WORD',
     selectMode: 'Select a mode',
@@ -349,18 +357,20 @@ const translations = {
     yourName: 'Your name',
     yourNamePlaceholder: 'Your name',
     mode: 'Mode',
-    modeSolo: 'SOLO',
+    modeSolo: 'TEST',
     modeSopa: 'WORD',
     modeVS: 'VS',
     questionsCount: 'Number of questions',
     time: 'Time',
     difficulty: 'Difficulty',
     difficultyAny: 'Any',
-    difficultyEasy: 'Easy',
-    difficultyMedium: 'Medium',
-    difficultyHard: 'Hard',
+    difficultyEasy: 'Beginner',
+    difficultyMedium: 'Intermediate',
+    difficultyHard: 'Expert',
     category: 'Category',
     categoryAll: 'All categories',
+    book: 'Book',
+    bookAll: 'All books',
     start: 'START',
     create: 'CREATE',
     join: 'JOIN',
@@ -395,10 +405,13 @@ const translations = {
     pts: 'pts',
     
     // Word search
+    wsDescription: 'Find hidden biblical words in the word search. Drag the cursor or tap letters to select words in any direction: horizontal, vertical, or diagonal.',
     wsFindWords: 'Find words',
+    wsHint: 'Hint',
     wsCongratulations: 'Congratulations!',
     wsAllFound: 'You found all the words.',
     wsPlayAgain: 'Play again',
+    wsNextVerse: 'Next verse',
     
     // Bible Study
     modeBibleFull: 'Bible Study',
@@ -410,6 +423,9 @@ const translations = {
     bibleNotAvailableOffline: 'This book is not available for offline reading. You can read it online.',
     bibleSaveVerses: 'Save verse(s)',
     bibleAddNote: 'Add note',
+    bibleShareVerses: 'Share verse(s)',
+    bibleVerseCopied: 'Copied to clipboard',
+    bibleVerseShared: 'Shared',
     bibleMyPassagesNotes: 'My verses & notes',
     bibleTabPassages: 'Verses',
     bibleTabNotes: 'Notes',
@@ -433,7 +449,7 @@ const translations = {
     purchases: 'Purchases',
     purchasesEmpty: 'Your purchased packs will appear here.',
     plan: 'Plan',
-    planFree: 'You are currently using the Free plan. Ad removal coming soon!',
+    planFree: 'Free plan',
     settings: 'Settings',
     sounds: 'Sounds',
     soundsActivate: 'Enable',

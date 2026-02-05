@@ -174,16 +174,9 @@ export function openSingleResult({title, subtitle, scoreText, details, matchId, 
       appHeader.className = 'results-header';
       appHeader.innerHTML = `
         <div class="app-title">
-          <img src="./assets/logo/logo.png" alt="Quizlo!" class="app-logo"/>
-          <span>Quizlo!</span>
+          <img src="./assets/logo/logo.webp" alt="Bible Trivia" class="app-logo"/>
         </div>
         <div class="row">
-          <button class="iconbtn" id="btnFriendsResults" title="Amigos" style="position: relative;">
-            <svg viewBox="0 0 24 24" width="22" height="22">
-              <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-            </svg>
-            <span class="notification-badge" id="friendsBadgeResults" style="display: none;">0</span>
-          </button>
           <button class="iconbtn avatar-btn" id="btnProfileResults" aria-label="Perfil de Usuario">
             <img src="img/avatar_placeholder.svg" alt="Avatar"/>
           </button>
@@ -193,16 +186,6 @@ export function openSingleResult({title, subtitle, scoreText, details, matchId, 
       
       // Vincular eventos de los botones
       setTimeout(() => {
-        const btnFriends = document.getElementById('btnFriendsResults');
-        if (btnFriends) {
-          btnFriends.addEventListener('click', () => {
-            fs.style.display = 'none';
-            showGame(false);
-            const mainFriendsBtn = document.getElementById('btnFriends');
-            if (mainFriendsBtn) mainFriendsBtn.click();
-          });
-        }
-        
         const btnProfile = document.getElementById('btnProfileResults');
         if (btnProfile) {
           btnProfile.addEventListener('click', () => {
@@ -254,7 +237,7 @@ export function openSingleResult({title, subtitle, scoreText, details, matchId, 
       const currentDetails = document.getElementById('srDetails')?.textContent || details || '';
       
       // Construir mensaje para WhatsApp
-      const shareText = `${currentTitle}\n${currentSubtitle}\n${currentScore}${currentDetails ? '\n' + currentDetails : ''}\n\n¡Jugá Quizlo! 🎮`;
+      const shareText = `${currentTitle}\n${currentSubtitle}\n${currentScore}${currentDetails ? '\n' + currentDetails : ''}\n\n¡Jugá Bible Trivia! 🎮`;
       const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
       window.open(whatsappUrl, '_blank');
     };
@@ -696,7 +679,9 @@ export async function startSolo(){
       }
       
       currentState.total = total;
-      currentState.deck  = await buildDeckSingle(selectedCat, total, diff);
+      const bookSel = document.getElementById('bookSel');
+      const bookFilter = (selectedCat.startsWith('filepack:') && bookSel?.value) ? bookSel.value : null;
+      currentState.deck  = await buildDeckSingle(selectedCat, total, diff, null, bookFilter);
     }
   }
 

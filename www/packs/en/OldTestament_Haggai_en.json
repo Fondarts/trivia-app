@@ -1,0 +1,548 @@
+[
+  {
+    "id": 97,
+    "book": "Haggai",
+    "question": "What did Haggai encourage the people to do?",
+    "options": [
+      "Rebuild the Temple",
+      "Rebuild the Wall",
+      "Fight the Persians",
+      "Stop sacrificing"
+    ],
+    "answer": "Rebuild the Temple",
+    "reference": "Haggai 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 237,
+    "book": "Haggai",
+    "question": "Why did Haggai say the people were earning wages only to put them in a purse with holes?",
+    "options": [
+      "Because they neglected God's house",
+      "Because of high taxes",
+      "Because of thieves",
+      "Because they were lazy"
+    ],
+    "answer": "Because they neglected God's house",
+    "reference": "Haggai 1:6-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 293,
+    "book": "Haggai",
+    "question": "What was the main message of Haggai?",
+    "options": [
+      "Consider your ways",
+      "Repent for the kingdom is near",
+      "Prepare for war",
+      "Love your neighbor"
+    ],
+    "answer": "Consider your ways",
+    "reference": "Haggai 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 397,
+    "book": "Haggai",
+    "question": "God says through Haggai, 'The glory of this latter house shall be...'",
+    "options": [
+      "Greater than the former",
+      "Less than Solomon's",
+      "Equal to the first",
+      "Forgotten"
+    ],
+    "answer": "Greater than the former",
+    "reference": "Haggai 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 443,
+    "book": "Haggai",
+    "question": "God says: 'The silver is mine, and the ______ is mine.'",
+    "options": [
+      "Gold",
+      "Land",
+      "Cattle",
+      "Copper"
+    ],
+    "answer": "Gold",
+    "reference": "Haggai 2:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 490,
+    "book": "Haggai",
+    "question": "To whom did God say, 'I will make you like a signet ring'?",
+    "options": [
+      "Zerubbabel",
+      "Joshua",
+      "Haggai",
+      "Ezra"
+    ],
+    "answer": "Zerubbabel",
+    "reference": "Haggai 2:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 542,
+    "book": "Haggai",
+    "question": "God refers to the coming Messiah as the '______ of all nations'.",
+    "options": [
+      "Desire",
+      "King",
+      "Judge",
+      "Hope"
+    ],
+    "answer": "Desire",
+    "reference": "Haggai 2:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 590,
+    "book": "Haggai",
+    "question": "On what day of the month did the word of the Lord come to Haggai?",
+    "options": [
+      "The first day",
+      "The seventh day",
+      "The twenty-fourth day",
+      "The fifteenth day"
+    ],
+    "answer": "The first day",
+    "reference": "Haggai 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 646,
+    "book": "Haggai",
+    "question": "Who was the High Priest in the days of Haggai?",
+    "options": [
+      "Joshua",
+      "Ezra",
+      "Eliashib",
+      "Zadok"
+    ],
+    "answer": "Joshua",
+    "reference": "Haggai 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 696,
+    "book": "Haggai",
+    "question": "Haggai asked the priests questions about what law?",
+    "options": [
+      "Clean and Unclean / Holiness",
+      "Sabbath",
+      "Tithes",
+      "Sacrifices"
+    ],
+    "answer": "Clean and Unclean / Holiness",
+    "reference": "Haggai 2:11-13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 753,
+    "book": "Haggai",
+    "question": "Haggai prophesies that the Lord will shake...",
+    "options": [
+      "The heavens and the earth",
+      "The foundations of the temple",
+      "The hearts of kings",
+      "The Mount of Olives"
+    ],
+    "answer": "The heavens and the earth",
+    "reference": "Haggai 2:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 792,
+    "book": "Haggai",
+    "question": "Haggai 1:4 asks if it is time for the people to dwell in...",
+    "options": [
+      "Paneled houses",
+      "Tents",
+      "Caves",
+      "Stone fortresses"
+    ],
+    "answer": "Paneled houses",
+    "reference": "Haggai 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 852,
+    "book": "Haggai",
+    "question": "What did the people say about the time to build the Lord's house?",
+    "options": [
+      "'The time has not come'",
+      "'We are ready'",
+      "'We have no money'",
+      "'The king forbids it'"
+    ],
+    "answer": "'The time has not come'",
+    "reference": "Haggai 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 891,
+    "book": "Haggai",
+    "question": "What did the Lord promise to fill the temple with in Haggai 2:7?",
+    "options": [
+      "Glory",
+      "Gold",
+      "Peace",
+      "People"
+    ],
+    "answer": "Glory",
+    "reference": "Haggai 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 952,
+    "book": "Haggai",
+    "question": "Haggai 2:9 says the glory of this latter temple shall be...",
+    "options": [
+      "Greater than the former",
+      "Less than the former",
+      "Equal to the former",
+      "Eternal"
+    ],
+    "answer": "Greater than the former",
+    "reference": "Haggai 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 991,
+    "book": "Haggai",
+    "question": "Haggai encouraged the people to rebuild the...",
+    "options": [
+      "Temple",
+      "Wall",
+      "Palace",
+      "Gates"
+    ],
+    "answer": "Temple",
+    "reference": "Haggai 1:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1355,
+    "book": "Haggai",
+    "question": "In what year of King Darius did the word of the Lord come to Haggai?",
+    "options": [
+      "Second year",
+      "First year",
+      "Twentieth year",
+      "Fourth year"
+    ],
+    "answer": "Second year",
+    "reference": "Haggai 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1356,
+    "book": "Haggai",
+    "question": "Who was the father of Zerubbabel?",
+    "options": [
+      "Shealtiel",
+      "Jehozadak",
+      "David",
+      "Solomon"
+    ],
+    "answer": "Shealtiel",
+    "reference": "Haggai 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1357,
+    "book": "Haggai",
+    "question": "Who was the father of Joshua the High Priest?",
+    "options": [
+      "Jehozadak",
+      "Shealtiel",
+      "Iddo",
+      "Ezra"
+    ],
+    "answer": "Jehozadak",
+    "reference": "Haggai 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1358,
+    "book": "Haggai",
+    "question": "What excuse did the people give for not building the temple?",
+    "options": [
+      "The time has not come",
+      "We have no money",
+      "The Persians stopped us",
+      "We are too few"
+    ],
+    "answer": "The time has not come",
+    "reference": "Haggai 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1359,
+    "book": "Haggai",
+    "question": "Haggai 1:6 says, 'He who earns wages, earns wages to put into a...'",
+    "options": [
+      "Bag with holes",
+      "Safe place",
+      "Fire",
+      "River"
+    ],
+    "answer": "Bag with holes",
+    "reference": "Haggai 1:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1360,
+    "book": "Haggai",
+    "question": "What phrase does Haggai repeat to the people urging self-reflection?",
+    "options": [
+      "Consider your ways",
+      "Repent and believe",
+      "Fear the Lord",
+      "Listen to My voice"
+    ],
+    "answer": "Consider your ways",
+    "reference": "Haggai 1:5, 7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1361,
+    "book": "Haggai",
+    "question": "God commanded them to go up to the mountains and bring...",
+    "options": [
+      "Wood",
+      "Gold",
+      "Stone",
+      "Sacrifices"
+    ],
+    "answer": "Wood",
+    "reference": "Haggai 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1362,
+    "book": "Haggai",
+    "question": "Why did the heaven withhold the dew and the earth withhold fruit?",
+    "options": [
+      "Because God's house lies in ruins",
+      "Because of idolatry",
+      "Because of Sabbath breaking",
+      "Because of murder"
+    ],
+    "answer": "Because God's house lies in ruins",
+    "reference": "Haggai 1:9-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1363,
+    "book": "Haggai",
+    "question": "What simple message did the Lord send via Haggai in 1:13?",
+    "options": [
+      "I am with you",
+      "Fear not",
+      "Build the house",
+      "Repent"
+    ],
+    "answer": "I am with you",
+    "reference": "Haggai 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1364,
+    "book": "Haggai",
+    "question": "On what day did they come and work on the house of the Lord?",
+    "options": [
+      "Twenty-fourth day of the sixth month",
+      "First day of the first month",
+      "Tenth day",
+      "Fifteenth day"
+    ],
+    "answer": "Twenty-fourth day of the sixth month",
+    "reference": "Haggai 1:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1365,
+    "book": "Haggai",
+    "question": "How did the current temple compare to the former one in the eyes of the people?",
+    "options": [
+      "As nothing",
+      "Greater",
+      "Equal",
+      "Different"
+    ],
+    "answer": "As nothing",
+    "reference": "Haggai 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1366,
+    "book": "Haggai",
+    "question": "What command is given three times in Haggai 2:4 to Zerubbabel, Joshua, and the people?",
+    "options": [
+      "Be strong",
+      "Fear not",
+      "Work hard",
+      "Rejoice"
+    ],
+    "answer": "Be strong",
+    "reference": "Haggai 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1367,
+    "book": "Haggai",
+    "question": "Haggai 2:5 mentions that what remains among them?",
+    "options": [
+      "My Spirit",
+      "My Law",
+      "My Ark",
+      "My Glory"
+    ],
+    "answer": "My Spirit",
+    "reference": "Haggai 2:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1368,
+    "book": "Haggai",
+    "question": "God says, 'I will shake all nations, and they shall come to...'",
+    "options": [
+      "The Desire of All Nations",
+      "Jerusalem",
+      "Judgment",
+      "War"
+    ],
+    "answer": "The Desire of All Nations",
+    "reference": "Haggai 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1369,
+    "book": "Haggai",
+    "question": "In Haggai 2:8, God claims ownership of what?",
+    "options": [
+      "The silver and the gold",
+      "The land and the sea",
+      "The beasts of the field",
+      "The souls of men"
+    ],
+    "answer": "The silver and the gold",
+    "reference": "Haggai 2:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1370,
+    "book": "Haggai",
+    "question": "In this place I will give ______,' says the Lord of hosts.",
+    "options": [
+      "Peace",
+      "Victory",
+      "Wealth",
+      "Power"
+    ],
+    "answer": "Peace",
+    "reference": "Haggai 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1371,
+    "book": "Haggai",
+    "question": "If one carries holy meat in the fold of his garment, does the garment become holy?",
+    "options": [
+      "No",
+      "Yes",
+      "Only if washed",
+      "Only if blessed"
+    ],
+    "answer": "No",
+    "reference": "Haggai 2:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1372,
+    "book": "Haggai",
+    "question": "If one who is unclean touches food, does it become unclean?",
+    "options": [
+      "Yes",
+      "No",
+      "Only if eaten",
+      "Depends on the food"
+    ],
+    "answer": "Yes",
+    "reference": "Haggai 2:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1373,
+    "book": "Haggai",
+    "question": "With what did God strike their labors in Haggai 2:17?",
+    "options": [
+      "Blight, mildew, and hail",
+      "Fire",
+      "Locusts",
+      "Earthquake"
+    ],
+    "answer": "Blight, mildew, and hail",
+    "reference": "Haggai 2:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1374,
+    "book": "Haggai",
+    "question": "Haggai asks if the seed is still in the...",
+    "options": [
+      "Barn",
+      "Ground",
+      "Sack",
+      "Field"
+    ],
+    "answer": "Barn",
+    "reference": "Haggai 2:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1375,
+    "book": "Haggai",
+    "question": "What does God promise to do 'from this day forward' (after the foundation is laid)?",
+    "options": [
+      "I will bless you",
+      "I will judge you",
+      "I will hide my face",
+      "I will speak"
+    ],
+    "answer": "I will bless you",
+    "reference": "Haggai 2:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1376,
+    "book": "Haggai",
+    "question": "God says He will overthrow the throne of...",
+    "options": [
+      "Kingdoms",
+      "Egypt",
+      "Babylon",
+      "David"
+    ],
+    "answer": "Kingdoms",
+    "reference": "Haggai 2:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1377,
+    "book": "Haggai",
+    "question": "Zerubbabel is chosen to be like a...",
+    "options": [
+      "Signet ring",
+      "Crown",
+      "Scepter",
+      "Shield"
+    ],
+    "answer": "Signet ring",
+    "reference": "Haggai 2:23",
+    "difficulty": "medium"
+  }
+]

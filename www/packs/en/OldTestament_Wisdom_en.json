@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1061,
+    "book": "Wisdom",
+    "question": "Who is the traditional author of the Book of Wisdom?",
+    "options": [
+      "Solomon",
+      "David",
+      "Moses",
+      "Jesus Sirach"
+    ],
+    "answer": "Solomon",
+    "reference": "Wisdom 9:7 (implied king)",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1062,
+    "book": "Wisdom",
+    "question": "Wisdom 1:7 says the Spirit of the Lord has filled...",
+    "options": [
+      "The whole world",
+      "The temple",
+      "The hearts of kings",
+      "The ark"
+    ],
+    "answer": "The whole world",
+    "reference": "Wisdom 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1063,
+    "book": "Wisdom",
+    "question": "According to Wisdom 2, what do the ungodly say about death?",
+    "options": [
+      "Let us enjoy the good things that exist, for this is our lot",
+      "We must fear judgment",
+      "There is an afterlife",
+      "Death is an illusion"
+    ],
+    "answer": "Let us enjoy the good things that exist, for this is our lot",
+    "reference": "Wisdom 2:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1064,
+    "book": "Wisdom",
+    "question": "Wisdom 3:1 says the souls of the righteous are...",
+    "options": [
+      "In the hand of God",
+      "In the grave",
+      "Lost forever",
+      "Wandering the earth"
+    ],
+    "answer": "In the hand of God",
+    "reference": "Wisdom 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1065,
+    "book": "Wisdom",
+    "question": "What is 'more active than any motion'?",
+    "options": [
+      "Wisdom",
+      "Wind",
+      "Fire",
+      "Time"
+    ],
+    "answer": "Wisdom",
+    "reference": "Wisdom 7:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1066,
+    "book": "Wisdom",
+    "question": "According to Wisdom 11:20, God ordered all things by...",
+    "options": [
+      "Measure, number, and weight",
+      "Chaos and chance",
+      "Fire and water",
+      "Love and hate"
+    ],
+    "answer": "Measure, number, and weight",
+    "reference": "Wisdom 11:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1067,
+    "book": "Wisdom",
+    "question": "Who was the 'righteous man' sold who Wisdom did not abandon?",
+    "options": [
+      "Joseph",
+      "Job",
+      "Daniel",
+      "Jeremiah"
+    ],
+    "answer": "Joseph",
+    "reference": "Wisdom 10:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1068,
+    "book": "Wisdom",
+    "question": "What did the author pray for in Wisdom 9?",
+    "options": [
+      "Wisdom to sit by God's throne",
+      "Long life",
+      "Riches",
+      "Victory in war"
+    ],
+    "answer": "Wisdom to sit by God's throne",
+    "reference": "Wisdom 9:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1069,
+    "book": "Wisdom",
+    "question": "How did death enter the world according to Wisdom 2:24?",
+    "options": [
+      "Through the devil's envy",
+      "Through God's will",
+      "Through natural causes",
+      "Through war"
+    ],
+    "answer": "Through the devil's envy",
+    "reference": "Wisdom 2:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1070,
+    "book": "Wisdom",
+    "question": "Wisdom is described as the 'spotless mirror' of...",
+    "options": [
+      "The power of God",
+      "The world",
+      "The soul",
+      "The law"
+    ],
+    "answer": "The power of God",
+    "reference": "Wisdom 7:26",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1071,
+    "book": "Wisdom",
+    "question": "What was the origin of idols according to Wisdom 14?",
+    "options": [
+      "A father grieving a dead child / Honor for a distant king",
+      "Demons teaching men",
+      "Stones falling from heaven",
+      "God's command"
+    ],
+    "answer": "A father grieving a dead child / Honor for a distant king",
+    "reference": "Wisdom 14:15-17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1072,
+    "book": "Wisdom",
+    "question": "What food is described as 'suited to every taste'?",
+    "options": [
+      "Manna",
+      "Quail",
+      "Honey",
+      "Figs"
+    ],
+    "answer": "Manna",
+    "reference": "Wisdom 16:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1073,
+    "book": "Wisdom",
+    "question": "Who preserved the first-formed father (Adam) when he was created alone?",
+    "options": [
+      "Wisdom",
+      "Michael",
+      "The Spirit",
+      "Grace"
+    ],
+    "answer": "Wisdom",
+    "reference": "Wisdom 10:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1074,
+    "book": "Wisdom",
+    "question": "The book compares the life of the ungodly to...",
+    "options": [
+      "A shadow that passes away",
+      "A strong tower",
+      "A rooted tree",
+      "A flowing river"
+    ],
+    "answer": "A shadow that passes away",
+    "reference": "Wisdom 5:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1075,
+    "book": "Wisdom",
+    "question": "What leaped from heaven into the midst of the doomed land (Egypt)?",
+    "options": [
+      "Your all-powerful Word",
+      "A burning sword",
+      "A plague of locusts",
+      "An angel of death"
+    ],
+    "answer": "Your all-powerful Word",
+    "reference": "Wisdom 18:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1076,
+    "book": "Wisdom",
+    "question": "Why does God overlook the sins of men according to Wisdom 11:23?",
+    "options": [
+      "That they may repent",
+      "Because He doesn't care",
+      "Because He is busy",
+      "Because they are small"
+    ],
+    "answer": "That they may repent",
+    "reference": "Wisdom 11:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1077,
+    "book": "Wisdom",
+    "question": "What did the potter make out of the same clay?",
+    "options": [
+      "Vessels for clean and unclean uses",
+      "Gods and men",
+      "Bricks and mortar",
+      "Houses and barns"
+    ],
+    "answer": "Vessels for clean and unclean uses",
+    "reference": "Wisdom 15:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1078,
+    "book": "Wisdom",
+    "question": "Wisdom 4:1 says it is better to be childless with...",
+    "options": [
+      "Virtue",
+      "Wealth",
+      "Power",
+      "Beauty"
+    ],
+    "answer": "Virtue",
+    "reference": "Wisdom 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1079,
+    "book": "Wisdom",
+    "question": "Who stood against the wrath and put an end to the calamity (plague)?",
+    "options": [
+      "The blameless man (Aaron/Phinehas)",
+      "Moses",
+      "Joshua",
+      "Caleb"
+    ],
+    "answer": "The blameless man (Aaron/Phinehas)",
+    "reference": "Wisdom 18:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1080,
+    "book": "Wisdom",
+    "question": "What is the 'root of immortality'?",
+    "options": [
+      "To know God's power",
+      "To eat the tree of life",
+      "To drink living water",
+      "To build a legacy"
+    ],
+    "answer": "To know God's power",
+    "reference": "Wisdom 15:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1081,
+    "book": "Wisdom",
+    "question": "Wisdom 1:11 warns to beware of...",
+    "options": [
+      "Useless murmuring/grumbling",
+      "Idols",
+      "Adultery",
+      "Theft"
+    ],
+    "answer": "Useless murmuring/grumbling",
+    "reference": "Wisdom 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1082,
+    "book": "Wisdom",
+    "question": "How were the enemies of God punished according to Wisdom 11?",
+    "options": [
+      "By their own abominations (little animals)",
+      "By fire",
+      "By flood",
+      "By the sword"
+    ],
+    "answer": "By their own abominations (little animals)",
+    "reference": "Wisdom 11:15-16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1083,
+    "book": "Wisdom",
+    "question": "What did the author say he was at birth?",
+    "options": [
+      "A mortal man like all others",
+      "A king",
+      "A prophet",
+      "Divine"
+    ],
+    "answer": "A mortal man like all others",
+    "reference": "Wisdom 7:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1084,
+    "book": "Wisdom",
+    "question": "Wisdom 6 admonishes whom to listen and understand?",
+    "options": [
+      "Kings and judges",
+      "Priests",
+      "Children",
+      "The poor"
+    ],
+    "answer": "Kings and judges",
+    "reference": "Wisdom 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1085,
+    "book": "Wisdom",
+    "question": "What guided the righteous on their journey?",
+    "options": [
+      "A shelter by day and starry flame by night",
+      "A map",
+      "An angel",
+      "A compass"
+    ],
+    "answer": "A shelter by day and starry flame by night",
+    "reference": "Wisdom 10:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1086,
+    "book": "Wisdom",
+    "question": "Wisdom 8:7 lists the four cardinal virtues. They are...",
+    "options": [
+      "Temperance, prudence, justice, and fortitude",
+      "Faith, hope, charity, and peace",
+      "Love, joy, peace, and patience",
+      "Wisdom, knowledge, understanding, and counsel"
+    ],
+    "answer": "Temperance, prudence, justice, and fortitude",
+    "reference": "Wisdom 8:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1087,
+    "book": "Wisdom",
+    "question": "What does the author desire to take as his bride?",
+    "options": [
+      "Wisdom",
+      "Justice",
+      "Truth",
+      "Mercy"
+    ],
+    "answer": "Wisdom",
+    "reference": "Wisdom 8:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1088,
+    "book": "Wisdom",
+    "question": "For God created man for...",
+    "options": [
+      "Incorruption/Immortality",
+      "Work",
+      "Suffering",
+      "Judgment"
+    ],
+    "answer": "Incorruption/Immortality",
+    "reference": "Wisdom 2:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1089,
+    "book": "Wisdom",
+    "question": "What is the 'beginning of fornication' (spiritual unfaithfulness)?",
+    "options": [
+      "The devising of idols",
+      "Love of money",
+      "Pride",
+      "Lust"
+    ],
+    "answer": "The devising of idols",
+    "reference": "Wisdom 14:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1090,
+    "book": "Wisdom",
+    "question": "Wisdom 13 criticizes those who worship...",
+    "options": [
+      "Nature (fire, wind, stars)",
+      "Money",
+      "Kings",
+      "Ancestors"
+    ],
+    "answer": "Nature (fire, wind, stars)",
+    "reference": "Wisdom 13:2",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "id": 124,
+    "book": "2 Chronicles",
+    "question": "Which king was struck with leprosy for trying to burn incense in the temple?",
+    "options": [
+      "Uzziah",
+      "Hezekiah",
+      "David",
+      "Asa"
+    ],
+    "answer": "Uzziah",
+    "reference": "2 Chronicles 26:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 270,
+    "book": "2 Chronicles",
+    "question": "Which King of Judah was diseased in his feet in his old age?",
+    "options": [
+      "Asa",
+      "Jehoshaphat",
+      "Hezekiah",
+      "Josiah"
+    ],
+    "answer": "Asa",
+    "reference": "2 Chronicles 16:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 325,
+    "book": "2 Chronicles",
+    "question": "Which King of Judah was known for having a very large army of over a million men?",
+    "options": [
+      "Jehoshaphat",
+      "David",
+      "Solomon",
+      "Asa"
+    ],
+    "answer": "Jehoshaphat",
+    "reference": "2 Chronicles 17:14-19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 374,
+    "book": "2 Chronicles",
+    "question": "Which wicked King of Judah repented while in captivity in Babylon?",
+    "options": [
+      "Manasseh",
+      "Amon",
+      "Ahaz",
+      "Jehoram"
+    ],
+    "answer": "Manasseh",
+    "reference": "2 Chronicles 33:12-13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 519,
+    "book": "2 Chronicles",
+    "question": "Which king was hidden in the temple for six years while Athaliah ruled?",
+    "options": [
+      "Joash",
+      "Josiah",
+      "Uzziah",
+      "Hezekiah"
+    ],
+    "answer": "Joash",
+    "reference": "2 Chronicles 22:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 569,
+    "book": "2 Chronicles",
+    "question": "Which king began to reign at age 16 and invented engines of war?",
+    "options": [
+      "Uzziah",
+      "Jotham",
+      "Ahaz",
+      "Hezekiah"
+    ],
+    "answer": "Uzziah",
+    "reference": "2 Chronicles 26:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 624,
+    "book": "2 Chronicles",
+    "question": "Which king died of a severe disease in his bowels?",
+    "options": [
+      "Jehoram",
+      "Uzziah",
+      "Asa",
+      "Ahaziah"
+    ],
+    "answer": "Jehoram",
+    "reference": "2 Chronicles 21:18-19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 674,
+    "book": "2 Chronicles",
+    "question": "What happened when the singers began to praise the Lord in the battle of Jehoshaphat?",
+    "options": [
+      "The Lord set ambushes against the enemy",
+      "The walls fell down",
+      "Fire came from heaven",
+      "The sun stood still"
+    ],
+    "answer": "The Lord set ambushes against the enemy",
+    "reference": "2 Chronicles 20:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 727,
+    "book": "2 Chronicles",
+    "question": "Which King of Judah was captured by the Assyrians and taken to Babylon with hooks?",
+    "options": [
+      "Manasseh",
+      "Hezekiah",
+      "Josiah",
+      "Jehoahaz"
+    ],
+    "answer": "Manasseh",
+    "reference": "2 Chronicles 33:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 769,
+    "book": "2 Chronicles",
+    "question": "Which king of Judah was 7 years old when he began to reign?",
+    "options": [
+      "Joash",
+      "Josiah",
+      "Uzziah",
+      "Manasseh"
+    ],
+    "answer": "Joash",
+    "reference": "2 Chronicles 24:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 826,
+    "book": "2 Chronicles",
+    "question": "Which king of Judah established judges in the land and told them to judge for the Lord?",
+    "options": [
+      "Jehoshaphat",
+      "Hezekiah",
+      "David",
+      "Rehoboam"
+    ],
+    "answer": "Jehoshaphat",
+    "reference": "2 Chronicles 19:5-6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 868,
+    "book": "2 Chronicles",
+    "question": "Which king was rebuked by the prophet Hanani for relying on the King of Syria?",
+    "options": [
+      "Asa",
+      "Jehoshaphat",
+      "Joash",
+      "Amaziah"
+    ],
+    "answer": "Asa",
+    "reference": "2 Chronicles 16:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 926,
+    "book": "2 Chronicles",
+    "question": "Which king of Judah had a leprosy outbreak on his forehead in the temple?",
+    "options": [
+      "Uzziah",
+      "Asa",
+      "Jehoram",
+      "Ahaz"
+    ],
+    "answer": "Uzziah",
+    "reference": "2 Chronicles 26:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 968,
+    "book": "2 Chronicles",
+    "question": "Who was the king who burned incense to the Lord and was struck with leprosy?",
+    "options": [
+      "Uzziah",
+      "Hezekiah",
+      "Asa",
+      "Josiah"
+    ],
+    "answer": "Uzziah",
+    "reference": "2 Chronicles 26:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1608,
+    "book": "2 Chronicles",
+    "question": "Where did Solomon go to offer sacrifices at the beginning of his reign because the Tabernacle was there?",
+    "options": [
+      "Gibeon",
+      "Jerusalem",
+      "Hebron",
+      "Bethel"
+    ],
+    "answer": "Gibeon",
+    "reference": "2 Chronicles 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1609,
+    "book": "2 Chronicles",
+    "question": "What did Solomon ask God for when He appeared to him in a dream?",
+    "options": [
+      "Wisdom and knowledge",
+      "Riches and honor",
+      "The life of his enemies",
+      "Long life"
+    ],
+    "answer": "Wisdom and knowledge",
+    "reference": "2 Chronicles 1:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1610,
+    "book": "2 Chronicles",
+    "question": "How many years did it take Solomon to build the Temple?",
+    "options": [
+      "7 years",
+      "13 years",
+      "20 years",
+      "40 years"
+    ],
+    "answer": "7 years",
+    "reference": "2 Chronicles 3:1-4:22 (Context of 1 Kings 6:38)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1611,
+    "book": "2 Chronicles",
+    "question": "What happened when the priests came out of the Holy Place at the dedication of the Temple?",
+    "options": [
+      "A cloud filled the house so they could not continue to minister",
+      "Fire fell and consumed the people",
+      "An earthquake shook the city",
+      "The Ark disappeared"
+    ],
+    "answer": "A cloud filled the house so they could not continue to minister",
+    "reference": "2 Chronicles 5:13-14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1612,
+    "book": "2 Chronicles",
+    "question": "If My people who are called by My name will humble themselves, and pray...",
+    "options": [
+      "Then I will hear from heaven and will forgive their sin and heal their land",
+      "Then I will give them victory",
+      "Then they shall be rich",
+      "Then I will return to them"
+    ],
+    "answer": "Then I will hear from heaven and will forgive their sin and heal their land",
+    "reference": "2 Chronicles 7:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1613,
+    "book": "2 Chronicles",
+    "question": "Which Queen visited Solomon to test him with hard questions?",
+    "options": [
+      "Queen of Sheba",
+      "Queen of Egypt",
+      "Queen of Ethiopia",
+      "Queen Vashti"
+    ],
+    "answer": "Queen of Sheba",
+    "reference": "2 Chronicles 9:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1614,
+    "book": "2 Chronicles",
+    "question": "Who was the son of Solomon who caused the kingdom to split?",
+    "options": [
+      "Rehoboam",
+      "Jeroboam",
+      "Abijah",
+      "Asa"
+    ],
+    "answer": "Rehoboam",
+    "reference": "2 Chronicles 10:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1615,
+    "book": "2 Chronicles",
+    "question": "Which king of Judah commanded the people to seek the Lord and removed the high places and incense altars?",
+    "options": [
+      "Asa",
+      "Rehoboam",
+      "Abijah",
+      "Jehoram"
+    ],
+    "answer": "Asa",
+    "reference": "2 Chronicles 14:2-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1616,
+    "book": "2 Chronicles",
+    "question": "How did King Jehoshaphat defeat the massive army of Moab and Ammon?",
+    "options": [
+      "By appointing singers to praise the Lord ahead of the army",
+      "By a midnight raid",
+      "With chariots from Egypt",
+      "Through a long siege"
+    ],
+    "answer": "By appointing singers to praise the Lord ahead of the army",
+    "reference": "2 Chronicles 20:21-22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1617,
+    "book": "2 Chronicles",
+    "question": "Which queen mother attempted to destroy all the royal heirs of the house of Judah?",
+    "options": [
+      "Athaliah",
+      "Jezebel",
+      "Maacah",
+      "Naamah"
+    ],
+    "answer": "Athaliah",
+    "reference": "2 Chronicles 22:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1618,
+    "book": "2 Chronicles",
+    "question": "Who was the young king hidden in the Temple for six years to save his life from Athaliah?",
+    "options": [
+      "Joash (Jehoash)",
+      "Josiah",
+      "Uzziah",
+      "Hezekiah"
+    ],
+    "answer": "Joash (Jehoash)",
+    "reference": "2 Chronicles 22:11-12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1619,
+    "book": "2 Chronicles",
+    "question": "What disease struck King Uzziah when he tried to burn incense in the Temple?",
+    "options": [
+      "Leprosy",
+      "Blindness",
+      "Paralysis",
+      "Plague"
+    ],
+    "answer": "Leprosy",
+    "reference": "2 Chronicles 26:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1620,
+    "book": "2 Chronicles",
+    "question": "Which king of Judah is famous for reopening the Temple and organizing a massive Passover?",
+    "options": [
+      "Hezekiah",
+      "Josiah",
+      "Asa",
+      "Jehoshaphat"
+    ],
+    "answer": "Hezekiah",
+    "reference": "2 Chronicles 29:3, 30:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1621,
+    "book": "2 Chronicles",
+    "question": "How long was the sun dial turned back for Hezekiah as a sign?",
+    "options": [
+      "10 degrees",
+      "5 degrees",
+      "1 hour",
+      "12 degrees"
+    ],
+    "answer": "10 degrees",
+    "reference": "2 Chronicles 32:24 (Context of 2 Kings 20:11)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1622,
+    "book": "2 Chronicles",
+    "question": "Which king of Judah was the most wicked, but later repented when captured by Assyria?",
+    "options": [
+      "Manasseh",
+      "Ahaz",
+      "Amon",
+      "Jehoiakim"
+    ],
+    "answer": "Manasseh",
+    "reference": "2 Chronicles 33:12-13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1623,
+    "book": "2 Chronicles",
+    "question": "Who was the last king of Judah mentioned before the exile in 2 Chronicles?",
+    "options": [
+      "Zedekiah",
+      "Jehoiachin",
+      "Jehoahaz",
+      "Jehoiakim"
+    ],
+    "answer": "Zedekiah",
+    "reference": "2 Chronicles 36:11",
+    "difficulty": "medium"
+  }
+]

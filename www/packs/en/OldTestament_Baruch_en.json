@@ -1,0 +1,464 @@
+[
+  {
+    "id": 1134,
+    "book": "Baruch",
+    "question": "Who was Baruch?",
+    "options": [
+      "The scribe of Jeremiah",
+      "The son of Jeremiah",
+      "A king of Judah",
+      "A prophet in Egypt"
+    ],
+    "answer": "The scribe of Jeremiah",
+    "reference": "Baruch 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1135,
+    "book": "Baruch",
+    "question": "Where was the book of Baruch written?",
+    "options": [
+      "Babylon",
+      "Jerusalem",
+      "Egypt",
+      "Rome"
+    ],
+    "answer": "Babylon",
+    "reference": "Baruch 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1136,
+    "book": "Baruch",
+    "question": "To whom did Baruch read the words of this book?",
+    "options": [
+      "Jeconiah (Jehoiachin) and the people",
+      "Nebuchadnezzar",
+      "Zedekiah",
+      "Cyrus"
+    ],
+    "answer": "Jeconiah (Jehoiachin) and the people",
+    "reference": "Baruch 1:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1137,
+    "book": "Baruch",
+    "question": "What did the people do after hearing the book?",
+    "options": [
+      "Wept, fasted, and prayed",
+      "Rejoiced",
+      "Burned the book",
+      "Attacked the Babylonians"
+    ],
+    "answer": "Wept, fasted, and prayed",
+    "reference": "Baruch 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1138,
+    "book": "Baruch",
+    "question": "Baruch 1:15 says, 'To the Lord our God belongs righteousness, but to us...'",
+    "options": [
+      "Confusion of face / Shame",
+      "Mercy",
+      "Forgiveness",
+      "The land"
+    ],
+    "answer": "Confusion of face / Shame",
+    "reference": "Baruch 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1139,
+    "book": "Baruch",
+    "question": "According to Baruch 2, why did the Lord bring evils upon Israel?",
+    "options": [
+      "Because they did not obey His voice",
+      "Because He forgot them",
+      "Because Babylon was stronger",
+      "Because the temple was small"
+    ],
+    "answer": "Because they did not obey His voice",
+    "reference": "Baruch 2:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1140,
+    "book": "Baruch",
+    "question": "Who are the 'dead' mentioned in Baruch 2:17 who cannot praise God?",
+    "options": [
+      "Those in Hades whose spirit is taken",
+      "The idols",
+      "The Babylonians",
+      "The wicked on earth"
+    ],
+    "answer": "Those in Hades whose spirit is taken",
+    "reference": "Baruch 2:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1141,
+    "book": "Baruch",
+    "question": "Baruch 3 asks, 'Who has gone up into heaven and taken her (Wisdom)?' It parallels which OT book?",
+    "options": [
+      "Deuteronomy (and Job)",
+      "Genesis",
+      "Psalms",
+      "Isaiah"
+    ],
+    "answer": "Deuteronomy (and Job)",
+    "reference": "Baruch 3:29",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1142,
+    "book": "Baruch",
+    "question": "Who are the 'giants' mentioned in Baruch 3?",
+    "options": [
+      "Ancient men of great stature who perished",
+      "The Babylonians",
+      "The Philistines",
+      "The angels"
+    ],
+    "answer": "Ancient men of great stature who perished",
+    "reference": "Baruch 3:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1143,
+    "book": "Baruch",
+    "question": "According to Baruch 4:1, what is the book of the commandments of God?",
+    "options": [
+      "Wisdom",
+      "The Temple",
+      "The Covenant",
+      "The Prophets"
+    ],
+    "answer": "Wisdom",
+    "reference": "Baruch 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1144,
+    "book": "Baruch",
+    "question": "In Baruch 4, Jerusalem is personified as...",
+    "options": [
+      "A mother grieving for her children",
+      "A bride waiting for her groom",
+      "A queen on a throne",
+      "A widow finding a coin"
+    ],
+    "answer": "A mother grieving for her children",
+    "reference": "Baruch 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1145,
+    "book": "Baruch",
+    "question": "Who does Jerusalem say sent the fire upon her?",
+    "options": [
+      "The Everlasting",
+      "The Chaldeans",
+      "The Egyptians",
+      "Her own sins"
+    ],
+    "answer": "The Everlasting",
+    "reference": "Baruch 4:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1146,
+    "book": "Baruch",
+    "question": "Baruch 4:25 tells the children to wait patiently for...",
+    "options": [
+      "The deliverance of God",
+      "The death of the king",
+      "The rebuilding of the wall",
+      "The messiah"
+    ],
+    "answer": "The deliverance of God",
+    "reference": "Baruch 4:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1147,
+    "book": "Baruch",
+    "question": "Baruch 5 describes Jerusalem taking off the garment of sorrow and putting on...",
+    "options": [
+      "The beauty of the glory from God",
+      "Armor for war",
+      "Sackcloth",
+      "Purple robes"
+    ],
+    "answer": "The beauty of the glory from God",
+    "reference": "Baruch 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1148,
+    "book": "Baruch",
+    "question": "What is Chapter 6 of Baruch also known as?",
+    "options": [
+      "The Letter of Jeremiah",
+      "The Prayer of Azariah",
+      "The Song of the Three Children",
+      "The Vision of Baruch"
+    ],
+    "answer": "The Letter of Jeremiah",
+    "reference": "Baruch 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1149,
+    "book": "Baruch",
+    "question": "The Letter of Jeremiah warns the exiles about...",
+    "options": [
+      "Idolatry",
+      "Intermarriage",
+      "Eating pork",
+      "Sabbath breaking"
+    ],
+    "answer": "Idolatry",
+    "reference": "Baruch 6:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1150,
+    "book": "Baruch",
+    "question": "The Letter says idols are like a scarecrow in a...",
+    "options": [
+      "Cucumber patch",
+      "Cornfield",
+      "Vineyard",
+      "Wheat field"
+    ],
+    "answer": "Cucumber patch",
+    "reference": "Baruch 6:70",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1151,
+    "book": "Baruch",
+    "question": "What sits on the heads of the idols according to the Letter of Jeremiah?",
+    "options": [
+      "Bats, swallows, and birds",
+      "Crowns of fire",
+      "Halos",
+      "Clouds"
+    ],
+    "answer": "Bats, swallows, and birds",
+    "reference": "Baruch 6:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1152,
+    "book": "Baruch",
+    "question": "Why do the priests sit in the temples of idols with torn clothes?",
+    "options": [
+      "To mourn (as a funeral custom)",
+      "Because they are poor",
+      "Because they are crazy",
+      "Because the idols demand it"
+    ],
+    "answer": "To mourn (as a funeral custom)",
+    "reference": "Baruch 6:31",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1153,
+    "book": "Baruch",
+    "question": "How long did Jeremiah say the exiles would be in Babylon?",
+    "options": [
+      "Seven generations",
+      "70 years",
+      "40 years",
+      "400 years"
+    ],
+    "answer": "Seven generations",
+    "reference": "Baruch 6:3 (Note: Differs from Jeremiah 25's '70 years')",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1154,
+    "book": "Baruch",
+    "question": "What did the people send to Jerusalem along with the book?",
+    "options": [
+      "Money to buy burnt offerings",
+      "Weapons",
+      "Letters to the king",
+      "Priestly garments"
+    ],
+    "answer": "Money to buy burnt offerings",
+    "reference": "Baruch 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1155,
+    "book": "Baruch",
+    "question": "The author says God has appointed every high mountain to be...",
+    "options": [
+      "Made low / Flattened",
+      "Exalted",
+      "Covered in snow",
+      "Worshipped"
+    ],
+    "answer": "Made low / Flattened",
+    "reference": "Baruch 5:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1156,
+    "book": "Baruch",
+    "question": "In Baruch 3, to whom did God give the way of knowledge?",
+    "options": [
+      "To Jacob his servant",
+      "To the Giants",
+      "To the Chaldeans",
+      "To the kings of the earth"
+    ],
+    "answer": "To Jacob his servant",
+    "reference": "Baruch 3:36",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1157,
+    "book": "Baruch",
+    "question": "Baruch 2 prays for the Lord to open His eyes and see, for the dead cannot...",
+    "options": [
+      "Give glory and justice to the Lord",
+      "Return to life",
+      "Fight",
+      "See the sun"
+    ],
+    "answer": "Give glory and justice to the Lord",
+    "reference": "Baruch 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1158,
+    "book": "Baruch",
+    "question": "The Letter of Jeremiah says the idols cannot save themselves from...",
+    "options": [
+      "Rust and moths",
+      "The Romans",
+      "Water",
+      "Wind"
+    ],
+    "answer": "Rust and moths",
+    "reference": "Baruch 6:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1159,
+    "book": "Baruch",
+    "question": "Who lights candles for the idols?",
+    "options": [
+      "The people",
+      "The angels",
+      "The demons",
+      "No one"
+    ],
+    "answer": "The people",
+    "reference": "Baruch 6:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1160,
+    "book": "Baruch",
+    "question": "Baruch 4:2 says to walk toward the shining of...",
+    "options": [
+      "Her (Wisdom's) light",
+      "The sun",
+      "The temple",
+      "The law"
+    ],
+    "answer": "Her (Wisdom's) light",
+    "reference": "Baruch 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1161,
+    "book": "Baruch",
+    "question": "What curse adhered to the Israelites according to Baruch 1:20?",
+    "options": [
+      "The curse Moses pronounced",
+      "The curse of Adam",
+      "The curse of Cain",
+      "The curse of David"
+    ],
+    "answer": "The curse Moses pronounced",
+    "reference": "Baruch 1:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1162,
+    "book": "Baruch",
+    "question": "Baruch 2:3 mentions a terrible thing they did: eating the flesh of...",
+    "options": [
+      "Their sons and daughters",
+      "Pigs",
+      "Camels",
+      "Sacrifices to idols"
+    ],
+    "answer": "Their sons and daughters",
+    "reference": "Baruch 2:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1163,
+    "book": "Baruch",
+    "question": "The 'Statue' in Baruch 6 holds what in its hand?",
+    "options": [
+      "A scepter or a dagger",
+      "A globe",
+      "A scale",
+      "A lightning bolt"
+    ],
+    "answer": "A scepter or a dagger",
+    "reference": "Baruch 6:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1164,
+    "book": "Baruch",
+    "question": "Who wipes the dust off the face of the idols?",
+    "options": [
+      "The priests",
+      "The wind",
+      "The rain",
+      "The king"
+    ],
+    "answer": "The priests",
+    "reference": "Baruch 6:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1165,
+    "book": "Baruch",
+    "question": "What animals are mentioned sitting on the idols?",
+    "options": [
+      "Cats",
+      "Dogs",
+      "Lions",
+      "Snakes"
+    ],
+    "answer": "Cats",
+    "reference": "Baruch 6:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1166,
+    "book": "Baruch",
+    "question": "Baruch 3:14 says: 'Learn where there is...'",
+    "options": [
+      "Wisdom, strength, and understanding",
+      "Gold and silver",
+      "Peace and safety",
+      "Power and glory"
+    ],
+    "answer": "Wisdom, strength, and understanding",
+    "reference": "Baruch 3:14",
+    "difficulty": "medium"
+  }
+]

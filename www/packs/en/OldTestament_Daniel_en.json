@@ -1,0 +1,422 @@
+[
+  {
+    "id": 4,
+    "book": "Daniel",
+    "question": "What happened to Shadrach, Meshach, and Abednego?",
+    "options": [
+      "Thrown into a lion's den",
+      "Swallowed by a fish",
+      "Thrown into a fiery furnace",
+      "Exiled to an island"
+    ],
+    "answer": "Thrown into a fiery furnace",
+    "reference": "Daniel 3:19-23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 29,
+    "book": "Daniel",
+    "question": "Who interpreted the writing on the wall for Belshazzar?",
+    "options": [
+      "Daniel",
+      "Shadrach",
+      "Ezra",
+      "Nehemiah"
+    ],
+    "answer": "Daniel",
+    "reference": "Daniel 5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 62,
+    "book": "Daniel",
+    "question": "Why was Daniel thrown into the lions' den?",
+    "options": [
+      "He refused to eat the King's food",
+      "He prayed to God instead of the King",
+      "He interpreted a dream",
+      "He refused to bow to an idol"
+    ],
+    "answer": "He prayed to God instead of the King",
+    "reference": "Daniel 6:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 90,
+    "book": "Daniel",
+    "question": "Who were the three men thrown into the fiery furnace?",
+    "options": [
+      "Shadrach, Meshach, Abednego",
+      "Peter, James, John",
+      "Shem, Ham, Japheth",
+      "Daniel, Ezekiel, Jeremiah"
+    ],
+    "answer": "Shadrach, Meshach, Abednego",
+    "reference": "Daniel 3:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 139,
+    "book": "Daniel",
+    "question": "What kind of food did Daniel and his friends request to eat?",
+    "options": [
+      "King's meat",
+      "Vegetables and water",
+      "Bread and wine",
+      "Milk and honey"
+    ],
+    "answer": "Vegetables and water",
+    "reference": "Daniel 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 140,
+    "book": "Daniel",
+    "question": "Which king was turned into a beast-like man for seven years?",
+    "options": [
+      "Nebuchadnezzar",
+      "Belshazzar",
+      "Darius",
+      "Cyrus"
+    ],
+    "answer": "Nebuchadnezzar",
+    "reference": "Daniel 4:33",
+    "difficulty": "hard"
+  },
+  {
+    "id": 186,
+    "book": "Daniel",
+    "question": "What words appeared on the wall at Belshazzar's feast?",
+    "options": [
+      "Mene, Mene, Tekel, Parsin",
+      "Holy, Holy, Holy",
+      "Repent, for the end is near",
+      "Ichabod"
+    ],
+    "answer": "Mene, Mene, Tekel, Parsin",
+    "reference": "Daniel 5:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 187,
+    "book": "Daniel",
+    "question": "Who was the angel that came to give Daniel understanding of his vision?",
+    "options": [
+      "Gabriel",
+      "Michael",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Gabriel",
+    "reference": "Daniel 9:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 227,
+    "book": "Daniel",
+    "question": "Which angel fought with the 'Prince of Persia' to reach Daniel?",
+    "options": [
+      "Michael",
+      "Gabriel",
+      "Lucifer",
+      "Raphael"
+    ],
+    "answer": "Michael",
+    "reference": "Daniel 10:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 285,
+    "book": "Daniel",
+    "question": "In Daniel's vision, what animal represented the King of Greece?",
+    "options": [
+      "A goat",
+      "A ram",
+      "A lion",
+      "A bear"
+    ],
+    "answer": "A goat",
+    "reference": "Daniel 8:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 337,
+    "book": "Daniel",
+    "question": "Who was the King who threw Daniel into the lions' den?",
+    "options": [
+      "Darius",
+      "Cyrus",
+      "Nebuchadnezzar",
+      "Belshazzar"
+    ],
+    "answer": "Darius",
+    "reference": "Daniel 6:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 350,
+    "book": "Daniel",
+    "question": "Who was the commander of the Babylonian army that destroyed Jerusalem?",
+    "options": [
+      "Nebuzaradan",
+      "Sisera",
+      "Naaman",
+      "Potiphar"
+    ],
+    "answer": "Nebuzaradan",
+    "reference": "2 Kings 25:8 / Jeremiah 39:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 387,
+    "book": "Daniel",
+    "question": "In Nebuchadnezzar's dream of the statue, the feet were made of...",
+    "options": [
+      "Iron mixed with clay",
+      "Gold",
+      "Silver",
+      "Bronze"
+    ],
+    "answer": "Iron mixed with clay",
+    "reference": "Daniel 2:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 388,
+    "book": "Daniel",
+    "question": "How many 'weeks' (sevens) were determined for Daniel's people?",
+    "options": [
+      "70 weeks",
+      "7 weeks",
+      "62 weeks",
+      "100 weeks"
+    ],
+    "answer": "70 weeks",
+    "reference": "Daniel 9:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 435,
+    "book": "Daniel",
+    "question": "What was the Babylonian name given to Daniel?",
+    "options": [
+      "Belteshazzar",
+      "Shadrach",
+      "Abednego",
+      "Meshach"
+    ],
+    "answer": "Belteshazzar",
+    "reference": "Daniel 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 482,
+    "book": "Daniel",
+    "question": "What were the Hebrew names of Shadrach, Meshach, and Abednego?",
+    "options": [
+      "Hananiah, Mishael, Azariah",
+      "Reuben, Simeon, Levi",
+      "Eliphaz, Bildad, Zophar",
+      "Gershom, Eliezer, Ichabod"
+    ],
+    "answer": "Hananiah, Mishael, Azariah",
+    "reference": "Daniel 1:6-7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 532,
+    "book": "Daniel",
+    "question": "In the prophecy of the end times, how many days are mentioned in Daniel 12:11?",
+    "options": [
+      "1,290 days",
+      "1,260 days",
+      "70 weeks",
+      "40 days"
+    ],
+    "answer": "1,290 days",
+    "reference": "Daniel 12:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 581,
+    "book": "Daniel",
+    "question": "Who was the 'Ancient of Days' mentioned in Daniel's vision?",
+    "options": [
+      "God",
+      "The Messiah",
+      "An Angel",
+      "The King"
+    ],
+    "answer": "God",
+    "reference": "Daniel 7:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 637,
+    "book": "Daniel",
+    "question": "In Nebuchadnezzar's dream, what destroyed the statue?",
+    "options": [
+      "A stone cut without hands",
+      "A great fire",
+      "A flood",
+      "An earthquake"
+    ],
+    "answer": "A stone cut without hands",
+    "reference": "Daniel 2:34",
+    "difficulty": "medium"
+  },
+  {
+    "id": 687,
+    "book": "Daniel",
+    "question": "What did the fourth beast in Daniel's dream look like?",
+    "options": [
+      "It was terrifying, frightening, and very powerful with iron teeth",
+      "Like a lion with eagle's wings",
+      "Like a bear raised up on one side",
+      "Like a leopard with four wings"
+    ],
+    "answer": "It was terrifying, frightening, and very powerful with iron teeth",
+    "reference": "Daniel 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 743,
+    "book": "Daniel",
+    "question": "Who was the father of Daniel (trick question)?",
+    "options": [
+      "It is not mentioned",
+      "David",
+      "Josiah",
+      "Hezekiah"
+    ],
+    "answer": "It is not mentioned",
+    "reference": "Daniel 1 (No genealogy given)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 782,
+    "book": "Daniel",
+    "question": "How long was the period of insanity decreed for Nebuchadnezzar?",
+    "options": [
+      "Seven times (years)",
+      "Three years",
+      "Twelve months",
+      "One week"
+    ],
+    "answer": "Seven times (years)",
+    "reference": "Daniel 4:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 842,
+    "book": "Daniel",
+    "question": "What is the name of the river where Daniel had his vision in chapter 10?",
+    "options": [
+      "Tigris (Hiddekel)",
+      "Euphrates",
+      "Nile",
+      "Jordan"
+    ],
+    "answer": "Tigris (Hiddekel)",
+    "reference": "Daniel 10:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 881,
+    "book": "Daniel",
+    "question": "Who was the father of Belshazzar?",
+    "options": [
+      "Nabonidus (often referred to as son of Nebuchadnezzar in Bible)",
+      "Nebuchadnezzar",
+      "Darius",
+      "Cyrus"
+    ],
+    "answer": "Nabonidus (often referred to as son of Nebuchadnezzar in Bible)",
+    "reference": "Daniel 5:11 (Biblical usage refers to ancestor as father)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 942,
+    "book": "Daniel",
+    "question": "Who was the high official who gave Daniel and his friends new names?",
+    "options": [
+      "Ashpenaz",
+      "Arioch",
+      "Melzar",
+      "Nebuzaradan"
+    ],
+    "answer": "Ashpenaz",
+    "reference": "Daniel 1:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 981,
+    "book": "Daniel",
+    "question": "Who was cast into the den of lions?",
+    "options": [
+      "Daniel",
+      "Shadrach",
+      "Meshach",
+      "Abednego"
+    ],
+    "answer": "Daniel",
+    "reference": "Daniel 6:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1407,
+    "book": "Daniel",
+    "question": "What words appeared on the wall during Belshazzar's feast?",
+    "options": [
+      "Mene, Mene, Tekel, Upharsin",
+      "Ichabod, Ichabod",
+      "Eloi, Eloi, Lama Sabachthani",
+      "Alpha and Omega"
+    ],
+    "answer": "Mene, Mene, Tekel, Upharsin",
+    "reference": "Daniel 5:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1408,
+    "book": "Daniel",
+    "question": "Who was the angel that came to give Daniel understanding of his vision?",
+    "options": [
+      "Gabriel",
+      "Michael",
+      "Raphael",
+      "Uriel"
+    ],
+    "answer": "Gabriel",
+    "reference": "Daniel 9:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1409,
+    "book": "Daniel",
+    "question": "What did Daniel refuse to do, leading to the Lion's Den?",
+    "options": [
+      "Stop praying to his God",
+      "Eat the King's meat",
+      "Bow to the statue",
+      "Interpret the dream"
+    ],
+    "answer": "Stop praying to his God",
+    "reference": "Daniel 6:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1410,
+    "book": "Daniel",
+    "question": "In Nebuchadnezzar's dream of the tree, who was the tree?",
+    "options": [
+      "Nebuchadnezzar himself",
+      "The Messiah",
+      "The Kingdom of Israel",
+      "Cyrus"
+    ],
+    "answer": "Nebuchadnezzar himself",
+    "reference": "Daniel 4:22",
+    "difficulty": "medium"
+  }
+]

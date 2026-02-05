@@ -1,0 +1,422 @@
+[
+  {
+    "id": 94,
+    "book": "Nahum",
+    "question": "Nahum prophesied the destruction of which city (which Jonah had previously warned)?",
+    "options": [
+      "Nineveh",
+      "Tyre",
+      "Sidon",
+      "Damascus"
+    ],
+    "answer": "Nineveh",
+    "reference": "Nahum 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 234,
+    "book": "Nahum",
+    "question": "Nahum says, 'Beautiful on the mountains are the feet of him who...'",
+    "options": [
+      "Brings good news",
+      "Walks with God",
+      "Defeats the enemy",
+      "Plants vineyards"
+    ],
+    "answer": "Brings good news",
+    "reference": "Nahum 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 394,
+    "book": "Nahum",
+    "question": "Complete the verse: 'The Lord is slow to anger and great in...'",
+    "options": [
+      "Power",
+      "Love",
+      "Mercy",
+      "Wrath"
+    ],
+    "answer": "Power",
+    "reference": "Nahum 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 441,
+    "book": "Nahum",
+    "question": "Nahum compares the city of Nineveh to a...",
+    "options": [
+      "Pool of water",
+      "Broken pot",
+      "Withered tree",
+      "Den of lions"
+    ],
+    "answer": "Pool of water",
+    "reference": "Nahum 2:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 487,
+    "book": "Nahum",
+    "question": "Nahum describes the chariots in the streets rushing like...",
+    "options": [
+      "Torches/Lightning",
+      "Lions",
+      "Floods",
+      "Eagles"
+    ],
+    "answer": "Torches/Lightning",
+    "reference": "Nahum 2:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 539,
+    "book": "Nahum",
+    "question": "Nahum prophesies the destruction of which empire?",
+    "options": [
+      "Assyria",
+      "Babylon",
+      "Persia",
+      "Rome"
+    ],
+    "answer": "Assyria",
+    "reference": "Nahum 3:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 587,
+    "book": "Nahum",
+    "question": "Nahum asks, 'Who can stand before His...?'",
+    "options": [
+      "Indignation",
+      "Love",
+      "Throne",
+      "Temple"
+    ],
+    "answer": "Indignation",
+    "reference": "Nahum 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 643,
+    "book": "Nahum",
+    "question": "Nahum 1:7 says, 'The Lord is good, a stronghold in the day of...'",
+    "options": [
+      "Trouble",
+      "Battle",
+      "Judgment",
+      "Evil"
+    ],
+    "answer": "Trouble",
+    "reference": "Nahum 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 693,
+    "book": "Nahum",
+    "question": "Nahum asks Nineveh, 'Are you better than...?'",
+    "options": [
+      "Thebes (No Amon)",
+      "Jerusalem",
+      "Babylon",
+      "Tyre"
+    ],
+    "answer": "Thebes (No Amon)",
+    "reference": "Nahum 3:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 750,
+    "book": "Nahum",
+    "question": "Nahum 2:1 warns: 'He who scatters has come up before your...'",
+    "options": [
+      "Face",
+      "Gates",
+      "Walls",
+      "King"
+    ],
+    "answer": "Face",
+    "reference": "Nahum 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 789,
+    "book": "Nahum",
+    "question": "Nahum 3:1 calls Nineveh the...",
+    "options": [
+      "Bloody city",
+      "City of Gold",
+      "City of Pride",
+      "Eternal City"
+    ],
+    "answer": "Bloody city",
+    "reference": "Nahum 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 849,
+    "book": "Nahum",
+    "question": "According to Nahum 3, Nineveh is laid waste; who will...?",
+    "options": [
+      "Bemoan/Mourn for her",
+      "Rebuild her",
+      "Inhabit her",
+      "Remember her"
+    ],
+    "answer": "Bemoan/Mourn for her",
+    "reference": "Nahum 3:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 888,
+    "book": "Nahum",
+    "question": "Nahum 1:2 says the Lord is a ______ God.",
+    "options": [
+      "Jealous and avenging",
+      "Loving and kind",
+      "Patient",
+      "Silent"
+    ],
+    "answer": "Jealous and avenging",
+    "reference": "Nahum 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 949,
+    "book": "Nahum",
+    "question": "Nahum 1:3 says the Lord has His way in the...",
+    "options": [
+      "Whirlwind and in the storm",
+      "Hearts of kings",
+      "Temple",
+      "Clouds"
+    ],
+    "answer": "Whirlwind and in the storm",
+    "reference": "Nahum 1:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 988,
+    "book": "Nahum",
+    "question": "Nahum prophesied against...",
+    "options": [
+      "Nineveh",
+      "Babylon",
+      "Tyre",
+      "Sidon"
+    ],
+    "answer": "Nineveh",
+    "reference": "Nahum 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1577,
+    "book": "Nahum",
+    "question": "Nahum is a prophecy concerning which city?",
+    "options": [
+      "Nineveh",
+      "Babylon",
+      "Tyre",
+      "Jerusalem"
+    ],
+    "answer": "Nineveh",
+    "reference": "Nahum 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1578,
+    "book": "Nahum",
+    "question": "The Lord is slow to anger and great in...",
+    "options": [
+      "Power",
+      "Mercy",
+      "Love",
+      "Wisdom"
+    ],
+    "answer": "Power",
+    "reference": "Nahum 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1579,
+    "book": "Nahum",
+    "question": "Who can stand before His indignation?",
+    "options": [
+      "No one",
+      "The righteous",
+      "The angels",
+      "The kings"
+    ],
+    "answer": "No one",
+    "reference": "Nahum 1:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1580,
+    "book": "Nahum",
+    "question": "The Lord is good, a stronghold in the day of...",
+    "options": [
+      "Trouble",
+      "Battle",
+      "Judgment",
+      "Feast"
+    ],
+    "answer": "Trouble",
+    "reference": "Nahum 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1581,
+    "book": "Nahum",
+    "question": "What will He make of the place of Nineveh?",
+    "options": [
+      "An utter end",
+      "A great city",
+      "A memorial",
+      "A lake"
+    ],
+    "answer": "An utter end",
+    "reference": "Nahum 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1582,
+    "book": "Nahum",
+    "question": "Behold, on the mountains the feet of him who brings...",
+    "options": [
+      "Good tidings",
+      "War",
+      "Judgment",
+      "Gold"
+    ],
+    "answer": "Good tidings",
+    "reference": "Nahum 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1583,
+    "book": "Nahum",
+    "question": "Nahum compares Nineveh to a pool of...",
+    "options": [
+      "Water",
+      "Blood",
+      "Mud",
+      "Fire"
+    ],
+    "answer": "Water",
+    "reference": "Nahum 2:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1584,
+    "book": "Nahum",
+    "question": "Where is the dwelling of the...?",
+    "options": [
+      "Lions",
+      "Eagles",
+      "Kings",
+      "Gods"
+    ],
+    "answer": "Lions",
+    "reference": "Nahum 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1585,
+    "book": "Nahum",
+    "question": "Woe to the ______ city!",
+    "options": [
+      "Bloody",
+      "Golden",
+      "Great",
+      "Eternal"
+    ],
+    "answer": "Bloody",
+    "reference": "Nahum 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1586,
+    "book": "Nahum",
+    "question": "Because of the multitude of harlotries of the seductive...",
+    "options": [
+      "Harlot",
+      "Queen",
+      "City",
+      "Nation"
+    ],
+    "answer": "Harlot",
+    "reference": "Nahum 3:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1587,
+    "book": "Nahum",
+    "question": "I will cast abominable filth upon you and make you...",
+    "options": [
+      "Vile",
+      "Clean",
+      "Poor",
+      "Sick"
+    ],
+    "answer": "Vile",
+    "reference": "Nahum 3:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1588,
+    "book": "Nahum",
+    "question": "Are you better than...?",
+    "options": [
+      "No Amon (Thebes)",
+      "Jerusalem",
+      "Babylon",
+      "Tyre"
+    ],
+    "answer": "No Amon (Thebes)",
+    "reference": "Nahum 3:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1589,
+    "book": "Nahum",
+    "question": "Your shepherds slumber, O king of...",
+    "options": [
+      "Assyria",
+      "Babylon",
+      "Egypt",
+      "Judah"
+    ],
+    "answer": "Assyria",
+    "reference": "Nahum 3:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1590,
+    "book": "Nahum",
+    "question": "There is no healing for your...",
+    "options": [
+      "Bruise/Injury",
+      "Sin",
+      "Land",
+      "Heart"
+    ],
+    "answer": "Bruise/Injury",
+    "reference": "Nahum 3:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1591,
+    "book": "Nahum",
+    "question": "All who hear news of you will...",
+    "options": [
+      "Clap their hands",
+      "Weep",
+      "Flee",
+      "Pray"
+    ],
+    "answer": "Clap their hands",
+    "reference": "Nahum 3:19",
+    "difficulty": "medium"
+  }
+]

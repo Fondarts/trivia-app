@@ -338,37 +338,15 @@ export async function refreshCategorySelect(){
             const category = pack.category || 'misc';
             const files = pack.files || [];
             
-            // Procesar TODOS los archivos del pack, no solo el primero
-            files.forEach(fileName => {
-              // Asegurar que el nombre del archivo tenga la extensión .json
-              let normalizedFileName = fileName;
+            // Si el pack tiene múltiples archivos, mostrar solo UNA opción con el nombre del pack
+            // El código cargará automáticamente todos los archivos del pack
+            if (files.length > 1) {
+              // Pack con múltiples archivos: mostrar solo una opción
+              const packName = pack.id || pack.title || 'Pack';
+              const firstFile = files[0]; // Usar el primer archivo como referencia
+              let normalizedFileName = firstFile;
               if (normalizedFileName && !normalizedFileName.endsWith('.json')) {
                 normalizedFileName = normalizedFileName + '.json';
-              }
-              
-              // Usar el id del manifest como nombre de visualización
-              // Si hay múltiples archivos, usar id + nombre del archivo
-              let packName;
-              if (pack.id) {
-                if (files.length > 1) {
-                  // Si hay múltiples archivos, mostrar id + nombre del archivo
-                  const fileDisplayName = normalizedFileName.replace('.json', '').replace(/_/g, ' ').replace(/-/g, ' ');
-                  packName = `${pack.id} - ${fileDisplayName}`;
-                } else {
-                  // Si solo hay un archivo, usar solo el id
-                  packName = pack.id;
-                }
-              } else {
-                // Fallback: generar nombre del archivo si no hay id
-                packName = normalizedFileName.replace('.json', '').replace(/_/g, ' ').replace(/-/g, ' ');
-                packName = packName.split(' ').map(word => 
-                  word.charAt(0).toUpperCase() + word.slice(1)
-                ).join(' ');
-              }
-              
-              // Si el pack tiene un título específico para este archivo, usarlo
-              if (pack.title) {
-                packName = pack.title;
               }
               
               if (!packsMap.has(category)) {
@@ -377,10 +355,30 @@ export async function refreshCategorySelect(){
               packsMap.get(category).push({
                 id: pack.id || normalizedFileName.replace('.json', ''),
                 name: packName,
-                fileName: normalizedFileName,
+                fileName: normalizedFileName, // Primer archivo como referencia
                 category: category
               });
-            });
+            } else {
+              // Pack con un solo archivo: mostrar normalmente
+              files.forEach(fileName => {
+                let normalizedFileName = fileName;
+                if (normalizedFileName && !normalizedFileName.endsWith('.json')) {
+                  normalizedFileName = normalizedFileName + '.json';
+                }
+                
+                const packName = pack.id || pack.title || normalizedFileName.replace('.json', '').replace(/_/g, ' ').replace(/-/g, ' ');
+                
+                if (!packsMap.has(category)) {
+                  packsMap.set(category, []);
+                }
+                packsMap.get(category).push({
+                  id: pack.id || normalizedFileName.replace('.json', ''),
+                  name: packName,
+                  fileName: normalizedFileName,
+                  category: category
+                });
+              });
+            }
           });
           
           // Crear grupos por categoría o lista plana según configuración

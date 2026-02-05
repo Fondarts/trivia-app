@@ -89,6 +89,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   overflow-x: hidden;
+  overflow-y: auto; /* Scroll en body en lugar del container */
 }
 
 /* Efecto de partículas flotantes sutil para fondo espiritual */
@@ -121,7 +122,10 @@ body::before {
   position: relative;
   z-index: 1;
   overflow-x: hidden;
-  overflow-y: auto; /* Scroll solo si el contenido realmente sobresale */
+  overflow-y: visible; /* Sin scroll en container, el body maneja el scroll */
+  /* Espacio adicional para efectos hover (box-shadow puede expandirse hasta 48px) */
+  padding-top: calc(36px + env(safe-area-inset-top, 0px) + 2px);
+  padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px) + 2px);
 }
 
 
@@ -231,7 +235,8 @@ body::before {
     0 0 0 1px rgba(139, 92, 246, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
   border-color: rgba(139, 92, 246, 0.5);
-  transform: translateY(-2px);
+  /* Reducir el transform para evitar overflow */
+  transform: translateY(-1px);
 }
 
 /* Secciones */

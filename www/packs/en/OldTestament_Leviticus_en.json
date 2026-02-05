@@ -1,0 +1,422 @@
+[
+  {
+    "id": 36,
+    "book": "Leviticus",
+    "question": "Which tribe was set apart to serve as priests?",
+    "options": [
+      "Judah",
+      "Levi",
+      "Benjamin",
+      "Reuben"
+    ],
+    "answer": "Levi",
+    "reference": "Leviticus 8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 68,
+    "book": "Leviticus",
+    "question": "What is the Day of Atonement called in Hebrew?",
+    "options": [
+      "Passover",
+      "Yom Kippur",
+      "Rosh Hashanah",
+      "Purim"
+    ],
+    "answer": "Yom Kippur",
+    "reference": "Leviticus 23:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 100,
+    "book": "Leviticus",
+    "question": "Which festival involves living in booths or tents for seven days?",
+    "options": [
+      "Passover",
+      "Pentecost",
+      "Feast of Tabernacles (Sukkot)",
+      "Purim"
+    ],
+    "answer": "Feast of Tabernacles (Sukkot)",
+    "reference": "Leviticus 23:34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 106,
+    "book": "Leviticus",
+    "question": "How often did the Year of Jubilee occur?",
+    "options": [
+      "Every 7 years",
+      "Every 12 years",
+      "Every 50 years",
+      "Every 100 years"
+    ],
+    "answer": "Every 50 years",
+    "reference": "Leviticus 25:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 154,
+    "book": "Leviticus",
+    "question": "Who were Aaron's sons that offered 'strange fire' and died?",
+    "options": [
+      "Nadab and Abihu",
+      "Hophni and Phinehas",
+      "Eleazar and Ithamar",
+      "Cain and Abel"
+    ],
+    "answer": "Nadab and Abihu",
+    "reference": "Leviticus 10:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 195,
+    "book": "Leviticus",
+    "question": "Which animal was sent into the wilderness carrying the sins of the people?",
+    "options": [
+      "The Scapegoat",
+      "The Red Heifer",
+      "The Lamb",
+      "The Ram"
+    ],
+    "answer": "The Scapegoat",
+    "reference": "Leviticus 16:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 204,
+    "book": "Leviticus",
+    "question": "Which animals were considered clean to eat?",
+    "options": [
+      "Those that chew the cud and have a split hoof",
+      "Those that fly and crawl",
+      "Those with paws",
+      "Those that swim without scales"
+    ],
+    "answer": "Those that chew the cud and have a split hoof",
+    "reference": "Leviticus 11:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 306,
+    "book": "Leviticus",
+    "question": "Which son of Aaron succeeded him as High Priest?",
+    "options": [
+      "Eleazar",
+      "Ithamar",
+      "Nadab",
+      "Abihu"
+    ],
+    "answer": "Eleazar",
+    "reference": "Numbers 20:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 356,
+    "book": "Leviticus",
+    "question": "How often was the Sabbatical Year (Shemitah) for the land?",
+    "options": [
+      "Every 7th year",
+      "Every 50th year",
+      "Every 3rd year",
+      "Every 12th year"
+    ],
+    "answer": "Every 7th year",
+    "reference": "Leviticus 25:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 406,
+    "book": "Leviticus",
+    "question": "What substance was required to be added to every grain offering as a sign of the covenant?",
+    "options": [
+      "Salt",
+      "Honey",
+      "Yeast",
+      "Wine"
+    ],
+    "answer": "Salt",
+    "reference": "Leviticus 2:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 456,
+    "book": "Leviticus",
+    "question": "What phrase is repeated often in Leviticus to emphasize God's nature? 'Be holy because...'",
+    "options": [
+      "I am holy",
+      "I am powerful",
+      "I am just",
+      "I am love"
+    ],
+    "answer": "I am holy",
+    "reference": "Leviticus 11:44",
+    "difficulty": "easy"
+  },
+  {
+    "id": 505,
+    "book": "Leviticus",
+    "question": "Which feast involved blowing trumpets and is known as Rosh Hashanah?",
+    "options": [
+      "Feast of Trumpets",
+      "Feast of Booths",
+      "Passover",
+      "Pentecost"
+    ],
+    "answer": "Feast of Trumpets",
+    "reference": "Leviticus 23:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 547,
+    "book": "Leviticus",
+    "question": "What is the penalty for cursing one's father or mother?",
+    "options": [
+      "Death",
+      "Exile",
+      "A fine",
+      "Beating"
+    ],
+    "answer": "Death",
+    "reference": "Leviticus 20:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 555,
+    "book": "Leviticus",
+    "question": "If a person sinned unintentionally, what were they required to bring?",
+    "options": [
+      "A sin offering",
+      "A grain offering",
+      "A tithe",
+      "Gold"
+    ],
+    "answer": "A sin offering",
+    "reference": "Leviticus 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 606,
+    "book": "Leviticus",
+    "question": "According to Leviticus 6:13, what must happen to the fire on the altar?",
+    "options": [
+      "It shall never go out",
+      "It must be put out at night",
+      "It must be rekindled every morning",
+      "It must be blue"
+    ],
+    "answer": "It shall never go out",
+    "reference": "Leviticus 6:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 656,
+    "book": "Leviticus",
+    "question": "Which offering required the animal to be completely burned up, with no part eaten?",
+    "options": [
+      "Burnt Offering",
+      "Peace Offering",
+      "Sin Offering",
+      "Grain Offering"
+    ],
+    "answer": "Burnt Offering",
+    "reference": "Leviticus 1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 706,
+    "book": "Leviticus",
+    "question": "Which festival is celebrated 50 days after the Sabbath of Passover?",
+    "options": [
+      "Feast of Weeks (Pentecost)",
+      "Feast of Trumpets",
+      "Day of Atonement",
+      "Feast of Tabernacles"
+    ],
+    "answer": "Feast of Weeks (Pentecost)",
+    "reference": "Leviticus 23:15-16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 707,
+    "book": "Leviticus",
+    "question": "If a man made a special vow to the Lord, the value of a male (20-60 years old) was...",
+    "options": [
+      "50 shekels of silver",
+      "30 shekels of silver",
+      "100 shekels of silver",
+      "10 shekels of silver"
+    ],
+    "answer": "50 shekels of silver",
+    "reference": "Leviticus 27:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 758,
+    "book": "Leviticus",
+    "question": "What animal was forbidden to be eaten because it chews the cud but does not have a split hoof?",
+    "options": [
+      "The camel",
+      "The pig",
+      "The cow",
+      "The sheep"
+    ],
+    "answer": "The camel",
+    "reference": "Leviticus 11:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 797,
+    "book": "Leviticus",
+    "question": "What bird was used in the cleansing of a leper?",
+    "options": [
+      "Two living clean birds (sparrows/doves)",
+      "A raven",
+      "An eagle",
+      "A hawk"
+    ],
+    "answer": "Two living clean birds (sparrows/doves)",
+    "reference": "Leviticus 14:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 806,
+    "book": "Leviticus",
+    "question": "What defect would prevent a priest from offering the bread of his God?",
+    "options": [
+      "Blindness or lameness",
+      "Poverty",
+      "Being too young",
+      "Being unmarried"
+    ],
+    "answer": "Blindness or lameness",
+    "reference": "Leviticus 21:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 807,
+    "book": "Leviticus",
+    "question": "Which chapter in Leviticus deals primarily with sexual immorality?",
+    "options": [
+      "Chapter 18",
+      "Chapter 1",
+      "Chapter 11",
+      "Chapter 25"
+    ],
+    "answer": "Chapter 18",
+    "reference": "Leviticus 18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 857,
+    "book": "Leviticus",
+    "question": "What happens to the land during the Jubilee?",
+    "options": [
+      "It returns to its original owner",
+      "It is given to the priests",
+      "It is burned",
+      "It is sold to the king"
+    ],
+    "answer": "It returns to its original owner",
+    "reference": "Leviticus 25:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 896,
+    "book": "Leviticus",
+    "question": "How many days was a woman considered unclean after giving birth to a male child?",
+    "options": [
+      "7 days (plus 33 days purification)",
+      "14 days",
+      "40 days",
+      "1 day"
+    ],
+    "answer": "7 days (plus 33 days purification)",
+    "reference": "Leviticus 12:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 906,
+    "book": "Leviticus",
+    "question": "What animal could be offered by the poor who could not afford a lamb?",
+    "options": [
+      "Two turtledoves or young pigeons",
+      "A goat",
+      "A handful of flour",
+      "A fish"
+    ],
+    "answer": "Two turtledoves or young pigeons",
+    "reference": "Leviticus 5:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 907,
+    "book": "Leviticus",
+    "question": "Leviticus 17:11 says the life of the flesh is in the...",
+    "options": [
+      "Blood",
+      "Breath",
+      "Heart",
+      "Spirit"
+    ],
+    "answer": "Blood",
+    "reference": "Leviticus 17:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 957,
+    "book": "Leviticus",
+    "question": "Leviticus 19:18 says, 'You shall love your neighbor as...'",
+    "options": [
+      "Yourself",
+      "God loves you",
+      "Your brother",
+      "Your family"
+    ],
+    "answer": "Yourself",
+    "reference": "Leviticus 19:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 996,
+    "book": "Leviticus",
+    "question": "What is the Day of Atonement called?",
+    "options": [
+      "Yom Kippur",
+      "Passover",
+      "Pentecost",
+      "Purim"
+    ],
+    "answer": "Yom Kippur",
+    "reference": "Leviticus 23:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1402,
+    "book": "Leviticus",
+    "question": "What is the name of the goat that was released into the wilderness on the Day of Atonement?",
+    "options": [
+      "The Scapegoat (Azazel)",
+      "The Sacrificial Goat",
+      "The Paschal Goat",
+      "The Wild Goat"
+    ],
+    "answer": "The Scapegoat (Azazel)",
+    "reference": "Leviticus 16:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1403,
+    "book": "Leviticus",
+    "question": "How often did the Year of Jubilee occur?",
+    "options": [
+      "Every 50th year",
+      "Every 7th year",
+      "Every 100th year",
+      "Every 12th year"
+    ],
+    "answer": "Every 50th year",
+    "reference": "Leviticus 25:10",
+    "difficulty": "medium"
+  }
+]

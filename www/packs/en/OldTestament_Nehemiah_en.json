@@ -1,0 +1,422 @@
+[
+  {
+    "id": 55,
+    "book": "Nehemiah",
+    "question": "What was Nehemiah's job for the King of Persia?",
+    "options": [
+      "General",
+      "Scribe",
+      "Cupbearer",
+      "Gardener"
+    ],
+    "answer": "Cupbearer",
+    "reference": "Nehemiah 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 81,
+    "book": "Nehemiah",
+    "question": "How long did it take to rebuild the walls of Jerusalem?",
+    "options": [
+      "52 days",
+      "7 years",
+      "12 months",
+      "3 days"
+    ],
+    "answer": "52 days",
+    "reference": "Nehemiah 6:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 126,
+    "book": "Nehemiah",
+    "question": "Who were the two main enemies who opposed Nehemiah's rebuilding?",
+    "options": [
+      "Sanballat and Tobiah",
+      "Hophni and Phinehas",
+      "Jannes and Jambres",
+      "Balak and Balaam"
+    ],
+    "answer": "Sanballat and Tobiah",
+    "reference": "Nehemiah 4:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 173,
+    "book": "Nehemiah",
+    "question": "What job did the people do with one hand while holding a weapon in the other?",
+    "options": [
+      "Rebuilding the wall",
+      "Harvesting wheat",
+      "Cooking food",
+      "Writing the law"
+    ],
+    "answer": "Rebuilding the wall",
+    "reference": "Nehemiah 4:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 272,
+    "book": "Nehemiah",
+    "question": "What did Nehemiah do when he saw Jews had married foreign women?",
+    "options": [
+      "Pulled out their hair and beat them",
+      "Divorced them quietly",
+      "Ignored it",
+      "Praised them"
+    ],
+    "answer": "Pulled out their hair and beat them",
+    "reference": "Nehemiah 13:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 327,
+    "book": "Nehemiah",
+    "question": "Who was Nehemiah's father?",
+    "options": [
+      "Hacaliah",
+      "Hilkias",
+      "Hanani",
+      "Zerubbabel"
+    ],
+    "answer": "Hacaliah",
+    "reference": "Nehemiah 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 376,
+    "book": "Nehemiah",
+    "question": "Which gate of Jerusalem did Nehemiah NOT repair because it did not need it (trick question) or is famous for the reading of the law?",
+    "options": [
+      "Water Gate",
+      "Sheep Gate",
+      "Fish Gate",
+      "Horse Gate"
+    ],
+    "answer": "Water Gate",
+    "reference": "Nehemiah 3 (The Water Gate is mentioned but no repairs listed, often assoc with the Word)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 422,
+    "book": "Nehemiah",
+    "question": "Who was the Ammonite official who threw Tobiah's furniture out of the temple chamber?",
+    "options": [
+      "Nehemiah",
+      "Ezra",
+      "Eliashib",
+      "Sanballat"
+    ],
+    "answer": "Nehemiah",
+    "reference": "Nehemiah 13:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 473,
+    "book": "Nehemiah",
+    "question": "Which people group was Tobiah (Nehemiah's enemy) from?",
+    "options": [
+      "Ammonite",
+      "Moabite",
+      "Egyptian",
+      "Horonite"
+    ],
+    "answer": "Ammonite",
+    "reference": "Nehemiah 2:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 521,
+    "book": "Nehemiah",
+    "question": "Who was the Arab who opposed Nehemiah?",
+    "options": [
+      "Geshem",
+      "Sanballat",
+      "Tobiah",
+      "Haman"
+    ],
+    "answer": "Geshem",
+    "reference": "Nehemiah 2:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 571,
+    "book": "Nehemiah",
+    "question": "What was Nehemiah doing when he heard the news about Jerusalem's wall?",
+    "options": [
+      "He was in Susa the citadel",
+      "He was in Babylon",
+      "He was in Egypt",
+      "He was in Rome"
+    ],
+    "answer": "He was in Susa the citadel",
+    "reference": "Nehemiah 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 626,
+    "book": "Nehemiah",
+    "question": "Who was the keeper of the King's forest who gave timber to Nehemiah?",
+    "options": [
+      "Asaph",
+      "Geshem",
+      "Haman",
+      "Artaxerxes"
+    ],
+    "answer": "Asaph",
+    "reference": "Nehemiah 2:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 676,
+    "book": "Nehemiah",
+    "question": "What was Nehemiah's reaction when he saw Jews selling food on the Sabbath?",
+    "options": [
+      "He rebuked them and locked the gates",
+      "He wept",
+      "He joined them",
+      "He ignored it"
+    ],
+    "answer": "He rebuked them and locked the gates",
+    "reference": "Nehemiah 13:15-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 729,
+    "book": "Nehemiah",
+    "question": "Who was the High Priest who helped build the Sheep Gate?",
+    "options": [
+      "Eliashib",
+      "Jeshua",
+      "Ezra",
+      "Zadok"
+    ],
+    "answer": "Eliashib",
+    "reference": "Nehemiah 3:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 771,
+    "book": "Nehemiah",
+    "question": "How many choirs gave thanks at the dedication of the wall?",
+    "options": [
+      "Two great choirs",
+      "Twelve choirs",
+      "One choir",
+      "Seven choirs"
+    ],
+    "answer": "Two great choirs",
+    "reference": "Nehemiah 12:31",
+    "difficulty": "medium"
+  },
+  {
+    "id": 828,
+    "book": "Nehemiah",
+    "question": "What was the name of the man who tried to trick Nehemiah into entering the temple to save his life?",
+    "options": [
+      "Shemaiah",
+      "Sanballat",
+      "Tobiah",
+      "Geshem"
+    ],
+    "answer": "Shemaiah",
+    "reference": "Nehemiah 6:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 870,
+    "book": "Nehemiah",
+    "question": "What was Nehemiah's position before going to Jerusalem?",
+    "options": [
+      "Cupbearer",
+      "Baker",
+      "Scribe",
+      "Soldier"
+    ],
+    "answer": "Cupbearer",
+    "reference": "Nehemiah 1:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 928,
+    "book": "Nehemiah",
+    "question": "Who was the Persian king Nehemiah served?",
+    "options": [
+      "Artaxerxes",
+      "Cyrus",
+      "Darius",
+      "Xerxes"
+    ],
+    "answer": "Artaxerxes",
+    "reference": "Nehemiah 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 970,
+    "book": "Nehemiah",
+    "question": "What was Nehemiah's main task in Jerusalem?",
+    "options": [
+      "Rebuilding the wall",
+      "Rebuilding the temple",
+      "Becoming king",
+      "Teaching the law"
+    ],
+    "answer": "Rebuilding the wall",
+    "reference": "Nehemiah 2:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1489,
+    "book": "Nehemiah",
+    "question": "What job did Nehemiah hold in the Persian court?",
+    "options": [
+      "Cupbearer to the King",
+      "Scribe",
+      "General",
+      "Baker"
+    ],
+    "answer": "Cupbearer to the King",
+    "reference": "Nehemiah 1:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1490,
+    "book": "Nehemiah",
+    "question": "Why was Nehemiah sad in the presence of King Artaxerxes?",
+    "options": [
+      "Because the walls of Jerusalem were broken down",
+      "Because he was sick",
+      "Because he missed his family",
+      "Because he lost money"
+    ],
+    "answer": "Because the walls of Jerusalem were broken down",
+    "reference": "Nehemiah 2:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1491,
+    "book": "Nehemiah",
+    "question": "Who were the three main enemies who opposed Nehemiah?",
+    "options": [
+      "Sanballat, Tobiah, and Geshem",
+      "Haman, Zeresh, and Bigthan",
+      "Tattenai, Rehum, and Shimshai",
+      "Sihon, Og, and Balak"
+    ],
+    "answer": "Sanballat, Tobiah, and Geshem",
+    "reference": "Nehemiah 2:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1492,
+    "book": "Nehemiah",
+    "question": "How did the builders protect themselves while working on the wall?",
+    "options": [
+      "They held a weapon in one hand and worked with the other",
+      "They hired mercenaries",
+      "They worked only at night",
+      "They built a moat"
+    ],
+    "answer": "They held a weapon in one hand and worked with the other",
+    "reference": "Nehemiah 4:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1493,
+    "book": "Nehemiah",
+    "question": "How long did it take to finish the wall of Jerusalem?",
+    "options": [
+      "52 days",
+      "7 years",
+      "12 years",
+      "6 months"
+    ],
+    "answer": "52 days",
+    "reference": "Nehemiah 6:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1494,
+    "book": "Nehemiah",
+    "question": "What did Ezra do in Nehemiah 8?",
+    "options": [
+      "Read the Book of the Law to the people",
+      "Built the altar",
+      "Fought the Samaritans",
+      "Went back to Babylon"
+    ],
+    "answer": "Read the Book of the Law to the people",
+    "reference": "Nehemiah 8:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1495,
+    "book": "Nehemiah",
+    "question": "Nehemiah told the people, 'The ____ of the Lord is your strength.'",
+    "options": [
+      "Joy",
+      "Word",
+      "Fear",
+      "Law"
+    ],
+    "answer": "Joy",
+    "reference": "Nehemiah 8:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1496,
+    "book": "Nehemiah",
+    "question": "What great outcry did the people raise against their Jewish brethren?",
+    "options": [
+      "They were charging high interest (usury) and enslaving children",
+      "They were worshipping idols",
+      "They were not working",
+      "They were eating pork"
+    ],
+    "answer": "They were charging high interest (usury) and enslaving children",
+    "reference": "Nehemiah 5:1-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1497,
+    "book": "Nehemiah",
+    "question": "Why did Nehemiah throw Tobiah's furniture out of the temple chamber?",
+    "options": [
+      "Because Tobiah was an enemy and had no right to live there",
+      "Because the furniture was ugly",
+      "Because he needed the space",
+      "Because it was unclean"
+    ],
+    "answer": "Because Tobiah was an enemy and had no right to live there",
+    "reference": "Nehemiah 13:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1498,
+    "book": "Nehemiah",
+    "question": "What did Nehemiah do to men who had married foreign women?",
+    "options": [
+      "Contended with them, cursed them, struck them, and pulled out their hair",
+      "Stoned them",
+      "Exiled them immediately",
+      "Put them in prison"
+    ],
+    "answer": "Contended with them, cursed them, struck them, and pulled out their hair",
+    "reference": "Nehemiah 13:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1499,
+    "book": "Nehemiah",
+    "question": "How did Nehemiah stop the merchants from selling on the Sabbath?",
+    "options": [
+      "He ordered the gates shut before Sabbath",
+      "He fined them",
+      "He bought everything himself",
+      "He preached to them"
+    ],
+    "answer": "He ordered the gates shut before Sabbath",
+    "reference": "Nehemiah 13:19",
+    "difficulty": "medium"
+  }
+]

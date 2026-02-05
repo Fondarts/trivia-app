@@ -1,0 +1,464 @@
+[
+  {
+    "id": 1101,
+    "book": "Sirach",
+    "question": "Who is the author of the book of Sirach (Ecclesiasticus)?",
+    "options": [
+      "Jesus son of Eleazar son of Sirach",
+      "Solomon",
+      "Ezra",
+      "Simon the High Priest"
+    ],
+    "answer": "Jesus son of Eleazar son of Sirach",
+    "reference": "Sirach 50:27 (Prologue)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1102,
+    "book": "Sirach",
+    "question": "According to Sirach 1:1, where does all wisdom come from?",
+    "options": [
+      "The Lord",
+      "The King",
+      "The Elders",
+      "Experience"
+    ],
+    "answer": "The Lord",
+    "reference": "Sirach 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1103,
+    "book": "Sirach",
+    "question": "Sirach 2:1 warns: 'My son, if you come forward to serve the Lord, prepare yourself for...'",
+    "options": [
+      "Temptation/Trial",
+      "Wealth",
+      "Honor",
+      "Peace"
+    ],
+    "answer": "Temptation/Trial",
+    "reference": "Sirach 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1104,
+    "book": "Sirach",
+    "question": "What acts as atonement for sins according to Sirach 3:3?",
+    "options": [
+      "Honoring one's father",
+      "Fasting",
+      "Sacrificing bulls",
+      "Washing with water"
+    ],
+    "answer": "Honoring one's father",
+    "reference": "Sirach 3:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1105,
+    "book": "Sirach",
+    "question": "Sirach 3:30 says that water extinguishes a blazing fire, so ________ atones for sin.",
+    "options": [
+      "Almsgiving",
+      "Prayer",
+      "Sacrifice",
+      "Repentance"
+    ],
+    "answer": "Almsgiving",
+    "reference": "Sirach 3:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1106,
+    "book": "Sirach",
+    "question": "According to Sirach 6:14, a faithful friend is a...",
+    "options": [
+      "Sturdy shelter",
+      "Rare treasure",
+      "Flowing river",
+      "Gift from kings"
+    ],
+    "answer": "Sturdy shelter",
+    "reference": "Sirach 6:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1107,
+    "book": "Sirach",
+    "question": "What should you not do regarding a physician (doctor)?",
+    "options": [
+      "Do not ignore him, for the Lord created him",
+      "Do not pay him",
+      "Do not trust him",
+      "Do not speak to him"
+    ],
+    "answer": "Do not ignore him, for the Lord created him",
+    "reference": "Sirach 38:1-2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1108,
+    "book": "Sirach",
+    "question": "Sirach 11:2 says not to praise a man for his...",
+    "options": [
+      "Beauty",
+      "Wealth",
+      "Strength",
+      "Ancestors"
+    ],
+    "answer": "Beauty",
+    "reference": "Sirach 11:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1109,
+    "book": "Sirach",
+    "question": "What is the beginning of pride?",
+    "options": [
+      "Forsaking the Lord",
+      "Having much gold",
+      "Winning a battle",
+      "Having many children"
+    ],
+    "answer": "Forsaking the Lord",
+    "reference": "Sirach 10:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1110,
+    "book": "Sirach",
+    "question": "He who touches pitch (tar) will be...",
+    "options": [
+      "Defiled",
+      "Burned",
+      "Stuck",
+      "Cleansed"
+    ],
+    "answer": "Defiled",
+    "reference": "Sirach 13:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1111,
+    "book": "Sirach",
+    "question": "Sirach 19:1 warns that he who despises small things will...",
+    "options": [
+      "Fall little by little",
+      "Gain great things",
+      "Be wise",
+      "Remain small"
+    ],
+    "answer": "Fall little by little",
+    "reference": "Sirach 19:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1112,
+    "book": "Sirach",
+    "question": "Complete the verse: 'There is a rebuke that is not...'",
+    "options": [
+      "Timely",
+      "True",
+      "Harsh",
+      "Loud"
+    ],
+    "answer": "Timely",
+    "reference": "Sirach 20:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1113,
+    "book": "Sirach",
+    "question": "Sirach 25 mentions three things that the Lord hates. Which is NOT one of them?",
+    "options": [
+      "A hard working servant",
+      "A poor man who is proud",
+      "A rich man who is a liar",
+      "An old adulterer"
+    ],
+    "answer": "A hard working servant",
+    "reference": "Sirach 25:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1114,
+    "book": "Sirach",
+    "question": "What does Sirach 28 warn will fall upon those who bear a grudge?",
+    "options": [
+      "The wrath of the Lord",
+      "Poverty",
+      "Sickness",
+      "Loneliness"
+    ],
+    "answer": "The wrath of the Lord",
+    "reference": "Sirach 28:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1115,
+    "book": "Sirach",
+    "question": "Sirach 30:1 says he who loves his son will...",
+    "options": [
+      "Whip him often",
+      "Give him gifts",
+      "Let him play",
+      "Teach him a trade"
+    ],
+    "answer": "Whip him often",
+    "reference": "Sirach 30:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1116,
+    "book": "Sirach",
+    "question": "According to Sirach 34, sacrifices of the wicked are...",
+    "options": [
+      "A mockery",
+      "Acceptable",
+      "Better than nothing",
+      "Forgotten"
+    ],
+    "answer": "A mockery",
+    "reference": "Sirach 34:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1117,
+    "book": "Sirach",
+    "question": "Sirach 38:24 says the wisdom of the scribe depends on...",
+    "options": [
+      "The opportunity of leisure",
+      "Many books",
+      "A good teacher",
+      "The king's favor"
+    ],
+    "answer": "The opportunity of leisure",
+    "reference": "Sirach 38:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1118,
+    "book": "Sirach",
+    "question": "How does the famous hymn in Sirach 44 begin?",
+    "options": [
+      "Let us now praise famous men",
+      "Sing to the Lord a new song",
+      "Blessed is the man",
+      "Hear O Israel"
+    ],
+    "answer": "Let us now praise famous men",
+    "reference": "Sirach 44:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1119,
+    "book": "Sirach",
+    "question": "Who is described in Sirach 45 as having a 'crown of gold' upon his turban?",
+    "options": [
+      "Aaron",
+      "Moses",
+      "David",
+      "Solomon"
+    ],
+    "answer": "Aaron",
+    "reference": "Sirach 45:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1120,
+    "book": "Sirach",
+    "question": "Which High Priest rebuilt the house and fortified the temple in his days?",
+    "options": [
+      "Simon son of Onias",
+      "Aaron",
+      "Phinehas",
+      "Joshua"
+    ],
+    "answer": "Simon son of Onias",
+    "reference": "Sirach 50:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1121,
+    "book": "Sirach",
+    "question": "Sirach 22:15 says it is easier to carry sand, salt, and iron than to bear...",
+    "options": [
+      "A stupid man",
+      "A heavy cross",
+      "A wicked king",
+      "Poverty"
+    ],
+    "answer": "A stupid man",
+    "reference": "Sirach 22:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1122,
+    "book": "Sirach",
+    "question": "According to Sirach 26, a silent and loving wife is a gift from...",
+    "options": [
+      "The Lord",
+      "Her parents",
+      "The King",
+      "Nature"
+    ],
+    "answer": "The Lord",
+    "reference": "Sirach 26:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1123,
+    "book": "Sirach",
+    "question": "Sirach 15:14 says God created man and left him in the power of his own...",
+    "options": [
+      "Free choice/Inclination",
+      "Sin",
+      "Destiny",
+      "Enemies"
+    ],
+    "answer": "Free choice/Inclination",
+    "reference": "Sirach 15:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1124,
+    "book": "Sirach",
+    "question": "What happens to iron if it is not used (Sirach 20)?",
+    "options": [
+      "It rusts",
+      "It breaks",
+      "It shines",
+      "It disappears"
+    ],
+    "answer": "It rusts",
+    "reference": "Sirach 12:10 (Metaphor of enemy)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1125,
+    "book": "Sirach",
+    "question": "Sirach 42 says, 'Better is the wickedness of a man than a woman who...'",
+    "options": [
+      "Does good",
+      "Is silent",
+      "Is rich",
+      "Is beautiful"
+    ],
+    "answer": "Does good",
+    "reference": "Sirach 42:14 (A controversial verse often debated)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1126,
+    "book": "Sirach",
+    "question": "Who was taken up in a whirlwind of fire in Sirach 48?",
+    "options": [
+      "Elijah",
+      "Enoch",
+      "Moses",
+      "Isaiah"
+    ],
+    "answer": "Elijah",
+    "reference": "Sirach 48:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1127,
+    "book": "Sirach",
+    "question": "Sirach 41:1 asks: 'O death, how bitter is the reminder of you to one who...'",
+    "options": [
+      "Lives at peace in his possessions",
+      "Is poor and needy",
+      "Is sick",
+      "Is old"
+    ],
+    "answer": "Lives at peace in his possessions",
+    "reference": "Sirach 41:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1128,
+    "book": "Sirach",
+    "question": "In Sirach 24, Wisdom compares herself to...",
+    "options": [
+      "A cedar in Lebanon",
+      "A lion",
+      "A rock",
+      "A sword"
+    ],
+    "answer": "A cedar in Lebanon",
+    "reference": "Sirach 24:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1129,
+    "book": "Sirach",
+    "question": "According to Sirach 10:2, as the judge of the people is, so are...",
+    "options": [
+      "His ministers/officials",
+      "His enemies",
+      "His children",
+      "His laws"
+    ],
+    "answer": "His ministers/officials",
+    "reference": "Sirach 10:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1130,
+    "book": "Sirach",
+    "question": "Sirach 31 warns that watching over what consumes the flesh?",
+    "options": [
+      "Wealth",
+      "Children",
+      "Enemies",
+      "The Law"
+    ],
+    "answer": "Wealth",
+    "reference": "Sirach 31:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1131,
+    "book": "Sirach",
+    "question": "Who was the 'signet ring' on God's right hand mentioned in Sirach 49?",
+    "options": [
+      "Zerubbabel",
+      "Nehemiah",
+      "Ezekiel",
+      "Josiah"
+    ],
+    "answer": "Zerubbabel",
+    "reference": "Sirach 49:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1132,
+    "book": "Sirach",
+    "question": "Sirach 27:6 says the fruit of a tree discloses...",
+    "options": [
+      "The cultivation/care of the tree",
+      "The age of the tree",
+      "The type of tree",
+      "The value of the tree"
+    ],
+    "answer": "The cultivation/care of the tree",
+    "reference": "Sirach 27:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1133,
+    "book": "Sirach",
+    "question": "Complete the verse from Sirach 2:5: 'For gold is tested in the fire, and acceptable men in the...'",
+    "options": [
+      "Furnace of humiliation/adversity",
+      "House of the Lord",
+      "Battlefield",
+      "Day of judgment"
+    ],
+    "answer": "Furnace of humiliation/adversity",
+    "reference": "Sirach 2:5",
+    "difficulty": "easy"
+  }
+]

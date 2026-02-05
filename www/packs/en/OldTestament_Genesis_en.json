@@ -1,0 +1,968 @@
+[
+  {
+    "id": 1,
+    "book": "Genesis",
+    "question": "On which day did God create man?",
+    "options": [
+      "Third Day",
+      "Fifth Day",
+      "Sixth Day",
+      "Seventh Day"
+    ],
+    "answer": "Sixth Day",
+    "reference": "Genesis 1:26-31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 10,
+    "book": "Genesis",
+    "question": "What was the sign of God's covenant with Noah?",
+    "options": [
+      "A dove",
+      "A rainbow",
+      "An olive branch",
+      "A star"
+    ],
+    "answer": "A rainbow",
+    "reference": "Genesis 9:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 11,
+    "book": "Genesis",
+    "question": "Who was the first son of Adam and Eve?",
+    "options": [
+      "Abel",
+      "Seth",
+      "Cain",
+      "Enoch"
+    ],
+    "answer": "Cain",
+    "reference": "Genesis 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 12,
+    "book": "Genesis",
+    "question": "Which city did God destroy with fire and brimstone?",
+    "options": [
+      "Jericho",
+      "Sodom",
+      "Nineveh",
+      "Ur"
+    ],
+    "answer": "Sodom",
+    "reference": "Genesis 19:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 33,
+    "book": "Genesis",
+    "question": "Who sold his birthright for a bowl of stew?",
+    "options": [
+      "Jacob",
+      "Esau",
+      "Isaac",
+      "Joseph"
+    ],
+    "answer": "Esau",
+    "reference": "Genesis 25:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 34,
+    "book": "Genesis",
+    "question": "How old was Noah when the floodwaters came?",
+    "options": [
+      "400",
+      "500",
+      "600",
+      "900"
+    ],
+    "answer": "600",
+    "reference": "Genesis 7:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 41,
+    "book": "Genesis",
+    "question": "What structure did men build to try to reach heaven?",
+    "options": [
+      "The Great Pyramid",
+      "The Temple of Baal",
+      "The Tower of Babel",
+      "The Walls of Jericho"
+    ],
+    "answer": "The Tower of Babel",
+    "reference": "Genesis 11:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 42,
+    "book": "Genesis",
+    "question": "What special gift did Jacob give to his son Joseph?",
+    "options": [
+      "A golden ring",
+      "A coat of many colors",
+      "A flock of sheep",
+      "A sword"
+    ],
+    "answer": "A coat of many colors",
+    "reference": "Genesis 37:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 67,
+    "book": "Genesis",
+    "question": "Who was the oldest man mentioned in the Bible?",
+    "options": [
+      "Noah",
+      "Methuselah",
+      "Adam",
+      "Enoch"
+    ],
+    "answer": "Methuselah",
+    "reference": "Genesis 5:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 72,
+    "book": "Genesis",
+    "question": "Who was Abraham's wife?",
+    "options": [
+      "Rebekah",
+      "Rachel",
+      "Sarah",
+      "Leah"
+    ],
+    "answer": "Sarah",
+    "reference": "Genesis 17:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 73,
+    "book": "Genesis",
+    "question": "What did God ask Abraham to sacrifice on Mount Moriah?",
+    "options": [
+      "A lamb",
+      "His son Isaac",
+      "His servant",
+      "All his wealth"
+    ],
+    "answer": "His son Isaac",
+    "reference": "Genesis 22:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 101,
+    "book": "Genesis",
+    "question": "What did Lot's wife turn into when she looked back at Sodom?",
+    "options": [
+      "A stone",
+      "A pillar of salt",
+      "A tree",
+      "A statue of gold"
+    ],
+    "answer": "A pillar of salt",
+    "reference": "Genesis 19:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 102,
+    "book": "Genesis",
+    "question": "Which son of Jacob was sold into slavery by his brothers?",
+    "options": [
+      "Benjamin",
+      "Joseph",
+      "Judah",
+      "Levi"
+    ],
+    "answer": "Joseph",
+    "reference": "Genesis 37:28",
+    "difficulty": "easy"
+  },
+  {
+    "id": 103,
+    "book": "Genesis",
+    "question": "What new name did God give to Jacob after wrestling with him?",
+    "options": [
+      "Israel",
+      "Ephraim",
+      "Abraham",
+      "Jeshurun"
+    ],
+    "answer": "Israel",
+    "reference": "Genesis 32:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 148,
+    "book": "Genesis",
+    "question": "Who was Hagar?",
+    "options": [
+      "Sarah's sister",
+      "Sarah's maidservant",
+      "Isaac's wife",
+      "Lot's daughter"
+    ],
+    "answer": "Sarah's maidservant",
+    "reference": "Genesis 16:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 149,
+    "book": "Genesis",
+    "question": "How many years did Jacob work to marry Rachel?",
+    "options": [
+      "7 years",
+      "14 years",
+      "1 year",
+      "5 years"
+    ],
+    "answer": "14 years",
+    "reference": "Genesis 29:27-30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 151,
+    "book": "Genesis",
+    "question": "How many people were saved on Noah's Ark?",
+    "options": [
+      "8",
+      "12",
+      "40",
+      "7"
+    ],
+    "answer": "8",
+    "reference": "Genesis 7:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 152,
+    "book": "Genesis",
+    "question": "What object did Joseph hide in Benjamin's sack to test his brothers?",
+    "options": [
+      "A gold coin",
+      "A silver cup",
+      "A precious stone",
+      "A royal ring"
+    ],
+    "answer": "A silver cup",
+    "reference": "Genesis 44:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 193,
+    "book": "Genesis",
+    "question": "Who was the mother of Ishmael?",
+    "options": [
+      "Hagar",
+      "Sarah",
+      "Keturah",
+      "Leah"
+    ],
+    "answer": "Hagar",
+    "reference": "Genesis 16:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 201,
+    "book": "Genesis",
+    "question": "What did Rachel steal from her father Laban?",
+    "options": [
+      "Gold coins",
+      "Household idols",
+      "A silver cup",
+      "Fine robes"
+    ],
+    "answer": "Household idols",
+    "reference": "Genesis 31:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 202,
+    "book": "Genesis",
+    "question": "Who was the first person in the Bible to be called a 'Hebrew'?",
+    "options": [
+      "Abraham/Abram",
+      "Isaac",
+      "Jacob",
+      "Joseph"
+    ],
+    "answer": "Abraham/Abram",
+    "reference": "Genesis 14:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 240,
+    "book": "Genesis",
+    "question": "Which of Joseph's brothers tried to save him from being killed?",
+    "options": [
+      "Reuben",
+      "Simeon",
+      "Gad",
+      "Asher"
+    ],
+    "answer": "Reuben",
+    "reference": "Genesis 37:21-22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 251,
+    "book": "Genesis",
+    "question": "Where did Abraham bury Sarah?",
+    "options": [
+      "Cave of Machpelah",
+      "Mount Moriah",
+      "Egypt",
+      "Ur"
+    ],
+    "answer": "Cave of Machpelah",
+    "reference": "Genesis 23:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 252,
+    "book": "Genesis",
+    "question": "Who was Abraham's second wife after Sarah died?",
+    "options": [
+      "Keturah",
+      "Hagar",
+      "Rebekah",
+      "Milcah"
+    ],
+    "answer": "Keturah",
+    "reference": "Genesis 25:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 301,
+    "book": "Genesis",
+    "question": "Who was the first man mentioned in the Bible to be a 'mighty hunter'?",
+    "options": [
+      "Nimrod",
+      "Esau",
+      "Ishmael",
+      "Goliath"
+    ],
+    "answer": "Nimrod",
+    "reference": "Genesis 10:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 302,
+    "book": "Genesis",
+    "question": "What was the name of Abraham's chief servant who found a wife for Isaac?",
+    "options": [
+      "Eliezer",
+      "Gehazi",
+      "Ziba",
+      "Malchus"
+    ],
+    "answer": "Eliezer",
+    "reference": "Genesis 15:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 303,
+    "book": "Genesis",
+    "question": "For how many pieces of silver was Joseph sold to the Ishmaelites?",
+    "options": [
+      "20",
+      "30",
+      "50",
+      "100"
+    ],
+    "answer": "20",
+    "reference": "Genesis 37:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 344,
+    "book": "Genesis",
+    "question": "What was the name of the spring Hagar found in the desert?",
+    "options": [
+      "Beer-lahai-roi",
+      "Marah",
+      "Elim",
+      "Beer-sheba"
+    ],
+    "answer": "Beer-lahai-roi",
+    "reference": "Genesis 16:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 351,
+    "book": "Genesis",
+    "question": "Who was the King of Salem and Priest of God Most High who blessed Abraham?",
+    "options": [
+      "Melchizedek",
+      "Abimelech",
+      "Pharaoh",
+      "Bera"
+    ],
+    "answer": "Melchizedek",
+    "reference": "Genesis 14:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 352,
+    "book": "Genesis",
+    "question": "Which of Jacob's wives was buried on the way to Ephrath (Bethlehem), not in the family cave?",
+    "options": [
+      "Rachel",
+      "Leah",
+      "Bilhah",
+      "Zilpah"
+    ],
+    "answer": "Rachel",
+    "reference": "Genesis 35:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 353,
+    "book": "Genesis",
+    "question": "What did God place at the east of the Garden of Eden to guard the way to the Tree of Life?",
+    "options": [
+      "Cherubim and a flaming sword",
+      "A high wall",
+      "A deep river",
+      "A legion of angels"
+    ],
+    "answer": "Cherubim and a flaming sword",
+    "reference": "Genesis 3:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 401,
+    "book": "Genesis",
+    "question": "Where did Cain live after he killed Abel?",
+    "options": [
+      "The Land of Nod",
+      "The Land of Ur",
+      "The Land of Canaan",
+      "The Land of Goshen"
+    ],
+    "answer": "The Land of Nod",
+    "reference": "Genesis 4:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 402,
+    "book": "Genesis",
+    "question": "Who was the first man recorded in the Bible to have two wives (polygamy)?",
+    "options": [
+      "Lamech",
+      "Abraham",
+      "Jacob",
+      "Esau"
+    ],
+    "answer": "Lamech",
+    "reference": "Genesis 4:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 403,
+    "book": "Genesis",
+    "question": "How old was Methuselah when he died?",
+    "options": [
+      "969 years",
+      "930 years",
+      "950 years",
+      "999 years"
+    ],
+    "answer": "969 years",
+    "reference": "Genesis 5:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 450,
+    "book": "Genesis",
+    "question": "Who was the father of Methuselah?",
+    "options": [
+      "Enoch",
+      "Lamech",
+      "Noah",
+      "Jared"
+    ],
+    "answer": "Enoch",
+    "reference": "Genesis 5:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 451,
+    "book": "Genesis",
+    "question": "Who was the only daughter of Jacob mentioned by name?",
+    "options": [
+      "Dinah",
+      "Miriam",
+      "Tamar",
+      "Leah"
+    ],
+    "answer": "Dinah",
+    "reference": "Genesis 30:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 452,
+    "book": "Genesis",
+    "question": "What was the name of the Egyptian officer who bought Joseph?",
+    "options": [
+      "Potiphar",
+      "Pharaoh",
+      "Asenath",
+      "Zaphenath-Paneah"
+    ],
+    "answer": "Potiphar",
+    "reference": "Genesis 37:36",
+    "difficulty": "easy"
+  },
+  {
+    "id": 453,
+    "book": "Genesis",
+    "question": "Who were the two sons of Joseph born in Egypt?",
+    "options": [
+      "Manasseh and Ephraim",
+      "Gershom and Eliezer",
+      "Nadab and Abihu",
+      "Hophni and Phinehas"
+    ],
+    "answer": "Manasseh and Ephraim",
+    "reference": "Genesis 41:50-52",
+    "difficulty": "medium"
+  },
+  {
+    "id": 495,
+    "book": "Genesis",
+    "question": "Who closed the door of Noah's Ark?",
+    "options": [
+      "The Lord",
+      "Noah",
+      "Shem",
+      "An angel"
+    ],
+    "answer": "The Lord",
+    "reference": "Genesis 7:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 498,
+    "book": "Genesis",
+    "question": "What did the dove bring back to Noah the second time?",
+    "options": [
+      "An olive leaf",
+      "A fig leaf",
+      "A worm",
+      "A twig"
+    ],
+    "answer": "An olive leaf",
+    "reference": "Genesis 8:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 501,
+    "book": "Genesis",
+    "question": "What were the names of the four rivers that flowed out of Eden?",
+    "options": [
+      "Pishon, Gihon, Tigris, Euphrates",
+      "Nile, Jordan, Tigris, Euphrates",
+      "Abana, Pharpar, Kishon, Gihon",
+      "Danube, Nile, Euphrates, Amazon"
+    ],
+    "answer": "Pishon, Gihon, Tigris, Euphrates",
+    "reference": "Genesis 2:11-14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 502,
+    "book": "Genesis",
+    "question": "What does the name 'Isaac' mean?",
+    "options": [
+      "Laughter",
+      "Hairy",
+      "Supplanter",
+      "Prince"
+    ],
+    "answer": "Laughter",
+    "reference": "Genesis 21:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 545,
+    "book": "Genesis",
+    "question": "What wood was Noah's Ark made of?",
+    "options": [
+      "Gopher wood",
+      "Cedar",
+      "Oak",
+      "Acacia"
+    ],
+    "answer": "Gopher wood",
+    "reference": "Genesis 6:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 551,
+    "book": "Genesis",
+    "question": "Which two sons of Jacob took revenge on the city of Shechem for their sister Dinah?",
+    "options": [
+      "Simeon and Levi",
+      "Reuben and Judah",
+      "Dan and Naphtali",
+      "Joseph and Benjamin"
+    ],
+    "answer": "Simeon and Levi",
+    "reference": "Genesis 34:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 552,
+    "book": "Genesis",
+    "question": "How old was Abraham when his son Isaac was born?",
+    "options": [
+      "100 years old",
+      "90 years old",
+      "75 years old",
+      "120 years old"
+    ],
+    "answer": "100 years old",
+    "reference": "Genesis 21:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 593,
+    "book": "Genesis",
+    "question": "On which day did God create the sun, moon, and stars?",
+    "options": [
+      "Day 4",
+      "Day 1",
+      "Day 3",
+      "Day 6"
+    ],
+    "answer": "Day 4",
+    "reference": "Genesis 1:14-19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 594,
+    "book": "Genesis",
+    "question": "How old was Sarah when Isaac was born?",
+    "options": [
+      "90",
+      "100",
+      "80",
+      "75"
+    ],
+    "answer": "90",
+    "reference": "Genesis 17:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 595,
+    "book": "Genesis",
+    "question": "What happened to Jacob's hip when he wrestled with God?",
+    "options": [
+      "It was touched and put out of joint",
+      "It was broken",
+      "It was healed",
+      "Nothing"
+    ],
+    "answer": "It was touched and put out of joint",
+    "reference": "Genesis 32:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 601,
+    "book": "Genesis",
+    "question": "What was the length of Noah's Ark in cubits?",
+    "options": [
+      "300 cubits",
+      "500 cubits",
+      "100 cubits",
+      "50 cubits"
+    ],
+    "answer": "300 cubits",
+    "reference": "Genesis 6:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 602,
+    "book": "Genesis",
+    "question": "Who was the mother of Dan and Naphtali?",
+    "options": [
+      "Bilhah",
+      "Zilpah",
+      "Leah",
+      "Rachel"
+    ],
+    "answer": "Bilhah",
+    "reference": "Genesis 30:4-8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 603,
+    "book": "Genesis",
+    "question": "What was the original name of Benjamin given by his dying mother Rachel?",
+    "options": [
+      "Ben-Oni",
+      "Ben-Ammi",
+      "Ben-Hadad",
+      "Ichabod"
+    ],
+    "answer": "Ben-Oni",
+    "reference": "Genesis 35:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 651,
+    "book": "Genesis",
+    "question": "Who is described as the father of all who play the harp and flute?",
+    "options": [
+      "Jubal",
+      "Tubal-Cain",
+      "Jabal",
+      "Lamech"
+    ],
+    "answer": "Jubal",
+    "reference": "Genesis 4:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 652,
+    "book": "Genesis",
+    "question": "What kind of wood did Abraham use for the burnt offering of Isaac?",
+    "options": [
+      "The text just says 'wood'",
+      "Cedar",
+      "Acacia",
+      "Oak"
+    ],
+    "answer": "The text just says 'wood'",
+    "reference": "Genesis 22:3 (He cut the wood, type not specified)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 653,
+    "book": "Genesis",
+    "question": "Which son of Jacob slept with Bilhah, his father's concubine?",
+    "options": [
+      "Reuben",
+      "Simeon",
+      "Judah",
+      "Dan"
+    ],
+    "answer": "Reuben",
+    "reference": "Genesis 35:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 701,
+    "book": "Genesis",
+    "question": "What was the name of Rebekah's nurse who died and was buried at Bethel?",
+    "options": [
+      "Deborah",
+      "Milcah",
+      "Zilpah",
+      "Bilhah"
+    ],
+    "answer": "Deborah",
+    "reference": "Genesis 35:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 702,
+    "book": "Genesis",
+    "question": "Who was the father of Lot?",
+    "options": [
+      "Haran",
+      "Nahor",
+      "Terah",
+      "Abraham"
+    ],
+    "answer": "Haran",
+    "reference": "Genesis 11:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 703,
+    "book": "Genesis",
+    "question": "Which son of Jacob is described as a 'ravenous wolf'?",
+    "options": [
+      "Benjamin",
+      "Dan",
+      "Judah",
+      "Gad"
+    ],
+    "answer": "Benjamin",
+    "reference": "Genesis 49:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 756,
+    "book": "Genesis",
+    "question": "Which tree in the Garden was Adam commanded NOT to eat from?",
+    "options": [
+      "The Tree of the Knowledge of Good and Evil",
+      "The Tree of Life",
+      "The Fig Tree",
+      "The Olive Tree"
+    ],
+    "answer": "The Tree of the Knowledge of Good and Evil",
+    "reference": "Genesis 2:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 795,
+    "book": "Genesis",
+    "question": "Who was the father of Peleg?",
+    "options": [
+      "Eber",
+      "Shelah",
+      "Arphaxad",
+      "Noah"
+    ],
+    "answer": "Eber",
+    "reference": "Genesis 10:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 801,
+    "book": "Genesis",
+    "question": "What was the name of the cave where Lot lived with his daughters?",
+    "options": [
+      "It is unnamed",
+      "Cave of Machpelah",
+      "Cave of Adullam",
+      "Cave of Makkedah"
+    ],
+    "answer": "It is unnamed",
+    "reference": "Genesis 19:30",
+    "difficulty": "hard"
+  },
+  {
+    "id": 802,
+    "book": "Genesis",
+    "question": "Who was the firstborn son of Ishmael?",
+    "options": [
+      "Nebaioth",
+      "Kedar",
+      "Adbeel",
+      "Mibsam"
+    ],
+    "answer": "Nebaioth",
+    "reference": "Genesis 25:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 803,
+    "book": "Genesis",
+    "question": "Which king took Sarah into his palace thinking she was Abraham's sister?",
+    "options": [
+      "Abimelech (also Pharaoh earlier)",
+      "Melchizedek",
+      "Bera",
+      "Og"
+    ],
+    "answer": "Abimelech (also Pharaoh earlier)",
+    "reference": "Genesis 20:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 855,
+    "book": "Genesis",
+    "question": "What was the name of the servant Hagar's son?",
+    "options": [
+      "Ishmael",
+      "Isaac",
+      "Zimran",
+      "Medan"
+    ],
+    "answer": "Ishmael",
+    "reference": "Genesis 16:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 894,
+    "book": "Genesis",
+    "question": "How old was Abraham when he died?",
+    "options": [
+      "175",
+      "180",
+      "120",
+      "100"
+    ],
+    "answer": "175",
+    "reference": "Genesis 25:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 901,
+    "book": "Genesis",
+    "question": "What was the name of the spring where the angel found Hagar?",
+    "options": [
+      "Shur",
+      "Beer-lahai-roi",
+      "Marah",
+      "Elim"
+    ],
+    "answer": "Shur",
+    "reference": "Genesis 16:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 902,
+    "book": "Genesis",
+    "question": "How old was Joseph when he died?",
+    "options": [
+      "110",
+      "120",
+      "100",
+      "90"
+    ],
+    "answer": "110",
+    "reference": "Genesis 50:26",
+    "difficulty": "hard"
+  },
+  {
+    "id": 903,
+    "book": "Genesis",
+    "question": "Which son of Jacob was called 'a lion's whelp'?",
+    "options": [
+      "Judah",
+      "Dan",
+      "Gad",
+      "Simeon"
+    ],
+    "answer": "Judah",
+    "reference": "Genesis 49:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 955,
+    "book": "Genesis",
+    "question": "Who was the father of Methuselah?",
+    "options": [
+      "Enoch",
+      "Jared",
+      "Lamech",
+      "Noah"
+    ],
+    "answer": "Enoch",
+    "reference": "Genesis 5:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 994,
+    "book": "Genesis",
+    "question": "Who was the wife of Abraham?",
+    "options": [
+      "Sarah",
+      "Rebekah",
+      "Rachel",
+      "Leah"
+    ],
+    "answer": "Sarah",
+    "reference": "Genesis 11:29",
+    "difficulty": "easy"
+  }
+]

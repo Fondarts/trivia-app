@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1001,
+    "book": "Tobit",
+    "question": "Who was Tobit's son?",
+    "options": [
+      "Tobias",
+      "Judas",
+      "Simon",
+      "John"
+    ],
+    "answer": "Tobias",
+    "reference": "Tobit 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1002,
+    "book": "Tobit",
+    "question": "What charitable act did Tobit perform that put him in danger with the king?",
+    "options": [
+      "Burying the dead",
+      "Feeding the poor",
+      "Rebuilding walls",
+      "Hiding priests"
+    ],
+    "answer": "Burying the dead",
+    "reference": "Tobit 1:17-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1003,
+    "book": "Tobit",
+    "question": "How did Tobit lose his eyesight?",
+    "options": [
+      "Sparrow droppings fell in his eyes",
+      "He looked at the sun",
+      "He was struck by lightning",
+      "A disease from a corpse"
+    ],
+    "answer": "Sparrow droppings fell in his eyes",
+    "reference": "Tobit 2:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1004,
+    "book": "Tobit",
+    "question": "What was the name of the demon that killed Sarah's seven husbands?",
+    "options": [
+      "Asmodeus",
+      "Beelzebub",
+      "Mammon",
+      "Belial"
+    ],
+    "answer": "Asmodeus",
+    "reference": "Tobit 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1005,
+    "book": "Tobit",
+    "question": "Which angel accompanied Tobias on his journey, disguised as Azarias?",
+    "options": [
+      "Raphael",
+      "Michael",
+      "Gabriel",
+      "Uriel"
+    ],
+    "answer": "Raphael",
+    "reference": "Tobit 5:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1006,
+    "book": "Tobit",
+    "question": "What animal attacked Tobias at the river Tigris?",
+    "options": [
+      "A large fish",
+      "A crocodile",
+      "A lion",
+      "A snake"
+    ],
+    "answer": "A large fish",
+    "reference": "Tobit 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1007,
+    "book": "Tobit",
+    "question": "Which parts of the fish did the angel tell Tobias to keep?",
+    "options": [
+      "Gall, heart, and liver",
+      "Scales and fins",
+      "Head and tail",
+      "Eyes and teeth"
+    ],
+    "answer": "Gall, heart, and liver",
+    "reference": "Tobit 6:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1008,
+    "book": "Tobit",
+    "question": "What was the fish's gall used for?",
+    "options": [
+      "To cure blindness",
+      "To drive away demons",
+      "To make poison",
+      "To spice food"
+    ],
+    "answer": "To cure blindness",
+    "reference": "Tobit 6:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1009,
+    "book": "Tobit",
+    "question": "What did Tobias use to drive the demon away from the bridal chamber?",
+    "options": [
+      "Burning the fish's heart and liver",
+      "Holy water",
+      "A sword",
+      "Salt"
+    ],
+    "answer": "Burning the fish's heart and liver",
+    "reference": "Tobit 8:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1010,
+    "book": "Tobit",
+    "question": "What city did Tobias travel to in order to collect his father's money?",
+    "options": [
+      "Rages (in Media)",
+      "Nineveh",
+      "Babylon",
+      "Jerusalem"
+    ],
+    "answer": "Rages (in Media)",
+    "reference": "Tobit 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1011,
+    "book": "Tobit",
+    "question": "Who was Sarah's father?",
+    "options": [
+      "Raguel",
+      "Gabael",
+      "Tobiel",
+      "Anan"
+    ],
+    "answer": "Raguel",
+    "reference": "Tobit 7:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1012,
+    "book": "Tobit",
+    "question": "What did Raguel do the night Tobias married Sarah?",
+    "options": [
+      "Dug a grave",
+      "Prepared a feast",
+      "Called the guards",
+      "Slept"
+    ],
+    "answer": "Dug a grave",
+    "reference": "Tobit 8:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1013,
+    "book": "Tobit",
+    "question": "What animal accompanied Tobias and the angel on their journey?",
+    "options": [
+      "A dog",
+      "A donkey",
+      "A camel",
+      "A goat"
+    ],
+    "answer": "A dog",
+    "reference": "Tobit 5:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1014,
+    "book": "Tobit",
+    "question": "What was the name of Tobit's wife?",
+    "options": [
+      "Anna",
+      "Edna",
+      "Sarah",
+      "Deborah"
+    ],
+    "answer": "Anna",
+    "reference": "Tobit 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1015,
+    "book": "Tobit",
+    "question": "From which tribe was Tobit?",
+    "options": [
+      "Naphtali",
+      "Judah",
+      "Levi",
+      "Benjamin"
+    ],
+    "answer": "Naphtali",
+    "reference": "Tobit 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1016,
+    "book": "Tobit",
+    "question": "Where did Tobit live in exile?",
+    "options": [
+      "Nineveh",
+      "Susa",
+      "Babylon",
+      "Egypt"
+    ],
+    "answer": "Nineveh",
+    "reference": "Tobit 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1017,
+    "book": "Tobit",
+    "question": "What advice did Raphael give Tobit about prayer and fasting?",
+    "options": [
+      "Prayer with fasting and almsgiving is good",
+      "Only prayer matters",
+      "Fasting is unnecessary",
+      "Give all money to the temple"
+    ],
+    "answer": "Prayer with fasting and almsgiving is good",
+    "reference": "Tobit 12:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1018,
+    "book": "Tobit",
+    "question": "How long did the wedding feast of Tobias and Sarah last?",
+    "options": [
+      "14 days",
+      "7 days",
+      "3 days",
+      "30 days"
+    ],
+    "answer": "14 days",
+    "reference": "Tobit 8:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1019,
+    "book": "Tobit",
+    "question": "What did Anna do while waiting for her son's return?",
+    "options": [
+      "Sat by the road watching",
+      "Wove cloth",
+      "Wept in her room",
+      "Cooked a feast"
+    ],
+    "answer": "Sat by the road watching",
+    "reference": "Tobit 11:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1020,
+    "book": "Tobit",
+    "question": "What does the name Raphael mean?",
+    "options": [
+      "God heals",
+      "God protects",
+      "God is strong",
+      "God sees"
+    ],
+    "answer": "God heals",
+    "reference": "Meaning of Name",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1021,
+    "book": "Tobit",
+    "question": "Who was the man Tobit left his money with in Media?",
+    "options": [
+      "Gabael",
+      "Raguel",
+      "Raphael",
+      "Ahikar"
+    ],
+    "answer": "Gabael",
+    "reference": "Tobit 1:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1022,
+    "book": "Tobit",
+    "question": "Why did Tobit sleep outdoors the night he was blinded?",
+    "options": [
+      "He was ritually unclean from burying a corpse",
+      "It was too hot",
+      "His wife kicked him out",
+      "He was watching the stars"
+    ],
+    "answer": "He was ritually unclean from burying a corpse",
+    "reference": "Tobit 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1023,
+    "book": "Tobit",
+    "question": "What work did Anna do to support the family?",
+    "options": [
+      "Women's work (weaving/spinning)",
+      "Selling pottery",
+      "Baking bread",
+      "Farming"
+    ],
+    "answer": "Women's work (weaving/spinning)",
+    "reference": "Tobit 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1024,
+    "book": "Tobit",
+    "question": "What did Tobit wrongfully accuse his wife of stealing?",
+    "options": [
+      "A young goat",
+      "A piece of silver",
+      "A loaf of bread",
+      "Wool"
+    ],
+    "answer": "A young goat",
+    "reference": "Tobit 2:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1025,
+    "book": "Tobit",
+    "question": "What did Raphael say he was doing when Tobit and Sarah were praying?",
+    "options": [
+      "Presenting their prayers before the Holy One",
+      "Fighting demons",
+      "Sleeping",
+      "Watching the earth"
+    ],
+    "answer": "Presenting their prayers before the Holy One",
+    "reference": "Tobit 12:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1026,
+    "book": "Tobit",
+    "question": "How old was Tobit when he died?",
+    "options": [
+      "112 (or 158 in some versions)",
+      "100",
+      "90",
+      "120"
+    ],
+    "answer": "112 (or 158 in some versions)",
+    "reference": "Tobit 14:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1027,
+    "book": "Tobit",
+    "question": "Which prophet's words did Tobit recall regarding the destruction of Nineveh?",
+    "options": [
+      "Nahum (or Jonah)",
+      "Isaiah",
+      "Jeremiah",
+      "Amos"
+    ],
+    "answer": "Nahum (or Jonah)",
+    "reference": "Tobit 14:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1028,
+    "book": "Tobit",
+    "question": "Where did Tobias move after his parents died?",
+    "options": [
+      "Ecbatana in Media",
+      "Jerusalem",
+      "Babylon",
+      "Egypt"
+    ],
+    "answer": "Ecbatana in Media",
+    "reference": "Tobit 14:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1029,
+    "book": "Tobit",
+    "question": "Who was Ahikar?",
+    "options": [
+      "Tobit's nephew and a high official",
+      "The King of Assyria",
+      "A demon",
+      "A priest"
+    ],
+    "answer": "Tobit's nephew and a high official",
+    "reference": "Tobit 1:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1030,
+    "book": "Tobit",
+    "question": "What is the main theme of the book of Tobit?",
+    "options": [
+      "God's providence towards the faithful",
+      "The history of kings",
+      "Building the temple",
+      "Laws of sacrifice"
+    ],
+    "answer": "God's providence towards the faithful",
+    "reference": "Theme",
+    "difficulty": "easy"
+  }
+]

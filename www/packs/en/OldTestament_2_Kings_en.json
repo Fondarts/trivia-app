@@ -1,0 +1,534 @@
+[
+  {
+    "id": 8,
+    "book": "2 Kings",
+    "question": "Which prophet was taken up to heaven in a whirlwind?",
+    "options": [
+      "Elisha",
+      "Elijah",
+      "Isaiah",
+      "Jeremiah"
+    ],
+    "answer": "Elijah",
+    "reference": "2 Kings 2:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 21,
+    "book": "2 Kings",
+    "question": "Which king of Judah was only 8 years old when he began to reign?",
+    "options": [
+      "Josiah",
+      "Hezekiah",
+      "Manasseh",
+      "Joash"
+    ],
+    "answer": "Josiah",
+    "reference": "2 Kings 22:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 53,
+    "book": "2 Kings",
+    "question": "What disease was Naaman the Syrian healed of?",
+    "options": [
+      "Blindness",
+      "Leprosy",
+      "Paralysis",
+      "Fever"
+    ],
+    "answer": "Leprosy",
+    "reference": "2 Kings 5:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 79,
+    "book": "2 Kings",
+    "question": "Which king was granted 15 extra years of life after praying?",
+    "options": [
+      "Hezekiah",
+      "Josiah",
+      "David",
+      "Ahab"
+    ],
+    "answer": "Hezekiah",
+    "reference": "2 Kings 20:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 120,
+    "book": "2 Kings",
+    "question": "Which prophet made an iron axe head float?",
+    "options": [
+      "Elijah",
+      "Elisha",
+      "Samuel",
+      "Nathan"
+    ],
+    "answer": "Elisha",
+    "reference": "2 Kings 6:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 121,
+    "book": "2 Kings",
+    "question": "Who was the furious chariot driver who became king and killed Jezebel?",
+    "options": [
+      "Jehu",
+      "Ahab",
+      "Joram",
+      "Ahaziah"
+    ],
+    "answer": "Jehu",
+    "reference": "2 Kings 9:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 122,
+    "book": "2 Kings",
+    "question": "Which king found the Book of the Law in the temple and tore his clothes?",
+    "options": [
+      "Josiah",
+      "Manasseh",
+      "Amon",
+      "Zedekiah"
+    ],
+    "answer": "Josiah",
+    "reference": "2 Kings 22:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 169,
+    "book": "2 Kings",
+    "question": "What appeared to take Elijah up to heaven?",
+    "options": [
+      "A chariot of fire and horses of fire",
+      "A golden staircase",
+      "A cloud of glory",
+      "A giant eagle"
+    ],
+    "answer": "A chariot of fire and horses of fire",
+    "reference": "2 Kings 2:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 170,
+    "book": "2 Kings",
+    "question": "Which servant of Elisha was struck with leprosy because of his greed?",
+    "options": [
+      "Gehazi",
+      "Baruch",
+      "Ziba",
+      "Obadiah"
+    ],
+    "answer": "Gehazi",
+    "reference": "2 Kings 5:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 214,
+    "book": "2 Kings",
+    "question": "What miracle did Isaiah perform as a sign to Hezekiah?",
+    "options": [
+      "The sun's shadow went back ten steps",
+      "The river stopped flowing",
+      "Fire fell from heaven",
+      "A dead tree blossomed"
+    ],
+    "answer": "The sun's shadow went back ten steps",
+    "reference": "2 Kings 20:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 248,
+    "book": "2 Kings",
+    "question": "Who was the mother of King Hezekiah?",
+    "options": [
+      "Abijah/Abi",
+      "Athaliah",
+      "Jezebel",
+      "Zibiah"
+    ],
+    "answer": "Abijah/Abi",
+    "reference": "2 Kings 18:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 266,
+    "book": "2 Kings",
+    "question": "What happened to the children who mocked Elisha calling him 'baldhead'?",
+    "options": [
+      "Two bears mauled them",
+      "Fire came from heaven",
+      "They were blinded",
+      "The ground swallowed them"
+    ],
+    "answer": "Two bears mauled them",
+    "reference": "2 Kings 2:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 267,
+    "book": "2 Kings",
+    "question": "Who was the daughter of Ahab who seized the throne of Judah?",
+    "options": [
+      "Athaliah",
+      "Jezebel",
+      "Esther",
+      "Huldah"
+    ],
+    "answer": "Athaliah",
+    "reference": "2 Kings 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 268,
+    "book": "2 Kings",
+    "question": "What engineering feat did King Hezekiah build in Jerusalem?",
+    "options": [
+      "A water tunnel",
+      "A hanging garden",
+      "A golden pyramid",
+      "A great bridge"
+    ],
+    "answer": "A water tunnel",
+    "reference": "2 Kings 20:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 322,
+    "book": "2 Kings",
+    "question": "Which river did Naaman want to wash in instead of the Jordan?",
+    "options": [
+      "Abana and Pharpar",
+      "Nile",
+      "Euphrates",
+      "Tigris"
+    ],
+    "answer": "Abana and Pharpar",
+    "reference": "2 Kings 5:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 323,
+    "book": "2 Kings",
+    "question": "What miracle happened when a dead body touched Elisha's bones?",
+    "options": [
+      "The man came back to life",
+      "The bones turned to gold",
+      "Fire consumed the body",
+      "An earthquake occurred"
+    ],
+    "answer": "The man came back to life",
+    "reference": "2 Kings 13:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 371,
+    "book": "2 Kings",
+    "question": "What did Elisha fix by throwing flour into the pot?",
+    "options": [
+      "Poisonous stew",
+      "Bitter water",
+      "Sour milk",
+      "Burnt offering"
+    ],
+    "answer": "Poisonous stew",
+    "reference": "2 Kings 4:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 372,
+    "book": "2 Kings",
+    "question": "Which King of Judah was killed by an arrow in his disguise?",
+    "options": [
+      "Josiah",
+      "Ahab",
+      "Jehoiakim",
+      "Ahaziah"
+    ],
+    "answer": "Josiah",
+    "reference": "2 Chronicles 35:22-23 (Also 2 Kings 23:29 context)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 419,
+    "book": "2 Kings",
+    "question": "What was the name of the bronze serpent Moses made, which Hezekiah broke because people worshipped it?",
+    "options": [
+      "Nehushtan",
+      "Leviathan",
+      "Behemoth",
+      "Asherah"
+    ],
+    "answer": "Nehushtan",
+    "reference": "2 Kings 18:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 469,
+    "book": "2 Kings",
+    "question": "Who was the son of a prophet that anointed Jehu as king?",
+    "options": [
+      "Unnamed (A young man)",
+      "Elisha",
+      "Elijah",
+      "Jonah"
+    ],
+    "answer": "Unnamed (A young man)",
+    "reference": "2 Kings 9:1-4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 470,
+    "book": "2 Kings",
+    "question": "What did Hezekiah do with the threatening letter from the King of Assyria?",
+    "options": [
+      "Spread it out before the Lord",
+      "Burned it",
+      "Tore it up",
+      "Sent it back"
+    ],
+    "answer": "Spread it out before the Lord",
+    "reference": "2 Kings 19:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 516,
+    "book": "2 Kings",
+    "question": "Who discovered that the Syrian army had fled during the siege of Samaria?",
+    "options": [
+      "Four lepers",
+      "The King's spies",
+      "Elisha",
+      "The gatekeepers"
+    ],
+    "answer": "Four lepers",
+    "reference": "2 Kings 7:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 517,
+    "book": "2 Kings",
+    "question": "How old was Jehoiachin when he was released from prison in Babylon?",
+    "options": [
+      "It doesn't say (after 37 years of captivity)",
+      "25",
+      "50",
+      "80"
+    ],
+    "answer": "It doesn't say (after 37 years of captivity)",
+    "reference": "2 Kings 25:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 566,
+    "book": "2 Kings",
+    "question": "What did Elisha use to heal the bad waters of Jericho?",
+    "options": [
+      "Salt",
+      "A stick",
+      "Flour",
+      "Oil"
+    ],
+    "answer": "Salt",
+    "reference": "2 Kings 2:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 567,
+    "book": "2 Kings",
+    "question": "What sign was given to Hezekiah that he would be healed?",
+    "options": [
+      "The shadow on the sundial went back",
+      "The sun stood still",
+      "A star appeared",
+      "Thunder was heard"
+    ],
+    "answer": "The shadow on the sundial went back",
+    "reference": "2 Kings 20:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 621,
+    "book": "2 Kings",
+    "question": "Which king built a new altar based on one he saw in Damascus?",
+    "options": [
+      "Ahaz",
+      "Hezekiah",
+      "Manasseh",
+      "Josiah"
+    ],
+    "answer": "Ahaz",
+    "reference": "2 Kings 16:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 622,
+    "book": "2 Kings",
+    "question": "Who was the last King of Judah before the Babylonian exile?",
+    "options": [
+      "Zedekiah",
+      "Jehoiachin",
+      "Jehoiakim",
+      "Josiah"
+    ],
+    "answer": "Zedekiah",
+    "reference": "2 Kings 25:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 671,
+    "book": "2 Kings",
+    "question": "Who was the King of Israel when Samaria fell to the Assyrians?",
+    "options": [
+      "Hoshea",
+      "Pekah",
+      "Ahab",
+      "Jeroboam II"
+    ],
+    "answer": "Hoshea",
+    "reference": "2 Kings 17:1-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 672,
+    "book": "2 Kings",
+    "question": "Which King of Babylon released Jehoiachin from prison?",
+    "options": [
+      "Evil-Merodach",
+      "Nebuchadnezzar",
+      "Belshazzar",
+      "Darius"
+    ],
+    "answer": "Evil-Merodach",
+    "reference": "2 Kings 25:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 724,
+    "book": "2 Kings",
+    "question": "What happened to the Moabites when they saw the water in the valley looking red like blood?",
+    "options": [
+      "They thought the kings had killed each other and attacked",
+      "They fled in fear",
+      "They drank it and died",
+      "They worshipped it"
+    ],
+    "answer": "They thought the kings had killed each other and attacked",
+    "reference": "2 Kings 3:22-23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 725,
+    "book": "2 Kings",
+    "question": "Who was the mother of King Josiah?",
+    "options": [
+      "Jedidah",
+      "Athaliah",
+      "Hephzibah",
+      "Hamutal"
+    ],
+    "answer": "Jedidah",
+    "reference": "2 Kings 22:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 767,
+    "book": "2 Kings",
+    "question": "Who was the father of Jehu (the king)?",
+    "options": [
+      "Jehoshaphat (son of Nimshi)",
+      "Omri",
+      "Ahab",
+      "Basha"
+    ],
+    "answer": "Jehoshaphat (son of Nimshi)",
+    "reference": "2 Kings 9:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 823,
+    "book": "2 Kings",
+    "question": "Who was the king of Israel when Elisha died?",
+    "options": [
+      "Joash",
+      "Jehu",
+      "Ahab",
+      "Jeroboam II"
+    ],
+    "answer": "Joash",
+    "reference": "2 Kings 13:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 824,
+    "book": "2 Kings",
+    "question": "Who destroyed the bronze serpent Nehushtan?",
+    "options": [
+      "Hezekiah",
+      "Josiah",
+      "David",
+      "Asa"
+    ],
+    "answer": "Hezekiah",
+    "reference": "2 Kings 18:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 866,
+    "book": "2 Kings",
+    "question": "Who was the Syrian commander healed of leprosy?",
+    "options": [
+      "Naaman",
+      "Hazael",
+      "Ben-Hadad",
+      "Gehazi"
+    ],
+    "answer": "Naaman",
+    "reference": "2 Kings 5:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 923,
+    "book": "2 Kings",
+    "question": "Who was the king of Assyria who captured Samaria?",
+    "options": [
+      "Shalmaneser",
+      "Sennacherib",
+      "Tiglath-Pileser",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Shalmaneser",
+    "reference": "2 Kings 17:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 924,
+    "book": "2 Kings",
+    "question": "What did Isaiah use to heal Hezekiah's boil?",
+    "options": [
+      "A cake of figs",
+      "Oil",
+      "Mud",
+      "Holy water"
+    ],
+    "answer": "A cake of figs",
+    "reference": "2 Kings 20:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 966,
+    "book": "2 Kings",
+    "question": "What happened to the children who mocked Elisha?",
+    "options": [
+      "Two female bears mauled them",
+      "Lightning struck them",
+      "They became lepers",
+      "The earth swallowed them"
+    ],
+    "answer": "Two female bears mauled them",
+    "reference": "2 Kings 2:24",
+    "difficulty": "medium"
+  }
+]

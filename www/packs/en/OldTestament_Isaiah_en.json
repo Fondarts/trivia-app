@@ -1,0 +1,422 @@
+[
+  {
+    "id": 26,
+    "book": "Isaiah",
+    "question": "Which prophet is known as the 'Messianic Prophet'?",
+    "options": [
+      "Jeremiah",
+      "Isaiah",
+      "Ezekiel",
+      "Daniel"
+    ],
+    "answer": "Isaiah",
+    "reference": "Isaiah 53",
+    "difficulty": "medium"
+  },
+  {
+    "id": 60,
+    "book": "Isaiah",
+    "question": "What sign did Isaiah give to Ahaz about the Messiah?",
+    "options": [
+      "A star in the east",
+      "A virgin shall conceive",
+      "A scepter from Judah",
+      "A root from dry ground"
+    ],
+    "answer": "A virgin shall conceive",
+    "reference": "Isaiah 7:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 86,
+    "book": "Isaiah",
+    "question": "In Isaiah's vision of peace, what animal will lie down with the lamb?",
+    "options": [
+      "The lion",
+      "The wolf",
+      "The bear",
+      "The leopard"
+    ],
+    "answer": "The wolf",
+    "reference": "Isaiah 11:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 134,
+    "book": "Isaiah",
+    "question": "In Isaiah's vision, what did the seraphim cry out?",
+    "options": [
+      "Worthy is the Lamb",
+      "Holy, holy, holy is the Lord Almighty",
+      "Glory to God in the highest",
+      "The Lord reigns"
+    ],
+    "answer": "Holy, holy, holy is the Lord Almighty",
+    "reference": "Isaiah 6:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 135,
+    "book": "Isaiah",
+    "question": "Who is the king mentioned in Isaiah who showed his treasures to Babylon?",
+    "options": [
+      "Hezekiah",
+      "Ahaz",
+      "Uzziah",
+      "Manasseh"
+    ],
+    "answer": "Hezekiah",
+    "reference": "Isaiah 39:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 180,
+    "book": "Isaiah",
+    "question": "What touched Isaiah's lips to take away his guilt?",
+    "options": [
+      "A live coal",
+      "Water",
+      "Honey",
+      "Oil"
+    ],
+    "answer": "A live coal",
+    "reference": "Isaiah 6:6-7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 181,
+    "book": "Isaiah",
+    "question": "Who is the Persian king named by Isaiah years before he was born?",
+    "options": [
+      "Cyrus",
+      "Darius",
+      "Artaxerxes",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Cyrus",
+    "reference": "Isaiah 44:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 223,
+    "book": "Isaiah",
+    "question": "Complete the verse: 'All we like _____ have gone astray.'",
+    "options": [
+      "Sheep",
+      "Goats",
+      "Birds",
+      "Children"
+    ],
+    "answer": "Sheep",
+    "reference": "Isaiah 53:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 281,
+    "book": "Isaiah",
+    "question": "In the year that which king died did Isaiah see the Lord?",
+    "options": [
+      "Uzziah",
+      "Ahaz",
+      "Hezekiah",
+      "David"
+    ],
+    "answer": "Uzziah",
+    "reference": "Isaiah 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 334,
+    "book": "Isaiah",
+    "question": "In Isaiah's vision of the seraphim, how many wings did each have?",
+    "options": [
+      "Six",
+      "Four",
+      "Two",
+      "Eight"
+    ],
+    "answer": "Six",
+    "reference": "Isaiah 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 348,
+    "book": "Isaiah",
+    "question": "Isaiah says our righteous acts are like...",
+    "options": [
+      "Filthy rags",
+      "Gold",
+      "Dust",
+      "Fading flowers"
+    ],
+    "answer": "Filthy rags",
+    "reference": "Isaiah 64:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 383,
+    "book": "Isaiah",
+    "question": "How does Isaiah 40 begin?",
+    "options": [
+      "Comfort, comfort my people",
+      "Woe to the rebellious children",
+      "The vision of Isaiah",
+      "Arise, shine"
+    ],
+    "answer": "Comfort, comfort my people",
+    "reference": "Isaiah 40:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 431,
+    "book": "Isaiah",
+    "question": "Complete the verse: 'The grass withers, the flower fades, but the word of our God...'",
+    "options": [
+      "Stands forever",
+      "Is eternal",
+      "Never fails",
+      "Is pure"
+    ],
+    "answer": "Stands forever",
+    "reference": "Isaiah 40:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 479,
+    "book": "Isaiah",
+    "question": "Isaiah 9:6 calls the Messiah: 'Wonderful Counselor, Mighty God, Everlasting Father, ...'",
+    "options": [
+      "Prince of Peace",
+      "King of Kings",
+      "Lion of Judah",
+      "Son of Man"
+    ],
+    "answer": "Prince of Peace",
+    "reference": "Isaiah 9:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 528,
+    "book": "Isaiah",
+    "question": "Which chapter of Isaiah describes the 'Suffering Servant'?",
+    "options": [
+      "Isaiah 53",
+      "Isaiah 40",
+      "Isaiah 6",
+      "Isaiah 9"
+    ],
+    "answer": "Isaiah 53",
+    "reference": "Isaiah 53",
+    "difficulty": "easy"
+  },
+  {
+    "id": 578,
+    "book": "Isaiah",
+    "question": "According to Isaiah 1:18, though your sins are like scarlet, they shall be as white as...",
+    "options": [
+      "Snow",
+      "Wool",
+      "Cotton",
+      "Clouds"
+    ],
+    "answer": "Snow",
+    "reference": "Isaiah 1:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 634,
+    "book": "Isaiah",
+    "question": "Complete the verse: 'For unto us a Child is born, unto us a Son is...'",
+    "options": [
+      "Given",
+      "Sent",
+      "Promised",
+      "Risen"
+    ],
+    "answer": "Given",
+    "reference": "Isaiah 9:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 684,
+    "book": "Isaiah",
+    "question": "Isaiah 11 mentions the 'Spirit of the Lord' resting upon Him, including the Spirit of...",
+    "options": [
+      "Wisdom and understanding",
+      "Fire and wind",
+      "Truth and grace",
+      "Life and peace"
+    ],
+    "answer": "Wisdom and understanding",
+    "reference": "Isaiah 11:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 738,
+    "book": "Isaiah",
+    "question": "Who was the scribe who recorded the words of the Assyrian field commander for Hezekiah?",
+    "options": [
+      "Shebna",
+      "Eliakim",
+      "Joah",
+      "Baruch"
+    ],
+    "answer": "Shebna",
+    "reference": "Isaiah 36:3 (and 2 Kings 18:18)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 739,
+    "book": "Isaiah",
+    "question": "Isaiah 40:31 says those who wait on the Lord shall mount up with wings like...",
+    "options": [
+      "Eagles",
+      "Doves",
+      "Angels",
+      "Hawks"
+    ],
+    "answer": "Eagles",
+    "reference": "Isaiah 40:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 778,
+    "book": "Isaiah",
+    "question": "Isaiah 55:8 says: 'For My thoughts are not your thoughts, nor are your ways...'",
+    "options": [
+      "My ways",
+      "My laws",
+      "My truth",
+      "My statutes"
+    ],
+    "answer": "My ways",
+    "reference": "Isaiah 55:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 837,
+    "book": "Isaiah",
+    "question": "In Isaiah 6, the seraphim covered their feet with...",
+    "options": [
+      "Two wings",
+      "Four wings",
+      "A cloud",
+      "Fire"
+    ],
+    "answer": "Two wings",
+    "reference": "Isaiah 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 838,
+    "book": "Isaiah",
+    "question": "Which King showed the envoys from Babylon all his treasures?",
+    "options": [
+      "Hezekiah",
+      "Manasseh",
+      "Ahaz",
+      "Josiah"
+    ],
+    "answer": "Hezekiah",
+    "reference": "Isaiah 39:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 877,
+    "book": "Isaiah",
+    "question": "Isaiah 7:14 prophesies that a virgin shall conceive and call His name...",
+    "options": [
+      "Immanuel",
+      "Jesus",
+      "Messiah",
+      "David"
+    ],
+    "answer": "Immanuel",
+    "reference": "Isaiah 7:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 937,
+    "book": "Isaiah",
+    "question": "Isaiah 1:18 says, 'Though your sins be as scarlet, they shall be as white as...'",
+    "options": [
+      "Snow",
+      "Wool",
+      "Light",
+      "Cotton"
+    ],
+    "answer": "Snow",
+    "reference": "Isaiah 1:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 938,
+    "book": "Isaiah",
+    "question": "Who is the 'voice of one crying in the wilderness' prophesied in Isaiah 40:3?",
+    "options": [
+      "John the Baptist",
+      "Elijah",
+      "Jeremiah",
+      "Jesus"
+    ],
+    "answer": "John the Baptist",
+    "reference": "Isaiah 40:3 (Confirmed in Gospels)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 977,
+    "book": "Isaiah",
+    "question": "Isaiah 6:3 says, 'Holy, holy, holy is the Lord of hosts; the whole earth is full of His...'",
+    "options": [
+      "Glory",
+      "Power",
+      "Love",
+      "Wisdom"
+    ],
+    "answer": "Glory",
+    "reference": "Isaiah 6:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1404,
+    "book": "Isaiah",
+    "question": "In Isaiah 6, what did the Seraphim cry out to one another?",
+    "options": [
+      "Holy, holy, holy is the Lord of hosts",
+      "Worthy is the Lamb",
+      "Glory to God in the highest",
+      "The Lord is my Shepherd"
+    ],
+    "answer": "Holy, holy, holy is the Lord of hosts",
+    "reference": "Isaiah 6:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1405,
+    "book": "Isaiah",
+    "question": "Who is the Persian king prophesied by name in Isaiah who would rebuild Jerusalem?",
+    "options": [
+      "Cyrus",
+      "Darius",
+      "Artaxerxes",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Cyrus",
+    "reference": "Isaiah 44:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1406,
+    "book": "Isaiah",
+    "question": "Isaiah 53 compares the Suffering Servant to a sheep that is...",
+    "options": [
+      "Silent before its shearers",
+      "Lost in the mountains",
+      "White as snow",
+      "Strong as a lion"
+    ],
+    "answer": "Silent before its shearers",
+    "reference": "Isaiah 53:7",
+    "difficulty": "medium"
+  }
+]

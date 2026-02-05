@@ -1,0 +1,422 @@
+[
+  {
+    "id": 30,
+    "book": "Hosea",
+    "question": "Which prophet was told to marry a prostitute named Gomer?",
+    "options": [
+      "Amos",
+      "Hosea",
+      "Joel",
+      "Micah"
+    ],
+    "answer": "Hosea",
+    "reference": "Hosea 1:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 141,
+    "book": "Hosea",
+    "question": "God compared Israel's unfaithfulness to:",
+    "options": [
+      "A lost sheep",
+      "An adulterous wife",
+      "A broken pot",
+      "A withered tree"
+    ],
+    "answer": "An adulterous wife",
+    "reference": "Hosea 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 188,
+    "book": "Hosea",
+    "question": "Complete the verse: 'My people are destroyed for lack of...'",
+    "options": [
+      "Knowledge",
+      "Faith",
+      "Money",
+      "Bread"
+    ],
+    "answer": "Knowledge",
+    "reference": "Hosea 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 228,
+    "book": "Hosea",
+    "question": "Complete the verse: 'For I desire mercy, not...'",
+    "options": [
+      "Sacrifice",
+      "Gold",
+      "Prayer",
+      "Songs"
+    ],
+    "answer": "Sacrifice",
+    "reference": "Hosea 6:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 286,
+    "book": "Hosea",
+    "question": "What was the name of Hosea's daughter, meaning 'No Mercy'?",
+    "options": [
+      "Lo-Ruhamah",
+      "Lo-Ammi",
+      "Gomer",
+      "Jezreel"
+    ],
+    "answer": "Lo-Ruhamah",
+    "reference": "Hosea 1:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 338,
+    "book": "Hosea",
+    "question": "What did Hosea say Israel had 'sown' and what would they 'reap'?",
+    "options": [
+      "Sown the wind, reap the whirlwind",
+      "Sown seeds, reap thorns",
+      "Sown evil, reap death",
+      "Sown tears, reap joy"
+    ],
+    "answer": "Sown the wind, reap the whirlwind",
+    "reference": "Hosea 8:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 389,
+    "book": "Hosea",
+    "question": "God told Hosea, 'I will betroth you to me...'",
+    "options": [
+      "Forever",
+      "For a year",
+      "If you obey",
+      "In the desert"
+    ],
+    "answer": "Forever",
+    "reference": "Hosea 2:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 436,
+    "book": "Hosea",
+    "question": "Hosea describes Ephraim (Israel) as a cake that is...",
+    "options": [
+      "Not turned (half-baked)",
+      "Burnt",
+      "Without yeast",
+      "Sweet"
+    ],
+    "answer": "Not turned (half-baked)",
+    "reference": "Hosea 7:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 483,
+    "book": "Hosea",
+    "question": "What valley was promised to be a 'door of hope'?",
+    "options": [
+      "Valley of Achor",
+      "Valley of Elah",
+      "Valley of Hinnom",
+      "Valley of Jezreel"
+    ],
+    "answer": "Valley of Achor",
+    "reference": "Hosea 2:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 533,
+    "book": "Hosea",
+    "question": "Complete the verse: 'When Israel was a child, I loved him, and out of Egypt I called my...'",
+    "options": [
+      "Son",
+      "People",
+      "Servant",
+      "Chosen"
+    ],
+    "answer": "Son",
+    "reference": "Hosea 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 582,
+    "book": "Hosea",
+    "question": "God said, 'I will heal their waywardness and love them...'",
+    "options": [
+      "Freely",
+      "Forever",
+      "Deeply",
+      "Again"
+    ],
+    "answer": "Freely",
+    "reference": "Hosea 14:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 638,
+    "book": "Hosea",
+    "question": "Hosea 6:3 says, 'Let us know, Let us pursue the knowledge of...'",
+    "options": [
+      "The Lord",
+      "The Truth",
+      "Wisdom",
+      "The Law"
+    ],
+    "answer": "The Lord",
+    "reference": "Hosea 6:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 688,
+    "book": "Hosea",
+    "question": "God says in Hosea 4:1 there is no faithfulness, no love, and no ______ in the land.",
+    "options": [
+      "Acknowledgment/Knowledge of God",
+      "Peace",
+      "Justice",
+      "Joy"
+    ],
+    "answer": "Acknowledgment/Knowledge of God",
+    "reference": "Hosea 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 744,
+    "book": "Hosea",
+    "question": "Hosea 10:12 says: 'Sow for yourselves righteousness; reap in...'",
+    "options": [
+      "Mercy",
+      "Joy",
+      "Plenty",
+      "Peace"
+    ],
+    "answer": "Mercy",
+    "reference": "Hosea 10:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 783,
+    "book": "Hosea",
+    "question": "Hosea 13:4 says: 'You shall know no God but Me; for there is no...'",
+    "options": [
+      "Savior besides Me",
+      "King besides Me",
+      "Judge besides Me",
+      "Creator besides Me"
+    ],
+    "answer": "Savior besides Me",
+    "reference": "Hosea 13:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 843,
+    "book": "Hosea",
+    "question": "Hosea 7:11 compares Ephraim to a...",
+    "options": [
+      "Silly dove",
+      "Wild donkey",
+      "Lion",
+      "Broken bow"
+    ],
+    "answer": "Silly dove",
+    "reference": "Hosea 7:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 882,
+    "book": "Hosea",
+    "question": "Hosea 2:23 says: 'I will say to those who were not My people...'",
+    "options": [
+      "You are My people",
+      "Depart from Me",
+      "Repent",
+      "Come home"
+    ],
+    "answer": "You are My people",
+    "reference": "Hosea 2:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 943,
+    "book": "Hosea",
+    "question": "Hosea 4:6 says people are destroyed for lack of...",
+    "options": [
+      "Knowledge",
+      "Food",
+      "Water",
+      "Leadership"
+    ],
+    "answer": "Knowledge",
+    "reference": "Hosea 4:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 982,
+    "book": "Hosea",
+    "question": "Who was Hosea told to marry?",
+    "options": [
+      "Gomer",
+      "Ruth",
+      "Rahab",
+      "Esther"
+    ],
+    "answer": "Gomer",
+    "reference": "Hosea 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1500,
+    "book": "Hosea",
+    "question": "What was the name of Hosea's wife?",
+    "options": [
+      "Gomer",
+      "Ruth",
+      "Rahab",
+      "Naomi"
+    ],
+    "answer": "Gomer",
+    "reference": "Hosea 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1501,
+    "book": "Hosea",
+    "question": "What were the names of the three children Hosea had with Gomer?",
+    "options": [
+      "Jezreel, Lo-Ruhamah, Lo-Ammi",
+      "Shear-Jashub, Maher-Shalal-Hash-Baz, Immanuel",
+      "Joel, Abijah, Enoch",
+      "Reuben, Simeon, Levi"
+    ],
+    "answer": "Jezreel, Lo-Ruhamah, Lo-Ammi",
+    "reference": "Hosea 1:4-9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1502,
+    "book": "Hosea",
+    "question": "What does the name 'Lo-Ammi' mean?",
+    "options": [
+      "Not My People",
+      "No Mercy",
+      "God Scatters",
+      "Beloved"
+    ],
+    "answer": "Not My People",
+    "reference": "Hosea 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1503,
+    "book": "Hosea",
+    "question": "Hosea 4:11 says that harlotry, wine, and new wine enslave the...",
+    "options": [
+      "Heart",
+      "Mind",
+      "Body",
+      "Soul"
+    ],
+    "answer": "Heart",
+    "reference": "Hosea 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1504,
+    "book": "Hosea",
+    "question": "Hosea compares Ephraim to a cake that is...",
+    "options": [
+      "Unturned (half-baked)",
+      "Burnt",
+      "Sweet",
+      "Moldy"
+    ],
+    "answer": "Unturned (half-baked)",
+    "reference": "Hosea 7:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1505,
+    "book": "Hosea",
+    "question": "For I desire mercy and not sacrifice, and the knowledge of God more than...",
+    "options": [
+      "Burnt offerings",
+      "Gold",
+      "Incense",
+      "Songs"
+    ],
+    "answer": "Burnt offerings",
+    "reference": "Hosea 6:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1506,
+    "book": "Hosea",
+    "question": "They have sown the wind, and they shall reap the...",
+    "options": [
+      "Whirlwind",
+      "Storm",
+      "Dust",
+      "Fire"
+    ],
+    "answer": "Whirlwind",
+    "reference": "Hosea 8:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1507,
+    "book": "Hosea",
+    "question": "What agricultural imagery does Hosea use in 10:12? 'Break up your...'",
+    "options": [
+      "Fallow ground",
+      "Stony heart",
+      "Dry cisterns",
+      "Old altars"
+    ],
+    "answer": "Fallow ground",
+    "reference": "Hosea 10:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1508,
+    "book": "Hosea",
+    "question": "Out of Egypt I called My...",
+    "options": [
+      "Son",
+      "People",
+      "Servant",
+      "Army"
+    ],
+    "answer": "Son",
+    "reference": "Hosea 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1509,
+    "book": "Hosea",
+    "question": "Hosea 14:9 says the ways of the Lord are...",
+    "options": [
+      "Right",
+      "Mysterious",
+      "High",
+      "Hard"
+    ],
+    "answer": "Right",
+    "reference": "Hosea 14:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1510,
+    "book": "Hosea",
+    "question": "What price did Hosea pay to buy back his wife?",
+    "options": [
+      "Fifteen shekels of silver and barley",
+      "Thirty pieces of silver",
+      "A golden ring",
+      "Seven sheep"
+    ],
+    "answer": "Fifteen shekels of silver and barley",
+    "reference": "Hosea 3:2",
+    "difficulty": "hard"
+  }
+]

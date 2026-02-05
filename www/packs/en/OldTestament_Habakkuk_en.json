@@ -1,0 +1,422 @@
+[
+  {
+    "id": 95,
+    "book": "Habakkuk",
+    "question": "Finish the verse: 'The just shall live by...'",
+    "options": [
+      "Law",
+      "Works",
+      "Faith",
+      "Hope"
+    ],
+    "answer": "Faith",
+    "reference": "Habakkuk 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 146,
+    "book": "Habakkuk",
+    "question": "Habakkuk complained that God was using which wicked nation to judge Israel?",
+    "options": [
+      "The Chaldeans/Babylonians",
+      "The Egyptians",
+      "The Romans",
+      "The Philistines"
+    ],
+    "answer": "The Chaldeans/Babylonians",
+    "reference": "Habakkuk 1:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 235,
+    "book": "Habakkuk",
+    "question": "Even if the fig tree does not blossom, Habakkuk says he will...",
+    "options": [
+      "Rejoice in the Lord",
+      "Weep in the night",
+      "Flee to the mountains",
+      "Wait in silence"
+    ],
+    "answer": "Rejoice in the Lord",
+    "reference": "Habakkuk 3:17-18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 291,
+    "book": "Habakkuk",
+    "question": "Where did Habakkuk station himself to wait for God's answer?",
+    "options": [
+      "On the watchtower",
+      "In the temple",
+      "In a cave",
+      "On a mountain"
+    ],
+    "answer": "On the watchtower",
+    "reference": "Habakkuk 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 395,
+    "book": "Habakkuk",
+    "question": "God told Habakkuk to write the vision and make it plain on...",
+    "options": [
+      "Tablets",
+      "Scrolls",
+      "Stones",
+      "Doorposts"
+    ],
+    "answer": "Tablets",
+    "reference": "Habakkuk 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 442,
+    "book": "Habakkuk",
+    "question": "Complete the verse: 'For the earth will be filled with the knowledge of the glory of the Lord as the waters cover the...'",
+    "options": [
+      "Sea",
+      "Land",
+      "Mountains",
+      "Deep"
+    ],
+    "answer": "Sea",
+    "reference": "Habakkuk 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 488,
+    "book": "Habakkuk",
+    "question": "Complete the verse: 'The Lord is in his holy temple; let all the earth...'",
+    "options": [
+      "Keep silence before him",
+      "Sing for joy",
+      "Tremble in fear",
+      "Bow down"
+    ],
+    "answer": "Keep silence before him",
+    "reference": "Habakkuk 2:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 540,
+    "book": "Habakkuk",
+    "question": "Complete the verse: 'Though the fig tree should not...'",
+    "options": [
+      "Blossom",
+      "Grow",
+      "Die",
+      "Bear fruit"
+    ],
+    "answer": "Blossom",
+    "reference": "Habakkuk 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 588,
+    "book": "Habakkuk",
+    "question": "Habakkuk describes God coming from where?",
+    "options": [
+      "Teman and Mount Paran",
+      "Zion",
+      "Heaven",
+      "The East"
+    ],
+    "answer": "Teman and Mount Paran",
+    "reference": "Habakkuk 3:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 644,
+    "book": "Habakkuk",
+    "question": "Habakkuk 2:4 is quoted three times in the New Testament. How does it end? 'The just shall live by...'",
+    "options": [
+      "Faith",
+      "Bread",
+      "Law",
+      "Grace"
+    ],
+    "answer": "Faith",
+    "reference": "Habakkuk 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 694,
+    "book": "Habakkuk",
+    "question": "Habakkuk 2:20 says the Lord is in His holy temple, let all the earth...",
+    "options": [
+      "Keep silence before Him",
+      "Rejoice",
+      "Sing praises",
+      "Tremble"
+    ],
+    "answer": "Keep silence before Him",
+    "reference": "Habakkuk 2:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 751,
+    "book": "Habakkuk",
+    "question": "Habakkuk 3 is written in the form of a...",
+    "options": [
+      "Prayer/Song (Shigionoth)",
+      "Letter",
+      "Sermon",
+      "Genealogy"
+    ],
+    "answer": "Prayer/Song (Shigionoth)",
+    "reference": "Habakkuk 3:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 790,
+    "book": "Habakkuk",
+    "question": "What instrument does Habakkuk mention at the end of his prayer?",
+    "options": [
+      "Stringed instruments",
+      "Trumpet",
+      "Harp",
+      "Cymbal"
+    ],
+    "answer": "Stringed instruments",
+    "reference": "Habakkuk 3:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 850,
+    "book": "Habakkuk",
+    "question": "Habakkuk 1:13 says God is of purer eyes than to behold...",
+    "options": [
+      "Evil/Iniquity",
+      "Sinners",
+      "The earth",
+      "The sun"
+    ],
+    "answer": "Evil/Iniquity",
+    "reference": "Habakkuk 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 889,
+    "book": "Habakkuk",
+    "question": "Habakkuk 2:14 says the earth will be filled with the knowledge of the glory of the Lord as...",
+    "options": [
+      "The waters cover the sea",
+      "The stars cover the sky",
+      "The sand covers the shore",
+      "The grass covers the field"
+    ],
+    "answer": "The waters cover the sea",
+    "reference": "Habakkuk 2:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 950,
+    "book": "Habakkuk",
+    "question": "Habakkuk 2:3 says the vision is for an...",
+    "options": [
+      "Appointed time",
+      "Eternal purpose",
+      "End of days",
+      "Unknown time"
+    ],
+    "answer": "Appointed time",
+    "reference": "Habakkuk 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 989,
+    "book": "Habakkuk",
+    "question": "Habakkuk 2:4 says the just shall live by his...",
+    "options": [
+      "Faith",
+      "Works",
+      "Strength",
+      "Wisdom"
+    ],
+    "answer": "Faith",
+    "reference": "Habakkuk 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1534,
+    "book": "Habakkuk",
+    "question": "What is Habakkuk's first complaint to God?",
+    "options": [
+      "Why do You show me iniquity and cause me to see trouble?",
+      "Why is there a famine?",
+      "Why are we in exile?",
+      "Why is the temple destroyed?"
+    ],
+    "answer": "Why do You show me iniquity and cause me to see trouble?",
+    "reference": "Habakkuk 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1535,
+    "book": "Habakkuk",
+    "question": "Which nation is God raising up to judge Judah, described as 'bitter and hasty'?",
+    "options": [
+      "The Chaldeans (Babylonians)",
+      "The Assyrians",
+      "The Egyptians",
+      "The Romans"
+    ],
+    "answer": "The Chaldeans (Babylonians)",
+    "reference": "Habakkuk 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1536,
+    "book": "Habakkuk",
+    "question": "Habakkuk says God is of purer eyes than to behold...",
+    "options": [
+      "Evil/Iniquity",
+      "Man",
+      "The sun",
+      "Angels"
+    ],
+    "answer": "Evil/Iniquity",
+    "reference": "Habakkuk 1:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1537,
+    "book": "Habakkuk",
+    "question": "I will stand my watch and set myself on the...",
+    "options": [
+      "Rampart/Tower",
+      "Wall",
+      "Mountain",
+      "Rock"
+    ],
+    "answer": "Rampart/Tower",
+    "reference": "Habakkuk 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1538,
+    "book": "Habakkuk",
+    "question": "God told Habakkuk to write the vision and make it plain on...",
+    "options": [
+      "Tablets",
+      "Scrolls",
+      "Stones",
+      "Gates"
+    ],
+    "answer": "Tablets",
+    "reference": "Habakkuk 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1539,
+    "book": "Habakkuk",
+    "question": "But the just shall live by his...",
+    "options": [
+      "Faith",
+      "Works",
+      "Wisdom",
+      "Strength"
+    ],
+    "answer": "Faith",
+    "reference": "Habakkuk 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1540,
+    "book": "Habakkuk",
+    "question": "Woe to him who builds a town with...",
+    "options": [
+      "Blood",
+      "Gold",
+      "Lies",
+      "Sand"
+    ],
+    "answer": "Blood",
+    "reference": "Habakkuk 2:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1541,
+    "book": "Habakkuk",
+    "question": "For the earth will be filled with the knowledge of the glory of the Lord as...",
+    "options": [
+      "The waters cover the sea",
+      "The sun covers the day",
+      "The stars cover the sky",
+      "The grass covers the field"
+    ],
+    "answer": "The waters cover the sea",
+    "reference": "Habakkuk 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1542,
+    "book": "Habakkuk",
+    "question": "What does Habakkuk say about idols in 2:18-19? Can they speak?",
+    "options": [
+      "No, they are dumb stones",
+      "Yes",
+      "Only at night",
+      "Only to priests"
+    ],
+    "answer": "No, they are dumb stones",
+    "reference": "Habakkuk 2:18-19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1543,
+    "book": "Habakkuk",
+    "question": "The Lord is in His holy temple. Let all the earth...",
+    "options": [
+      "Keep silence before Him",
+      "Rejoice",
+      "Sing praises",
+      "Tremble"
+    ],
+    "answer": "Keep silence before Him",
+    "reference": "Habakkuk 2:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1544,
+    "book": "Habakkuk",
+    "question": "In his prayer (Chapter 3), Habakkuk says God came from...",
+    "options": [
+      "Teman",
+      "Zion",
+      "Sinai",
+      "Egypt"
+    ],
+    "answer": "Teman",
+    "reference": "Habakkuk 3:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1545,
+    "book": "Habakkuk",
+    "question": "Though the fig tree may not blossom, yet I will...",
+    "options": [
+      "Rejoice in the Lord",
+      "Weep bitterly",
+      "Plant another",
+      "Curse the day"
+    ],
+    "answer": "Rejoice in the Lord",
+    "reference": "Habakkuk 3:17-18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1546,
+    "book": "Habakkuk",
+    "question": "He makes my feet like...",
+    "options": [
+      "Deer's feet",
+      "Lion's paws",
+      "Eagle's wings",
+      "Iron pillars"
+    ],
+    "answer": "Deer's feet",
+    "reference": "Habakkuk 3:19",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "id": 28,
+    "book": "Ezekiel",
+    "question": "What strange valley did God show Ezekiel?",
+    "options": [
+      "Valley of Shadow of Death",
+      "Valley of Dry Bones",
+      "Valley of Kings",
+      "Valley of Decision"
+    ],
+    "answer": "Valley of Dry Bones",
+    "reference": "Ezekiel 37",
+    "difficulty": "easy"
+  },
+  {
+    "id": 89,
+    "book": "Ezekiel",
+    "question": "What job title did God give Ezekiel regarding the house of Israel?",
+    "options": [
+      "King",
+      "Watchman",
+      "Shepherd",
+      "Judge"
+    ],
+    "answer": "Watchman",
+    "reference": "Ezekiel 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 138,
+    "book": "Ezekiel",
+    "question": "What did Ezekiel see in his vision by the Chebar River?",
+    "options": [
+      "A burning bush",
+      "A wheel in the middle of a wheel",
+      "A ladder to heaven",
+      "A valley of bones"
+    ],
+    "answer": "A wheel in the middle of a wheel",
+    "reference": "Ezekiel 1:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 184,
+    "book": "Ezekiel",
+    "question": "What did God tell Ezekiel to do with the scroll given to him?",
+    "options": [
+      "Eat it",
+      "Burn it",
+      "Bury it",
+      "Throw it in the river"
+    ],
+    "answer": "Eat it",
+    "reference": "Ezekiel 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 185,
+    "book": "Ezekiel",
+    "question": "Ezekiel was told to shave his head and beard with what?",
+    "options": [
+      "A sharp sword",
+      "A razor",
+      "A knife",
+      "Fire"
+    ],
+    "answer": "A sharp sword",
+    "reference": "Ezekiel 5:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 226,
+    "book": "Ezekiel",
+    "question": "God promised to remove their heart of stone and give them a heart of...",
+    "options": [
+      "Flesh",
+      "Gold",
+      "Water",
+      "Spirit"
+    ],
+    "answer": "Flesh",
+    "reference": "Ezekiel 36:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 284,
+    "book": "Ezekiel",
+    "question": "How many days did Ezekiel lie on his left side to bear the iniquity of Israel?",
+    "options": [
+      "390 days",
+      "40 days",
+      "7 days",
+      "3 days"
+    ],
+    "answer": "390 days",
+    "reference": "Ezekiel 4:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 336,
+    "book": "Ezekiel",
+    "question": "What happened to Ezekiel's wife as a sign to Israel?",
+    "options": [
+      "She died and he was told not to mourn",
+      "She became a prophetess",
+      "She left him",
+      "She became mute"
+    ],
+    "answer": "She died and he was told not to mourn",
+    "reference": "Ezekiel 24:16-18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 386,
+    "book": "Ezekiel",
+    "question": "Ezekiel saw a river flowing from the Temple that became deep enough to...",
+    "options": [
+      "Swim in",
+      "Drink",
+      "Sail",
+      "Drown"
+    ],
+    "answer": "Swim in",
+    "reference": "Ezekiel 47:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 434,
+    "book": "Ezekiel",
+    "question": "Ezekiel prophesied a long lament over the King of which city, describing him as a guardian cherub?",
+    "options": [
+      "Tyre",
+      "Babylon",
+      "Egypt",
+      "Sidon"
+    ],
+    "answer": "Tyre",
+    "reference": "Ezekiel 28:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 481,
+    "book": "Ezekiel",
+    "question": "What is the name of the city in the final verse of Ezekiel?",
+    "options": [
+      "The Lord is There (Jehovah Shammah)",
+      "The Lord is Peace",
+      "The Lord Provides",
+      "The Holy City"
+    ],
+    "answer": "The Lord is There (Jehovah Shammah)",
+    "reference": "Ezekiel 48:35",
+    "difficulty": "hard"
+  },
+  {
+    "id": 531,
+    "book": "Ezekiel",
+    "question": "What two sticks was Ezekiel told to join together?",
+    "options": [
+      "Judah and Joseph (Ephraim)",
+      "Israel and Edom",
+      "Good and Evil",
+      "Law and Grace"
+    ],
+    "answer": "Judah and Joseph (Ephraim)",
+    "reference": "Ezekiel 37:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 580,
+    "book": "Ezekiel",
+    "question": "Ezekiel was called 'Son of...' over 90 times in the book.",
+    "options": [
+      "Man",
+      "God",
+      "Adam",
+      "David"
+    ],
+    "answer": "Man",
+    "reference": "Throughout Ezekiel",
+    "difficulty": "easy"
+  },
+  {
+    "id": 636,
+    "book": "Ezekiel",
+    "question": "What phrase appears over 60 times in Ezekiel to show God's purpose?",
+    "options": [
+      "Then they will know that I am the Lord",
+      "Repent and live",
+      "Hear the word of the Lord",
+      "For my name's sake"
+    ],
+    "answer": "Then they will know that I am the Lord",
+    "reference": "Throughout Ezekiel",
+    "difficulty": "medium"
+  },
+  {
+    "id": 686,
+    "book": "Ezekiel",
+    "question": "In Ezekiel 8, what abomination did he see women doing at the temple gate?",
+    "options": [
+      "Weeping for Tammuz",
+      "Baking cakes for the Queen of Heaven",
+      "Worshipping the sun",
+      "Sacrificing pigs"
+    ],
+    "answer": "Weeping for Tammuz",
+    "reference": "Ezekiel 8:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 742,
+    "book": "Ezekiel",
+    "question": "In Ezekiel 4, what kind of dung was Ezekiel allowed to use as fuel instead of human dung?",
+    "options": [
+      "Cow dung",
+      "Sheep dung",
+      "Goat dung",
+      "Camel dung"
+    ],
+    "answer": "Cow dung",
+    "reference": "Ezekiel 4:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 781,
+    "book": "Ezekiel",
+    "question": "Ezekiel 33 compares the prophet to a...",
+    "options": [
+      "Watchman",
+      "Shepherd",
+      "Builder",
+      "Soldier"
+    ],
+    "answer": "Watchman",
+    "reference": "Ezekiel 33:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 841,
+    "book": "Ezekiel",
+    "question": "Ezekiel 1 describes creatures with the face of a man, a lion, an ox, and...",
+    "options": [
+      "An eagle",
+      "A bear",
+      "A wolf",
+      "A serpent"
+    ],
+    "answer": "An eagle",
+    "reference": "Ezekiel 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 880,
+    "book": "Ezekiel",
+    "question": "In Ezekiel 3, the prophet was made a watchman to the house of...",
+    "options": [
+      "Israel",
+      "Judah",
+      "God",
+      "David"
+    ],
+    "answer": "Israel",
+    "reference": "Ezekiel 3:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 941,
+    "book": "Ezekiel",
+    "question": "What did Ezekiel see in the valley in chapter 37?",
+    "options": [
+      "Dry bones",
+      "A river of life",
+      "A great army",
+      "A burning bush"
+    ],
+    "answer": "Dry bones",
+    "reference": "Ezekiel 37:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 980,
+    "book": "Ezekiel",
+    "question": "What did God give Ezekiel to eat in chapter 3?",
+    "options": [
+      "A scroll",
+      "Bread",
+      "Meat",
+      "Fruit"
+    ],
+    "answer": "A scroll",
+    "reference": "Ezekiel 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1429,
+    "book": "Ezekiel",
+    "question": "What strange food was Ezekiel commanded to eat?",
+    "options": [
+      "A scroll",
+      "Locusts",
+      "Unleavened bread",
+      "Figs"
+    ],
+    "answer": "A scroll",
+    "reference": "Ezekiel 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1430,
+    "book": "Ezekiel",
+    "question": "In Ezekiel's vision of the dry bones, what happened after they came together?",
+    "options": [
+      "Breath entered them and they lived",
+      "They turned to dust",
+      "They burned",
+      "They fought each other"
+    ],
+    "answer": "Breath entered them and they lived",
+    "reference": "Ezekiel 37:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1431,
+    "book": "Ezekiel",
+    "question": "What did Ezekiel see leaving the temple in Jerusalem?",
+    "options": [
+      "The Glory of the Lord",
+      "The Ark of the Covenant",
+      "The High Priest",
+      "The Altar"
+    ],
+    "answer": "The Glory of the Lord",
+    "reference": "Ezekiel 10:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1432,
+    "book": "Ezekiel",
+    "question": "God calls Ezekiel to be a ______ for the house of Israel.",
+    "options": [
+      "Watchman",
+      "King",
+      "Shepherd",
+      "Judge"
+    ],
+    "answer": "Watchman",
+    "reference": "Ezekiel 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1433,
+    "book": "Ezekiel",
+    "question": "In Ezekiel 4, how many days did he lie on his left side for the iniquity of Israel?",
+    "options": [
+      "390 days",
+      "40 days",
+      "7 days",
+      "100 days"
+    ],
+    "answer": "390 days",
+    "reference": "Ezekiel 4:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1434,
+    "book": "Ezekiel",
+    "question": "What phrase is repeated constantly in Ezekiel (over 60 times)?",
+    "options": [
+      "Then they shall know that I am the Lord",
+      "Thus says the Lord",
+      "Repent for the kingdom is near",
+      "Holy, Holy, Holy"
+    ],
+    "answer": "Then they shall know that I am the Lord",
+    "reference": "Throughout Ezekiel",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1435,
+    "book": "Ezekiel",
+    "question": "God promised to take out their heart of stone and give them a...",
+    "options": [
+      "Heart of flesh",
+      "Heart of gold",
+      "Heart of wisdom",
+      "Heart of fire"
+    ],
+    "answer": "Heart of flesh",
+    "reference": "Ezekiel 36:26",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1436,
+    "book": "Ezekiel",
+    "question": "Ezekiel saw a vision of a wheel within a...",
+    "options": [
+      "Wheel",
+      "Fire",
+      "Cloud",
+      "Storm"
+    ],
+    "answer": "Wheel",
+    "reference": "Ezekiel 1:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1437,
+    "book": "Ezekiel",
+    "question": "Which city is lamented over as a beautiful ship that sinks in Ezekiel 27?",
+    "options": [
+      "Tyre",
+      "Sidon",
+      "Babylon",
+      "Nineveh"
+    ],
+    "answer": "Tyre",
+    "reference": "Ezekiel 27:2",
+    "difficulty": "hard"
+  }
+]

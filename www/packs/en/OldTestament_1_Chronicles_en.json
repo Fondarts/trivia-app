@@ -1,0 +1,422 @@
+[
+  {
+    "id": 80,
+    "book": "1 Chronicles",
+    "question": "Who prayed that God would enlarge his territory and keep him from evil?",
+    "options": [
+      "David",
+      "Solomon",
+      "Jabez",
+      "Caleb"
+    ],
+    "answer": "Jabez",
+    "reference": "1 Chronicles 4:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 123,
+    "book": "1 Chronicles",
+    "question": "Why was David not allowed to build the Temple?",
+    "options": [
+      "He didn't have enough money",
+      "He was a man of war and had shed blood",
+      "He was too old",
+      "God wanted a tent instead"
+    ],
+    "answer": "He was a man of war and had shed blood",
+    "reference": "1 Chronicles 28:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 171,
+    "book": "1 Chronicles",
+    "question": "Which king of Israel killed himself by burning down the king's house over himself?",
+    "options": [
+      "Zimri",
+      "Omri",
+      "Ahab",
+      "Jehu"
+    ],
+    "answer": "Zimri",
+    "reference": "1 Kings 16:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 215,
+    "book": "1 Chronicles",
+    "question": "Why did Uzza die while transporting the Ark?",
+    "options": [
+      "He put his hand out to hold the Ark",
+      "He looked inside it",
+      "He stole from it",
+      "He cursed God"
+    ],
+    "answer": "He put his hand out to hold the Ark",
+    "reference": "1 Chronicles 13:9-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 269,
+    "book": "1 Chronicles",
+    "question": "The book of 1 Chronicles begins with a list of...",
+    "options": [
+      "Genealogies",
+      "Laws",
+      "Songs",
+      "Wars"
+    ],
+    "answer": "Genealogies",
+    "reference": "1 Chronicles 1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 324,
+    "book": "1 Chronicles",
+    "question": "Who was struck dead because he didn't seek the Lord, but consulted a medium?",
+    "options": [
+      "Saul",
+      "Ahab",
+      "Manasseh",
+      "Jeroboam"
+    ],
+    "answer": "Saul",
+    "reference": "1 Chronicles 10:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 373,
+    "book": "1 Chronicles",
+    "question": "Who was the Mighty Man of David who killed a lion in a pit on a snowy day?",
+    "options": [
+      "Benaiah",
+      "Joab",
+      "Abishai",
+      "Eleazar"
+    ],
+    "answer": "Benaiah",
+    "reference": "1 Chronicles 11:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 420,
+    "book": "1 Chronicles",
+    "question": "On whose threshing floor did David build an altar to stop the plague?",
+    "options": [
+      "Ornan (Araunah) the Jebusite",
+      "Naboth",
+      "Boaz",
+      "Obed-Edom"
+    ],
+    "answer": "Ornan (Araunah) the Jebusite",
+    "reference": "1 Chronicles 21:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 471,
+    "book": "1 Chronicles",
+    "question": "Who were the three primary Levites appointed by David over the service of song?",
+    "options": [
+      "Heman, Asaph, and Ethan/Jeduthun",
+      "Moses, Aaron, and Miriam",
+      "Korah, Dathan, and Abiram",
+      "Shadrach, Meshach, and Abednego"
+    ],
+    "answer": "Heman, Asaph, and Ethan/Jeduthun",
+    "reference": "1 Chronicles 6:31-33",
+    "difficulty": "hard"
+  },
+  {
+    "id": 518,
+    "book": "1 Chronicles",
+    "question": "Who stood up against Israel and incited David to count the people?",
+    "options": [
+      "Satan",
+      "Joab",
+      "The Philistines",
+      "God (in 2 Samuel account)"
+    ],
+    "answer": "Satan",
+    "reference": "1 Chronicles 21:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 568,
+    "book": "1 Chronicles",
+    "question": "Who was the first person to die in the genealogy of Chronicles (and the Bible)?",
+    "options": [
+      "Abel (implied in history)",
+      "Er",
+      "Achar",
+      "Adam"
+    ],
+    "answer": "Er",
+    "reference": "1 Chronicles 2:3 (First explicit 'slain by the Lord' in this list)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 623,
+    "book": "1 Chronicles",
+    "question": "Who was the mother of Solomon?",
+    "options": [
+      "Bath-shua (Bathsheba)",
+      "Maacah",
+      "Abigail",
+      "Michal"
+    ],
+    "answer": "Bath-shua (Bathsheba)",
+    "reference": "1 Chronicles 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 673,
+    "book": "1 Chronicles",
+    "question": "Who was the head of the threshing floor where the angel of the Lord stood?",
+    "options": [
+      "Ornan",
+      "Araunah",
+      "Both are the same person",
+      "Boaz"
+    ],
+    "answer": "Both are the same person",
+    "reference": "1 Chronicles 21:15 / 2 Samuel 24:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 726,
+    "book": "1 Chronicles",
+    "question": "The prayer of Jabez asked God to enlarge his...",
+    "options": [
+      "Territory/Coast",
+      "Wisdom",
+      "Family",
+      "Wealth"
+    ],
+    "answer": "Territory/Coast",
+    "reference": "1 Chronicles 4:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 768,
+    "book": "1 Chronicles",
+    "question": "Who was the first king of the northern kingdom of Israel listed in the genealogies?",
+    "options": [
+      "Jeroboam",
+      "Rehoboam",
+      "Saul",
+      "Baasha"
+    ],
+    "answer": "Jeroboam",
+    "reference": "1 Chronicles 5 (Context of Reuben/Gad history mentions him)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 825,
+    "book": "1 Chronicles",
+    "question": "Who was the father of the mighty men Joab, Abishai, and Asahel?",
+    "options": [
+      "Zeruiah (Their mother)",
+      "Jesse",
+      "Ner",
+      "Kish"
+    ],
+    "answer": "Zeruiah (Their mother)",
+    "reference": "1 Chronicles 2:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 867,
+    "book": "1 Chronicles",
+    "question": "Who was the first man to organize the Levites into divisions?",
+    "options": [
+      "David",
+      "Moses",
+      "Solomon",
+      "Hezekiah"
+    ],
+    "answer": "David",
+    "reference": "1 Chronicles 23:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 925,
+    "book": "1 Chronicles",
+    "question": "What is the primary focus of the genealogies in 1 Chronicles 1-9?",
+    "options": [
+      "The line of David and the Levites",
+      "The kings of Edom",
+      "The descendants of Esau",
+      "The judges of Israel"
+    ],
+    "answer": "The line of David and the Levites",
+    "reference": "1 Chronicles 1-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 967,
+    "book": "1 Chronicles",
+    "question": "Who was the first king of Israel?",
+    "options": [
+      "Saul",
+      "David",
+      "Solomon",
+      "Jeroboam"
+    ],
+    "answer": "Saul",
+    "reference": "1 Chronicles 10:14 (Context)",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1467,
+    "book": "1 Chronicles",
+    "question": "How does the book of 1 Chronicles begin?",
+    "options": [
+      "With a genealogy from Adam",
+      "With the creation of the world",
+      "With the story of David",
+      "With the reign of Saul"
+    ],
+    "answer": "With a genealogy from Adam",
+    "reference": "1 Chronicles 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1468,
+    "book": "1 Chronicles",
+    "question": "Who prayed, 'Oh, that You would bless me indeed, and enlarge my territory'?",
+    "options": [
+      "Jabez",
+      "David",
+      "Solomon",
+      "Caleb"
+    ],
+    "answer": "Jabez",
+    "reference": "1 Chronicles 4:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1469,
+    "book": "1 Chronicles",
+    "question": "Who was struck dead for touching the Ark of the Covenant when the oxen stumbled?",
+    "options": [
+      "Uzza",
+      "Ahio",
+      "Obed-Edom",
+      "Zadok"
+    ],
+    "answer": "Uzza",
+    "reference": "1 Chronicles 13:9-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1470,
+    "book": "1 Chronicles",
+    "question": "Why was David not allowed to build the temple?",
+    "options": [
+      "Because he was a man of war and had shed blood",
+      "Because he didn't have enough money",
+      "Because God wanted a tent",
+      "Because he was too old"
+    ],
+    "answer": "Because he was a man of war and had shed blood",
+    "reference": "1 Chronicles 22:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1471,
+    "book": "1 Chronicles",
+    "question": "Which one of David's mighty men killed a lion in a pit on a snowy day?",
+    "options": [
+      "Benaiah",
+      "Joab",
+      "Abishai",
+      "Eleazar"
+    ],
+    "answer": "Benaiah",
+    "reference": "1 Chronicles 11:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1472,
+    "book": "1 Chronicles",
+    "question": "Who incited David to number Israel (take a census)?",
+    "options": [
+      "Satan",
+      "Joab",
+      "The Philistines",
+      "God (in 2 Samuel) / Satan (in 1 Chronicles)"
+    ],
+    "answer": "Satan",
+    "reference": "1 Chronicles 21:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1473,
+    "book": "1 Chronicles",
+    "question": "Where did the angel of the Lord stand with a drawn sword during the plague?",
+    "options": [
+      "By the threshing floor of Ornan the Jebusite",
+      "On Mount Sinai",
+      "In the Temple",
+      "At the city gate"
+    ],
+    "answer": "By the threshing floor of Ornan the Jebusite",
+    "reference": "1 Chronicles 21:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1474,
+    "book": "1 Chronicles",
+    "question": "Who provided much of the materials (cedar, gold, silver) for the temple before he died?",
+    "options": [
+      "David",
+      "Solomon",
+      "Hiram",
+      "Saul"
+    ],
+    "answer": "David",
+    "reference": "1 Chronicles 22:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1475,
+    "book": "1 Chronicles",
+    "question": "Which tribe was set apart to carry the Ark of the Covenant?",
+    "options": [
+      "Levi",
+      "Judah",
+      "Ephraim",
+      "Benjamin"
+    ],
+    "answer": "Levi",
+    "reference": "1 Chronicles 15:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1476,
+    "book": "1 Chronicles",
+    "question": "Who were the musicians appointed by David to prophesy with harps and cymbals?",
+    "options": [
+      "Asaph, Heman, and Jeduthun",
+      "Moses and Aaron",
+      "Korah and Dathan",
+      "Joshua and Caleb"
+    ],
+    "answer": "Asaph, Heman, and Jeduthun",
+    "reference": "1 Chronicles 25:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1477,
+    "book": "1 Chronicles",
+    "question": "How did Saul die according to 1 Chronicles 10?",
+    "options": [
+      "He fell on his own sword",
+      "He was killed by a Philistine",
+      "He died of old age",
+      "He was poisoned"
+    ],
+    "answer": "He fell on his own sword",
+    "reference": "1 Chronicles 10:4",
+    "difficulty": "medium"
+  }
+]

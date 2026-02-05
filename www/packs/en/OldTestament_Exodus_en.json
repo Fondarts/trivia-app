@@ -1,0 +1,660 @@
+[
+  {
+    "id": 2,
+    "book": "Exodus",
+    "question": "What was the first plague God sent upon Egypt?",
+    "options": [
+      "Frogs",
+      "Water turned to blood",
+      "Locusts",
+      "Darkness"
+    ],
+    "answer": "Water turned to blood",
+    "reference": "Exodus 7:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 13,
+    "book": "Exodus",
+    "question": "What food did God provide for the Israelites in the desert?",
+    "options": [
+      "Bread and Fish",
+      "Manna",
+      "Figs",
+      "Locusts"
+    ],
+    "answer": "Manna",
+    "reference": "Exodus 16:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 35,
+    "book": "Exodus",
+    "question": "Who found baby Moses in the river?",
+    "options": [
+      "Pharaoh's daughter",
+      "Miriam",
+      "Jochebed",
+      "Zipporah"
+    ],
+    "answer": "Pharaoh's daughter",
+    "reference": "Exodus 2:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 43,
+    "book": "Exodus",
+    "question": "What idol did Aaron fashion while Moses was on the mountain?",
+    "options": [
+      "A Golden Calf",
+      "A Silver Serpent",
+      "A Bronze Lion",
+      "A Stone Eagle"
+    ],
+    "answer": "A Golden Calf",
+    "reference": "Exodus 32:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 71,
+    "book": "Exodus",
+    "question": "How did God first appear to Moses?",
+    "options": [
+      "In a dream",
+      "In a burning bush",
+      "As a cloud",
+      "As a man"
+    ],
+    "answer": "In a burning bush",
+    "reference": "Exodus 3:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 99,
+    "book": "Exodus",
+    "question": "What are the Ten Commandments written on?",
+    "options": [
+      "Scrolls of papyrus",
+      "Tablets of stone",
+      "Golden plates",
+      "The doorposts"
+    ],
+    "answer": "Tablets of stone",
+    "reference": "Exodus 31:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 104,
+    "book": "Exodus",
+    "question": "Who was Moses' brother that helped him speak to Pharaoh?",
+    "options": [
+      "Caleb",
+      "Joshua",
+      "Aaron",
+      "Hur"
+    ],
+    "answer": "Aaron",
+    "reference": "Exodus 4:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 105,
+    "book": "Exodus",
+    "question": "What did Moses throw into the bitter waters of Marah to make them sweet?",
+    "options": [
+      "Salt",
+      "A stone",
+      "A piece of wood/tree",
+      "His staff"
+    ],
+    "answer": "A piece of wood/tree",
+    "reference": "Exodus 15:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 150,
+    "book": "Exodus",
+    "question": "What was the name of Moses' wife?",
+    "options": [
+      "Zipporah",
+      "Miriam",
+      "Elisheba",
+      "Keturah"
+    ],
+    "answer": "Zipporah",
+    "reference": "Exodus 2:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 153,
+    "book": "Exodus",
+    "question": "Who was the craftsman filled with the Spirit of God to build the Tabernacle furnishings?",
+    "options": [
+      "Bezalel",
+      "Hur",
+      "Oholiab",
+      "Eleazar"
+    ],
+    "answer": "Bezalel",
+    "reference": "Exodus 31:2-3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 194,
+    "book": "Exodus",
+    "question": "What was the name of the place where the Israelites fought Amalek while Moses held up his hands?",
+    "options": [
+      "Rephidim",
+      "Marah",
+      "Elim",
+      "Sinai"
+    ],
+    "answer": "Rephidim",
+    "reference": "Exodus 17:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 203,
+    "book": "Exodus",
+    "question": "Who was Moses' father-in-law, the priest of Midian?",
+    "options": [
+      "Jethro",
+      "Balaam",
+      "Eleazar",
+      "Korah"
+    ],
+    "answer": "Jethro",
+    "reference": "Exodus 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 241,
+    "book": "Exodus",
+    "question": "What was the name of the mountain where God gave the Law?",
+    "options": [
+      "Mount Sinai",
+      "Mount Zion",
+      "Mount Carmel",
+      "Mount Olives"
+    ],
+    "answer": "Mount Sinai",
+    "reference": "Exodus 19:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 253,
+    "book": "Exodus",
+    "question": "Who held up Moses' hands during the battle against Amalek?",
+    "options": [
+      "Aaron and Hur",
+      "Joshua and Caleb",
+      "Aaron and Miriam",
+      "Gershom and Eliezer"
+    ],
+    "answer": "Aaron and Hur",
+    "reference": "Exodus 17:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 254,
+    "book": "Exodus",
+    "question": "What was the name of the assistant to Bezalel in building the Tabernacle?",
+    "options": [
+      "Oholiab",
+      "Uri",
+      "Hur",
+      "Ithamar"
+    ],
+    "answer": "Oholiab",
+    "reference": "Exodus 31:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 304,
+    "book": "Exodus",
+    "question": "Who was the father of Moses and Aaron?",
+    "options": [
+      "Amram",
+      "Kohath",
+      "Levi",
+      "Izhar"
+    ],
+    "answer": "Amram",
+    "reference": "Exodus 6:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 305,
+    "book": "Exodus",
+    "question": "How many total plagues did God send upon Egypt?",
+    "options": [
+      "7",
+      "10",
+      "12",
+      "40"
+    ],
+    "answer": "10",
+    "reference": "Exodus 7-12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 354,
+    "book": "Exodus",
+    "question": "What two objects were kept in the High Priest's breastpiece to determine God's will?",
+    "options": [
+      "Urim and Thummim",
+      "Gold and Silver stones",
+      "Manna and Rod",
+      "Alpha and Omega"
+    ],
+    "answer": "Urim and Thummim",
+    "reference": "Exodus 28:30",
+    "difficulty": "hard"
+  },
+  {
+    "id": 355,
+    "book": "Exodus",
+    "question": "How many branches did the Golden Lampstand (Menorah) have?",
+    "options": [
+      "7",
+      "12",
+      "3",
+      "10"
+    ],
+    "answer": "7",
+    "reference": "Exodus 25:31-32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 404,
+    "book": "Exodus",
+    "question": "What were the names of the Hebrew midwives who feared God and saved the baby boys?",
+    "options": [
+      "Shiphrah and Puah",
+      "Leah and Rachel",
+      "Miriam and Zipporah",
+      "Milcah and Tirzah"
+    ],
+    "answer": "Shiphrah and Puah",
+    "reference": "Exodus 1:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 405,
+    "book": "Exodus",
+    "question": "What was the name of Moses' first son?",
+    "options": [
+      "Gershom",
+      "Eliezer",
+      "Nadab",
+      "Phinehas"
+    ],
+    "answer": "Gershom",
+    "reference": "Exodus 2:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 448,
+    "book": "Exodus",
+    "question": "Upon which two stones were the names of the tribes of Israel engraved on the priest's ephod?",
+    "options": [
+      "Onyx stones",
+      "Ruby stones",
+      "Sapphire stones",
+      "Emerald stones"
+    ],
+    "answer": "Onyx stones",
+    "reference": "Exodus 28:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 454,
+    "book": "Exodus",
+    "question": "What is the name of the bread without yeast eaten during Passover?",
+    "options": [
+      "Matzah (Unleavened Bread)",
+      "Manna",
+      "Showbread",
+      "Challah"
+    ],
+    "answer": "Matzah (Unleavened Bread)",
+    "reference": "Exodus 12:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 455,
+    "book": "Exodus",
+    "question": "Who led the women in singing and dancing after crossing the Red Sea?",
+    "options": [
+      "Miriam",
+      "Zipporah",
+      "Jochebed",
+      "Elisheba"
+    ],
+    "answer": "Miriam",
+    "reference": "Exodus 15:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 499,
+    "book": "Exodus",
+    "question": "What did the Israelites call the bread God provided in the wilderness?",
+    "options": [
+      "Manna",
+      "Matzah",
+      "Wafers",
+      "Corn"
+    ],
+    "answer": "Manna",
+    "reference": "Exodus 16:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 503,
+    "book": "Exodus",
+    "question": "What was engraved on the gold plate on the High Priest's turban?",
+    "options": [
+      "Holy to the Lord",
+      "King of Kings",
+      "Servant of God",
+      "Peace be upon Israel"
+    ],
+    "answer": "Holy to the Lord",
+    "reference": "Exodus 28:36",
+    "difficulty": "medium"
+  },
+  {
+    "id": 504,
+    "book": "Exodus",
+    "question": "Who was the father-in-law of Eleazar (Aaron's son)?",
+    "options": [
+      "Putiel",
+      "Jethro",
+      "Amram",
+      "Nahshon"
+    ],
+    "answer": "Putiel",
+    "reference": "Exodus 6:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 546,
+    "book": "Exodus",
+    "question": "How long did Moses stay on Mount Sinai receiving the Law?",
+    "options": [
+      "40 days and 40 nights",
+      "7 days",
+      "3 days",
+      "1 year"
+    ],
+    "answer": "40 days and 40 nights",
+    "reference": "Exodus 24:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 553,
+    "book": "Exodus",
+    "question": "What material did Aaron use to make the Golden Calf?",
+    "options": [
+      "Golden earrings from the people",
+      "Gold from the Ark",
+      "Golden cups from Egypt",
+      "Golden shields"
+    ],
+    "answer": "Golden earrings from the people",
+    "reference": "Exodus 32:2-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 554,
+    "book": "Exodus",
+    "question": "What covered the Tabernacle by day to show God's presence?",
+    "options": [
+      "A cloud",
+      "A fire",
+      "A wind",
+      "A smoke"
+    ],
+    "answer": "A cloud",
+    "reference": "Exodus 40:34",
+    "difficulty": "easy"
+  },
+  {
+    "id": 596,
+    "book": "Exodus",
+    "question": "Who was the father of Nadab and Abihu?",
+    "options": [
+      "Aaron",
+      "Moses",
+      "Korah",
+      "Eleazar"
+    ],
+    "answer": "Aaron",
+    "reference": "Exodus 6:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 604,
+    "book": "Exodus",
+    "question": "Which is the Fifth Commandment?",
+    "options": [
+      "Honor your father and mother",
+      "You shall not kill",
+      "You shall not steal",
+      "Remember the Sabbath day"
+    ],
+    "answer": "Honor your father and mother",
+    "reference": "Exodus 20:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 605,
+    "book": "Exodus",
+    "question": "Who was the father of the craftsman Bezalel?",
+    "options": [
+      "Uri",
+      "Hur",
+      "Caleb",
+      "Amram"
+    ],
+    "answer": "Uri",
+    "reference": "Exodus 31:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 654,
+    "book": "Exodus",
+    "question": "What was attached to the hem of the High Priest's robe?",
+    "options": [
+      "Bells and Pomegranates",
+      "Tassels of Blue",
+      "Silver Coins",
+      "Tiny Scrolls"
+    ],
+    "answer": "Bells and Pomegranates",
+    "reference": "Exodus 28:33-34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 655,
+    "book": "Exodus",
+    "question": "How long did the Israelites eat Manna?",
+    "options": [
+      "40 years",
+      "7 years",
+      "1 year",
+      "40 days"
+    ],
+    "answer": "40 years",
+    "reference": "Exodus 16:35",
+    "difficulty": "easy"
+  },
+  {
+    "id": 704,
+    "book": "Exodus",
+    "question": "What was the amount of the ransom money every Israelite had to pay for their life?",
+    "options": [
+      "Half a shekel",
+      "One shekel",
+      "Ten shekels",
+      "Two mites"
+    ],
+    "answer": "Half a shekel",
+    "reference": "Exodus 30:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 705,
+    "book": "Exodus",
+    "question": "What wood was used to make the altar of incense?",
+    "options": [
+      "Acacia wood",
+      "Cedar wood",
+      "Olive wood",
+      "Cypress wood"
+    ],
+    "answer": "Acacia wood",
+    "reference": "Exodus 30:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 757,
+    "book": "Exodus",
+    "question": "What sound announced the presence of the Lord on Mount Sinai?",
+    "options": [
+      "A trumpet blast",
+      "A choir of angels",
+      "A mighty wind",
+      "A rushing river"
+    ],
+    "answer": "A trumpet blast",
+    "reference": "Exodus 19:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 796,
+    "book": "Exodus",
+    "question": "What did Moses throw into the air to start the plague of boils?",
+    "options": [
+      "Soot from the kiln/furnace",
+      "Dust from the ground",
+      "Water from the Nile",
+      "Ashes from the altar"
+    ],
+    "answer": "Soot from the kiln/furnace",
+    "reference": "Exodus 9:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 804,
+    "book": "Exodus",
+    "question": "How many pillars were at the entrance of the courtyard of the Tabernacle?",
+    "options": [
+      "Four",
+      "Five",
+      "Ten",
+      "Twelve"
+    ],
+    "answer": "Four",
+    "reference": "Exodus 27:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 805,
+    "book": "Exodus",
+    "question": "What happened to the manna that was kept until the morning on weekdays?",
+    "options": [
+      "It bred worms and stank",
+      "It turned to stone",
+      "It vanished",
+      "It became sweet"
+    ],
+    "answer": "It bred worms and stank",
+    "reference": "Exodus 16:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 856,
+    "book": "Exodus",
+    "question": "What did God show Moses to make the water of Marah sweet?",
+    "options": [
+      "A tree/log",
+      "A rock",
+      "A salt shaker",
+      "A staff"
+    ],
+    "answer": "A tree/log",
+    "reference": "Exodus 15:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 895,
+    "book": "Exodus",
+    "question": "Who was the father of Jethro?",
+    "options": [
+      "Reuel",
+      "Midian",
+      "Esau",
+      "Ishmael"
+    ],
+    "answer": "Reuel",
+    "reference": "Exodus 2:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 904,
+    "book": "Exodus",
+    "question": "What was the name of the hill where Moses stood with the rod of God during the battle with Amalek?",
+    "options": [
+      "The text just says 'top of the hill'",
+      "Mount Sinai",
+      "Mount Horeb",
+      "Mount Nebo"
+    ],
+    "answer": "The text just says 'top of the hill'",
+    "reference": "Exodus 17:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 905,
+    "book": "Exodus",
+    "question": "Who were the two sons of Moses?",
+    "options": [
+      "Gershom and Eliezer",
+      "Nadab and Abihu",
+      "Hophni and Phinehas",
+      "Ephraim and Manasseh"
+    ],
+    "answer": "Gershom and Eliezer",
+    "reference": "Exodus 18:3-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 956,
+    "book": "Exodus",
+    "question": "What did the Israelites have to put on their doorposts during the first Passover?",
+    "options": [
+      "Blood of a lamb",
+      "Oil",
+      "Water",
+      "Hyssop"
+    ],
+    "answer": "Blood of a lamb",
+    "reference": "Exodus 12:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 995,
+    "book": "Exodus",
+    "question": "Who found baby Moses in the river?",
+    "options": [
+      "Pharaoh's daughter",
+      "Miriam",
+      "Jochebed",
+      "Zipporah"
+    ],
+    "answer": "Pharaoh's daughter",
+    "reference": "Exodus 2:5",
+    "difficulty": "easy"
+  }
+]

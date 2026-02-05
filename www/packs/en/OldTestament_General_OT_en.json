@@ -1,0 +1,184 @@
+[
+  {
+    "id": 298,
+    "book": "General OT",
+    "question": "How many books are there in the Old Testament (Protestant canon)?",
+    "options": [
+      "39",
+      "27",
+      "66",
+      "46"
+    ],
+    "answer": "39",
+    "reference": "General Knowledge",
+    "difficulty": "easy"
+  },
+  {
+    "id": 299,
+    "book": "General OT",
+    "question": "What is the Hebrew acronym for the Old Testament (Law, Prophets, Writings)?",
+    "options": [
+      "Tanakh",
+      "Torah",
+      "Talmud",
+      "Mishnah"
+    ],
+    "answer": "Tanakh",
+    "reference": "General Knowledge",
+    "difficulty": "medium"
+  },
+  {
+    "id": 300,
+    "book": "General OT",
+    "question": "Which is the shortest book in the Old Testament?",
+    "options": [
+      "Obadiah",
+      "Joel",
+      "Nahum",
+      "Haggai"
+    ],
+    "answer": "Obadiah",
+    "reference": "General Knowledge",
+    "difficulty": "medium"
+  },
+  {
+    "id": 343,
+    "book": "General OT",
+    "question": "Who was the first person in the Bible to build a city?",
+    "options": [
+      "Cain",
+      "Nimrod",
+      "Adam",
+      "Noah"
+    ],
+    "answer": "Cain",
+    "reference": "Genesis 4:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 400,
+    "book": "General OT",
+    "question": "What is the collective name for the first five books of the Bible?",
+    "options": [
+      "Pentateuch",
+      "Gospels",
+      "Epistles",
+      "Wisdom Books"
+    ],
+    "answer": "Pentateuch",
+    "reference": "General Knowledge",
+    "difficulty": "easy"
+  },
+  {
+    "id": 449,
+    "book": "General OT",
+    "question": "What is the name of the Greek translation of the Old Testament?",
+    "options": [
+      "Septuagint",
+      "Vulgate",
+      "Torah",
+      "Masoretic Text"
+    ],
+    "answer": "Septuagint",
+    "reference": "General Knowledge",
+    "difficulty": "hard"
+  },
+  {
+    "id": 493,
+    "book": "General OT",
+    "question": "What is the longest name in the Bible (found in Isaiah)?",
+    "options": [
+      "Maher-shalal-hash-baz",
+      "Nebuchadnezzar",
+      "Zaphenath-Paneah",
+      "Tilgath-Pilneser"
+    ],
+    "answer": "Maher-shalal-hash-baz",
+    "reference": "Isaiah 8:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 494,
+    "book": "General OT",
+    "question": "Which verse is commonly cited as the center verse of the Bible?",
+    "options": [
+      "Psalm 118:8",
+      "John 3:16",
+      "Genesis 1:1",
+      "Psalm 23:1"
+    ],
+    "answer": "Psalm 118:8",
+    "reference": "General Knowledge",
+    "difficulty": "medium"
+  },
+  {
+    "id": 600,
+    "book": "General OT",
+    "question": "Which is the longest book in the Bible by word count?",
+    "options": [
+      "Jeremiah",
+      "Psalms",
+      "Genesis",
+      "Isaiah"
+    ],
+    "answer": "Jeremiah",
+    "reference": "General Knowledge",
+    "difficulty": "hard"
+  },
+  {
+    "id": 649,
+    "book": "General OT",
+    "question": "Who walked with God and was no more, because God took him?",
+    "options": [
+      "Enoch",
+      "Elijah",
+      "Noah",
+      "Moses"
+    ],
+    "answer": "Enoch",
+    "reference": "Genesis 5:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 650,
+    "book": "General OT",
+    "question": "What is the collective name for the books of Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon?",
+    "options": [
+      "The Poetic Books (or Wisdom Literature)",
+      "The Pentateuch",
+      "The Major Prophets",
+      "The Historical Books"
+    ],
+    "answer": "The Poetic Books (or Wisdom Literature)",
+    "reference": "General Knowledge",
+    "difficulty": "easy"
+  },
+  {
+    "id": 699,
+    "book": "General OT",
+    "question": "What is the Hebrew name for the 'Law' (first 5 books)?",
+    "options": [
+      "Torah",
+      "Nevi'im",
+      "Ketuvim",
+      "Halakhah"
+    ],
+    "answer": "Torah",
+    "reference": "General Knowledge",
+    "difficulty": "easy"
+  },
+  {
+    "id": 700,
+    "book": "General OT",
+    "question": "Which man was known for having a coat of many colors?",
+    "options": [
+      "Joseph",
+      "David",
+      "Solomon",
+      "Benjamin"
+    ],
+    "answer": "Joseph",
+    "reference": "Genesis 37:3",
+    "difficulty": "easy"
+  }
+]

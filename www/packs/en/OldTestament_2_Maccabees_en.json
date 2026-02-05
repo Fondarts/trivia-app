@@ -1,0 +1,618 @@
+[
+  {
+    "id": 1201,
+    "book": "2 Maccabees",
+    "question": "¿Quién es el autor original cuya obra de cinco volúmenes resume el escritor de 2 Macabeos?",
+    "options": [
+      "Jasón de Cirene",
+      "Judas Macabeo",
+      "Simón el Sumo Sacerdote",
+      "Nehemías"
+    ],
+    "answer": "Jasón de Cirene",
+    "reference": "2 Macabeos 2:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1202,
+    "book": "2 Maccabees",
+    "question": "¿Qué oficial intentó confiscar el tesoro del Templo pero fue detenido por una aparición divina a caballo?",
+    "options": [
+      "Heliodoro",
+      "Nicanor",
+      "Antíoco",
+      "Lisias"
+    ],
+    "answer": "Heliodoro",
+    "reference": "2 Macabeos 3:25-26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1203,
+    "book": "2 Maccabees",
+    "question": "¿Qué objetos sagrados escondió el profeta Jeremías en una cueva en el monte?",
+    "options": [
+      "El Tabernáculo, el Arca y el Altar del incienso",
+      "La Menorá y la mesa de los panes",
+      "Las vestiduras de Aarón",
+      "La espada de Goliat"
+    ],
+    "answer": "El Tabernáculo, el Arca y el Altar del incienso",
+    "reference": "2 Macabeos 2:4-5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1204,
+    "book": "2 Maccabees",
+    "question": "¿Quién compró el sumo sacerdocio ofreciendo plata al rey y promovió costumbres griegas?",
+    "options": [
+      "Jasón",
+      "Onías",
+      "Simón",
+      "Eleazar"
+    ],
+    "answer": "Jasón",
+    "reference": "2 Macabeos 4:7-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1205,
+    "book": "2 Maccabees",
+    "question": "¿Qué anciano escriba prefirió morir antes que comer carne de cerdo?",
+    "options": [
+      "Eleazar",
+      "Razis",
+      "Onías",
+      "Matatías"
+    ],
+    "answer": "Eleazar",
+    "reference": "2 Macabeos 6:18-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1206,
+    "book": "2 Maccabees",
+    "question": "¿Cuántos hermanos fueron torturados y muertos junto a su madre por el rey Antíoco?",
+    "options": [
+      "Siete",
+      "Tres",
+      "Doce",
+      "Cinco"
+    ],
+    "answer": "Siete",
+    "reference": "2 Macabeos 7:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1207,
+    "book": "2 Maccabees",
+    "question": "¿Cuál era la esperanza principal que expresaban los siete hermanos al morir?",
+    "options": [
+      "La resurrección y la vida eterna",
+      "La venganza política",
+      "La conquista de Roma",
+      "La riqueza en el cielo"
+    ],
+    "answer": "La resurrección y la vida eterna",
+    "reference": "2 Macabeos 7:9, 14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1208,
+    "book": "2 Maccabees",
+    "question": "La madre de los siete hermanos animó a sus hijos recordándoles que Dios creó el mundo de...",
+    "options": [
+      "La nada",
+      "Materia preexistente",
+      "Caos y agua",
+      "Fuego"
+    ],
+    "answer": "La nada",
+    "reference": "2 Macabeos 7:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1209,
+    "book": "2 Maccabees",
+    "question": "¿Qué figura bíblica apareció en una visión a Judas Macabeo entregándole una espada dorada?",
+    "options": [
+      "Jeremías",
+      "Elías",
+      "Moisés",
+      "David"
+    ],
+    "answer": "Jeremías",
+    "reference": "2 Macabeos 15:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1210,
+    "book": "2 Maccabees",
+    "question": "¿Por qué ofreció Judas Macabeo un sacrificio por los soldados caídos que tenían amuletos de ídolos?",
+    "options": [
+      "Para que fueran liberados de su pecado (oración por los muertos)",
+      "Para purificar el campamento",
+      "Para calmar la ira de Dios en la batalla",
+      "Para celebrar la victoria"
+    ],
+    "answer": "Para que fueran liberados de su pecado (oración por los muertos)",
+    "reference": "2 Macabeos 12:43-45",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1211,
+    "book": "2 Maccabees",
+    "question": "¿Cómo murió Antíoco Epífanes según 2 Macabeos 9?",
+    "options": [
+      "Herido de dolor en las entrañas y gusanos saliendo de su cuerpo",
+      "En batalla gloriosa",
+      "Asesinado por su hijo",
+      "Ahogado en el mar"
+    ],
+    "answer": "Herido de dolor en las entrañas y gusanos saliendo de su cuerpo",
+    "reference": "2 Maccabees 9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1301,
+    "book": "2 Maccabees",
+    "question": "To whom is the first letter in 2 Maccabees addressed?",
+    "options": [
+      "The Jewish brethren in Egypt",
+      "The Jews in Babylon",
+      "The Romans",
+      "The Spartans"
+    ],
+    "answer": "The Jewish brethren in Egypt",
+    "reference": "2 Maccabees 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1302,
+    "book": "2 Maccabees",
+    "question": "What substance did Nehemiah sprinkle on the wood and sacrifices, which ignited a great fire?",
+    "options": [
+      "Thick water (Naphtha)",
+      "Oil",
+      "Sulfur",
+      "Alcohol"
+    ],
+    "answer": "Thick water (Naphtha)",
+    "reference": "2 Maccabees 1:20-36",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1303,
+    "book": "2 Maccabees",
+    "question": "Who was the High Priest described as a 'zealot for the laws' and a benefactor of the city?",
+    "options": [
+      "Onias III",
+      "Jason",
+      "Menelaus",
+      "Simon"
+    ],
+    "answer": "Onias III",
+    "reference": "2 Maccabees 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1304,
+    "book": "2 Maccabees",
+    "question": "Who was the administrator of the temple who falsely informed the king about the treasury funds?",
+    "options": [
+      "Simon",
+      "Heliodorus",
+      "Apollonius",
+      "Nicanor"
+    ],
+    "answer": "Simon",
+    "reference": "2 Maccabees 3:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1305,
+    "book": "2 Maccabees",
+    "question": "Menelaus secured the high priesthood by...",
+    "options": [
+      "Outbidding Jason with more money",
+      "Being the rightful heir",
+      "Winning a battle",
+      "A vision from God"
+    ],
+    "answer": "Outbidding Jason with more money",
+    "reference": "2 Maccabees 4:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1306,
+    "book": "2 Maccabees",
+    "question": "What did Menelaus steal to pay his bribes to Andronicus?",
+    "options": [
+      "Gold vessels from the temple",
+      "The King's crown",
+      "The Ark of the Covenant",
+      "Tax money"
+    ],
+    "answer": "Gold vessels from the temple",
+    "reference": "2 Maccabees 4:32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1307,
+    "book": "2 Maccabees",
+    "question": "What ominous sign was seen in the sky over Jerusalem for 40 days?",
+    "options": [
+      "Horsemen in golden armor charging",
+      "A solar eclipse",
+      "A comet shaped like a sword",
+      "Blood raining down"
+    ],
+    "answer": "Horsemen in golden armor charging",
+    "reference": "2 Maccabees 5:2-3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1308,
+    "book": "2 Maccabees",
+    "question": "Where did Jason the usurper eventually die in exile?",
+    "options": [
+      "Among the Lacedaemonians (Spartans)",
+      "In Egypt",
+      "In Babylon",
+      "In Rome"
+    ],
+    "answer": "Among the Lacedaemonians (Spartans)",
+    "reference": "2 Maccabees 5:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1309,
+    "book": "2 Maccabees",
+    "question": "The author compares the celebration of the temple purification to which feast?",
+    "options": [
+      "Feast of Tabernacles (Booths)",
+      "Passover",
+      "Pentecost",
+      "Purim"
+    ],
+    "answer": "Feast of Tabernacles (Booths)",
+    "reference": "2 Maccabees 10:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1310,
+    "book": "2 Maccabees",
+    "question": "Who was the elder called the 'father of the Jews' who committed suicide to avoid capture?",
+    "options": [
+      "Razis",
+      "Eleazar",
+      "Mattathias",
+      "Onias"
+    ],
+    "answer": "Razis",
+    "reference": "2 Maccabees 14:37-46",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1311,
+    "book": "2 Maccabees",
+    "question": "What did the mother of the seven martyrs say to her youngest son?",
+    "options": [
+      "Do not fear this butcher, but prove worthy of your brothers",
+      "Save yourself",
+      "Run away",
+      "Obey the king"
+    ],
+    "answer": "Do not fear this butcher, but prove worthy of your brothers",
+    "reference": "2 Maccabees 7:29",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1312,
+    "book": "2 Maccabees",
+    "question": "How was Menelaus executed?",
+    "options": [
+      "Thrown into a tower of ashes",
+      "Beheaded",
+      "Crucified",
+      "Stoned"
+    ],
+    "answer": "Thrown into a tower of ashes",
+    "reference": "2 Maccabees 13:5-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1313,
+    "book": "2 Maccabees",
+    "question": "In Judas's dream, who was praying for the whole body of the Jews?",
+    "options": [
+      "Onias (the former High Priest)",
+      "Moses",
+      "David",
+      "Abraham"
+    ],
+    "answer": "Onias (the former High Priest)",
+    "reference": "2 Maccabees 15:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1314,
+    "book": "2 Maccabees",
+    "question": "What did the prophet Jeremiah give to Judas in his vision?",
+    "options": [
+      "A golden sword",
+      "A shield of fire",
+      "A scroll",
+      "A crown"
+    ],
+    "answer": "A golden sword",
+    "reference": "2 Maccabees 15:15-16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1315,
+    "book": "2 Maccabees",
+    "question": "What happened to Nicanor's head and right hand?",
+    "options": [
+      "They were cut off and hung from the citadel",
+      "They were buried",
+      "They were sent to the king",
+      "They were burned"
+    ],
+    "answer": "They were cut off and hung from the citadel",
+    "reference": "2 Maccabees 15:35",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1316,
+    "book": "2 Maccabees",
+    "question": "What day was established to celebrate the victory over Nicanor?",
+    "options": [
+      "The thirteenth of Adar",
+      "The first of Nisan",
+      "The tenth of Tishri",
+      "The twenty-fifth of Kislev"
+    ],
+    "answer": "The thirteenth of Adar",
+    "reference": "2 Maccabees 15:36",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1317,
+    "book": "2 Maccabees",
+    "question": "How does the author end the book of 2 Maccabees?",
+    "options": [
+      "With a comparison to drinking wine and water",
+      "With a prayer",
+      "With a curse on Rome",
+      "With a genealogy"
+    ],
+    "answer": "With a comparison to drinking wine and water",
+    "reference": "2 Maccabees 15:39",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1318,
+    "book": "2 Maccabees",
+    "question": "Antiochus IV was often called 'Epiphanes' (God Manifest), but some called him 'Epimanes', meaning...",
+    "options": [
+      "Madman",
+      "Conqueror",
+      "Beast",
+      "Fool"
+    ],
+    "answer": "Madman",
+    "reference": "Historical Context (implied in text's portrayal)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1319,
+    "book": "2 Maccabees",
+    "question": "What Greek custom did Jason introduce to Jerusalem?",
+    "options": [
+      "A gymnasium",
+      "A theater",
+      "A chariot race",
+      "A library"
+    ],
+    "answer": "A gymnasium",
+    "reference": "2 Maccabees 4:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1320,
+    "book": "2 Maccabees",
+    "question": "What did the priests neglect in order to participate in the games?",
+    "options": [
+      "The sacrifices/service of the altar",
+      "Their families",
+      "Study of Torah",
+      "Prayer"
+    ],
+    "answer": "The sacrifices/service of the altar",
+    "reference": "2 Maccabees 4:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1321,
+    "book": "2 Maccabees",
+    "question": "Who murdered the good High Priest Onias III?",
+    "options": [
+      "Andronicus",
+      "Menelaus",
+      "Jason",
+      "Lysimachus"
+    ],
+    "answer": "Andronicus",
+    "reference": "2 Maccabees 4:34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1322,
+    "book": "2 Maccabees",
+    "question": "What happened to Lysimachus when the people revolted against the church robbery?",
+    "options": [
+      "He was killed beside the treasury",
+      "He escaped",
+      "He became king",
+      "He repented"
+    ],
+    "answer": "He was killed beside the treasury",
+    "reference": "2 Maccabees 4:42",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1323,
+    "book": "2 Maccabees",
+    "question": "Who was the governor of Coelesyria who sympathized with the Jews but poisoned himself?",
+    "options": [
+      "Ptolemy Macron",
+      "Nicanor",
+      "Gorgias",
+      "Timothy"
+    ],
+    "answer": "Ptolemy Macron",
+    "reference": "2 Maccabees 10:12-13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1324,
+    "book": "2 Maccabees",
+    "question": "In the torture of the seven brothers, what was the first brother's punishment?",
+    "options": [
+      "His tongue was cut out and he was fried in a pan",
+      "He was beheaded",
+      "He was stoned",
+      "He was drowned"
+    ],
+    "answer": "His tongue was cut out and he was fried in a pan",
+    "reference": "2 Maccabees 7:3-5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1325,
+    "book": "2 Maccabees",
+    "question": "What did Judas find under the tunics of the fallen soldiers at Jamnia?",
+    "options": [
+      "Sacred tokens/amulets of the idols of Jamnia",
+      "Gold coins",
+      "Letters to the enemy",
+      "Food"
+    ],
+    "answer": "Sacred tokens/amulets of the idols of Jamnia",
+    "reference": "2 Maccabees 12:40",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1326,
+    "book": "2 Maccabees",
+    "question": "What happened to the holy fire when the priests were exiled to Persia?",
+    "options": [
+      "It was hidden in a dry cistern",
+      "It went out forever",
+      "It was taken to heaven",
+      "It turned to ice"
+    ],
+    "answer": "It was hidden in a dry cistern",
+    "reference": "2 Maccabees 1:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1327,
+    "book": "2 Maccabees",
+    "question": "Who was the old scribe who spat out the swine's flesh?",
+    "options": [
+      "Eleazar",
+      "Mattathias",
+      "Simeon",
+      "John"
+    ],
+    "answer": "Eleazar",
+    "reference": "2 Maccabees 6:18-19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1328,
+    "book": "2 Maccabees",
+    "question": "What did the king name the temple in Jerusalem?",
+    "options": [
+      "Temple of Olympian Zeus",
+      "Temple of Jupiter",
+      "Temple of Baal",
+      "Temple of Antiochus"
+    ],
+    "answer": "Temple of Olympian Zeus",
+    "reference": "2 Maccabees 6:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1329,
+    "book": "2 Maccabees",
+    "question": "How did the youngest of the seven brothers view his death?",
+    "options": [
+      "As a payment/ransom for the nation's sins",
+      "As a tragedy",
+      "As a defeat",
+      "As an accident"
+    ],
+    "answer": "As a payment/ransom for the nation's sins",
+    "reference": "2 Maccabees 7:37-38",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1330,
+    "book": "2 Maccabees",
+    "question": "What physical ailment struck Antiochus IV?",
+    "options": [
+      "A pain in his bowels and worms swarming",
+      "Blindness",
+      "Leprosy",
+      "Paralysis"
+    ],
+    "answer": "A pain in his bowels and worms swarming",
+    "reference": "2 Maccabees 9:5-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1331,
+    "book": "2 Maccabees",
+    "question": "To whom did Antiochus vow he would become a Jew?",
+    "options": [
+      "God",
+      "Judas",
+      "The High Priest",
+      "No one"
+    ],
+    "answer": "God",
+    "reference": "2 Maccabees 9:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1332,
+    "book": "2 Maccabees",
+    "question": "Who succeeded Antiochus IV?",
+    "options": [
+      "Antiochus V Eupator",
+      "Demetrius",
+      "Seleucus",
+      "Alexander"
+    ],
+    "answer": "Antiochus V Eupator",
+    "reference": "2 Maccabees 10:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1333,
+    "book": "2 Maccabees",
+    "question": "Who was Callisthenes?",
+    "options": [
+      "A man who had set fire to the sacred gates, burned by Jews",
+      "A general",
+      "A priest",
+      "A Greek philosopher"
+    ],
+    "answer": "A man who had set fire to the sacred gates, burned by Jews",
+    "reference": "2 Maccabees 8:33",
+    "difficulty": "hard"
+  }
+]

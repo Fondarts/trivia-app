@@ -138,24 +138,89 @@ export function difficultyFilter(arr, diff) {
 // Cache para packs de archivos cargados
 const filePackCache = new Map();
 
-/** Devuelve la lista única de libros en un pack por archivo (para el submenú Book). */
-export async function getBooksInFilePack(lang, fileName) {
+/** Obtiene todos los archivos de un pack desde el manifest. */
+async function getPackFiles(lang, fileName) {
+  try {
+    const manifestUrl = `${PACKS_BASE}/${lang}/manifest.json`;
+    const res = await fetch(manifestUrl);
+    if (!res.ok) return null;
+    const manifest = await res.json();
+    if (!manifest.packs || !Array.isArray(manifest.packs)) return null;
+    
+    for (const pack of manifest.packs) {
+      if (pack.files && Array.isArray(pack.files) && pack.files.includes(fileName)) {
+        return pack.files; // Retorna todos los archivos del pack
+      }
+    }
+    return null; // No encontrado en ningún pack
+  } catch (e) {
+    return null;
+  }
+}
+
+/** Carga un archivo JSON y normaliza sus preguntas. */
+async function loadAndNormalizeFile(lang, fileName) {
   const cacheKey = `${lang}:${fileName}`;
   if (filePackCache.has(cacheKey)) {
-    const pool = filePackCache.get(cacheKey);
-    const books = [...new Set(pool.map(q => q.book).filter(Boolean))].sort();
-    return books;
+    return filePackCache.get(cacheKey);
   }
+  
   const url = `${PACKS_BASE}/${lang}/${fileName}`;
   try {
     const res = await fetch(url);
     if (!res.ok) return [];
     const arr = await res.json();
     if (!Array.isArray(arr)) return [];
-    return [...new Set(arr.map(q => q.book).filter(b => b != null && String(b).trim()))].sort();
+    
+    const base = url.substring(0, url.lastIndexOf('/') + 1);
+    const pool = arr.map(q => {
+      const normalized = normalizeQuestion(q, q.category || 'misc', q.book);
+      if (!normalized) return null;
+      
+      let imgUrl = null;
+      if (q.img && typeof q.img === 'string') {
+        if (/^https?:\/\//.test(q.img)) {
+          imgUrl = q.img;
+        } else {
+          let imgPath = q.img.replace(/^\.\//, '');
+          if (imgPath.startsWith('../')) {
+            const resolvedPath = imgPath.replace(/^\.\.\//, '');
+            imgUrl = `${PACKS_BASE}/${resolvedPath}`.replace(/\/+/g, '/');
+          } else {
+            imgUrl = base + imgPath;
+          }
+        }
+      }
+      return { ...normalized, img: imgUrl };
+    }).filter(q => q !== null);
+    
+    filePackCache.set(cacheKey, pool);
+    return pool;
   } catch (e) {
     return [];
   }
+}
+
+/** Devuelve la lista única de libros en un pack por archivo (para el submenú Book). */
+export async function getBooksInFilePack(lang, fileName) {
+  // Verificar si este archivo pertenece a un pack con múltiples archivos
+  const packFiles = await getPackFiles(lang, fileName);
+  
+  if (packFiles && packFiles.length > 1) {
+    // Cargar todos los archivos del pack y combinar libros
+    const allBooks = new Set();
+    for (const file of packFiles) {
+      const pool = await loadAndNormalizeFile(lang, file);
+      pool.forEach(q => {
+        if (q.book && q.book !== 'General OT') allBooks.add(q.book);
+      });
+    }
+    return Array.from(allBooks).sort();
+  }
+  
+  // Si es un archivo único, cargar solo ese
+  const pool = await loadAndNormalizeFile(lang, fileName);
+  return [...new Set(pool.map(q => q.book).filter(b => b && b !== 'General OT'))].sort();
 }
 
 export async function buildDeckSingle(categoryKey, count, diff = 'any', customPool = null, bookFilter = null) {
@@ -171,55 +236,29 @@ export async function buildDeckSingle(categoryKey, count, diff = 'any', customPo
       if (parts.length >= 3) {
         const lang = parts[1];
         const fileName = parts.slice(2).join(':'); // Por si el nombre tiene ':'
-        const cacheKey = `${lang}:${fileName}`;
         
-        // Verificar cache primero
-        if (filePackCache.has(cacheKey)) {
-          pool = [...filePackCache.get(cacheKey)];
-        } else {
-          // Cargar el archivo
-          const url = `${PACKS_BASE}/${lang}/${fileName}`;
-          const res = await fetch(url);
-          if (res.ok) {
-            const arr = await res.json();
-            if (Array.isArray(arr)) {
-              // Calcular la base URL para resolver rutas relativas de imágenes
-              const base = url.substring(0, url.lastIndexOf('/') + 1);
-              
-              pool = arr.map(q => {
-                const normalized = normalizeQuestion(q, q.category || 'misc', q.book);
-                if (!normalized) return null;
-                // Resolver ruta de imagen: si es URL absoluta, usarla; si es relativa, resolver desde base
-                let imgUrl = null;
-                if (q.img && typeof q.img === 'string') {
-                  if (/^https?:\/\//.test(q.img)) {
-                    imgUrl = q.img;
-                  } else {
-                    let imgPath = q.img.replace(/^\.\//, '');
-                    if (imgPath.startsWith('../')) {
-                      const resolvedPath = imgPath.replace(/^\.\.\//, '');
-                      imgUrl = `${PACKS_BASE}/${resolvedPath}`.replace(/\/+/g, '/');
-                    } else {
-                      imgUrl = base + imgPath;
-                    }
-                  }
-                }
-                return { ...normalized, img: imgUrl };
-              }).filter(q => q !== null);
-              
-              // Guardar en cache
-              filePackCache.set(cacheKey, pool);
-            }
-          } else {
-
+        // Verificar si este archivo pertenece a un pack con múltiples archivos
+        const packFiles = await getPackFiles(lang, fileName);
+        
+        if (packFiles && packFiles.length > 1) {
+          // Cargar todos los archivos del pack y combinar
+          const allPools = [];
+          for (const file of packFiles) {
+            const filePool = await loadAndNormalizeFile(lang, file);
+            allPools.push(...filePool);
           }
+          pool = allPools;
+        } else {
+          // Cargar solo el archivo seleccionado
+          pool = await loadAndNormalizeFile(lang, fileName);
         }
+        
+        // Aplicar filtro de libro si existe
         if (bookFilter && pool.length) {
           pool = pool.filter(q => q && q.book === bookFilter);
         }
       }
     } catch(e) {
-
       pool = [];
     }
   } else if (String(categoryKey||'').startsWith('userpack:')) {

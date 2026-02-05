@@ -1,0 +1,562 @@
+[
+  {
+    "id": 6,
+    "book": "Judges",
+    "question": "What was the secret of Samson's strength?",
+    "options": [
+      "His diet",
+      "His prayer",
+      "His hair",
+      "His sword"
+    ],
+    "answer": "His hair",
+    "reference": "Judges 16:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 15,
+    "book": "Judges",
+    "question": "Which judge defeated the Midianites with only 300 men?",
+    "options": [
+      "Samson",
+      "Gideon",
+      "Jephthah",
+      "Deborah"
+    ],
+    "answer": "Gideon",
+    "reference": "Judges 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 46,
+    "book": "Judges",
+    "question": "Who killed the commander Sisera by driving a tent peg through his temple?",
+    "options": [
+      "Deborah",
+      "Jael",
+      "Delilah",
+      "Ruth"
+    ],
+    "answer": "Jael",
+    "reference": "Judges 4:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 75,
+    "book": "Judges",
+    "question": "Which judge made a foolish vow that cost him his daughter?",
+    "options": [
+      "Gideon",
+      "Samson",
+      "Jephthah",
+      "Ehud"
+    ],
+    "answer": "Jephthah",
+    "reference": "Judges 11:30-34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 111,
+    "book": "Judges",
+    "question": "Which judge was left-handed and killed King Eglon?",
+    "options": [
+      "Ehud",
+      "Shamgar",
+      "Barak",
+      "Othniel"
+    ],
+    "answer": "Ehud",
+    "reference": "Judges 3:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 112,
+    "book": "Judges",
+    "question": "What object did Gideon use to test God's will?",
+    "options": [
+      "A staff",
+      "A fleece of wool",
+      "A shield",
+      "A trumpet"
+    ],
+    "answer": "A fleece of wool",
+    "reference": "Judges 6:37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 160,
+    "book": "Judges",
+    "question": "Which judge refused to be king, saying 'The Lord shall rule over you'?",
+    "options": [
+      "Gideon",
+      "Samson",
+      "Jephthah",
+      "Abimelech"
+    ],
+    "answer": "Gideon",
+    "reference": "Judges 8:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 161,
+    "book": "Judges",
+    "question": "Who killed 600 Philistines with an oxgoad?",
+    "options": [
+      "Shamgar",
+      "Samson",
+      "Barak",
+      "Gideon"
+    ],
+    "answer": "Shamgar",
+    "reference": "Judges 3:31",
+    "difficulty": "hard"
+  },
+  {
+    "id": 198,
+    "book": "Judges",
+    "question": "Which tribe was nearly wiped out in a civil war at the end of Judges?",
+    "options": [
+      "Benjamin",
+      "Dan",
+      "Ephraim",
+      "Judah"
+    ],
+    "answer": "Benjamin",
+    "reference": "Judges 20:46-48",
+    "difficulty": "hard"
+  },
+  {
+    "id": 208,
+    "book": "Judges",
+    "question": "Who killed the usurper Abimelech by dropping a millstone on his head?",
+    "options": [
+      "A certain woman",
+      "Gideon",
+      "Jotham",
+      "Samson"
+    ],
+    "answer": "A certain woman",
+    "reference": "Judges 9:53",
+    "difficulty": "hard"
+  },
+  {
+    "id": 244,
+    "book": "Judges",
+    "question": "Who told the parable of the trees trying to appoint a king?",
+    "options": [
+      "Jotham",
+      "Gideon",
+      "Samson",
+      "Jephthah"
+    ],
+    "answer": "Jotham",
+    "reference": "Judges 9:7-15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 259,
+    "book": "Judges",
+    "question": "What word was used as a password to identify the Ephraimites?",
+    "options": [
+      "Shibboleth",
+      "Hallelujah",
+      "Jehovah",
+      "Gilgal"
+    ],
+    "answer": "Shibboleth",
+    "reference": "Judges 12:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 260,
+    "book": "Judges",
+    "question": "Who was Samson's father?",
+    "options": [
+      "Manoah",
+      "Elkanah",
+      "Jesse",
+      "Boaz"
+    ],
+    "answer": "Manoah",
+    "reference": "Judges 13:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 311,
+    "book": "Judges",
+    "question": "Who was the first Judge of Israel?",
+    "options": [
+      "Othniel",
+      "Ehud",
+      "Shamgar",
+      "Barak"
+    ],
+    "answer": "Othniel",
+    "reference": "Judges 3:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 312,
+    "book": "Judges",
+    "question": "Which king had his thumbs and big toes cut off?",
+    "options": [
+      "Adoni-Bezek",
+      "Eglon",
+      "Agag",
+      "Jabin"
+    ],
+    "answer": "Adoni-Bezek",
+    "reference": "Judges 1:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 313,
+    "book": "Judges",
+    "question": "How much silver did the Philistine lords offer Delilah to betray Samson?",
+    "options": [
+      "1100 pieces each",
+      "30 pieces",
+      "500 shekels",
+      "A talent of gold"
+    ],
+    "answer": "1100 pieces each",
+    "reference": "Judges 16:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 345,
+    "book": "Judges",
+    "question": "Which tribe was forbidden from marrying the other tribes after a civil war?",
+    "options": [
+      "Benjamin",
+      "Dan",
+      "Levi",
+      "Simeon"
+    ],
+    "answer": "Benjamin",
+    "reference": "Judges 21:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 362,
+    "book": "Judges",
+    "question": "Barak refused to go into battle unless this person went with him:",
+    "options": [
+      "Deborah",
+      "Gideon",
+      "Samson",
+      "Jael"
+    ],
+    "answer": "Deborah",
+    "reference": "Judges 4:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 363,
+    "book": "Judges",
+    "question": "Which judge had 70 sons and was killed by a woman dropping a stone on him?",
+    "options": [
+      "Abimelech",
+      "Jair",
+      "Tola",
+      "Ibzan"
+    ],
+    "answer": "Abimelech",
+    "reference": "Judges 9:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 412,
+    "book": "Judges",
+    "question": "Which man in the book of Judges stole 1,100 shekels of silver from his mother and made an idol?",
+    "options": [
+      "Micah",
+      "Samson",
+      "Gideon",
+      "Jephthah"
+    ],
+    "answer": "Micah",
+    "reference": "Judges 17:1-4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 461,
+    "book": "Judges",
+    "question": "Who was the husband of Jael (the woman who killed Sisera)?",
+    "options": [
+      "Heber the Kenite",
+      "Barak",
+      "Lapidoth",
+      "Othniel"
+    ],
+    "answer": "Heber the Kenite",
+    "reference": "Judges 4:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 462,
+    "book": "Judges",
+    "question": "How many foxes did Samson catch and tie torches to their tails?",
+    "options": [
+      "300",
+      "100",
+      "50",
+      "12"
+    ],
+    "answer": "300",
+    "reference": "Judges 15:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 509,
+    "book": "Judges",
+    "question": "Which minor judge had 30 sons who rode on 30 donkeys?",
+    "options": [
+      "Jair",
+      "Tola",
+      "Ibzan",
+      "Elon"
+    ],
+    "answer": "Jair",
+    "reference": "Judges 10:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 559,
+    "book": "Judges",
+    "question": "What did Jael give Sisera to drink when he asked for water?",
+    "options": [
+      "Milk",
+      "Wine",
+      "Vinegar",
+      "Grape juice"
+    ],
+    "answer": "Milk",
+    "reference": "Judges 4:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 560,
+    "book": "Judges",
+    "question": "What was the name of the very fat King of Moab killed by Ehud?",
+    "options": [
+      "Eglon",
+      "Sihon",
+      "Og",
+      "Balak"
+    ],
+    "answer": "Eglon",
+    "reference": "Judges 3:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 612,
+    "book": "Judges",
+    "question": "What was Gideon's other name?",
+    "options": [
+      "Jerubbaal",
+      "Jeshurun",
+      "Jedidiah",
+      "Jether"
+    ],
+    "answer": "Jerubbaal",
+    "reference": "Judges 6:32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 613,
+    "book": "Judges",
+    "question": "Who stole the gates of the city of Gaza and carried them to the top of a hill?",
+    "options": [
+      "Samson",
+      "Gideon",
+      "David",
+      "Goliath"
+    ],
+    "answer": "Samson",
+    "reference": "Judges 16:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 662,
+    "book": "Judges",
+    "question": "After Gideon died, the people turned back to worship which god?",
+    "options": [
+      "Baal-Berith",
+      "Dagon",
+      "Molech",
+      "Chemosh"
+    ],
+    "answer": "Baal-Berith",
+    "reference": "Judges 8:33",
+    "difficulty": "hard"
+  },
+  {
+    "id": 663,
+    "book": "Judges",
+    "question": "How many men of Benjamin were left after the civil war in Judges?",
+    "options": [
+      "600",
+      "7,000",
+      "12",
+      "144,000"
+    ],
+    "answer": "600",
+    "reference": "Judges 20:47",
+    "difficulty": "hard"
+  },
+  {
+    "id": 714,
+    "book": "Judges",
+    "question": "Which judge saved Israel from the King of Mesopotamia (Cushan-Rishathaim)?",
+    "options": [
+      "Othniel",
+      "Ehud",
+      "Shamgar",
+      "Deborah"
+    ],
+    "answer": "Othniel",
+    "reference": "Judges 3:8-9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 715,
+    "book": "Judges",
+    "question": "What was the name of Gideon's father?",
+    "options": [
+      "Joash",
+      "Jesse",
+      "Manoah",
+      "Elkanah"
+    ],
+    "answer": "Joash",
+    "reference": "Judges 6:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 762,
+    "book": "Judges",
+    "question": "Which judge had 40 sons and 30 grandsons?",
+    "options": [
+      "Abdon",
+      "Ibzan",
+      "Elon",
+      "Jair"
+    ],
+    "answer": "Abdon",
+    "reference": "Judges 12:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 814,
+    "book": "Judges",
+    "question": "Who was the father of the judge Jephthah?",
+    "options": [
+      "Gilead",
+      "Manoah",
+      "Joash",
+      "Othniel"
+    ],
+    "answer": "Gilead",
+    "reference": "Judges 11:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 815,
+    "book": "Judges",
+    "question": "What did the Philistines do to Samson after capturing him?",
+    "options": [
+      "Gouged out his eyes",
+      "Cut off his hands",
+      "Broke his legs",
+      "Silenced his tongue"
+    ],
+    "answer": "Gouged out his eyes",
+    "reference": "Judges 16:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 861,
+    "book": "Judges",
+    "question": "Who killed Eglon the fat king of Moab?",
+    "options": [
+      "Ehud",
+      "Shamgar",
+      "Othniel",
+      "Gideon"
+    ],
+    "answer": "Ehud",
+    "reference": "Judges 3:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 900,
+    "book": "Judges",
+    "question": "Which tribe was the judge Samson from?",
+    "options": [
+      "Dan",
+      "Judah",
+      "Ephraim",
+      "Benjamin"
+    ],
+    "answer": "Dan",
+    "reference": "Judges 13:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 914,
+    "book": "Judges",
+    "question": "Which judge was buried in Shamir?",
+    "options": [
+      "Tola",
+      "Jair",
+      "Ibzan",
+      "Elon"
+    ],
+    "answer": "Tola",
+    "reference": "Judges 10:1-2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 915,
+    "book": "Judges",
+    "question": "Who said, 'Out of the eater came something to eat, and out of the strong came something sweet'?",
+    "options": [
+      "Samson",
+      "Gideon",
+      "Jephthah",
+      "Barak"
+    ],
+    "answer": "Samson",
+    "reference": "Judges 14:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 961,
+    "book": "Judges",
+    "question": "How did Jael kill Sisera?",
+    "options": [
+      "She drove a tent peg through his temple",
+      "She poisoned him",
+      "She stabbed him with a sword",
+      "She strangled him"
+    ],
+    "answer": "She drove a tent peg through his temple",
+    "reference": "Judges 4:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1000,
+    "book": "Judges",
+    "question": "Who was the strongest man in the Bible?",
+    "options": [
+      "Samson",
+      "Gideon",
+      "David",
+      "Goliath"
+    ],
+    "answer": "Samson",
+    "reference": "Judges 13-16",
+    "difficulty": "easy"
+  }
+]

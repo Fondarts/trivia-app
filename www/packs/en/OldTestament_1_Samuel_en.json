@@ -1,0 +1,688 @@
+[
+  {
+    "id": 3,
+    "book": "1 Samuel",
+    "question": "Who was the first King of Israel?",
+    "options": [
+      "David",
+      "Solomon",
+      "Saul",
+      "Samuel"
+    ],
+    "answer": "Saul",
+    "reference": "1 Samuel 10:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 16,
+    "book": "1 Samuel",
+    "question": "Who was Samuel's mother?",
+    "options": [
+      "Sarah",
+      "Hannah",
+      "Leah",
+      "Rachel"
+    ],
+    "answer": "Hannah",
+    "reference": "1 Samuel 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 17,
+    "book": "1 Samuel",
+    "question": "What instrument did David play to soothe King Saul?",
+    "options": [
+      "Trumpet",
+      "Flute",
+      "Harp/Lyre",
+      "Drum"
+    ],
+    "answer": "Harp/Lyre",
+    "reference": "1 Samuel 16:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 40,
+    "book": "1 Samuel",
+    "question": "How did the Philistines capture the Ark of the Covenant?",
+    "options": [
+      "They stole it at night",
+      "They won it in battle",
+      "Israel sold it",
+      "God gave it to them"
+    ],
+    "answer": "They won it in battle",
+    "reference": "1 Samuel 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 48,
+    "book": "1 Samuel",
+    "question": "Who was the High Priest when Samuel was a boy?",
+    "options": [
+      "Eli",
+      "Aaron",
+      "Phinehas",
+      "Zadok"
+    ],
+    "answer": "Eli",
+    "reference": "1 Samuel 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 49,
+    "book": "1 Samuel",
+    "question": "How many stones did David pick up to fight Goliath?",
+    "options": [
+      "One",
+      "Three",
+      "Five",
+      "Seven"
+    ],
+    "answer": "Five",
+    "reference": "1 Samuel 17:40",
+    "difficulty": "easy"
+  },
+  {
+    "id": 69,
+    "book": "1 Samuel",
+    "question": "Who was the Philistine god that fell on its face before the Ark of the Covenant?",
+    "options": [
+      "Baal",
+      "Dagon",
+      "Molech",
+      "Asherah"
+    ],
+    "answer": "Dagon",
+    "reference": "1 Samuel 5:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 76,
+    "book": "1 Samuel",
+    "question": "Whom did Saul consult when God stopped answering him?",
+    "options": [
+      "Samuel",
+      "The Witch of Endor",
+      "David",
+      "A prophet of Baal"
+    ],
+    "answer": "The Witch of Endor",
+    "reference": "1 Samuel 28:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 113,
+    "book": "1 Samuel",
+    "question": "What does the name 'Ichabod' mean?",
+    "options": [
+      "God is great",
+      "The glory has departed",
+      "He who laughs",
+      "God has heard"
+    ],
+    "answer": "The glory has departed",
+    "reference": "1 Samuel 4:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 114,
+    "book": "1 Samuel",
+    "question": "Who was David's best friend?",
+    "options": [
+      "Saul",
+      "Jonathan",
+      "Joab",
+      "Samuel"
+    ],
+    "answer": "Jonathan",
+    "reference": "1 Samuel 18:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 115,
+    "book": "1 Samuel",
+    "question": "What foolish man refused to give food to David's men?",
+    "options": [
+      "Nabal",
+      "Uriah",
+      "Doeg",
+      "Shimei"
+    ],
+    "answer": "Nabal",
+    "reference": "1 Samuel 25:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 116,
+    "book": "1 Samuel",
+    "question": "Who was the wise woman who stopped David from killing Nabal?",
+    "options": [
+      "Abigail",
+      "Michal",
+      "Bathsheba",
+      "Hannah"
+    ],
+    "answer": "Abigail",
+    "reference": "1 Samuel 25:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 163,
+    "book": "1 Samuel",
+    "question": "How did King Saul die?",
+    "options": [
+      "He was poisoned",
+      "He fell on his own sword",
+      "He was killed by a lion",
+      "He died of old age"
+    ],
+    "answer": "He fell on his own sword",
+    "reference": "1 Samuel 31:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 164,
+    "book": "1 Samuel",
+    "question": "What did David cut off from Saul's robe in the cave?",
+    "options": [
+      "A corner/hem",
+      "A tassel",
+      "A sleeve",
+      "A pocket"
+    ],
+    "answer": "A corner/hem",
+    "reference": "1 Samuel 24:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 199,
+    "book": "1 Samuel",
+    "question": "Who was the priest that died when he heard the Ark was captured?",
+    "options": [
+      "Eli",
+      "Phinehas",
+      "Hophni",
+      "Samuel"
+    ],
+    "answer": "Eli",
+    "reference": "1 Samuel 4:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 210,
+    "book": "1 Samuel",
+    "question": "What forbidden food did David and his men eat at Nob?",
+    "options": [
+      "Consecrated bread (Showbread)",
+      "Pork",
+      "Honey from a lion",
+      "Unleavened cakes"
+    ],
+    "answer": "Consecrated bread (Showbread)",
+    "reference": "1 Samuel 21:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 245,
+    "book": "1 Samuel",
+    "question": "What did Jonathan eat that violated his father Saul's oath?",
+    "options": [
+      "Honey",
+      "Bread",
+      "Meat",
+      "Fruit"
+    ],
+    "answer": "Honey",
+    "reference": "1 Samuel 14:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 261,
+    "book": "1 Samuel",
+    "question": "Who was David's first wife?",
+    "options": [
+      "Michal",
+      "Abigail",
+      "Bathsheba",
+      "Maacah"
+    ],
+    "answer": "Michal",
+    "reference": "1 Samuel 18:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 262,
+    "book": "1 Samuel",
+    "question": "Who was the priest at Nob that gave David the showbread?",
+    "options": [
+      "Ahimelech",
+      "Abiathar",
+      "Zadok",
+      "Eli"
+    ],
+    "answer": "Ahimelech",
+    "reference": "1 Samuel 21:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 314,
+    "book": "1 Samuel",
+    "question": "From which tribe was King Saul?",
+    "options": [
+      "Benjamin",
+      "Judah",
+      "Ephraim",
+      "Manasseh"
+    ],
+    "answer": "Benjamin",
+    "reference": "1 Samuel 9:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 315,
+    "book": "1 Samuel",
+    "question": "What physical description is given about Saul compared to other people?",
+    "options": [
+      "He was a head taller than anyone else",
+      "He was left-handed",
+      "He had red hair",
+      "He was very short"
+    ],
+    "answer": "He was a head taller than anyone else",
+    "reference": "1 Samuel 9:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 346,
+    "book": "1 Samuel",
+    "question": "What was the name of the Philistine giant who had 6 fingers and 6 toes?",
+    "options": [
+      "He is unnamed (A descendant of Rapha)",
+      "Goliath",
+      "Og",
+      "Sihon"
+    ],
+    "answer": "He is unnamed (A descendant of Rapha)",
+    "reference": "2 Samuel 21:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 365,
+    "book": "1 Samuel",
+    "question": "Where was David hiding when his men joined him in distress and debt?",
+    "options": [
+      "Cave of Adullam",
+      "Cave of Machpelah",
+      "Mount Carmel",
+      "Forest of Hereth"
+    ],
+    "answer": "Cave of Adullam",
+    "reference": "1 Samuel 22:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 366,
+    "book": "1 Samuel",
+    "question": "Who was the commander of Saul's army?",
+    "options": [
+      "Abner",
+      "Joab",
+      "Benaiah",
+      "Amasa"
+    ],
+    "answer": "Abner",
+    "reference": "1 Samuel 14:50",
+    "difficulty": "medium"
+  },
+  {
+    "id": 414,
+    "book": "1 Samuel",
+    "question": "What happened to the idol of Dagon when the Ark was placed next to it?",
+    "options": [
+      "It fell on its face and its head/hands broke off",
+      "It turned to dust",
+      "It caught fire",
+      "It spoke"
+    ],
+    "answer": "It fell on its face and its head/hands broke off",
+    "reference": "1 Samuel 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 446,
+    "book": "1 Samuel",
+    "question": "Who was David's general that killed Absalom against David's orders?",
+    "options": [
+      "Joab",
+      "Abishai",
+      "Benaiah",
+      "Asahel"
+    ],
+    "answer": "Joab",
+    "reference": "2 Samuel 18:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 447,
+    "book": "1 Samuel",
+    "question": "Which counselor of David committed suicide when his advice was ignored?",
+    "options": [
+      "Ahithophel",
+      "Hushai",
+      "Ziba",
+      "Shimei"
+    ],
+    "answer": "Ahithophel",
+    "reference": "2 Samuel 17:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 463,
+    "book": "1 Samuel",
+    "question": "What does the name 'Ebenezer' mean?",
+    "options": [
+      "Stone of help",
+      "God is my rock",
+      "The Lord sees",
+      "Victory"
+    ],
+    "answer": "Stone of help",
+    "reference": "1 Samuel 7:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 464,
+    "book": "1 Samuel",
+    "question": "Who was the King of the Amalekites that Samuel hacked to pieces?",
+    "options": [
+      "Agag",
+      "Sihon",
+      "Og",
+      "Balak"
+    ],
+    "answer": "Agag",
+    "reference": "1 Samuel 15:33",
+    "difficulty": "hard"
+  },
+  {
+    "id": 465,
+    "book": "1 Samuel",
+    "question": "Who was Samuel's father?",
+    "options": [
+      "Elkanah",
+      "Eli",
+      "Kish",
+      "Jesse"
+    ],
+    "answer": "Elkanah",
+    "reference": "1 Samuel 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 496,
+    "book": "1 Samuel",
+    "question": "Who was Saul's older daughter that he promised to David but gave to another?",
+    "options": [
+      "Merab",
+      "Michal",
+      "Tamar",
+      "Hannah"
+    ],
+    "answer": "Merab",
+    "reference": "1 Samuel 18:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 497,
+    "book": "1 Samuel",
+    "question": "How much did David pay Araunah for the threshing floor and oxen?",
+    "options": [
+      "50 shekels of silver",
+      "600 shekels of gold",
+      "100 pieces of silver",
+      "A talent of gold"
+    ],
+    "answer": "50 shekels of silver",
+    "reference": "2 Samuel 24:24 (Note: Chronicles records a different amount for the whole site)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 510,
+    "book": "1 Samuel",
+    "question": "What plagued the Philistines after they captured the Ark of the Covenant?",
+    "options": [
+      "Tumors/Rats",
+      "Locusts",
+      "Boils",
+      "Darkness"
+    ],
+    "answer": "Tumors/Rats",
+    "reference": "1 Samuel 5:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 511,
+    "book": "1 Samuel",
+    "question": "Who was the wife of Nabal who became David's wife?",
+    "options": [
+      "Abigail",
+      "Ahinoam",
+      "Maacah",
+      "Haggith"
+    ],
+    "answer": "Abigail",
+    "reference": "1 Samuel 25:42",
+    "difficulty": "easy"
+  },
+  {
+    "id": 561,
+    "book": "1 Samuel",
+    "question": "Who was the High Priest that Eli descended from?",
+    "options": [
+      "Ithamar",
+      "Eleazar",
+      "Phinehas",
+      "Nadab"
+    ],
+    "answer": "Ithamar",
+    "reference": "1 Chronicles 24:3 (Genealogical context)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 562,
+    "book": "1 Samuel",
+    "question": "Why did Michal despise David in her heart?",
+    "options": [
+      "Because he danced before the Lord",
+      "Because he killed her father",
+      "Because he married Abigail",
+      "Because he fled"
+    ],
+    "answer": "Because he danced before the Lord",
+    "reference": "2 Samuel 6:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 615,
+    "book": "1 Samuel",
+    "question": "What was the name of the city of priests that Saul destroyed?",
+    "options": [
+      "Nob",
+      "Shiloh",
+      "Ramah",
+      "Bethel"
+    ],
+    "answer": "Nob",
+    "reference": "1 Samuel 22:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 616,
+    "book": "1 Samuel",
+    "question": "Who cut off the thumbs and big toes of 70 kings?",
+    "options": [
+      "Adoni-Bezek",
+      "Agag",
+      "Saul",
+      "Abimelech"
+    ],
+    "answer": "Adoni-Bezek",
+    "reference": "Judges 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 665,
+    "book": "1 Samuel",
+    "question": "Who climbed up a cliff on his hands and feet to attack a Philistine outpost?",
+    "options": [
+      "Jonathan",
+      "David",
+      "Saul",
+      "Abner"
+    ],
+    "answer": "Jonathan",
+    "reference": "1 Samuel 14:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 666,
+    "book": "1 Samuel",
+    "question": "What did David take from Saul while Saul was sleeping in the camp?",
+    "options": [
+      "His spear and water jug",
+      "His crown",
+      "His sword",
+      "His shield"
+    ],
+    "answer": "His spear and water jug",
+    "reference": "1 Samuel 26:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 717,
+    "book": "1 Samuel",
+    "question": "What signal did Jonathan use to warn David about Saul's anger?",
+    "options": [
+      "Shooting arrows",
+      "Lighting a fire",
+      "Waving a cloth",
+      "Sending a messenger"
+    ],
+    "answer": "Shooting arrows",
+    "reference": "1 Samuel 20:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 718,
+    "book": "1 Samuel",
+    "question": "Who was the wife of David that he married after Nabal died?",
+    "options": [
+      "Abigail",
+      "Michal",
+      "Bathsheba",
+      "Maacah"
+    ],
+    "answer": "Abigail",
+    "reference": "1 Samuel 25:39",
+    "difficulty": "easy"
+  },
+  {
+    "id": 764,
+    "book": "1 Samuel",
+    "question": "Who was Saul's grandfather?",
+    "options": [
+      "Abiel",
+      "Kish",
+      "Zeror",
+      "Aphiah"
+    ],
+    "answer": "Abiel",
+    "reference": "1 Samuel 9:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 817,
+    "book": "1 Samuel",
+    "question": "Who was the god of the Ammonites that demanded the right eye of the men of Jabesh Gilead?",
+    "options": [
+      "Nahash (The King made the demand)",
+      "Molech",
+      "Chemosh",
+      "Dagon"
+    ],
+    "answer": "Nahash (The King made the demand)",
+    "reference": "1 Samuel 11:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 818,
+    "book": "1 Samuel",
+    "question": "How many men did Saul choose to fight the Philistines in Michmash?",
+    "options": [
+      "3,000",
+      "10,000",
+      "300",
+      "500"
+    ],
+    "answer": "3,000",
+    "reference": "1 Samuel 13:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 863,
+    "book": "1 Samuel",
+    "question": "Who was the High Priest when Hannah prayed for a son?",
+    "options": [
+      "Eli",
+      "Samuel",
+      "Phinehas",
+      "Ahijah"
+    ],
+    "answer": "Eli",
+    "reference": "1 Samuel 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 917,
+    "book": "1 Samuel",
+    "question": "Who was the Philistine god whose head and hands were cut off?",
+    "options": [
+      "Dagon",
+      "Baal",
+      "Molech",
+      "Chemosh"
+    ],
+    "answer": "Dagon",
+    "reference": "1 Samuel 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 918,
+    "book": "1 Samuel",
+    "question": "How many sons did Jesse have (according to 1 Samuel)?",
+    "options": [
+      "Eight",
+      "Seven",
+      "Ten",
+      "Twelve"
+    ],
+    "answer": "Eight",
+    "reference": "1 Samuel 16:10-11 (David was the 8th)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 963,
+    "book": "1 Samuel",
+    "question": "What did Hannah vow to give to the Lord if He gave her a son?",
+    "options": [
+      "She would give him to the Lord all the days of his life",
+      "She would offer a bull",
+      "She would fast",
+      "She would build an altar"
+    ],
+    "answer": "She would give him to the Lord all the days of his life",
+    "reference": "1 Samuel 1:11",
+    "difficulty": "medium"
+  }
+]

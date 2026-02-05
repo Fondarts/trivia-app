@@ -1,0 +1,982 @@
+[
+  {
+    "id": 63,
+    "book": "Amos",
+    "question": "What was Amos' profession before he became a prophet?",
+    "options": [
+      "Priest",
+      "Shepherd and fig-tree farmer",
+      "Soldier",
+      "Scribe"
+    ],
+    "answer": "Shepherd and fig-tree farmer",
+    "reference": "Amos 7:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 143,
+    "book": "Amos",
+    "question": "Amos warned the people who were 'at ease' in which city?",
+    "options": [
+      "Zion/Jerusalem",
+      "Babylon",
+      "Damascus",
+      "Nineveh"
+    ],
+    "answer": "Zion/Jerusalem",
+    "reference": "Amos 6:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 189,
+    "book": "Amos",
+    "question": "Amos saw a vision of God standing by a wall with what in His hand?",
+    "options": [
+      "A plumb line",
+      "A sword",
+      "A scroll",
+      "A basket of fruit"
+    ],
+    "answer": "A plumb line",
+    "reference": "Amos 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 230,
+    "book": "Amos",
+    "question": "Complete the verse: 'But let justice roll down like...'",
+    "options": [
+      "Waters",
+      "Thunder",
+      "A stone",
+      "Fire"
+    ],
+    "answer": "Waters",
+    "reference": "Amos 5:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 288,
+    "book": "Amos",
+    "question": "Amos saw a vision of a basket of what?",
+    "options": [
+      "Summer fruit",
+      "Bread",
+      "Fish",
+      "Flowers"
+    ],
+    "answer": "Summer fruit",
+    "reference": "Amos 8:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 339,
+    "book": "Amos",
+    "question": "Which city does Amos mention as his home?",
+    "options": [
+      "Tekoa",
+      "Bethel",
+      "Jerusalem",
+      "Samaria"
+    ],
+    "answer": "Tekoa",
+    "reference": "Amos 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 391,
+    "book": "Amos",
+    "question": "Who did Amos refer to as 'cows of Bashan'?",
+    "options": [
+      "The wealthy women of Samaria",
+      "The priests of Bethel",
+      "The kings of Edom",
+      "The false prophets"
+    ],
+    "answer": "The wealthy women of Samaria",
+    "reference": "Amos 4:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 438,
+    "book": "Amos",
+    "question": "What phrase does Amos repeatedly use to introduce judgment on nations? 'For ______ transgressions and for four...'",
+    "options": [
+      "Three",
+      "Two",
+      "Seven",
+      "Many"
+    ],
+    "answer": "Three",
+    "reference": "Amos 1:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 484,
+    "book": "Amos",
+    "question": "Amos described himself as a herdsman and a gatherer/grower of what fruit?",
+    "options": [
+      "Sycamore figs",
+      "Grapes",
+      "Olives",
+      "Pomegranates"
+    ],
+    "answer": "Sycamore figs",
+    "reference": "Amos 7:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 535,
+    "book": "Amos",
+    "question": "Amos speaks of a famine not of bread, but of...",
+    "options": [
+      "Hearing the words of the Lord",
+      "Water",
+      "Justice",
+      "Truth"
+    ],
+    "answer": "Hearing the words of the Lord",
+    "reference": "Amos 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 583,
+    "book": "Amos",
+    "question": "Amos 3:3 asks, 'Can two walk together, except they be...'",
+    "options": [
+      "Agreed",
+      "Friends",
+      "Brothers",
+      "Lost"
+    ],
+    "answer": "Agreed",
+    "reference": "Amos 3:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 640,
+    "book": "Amos",
+    "question": "Amos prophesied in the days of which King of Judah?",
+    "options": [
+      "Uzziah",
+      "Hezekiah",
+      "Josiah",
+      "David"
+    ],
+    "answer": "Uzziah",
+    "reference": "Amos 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 690,
+    "book": "Amos",
+    "question": "Amos 5:18 warns those who long for the 'Day of the Lord', saying it will be...",
+    "options": [
+      "Darkness, not light",
+      "A day of feast",
+      "A day of victory",
+      "Peaceful"
+    ],
+    "answer": "Darkness, not light",
+    "reference": "Amos 5:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 746,
+    "book": "Amos",
+    "question": "What title does Amos frequently use for God (over 20 times)?",
+    "options": [
+      "Lord God of hosts",
+      "King of Glory",
+      "Holy One of Israel",
+      "The Most High"
+    ],
+    "answer": "Lord God of hosts",
+    "reference": "Amos 4:13 (and throughout)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 785,
+    "book": "Amos",
+    "question": "Amos 8:11 speaks of a famine of...",
+    "options": [
+      "Hearing the words of the Lord",
+      "Bread and water",
+      "Justice",
+      "Truth"
+    ],
+    "answer": "Hearing the words of the Lord",
+    "reference": "Amos 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 845,
+    "book": "Amos",
+    "question": "Amos 9:11 promises to raise up the...",
+    "options": [
+      "Tabernacle/Booth of David",
+      "Temple of Solomon",
+      "Walls of Jerusalem",
+      "Throne of Israel"
+    ],
+    "answer": "Tabernacle/Booth of David",
+    "reference": "Amos 9:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 884,
+    "book": "Amos",
+    "question": "Amos 3:7 says surely the Lord God does nothing unless He reveals His secret to...",
+    "options": [
+      "His servants the prophets",
+      "The priests",
+      "The kings",
+      "The wise"
+    ],
+    "answer": "His servants the prophets",
+    "reference": "Amos 3:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 945,
+    "book": "Amos",
+    "question": "Amos 5:24 says, 'Let justice run down like water, and righteousness like a...'",
+    "options": [
+      "Mighty stream",
+      "Rushing wind",
+      "Great river",
+      "Gentle rain"
+    ],
+    "answer": "Mighty stream",
+    "reference": "Amos 5:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 984,
+    "book": "Amos",
+    "question": "Amos was a...",
+    "options": [
+      "Shepherd / Herdsman",
+      "Priest",
+      "King",
+      "Carpenter"
+    ],
+    "answer": "Shepherd / Herdsman",
+    "reference": "Amos 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1511,
+    "book": "Amos",
+    "question": "Amos 1 uses a repeating phrase for judgment: 'For ______ transgressions of [City], and for ______...'",
+    "options": [
+      "Three; four",
+      "Two; three",
+      "Seven; eight",
+      "Ten; eleven"
+    ],
+    "answer": "Three; four",
+    "reference": "Amos 1:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1512,
+    "book": "Amos",
+    "question": "Which city's punishment involves a fire devouring the palaces of Ben-Hadad?",
+    "options": [
+      "Damascus",
+      "Gaza",
+      "Tyre",
+      "Edom"
+    ],
+    "answer": "Damascus",
+    "reference": "Amos 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1513,
+    "book": "Amos",
+    "question": "Amos calls the wealthy women of Samaria...",
+    "options": [
+      "Cows of Bashan",
+      "Birds of prey",
+      "Fat sheep",
+      "Roaming bears"
+    ],
+    "answer": "Cows of Bashan",
+    "reference": "Amos 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1514,
+    "book": "Amos",
+    "question": "Prepare to meet your God, O...",
+    "options": [
+      "Israel",
+      "Judah",
+      "Sinner",
+      "Earth"
+    ],
+    "answer": "Israel",
+    "reference": "Amos 4:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1515,
+    "book": "Amos",
+    "question": "Amos 5:24 says, 'But let justice run down like water, and righteousness like a...'",
+    "options": [
+      "Mighty stream",
+      "Rushing wind",
+      "Waterfall",
+      "Gentle rain"
+    ],
+    "answer": "Mighty stream",
+    "reference": "Amos 5:24",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1516,
+    "book": "Amos",
+    "question": "What did Amos see the Lord holding while standing on a wall?",
+    "options": [
+      "A plumb line",
+      "A sword",
+      "A scroll",
+      "A trumpet"
+    ],
+    "answer": "A plumb line",
+    "reference": "Amos 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1517,
+    "book": "Amos",
+    "question": "Who was the priest of Bethel who told Amos to flee to Judah?",
+    "options": [
+      "Amaziah",
+      "Jeroboam",
+      "Pashhur",
+      "Hophni"
+    ],
+    "answer": "Amaziah",
+    "reference": "Amos 7:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1518,
+    "book": "Amos",
+    "question": "Amos saw a basket of what fruit in chapter 8?",
+    "options": [
+      "Summer fruit",
+      "Figs",
+      "Grapes",
+      "Pomegranates"
+    ],
+    "answer": "Summer fruit",
+    "reference": "Amos 8:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1519,
+    "book": "Amos",
+    "question": "Amos 8:11 speaks of a famine, not of bread, but of...",
+    "options": [
+      "Hearing the words of the Lord",
+      "Water",
+      "Justice",
+      "Love"
+    ],
+    "answer": "Hearing the words of the Lord",
+    "reference": "Amos 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1520,
+    "book": "Amos",
+    "question": "In that day I will raise up the ______ of David, which has fallen down.",
+    "options": [
+      "Tabernacle/Booth",
+      "Throne",
+      "Crown",
+      "House"
+    ],
+    "answer": "Tabernacle/Booth",
+    "reference": "Amos 9:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1521,
+    "book": "Amos",
+    "question": "Woe to you who are at ease in...",
+    "options": [
+      "Zion",
+      "Babylon",
+      "Luxury",
+      "Sin"
+    ],
+    "answer": "Zion",
+    "reference": "Amos 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1661,
+    "book": "Amos",
+    "question": "Amos was among the shepherds of ______.",
+    "options": [
+      "Tekoa",
+      "Bethlehem",
+      "Hebron",
+      "Jerusalem"
+    ],
+    "answer": "Tekoa",
+    "reference": "Amos 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1662,
+    "book": "Amos",
+    "question": "How many years before the earthquake did Amos begin to prophesy?",
+    "options": [
+      "Two years",
+      "Seven years",
+      "One year",
+      "Ten years"
+    ],
+    "answer": "Two years",
+    "reference": "Amos 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1663,
+    "book": "Amos",
+    "question": "Can two walk together, unless they are ______?",
+    "options": [
+      "Agreed",
+      "Friends",
+      "Related",
+      "Strong"
+    ],
+    "answer": "Agreed",
+    "reference": "Amos 3:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1664,
+    "book": "Amos",
+    "question": "Does a lion roar in the forest, when he has no ______?",
+    "options": [
+      "Prey",
+      "Cubs",
+      "Water",
+      "Mate"
+    ],
+    "answer": "Prey",
+    "reference": "Amos 3:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1665,
+    "book": "Amos",
+    "question": "Surely the Lord God does nothing, unless He reveals His ______ to His servants the prophets.",
+    "options": [
+      "Secret",
+      "Plan",
+      "Will",
+      "Power"
+    ],
+    "answer": "Secret",
+    "reference": "Amos 3:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1666,
+    "book": "Amos",
+    "question": "A lion has roared! Who will not ______?",
+    "options": [
+      "Fear",
+      "Run",
+      "Hide",
+      "Sleep"
+    ],
+    "answer": "Fear",
+    "reference": "Amos 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1667,
+    "book": "Amos",
+    "question": "As a shepherd takes from the mouth of a lion two legs or a piece of an ear, so shall the ______ be taken out.",
+    "options": [
+      "Children of Israel",
+      "Treasures",
+      "Kings",
+      "Idols"
+    ],
+    "answer": "Children of Israel",
+    "reference": "Amos 3:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1668,
+    "book": "Amos",
+    "question": "I have given you cleanness of ______ in all your cities.",
+    "options": [
+      "Teeth (famine)",
+      "Hands",
+      "Heart",
+      "Gold"
+    ],
+    "answer": "Teeth (famine)",
+    "reference": "Amos 4:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1669,
+    "book": "Amos",
+    "question": "I overthrew some of you, as God overthrew Sodom and Gomorrah, and you were like a ______ plucked from the burning.",
+    "options": [
+      "Firebrand",
+      "Stick",
+      "Lamb",
+      "Tree"
+    ],
+    "answer": "Firebrand",
+    "reference": "Amos 4:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1670,
+    "book": "Amos",
+    "question": "Seek the Lord and ______!",
+    "options": [
+      "Live",
+      "Rejoice",
+      "Pray",
+      "Fight"
+    ],
+    "answer": "Live",
+    "reference": "Amos 5:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1671,
+    "book": "Amos",
+    "question": "Seek ______, and not evil, that you may live.",
+    "options": [
+      "Good",
+      "Wealth",
+      "Power",
+      "Silence"
+    ],
+    "answer": "Good",
+    "reference": "Amos 5:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1672,
+    "book": "Amos",
+    "question": "Hate evil, love good; establish ______ in the gate.",
+    "options": [
+      "Justice",
+      "Peace",
+      "Trade",
+      "Law"
+    ],
+    "answer": "Justice",
+    "reference": "Amos 5:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1673,
+    "book": "Amos",
+    "question": "Woe to you who desire the day of the Lord! It will be ______ and not light.",
+    "options": [
+      "Darkness",
+      "Fire",
+      "Storm",
+      "Silence"
+    ],
+    "answer": "Darkness",
+    "reference": "Amos 5:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1674,
+    "book": "Amos",
+    "question": "It will be as though a man fled from a lion, and a ______ met him.",
+    "options": [
+      "Bear",
+      "Wolf",
+      "Leopard",
+      "Giant"
+    ],
+    "answer": "Bear",
+    "reference": "Amos 5:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1675,
+    "book": "Amos",
+    "question": "I ______ your feast days, and I do not savor your sacred assemblies.",
+    "options": [
+      "Hate/Despise",
+      "Ignore",
+      "Forget",
+      "Watch"
+    ],
+    "answer": "Hate/Despise",
+    "reference": "Amos 5:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1676,
+    "book": "Amos",
+    "question": "You also carried Sikkuth your king and Chiun, your ______.",
+    "options": [
+      "Idols",
+      "Armor",
+      "Tents",
+      "Treasures"
+    ],
+    "answer": "Idols",
+    "reference": "Amos 5:26",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1677,
+    "book": "Amos",
+    "question": "Woe to those who lie on beds of ______.",
+    "options": [
+      "Ivory",
+      "Gold",
+      "Linen",
+      "Wood"
+    ],
+    "answer": "Ivory",
+    "reference": "Amos 6:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1678,
+    "book": "Amos",
+    "question": "Who sing idly to the sound of ______?",
+    "options": [
+      "Stringed instruments",
+      "Trumpets",
+      "Drums",
+      "Flutes"
+    ],
+    "answer": "Stringed instruments",
+    "reference": "Amos 6:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1679,
+    "book": "Amos",
+    "question": "Who drink wine from ______?",
+    "options": [
+      "Bowls",
+      "Cups",
+      "Bottles",
+      "Skins"
+    ],
+    "answer": "Bowls",
+    "reference": "Amos 6:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1680,
+    "book": "Amos",
+    "question": "What did the Lord show Amos in his first vision in chapter 7?",
+    "options": [
+      "Locusts",
+      "Fire",
+      "A plumb line",
+      "Fruit"
+    ],
+    "answer": "Locusts",
+    "reference": "Amos 7:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1681,
+    "book": "Amos",
+    "question": "What did the Lord show Amos in his second vision in chapter 7?",
+    "options": [
+      "Fire",
+      "Locusts",
+      "A plumb line",
+      "Fruit"
+    ],
+    "answer": "Fire",
+    "reference": "Amos 7:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1682,
+    "book": "Amos",
+    "question": "Amos said, 'I was no prophet, nor was I a son of a prophet, but I was a ______.'",
+    "options": [
+      "Sheepbreeder / Herdsman",
+      "Carpenter",
+      "Fisherman",
+      "Soldier"
+    ],
+    "answer": "Sheepbreeder / Herdsman",
+    "reference": "Amos 7:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1683,
+    "book": "Amos",
+    "question": "What other occupation did Amos have besides being a herdsman?",
+    "options": [
+      "Tender of sycamore fruit",
+      "Maker of tents",
+      "Scribe",
+      "Vine dresser"
+    ],
+    "answer": "Tender of sycamore fruit",
+    "reference": "Amos 7:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1684,
+    "book": "Amos",
+    "question": "I will make the sun go down at ______.",
+    "options": [
+      "Noon",
+      "Midnight",
+      "Evening",
+      "Morning"
+    ],
+    "answer": "Noon",
+    "reference": "Amos 8:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1685,
+    "book": "Amos",
+    "question": "I will turn your feasts into ______.",
+    "options": [
+      "Mourning",
+      "Silence",
+      "Ash",
+      "War"
+    ],
+    "answer": "Mourning",
+    "reference": "Amos 8:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1686,
+    "book": "Amos",
+    "question": "Though they dig into ______, from there My hand shall take them.",
+    "options": [
+      "Hell (Sheol)",
+      "The earth",
+      "The mountain",
+      "The sea"
+    ],
+    "answer": "Hell (Sheol)",
+    "reference": "Amos 9:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1687,
+    "book": "Amos",
+    "question": "Though they hide themselves on top of ______, I will search and take them.",
+    "options": [
+      "Carmel",
+      "Sinai",
+      "Zion",
+      "Nebo"
+    ],
+    "answer": "Carmel",
+    "reference": "Amos 9:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1688,
+    "book": "Amos",
+    "question": "I will shake the house of Israel among all nations, as grain is shaken in a ______.",
+    "options": [
+      "Sieve",
+      "Basket",
+      "Bag",
+      "Field"
+    ],
+    "answer": "Sieve",
+    "reference": "Amos 9:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1689,
+    "book": "Amos",
+    "question": "The mountains shall drip with ______ wine.",
+    "options": [
+      "Sweet",
+      "Bitter",
+      "New",
+      "Strong"
+    ],
+    "answer": "Sweet",
+    "reference": "Amos 9:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1690,
+    "book": "Amos",
+    "question": "Behold, the days are coming when the ______ shall overtake the reaper.",
+    "options": [
+      "Plowman",
+      "Sower",
+      "Planter",
+      "King"
+    ],
+    "answer": "Plowman",
+    "reference": "Amos 9:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1691,
+    "book": "Amos",
+    "question": "I will bring back the captives of My people Israel; they shall build the ______ cities and inhabit them.",
+    "options": [
+      "Waste",
+      "New",
+      "Old",
+      "Strong"
+    ],
+    "answer": "Waste",
+    "reference": "Amos 9:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1692,
+    "book": "Amos",
+    "question": "I will plant them in their land, and no longer shall they be ______.",
+    "options": [
+      "Pulled up",
+      "Forgotten",
+      "Scattered",
+      "Afraid"
+    ],
+    "answer": "Pulled up",
+    "reference": "Amos 9:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1693,
+    "book": "Amos",
+    "question": "Amos 1:2 says the Lord ______ from Zion.",
+    "options": [
+      "Roars",
+      "Speaks",
+      "Sings",
+      "Laughs"
+    ],
+    "answer": "Roars",
+    "reference": "Amos 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1694,
+    "book": "Amos",
+    "question": "What instrument is mentioned in Amos 2:2 when Moab dies?",
+    "options": [
+      "Trumpet",
+      "Harp",
+      "Drum",
+      "Flute"
+    ],
+    "answer": "Trumpet",
+    "reference": "Amos 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1695,
+    "book": "Amos",
+    "question": "He who is courageous among the mighty shall flee ______ in that day.",
+    "options": [
+      "Naked",
+      "Afraid",
+      "Quietly",
+      "Fast"
+    ],
+    "answer": "Naked",
+    "reference": "Amos 2:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1696,
+    "book": "Amos",
+    "question": "Does a bird fall into a snare on the earth, where there is no ______ for it?",
+    "options": [
+      "Trap",
+      "Bait",
+      "Food",
+      "Seed"
+    ],
+    "answer": "Trap",
+    "reference": "Amos 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1697,
+    "book": "Amos",
+    "question": "If a ______ is blown in a city, will not the people be afraid?",
+    "options": [
+      "Trumpet",
+      "Horn",
+      "Whistle",
+      "Voice"
+    ],
+    "answer": "Trumpet",
+    "reference": "Amos 3:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1698,
+    "book": "Amos",
+    "question": "In Amos 4, God says He withheld ______ from them when there were yet three months to the harvest.",
+    "options": [
+      "Rain",
+      "Food",
+      "Dew",
+      "Wine"
+    ],
+    "answer": "Rain",
+    "reference": "Amos 4:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1699,
+    "book": "Amos",
+    "question": "The Lord God has sworn by His ______, that the days shall come upon you.",
+    "options": [
+      "Holiness",
+      "Name",
+      "Throne",
+      "Power"
+    ],
+    "answer": "Holiness",
+    "reference": "Amos 4:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1700,
+    "book": "Amos",
+    "question": "In Amos 6, God says He ______ the excellence of Jacob and hates his palaces.",
+    "options": [
+      "Abhors",
+      "Loves",
+      "Remembers",
+      "Watches"
+    ],
+    "answer": "Abhors",
+    "reference": "Amos 6:8",
+    "difficulty": "hard"
+  }
+]

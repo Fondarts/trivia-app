@@ -1,0 +1,506 @@
+[
+  {
+    "id": 14,
+    "book": "Joshua",
+    "question": "Which city's walls fell down after the Israelites marched around them?",
+    "options": [
+      "Ai",
+      "Jericho",
+      "Jerusalem",
+      "Hebron"
+    ],
+    "answer": "Jericho",
+    "reference": "Joshua 6:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 45,
+    "book": "Joshua",
+    "question": "What miracle happened during the battle at Gibeon?",
+    "options": [
+      "The sun stood still",
+      "Fire rained from heaven",
+      "The earth swallowed the enemy",
+      "Angels appeared"
+    ],
+    "answer": "The sun stood still",
+    "reference": "Joshua 10:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 74,
+    "book": "Joshua",
+    "question": "Who was the harlot that hid the Israelite spies in Jericho?",
+    "options": [
+      "Rahab",
+      "Delilah",
+      "Bathsheba",
+      "Tamar"
+    ],
+    "answer": "Rahab",
+    "reference": "Joshua 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 110,
+    "book": "Joshua",
+    "question": "Who stole items from Jericho, causing Israel to lose the battle at Ai?",
+    "options": [
+      "Achan",
+      "Gideon",
+      "Balak",
+      "Caleb"
+    ],
+    "answer": "Achan",
+    "reference": "Joshua 7:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 158,
+    "book": "Joshua",
+    "question": "What happened to the waters of the Jordan when the priests' feet touched them?",
+    "options": [
+      "They turned to blood",
+      "They parted/stopped flowing",
+      "They boiled",
+      "They became sweet"
+    ],
+    "answer": "They parted/stopped flowing",
+    "reference": "Joshua 3:15-16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 159,
+    "book": "Joshua",
+    "question": "At what age did Caleb say he was still as strong as he was in his youth?",
+    "options": [
+      "85",
+      "100",
+      "70",
+      "40"
+    ],
+    "answer": "85",
+    "reference": "Joshua 14:10-11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 207,
+    "book": "Joshua",
+    "question": "How many Cities of Refuge were established in Israel?",
+    "options": [
+      "6",
+      "12",
+      "3",
+      "48"
+    ],
+    "answer": "6",
+    "reference": "Joshua 20:7-8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 243,
+    "book": "Joshua",
+    "question": "What was the name of the altar built by the Transjordan tribes that caused a misunderstanding?",
+    "options": [
+      "Ed (Witness)",
+      "Bethel",
+      "Ebenezer",
+      "Shiloh"
+    ],
+    "answer": "Ed (Witness)",
+    "reference": "Joshua 22:34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 257,
+    "book": "Joshua",
+    "question": "What item did Rahab use to mark her house for safety?",
+    "options": [
+      "A scarlet cord",
+      "A palm branch",
+      "A lamb's blood",
+      "A white flag"
+    ],
+    "answer": "A scarlet cord",
+    "reference": "Joshua 2:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 258,
+    "book": "Joshua",
+    "question": "Which tribe received no land inheritance because the Lord was their inheritance?",
+    "options": [
+      "Levi",
+      "Judah",
+      "Dan",
+      "Simeon"
+    ],
+    "answer": "Levi",
+    "reference": "Joshua 13:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 310,
+    "book": "Joshua",
+    "question": "Which tribe was Achan from (the man who stole the devoted things)?",
+    "options": [
+      "Judah",
+      "Benjamin",
+      "Dan",
+      "Ephraim"
+    ],
+    "answer": "Judah",
+    "reference": "Joshua 7:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 360,
+    "book": "Joshua",
+    "question": "What did the Gibeonites use to trick Joshua into making a treaty?",
+    "options": [
+      "Old clothes and moldy bread",
+      "Gold and silver",
+      "False maps",
+      "A letter from Pharaoh"
+    ],
+    "answer": "Old clothes and moldy bread",
+    "reference": "Joshua 9:4-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 361,
+    "book": "Joshua",
+    "question": "Where were the bones of Joseph eventually buried?",
+    "options": [
+      "Shechem",
+      "Egypt",
+      "Jerusalem",
+      "Hebron"
+    ],
+    "answer": "Shechem",
+    "reference": "Joshua 24:32",
+    "difficulty": "hard"
+  },
+  {
+    "id": 410,
+    "book": "Joshua",
+    "question": "Who was the King of Jerusalem that formed a coalition against Gibeon?",
+    "options": [
+      "Adoni-Zedek",
+      "Melchizedek",
+      "Og",
+      "Sihon"
+    ],
+    "answer": "Adoni-Zedek",
+    "reference": "Joshua 10:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 411,
+    "book": "Joshua",
+    "question": "What did Caleb's daughter, Achsah, ask her father for?",
+    "options": [
+      "Springs of water",
+      "A field of wheat",
+      "Gold and silver",
+      "A city"
+    ],
+    "answer": "Springs of water",
+    "reference": "Joshua 15:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 460,
+    "book": "Joshua",
+    "question": "How many stones did Joshua command the men to take from the Jordan River as a memorial?",
+    "options": [
+      "12",
+      "7",
+      "40",
+      "3"
+    ],
+    "answer": "12",
+    "reference": "Joshua 4:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 508,
+    "book": "Joshua",
+    "question": "Who were the Gibeonites condemned to be forever?",
+    "options": [
+      "Woodcutters and water carriers",
+      "Soldiers",
+      "Priests",
+      "Shepherds"
+    ],
+    "answer": "Woodcutters and water carriers",
+    "reference": "Joshua 9:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 550,
+    "book": "Joshua",
+    "question": "Who was the commander of the Lord's Army that appeared to Joshua?",
+    "options": [
+      "The Captain of the Host of the Lord",
+      "Michael",
+      "Gabriel",
+      "Moses"
+    ],
+    "answer": "The Captain of the Host of the Lord",
+    "reference": "Joshua 5:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 558,
+    "book": "Joshua",
+    "question": "What killed more of the Amorites than the swords of the Israelites at Gibeon?",
+    "options": [
+      "Hailstones",
+      "Plague",
+      "Earthquake",
+      "Fire"
+    ],
+    "answer": "Hailstones",
+    "reference": "Joshua 10:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 599,
+    "book": "Joshua",
+    "question": "What did the twelve stones taken from the Jordan represent?",
+    "options": [
+      "The twelve tribes of Israel",
+      "The twelve apostles",
+      "The twelve months",
+      "The twelve spies"
+    ],
+    "answer": "The twelve tribes of Israel",
+    "reference": "Joshua 4:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 610,
+    "book": "Joshua",
+    "question": "How many kings in total did Joshua defeat west of the Jordan?",
+    "options": [
+      "31",
+      "12",
+      "7",
+      "40"
+    ],
+    "answer": "31",
+    "reference": "Joshua 12:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 611,
+    "book": "Joshua",
+    "question": "In which cave did the five Amorite kings hide from Joshua?",
+    "options": [
+      "Makkedah",
+      "Adullam",
+      "Machpelah",
+      "Ein Gedi"
+    ],
+    "answer": "Makkedah",
+    "reference": "Joshua 10:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 660,
+    "book": "Joshua",
+    "question": "Which city was given to Caleb as his inheritance?",
+    "options": [
+      "Hebron",
+      "Jerusalem",
+      "Bethel",
+      "Shiloh"
+    ],
+    "answer": "Hebron",
+    "reference": "Joshua 14:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 661,
+    "book": "Joshua",
+    "question": "Who was the priest that helped Joshua divide the land?",
+    "options": [
+      "Eleazar",
+      "Phinehas",
+      "Aaron",
+      "Eli"
+    ],
+    "answer": "Eleazar",
+    "reference": "Joshua 19:51",
+    "difficulty": "medium"
+  },
+  {
+    "id": 712,
+    "book": "Joshua",
+    "question": "What was the name of the place where the Israelites were circumcised after crossing the Jordan?",
+    "options": [
+      "Gilgal",
+      "Shiloh",
+      "Bethel",
+      "Ai"
+    ],
+    "answer": "Gilgal",
+    "reference": "Joshua 5:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 713,
+    "book": "Joshua",
+    "question": "Which city was given to the Levites as a city of refuge in Galilee?",
+    "options": [
+      "Kedesh",
+      "Shechem",
+      "Hebron",
+      "Ramoth"
+    ],
+    "answer": "Kedesh",
+    "reference": "Joshua 20:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 761,
+    "book": "Joshua",
+    "question": "Who was the priest who set up the tabernacle at Shiloh?",
+    "options": [
+      "The whole congregation (under Joshua/Eleazar)",
+      "Moses",
+      "Aaron",
+      "Eli"
+    ],
+    "answer": "The whole congregation (under Joshua/Eleazar)",
+    "reference": "Joshua 18:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 800,
+    "book": "Joshua",
+    "question": "Who was the father of Joshua?",
+    "options": [
+      "Nun",
+      "Caleb",
+      "Jephunneh",
+      "Eleazar"
+    ],
+    "answer": "Nun",
+    "reference": "Joshua 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 812,
+    "book": "Joshua",
+    "question": "Who was the giant king of the Amorites whose bed was 9 cubits long?",
+    "options": [
+      "Og",
+      "Sihon",
+      "Goliath",
+      "Anak"
+    ],
+    "answer": "Og",
+    "reference": "Deuteronomy 3:11 (Joshua 12:4)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 813,
+    "book": "Joshua",
+    "question": "Which city was assigned to the tribe of Dan but was hard to conquer, leading them to move north?",
+    "options": [
+      "Aijalon/Zorah area (moved to Laish)",
+      "Jericho",
+      "Bethel",
+      "Hebron"
+    ],
+    "answer": "Aijalon/Zorah area (moved to Laish)",
+    "reference": "Joshua 19:47",
+    "difficulty": "hard"
+  },
+  {
+    "id": 860,
+    "book": "Joshua",
+    "question": "Who was the father of Achan?",
+    "options": [
+      "Carmi",
+      "Zerah",
+      "Zabdi",
+      "Judah"
+    ],
+    "answer": "Carmi",
+    "reference": "Joshua 7:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 899,
+    "book": "Joshua",
+    "question": "What city was given to Joshua as his inheritance?",
+    "options": [
+      "Timnath-serah",
+      "Shiloh",
+      "Hebron",
+      "Bethel"
+    ],
+    "answer": "Timnath-serah",
+    "reference": "Joshua 19:50",
+    "difficulty": "hard"
+  },
+  {
+    "id": 912,
+    "book": "Joshua",
+    "question": "What happened to the kings of the Amorites who hid in the cave at Makkedah?",
+    "options": [
+      "Joshua struck them and hanged them on five trees",
+      "They were spared",
+      "They escaped",
+      "They were burned"
+    ],
+    "answer": "Joshua struck them and hanged them on five trees",
+    "reference": "Joshua 10:26",
+    "difficulty": "hard"
+  },
+  {
+    "id": 913,
+    "book": "Joshua",
+    "question": "How old was Joshua when he died?",
+    "options": [
+      "110",
+      "120",
+      "100",
+      "90"
+    ],
+    "answer": "110",
+    "reference": "Joshua 24:29",
+    "difficulty": "medium"
+  },
+  {
+    "id": 960,
+    "book": "Joshua",
+    "question": "What did Achan steal from Jericho?",
+    "options": [
+      "A beautiful Babylonian garment, silver, and gold",
+      "Just gold",
+      "Sheep and oxen",
+      "Weapons"
+    ],
+    "answer": "A beautiful Babylonian garment, silver, and gold",
+    "reference": "Joshua 7:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 999,
+    "book": "Joshua",
+    "question": "What city's walls fell down?",
+    "options": [
+      "Jericho",
+      "Ai",
+      "Gibeon",
+      "Jerusalem"
+    ],
+    "answer": "Jericho",
+    "reference": "Joshua 6:20",
+    "difficulty": "easy"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "id": 25,
+    "book": "Ecclesiastes",
+    "question": "What is the repeated theme/phrase in Ecclesiastes?",
+    "options": [
+      "God is love",
+      "Vanity of vanities",
+      "Holiness to the Lord",
+      "Repent and believe"
+    ],
+    "answer": "Vanity of vanities",
+    "reference": "Ecclesiastes 1:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 84,
+    "book": "Ecclesiastes",
+    "question": "What does the author say there is a time for?",
+    "options": [
+      "Only rejoicing",
+      "Everything",
+      "Only weeping",
+      "Making money"
+    ],
+    "answer": "Everything",
+    "reference": "Ecclesiastes 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 179,
+    "book": "Ecclesiastes",
+    "question": "Complete the verse: 'A cord of ___ strands is not quickly broken.'",
+    "options": [
+      "Three",
+      "Two",
+      "Seven",
+      "Four"
+    ],
+    "answer": "Three",
+    "reference": "Ecclesiastes 4:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 221,
+    "book": "Ecclesiastes",
+    "question": "What does the word 'Ecclesiastes' (Koheleth) mean?",
+    "options": [
+      "The Preacher/Teacher",
+      "The King",
+      "The Prophet",
+      "The Singer"
+    ],
+    "answer": "The Preacher/Teacher",
+    "reference": "Ecclesiastes 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 279,
+    "book": "Ecclesiastes",
+    "question": "Complete the phrase: 'There is nothing new under the...'",
+    "options": [
+      "Sun",
+      "Moon",
+      "Heavens",
+      "Earth"
+    ],
+    "answer": "Sun",
+    "reference": "Ecclesiastes 1:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 280,
+    "book": "Ecclesiastes",
+    "question": "When does the author say you should remember your Creator?",
+    "options": [
+      "In the days of your youth",
+      "Before you die",
+      "When you are rich",
+      "In times of trouble"
+    ],
+    "answer": "In the days of your youth",
+    "reference": "Ecclesiastes 12:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 332,
+    "book": "Ecclesiastes",
+    "question": "Complete the verse: 'Cast your bread upon the...'",
+    "options": [
+      "Waters",
+      "Ground",
+      "Altars",
+      "Poor"
+    ],
+    "answer": "Waters",
+    "reference": "Ecclesiastes 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 381,
+    "book": "Ecclesiastes",
+    "question": "The end of the matter is this: Fear God and...",
+    "options": [
+      "Keep His commandments",
+      "Love your neighbor",
+      "Build His house",
+      "Offer sacrifices"
+    ],
+    "answer": "Keep His commandments",
+    "reference": "Ecclesiastes 12:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 429,
+    "book": "Ecclesiastes",
+    "question": "According to Ecclesiastes 3, there is a time to be born and a time to...",
+    "options": [
+      "Die",
+      "Live",
+      "Dance",
+      "Weep"
+    ],
+    "answer": "Die",
+    "reference": "Ecclesiastes 3:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 478,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 12:7 says the dust returns to the earth, and the spirit returns to...",
+    "options": [
+      "God who gave it",
+      "The wind",
+      "Nothingness",
+      "The stars"
+    ],
+    "answer": "God who gave it",
+    "reference": "Ecclesiastes 12:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 526,
+    "book": "Ecclesiastes",
+    "question": "According to Ecclesiastes 10:1, what ruins a bottle of perfume?",
+    "options": [
+      "Dead flies",
+      "Vinegar",
+      "Water",
+      "Dust"
+    ],
+    "answer": "Dead flies",
+    "reference": "Ecclesiastes 10:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 576,
+    "book": "Ecclesiastes",
+    "question": "Complete the verse: 'Better is a poor and wise youth than an old and foolish...'",
+    "options": [
+      "King",
+      "Rich man",
+      "Priest",
+      "Judge"
+    ],
+    "answer": "King",
+    "reference": "Ecclesiastes 4:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 632,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 4:9 says, 'Two are better than one because they have a good...'",
+    "options": [
+      "Reward for their labor",
+      "Time together",
+      "Defense",
+      "Conversation"
+    ],
+    "answer": "Reward for their labor",
+    "reference": "Ecclesiastes 4:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 682,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 7:1 says, 'A good name is better than...'",
+    "options": [
+      "Precious ointment/perfume",
+      "Great riches",
+      "Fine wine",
+      "Long life"
+    ],
+    "answer": "Precious ointment/perfume",
+    "reference": "Ecclesiastes 7:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 736,
+    "book": "Ecclesiastes",
+    "question": "What is described as 'vanity of vanities'?",
+    "options": [
+      "All is vanity",
+      "Youth",
+      "Riches",
+      "Work"
+    ],
+    "answer": "All is vanity",
+    "reference": "Ecclesiastes 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 776,
+    "book": "Ecclesiastes",
+    "question": "According to Ecclesiastes, what is 'better than a handful with quietness'?",
+    "options": [
+      "Two hands full with toil",
+      "Nothing with peace",
+      "Neither",
+      "Wait... actually 'One hand full of rest is better than two hands full of toil'"
+    ],
+    "answer": "Wait... actually 'One hand full of rest is better than two hands full of toil'",
+    "reference": "Ecclesiastes 4:6 (Trick question on phrasing)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 835,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 11:4 says: 'He who observes the wind will not...'",
+    "options": [
+      "Sow",
+      "Reap",
+      "Sail",
+      "Sleep"
+    ],
+    "answer": "Sow",
+    "reference": "Ecclesiastes 11:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 875,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 3:11 says God has put ______ in their hearts.",
+    "options": [
+      "Eternity",
+      "Joy",
+      "Wisdom",
+      "Fear"
+    ],
+    "answer": "Eternity",
+    "reference": "Ecclesiastes 3:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 935,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 12:12 says 'of making many books there is no...'",
+    "options": [
+      "End",
+      "Profit",
+      "Wisdom",
+      "Joy"
+    ],
+    "answer": "End",
+    "reference": "Ecclesiastes 12:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 975,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 3:1 says to everything there is a...",
+    "options": [
+      "Season",
+      "Price",
+      "Limit",
+      "End"
+    ],
+    "answer": "Season",
+    "reference": "Ecclesiastes 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1457,
+    "book": "Ecclesiastes",
+    "question": "What is the recurring phrase used by the Preacher to describe life?",
+    "options": [
+      "Vanity of vanities, all is vanity",
+      "God is love",
+      "Life is suffering",
+      "Rejoice in the Lord"
+    ],
+    "answer": "Vanity of vanities, all is vanity",
+    "reference": "Ecclesiastes 1:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1458,
+    "book": "Ecclesiastes",
+    "question": "According to Ecclesiastes 3, to everything there is a...",
+    "options": [
+      "Season",
+      "Price",
+      "Reason",
+      "Limit"
+    ],
+    "answer": "Season",
+    "reference": "Ecclesiastes 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1459,
+    "book": "Ecclesiastes",
+    "question": "A threefold cord is not quickly...",
+    "options": [
+      "Broken",
+      "Tied",
+      "Found",
+      "Lost"
+    ],
+    "answer": "Broken",
+    "reference": "Ecclesiastes 4:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1460,
+    "book": "Ecclesiastes",
+    "question": "He who loves silver will not be satisfied with...",
+    "options": [
+      "Silver",
+      "Gold",
+      "Life",
+      "Friends"
+    ],
+    "answer": "Silver",
+    "reference": "Ecclesiastes 5:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1461,
+    "book": "Ecclesiastes",
+    "question": "Remember now your Creator in the days of your...",
+    "options": [
+      "Youth",
+      "Old age",
+      "Trouble",
+      "Wealth"
+    ],
+    "answer": "Youth",
+    "reference": "Ecclesiastes 12:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1462,
+    "book": "Ecclesiastes",
+    "question": "Ecclesiastes 12 compares the aging body to a...",
+    "options": [
+      "House deteriorating",
+      "Tree withering",
+      "Ship sinking",
+      "Garment tearing"
+    ],
+    "answer": "House deteriorating",
+    "reference": "Ecclesiastes 12:3-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1463,
+    "book": "Ecclesiastes",
+    "question": "The end of the matter; all has been heard. Fear God and...",
+    "options": [
+      "Keep his commandments",
+      "Love your neighbor",
+      "Offer sacrifices",
+      "Pray daily"
+    ],
+    "answer": "Keep his commandments",
+    "reference": "Ecclesiastes 12:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1464,
+    "book": "Ecclesiastes",
+    "question": "Cast your bread upon the waters, for you will...",
+    "options": [
+      "Find it after many days",
+      "Lose it forever",
+      "Feed the fish",
+      "See it sink"
+    ],
+    "answer": "Find it after many days",
+    "reference": "Ecclesiastes 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1465,
+    "book": "Ecclesiastes",
+    "question": "Better is a handful with quietness than both hands full with...",
+    "options": [
+      "Toil and grasping for the wind",
+      "Riches and sorrow",
+      "Gold and silver",
+      "Food"
+    ],
+    "answer": "Toil and grasping for the wind",
+    "reference": "Ecclesiastes 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1466,
+    "book": "Ecclesiastes",
+    "question": "God has put ______ in their hearts, except that no one can find out the work that God does.",
+    "options": [
+      "Eternity",
+      "Love",
+      "Sin",
+      "Wisdom"
+    ],
+    "answer": "Eternity",
+    "reference": "Ecclesiastes 3:11",
+    "difficulty": "medium"
+  }
+]

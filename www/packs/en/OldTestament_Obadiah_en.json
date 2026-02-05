@@ -1,0 +1,422 @@
+[
+  {
+    "id": 91,
+    "book": "Obadiah",
+    "question": "Which nation did Obadiah prophesy against?",
+    "options": [
+      "Egypt",
+      "Babylon",
+      "Edom",
+      "Assyria"
+    ],
+    "answer": "Edom",
+    "reference": "Obadiah 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 231,
+    "book": "Obadiah",
+    "question": "What is unique about the book of Obadiah?",
+    "options": [
+      "It is the shortest book in the Old Testament",
+      "It was written by a woman",
+      "It has no mention of God",
+      "It was written in Egypt"
+    ],
+    "answer": "It is the shortest book in the Old Testament",
+    "reference": "Obadiah (1 chapter, 21 verses)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 439,
+    "book": "Obadiah",
+    "question": "The book of Obadiah condemns Edom for their violence against their brother...",
+    "options": [
+      "Jacob",
+      "Joseph",
+      "Ishmael",
+      "Lot"
+    ],
+    "answer": "Jacob",
+    "reference": "Obadiah 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 536,
+    "book": "Obadiah",
+    "question": "What is the central theme of Obadiah?",
+    "options": [
+      "Judgment on Edom",
+      "Restoration of Nineveh",
+      "Fall of Babylon",
+      "Repentance of Israel"
+    ],
+    "answer": "Judgment on Edom",
+    "reference": "Obadiah 1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 584,
+    "book": "Obadiah",
+    "question": "Which qualities of Edom deceived them?",
+    "options": [
+      "The pride of their heart",
+      "Their wealth",
+      "Their army",
+      "Their allies"
+    ],
+    "answer": "The pride of their heart",
+    "reference": "Obadiah 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 747,
+    "book": "Obadiah",
+    "question": "Obadiah says: 'The day of the Lord is near upon all...'",
+    "options": [
+      "The nations",
+      "The sinners",
+      "The mountains",
+      "The seas"
+    ],
+    "answer": "The nations",
+    "reference": "Obadiah 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 786,
+    "book": "Obadiah",
+    "question": "Who will possess the mountains of Esau?",
+    "options": [
+      "The house of Jacob/Joseph",
+      "The Philistines",
+      "The Babylonians",
+      "The Egyptians"
+    ],
+    "answer": "The house of Jacob/Joseph",
+    "reference": "Obadiah 1:18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 846,
+    "book": "Obadiah",
+    "question": "Which verse is the key verse of Obadiah?",
+    "options": [
+      "'The kingdom shall be the Lord's'",
+      "'Pride goes before destruction'",
+      "'The just shall live by faith'",
+      "'Return to me'"
+    ],
+    "answer": "'The kingdom shall be the Lord's'",
+    "reference": "Obadiah 1:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 885,
+    "book": "Obadiah",
+    "question": "Which nation's destruction is prophesied in Obadiah?",
+    "options": [
+      "Edom",
+      "Moab",
+      "Ammon",
+      "Syria"
+    ],
+    "answer": "Edom",
+    "reference": "Obadiah 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 946,
+    "book": "Obadiah",
+    "question": "Obadiah prophesied against Edom because of their violence against...",
+    "options": [
+      "Their brother Jacob",
+      "The Lord",
+      "The temple",
+      "The poor"
+    ],
+    "answer": "Their brother Jacob",
+    "reference": "Obadiah 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 985,
+    "book": "Obadiah",
+    "question": "Obadiah prophesied the destruction of...",
+    "options": [
+      "Edom",
+      "Egypt",
+      "Babylon",
+      "Assyria"
+    ],
+    "answer": "Edom",
+    "reference": "Obadiah 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1642,
+    "book": "Obadiah",
+    "question": "Obadiah is the shortest book in the Old Testament. How many verses does it have?",
+    "options": [
+      "21",
+      "15",
+      "30",
+      "12"
+    ],
+    "answer": "21",
+    "reference": "Structure",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1643,
+    "book": "Obadiah",
+    "question": "Which nation is the subject of Obadiah's prophecy of judgment?",
+    "options": [
+      "Edom",
+      "Moab",
+      "Ammon",
+      "Syria"
+    ],
+    "answer": "Edom",
+    "reference": "Obadiah 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1644,
+    "book": "Obadiah",
+    "question": "The pride of your heart has deceived you, you who dwell in the...",
+    "options": [
+      "Clefts of the rock",
+      "Tents of luxury",
+      "Walls of the city",
+      "Valley of the giants"
+    ],
+    "answer": "Clefts of the rock",
+    "reference": "Obadiah 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1645,
+    "book": "Obadiah",
+    "question": "Edom said in his heart, 'Who will ______?'",
+    "options": [
+      "Bring me down to the ground",
+      "Defeat me",
+      "Judge me",
+      "See me"
+    ],
+    "answer": "Bring me down to the ground",
+    "reference": "Obadiah 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1646,
+    "book": "Obadiah",
+    "question": "Though you ascend as high as the ______, I will bring you down.",
+    "options": [
+      "Eagle",
+      "Cloud",
+      "Mountain",
+      "Sun"
+    ],
+    "answer": "Eagle",
+    "reference": "Obadiah 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1647,
+    "book": "Obadiah",
+    "question": "From where did Edom set his nest among the stars?",
+    "options": [
+      "There / Among the stars",
+      "On high",
+      "In the heavens",
+      "On the peak"
+    ],
+    "answer": "There / Among the stars",
+    "reference": "Obadiah 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1648,
+    "book": "Obadiah",
+    "question": "If thieves came to you, would they not have stolen till they had ______?",
+    "options": [
+      "Enough",
+      "Everything",
+      "The gold",
+      "Nothing"
+    ],
+    "answer": "Enough",
+    "reference": "Obadiah 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1649,
+    "book": "Obadiah",
+    "question": "How Esau shall be searched out! How his ______ treasures shall be sought after!",
+    "options": [
+      "Hidden",
+      "Gold",
+      "Lost",
+      "Great"
+    ],
+    "answer": "Hidden",
+    "reference": "Obadiah 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1650,
+    "book": "Obadiah",
+    "question": "Who will be dismayed so that everyone from the mountains of Esau may be cut off by slaughter?",
+    "options": [
+      "Teman",
+      "Zion",
+      "Babylon",
+      "Moab"
+    ],
+    "answer": "Teman",
+    "reference": "Obadiah 1:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1651,
+    "book": "Obadiah",
+    "question": "For violence against your brother ______, shame shall cover you.",
+    "options": [
+      "Jacob",
+      "Joseph",
+      "Isaac",
+      "Israel"
+    ],
+    "answer": "Jacob",
+    "reference": "Obadiah 1:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1652,
+    "book": "Obadiah",
+    "question": "You should not have rejoiced over the children of Judah in the day of their...",
+    "options": [
+      "Destruction",
+      "Feast",
+      "Exile",
+      "Birth"
+    ],
+    "answer": "Destruction",
+    "reference": "Obadiah 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1653,
+    "book": "Obadiah",
+    "question": "You should not have stood at the ______ to cut off those among them who escaped.",
+    "options": [
+      "Crossroads",
+      "City gate",
+      "River",
+      "Mountain pass"
+    ],
+    "answer": "Crossroads",
+    "reference": "Obadiah 1:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1654,
+    "book": "Obadiah",
+    "question": "For the day of the Lord upon all the nations is...",
+    "options": [
+      "Near",
+      "Far",
+      "Unknown",
+      "Great"
+    ],
+    "answer": "Near",
+    "reference": "Obadiah 1:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1655,
+    "book": "Obadiah",
+    "question": "As you have done, it shall be done to ______.",
+    "options": [
+      "You",
+      "Your children",
+      "Your nation",
+      "Your enemies"
+    ],
+    "answer": "You",
+    "reference": "Obadiah 1:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1656,
+    "book": "Obadiah",
+    "question": "But on Mount ______ there shall be deliverance.",
+    "options": [
+      "Zion",
+      "Sinai",
+      "Nebo",
+      "Carmel"
+    ],
+    "answer": "Zion",
+    "reference": "Obadiah 1:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1657,
+    "book": "Obadiah",
+    "question": "The house of Jacob shall be a fire, and the house of Joseph a flame; but the house of Esau shall be...",
+    "options": [
+      "Stubble",
+      "Water",
+      "Dust",
+      "Smoke"
+    ],
+    "answer": "Stubble",
+    "reference": "Obadiah 1:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1658,
+    "book": "Obadiah",
+    "question": "There shall be no survivor of the house of...",
+    "options": [
+      "Esau",
+      "Jacob",
+      "Levi",
+      "Judah"
+    ],
+    "answer": "Esau",
+    "reference": "Obadiah 1:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1659,
+    "book": "Obadiah",
+    "question": "Saviors shall come to Mount Zion to judge the mountains of Esau, and the ______ shall be the Lord's.",
+    "options": [
+      "Kingdom",
+      "Power",
+      "Glory",
+      "Earth"
+    ],
+    "answer": "Kingdom",
+    "reference": "Obadiah 1:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1660,
+    "book": "Obadiah",
+    "question": "What is the theme of Obadiah?",
+    "options": [
+      "Judgment on Edom and Restoration of Israel",
+      "The building of the wall",
+      "The love of God",
+      "The return of the exiles"
+    ],
+    "answer": "Judgment on Edom and Restoration of Israel",
+    "reference": "Theme",
+    "difficulty": "easy"
+  }
+]

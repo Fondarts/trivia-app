@@ -1,0 +1,2702 @@
+[
+    {
+      "id": 1401,
+      "book": "Deuteronomy",
+      "question": "What is the 'Great Commandment' found in Deuteronomy 6:5?",
+      "options": ["Love the Lord your God with all your heart, soul, and strength", "Love your neighbor as yourself", "Do not steal", "Keep the Sabbath holy"],
+      "answer": "Love the Lord your God with all your heart, soul, and strength",
+      "reference": "Deuteronomy 6:5",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1402,
+      "book": "Leviticus",
+      "question": "What is the name of the goat that was released into the wilderness on the Day of Atonement?",
+      "options": ["The Scapegoat (Azazel)", "The Sacrificial Goat", "The Paschal Goat", "The Wild Goat"],
+      "answer": "The Scapegoat (Azazel)",
+      "reference": "Leviticus 16:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1403,
+      "book": "Leviticus",
+      "question": "How often did the Year of Jubilee occur?",
+      "options": ["Every 50th year", "Every 7th year", "Every 100th year", "Every 12th year"],
+      "answer": "Every 50th year",
+      "reference": "Leviticus 25:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1404,
+      "book": "Isaiah",
+      "question": "In Isaiah 6, what did the Seraphim cry out to one another?",
+      "options": ["Holy, holy, holy is the Lord of hosts", "Worthy is the Lamb", "Glory to God in the highest", "The Lord is my Shepherd"],
+      "answer": "Holy, holy, holy is the Lord of hosts",
+      "reference": "Isaiah 6:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1405,
+      "book": "Isaiah",
+      "question": "Who is the Persian king prophesied by name in Isaiah who would rebuild Jerusalem?",
+      "options": ["Cyrus", "Darius", "Artaxerxes", "Nebuchadnezzar"],
+      "answer": "Cyrus",
+      "reference": "Isaiah 44:28",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1406,
+      "book": "Isaiah",
+      "question": "Isaiah 53 compares the Suffering Servant to a sheep that is...",
+      "options": ["Silent before its shearers", "Lost in the mountains", "White as snow", "Strong as a lion"],
+      "answer": "Silent before its shearers",
+      "reference": "Isaiah 53:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1407,
+      "book": "Daniel",
+      "question": "What words appeared on the wall during Belshazzar's feast?",
+      "options": ["Mene, Mene, Tekel, Upharsin", "Ichabod, Ichabod", "Eloi, Eloi, Lama Sabachthani", "Alpha and Omega"],
+      "answer": "Mene, Mene, Tekel, Upharsin",
+      "reference": "Daniel 5:25",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1408,
+      "book": "Daniel",
+      "question": "Who was the angel that came to give Daniel understanding of his vision?",
+      "options": ["Gabriel", "Michael", "Raphael", "Uriel"],
+      "answer": "Gabriel",
+      "reference": "Daniel 9:21",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1409,
+      "book": "Daniel",
+      "question": "What did Daniel refuse to do, leading to the Lion's Den?",
+      "options": ["Stop praying to his God", "Eat the King's meat", "Bow to the statue", "Interpret the dream"],
+      "answer": "Stop praying to his God",
+      "reference": "Daniel 6:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1410,
+      "book": "Daniel",
+      "question": "In Nebuchadnezzar's dream of the tree, who was the tree?",
+      "options": ["Nebuchadnezzar himself", "The Messiah", "The Kingdom of Israel", "Cyrus"],
+      "answer": "Nebuchadnezzar himself",
+      "reference": "Daniel 4:22",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1411,
+      "book": "Proverbs",
+      "question": "Go to the ____, you sluggard; consider her ways and be wise.",
+      "options": ["Ant", "Bee", "Lion", "Eagle"],
+      "answer": "Ant",
+      "reference": "Proverbs 6:6",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1412,
+      "book": "Proverbs",
+      "question": "Proverbs 27:17 says, 'As iron sharpens iron, so a man sharpens the...'",
+      "options": ["Countenance of his friend", "Sword of his enemy", "Mind of his son", "Wit of the king"],
+      "answer": "Countenance of his friend",
+      "reference": "Proverbs 27:17",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1413,
+      "book": "Proverbs",
+      "question": "What is the 'beginning of wisdom' according to Proverbs 9:10?",
+      "options": ["The fear of the Lord", "Knowledge of the law", "Respect for elders", "Silence"],
+      "answer": "The fear of the Lord",
+      "reference": "Proverbs 9:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1414,
+      "book": "Proverbs",
+      "question": "Proverbs 31 describes the characteristics of...",
+      "options": ["A virtuous/capable wife", "A mighty king", "A wise son", "A foolish sluggard"],
+      "answer": "A virtuous/capable wife",
+      "reference": "Proverbs 31:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1415,
+      "book": "Proverbs",
+      "question": "Pride goes before destruction, and a haughty spirit before...",
+      "options": ["A fall", "A battle", "Honor", "Death"],
+      "answer": "A fall",
+      "reference": "Proverbs 16:18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1416,
+      "book": "Jeremiah",
+      "question": "God told Jeremiah, 'Before I formed you in the womb I ____ you.'",
+      "options": ["Knew", "Loved", "Saw", "Called"],
+      "answer": "Knew",
+      "reference": "Jeremiah 1:5",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1417,
+      "book": "Jeremiah",
+      "question": "Where did God send Jeremiah to watch a craftsman work as a lesson for Israel?",
+      "options": ["The potter's house", "The blacksmith's shop", "The weaver's loom", "The carpenter's shed"],
+      "answer": "The potter's house",
+      "reference": "Jeremiah 18:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1418,
+      "book": "Jeremiah",
+      "question": "In Jeremiah 31:31, what new thing does God promise to make with the house of Israel?",
+      "options": ["A New Covenant", "A New Temple", "A New Kingdom", "A New Land"],
+      "answer": "A New Covenant",
+      "reference": "Jeremiah 31:31",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1419,
+      "book": "Jeremiah",
+      "question": "Which king cut Jeremiah's scroll with a knife and burned it?",
+      "options": ["Jehoiakim", "Zedekiah", "Josiah", "Nebuchadnezzar"],
+      "answer": "Jehoiakim",
+      "reference": "Jeremiah 36:23",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1420,
+      "book": "Jeremiah",
+      "question": "Where was Jeremiah cast into by the princes?",
+      "options": ["A muddy cistern/dungeon", "A lion's den", "A fiery furnace", "The river Jordan"],
+      "answer": "A muddy cistern/dungeon",
+      "reference": "Jeremiah 38:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1421,
+      "book": "Esther",
+      "question": "Who was the king who held the golden scepter out to Esther?",
+      "options": ["Ahasuerus (Xerxes)", "Cyrus", "Darius", "Nebuchadnezzar"],
+      "answer": "Ahasuerus (Xerxes)",
+      "reference": "Esther 5:2",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1422,
+      "book": "Esther",
+      "question": "What relation was Mordecai to Esther?",
+      "options": ["Cousin", "Uncle", "Brother", "Father"],
+      "answer": "Cousin",
+      "reference": "Esther 2:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1423,
+      "book": "Esther",
+      "question": "How high was the gallows Haman built for Mordecai?",
+      "options": ["50 cubits", "10 cubits", "100 cubits", "75 cubits"],
+      "answer": "50 cubits",
+      "reference": "Esther 5:14",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1424,
+      "book": "Esther",
+      "question": "What secret did Esther keep from the King initially?",
+      "options": ["Her Jewish heritage", "Her marriage to Mordecai", "Her wealth", "Her age"],
+      "answer": "Her Jewish heritage",
+      "reference": "Esther 2:20",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1425,
+      "book": "Esther",
+      "question": "What phrase did Mordecai use to encourage Esther to act?",
+      "options": ["For such a time as this", "Be strong and courageous", "The Lord is with you", "Let my people go"],
+      "answer": "For such a time as this",
+      "reference": "Esther 4:14",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1426,
+      "book": "Esther",
+      "question": "Who were the two eunuchs who plotted to kill the king, discovered by Mordecai?",
+      "options": ["Bigthan and Teresh", "Haman and Zeresh", "Hegai and Shaashgaz", "Memucan and Carshena"],
+      "answer": "Bigthan and Teresh",
+      "reference": "Esther 2:21",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1427,
+      "book": "Esther",
+      "question": "What was the name of Haman's wife?",
+      "options": ["Zeresh", "Vashti", "Esther", "Haggeth"],
+      "answer": "Zeresh",
+      "reference": "Esther 5:10",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1428,
+      "book": "Esther",
+      "question": "Why could the King not sleep on the night the tide turned for Mordecai?",
+      "options": ["God kept him awake / It just happened", "He was sick", "He was drunk", "The noise of the city"],
+      "answer": "God kept him awake / It just happened",
+      "reference": "Esther 6:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1429,
+      "book": "Ezekiel",
+      "question": "What strange food was Ezekiel commanded to eat?",
+      "options": ["A scroll", "Locusts", "Unleavened bread", "Figs"],
+      "answer": "A scroll",
+      "reference": "Ezekiel 3:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1430,
+      "book": "Ezekiel",
+      "question": "In Ezekiel's vision of the dry bones, what happened after they came together?",
+      "options": ["Breath entered them and they lived", "They turned to dust", "They burned", "They fought each other"],
+      "answer": "Breath entered them and they lived",
+      "reference": "Ezekiel 37:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1431,
+      "book": "Ezekiel",
+      "question": "What did Ezekiel see leaving the temple in Jerusalem?",
+      "options": ["The Glory of the Lord", "The Ark of the Covenant", "The High Priest", "The Altar"],
+      "answer": "The Glory of the Lord",
+      "reference": "Ezekiel 10:18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1432,
+      "book": "Ezekiel",
+      "question": "God calls Ezekiel to be a ______ for the house of Israel.",
+      "options": ["Watchman", "King", "Shepherd", "Judge"],
+      "answer": "Watchman",
+      "reference": "Ezekiel 3:17",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1433,
+      "book": "Ezekiel",
+      "question": "In Ezekiel 4, how many days did he lie on his left side for the iniquity of Israel?",
+      "options": ["390 days", "40 days", "7 days", "100 days"],
+      "answer": "390 days",
+      "reference": "Ezekiel 4:5",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1434,
+      "book": "Ezekiel",
+      "question": "What phrase is repeated constantly in Ezekiel (over 60 times)?",
+      "options": ["Then they shall know that I am the Lord", "Thus says the Lord", "Repent for the kingdom is near", "Holy, Holy, Holy"],
+      "answer": "Then they shall know that I am the Lord",
+      "reference": "Throughout Ezekiel",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1435,
+      "book": "Ezekiel",
+      "question": "God promised to take out their heart of stone and give them a...",
+      "options": ["Heart of flesh", "Heart of gold", "Heart of wisdom", "Heart of fire"],
+      "answer": "Heart of flesh",
+      "reference": "Ezekiel 36:26",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1436,
+      "book": "Ezekiel",
+      "question": "Ezekiel saw a vision of a wheel within a...",
+      "options": ["Wheel", "Fire", "Cloud", "Storm"],
+      "answer": "Wheel",
+      "reference": "Ezekiel 1:16",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1437,
+      "book": "Ezekiel",
+      "question": "Which city is lamented over as a beautiful ship that sinks in Ezekiel 27?",
+      "options": ["Tyre", "Sidon", "Babylon", "Nineveh"],
+      "answer": "Tyre",
+      "reference": "Ezekiel 27:2",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1438,
+      "book": "Jonah",
+      "question": "To which city was Jonah trying to flee?",
+      "options": ["Tarshish", "Nineveh", "Joppa", "Corinth"],
+      "answer": "Tarshish",
+      "reference": "Jonah 1:3",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1439,
+      "book": "Jonah",
+      "question": "How did the sailors determine who was responsible for the storm?",
+      "options": ["They cast lots", "They prayed", "Jonah confessed immediately", "The captain guessed"],
+      "answer": "They cast lots",
+      "reference": "Jonah 1:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1440,
+      "book": "Jonah",
+      "question": "How many days and nights was Jonah in the belly of the great fish?",
+      "options": ["Three days and three nights", "Seven days", "Forty days", "One night"],
+      "answer": "Three days and three nights",
+      "reference": "Jonah 1:17",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1441,
+      "book": "Jonah",
+      "question": "What was Jonah's message to Nineveh?",
+      "options": ["Yet forty days, and Nineveh shall be overthrown!", "Repent or die!", "God loves you!", "Surrender to Israel!"],
+      "answer": "Yet forty days, and Nineveh shall be overthrown!",
+      "reference": "Jonah 3:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1442,
+      "book": "Jonah",
+      "question": "How did the King of Nineveh respond to Jonah's message?",
+      "options": ["He covered himself with sackcloth and sat in ashes", "He killed Jonah", "He laughed", "He ignored it"],
+      "answer": "He covered himself with sackcloth and sat in ashes",
+      "reference": "Jonah 3:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1443,
+      "book": "Jonah",
+      "question": "Why was Jonah angry after Nineveh repented?",
+      "options": ["Because he knew God was gracious and merciful", "Because he looked foolish", "Because he hated the heat", "Because he wasn't paid"],
+      "answer": "Because he knew God was gracious and merciful",
+      "reference": "Jonah 4:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1444,
+      "book": "Jonah",
+      "question": "What did God prepare to give Jonah shade?",
+      "options": ["A plant (gourd/vine)", "A cloud", "A tent", "A tree"],
+      "answer": "A plant (gourd/vine)",
+      "reference": "Jonah 4:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1445,
+      "book": "Jonah",
+      "question": "What destroyed the plant that gave Jonah shade?",
+      "options": ["A worm", "A goat", "The wind", "The sun"],
+      "answer": "A worm",
+      "reference": "Jonah 4:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1446,
+      "book": "Jonah",
+      "question": "How many people in Nineveh did not know their right hand from their left?",
+      "options": ["More than 120,000", "50,000", "1 million", "600,000"],
+      "answer": "More than 120,000",
+      "reference": "Jonah 4:11",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1447,
+      "book": "Job",
+      "question": "Where did Job live?",
+      "options": ["The land of Uz", "The land of Ur", "Canaan", "Egypt"],
+      "answer": "The land of Uz",
+      "reference": "Job 1:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1448,
+      "book": "Job",
+      "question": "What did Job's wife tell him to do after he lost everything?",
+      "options": ["Curse God and die", "Pray harder", "Sacrifice a lamb", "Run away"],
+      "answer": "Curse God and die",
+      "reference": "Job 2:9",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1449,
+      "book": "Job",
+      "question": "Which of these was NOT one of Job's three friends?",
+      "options": ["Elihu", "Eliphaz", "Bildad", "Zophar"],
+      "answer": "Elihu",
+      "reference": "Job 2:11 (Elihu appears later)",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1450,
+      "book": "Job",
+      "question": "Job said, 'The Lord gave, and the Lord has taken away; ______.'",
+      "options": ["Blessed be the name of the Lord", "Cursed be the day I was born", "Why me?", "He is unjust"],
+      "answer": "Blessed be the name of the Lord",
+      "reference": "Job 1:21",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1451,
+      "book": "Job",
+      "question": "From where did God answer Job?",
+      "options": ["Out of the whirlwind", "From a burning bush", "In a dream", "Through a prophet"],
+      "answer": "Out of the whirlwind",
+      "reference": "Job 38:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1452,
+      "book": "Job",
+      "question": "What large land animal does God describe to Job to show His power?",
+      "options": ["Behemoth", "Elephant", "Lion", "Bear"],
+      "answer": "Behemoth",
+      "reference": "Job 40:15",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1453,
+      "book": "Job",
+      "question": "What sea creature does God describe that cannot be pulled out with a hook?",
+      "options": ["Leviathan", "Whale", "Shark", "Kraken"],
+      "answer": "Leviathan",
+      "reference": "Job 41:1",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1454,
+      "book": "Job",
+      "question": "How much did God restore to Job at the end?",
+      "options": ["Double what he had before", "The exact same amount", "Half", "Ten times as much"],
+      "answer": "Double what he had before",
+      "reference": "Job 42:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1455,
+      "book": "Job",
+      "question": "What were the names of Job's three daughters born after his restoration?",
+      "options": ["Jemimah, Keziah, Keren-Happuch", "Rachel, Leah, Dinah", "Sarah, Rebekah, Mary", "Miriam, Deborah, Ruth"],
+      "answer": "Jemimah, Keziah, Keren-Happuch",
+      "reference": "Job 42:14",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1456,
+      "book": "Job",
+      "question": "Job said, 'I know that my ______ lives.'",
+      "options": ["Redeemer", "Savior", "God", "Judge"],
+      "answer": "Redeemer",
+      "reference": "Job 19:25",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1457,
+      "book": "Ecclesiastes",
+      "question": "What is the recurring phrase used by the Preacher to describe life?",
+      "options": ["Vanity of vanities, all is vanity", "God is love", "Life is suffering", "Rejoice in the Lord"],
+      "answer": "Vanity of vanities, all is vanity",
+      "reference": "Ecclesiastes 1:2",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1458,
+      "book": "Ecclesiastes",
+      "question": "According to Ecclesiastes 3, to everything there is a...",
+      "options": ["Season", "Price", "Reason", "Limit"],
+      "answer": "Season",
+      "reference": "Ecclesiastes 3:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1459,
+      "book": "Ecclesiastes",
+      "question": "A threefold cord is not quickly...",
+      "options": ["Broken", "Tied", "Found", "Lost"],
+      "answer": "Broken",
+      "reference": "Ecclesiastes 4:12",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1460,
+      "book": "Ecclesiastes",
+      "question": "He who loves silver will not be satisfied with...",
+      "options": ["Silver", "Gold", "Life", "Friends"],
+      "answer": "Silver",
+      "reference": "Ecclesiastes 5:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1461,
+      "book": "Ecclesiastes",
+      "question": "Remember now your Creator in the days of your...",
+      "options": ["Youth", "Old age", "Trouble", "Wealth"],
+      "answer": "Youth",
+      "reference": "Ecclesiastes 12:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1462,
+      "book": "Ecclesiastes",
+      "question": "Ecclesiastes 12 compares the aging body to a...",
+      "options": ["House deteriorating", "Tree withering", "Ship sinking", "Garment tearing"],
+      "answer": "House deteriorating",
+      "reference": "Ecclesiastes 12:3-5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1463,
+      "book": "Ecclesiastes",
+      "question": "The end of the matter; all has been heard. Fear God and...",
+      "options": ["Keep his commandments", "Love your neighbor", "Offer sacrifices", "Pray daily"],
+      "answer": "Keep his commandments",
+      "reference": "Ecclesiastes 12:13",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1464,
+      "book": "Ecclesiastes",
+      "question": "Cast your bread upon the waters, for you will...",
+      "options": ["Find it after many days", "Lose it forever", "Feed the fish", "See it sink"],
+      "answer": "Find it after many days",
+      "reference": "Ecclesiastes 11:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1465,
+      "book": "Ecclesiastes",
+      "question": "Better is a handful with quietness than both hands full with...",
+      "options": ["Toil and grasping for the wind", "Riches and sorrow", "Gold and silver", "Food"],
+      "answer": "Toil and grasping for the wind",
+      "reference": "Ecclesiastes 4:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1466,
+      "book": "Ecclesiastes",
+      "question": "God has put ______ in their hearts, except that no one can find out the work that God does.",
+      "options": ["Eternity", "Love", "Sin", "Wisdom"],
+      "answer": "Eternity",
+      "reference": "Ecclesiastes 3:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1467,
+      "book": "1 Chronicles",
+      "question": "How does the book of 1 Chronicles begin?",
+      "options": ["With a genealogy from Adam", "With the creation of the world", "With the story of David", "With the reign of Saul"],
+      "answer": "With a genealogy from Adam",
+      "reference": "1 Chronicles 1:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1468,
+      "book": "1 Chronicles",
+      "question": "Who prayed, 'Oh, that You would bless me indeed, and enlarge my territory'?",
+      "options": ["Jabez", "David", "Solomon", "Caleb"],
+      "answer": "Jabez",
+      "reference": "1 Chronicles 4:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1469,
+      "book": "1 Chronicles",
+      "question": "Who was struck dead for touching the Ark of the Covenant when the oxen stumbled?",
+      "options": ["Uzza", "Ahio", "Obed-Edom", "Zadok"],
+      "answer": "Uzza",
+      "reference": "1 Chronicles 13:9-10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1470,
+      "book": "1 Chronicles",
+      "question": "Why was David not allowed to build the temple?",
+      "options": ["Because he was a man of war and had shed blood", "Because he didn't have enough money", "Because God wanted a tent", "Because he was too old"],
+      "answer": "Because he was a man of war and had shed blood",
+      "reference": "1 Chronicles 22:8",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1471,
+      "book": "1 Chronicles",
+      "question": "Which one of David's mighty men killed a lion in a pit on a snowy day?",
+      "options": ["Benaiah", "Joab", "Abishai", "Eleazar"],
+      "answer": "Benaiah",
+      "reference": "1 Chronicles 11:22",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1472,
+      "book": "1 Chronicles",
+      "question": "Who incited David to number Israel (take a census)?",
+      "options": ["Satan", "Joab", "The Philistines", "God (in 2 Samuel) / Satan (in 1 Chronicles)"],
+      "answer": "Satan",
+      "reference": "1 Chronicles 21:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1473,
+      "book": "1 Chronicles",
+      "question": "Where did the angel of the Lord stand with a drawn sword during the plague?",
+      "options": ["By the threshing floor of Ornan the Jebusite", "On Mount Sinai", "In the Temple", "At the city gate"],
+      "answer": "By the threshing floor of Ornan the Jebusite",
+      "reference": "1 Chronicles 21:15",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1474,
+      "book": "1 Chronicles",
+      "question": "Who provided much of the materials (cedar, gold, silver) for the temple before he died?",
+      "options": ["David", "Solomon", "Hiram", "Saul"],
+      "answer": "David",
+      "reference": "1 Chronicles 22:14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1475,
+      "book": "1 Chronicles",
+      "question": "Which tribe was set apart to carry the Ark of the Covenant?",
+      "options": ["Levi", "Judah", "Ephraim", "Benjamin"],
+      "answer": "Levi",
+      "reference": "1 Chronicles 15:2",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1476,
+      "book": "1 Chronicles",
+      "question": "Who were the musicians appointed by David to prophesy with harps and cymbals?",
+      "options": ["Asaph, Heman, and Jeduthun", "Moses and Aaron", "Korah and Dathan", "Joshua and Caleb"],
+      "answer": "Asaph, Heman, and Jeduthun",
+      "reference": "1 Chronicles 25:1",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1477,
+      "book": "1 Chronicles",
+      "question": "How did Saul die according to 1 Chronicles 10?",
+      "options": ["He fell on his own sword", "He was killed by a Philistine", "He died of old age", "He was poisoned"],
+      "answer": "He fell on his own sword",
+      "reference": "1 Chronicles 10:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1478,
+      "book": "Ezra",
+      "question": "Which Persian king issued the decree to rebuild the temple in Jerusalem?",
+      "options": ["Cyrus", "Darius", "Xerxes", "Artaxerxes"],
+      "answer": "Cyrus",
+      "reference": "Ezra 1:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1479,
+      "book": "Ezra",
+      "question": "Who led the first group of exiles back to Jerusalem?",
+      "options": ["Zerubbabel (and Jeshua)", "Ezra", "Nehemiah", "Daniel"],
+      "answer": "Zerubbabel (and Jeshua)",
+      "reference": "Ezra 2:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1480,
+      "book": "Ezra",
+      "question": "What happened when the foundation of the temple was laid?",
+      "options": ["Many shouted for joy, but old men wept", "The wall fell down", "Fire came from heaven", "The enemies attacked"],
+      "answer": "Many shouted for joy, but old men wept",
+      "reference": "Ezra 3:12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1481,
+      "book": "Ezra",
+      "question": "Who offered to help build the temple but were rejected by Zerubbabel?",
+      "options": ["The adversaries of Judah and Benjamin (Samaritans)", "The Egyptians", "The Greeks", "The Romans"],
+      "answer": "The adversaries of Judah and Benjamin (Samaritans)",
+      "reference": "Ezra 4:1-3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1482,
+      "book": "Ezra",
+      "question": "Which two prophets encouraged the people to restart building the temple after it stopped?",
+      "options": ["Haggai and Zechariah", "Isaiah and Jeremiah", "Elijah and Elisha", "Amos and Joel"],
+      "answer": "Haggai and Zechariah",
+      "reference": "Ezra 5:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1483,
+      "book": "Ezra",
+      "question": "What was Ezra's profession?",
+      "options": ["Scribe and Priest", "Carpenter", "King", "Soldier"],
+      "answer": "Scribe and Priest",
+      "reference": "Ezra 7:6",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1484,
+      "book": "Ezra",
+      "question": "Why did Ezra tear his garments and pull hair from his head?",
+      "options": ["Because the people had intermarried with foreigners", "Because the temple was destroyed", "Because he was sick", "Because of a war"],
+      "answer": "Because the people had intermarried with foreigners",
+      "reference": "Ezra 9:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1485,
+      "book": "Ezra",
+      "question": "What solution did the people propose to fix the sin of intermarriage?",
+      "options": ["Put away (divorce) the foreign wives and children", "Offer a sacrifice only", "Fast for 40 days", "Leave Jerusalem"],
+      "answer": "Put away (divorce) the foreign wives and children",
+      "reference": "Ezra 10:3",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1486,
+      "book": "Ezra",
+      "question": "Who was the governor 'Beyond the River' who challenged the Jews' building?",
+      "options": ["Tattenai", "Sanballat", "Tobiah", "Geshem"],
+      "answer": "Tattenai",
+      "reference": "Ezra 5:3",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1487,
+      "book": "Ezra",
+      "question": "What did they search for to prove they had the right to build?",
+      "options": ["The decree of Cyrus in the archives", "The Ark of the Covenant", "The High Priest's rod", "Gold"],
+      "answer": "The decree of Cyrus in the archives",
+      "reference": "Ezra 6:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1488,
+      "book": "Ezra",
+      "question": "Did Ezra travel with a military escort?",
+      "options": ["No, he was ashamed to ask the king for one", "Yes, a large army", "Yes, but only horsemen", "The text doesn't say"],
+      "answer": "No, he was ashamed to ask the king for one",
+      "reference": "Ezra 8:22",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1489,
+      "book": "Nehemiah",
+      "question": "What job did Nehemiah hold in the Persian court?",
+      "options": ["Cupbearer to the King", "Scribe", "General", "Baker"],
+      "answer": "Cupbearer to the King",
+      "reference": "Nehemiah 1:11",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1490,
+      "book": "Nehemiah",
+      "question": "Why was Nehemiah sad in the presence of King Artaxerxes?",
+      "options": ["Because the walls of Jerusalem were broken down", "Because he was sick", "Because he missed his family", "Because he lost money"],
+      "answer": "Because the walls of Jerusalem were broken down",
+      "reference": "Nehemiah 2:3",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1491,
+      "book": "Nehemiah",
+      "question": "Who were the three main enemies who opposed Nehemiah?",
+      "options": ["Sanballat, Tobiah, and Geshem", "Haman, Zeresh, and Bigthan", "Tattenai, Rehum, and Shimshai", "Sihon, Og, and Balak"],
+      "answer": "Sanballat, Tobiah, and Geshem",
+      "reference": "Nehemiah 2:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1492,
+      "book": "Nehemiah",
+      "question": "How did the builders protect themselves while working on the wall?",
+      "options": ["They held a weapon in one hand and worked with the other", "They hired mercenaries", "They worked only at night", "They built a moat"],
+      "answer": "They held a weapon in one hand and worked with the other",
+      "reference": "Nehemiah 4:17",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1493,
+      "book": "Nehemiah",
+      "question": "How long did it take to finish the wall of Jerusalem?",
+      "options": ["52 days", "7 years", "12 years", "6 months"],
+      "answer": "52 days",
+      "reference": "Nehemiah 6:15",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1494,
+      "book": "Nehemiah",
+      "question": "What did Ezra do in Nehemiah 8?",
+      "options": ["Read the Book of the Law to the people", "Built the altar", "Fought the Samaritans", "Went back to Babylon"],
+      "answer": "Read the Book of the Law to the people",
+      "reference": "Nehemiah 8:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1495,
+      "book": "Nehemiah",
+      "question": "Nehemiah told the people, 'The ____ of the Lord is your strength.'",
+      "options": ["Joy", "Word", "Fear", "Law"],
+      "answer": "Joy",
+      "reference": "Nehemiah 8:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1496,
+      "book": "Nehemiah",
+      "question": "What great outcry did the people raise against their Jewish brethren?",
+      "options": ["They were charging high interest (usury) and enslaving children", "They were worshipping idols", "They were not working", "They were eating pork"],
+      "answer": "They were charging high interest (usury) and enslaving children",
+      "reference": "Nehemiah 5:1-5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1497,
+      "book": "Nehemiah",
+      "question": "Why did Nehemiah throw Tobiah's furniture out of the temple chamber?",
+      "options": ["Because Tobiah was an enemy and had no right to live there", "Because the furniture was ugly", "Because he needed the space", "Because it was unclean"],
+      "answer": "Because Tobiah was an enemy and had no right to live there",
+      "reference": "Nehemiah 13:8",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1498,
+      "book": "Nehemiah",
+      "question": "What did Nehemiah do to men who had married foreign women?",
+      "options": ["Contended with them, cursed them, struck them, and pulled out their hair", "Stoned them", "Exiled them immediately", "Put them in prison"],
+      "answer": "Contended with them, cursed them, struck them, and pulled out their hair",
+      "reference": "Nehemiah 13:25",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1499,
+      "book": "Nehemiah",
+      "question": "How did Nehemiah stop the merchants from selling on the Sabbath?",
+      "options": ["He ordered the gates shut before Sabbath", "He fined them", "He bought everything himself", "He preached to them"],
+      "answer": "He ordered the gates shut before Sabbath",
+      "reference": "Nehemiah 13:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1500,
+      "book": "Hosea",
+      "question": "What was the name of Hosea's wife?",
+      "options": ["Gomer", "Ruth", "Rahab", "Naomi"],
+      "answer": "Gomer",
+      "reference": "Hosea 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1501,
+      "book": "Hosea",
+      "question": "What were the names of the three children Hosea had with Gomer?",
+      "options": ["Jezreel, Lo-Ruhamah, Lo-Ammi", "Shear-Jashub, Maher-Shalal-Hash-Baz, Immanuel", "Joel, Abijah, Enoch", "Reuben, Simeon, Levi"],
+      "answer": "Jezreel, Lo-Ruhamah, Lo-Ammi",
+      "reference": "Hosea 1:4-9",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1502,
+      "book": "Hosea",
+      "question": "What does the name 'Lo-Ammi' mean?",
+      "options": ["Not My People", "No Mercy", "God Scatters", "Beloved"],
+      "answer": "Not My People",
+      "reference": "Hosea 1:9",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1503,
+      "book": "Hosea",
+      "question": "Hosea 4:11 says that harlotry, wine, and new wine enslave the...",
+      "options": ["Heart", "Mind", "Body", "Soul"],
+      "answer": "Heart",
+      "reference": "Hosea 4:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1504,
+      "book": "Hosea",
+      "question": "Hosea compares Ephraim to a cake that is...",
+      "options": ["Unturned (half-baked)", "Burnt", "Sweet", "Moldy"],
+      "answer": "Unturned (half-baked)",
+      "reference": "Hosea 7:8",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1505,
+      "book": "Hosea",
+      "question": "For I desire mercy and not sacrifice, and the knowledge of God more than...",
+      "options": ["Burnt offerings", "Gold", "Incense", "Songs"],
+      "answer": "Burnt offerings",
+      "reference": "Hosea 6:6",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1506,
+      "book": "Hosea",
+      "question": "They have sown the wind, and they shall reap the...",
+      "options": ["Whirlwind", "Storm", "Dust", "Fire"],
+      "answer": "Whirlwind",
+      "reference": "Hosea 8:7",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1507,
+      "book": "Hosea",
+      "question": "What agricultural imagery does Hosea use in 10:12? 'Break up your...'",
+      "options": ["Fallow ground", "Stony heart", "Dry cisterns", "Old altars"],
+      "answer": "Fallow ground",
+      "reference": "Hosea 10:12",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1508,
+      "book": "Hosea",
+      "question": "Out of Egypt I called My...",
+      "options": ["Son", "People", "Servant", "Army"],
+      "answer": "Son",
+      "reference": "Hosea 11:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1509,
+      "book": "Hosea",
+      "question": "Hosea 14:9 says the ways of the Lord are...",
+      "options": ["Right", "Mysterious", "High", "Hard"],
+      "answer": "Right",
+      "reference": "Hosea 14:9",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1510,
+      "book": "Hosea",
+      "question": "What price did Hosea pay to buy back his wife?",
+      "options": ["Fifteen shekels of silver and barley", "Thirty pieces of silver", "A golden ring", "Seven sheep"],
+      "answer": "Fifteen shekels of silver and barley",
+      "reference": "Hosea 3:2",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1511,
+      "book": "Amos",
+      "question": "Amos 1 uses a repeating phrase for judgment: 'For ______ transgressions of [City], and for ______...'",
+      "options": ["Three; four", "Two; three", "Seven; eight", "Ten; eleven"],
+      "answer": "Three; four",
+      "reference": "Amos 1:3",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1512,
+      "book": "Amos",
+      "question": "Which city's punishment involves a fire devouring the palaces of Ben-Hadad?",
+      "options": ["Damascus", "Gaza", "Tyre", "Edom"],
+      "answer": "Damascus",
+      "reference": "Amos 1:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1513,
+      "book": "Amos",
+      "question": "Amos calls the wealthy women of Samaria...",
+      "options": ["Cows of Bashan", "Birds of prey", "Fat sheep", "Roaming bears"],
+      "answer": "Cows of Bashan",
+      "reference": "Amos 4:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1514,
+      "book": "Amos",
+      "question": "Prepare to meet your God, O...",
+      "options": ["Israel", "Judah", "Sinner", "Earth"],
+      "answer": "Israel",
+      "reference": "Amos 4:12",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1515,
+      "book": "Amos",
+      "question": "Amos 5:24 says, 'But let justice run down like water, and righteousness like a...'",
+      "options": ["Mighty stream", "Rushing wind", "Waterfall", "Gentle rain"],
+      "answer": "Mighty stream",
+      "reference": "Amos 5:24",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1516,
+      "book": "Amos",
+      "question": "What did Amos see the Lord holding while standing on a wall?",
+      "options": ["A plumb line", "A sword", "A scroll", "A trumpet"],
+      "answer": "A plumb line",
+      "reference": "Amos 7:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1517,
+      "book": "Amos",
+      "question": "Who was the priest of Bethel who told Amos to flee to Judah?",
+      "options": ["Amaziah", "Jeroboam", "Pashhur", "Hophni"],
+      "answer": "Amaziah",
+      "reference": "Amos 7:10",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1518,
+      "book": "Amos",
+      "question": "Amos saw a basket of what fruit in chapter 8?",
+      "options": ["Summer fruit", "Figs", "Grapes", "Pomegranates"],
+      "answer": "Summer fruit",
+      "reference": "Amos 8:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1519,
+      "book": "Amos",
+      "question": "Amos 8:11 speaks of a famine, not of bread, but of...",
+      "options": ["Hearing the words of the Lord", "Water", "Justice", "Love"],
+      "answer": "Hearing the words of the Lord",
+      "reference": "Amos 8:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1520,
+      "book": "Amos",
+      "question": "In that day I will raise up the ______ of David, which has fallen down.",
+      "options": ["Tabernacle/Booth", "Throne", "Crown", "House"],
+      "answer": "Tabernacle/Booth",
+      "reference": "Amos 9:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1521,
+      "book": "Amos",
+      "question": "Woe to you who are at ease in...",
+      "options": ["Zion", "Babylon", "Luxury", "Sin"],
+      "answer": "Zion",
+      "reference": "Amos 6:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1522,
+      "book": "Micah",
+      "question": "Micah prophesied during the reigns of which kings?",
+      "options": ["Jotham, Ahaz, and Hezekiah", "Uzziah, Jotham, Ahaz", "Hezekiah, Manasseh, Amon", "David, Solomon, Rehoboam"],
+      "answer": "Jotham, Ahaz, and Hezekiah",
+      "reference": "Micah 1:1",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1523,
+      "book": "Micah",
+      "question": "Micah 1:3 says the Lord is coming out of His place and will tread on the...",
+      "options": ["High places of the earth", "Clouds", "Enemies", "Sea"],
+      "answer": "High places of the earth",
+      "reference": "Micah 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1524,
+      "book": "Micah",
+      "question": "Woe to those who devise iniquity on their...",
+      "options": ["Beds", "Thrones", "Altars", "Roofs"],
+      "answer": "Beds",
+      "reference": "Micah 2:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1525,
+      "book": "Micah",
+      "question": "Micah 3:11 says the priests teach for...",
+      "options": ["Pay", "Truth", "Nothing", "The King"],
+      "answer": "Pay",
+      "reference": "Micah 3:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1526,
+      "book": "Micah",
+      "question": "Therefore because of you Zion shall be plowed like a...",
+      "options": ["Field", "Garden", "Vineyard", "Road"],
+      "answer": "Field",
+      "reference": "Micah 3:12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1527,
+      "book": "Micah",
+      "question": "They shall beat their swords into plowshares, and their spears into...",
+      "options": ["Pruning hooks", "Scythes", "Shields", "Axes"],
+      "answer": "Pruning hooks",
+      "reference": "Micah 4:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1528,
+      "book": "Micah",
+      "question": "Everyone shall sit under his vine and under his...",
+      "options": ["Fig tree", "Olive tree", "Roof", "Tent"],
+      "answer": "Fig tree",
+      "reference": "Micah 4:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1529,
+      "book": "Micah",
+      "question": "But you, Bethlehem Ephrathah, out of you shall come forth...",
+      "options": ["The Ruler in Israel", "A mighty warrior", "A great prophet", "The riches of nations"],
+      "answer": "The Ruler in Israel",
+      "reference": "Micah 5:2",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1530,
+      "book": "Micah",
+      "question": "What does the Lord require of you? To do justly, to love mercy, and to...",
+      "options": ["Walk humbly with your God", "Sacrifice daily", "Pray without ceasing", "Build His temple"],
+      "answer": "Walk humbly with your God",
+      "reference": "Micah 6:8",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1531,
+      "book": "Micah",
+      "question": "A man's enemies are the men of his own...",
+      "options": ["House/Household", "City", "Tribe", "Army"],
+      "answer": "House/Household",
+      "reference": "Micah 7:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1532,
+      "book": "Micah",
+      "question": "Do not rejoice over me, my enemy; when I fall, I will...",
+      "options": ["Arise", "Fight", "Cry", "Sleep"],
+      "answer": "Arise",
+      "reference": "Micah 7:8",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1533,
+      "book": "Micah",
+      "question": "You will cast all our sins into the...",
+      "options": ["Depths of the sea", "Fire", "Wilderness", "Clouds"],
+      "answer": "Depths of the sea",
+      "reference": "Micah 7:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1534,
+      "book": "Habakkuk",
+      "question": "What is Habakkuk's first complaint to God?",
+      "options": ["Why do You show me iniquity and cause me to see trouble?", "Why is there a famine?", "Why are we in exile?", "Why is the temple destroyed?"],
+      "answer": "Why do You show me iniquity and cause me to see trouble?",
+      "reference": "Habakkuk 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1535,
+      "book": "Habakkuk",
+      "question": "Which nation is God raising up to judge Judah, described as 'bitter and hasty'?",
+      "options": ["The Chaldeans (Babylonians)", "The Assyrians", "The Egyptians", "The Romans"],
+      "answer": "The Chaldeans (Babylonians)",
+      "reference": "Habakkuk 1:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1536,
+      "book": "Habakkuk",
+      "question": "Habakkuk says God is of purer eyes than to behold...",
+      "options": ["Evil/Iniquity", "Man", "The sun", "Angels"],
+      "answer": "Evil/Iniquity",
+      "reference": "Habakkuk 1:13",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1537,
+      "book": "Habakkuk",
+      "question": "I will stand my watch and set myself on the...",
+      "options": ["Rampart/Tower", "Wall", "Mountain", "Rock"],
+      "answer": "Rampart/Tower",
+      "reference": "Habakkuk 2:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1538,
+      "book": "Habakkuk",
+      "question": "God told Habakkuk to write the vision and make it plain on...",
+      "options": ["Tablets", "Scrolls", "Stones", "Gates"],
+      "answer": "Tablets",
+      "reference": "Habakkuk 2:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1539,
+      "book": "Habakkuk",
+      "question": "But the just shall live by his...",
+      "options": ["Faith", "Works", "Wisdom", "Strength"],
+      "answer": "Faith",
+      "reference": "Habakkuk 2:4",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1540,
+      "book": "Habakkuk",
+      "question": "Woe to him who builds a town with...",
+      "options": ["Blood", "Gold", "Lies", "Sand"],
+      "answer": "Blood",
+      "reference": "Habakkuk 2:12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1541,
+      "book": "Habakkuk",
+      "question": "For the earth will be filled with the knowledge of the glory of the Lord as...",
+      "options": ["The waters cover the sea", "The sun covers the day", "The stars cover the sky", "The grass covers the field"],
+      "answer": "The waters cover the sea",
+      "reference": "Habakkuk 2:14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1542,
+      "book": "Habakkuk",
+      "question": "What does Habakkuk say about idols in 2:18-19? Can they speak?",
+      "options": ["No, they are dumb stones", "Yes", "Only at night", "Only to priests"],
+      "answer": "No, they are dumb stones",
+      "reference": "Habakkuk 2:18-19",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1543,
+      "book": "Habakkuk",
+      "question": "The Lord is in His holy temple. Let all the earth...",
+      "options": ["Keep silence before Him", "Rejoice", "Sing praises", "Tremble"],
+      "answer": "Keep silence before Him",
+      "reference": "Habakkuk 2:20",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1544,
+      "book": "Habakkuk",
+      "question": "In his prayer (Chapter 3), Habakkuk says God came from...",
+      "options": ["Teman", "Zion", "Sinai", "Egypt"],
+      "answer": "Teman",
+      "reference": "Habakkuk 3:3",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1545,
+      "book": "Habakkuk",
+      "question": "Though the fig tree may not blossom, yet I will...",
+      "options": ["Rejoice in the Lord", "Weep bitterly", "Plant another", "Curse the day"],
+      "answer": "Rejoice in the Lord",
+      "reference": "Habakkuk 3:17-18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1546,
+      "book": "Habakkuk",
+      "question": "He makes my feet like...",
+      "options": ["Deer's feet", "Lion's paws", "Eagle's wings", "Iron pillars"],
+      "answer": "Deer's feet",
+      "reference": "Habakkuk 3:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1547,
+      "book": "Song of Solomon",
+      "question": "Let him kiss me with the kisses of his mouth, for your love is better than...",
+      "options": ["Wine", "Honey", "Life", "Gold"],
+      "answer": "Wine",
+      "reference": "Song of Solomon 1:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1548,
+      "book": "Song of Solomon",
+      "question": "I am dark, but...",
+      "options": ["Lovely", "Sad", "Strong", "Rich"],
+      "answer": "Lovely",
+      "reference": "Song of Solomon 1:5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1549,
+      "book": "Song of Solomon",
+      "question": "To what flower does the Beloved compare herself in 2:1?",
+      "options": ["Rose of Sharon", "Lily of the Nile", "Desert Rose", "Tulip of Sharon"],
+      "answer": "Rose of Sharon",
+      "reference": "Song of Solomon 2:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1550,
+      "book": "Song of Solomon",
+      "question": "His banner over me is...",
+      "options": ["Love", "Peace", "Joy", "Protection"],
+      "answer": "Love",
+      "reference": "Song of Solomon 2:4",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1551,
+      "book": "Song of Solomon",
+      "question": "Catch us the foxes, the little foxes that spoil the...",
+      "options": ["Vines", "Garden", "Flock", "Fields"],
+      "answer": "Vines",
+      "reference": "Song of Solomon 2:15",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1552,
+      "book": "Song of Solomon",
+      "question": "Who is the woman looking for at night in the city streets?",
+      "options": ["The one I love", "The watchmen", "Her mother", "Her brother"],
+      "answer": "The one I love",
+      "reference": "Song of Solomon 3:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1553,
+      "book": "Song of Solomon",
+      "question": "King Solomon made himself a carriage of wood from...",
+      "options": ["Lebanon", "Ophir", "Egypt", "Bashan"],
+      "answer": "Lebanon",
+      "reference": "Song of Solomon 3:9",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1554,
+      "book": "Song of Solomon",
+      "question": "Your teeth are like a flock of...",
+      "options": ["Shorn sheep", "Doves", "Goats", "Pearls"],
+      "answer": "Shorn sheep",
+      "reference": "Song of Solomon 4:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1555,
+      "book": "Song of Solomon",
+      "question": "Awake, O north wind, and come, O south! Blow upon my...",
+      "options": ["Garden", "Face", "House", "Hair"],
+      "answer": "Garden",
+      "reference": "Song of Solomon 4:16",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1556,
+      "book": "Song of Solomon",
+      "question": "Who struck and wounded the woman when she opened the door too late?",
+      "options": ["The watchmen", "The shepherds", "The soldiers", "Her brothers"],
+      "answer": "The watchmen",
+      "reference": "Song of Solomon 5:7",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1557,
+      "book": "Song of Solomon",
+      "question": "Where has your beloved gone, O fairest among...?",
+      "options": ["Women", "Queens", "Daughters", "Virgins"],
+      "answer": "Women",
+      "reference": "Song of Solomon 6:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1558,
+      "book": "Song of Solomon",
+      "question": "Return, return, O...",
+      "options": ["Shulamite", "Beloved", "Daughter of Zion", "Queen"],
+      "answer": "Shulamite",
+      "reference": "Song of Solomon 6:13",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1559,
+      "book": "Song of Solomon",
+      "question": "Set me as a seal upon your...",
+      "options": ["Heart", "Arm", "Hand", "Forehead"],
+      "answer": "Heart",
+      "reference": "Song of Solomon 8:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1560,
+      "book": "Song of Solomon",
+      "question": "Love is as strong as...",
+      "options": ["Death", "Life", "The grave", "Iron"],
+      "answer": "Death",
+      "reference": "Song of Solomon 8:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1561,
+      "book": "Song of Solomon",
+      "question": "Many waters cannot quench...",
+      "options": ["Love", "Fire", "Thirst", "Passion"],
+      "answer": "Love",
+      "reference": "Song of Solomon 8:7",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1562,
+      "book": "Joel",
+      "question": "What plague does Joel describe in Chapter 1?",
+      "options": ["Locusts", "Frogs", "Hail", "Darkness"],
+      "answer": "Locusts",
+      "reference": "Joel 1:4",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1563,
+      "book": "Joel",
+      "question": "To whom does Joel say 'Awake, you drunkards, and weep'?",
+      "options": ["Because of the new wine, for it has been cut off", "Because the king is dead", "Because war is coming", "Because they are foolish"],
+      "answer": "Because of the new wine, for it has been cut off",
+      "reference": "Joel 1:5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1564,
+      "book": "Joel",
+      "question": "Blow the trumpet in...",
+      "options": ["Zion", "Jerusalem", "Bethel", "Judah"],
+      "answer": "Zion",
+      "reference": "Joel 2:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1565,
+      "book": "Joel",
+      "question": "The day of the Lord is described as a day of...",
+      "options": ["Darkness and gloominess", "Light and joy", "Feasting", "Rest"],
+      "answer": "Darkness and gloominess",
+      "reference": "Joel 2:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1566,
+      "book": "Joel",
+      "question": "So rend your heart, and not your...",
+      "options": ["Garments", "Hair", "Houses", "Money"],
+      "answer": "Garments",
+      "reference": "Joel 2:13",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1567,
+      "book": "Joel",
+      "question": "Who knows if He will turn and relent, and leave a ______ behind Him?",
+      "options": ["Blessing", "Curse", "Sign", "Prophet"],
+      "answer": "Blessing",
+      "reference": "Joel 2:14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1568,
+      "book": "Joel",
+      "question": "I will restore to you the years that the swarming ______ has eaten.",
+      "options": ["Locust", "Worm", "Army", "Lion"],
+      "answer": "Locust",
+      "reference": "Joel 2:25",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1569,
+      "book": "Joel",
+      "question": "And it shall come to pass afterward that I will pour out My Spirit on...",
+      "options": ["All flesh", "The prophets only", "Israel only", "The priests"],
+      "answer": "All flesh",
+      "reference": "Joel 2:28",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1570,
+      "book": "Joel",
+      "question": "The sun shall be turned into darkness, and the moon into...",
+      "options": ["Blood", "Fire", "Dust", "Ice"],
+      "answer": "Blood",
+      "reference": "Joel 2:31",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1571,
+      "book": "Joel",
+      "question": "Whoever calls on the name of the Lord shall be...",
+      "options": ["Saved", "Heard", "Rich", "Wise"],
+      "answer": "Saved",
+      "reference": "Joel 2:32",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1572,
+      "book": "Joel",
+      "question": "I will gather all nations and bring them down to the Valley of...",
+      "options": ["Jehoshaphat", "Hinnom", "Elah", "Decision"],
+      "answer": "Jehoshaphat",
+      "reference": "Joel 3:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1573,
+      "book": "Joel",
+      "question": "Beat your plowshares into...",
+      "options": ["Swords", "Hooks", "Spears", "Shields"],
+      "answer": "Swords",
+      "reference": "Joel 3:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1574,
+      "book": "Joel",
+      "question": "Let the weak say...",
+      "options": ["'I am strong'", "'I am rich'", "'God help me'", "'I am safe'"],
+      "answer": "'I am strong'",
+      "reference": "Joel 3:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1575,
+      "book": "Joel",
+      "question": "Multitudes, multitudes in the valley of...",
+      "options": ["Decision", "Death", "Bones", "Kings"],
+      "answer": "Decision",
+      "reference": "Joel 3:14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1576,
+      "book": "Joel",
+      "question": "The Lord will roar from...",
+      "options": ["Zion", "Heaven", "Sinai", "The sea"],
+      "answer": "Zion",
+      "reference": "Joel 3:16",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1577,
+      "book": "Nahum",
+      "question": "Nahum is a prophecy concerning which city?",
+      "options": ["Nineveh", "Babylon", "Tyre", "Jerusalem"],
+      "answer": "Nineveh",
+      "reference": "Nahum 1:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1578,
+      "book": "Nahum",
+      "question": "The Lord is slow to anger and great in...",
+      "options": ["Power", "Mercy", "Love", "Wisdom"],
+      "answer": "Power",
+      "reference": "Nahum 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1579,
+      "book": "Nahum",
+      "question": "Who can stand before His indignation?",
+      "options": ["No one", "The righteous", "The angels", "The kings"],
+      "answer": "No one",
+      "reference": "Nahum 1:6",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1580,
+      "book": "Nahum",
+      "question": "The Lord is good, a stronghold in the day of...",
+      "options": ["Trouble", "Battle", "Judgment", "Feast"],
+      "answer": "Trouble",
+      "reference": "Nahum 1:7",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1581,
+      "book": "Nahum",
+      "question": "What will He make of the place of Nineveh?",
+      "options": ["An utter end", "A great city", "A memorial", "A lake"],
+      "answer": "An utter end",
+      "reference": "Nahum 1:8",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1582,
+      "book": "Nahum",
+      "question": "Behold, on the mountains the feet of him who brings...",
+      "options": ["Good tidings", "War", "Judgment", "Gold"],
+      "answer": "Good tidings",
+      "reference": "Nahum 1:15",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1583,
+      "book": "Nahum",
+      "question": "Nahum compares Nineveh to a pool of...",
+      "options": ["Water", "Blood", "Mud", "Fire"],
+      "answer": "Water",
+      "reference": "Nahum 2:8",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1584,
+      "book": "Nahum",
+      "question": "Where is the dwelling of the...?",
+      "options": ["Lions", "Eagles", "Kings", "Gods"],
+      "answer": "Lions",
+      "reference": "Nahum 2:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1585,
+      "book": "Nahum",
+      "question": "Woe to the ______ city!",
+      "options": ["Bloody", "Golden", "Great", "Eternal"],
+      "answer": "Bloody",
+      "reference": "Nahum 3:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1586,
+      "book": "Nahum",
+      "question": "Because of the multitude of harlotries of the seductive...",
+      "options": ["Harlot", "Queen", "City", "Nation"],
+      "answer": "Harlot",
+      "reference": "Nahum 3:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1587,
+      "book": "Nahum",
+      "question": "I will cast abominable filth upon you and make you...",
+      "options": ["Vile", "Clean", "Poor", "Sick"],
+      "answer": "Vile",
+      "reference": "Nahum 3:6",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1588,
+      "book": "Nahum",
+      "question": "Are you better than...?",
+      "options": ["No Amon (Thebes)", "Jerusalem", "Babylon", "Tyre"],
+      "answer": "No Amon (Thebes)",
+      "reference": "Nahum 3:8",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1589,
+      "book": "Nahum",
+      "question": "Your shepherds slumber, O king of...",
+      "options": ["Assyria", "Babylon", "Egypt", "Judah"],
+      "answer": "Assyria",
+      "reference": "Nahum 3:18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1590,
+      "book": "Nahum",
+      "question": "There is no healing for your...",
+      "options": ["Bruise/Injury", "Sin", "Land", "Heart"],
+      "answer": "Bruise/Injury",
+      "reference": "Nahum 3:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1591,
+      "book": "Nahum",
+      "question": "All who hear news of you will...",
+      "options": ["Clap their hands", "Weep", "Flee", "Pray"],
+      "answer": "Clap their hands",
+      "reference": "Nahum 3:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1592,
+      "book": "Ruth",
+      "question": "In the days when the judges ruled, there was a ______ in the land.",
+      "options": ["Famine", "War", "Plague", "Flood"],
+      "answer": "Famine",
+      "reference": "Ruth 1:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1593,
+      "book": "Ruth",
+      "question": "What was the name of Naomi's husband?",
+      "options": ["Elimelech", "Mahlon", "Chilion", "Boaz"],
+      "answer": "Elimelech",
+      "reference": "Ruth 1:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1594,
+      "book": "Ruth",
+      "question": "Which daughter-in-law went back to her people?",
+      "options": ["Orpah", "Ruth", "Mara", "Vashti"],
+      "answer": "Orpah",
+      "reference": "Ruth 1:14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1595,
+      "book": "Ruth",
+      "question": "Ruth said, 'Your people shall be my people, and your God...'",
+      "options": ["My God", "My King", "My Judge", "My Father"],
+      "answer": "My God",
+      "reference": "Ruth 1:16",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1596,
+      "book": "Ruth",
+      "question": "Call me not Naomi, call me...",
+      "options": ["Mara", "Sarah", "Rachel", "Esther"],
+      "answer": "Mara",
+      "reference": "Ruth 1:20",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1597,
+      "book": "Ruth",
+      "question": "What time of year did they return to Bethlehem?",
+      "options": ["Beginning of barley harvest", "Sheep shearing", "Passover", "Winter"],
+      "answer": "Beginning of barley harvest",
+      "reference": "Ruth 1:22",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1598,
+      "book": "Ruth",
+      "question": "Whose field did Ruth happen to glean in?",
+      "options": ["Boaz", "Elimelech", "Jesse", "Saul"],
+      "answer": "Boaz",
+      "reference": "Ruth 2:3",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1599,
+      "book": "Ruth",
+      "question": "Boaz told his young men to let Ruth glean even among the...",
+      "options": ["Sheaves", "Barns", "Threshing floor", "Roads"],
+      "answer": "Sheaves",
+      "reference": "Ruth 2:15",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1600,
+      "book": "Ruth",
+      "question": "What did Boaz invite Ruth to dip her bread in?",
+      "options": ["Vinegar/Wine", "Honey", "Oil", "Water"],
+      "answer": "Vinegar/Wine",
+      "reference": "Ruth 2:14",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1601,
+      "book": "Ruth",
+      "question": "Where did Naomi tell Ruth to go and lie down at the feet of Boaz?",
+      "options": ["The threshing floor", "The city gate", "The vineyard", "The well"],
+      "answer": "The threshing floor",
+      "reference": "Ruth 3:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1602,
+      "book": "Ruth",
+      "question": "What did Boaz have to do before he could marry Ruth?",
+      "options": ["Consult a closer relative (kinsman-redeemer)", "Pay a tax to the king", "Wait seven years", "Sacrifice a bull"],
+      "answer": "Consult a closer relative (kinsman-redeemer)",
+      "reference": "Ruth 3:12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1603,
+      "book": "Ruth",
+      "question": "What was the custom in Israel for confirming a transfer of property or redemption?",
+      "options": ["One man took off his sandal and gave it to the other", "They shook hands", "They signed a scroll", "They broke a piece of bread"],
+      "answer": "One man took off his sandal and gave it to the other",
+      "reference": "Ruth 4:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1604,
+      "book": "Ruth",
+      "question": "How many witnesses did Boaz call to the city gate?",
+      "options": ["Ten elders", "Twelve priests", "Three judges", "Seven neighbors"],
+      "answer": "Ten elders",
+      "reference": "Ruth 4:2",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1605,
+      "book": "Ruth",
+      "question": "What was the name of the son born to Ruth and Boaz?",
+      "options": ["Obed", "Jesse", "David", "Solomon"],
+      "answer": "Obed",
+      "reference": "Ruth 4:17",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1606,
+      "book": "Ruth",
+      "question": "Who was Ruth's great-grandson?",
+      "options": ["King David", "King Saul", "King Solomon", "Samuel"],
+      "answer": "King David",
+      "reference": "Ruth 4:22",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1607,
+      "book": "Ruth",
+      "question": "What did the neighborhood women say about Ruth to Naomi?",
+      "options": ["She is better to you than seven sons", "She is a hard worker", "She is a daughter of Moab", "She is blessed"],
+      "answer": "She is better to you than seven sons",
+      "reference": "Ruth 4:15",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1608,
+      "book": "2 Chronicles",
+      "question": "Where did Solomon go to offer sacrifices at the beginning of his reign because the Tabernacle was there?",
+      "options": ["Gibeon", "Jerusalem", "Hebron", "Bethel"],
+      "answer": "Gibeon",
+      "reference": "2 Chronicles 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1609,
+      "book": "2 Chronicles",
+      "question": "What did Solomon ask God for when He appeared to him in a dream?",
+      "options": ["Wisdom and knowledge", "Riches and honor", "The life of his enemies", "Long life"],
+      "answer": "Wisdom and knowledge",
+      "reference": "2 Chronicles 1:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1610,
+      "book": "2 Chronicles",
+      "question": "How many years did it take Solomon to build the Temple?",
+      "options": ["7 years", "13 years", "20 years", "40 years"],
+      "answer": "7 years",
+      "reference": "2 Chronicles 3:1-4:22 (Context of 1 Kings 6:38)",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1611,
+      "book": "2 Chronicles",
+      "question": "What happened when the priests came out of the Holy Place at the dedication of the Temple?",
+      "options": ["A cloud filled the house so they could not continue to minister", "Fire fell and consumed the people", "An earthquake shook the city", "The Ark disappeared"],
+      "answer": "A cloud filled the house so they could not continue to minister",
+      "reference": "2 Chronicles 5:13-14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1612,
+      "book": "2 Chronicles",
+      "question": "If My people who are called by My name will humble themselves, and pray...",
+      "options": ["Then I will hear from heaven and will forgive their sin and heal their land", "Then I will give them victory", "Then they shall be rich", "Then I will return to them"],
+      "answer": "Then I will hear from heaven and will forgive their sin and heal their land",
+      "reference": "2 Chronicles 7:14",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1613,
+      "book": "2 Chronicles",
+      "question": "Which Queen visited Solomon to test him with hard questions?",
+      "options": ["Queen of Sheba", "Queen of Egypt", "Queen of Ethiopia", "Queen Vashti"],
+      "answer": "Queen of Sheba",
+      "reference": "2 Chronicles 9:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1614,
+      "book": "2 Chronicles",
+      "question": "Who was the son of Solomon who caused the kingdom to split?",
+      "options": ["Rehoboam", "Jeroboam", "Abijah", "Asa"],
+      "answer": "Rehoboam",
+      "reference": "2 Chronicles 10:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1615,
+      "book": "2 Chronicles",
+      "question": "Which king of Judah commanded the people to seek the Lord and removed the high places and incense altars?",
+      "options": ["Asa", "Rehoboam", "Abijah", "Jehoram"],
+      "answer": "Asa",
+      "reference": "2 Chronicles 14:2-5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1616,
+      "book": "2 Chronicles",
+      "question": "How did King Jehoshaphat defeat the massive army of Moab and Ammon?",
+      "options": ["By appointing singers to praise the Lord ahead of the army", "By a midnight raid", "With chariots from Egypt", "Through a long siege"],
+      "answer": "By appointing singers to praise the Lord ahead of the army",
+      "reference": "2 Chronicles 20:21-22",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1617,
+      "book": "2 Chronicles",
+      "question": "Which queen mother attempted to destroy all the royal heirs of the house of Judah?",
+      "options": ["Athaliah", "Jezebel", "Maacah", "Naamah"],
+      "answer": "Athaliah",
+      "reference": "2 Chronicles 22:10",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1618,
+      "book": "2 Chronicles",
+      "question": "Who was the young king hidden in the Temple for six years to save his life from Athaliah?",
+      "options": ["Joash (Jehoash)", "Josiah", "Uzziah", "Hezekiah"],
+      "answer": "Joash (Jehoash)",
+      "reference": "2 Chronicles 22:11-12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1619,
+      "book": "2 Chronicles",
+      "question": "What disease struck King Uzziah when he tried to burn incense in the Temple?",
+      "options": ["Leprosy", "Blindness", "Paralysis", "Plague"],
+      "answer": "Leprosy",
+      "reference": "2 Chronicles 26:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1620,
+      "book": "2 Chronicles",
+      "question": "Which king of Judah is famous for reopening the Temple and organizing a massive Passover?",
+      "options": ["Hezekiah", "Josiah", "Asa", "Jehoshaphat"],
+      "answer": "Hezekiah",
+      "reference": "2 Chronicles 29:3, 30:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1621,
+      "book": "2 Chronicles",
+      "question": "How long was the sun dial turned back for Hezekiah as a sign?",
+      "options": ["10 degrees", "5 degrees", "1 hour", "12 degrees"],
+      "answer": "10 degrees",
+      "reference": "2 Chronicles 32:24 (Context of 2 Kings 20:11)",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1622,
+      "book": "2 Chronicles",
+      "question": "Which king of Judah was the most wicked, but later repented when captured by Assyria?",
+      "options": ["Manasseh", "Ahaz", "Amon", "Jehoiakim"],
+      "answer": "Manasseh",
+      "reference": "2 Chronicles 33:12-13",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1623,
+      "book": "2 Chronicles",
+      "question": "Who was the last king of Judah mentioned before the exile in 2 Chronicles?",
+      "options": ["Zedekiah", "Jehoiachin", "Jehoahaz", "Jehoiakim"],
+      "answer": "Zedekiah",
+      "reference": "2 Chronicles 36:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1624,
+      "book": "Lamentations",
+      "question": "Who is traditionally considered the author of Lamentations?",
+      "options": ["Jeremiah", "Isaiah", "Ezekiel", "Ezra"],
+      "answer": "Jeremiah",
+      "reference": "Tradition (LXX Prologue)",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1625,
+      "book": "Lamentations",
+      "question": "How many chapters are in the book of Lamentations?",
+      "options": ["Five", "Three", "Seven", "Ten"],
+      "answer": "Five",
+      "reference": "Structure",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1626,
+      "book": "Lamentations",
+      "question": "Which poetic structure is used in the first four chapters?",
+      "options": ["Acrostic (following the Hebrew alphabet)", "Rhyming couplets", "Chiasmus", "Free verse"],
+      "answer": "Acrostic (following the Hebrew alphabet)",
+      "reference": "Structure",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1627,
+      "book": "Lamentations",
+      "question": "How is the city of Jerusalem described in the first verse of the book?",
+      "options": ["As a widow", "As a queen", "As a ruins", "As a desert"],
+      "answer": "As a widow",
+      "reference": "Lamentations 1:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1628,
+      "book": "Lamentations",
+      "question": "Is there any among her lovers to comfort her?",
+      "options": ["None", "The King of Egypt", "Her children", "The priests"],
+      "answer": "None",
+      "reference": "Lamentations 1:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1629,
+      "book": "Lamentations",
+      "question": "What is the reason given for Jerusalem's suffering?",
+      "options": ["The multitude of her transgressions", "Bad luck", "Weakness of her walls", "Strength of Babylon"],
+      "answer": "The multitude of her transgressions",
+      "reference": "Lamentations 1:5",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1630,
+      "book": "Lamentations",
+      "question": "Jerusalem has sinned greatly, therefore she has become...",
+      "options": ["Vile / Unclean", "Rich", "Famous", "Strong"],
+      "answer": "Vile / Unclean",
+      "reference": "Lamentations 1:8",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1631,
+      "book": "Lamentations",
+      "question": "What happened to the children and infants in the streets of the city?",
+      "options": ["They fainted from hunger", "They were taken away", "They played in the ruins", "They were hidden"],
+      "answer": "They fainted from hunger",
+      "reference": "Lamentations 2:11-12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1632,
+      "book": "Lamentations",
+      "question": "Through the Lord's mercies we are not consumed, because His compassions...",
+      "options": ["Fail not", "Are many", "Are hidden", "Are eternal"],
+      "answer": "Fail not",
+      "reference": "Lamentations 3:22",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1633,
+      "book": "Lamentations",
+      "question": "They are new every ______; great is Your faithfulness.",
+      "options": ["Morning", "Evening", "Day", "Year"],
+      "answer": "Morning",
+      "reference": "Lamentations 3:23",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1634,
+      "book": "Lamentations",
+      "question": "The Lord is my ______, therefore I hope in Him!",
+      "options": ["Portion", "King", "Shield", "Rock"],
+      "answer": "Portion",
+      "reference": "Lamentations 3:24",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1635,
+      "book": "Lamentations",
+      "question": "It is good that one should hope and wait ______ for the salvation of the Lord.",
+      "options": ["Quietly", "Loudly", "Daily", "Happily"],
+      "answer": "Quietly",
+      "reference": "Lamentations 3:26",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1636,
+      "book": "Lamentations",
+      "question": "What is the Lord compared to in chapter 3:10 when He 'waits' for the prophet?",
+      "options": ["A bear lying in wait / A lion in secret places", "An eagle", "A shepherd", "A king"],
+      "answer": "A bear lying in wait / A lion in secret places",
+      "reference": "Lamentations 3:10",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1637,
+      "book": "Lamentations",
+      "question": "How has the gold become ______! How the fine gold has changed!",
+      "options": ["Dim", "Lost", "Black", "Dust"],
+      "answer": "Dim",
+      "reference": "Lamentations 4:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1638,
+      "book": "Lamentations",
+      "question": "The tongue of the infant clings to the roof of its mouth because of...",
+      "options": ["Thirst", "Fear", "Cold", "Sleep"],
+      "answer": "Thirst",
+      "reference": "Lamentations 4:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1639,
+      "book": "Lamentations",
+      "question": "The hands of the compassionate women have ______ their own children.",
+      "options": ["Cooked", "Abandoned", "Sold", "Hidden"],
+      "answer": "Cooked",
+      "reference": "Lamentations 4:10",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1640,
+      "book": "Lamentations",
+      "question": "What is the final plea of the book?",
+      "options": ["Turn us back to You, O Lord... renew our days as of old", "Destroy Babylon", "Give us food", "Let us go home"],
+      "answer": "Turn us back to You, O Lord... renew our days as of old",
+      "reference": "Lamentations 5:21",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1641,
+      "book": "Lamentations",
+      "question": "Chapter 5 is the only chapter that is NOT an acrostic. How many verses does it have?",
+      "options": ["22", "12", "40", "50"],
+      "answer": "22",
+      "reference": "Structure",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1642,
+      "book": "Obadiah",
+      "question": "Obadiah is the shortest book in the Old Testament. How many verses does it have?",
+      "options": ["21", "15", "30", "12"],
+      "answer": "21",
+      "reference": "Structure",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1643,
+      "book": "Obadiah",
+      "question": "Which nation is the subject of Obadiah's prophecy of judgment?",
+      "options": ["Edom", "Moab", "Ammon", "Syria"],
+      "answer": "Edom",
+      "reference": "Obadiah 1:1",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1644,
+      "book": "Obadiah",
+      "question": "The pride of your heart has deceived you, you who dwell in the...",
+      "options": ["Clefts of the rock", "Tents of luxury", "Walls of the city", "Valley of the giants"],
+      "answer": "Clefts of the rock",
+      "reference": "Obadiah 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1645,
+      "book": "Obadiah",
+      "question": "Edom said in his heart, 'Who will ______?'",
+      "options": ["Bring me down to the ground", "Defeat me", "Judge me", "See me"],
+      "answer": "Bring me down to the ground",
+      "reference": "Obadiah 1:3",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1646,
+      "book": "Obadiah",
+      "question": "Though you ascend as high as the ______, I will bring you down.",
+      "options": ["Eagle", "Cloud", "Mountain", "Sun"],
+      "answer": "Eagle",
+      "reference": "Obadiah 1:4",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1647,
+      "book": "Obadiah",
+      "question": "From where did Edom set his nest among the stars?",
+      "options": ["There / Among the stars", "On high", "In the heavens", "On the peak"],
+      "answer": "There / Among the stars",
+      "reference": "Obadiah 1:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1648,
+      "book": "Obadiah",
+      "question": "If thieves came to you, would they not have stolen till they had ______?",
+      "options": ["Enough", "Everything", "The gold", "Nothing"],
+      "answer": "Enough",
+      "reference": "Obadiah 1:5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1649,
+      "book": "Obadiah",
+      "question": "How Esau shall be searched out! How his ______ treasures shall be sought after!",
+      "options": ["Hidden", "Gold", "Lost", "Great"],
+      "answer": "Hidden",
+      "reference": "Obadiah 1:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1650,
+      "book": "Obadiah",
+      "question": "Who will be dismayed so that everyone from the mountains of Esau may be cut off by slaughter?",
+      "options": ["Teman", "Zion", "Babylon", "Moab"],
+      "answer": "Teman",
+      "reference": "Obadiah 1:9",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1651,
+      "book": "Obadiah",
+      "question": "For violence against your brother ______, shame shall cover you.",
+      "options": ["Jacob", "Joseph", "Isaac", "Israel"],
+      "answer": "Jacob",
+      "reference": "Obadiah 1:10",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1652,
+      "book": "Obadiah",
+      "question": "You should not have rejoiced over the children of Judah in the day of their...",
+      "options": ["Destruction", "Feast", "Exile", "Birth"],
+      "answer": "Destruction",
+      "reference": "Obadiah 1:12",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1653,
+      "book": "Obadiah",
+      "question": "You should not have stood at the ______ to cut off those among them who escaped.",
+      "options": ["Crossroads", "City gate", "River", "Mountain pass"],
+      "answer": "Crossroads",
+      "reference": "Obadiah 1:14",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1654,
+      "book": "Obadiah",
+      "question": "For the day of the Lord upon all the nations is...",
+      "options": ["Near", "Far", "Unknown", "Great"],
+      "answer": "Near",
+      "reference": "Obadiah 1:15",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1655,
+      "book": "Obadiah",
+      "question": "As you have done, it shall be done to ______.",
+      "options": ["You", "Your children", "Your nation", "Your enemies"],
+      "answer": "You",
+      "reference": "Obadiah 1:15",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1656,
+      "book": "Obadiah",
+      "question": "But on Mount ______ there shall be deliverance.",
+      "options": ["Zion", "Sinai", "Nebo", "Carmel"],
+      "answer": "Zion",
+      "reference": "Obadiah 1:17",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1657,
+      "book": "Obadiah",
+      "question": "The house of Jacob shall be a fire, and the house of Joseph a flame; but the house of Esau shall be...",
+      "options": ["Stubble", "Water", "Dust", "Smoke"],
+      "answer": "Stubble",
+      "reference": "Obadiah 1:18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1658,
+      "book": "Obadiah",
+      "question": "There shall be no survivor of the house of...",
+      "options": ["Esau", "Jacob", "Levi", "Judah"],
+      "answer": "Esau",
+      "reference": "Obadiah 1:18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1659,
+      "book": "Obadiah",
+      "question": "Saviors shall come to Mount Zion to judge the mountains of Esau, and the ______ shall be the Lord's.",
+      "options": ["Kingdom", "Power", "Glory", "Earth"],
+      "answer": "Kingdom",
+      "reference": "Obadiah 1:21",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1660,
+      "book": "Obadiah",
+      "question": "What is the theme of Obadiah?",
+      "options": ["Judgment on Edom and Restoration of Israel", "The building of the wall", "The love of God", "The return of the exiles"],
+      "answer": "Judgment on Edom and Restoration of Israel",
+      "reference": "Theme",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1661,
+      "book": "Amos",
+      "question": "Amos was among the shepherds of ______.",
+      "options": ["Tekoa", "Bethlehem", "Hebron", "Jerusalem"],
+      "answer": "Tekoa",
+      "reference": "Amos 1:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1662,
+      "book": "Amos",
+      "question": "How many years before the earthquake did Amos begin to prophesy?",
+      "options": ["Two years", "Seven years", "One year", "Ten years"],
+      "answer": "Two years",
+      "reference": "Amos 1:1",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1663,
+      "book": "Amos",
+      "question": "Can two walk together, unless they are ______?",
+      "options": ["Agreed", "Friends", "Related", "Strong"],
+      "answer": "Agreed",
+      "reference": "Amos 3:3",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1664,
+      "book": "Amos",
+      "question": "Does a lion roar in the forest, when he has no ______?",
+      "options": ["Prey", "Cubs", "Water", "Mate"],
+      "answer": "Prey",
+      "reference": "Amos 3:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1665,
+      "book": "Amos",
+      "question": "Surely the Lord God does nothing, unless He reveals His ______ to His servants the prophets.",
+      "options": ["Secret", "Plan", "Will", "Power"],
+      "answer": "Secret",
+      "reference": "Amos 3:7",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1666,
+      "book": "Amos",
+      "question": "A lion has roared! Who will not ______?",
+      "options": ["Fear", "Run", "Hide", "Sleep"],
+      "answer": "Fear",
+      "reference": "Amos 3:8",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1667,
+      "book": "Amos",
+      "question": "As a shepherd takes from the mouth of a lion two legs or a piece of an ear, so shall the ______ be taken out.",
+      "options": ["Children of Israel", "Treasures", "Kings", "Idols"],
+      "answer": "Children of Israel",
+      "reference": "Amos 3:12",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1668,
+      "book": "Amos",
+      "question": "I have given you cleanness of ______ in all your cities.",
+      "options": ["Teeth (famine)", "Hands", "Heart", "Gold"],
+      "answer": "Teeth (famine)",
+      "reference": "Amos 4:6",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1669,
+      "book": "Amos",
+      "question": "I overthrew some of you, as God overthrew Sodom and Gomorrah, and you were like a ______ plucked from the burning.",
+      "options": ["Firebrand", "Stick", "Lamb", "Tree"],
+      "answer": "Firebrand",
+      "reference": "Amos 4:11",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1670,
+      "book": "Amos",
+      "question": "Seek the Lord and ______!",
+      "options": ["Live", "Rejoice", "Pray", "Fight"],
+      "answer": "Live",
+      "reference": "Amos 5:6",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1671,
+      "book": "Amos",
+      "question": "Seek ______, and not evil, that you may live.",
+      "options": ["Good", "Wealth", "Power", "Silence"],
+      "answer": "Good",
+      "reference": "Amos 5:14",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1672,
+      "book": "Amos",
+      "question": "Hate evil, love good; establish ______ in the gate.",
+      "options": ["Justice", "Peace", "Trade", "Law"],
+      "answer": "Justice",
+      "reference": "Amos 5:15",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1673,
+      "book": "Amos",
+      "question": "Woe to you who desire the day of the Lord! It will be ______ and not light.",
+      "options": ["Darkness", "Fire", "Storm", "Silence"],
+      "answer": "Darkness",
+      "reference": "Amos 5:18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1674,
+      "book": "Amos",
+      "question": "It will be as though a man fled from a lion, and a ______ met him.",
+      "options": ["Bear", "Wolf", "Leopard", "Giant"],
+      "answer": "Bear",
+      "reference": "Amos 5:19",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1675,
+      "book": "Amos",
+      "question": "I ______ your feast days, and I do not savor your sacred assemblies.",
+      "options": ["Hate/Despise", "Ignore", "Forget", "Watch"],
+      "answer": "Hate/Despise",
+      "reference": "Amos 5:21",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1676,
+      "book": "Amos",
+      "question": "You also carried Sikkuth your king and Chiun, your ______.",
+      "options": ["Idols", "Armor", "Tents", "Treasures"],
+      "answer": "Idols",
+      "reference": "Amos 5:26",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1677,
+      "book": "Amos",
+      "question": "Woe to those who lie on beds of ______.",
+      "options": ["Ivory", "Gold", "Linen", "Wood"],
+      "answer": "Ivory",
+      "reference": "Amos 6:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1678,
+      "book": "Amos",
+      "question": "Who sing idly to the sound of ______?",
+      "options": ["Stringed instruments", "Trumpets", "Drums", "Flutes"],
+      "answer": "Stringed instruments",
+      "reference": "Amos 6:5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1679,
+      "book": "Amos",
+      "question": "Who drink wine from ______?",
+      "options": ["Bowls", "Cups", "Bottles", "Skins"],
+      "answer": "Bowls",
+      "reference": "Amos 6:6",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1680,
+      "book": "Amos",
+      "question": "What did the Lord show Amos in his first vision in chapter 7?",
+      "options": ["Locusts", "Fire", "A plumb line", "Fruit"],
+      "answer": "Locusts",
+      "reference": "Amos 7:1",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1681,
+      "book": "Amos",
+      "question": "What did the Lord show Amos in his second vision in chapter 7?",
+      "options": ["Fire", "Locusts", "A plumb line", "Fruit"],
+      "answer": "Fire",
+      "reference": "Amos 7:4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1682,
+      "book": "Amos",
+      "question": "Amos said, 'I was no prophet, nor was I a son of a prophet, but I was a ______.'",
+      "options": ["Sheepbreeder / Herdsman", "Carpenter", "Fisherman", "Soldier"],
+      "answer": "Sheepbreeder / Herdsman",
+      "reference": "Amos 7:14",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1683,
+      "book": "Amos",
+      "question": "What other occupation did Amos have besides being a herdsman?",
+      "options": ["Tender of sycamore fruit", "Maker of tents", "Scribe", "Vine dresser"],
+      "answer": "Tender of sycamore fruit",
+      "reference": "Amos 7:14",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1684,
+      "book": "Amos",
+      "question": "I will make the sun go down at ______.",
+      "options": ["Noon", "Midnight", "Evening", "Morning"],
+      "answer": "Noon",
+      "reference": "Amos 8:9",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1685,
+      "book": "Amos",
+      "question": "I will turn your feasts into ______.",
+      "options": ["Mourning", "Silence", "Ash", "War"],
+      "answer": "Mourning",
+      "reference": "Amos 8:10",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1686,
+      "book": "Amos",
+      "question": "Though they dig into ______, from there My hand shall take them.",
+      "options": ["Hell (Sheol)", "The earth", "The mountain", "The sea"],
+      "answer": "Hell (Sheol)",
+      "reference": "Amos 9:2",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1687,
+      "book": "Amos",
+      "question": "Though they hide themselves on top of ______, I will search and take them.",
+      "options": ["Carmel", "Sinai", "Zion", "Nebo"],
+      "answer": "Carmel",
+      "reference": "Amos 9:3",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1688,
+      "book": "Amos",
+      "question": "I will shake the house of Israel among all nations, as grain is shaken in a ______.",
+      "options": ["Sieve", "Basket", "Bag", "Field"],
+      "answer": "Sieve",
+      "reference": "Amos 9:9",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1689,
+      "book": "Amos",
+      "question": "The mountains shall drip with ______ wine.",
+      "options": ["Sweet", "Bitter", "New", "Strong"],
+      "answer": "Sweet",
+      "reference": "Amos 9:13",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1690,
+      "book": "Amos",
+      "question": "Behold, the days are coming when the ______ shall overtake the reaper.",
+      "options": ["Plowman", "Sower", "Planter", "King"],
+      "answer": "Plowman",
+      "reference": "Amos 9:13",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1691,
+      "book": "Amos",
+      "question": "I will bring back the captives of My people Israel; they shall build the ______ cities and inhabit them.",
+      "options": ["Waste", "New", "Old", "Strong"],
+      "answer": "Waste",
+      "reference": "Amos 9:14",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1692,
+      "book": "Amos",
+      "question": "I will plant them in their land, and no longer shall they be ______.",
+      "options": ["Pulled up", "Forgotten", "Scattered", "Afraid"],
+      "answer": "Pulled up",
+      "reference": "Amos 9:15",
+      "difficulty": "easy"
+    },
+    {
+      "id": 1693,
+      "book": "Amos",
+      "question": "Amos 1:2 says the Lord ______ from Zion.",
+      "options": ["Roars", "Speaks", "Sings", "Laughs"],
+      "answer": "Roars",
+      "reference": "Amos 1:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1694,
+      "book": "Amos",
+      "question": "What instrument is mentioned in Amos 2:2 when Moab dies?",
+      "options": ["Trumpet", "Harp", "Drum", "Flute"],
+      "answer": "Trumpet",
+      "reference": "Amos 2:2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1695,
+      "book": "Amos",
+      "question": "He who is courageous among the mighty shall flee ______ in that day.",
+      "options": ["Naked", "Afraid", "Quietly", "Fast"],
+      "answer": "Naked",
+      "reference": "Amos 2:16",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1696,
+      "book": "Amos",
+      "question": "Does a bird fall into a snare on the earth, where there is no ______ for it?",
+      "options": ["Trap", "Bait", "Food", "Seed"],
+      "answer": "Trap",
+      "reference": "Amos 3:5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1697,
+      "book": "Amos",
+      "question": "If a ______ is blown in a city, will not the people be afraid?",
+      "options": ["Trumpet", "Horn", "Whistle", "Voice"],
+      "answer": "Trumpet",
+      "reference": "Amos 3:6",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1698,
+      "book": "Amos",
+      "question": "In Amos 4, God says He withheld ______ from them when there were yet three months to the harvest.",
+      "options": ["Rain", "Food", "Dew", "Wine"],
+      "answer": "Rain",
+      "reference": "Amos 4:7",
+      "difficulty": "medium"
+    },
+    {
+      "id": 1699,
+      "book": "Amos",
+      "question": "The Lord God has sworn by His ______, that the days shall come upon you.",
+      "options": ["Holiness", "Name", "Throne", "Power"],
+      "answer": "Holiness",
+      "reference": "Amos 4:2",
+      "difficulty": "hard"
+    },
+    {
+      "id": 1700,
+      "book": "Amos",
+      "question": "In Amos 6, God says He ______ the excellence of Jacob and hates his palaces.",
+      "options": ["Abhors", "Loves", "Remembers", "Watches"],
+      "answer": "Abhors",
+      "reference": "Amos 6:8",
+      "difficulty": "hard"
+    }
+  ]

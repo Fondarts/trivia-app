@@ -1,0 +1,422 @@
+[
+  {
+    "id": 54,
+    "book": "Ezra",
+    "question": "What was the primary mission of Ezra?",
+    "options": [
+      "To rebuild the wall",
+      "To teach the Law and rebuild the Temple community",
+      "To fight the Philistines",
+      "To become King"
+    ],
+    "answer": "To teach the Law and rebuild the Temple community",
+    "reference": "Ezra 7:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 125,
+    "book": "Ezra",
+    "question": "Who was the Persian king that issued the decree to rebuild the Temple?",
+    "options": [
+      "Cyrus",
+      "Darius",
+      "Nebuchadnezzar",
+      "Xerxes"
+    ],
+    "answer": "Cyrus",
+    "reference": "Ezra 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 172,
+    "book": "Ezra",
+    "question": "When the foundation of the Temple was laid, why did the old men weep?",
+    "options": [
+      "They remembered the glory of the first Temple",
+      "They were tired",
+      "They were afraid of enemies",
+      "They had no money"
+    ],
+    "answer": "They remembered the glory of the first Temple",
+    "reference": "Ezra 3:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 216,
+    "book": "Ezra",
+    "question": "What did the people do when Ezra read the Book of the Law?",
+    "options": [
+      "They wept and bowed down",
+      "They laughed",
+      "They fell asleep",
+      "They left"
+    ],
+    "answer": "They wept and bowed down",
+    "reference": "Nehemiah 8:9 (Ezra was the reader)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 271,
+    "book": "Ezra",
+    "question": "What was Ezra's profession?",
+    "options": [
+      "Scribe and Priest",
+      "King",
+      "Carpenter",
+      "Shepherd"
+    ],
+    "answer": "Scribe and Priest",
+    "reference": "Ezra 7:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 326,
+    "book": "Ezra",
+    "question": "Which King of Persia wrote a letter authorizing Ezra's mission?",
+    "options": [
+      "Artaxerxes",
+      "Cyrus",
+      "Darius",
+      "Xerxes"
+    ],
+    "answer": "Artaxerxes",
+    "reference": "Ezra 7:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 375,
+    "book": "Ezra",
+    "question": "What was the name of the scribe who read the Law to the people?",
+    "options": [
+      "Ezra",
+      "Nehemiah",
+      "Zerubbabel",
+      "Jeshua"
+    ],
+    "answer": "Ezra",
+    "reference": "Nehemiah 8:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 421,
+    "book": "Ezra",
+    "question": "Which city in Persia served as the winter capital where Nehemiah and Esther lived?",
+    "options": [
+      "Susa (Shushan)",
+      "Persepolis",
+      "Babylon",
+      "Ecbatana"
+    ],
+    "answer": "Susa (Shushan)",
+    "reference": "Nehemiah 1:1 / Esther 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 472,
+    "book": "Ezra",
+    "question": "Ezra was a direct descendant of which High Priest?",
+    "options": [
+      "Aaron",
+      "Eli",
+      "Melchizedek",
+      "Samuel"
+    ],
+    "answer": "Aaron",
+    "reference": "Ezra 7:1-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 520,
+    "book": "Ezra",
+    "question": "Who were the enemies that hired counselors to frustrate the building of the temple?",
+    "options": [
+      "The people of the land (Samaritans)",
+      "The Babylonians",
+      "The Egyptians",
+      "The Greeks"
+    ],
+    "answer": "The people of the land (Samaritans)",
+    "reference": "Ezra 4:4-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 570,
+    "book": "Ezra",
+    "question": "How many vessels of gold and silver did Sheshbazzar bring back to Jerusalem?",
+    "options": [
+      "5,400",
+      "1,000",
+      "2,500",
+      "10,000"
+    ],
+    "answer": "5,400",
+    "reference": "Ezra 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 625,
+    "book": "Ezra",
+    "question": "What did the adversaries of Judah want to do when the temple was being rebuilt?",
+    "options": [
+      "Build with them",
+      "Burn it down",
+      "Buy the land",
+      "Kill the priests"
+    ],
+    "answer": "Build with them",
+    "reference": "Ezra 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 675,
+    "book": "Ezra",
+    "question": "Who were the prophets who helped the Jews restart the temple building?",
+    "options": [
+      "Haggai and Zechariah",
+      "Elijah and Elisha",
+      "Isaiah and Jeremiah",
+      "Amos and Joel"
+    ],
+    "answer": "Haggai and Zechariah",
+    "reference": "Ezra 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 728,
+    "book": "Ezra",
+    "question": "In the first return from exile, how many singers (descendants of Asaph) were there?",
+    "options": [
+      "128",
+      "200",
+      "4,000",
+      "12"
+    ],
+    "answer": "128",
+    "reference": "Ezra 2:41",
+    "difficulty": "hard"
+  },
+  {
+    "id": 770,
+    "book": "Ezra",
+    "question": "What did Ezra do when he heard of the intermarriage of the people?",
+    "options": [
+      "Tore his tunic and cloak and pulled hair from his head",
+      "He fasted for 40 days",
+      "He returned to Babylon",
+      "He burned the temple"
+    ],
+    "answer": "Tore his tunic and cloak and pulled hair from his head",
+    "reference": "Ezra 9:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 827,
+    "book": "Ezra",
+    "question": "What was the name of the decree issued by Cyrus?",
+    "options": [
+      "The Edict of Cyrus",
+      "The Babylonian Decree",
+      "The Persian Law",
+      "The Scroll of Freedom"
+    ],
+    "answer": "The Edict of Cyrus",
+    "reference": "Ezra 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 869,
+    "book": "Ezra",
+    "question": "What did the people do at the dedication of the second temple?",
+    "options": [
+      "Offered sacrifices with joy",
+      "Wept loudly",
+      "Fasted",
+      "Broke down the altar"
+    ],
+    "answer": "Offered sacrifices with joy",
+    "reference": "Ezra 6:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 927,
+    "book": "Ezra",
+    "question": "What did the people do when the foundation of the temple was laid?",
+    "options": [
+      "Some shouted for joy, others wept",
+      "They stayed silent",
+      "They danced",
+      "They blew trumpets only"
+    ],
+    "answer": "Some shouted for joy, others wept",
+    "reference": "Ezra 3:12-13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 969,
+    "book": "Ezra",
+    "question": "Who was the scribe skilled in the Law of Moses?",
+    "options": [
+      "Ezra",
+      "Nehemiah",
+      "Zerubbabel",
+      "Haggai"
+    ],
+    "answer": "Ezra",
+    "reference": "Ezra 7:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1478,
+    "book": "Ezra",
+    "question": "Which Persian king issued the decree to rebuild the temple in Jerusalem?",
+    "options": [
+      "Cyrus",
+      "Darius",
+      "Xerxes",
+      "Artaxerxes"
+    ],
+    "answer": "Cyrus",
+    "reference": "Ezra 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1479,
+    "book": "Ezra",
+    "question": "Who led the first group of exiles back to Jerusalem?",
+    "options": [
+      "Zerubbabel (and Jeshua)",
+      "Ezra",
+      "Nehemiah",
+      "Daniel"
+    ],
+    "answer": "Zerubbabel (and Jeshua)",
+    "reference": "Ezra 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1480,
+    "book": "Ezra",
+    "question": "What happened when the foundation of the temple was laid?",
+    "options": [
+      "Many shouted for joy, but old men wept",
+      "The wall fell down",
+      "Fire came from heaven",
+      "The enemies attacked"
+    ],
+    "answer": "Many shouted for joy, but old men wept",
+    "reference": "Ezra 3:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1481,
+    "book": "Ezra",
+    "question": "Who offered to help build the temple but were rejected by Zerubbabel?",
+    "options": [
+      "The adversaries of Judah and Benjamin (Samaritans)",
+      "The Egyptians",
+      "The Greeks",
+      "The Romans"
+    ],
+    "answer": "The adversaries of Judah and Benjamin (Samaritans)",
+    "reference": "Ezra 4:1-3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1482,
+    "book": "Ezra",
+    "question": "Which two prophets encouraged the people to restart building the temple after it stopped?",
+    "options": [
+      "Haggai and Zechariah",
+      "Isaiah and Jeremiah",
+      "Elijah and Elisha",
+      "Amos and Joel"
+    ],
+    "answer": "Haggai and Zechariah",
+    "reference": "Ezra 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1483,
+    "book": "Ezra",
+    "question": "What was Ezra's profession?",
+    "options": [
+      "Scribe and Priest",
+      "Carpenter",
+      "King",
+      "Soldier"
+    ],
+    "answer": "Scribe and Priest",
+    "reference": "Ezra 7:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1484,
+    "book": "Ezra",
+    "question": "Why did Ezra tear his garments and pull hair from his head?",
+    "options": [
+      "Because the people had intermarried with foreigners",
+      "Because the temple was destroyed",
+      "Because he was sick",
+      "Because of a war"
+    ],
+    "answer": "Because the people had intermarried with foreigners",
+    "reference": "Ezra 9:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1485,
+    "book": "Ezra",
+    "question": "What solution did the people propose to fix the sin of intermarriage?",
+    "options": [
+      "Put away (divorce) the foreign wives and children",
+      "Offer a sacrifice only",
+      "Fast for 40 days",
+      "Leave Jerusalem"
+    ],
+    "answer": "Put away (divorce) the foreign wives and children",
+    "reference": "Ezra 10:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1486,
+    "book": "Ezra",
+    "question": "Who was the governor 'Beyond the River' who challenged the Jews' building?",
+    "options": [
+      "Tattenai",
+      "Sanballat",
+      "Tobiah",
+      "Geshem"
+    ],
+    "answer": "Tattenai",
+    "reference": "Ezra 5:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1487,
+    "book": "Ezra",
+    "question": "What did they search for to prove they had the right to build?",
+    "options": [
+      "The decree of Cyrus in the archives",
+      "The Ark of the Covenant",
+      "The High Priest's rod",
+      "Gold"
+    ],
+    "answer": "The decree of Cyrus in the archives",
+    "reference": "Ezra 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1488,
+    "book": "Ezra",
+    "question": "Did Ezra travel with a military escort?",
+    "options": [
+      "No, he was ashamed to ask the king for one",
+      "Yes, a large army",
+      "Yes, but only horsemen",
+      "The text doesn't say"
+    ],
+    "answer": "No, he was ashamed to ask the king for one",
+    "reference": "Ezra 8:22",
+    "difficulty": "medium"
+  }
+]

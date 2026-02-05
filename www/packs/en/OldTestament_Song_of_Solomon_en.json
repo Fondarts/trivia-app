@@ -1,0 +1,422 @@
+[
+  {
+    "id": 85,
+    "book": "Song of Solomon",
+    "question": "What is the main theme of the Song of Solomon?",
+    "options": [
+      "War",
+      "Wisdom",
+      "Love and Marriage",
+      "Genealogy"
+    ],
+    "answer": "Love and Marriage",
+    "reference": "Song of Solomon",
+    "difficulty": "medium"
+  },
+  {
+    "id": 222,
+    "book": "Song of Solomon",
+    "question": "The bride describes herself as the 'Rose of...'",
+    "options": [
+      "Sharon",
+      "Jericho",
+      "Galilee",
+      "Lebanon"
+    ],
+    "answer": "Sharon",
+    "reference": "Song of Solomon 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 333,
+    "book": "Song of Solomon",
+    "question": "The Shulamite woman says, 'I am black but...'",
+    "options": [
+      "Lovely",
+      "Strong",
+      "Faithful",
+      "Rich"
+    ],
+    "answer": "Lovely",
+    "reference": "Song of Solomon 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 382,
+    "book": "Song of Solomon",
+    "question": "To what animal does the beloved compare her lover leaping over mountains?",
+    "options": [
+      "A gazelle or young stag",
+      "A lion",
+      "A horse",
+      "A leopard"
+    ],
+    "answer": "A gazelle or young stag",
+    "reference": "Song of Solomon 2:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 430,
+    "book": "Song of Solomon",
+    "question": "What 'little' animals does the speaker ask to catch because they spoil the vines?",
+    "options": [
+      "Foxes",
+      "Birds",
+      "Mice",
+      "Goats"
+    ],
+    "answer": "Foxes",
+    "reference": "Song of Solomon 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 527,
+    "book": "Song of Solomon",
+    "question": "Complete the verse: 'Love is as strong as...'",
+    "options": [
+      "Death",
+      "Life",
+      "The grave",
+      "Iron"
+    ],
+    "answer": "Death",
+    "reference": "Song of Solomon 8:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 577,
+    "book": "Song of Solomon",
+    "question": "The man says the woman's teeth are like a flock of...",
+    "options": [
+      "Sheep",
+      "Goats",
+      "Doves",
+      "Horses"
+    ],
+    "answer": "Sheep",
+    "reference": "Song of Solomon 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 633,
+    "book": "Song of Solomon",
+    "question": "What are the 'little foxes' said to spoil?",
+    "options": [
+      "The vines",
+      "The garden",
+      "The flock",
+      "The harvest"
+    ],
+    "answer": "The vines",
+    "reference": "Song of Solomon 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 683,
+    "book": "Song of Solomon",
+    "question": "The woman compares her beloved to a cluster of henna blooms in the vineyards of...",
+    "options": [
+      "En Gedi",
+      "Sharon",
+      "Lebanon",
+      "Carmel"
+    ],
+    "answer": "En Gedi",
+    "reference": "Song of Solomon 1:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 737,
+    "book": "Song of Solomon",
+    "question": "Who is the 'Rose of Sharon' usually interpreted to be in the poem?",
+    "options": [
+      "The Beloved (Shulamite)",
+      "Solomon",
+      "The Shepherd",
+      "Wisdom"
+    ],
+    "answer": "The Beloved (Shulamite)",
+    "reference": "Song of Solomon 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 777,
+    "book": "Song of Solomon",
+    "question": "What does the Shulamite say she is to the daughters of Jerusalem?",
+    "options": [
+      "Dark but lovely",
+      "White as snow",
+      "Rich and beautiful",
+      "Poor and needy"
+    ],
+    "answer": "Dark but lovely",
+    "reference": "Song of Solomon 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 836,
+    "book": "Song of Solomon",
+    "question": "Song of Solomon 8:7 says that 'many waters cannot quench...'",
+    "options": [
+      "Love",
+      "Fire",
+      "Thirst",
+      "Hope"
+    ],
+    "answer": "Love",
+    "reference": "Song of Solomon 8:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 876,
+    "book": "Song of Solomon",
+    "question": "Who are the 'daughters of Jerusalem' often addressed in the book?",
+    "options": [
+      "The women of the court/city",
+      "The angels",
+      "The stars",
+      "The foreign wives"
+    ],
+    "answer": "The women of the court/city",
+    "reference": "Song of Solomon 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 936,
+    "book": "Song of Solomon",
+    "question": "Song of Solomon 2:4 says, 'His banner over me was...'",
+    "options": [
+      "Love",
+      "Peace",
+      "Joy",
+      "Protection"
+    ],
+    "answer": "Love",
+    "reference": "Song of Solomon 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 976,
+    "book": "Song of Solomon",
+    "question": "Song of Solomon 2:1 says I am the rose of Sharon, and the...",
+    "options": [
+      "Lily of the valleys",
+      "Apple of the eye",
+      "Cedar of Lebanon",
+      "Vine of the earth"
+    ],
+    "answer": "Lily of the valleys",
+    "reference": "Song of Solomon 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1547,
+    "book": "Song of Solomon",
+    "question": "Let him kiss me with the kisses of his mouth, for your love is better than...",
+    "options": [
+      "Wine",
+      "Honey",
+      "Life",
+      "Gold"
+    ],
+    "answer": "Wine",
+    "reference": "Song of Solomon 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1548,
+    "book": "Song of Solomon",
+    "question": "I am dark, but...",
+    "options": [
+      "Lovely",
+      "Sad",
+      "Strong",
+      "Rich"
+    ],
+    "answer": "Lovely",
+    "reference": "Song of Solomon 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1549,
+    "book": "Song of Solomon",
+    "question": "To what flower does the Beloved compare herself in 2:1?",
+    "options": [
+      "Rose of Sharon",
+      "Lily of the Nile",
+      "Desert Rose",
+      "Tulip of Sharon"
+    ],
+    "answer": "Rose of Sharon",
+    "reference": "Song of Solomon 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1550,
+    "book": "Song of Solomon",
+    "question": "His banner over me is...",
+    "options": [
+      "Love",
+      "Peace",
+      "Joy",
+      "Protection"
+    ],
+    "answer": "Love",
+    "reference": "Song of Solomon 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1551,
+    "book": "Song of Solomon",
+    "question": "Catch us the foxes, the little foxes that spoil the...",
+    "options": [
+      "Vines",
+      "Garden",
+      "Flock",
+      "Fields"
+    ],
+    "answer": "Vines",
+    "reference": "Song of Solomon 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1552,
+    "book": "Song of Solomon",
+    "question": "Who is the woman looking for at night in the city streets?",
+    "options": [
+      "The one I love",
+      "The watchmen",
+      "Her mother",
+      "Her brother"
+    ],
+    "answer": "The one I love",
+    "reference": "Song of Solomon 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1553,
+    "book": "Song of Solomon",
+    "question": "King Solomon made himself a carriage of wood from...",
+    "options": [
+      "Lebanon",
+      "Ophir",
+      "Egypt",
+      "Bashan"
+    ],
+    "answer": "Lebanon",
+    "reference": "Song of Solomon 3:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1554,
+    "book": "Song of Solomon",
+    "question": "Your teeth are like a flock of...",
+    "options": [
+      "Shorn sheep",
+      "Doves",
+      "Goats",
+      "Pearls"
+    ],
+    "answer": "Shorn sheep",
+    "reference": "Song of Solomon 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1555,
+    "book": "Song of Solomon",
+    "question": "Awake, O north wind, and come, O south! Blow upon my...",
+    "options": [
+      "Garden",
+      "Face",
+      "House",
+      "Hair"
+    ],
+    "answer": "Garden",
+    "reference": "Song of Solomon 4:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1556,
+    "book": "Song of Solomon",
+    "question": "Who struck and wounded the woman when she opened the door too late?",
+    "options": [
+      "The watchmen",
+      "The shepherds",
+      "The soldiers",
+      "Her brothers"
+    ],
+    "answer": "The watchmen",
+    "reference": "Song of Solomon 5:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1557,
+    "book": "Song of Solomon",
+    "question": "Where has your beloved gone, O fairest among...?",
+    "options": [
+      "Women",
+      "Queens",
+      "Daughters",
+      "Virgins"
+    ],
+    "answer": "Women",
+    "reference": "Song of Solomon 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1558,
+    "book": "Song of Solomon",
+    "question": "Return, return, O...",
+    "options": [
+      "Shulamite",
+      "Beloved",
+      "Daughter of Zion",
+      "Queen"
+    ],
+    "answer": "Shulamite",
+    "reference": "Song of Solomon 6:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1559,
+    "book": "Song of Solomon",
+    "question": "Set me as a seal upon your...",
+    "options": [
+      "Heart",
+      "Arm",
+      "Hand",
+      "Forehead"
+    ],
+    "answer": "Heart",
+    "reference": "Song of Solomon 8:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1560,
+    "book": "Song of Solomon",
+    "question": "Love is as strong as...",
+    "options": [
+      "Death",
+      "Life",
+      "The grave",
+      "Iron"
+    ],
+    "answer": "Death",
+    "reference": "Song of Solomon 8:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1561,
+    "book": "Song of Solomon",
+    "question": "Many waters cannot quench...",
+    "options": [
+      "Love",
+      "Fire",
+      "Thirst",
+      "Passion"
+    ],
+    "answer": "Love",
+    "reference": "Song of Solomon 8:7",
+    "difficulty": "easy"
+  }
+]

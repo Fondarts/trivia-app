@@ -1,0 +1,520 @@
+[
+  {
+    "id": 18,
+    "book": "2 Samuel",
+    "question": "Who was the son of David that rebelled against him?",
+    "options": [
+      "Solomon",
+      "Absalom",
+      "Adonijah",
+      "Amnon"
+    ],
+    "answer": "Absalom",
+    "reference": "2 Samuel 15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 50,
+    "book": "2 Samuel",
+    "question": "Which prophet confronted David about his sin with Bathsheba?",
+    "options": [
+      "Samuel",
+      "Nathan",
+      "Elijah",
+      "Gad"
+    ],
+    "answer": "Nathan",
+    "reference": "2 Samuel 12:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 70,
+    "book": "2 Samuel",
+    "question": "Who died because he touched the Ark of the Covenant to steady it?",
+    "options": [
+      "Uzzah",
+      "Ahio",
+      "Obed-Edom",
+      "Michal"
+    ],
+    "answer": "Uzzah",
+    "reference": "2 Samuel 6:6-7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 77,
+    "book": "2 Samuel",
+    "question": "Who was Jonathan's crippled son to whom David showed kindness?",
+    "options": [
+      "Mephibosheth",
+      "Ishbosheth",
+      "Absalom",
+      "Adonijah"
+    ],
+    "answer": "Mephibosheth",
+    "reference": "2 Samuel 9:6-7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 117,
+    "book": "2 Samuel",
+    "question": "How long did David reign as king in total?",
+    "options": [
+      "20 years",
+      "30 years",
+      "40 years",
+      "50 years"
+    ],
+    "answer": "40 years",
+    "reference": "2 Samuel 5:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 165,
+    "book": "2 Samuel",
+    "question": "Who was struck dead for touching the Ark of the Covenant when the oxen stumbled?",
+    "options": [
+      "Uzzah",
+      "Ahio",
+      "Obed-Edom",
+      "Michal"
+    ],
+    "answer": "Uzzah",
+    "reference": "2 Samuel 6:6-7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 166,
+    "book": "2 Samuel",
+    "question": "How was Absalom caught, leading to his death?",
+    "options": [
+      "His hair got caught in a tree",
+      "He fell into a pit",
+      "His horse threw him",
+      "He was trapped in a cave"
+    ],
+    "answer": "His hair got caught in a tree",
+    "reference": "2 Samuel 18:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 200,
+    "book": "2 Samuel",
+    "question": "Which son of David raped his half-sister Tamar?",
+    "options": [
+      "Amnon",
+      "Absalom",
+      "Adonijah",
+      "Solomon"
+    ],
+    "answer": "Amnon",
+    "reference": "2 Samuel 13:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 211,
+    "book": "2 Samuel",
+    "question": "Who was David's counselor that betrayed him and joined Absalom?",
+    "options": [
+      "Ahithophel",
+      "Hushai",
+      "Zadok",
+      "Joab"
+    ],
+    "answer": "Ahithophel",
+    "reference": "2 Samuel 15:31",
+    "difficulty": "hard"
+  },
+  {
+    "id": 246,
+    "book": "2 Samuel",
+    "question": "Who was the woman who guarded the bodies of her executed sons from birds and beasts?",
+    "options": [
+      "Rizpah",
+      "Michal",
+      "Bathsheba",
+      "Hannah"
+    ],
+    "answer": "Rizpah",
+    "reference": "2 Samuel 21:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 263,
+    "book": "2 Samuel",
+    "question": "Who killed Abner, the commander of Saul's army?",
+    "options": [
+      "Joab",
+      "David",
+      "Asahel",
+      "Abishai"
+    ],
+    "answer": "Joab",
+    "reference": "2 Samuel 3:27",
+    "difficulty": "hard"
+  },
+  {
+    "id": 264,
+    "book": "2 Samuel",
+    "question": "What other name was Solomon given by the prophet Nathan?",
+    "options": [
+      "Jedidiah",
+      "Lemuel",
+      "Koheleth",
+      "Adoniram"
+    ],
+    "answer": "Jedidiah",
+    "reference": "2 Samuel 12:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 316,
+    "book": "2 Samuel",
+    "question": "Why was Mephibosheth crippled in his feet?",
+    "options": [
+      "His nurse dropped him when fleeing",
+      "He was born that way",
+      "He was wounded in battle",
+      "King Saul struck him"
+    ],
+    "answer": "His nurse dropped him when fleeing",
+    "reference": "2 Samuel 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 317,
+    "book": "2 Samuel",
+    "question": "How often did Absalom cut his heavy hair?",
+    "options": [
+      "Once a year",
+      "Every month",
+      "Never",
+      "Every week"
+    ],
+    "answer": "Once a year",
+    "reference": "2 Samuel 14:26",
+    "difficulty": "hard"
+  },
+  {
+    "id": 318,
+    "book": "2 Samuel",
+    "question": "Who was the 'Wise Woman' Joab sent to convince David to bring Absalom back?",
+    "options": [
+      "Woman of Tekoa",
+      "Woman of Endor",
+      "Woman of Timnah",
+      "Woman of Zarephath"
+    ],
+    "answer": "Woman of Tekoa",
+    "reference": "2 Samuel 14:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 367,
+    "book": "2 Samuel",
+    "question": "Who cursed David and threw stones at him as he fled from Absalom?",
+    "options": [
+      "Shimei",
+      "Ziba",
+      "Ahithophel",
+      "Sheba"
+    ],
+    "answer": "Shimei",
+    "reference": "2 Samuel 16:5-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 368,
+    "book": "2 Samuel",
+    "question": "What punishment did David choose for his sin of counting the people?",
+    "options": [
+      "3 days of pestilence/plague",
+      "3 years of famine",
+      "3 months of fleeing enemies",
+      "7 years of drought"
+    ],
+    "answer": "3 days of pestilence/plague",
+    "reference": "2 Samuel 24:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 415,
+    "book": "2 Samuel",
+    "question": "Who was Saul's son that was made king over Israel for two years while David ruled Judah?",
+    "options": [
+      "Ish-bosheth",
+      "Jonathan",
+      "Mephibosheth",
+      "Abinadab"
+    ],
+    "answer": "Ish-bosheth",
+    "reference": "2 Samuel 2:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 416,
+    "book": "2 Samuel",
+    "question": "Who was the 'Wise Woman' who saved the city of Abel by throwing the head of the rebel Sheba over the wall?",
+    "options": [
+      "The Wise Woman of Abel",
+      "Deborah",
+      "Jael",
+      "The Witch of Endor"
+    ],
+    "answer": "The Wise Woman of Abel",
+    "reference": "2 Samuel 20:21-22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 466,
+    "book": "2 Samuel",
+    "question": "What was the name of the place where God confused the languages?",
+    "options": [
+      "Babel",
+      "Eden",
+      "Sodom",
+      "Nineveh"
+    ],
+    "answer": "Babel",
+    "reference": "Genesis 11:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 467,
+    "book": "2 Samuel",
+    "question": "Who was the priest that escaped the slaughter at Nob and fled to David?",
+    "options": [
+      "Abiathar",
+      "Ahimelech",
+      "Zadok",
+      "Nathan"
+    ],
+    "answer": "Abiathar",
+    "reference": "1 Samuel 22:20",
+    "difficulty": "hard"
+  },
+  {
+    "id": 512,
+    "book": "2 Samuel",
+    "question": "Which three mighty men broke through the Philistine lines to get water for David?",
+    "options": [
+      "Josheb-Basshebeth, Eleazar, Shammah",
+      "Joab, Abishai, Asahel",
+      "Uriah, Benaiah, Zadok",
+      "Jonathan, Saul, Abner"
+    ],
+    "answer": "Josheb-Basshebeth, Eleazar, Shammah",
+    "reference": "2 Samuel 23:13-17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 513,
+    "book": "2 Samuel",
+    "question": "Who touched the Ark of God to steady it and died?",
+    "options": [
+      "Uzzah",
+      "Ahio",
+      "Obed-Edom",
+      "Zadok"
+    ],
+    "answer": "Uzzah",
+    "reference": "2 Samuel 6:6-7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 563,
+    "book": "2 Samuel",
+    "question": "Who was the crippled son of Jonathan?",
+    "options": [
+      "Mephibosheth",
+      "Ishbosheth",
+      "Armoni",
+      "Micha"
+    ],
+    "answer": "Mephibosheth",
+    "reference": "2 Samuel 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 617,
+    "book": "2 Samuel",
+    "question": "What was the name of the place where Uzzah died for touching the Ark?",
+    "options": [
+      "Perez-uzzah",
+      "Baal-perazim",
+      "Valley of Achor",
+      "Gilgal"
+    ],
+    "answer": "Perez-uzzah",
+    "reference": "2 Samuel 6:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 618,
+    "book": "2 Samuel",
+    "question": "Who killed the giant who had six fingers on each hand and six toes on each foot?",
+    "options": [
+      "Jonathan son of Shimeah",
+      "David",
+      "Joab",
+      "Abishai"
+    ],
+    "answer": "Jonathan son of Shimeah",
+    "reference": "2 Samuel 21:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 667,
+    "book": "2 Samuel",
+    "question": "Who assassinated Ish-bosheth and brought his head to David (who then executed them)?",
+    "options": [
+      "Recab and Baanah",
+      "Joab and Abishai",
+      "Ziba and Mephibosheth",
+      "Shimei and Hushai"
+    ],
+    "answer": "Recab and Baanah",
+    "reference": "2 Samuel 4:5-8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 668,
+    "book": "2 Samuel",
+    "question": "What was the name of the giant with a spear weighing 300 shekels of bronze who tried to kill David?",
+    "options": [
+      "Ishbi-Benob",
+      "Goliath",
+      "Og",
+      "Lahmi"
+    ],
+    "answer": "Ishbi-Benob",
+    "reference": "2 Samuel 21:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 719,
+    "book": "2 Samuel",
+    "question": "Where was David anointed King over Judah?",
+    "options": [
+      "Hebron",
+      "Jerusalem",
+      "Bethlehem",
+      "Gilgal"
+    ],
+    "answer": "Hebron",
+    "reference": "2 Samuel 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 720,
+    "book": "2 Samuel",
+    "question": "What was the name of the man who cursed David, throwing stones and dust?",
+    "options": [
+      "Shimei",
+      "Ziba",
+      "Sheba",
+      "Ahithophel"
+    ],
+    "answer": "Shimei",
+    "reference": "2 Samuel 16:5-6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 765,
+    "book": "2 Samuel",
+    "question": "What did David say he would not offer to the Lord?",
+    "options": [
+      "That which cost him nothing",
+      "Lame animals",
+      "Stolen goods",
+      "Foreign gold"
+    ],
+    "answer": "That which cost him nothing",
+    "reference": "2 Samuel 24:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 819,
+    "book": "2 Samuel",
+    "question": "Where was Ish-bosheth buried?",
+    "options": [
+      "In the tomb of Abner in Hebron",
+      "In Jerusalem",
+      "In Gibeah",
+      "In Mahanaim"
+    ],
+    "answer": "In the tomb of Abner in Hebron",
+    "reference": "2 Samuel 4:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 820,
+    "book": "2 Samuel",
+    "question": "Who was the mother of Absalom?",
+    "options": [
+      "Maacah",
+      "Haggith",
+      "Abital",
+      "Eglah"
+    ],
+    "answer": "Maacah",
+    "reference": "2 Samuel 3:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 864,
+    "book": "2 Samuel",
+    "question": "What was the name of the prophet who rebuked David for counting the people?",
+    "options": [
+      "Gad",
+      "Nathan",
+      "Samuel",
+      "Ahijah"
+    ],
+    "answer": "Gad",
+    "reference": "2 Samuel 24:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 919,
+    "book": "2 Samuel",
+    "question": "What was the name of the place where David bought the threshing floor?",
+    "options": [
+      "The threshing floor of Araunah the Jebusite",
+      "The field of Machpelah",
+      "The valley of Achor",
+      "The hill of Zion"
+    ],
+    "answer": "The threshing floor of Araunah the Jebusite",
+    "reference": "2 Samuel 24:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 920,
+    "book": "2 Samuel",
+    "question": "Who was the sister of Absalom that Amnon loved?",
+    "options": [
+      "Tamar",
+      "Dinah",
+      "Michal",
+      "Abigail"
+    ],
+    "answer": "Tamar",
+    "reference": "2 Samuel 13:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 964,
+    "book": "2 Samuel",
+    "question": "Who rebuked David for his sin with Bathsheba?",
+    "options": [
+      "Nathan",
+      "Gad",
+      "Samuel",
+      "Ahijah"
+    ],
+    "answer": "Nathan",
+    "reference": "2 Samuel 12:1",
+    "difficulty": "easy"
+  }
+]

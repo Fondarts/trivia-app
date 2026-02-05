@@ -1,0 +1,562 @@
+[
+  {
+    "id": 19,
+    "book": "1 Kings",
+    "question": "What did King Solomon ask God for?",
+    "options": [
+      "Wealth",
+      "Long life",
+      "Wisdom",
+      "Victory in battle"
+    ],
+    "answer": "Wisdom",
+    "reference": "1 Kings 3:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 20,
+    "book": "1 Kings",
+    "question": "Who was the wicked queen married to King Ahab?",
+    "options": [
+      "Athaliah",
+      "Jezebel",
+      "Delilah",
+      "Vashti"
+    ],
+    "answer": "Jezebel",
+    "reference": "1 Kings 16:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 51,
+    "book": "1 Kings",
+    "question": "How was the prophet Elijah fed by the brook Cherith?",
+    "options": [
+      "By angels",
+      "By ravens",
+      "By a widow",
+      "By fish"
+    ],
+    "answer": "By ravens",
+    "reference": "1 Kings 17:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 52,
+    "book": "1 Kings",
+    "question": "Where did Elijah challenge the prophets of Baal?",
+    "options": [
+      "Mount Sinai",
+      "Mount Carmel",
+      "Mount Zion",
+      "Mount Hermon"
+    ],
+    "answer": "Mount Carmel",
+    "reference": "1 Kings 18:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 78,
+    "book": "1 Kings",
+    "question": "Who came from a far land to test Solomon's wisdom?",
+    "options": [
+      "The Queen of Sheba",
+      "Pharaoh of Egypt",
+      "King of Tyre",
+      "Queen Jezebel"
+    ],
+    "answer": "The Queen of Sheba",
+    "reference": "1 Kings 10:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 118,
+    "book": "1 Kings",
+    "question": "Who built the first Temple in Jerusalem?",
+    "options": [
+      "David",
+      "Solomon",
+      "Hezekiah",
+      "Zerubbabel"
+    ],
+    "answer": "Solomon",
+    "reference": "1 Kings 6:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 119,
+    "book": "1 Kings",
+    "question": "What happened to the kingdom after Solomon died?",
+    "options": [
+      "It became richer",
+      "It was divided into North (Israel) and South (Judah)",
+      "It was conquered by Egypt",
+      "It was flooded"
+    ],
+    "answer": "It was divided into North (Israel) and South (Judah)",
+    "reference": "1 Kings 12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 167,
+    "book": "1 Kings",
+    "question": "Who succeeded Solomon as king and caused the rebellion of the ten tribes?",
+    "options": [
+      "Rehoboam",
+      "Jeroboam",
+      "Asa",
+      "Jehoshaphat"
+    ],
+    "answer": "Rehoboam",
+    "reference": "1 Kings 12:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 168,
+    "book": "1 Kings",
+    "question": "What did Rehoboam say he would chastise the people with, instead of whips?",
+    "options": [
+      "Scorpions",
+      "Swords",
+      "Chains",
+      "Fire"
+    ],
+    "answer": "Scorpions",
+    "reference": "1 Kings 12:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 212,
+    "book": "1 Kings",
+    "question": "Where did King Jeroboam set up the two golden calves?",
+    "options": [
+      "Bethel and Dan",
+      "Jerusalem and Hebron",
+      "Shiloh and Gilgal",
+      "Samaria and Jericho"
+    ],
+    "answer": "Bethel and Dan",
+    "reference": "1 Kings 12:29",
+    "difficulty": "hard"
+  },
+  {
+    "id": 213,
+    "book": "1 Kings",
+    "question": "Whose vineyard did King Ahab want to turn into a vegetable garden?",
+    "options": [
+      "Naboth",
+      "Naaman",
+      "Obadiah",
+      "Jehu"
+    ],
+    "answer": "Naboth",
+    "reference": "1 Kings 21:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 247,
+    "book": "1 Kings",
+    "question": "What miracle did Elijah perform for the widow of Zarephath?",
+    "options": [
+      "Her flour and oil did not run out",
+      "He healed her blindness",
+      "He built her a house",
+      "He turned water to wine"
+    ],
+    "answer": "Her flour and oil did not run out",
+    "reference": "1 Kings 17:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 265,
+    "book": "1 Kings",
+    "question": "Who was the mother of King Rehoboam?",
+    "options": [
+      "Naamah the Ammonite",
+      "Bathsheba",
+      "Jezebel",
+      "Athaliah"
+    ],
+    "answer": "Naamah the Ammonite",
+    "reference": "1 Kings 14:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 319,
+    "book": "1 Kings",
+    "question": "What did Adonijah grab hold of to avoid being killed by Solomon?",
+    "options": [
+      "The horns of the altar",
+      "The pillars of the temple",
+      "The King's robe",
+      "The Ark of the Covenant"
+    ],
+    "answer": "The horns of the altar",
+    "reference": "1 Kings 1:50",
+    "difficulty": "medium"
+  },
+  {
+    "id": 320,
+    "book": "1 Kings",
+    "question": "How many wives did Solomon have?",
+    "options": [
+      "700 wives (and 300 concubines)",
+      "100 wives",
+      "12 wives",
+      "1000 wives"
+    ],
+    "answer": "700 wives (and 300 concubines)",
+    "reference": "1 Kings 11:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 321,
+    "book": "1 Kings",
+    "question": "What was the widow of Zarephath doing when Elijah found her?",
+    "options": [
+      "Gathering sticks",
+      "Drawing water",
+      "Baking bread",
+      "Weeping"
+    ],
+    "answer": "Gathering sticks",
+    "reference": "1 Kings 17:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 347,
+    "book": "1 Kings",
+    "question": "Who was the false god of the flies mentioned in 2 Kings?",
+    "options": [
+      "Baal-Zebub",
+      "Dagon",
+      "Molech",
+      "Chemosh"
+    ],
+    "answer": "Baal-Zebub",
+    "reference": "2 Kings 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 369,
+    "book": "1 Kings",
+    "question": "Who was the father of King Ahab?",
+    "options": [
+      "Omri",
+      "Jeroboam",
+      "Baasha",
+      "Zimri"
+    ],
+    "answer": "Omri",
+    "reference": "1 Kings 16:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 370,
+    "book": "1 Kings",
+    "question": "What gifts did the Queen of Sheba bring to Solomon?",
+    "options": [
+      "Spices, gold, and precious stones",
+      "Horses and chariots",
+      "Cedar wood",
+      "Silk and linen"
+    ],
+    "answer": "Spices, gold, and precious stones",
+    "reference": "1 Kings 10:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 417,
+    "book": "1 Kings",
+    "question": "Who was the King of Tyre that supplied Solomon with cedar and cypress timber?",
+    "options": [
+      "Hiram",
+      "Balak",
+      "Cyrus",
+      "Darius"
+    ],
+    "answer": "Hiram",
+    "reference": "1 Kings 5:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 418,
+    "book": "1 Kings",
+    "question": "Which prophet was killed by a lion because he disobeyed God by eating bread in Bethel?",
+    "options": [
+      "The Man of God from Judah",
+      "Ahijah",
+      "Iddo",
+      "Nathan"
+    ],
+    "answer": "The Man of God from Judah",
+    "reference": "1 Kings 13:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 468,
+    "book": "1 Kings",
+    "question": "Which capital city did King Omri build?",
+    "options": [
+      "Samaria",
+      "Tirzah",
+      "Shechem",
+      "Shiloh"
+    ],
+    "answer": "Samaria",
+    "reference": "1 Kings 16:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 514,
+    "book": "1 Kings",
+    "question": "Where did Solomon send ships to bring back gold?",
+    "options": [
+      "Ophir",
+      "Tarshish",
+      "Nineveh",
+      "Egypt"
+    ],
+    "answer": "Ophir",
+    "reference": "1 Kings 9:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 515,
+    "book": "1 Kings",
+    "question": "Who was the Shunamite woman's son restored by?",
+    "options": [
+      "Elisha",
+      "Elijah",
+      "Samuel",
+      "Isaiah"
+    ],
+    "answer": "Elisha",
+    "reference": "2 Kings 4:32-37",
+    "difficulty": "medium"
+  },
+  {
+    "id": 564,
+    "book": "1 Kings",
+    "question": "What were the names of the two bronze pillars at the entrance of Solomon's Temple?",
+    "options": [
+      "Jachin and Boaz",
+      "David and Solomon",
+      "Moses and Aaron",
+      "Law and Grace"
+    ],
+    "answer": "Jachin and Boaz",
+    "reference": "1 Kings 7:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 565,
+    "book": "1 Kings",
+    "question": "Who rebuilt the city of Jericho at the cost of his two sons?",
+    "options": [
+      "Hiel of Bethel",
+      "Ahab",
+      "Omri",
+      "Jehu"
+    ],
+    "answer": "Hiel of Bethel",
+    "reference": "1 Kings 16:34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 519,
+    "book": "1 Kings",
+    "question": "Who killed Joab as he held onto the horns of the altar?",
+    "options": [
+      "Benaiah",
+      "Solomon",
+      "Abishai",
+      "Zadok"
+    ],
+    "answer": "Benaiah",
+    "reference": "1 Kings 2:34",
+    "difficulty": "medium"
+  },
+  {
+    "id": 620,
+    "book": "1 Kings",
+    "question": "According to 1 Kings 4, how many proverbs did Solomon speak?",
+    "options": [
+      "3,000",
+      "1,005",
+      "500",
+      "10,000"
+    ],
+    "answer": "3,000",
+    "reference": "1 Kings 4:32",
+    "difficulty": "hard"
+  },
+  {
+    "id": 669,
+    "book": "1 Kings",
+    "question": "Who tried to usurp the throne when David was old and dying?",
+    "options": [
+      "Adonijah",
+      "Absalom",
+      "Solomon",
+      "Amnon"
+    ],
+    "answer": "Adonijah",
+    "reference": "1 Kings 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 670,
+    "book": "1 Kings",
+    "question": "What happened to the man who tried to rebuild Jericho's gates?",
+    "options": [
+      "His youngest son died",
+      "He fell from the wall",
+      "He was struck by lightning",
+      "He became a leper"
+    ],
+    "answer": "His youngest son died",
+    "reference": "1 Kings 16:34",
+    "difficulty": "hard"
+  },
+  {
+    "id": 721,
+    "book": "1 Kings",
+    "question": "Who was the army commander who supported Adonijah as king?",
+    "options": [
+      "Joab",
+      "Benaiah",
+      "Abner",
+      "Amasa"
+    ],
+    "answer": "Joab",
+    "reference": "1 Kings 1:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 722,
+    "book": "1 Kings",
+    "question": "How long did it take Solomon to build his own palace?",
+    "options": [
+      "13 years",
+      "7 years",
+      "20 years",
+      "3 years"
+    ],
+    "answer": "13 years",
+    "reference": "1 Kings 7:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 723,
+    "book": "1 Kings",
+    "question": "Who hid 100 prophets in two caves to save them from Jezebel?",
+    "options": [
+      "Obadiah",
+      "Elijah",
+      "Micaiah",
+      "Jehu"
+    ],
+    "answer": "Obadiah",
+    "reference": "1 Kings 18:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 766,
+    "book": "1 Kings",
+    "question": "How many steps led up to Solomon's throne?",
+    "options": [
+      "Six",
+      "Seven",
+      "Twelve",
+      "Three"
+    ],
+    "answer": "Six",
+    "reference": "1 Kings 10:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 821,
+    "book": "1 Kings",
+    "question": "Who was the first person Solomon executed after becoming king?",
+    "options": [
+      "Adonijah",
+      "Joab",
+      "Shimei",
+      "Abiathar"
+    ],
+    "answer": "Adonijah",
+    "reference": "1 Kings 2:24-25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 822,
+    "book": "1 Kings",
+    "question": "What country supplied the gold for Solomon's shields?",
+    "options": [
+      "Ophir (via navy) / Trading",
+      "Egypt",
+      "Assyria",
+      "Babylon"
+    ],
+    "answer": "Ophir (via navy) / Trading",
+    "reference": "1 Kings 10:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 865,
+    "book": "1 Kings",
+    "question": "Who was the mother of Rehoboam?",
+    "options": [
+      "Naamah",
+      "Maacah",
+      "Abishag",
+      "Bathsheba"
+    ],
+    "answer": "Naamah",
+    "reference": "1 Kings 14:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 921,
+    "book": "1 Kings",
+    "question": "What was the name of the sensory organ of the Lord that Solomon mentions in his prayer?",
+    "options": [
+      "Eyes (to be open toward this house)",
+      "Ears",
+      "Hands",
+      "Mouth"
+    ],
+    "answer": "Eyes (to be open toward this house)",
+    "reference": "1 Kings 8:29",
+    "difficulty": "hard"
+  },
+  {
+    "id": 922,
+    "book": "1 Kings",
+    "question": "Who met Elijah at the entrance of the cave at Horeb?",
+    "options": [
+      "The Lord (in a still small voice)",
+      "An angel",
+      "Elisha",
+      "Obadiah"
+    ],
+    "answer": "The Lord (in a still small voice)",
+    "reference": "1 Kings 19:12-13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 965,
+    "book": "1 Kings",
+    "question": "What did the Queen of Sheba give to Solomon?",
+    "options": [
+      "Gold, spices, and precious stones",
+      "Horses",
+      "Cedar wood",
+      "Nothing"
+    ],
+    "answer": "Gold, spices, and precious stones",
+    "reference": "1 Kings 10:10",
+    "difficulty": "medium"
+  }
+]

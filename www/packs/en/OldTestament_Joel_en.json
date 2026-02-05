@@ -1,0 +1,422 @@
+[
+  {
+    "id": 31,
+    "book": "Joel",
+    "question": "What plague does the book of Joel describe?",
+    "options": [
+      "Locusts",
+      "Frogs",
+      "Darkness",
+      "Hail"
+    ],
+    "answer": "Locusts",
+    "reference": "Joel 1:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 142,
+    "book": "Joel",
+    "question": "Joel prophesied that God would pour out His Spirit upon whom?",
+    "options": [
+      "Only the priests",
+      "Only the prophets",
+      "All flesh/people",
+      "The kings"
+    ],
+    "answer": "All flesh/people",
+    "reference": "Joel 2:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 229,
+    "book": "Joel",
+    "question": "What does Joel tell the nations to beat their plowshares into?",
+    "options": [
+      "Swords",
+      "Hooks",
+      "Shields",
+      "Crowns"
+    ],
+    "answer": "Swords",
+    "reference": "Joel 3:10 (Reverse of Micah/Isaiah)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 287,
+    "book": "Joel",
+    "question": "Joel describes a devastating invasion of what insects?",
+    "options": [
+      "Locusts",
+      "Flies",
+      "Bees",
+      "Scorpions"
+    ],
+    "answer": "Locusts",
+    "reference": "Joel 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 390,
+    "book": "Joel",
+    "question": "Joel speaks of a valley where God will sit to judge the nations. What is it called?",
+    "options": [
+      "Valley of Jehoshaphat (Decision)",
+      "Valley of Hinnom",
+      "Valley of Elah",
+      "Valley of Achor"
+    ],
+    "answer": "Valley of Jehoshaphat (Decision)",
+    "reference": "Joel 3:2, 14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 437,
+    "book": "Joel",
+    "question": "Complete the command: 'Rend your ______ and not your garments.'",
+    "options": [
+      "Heart",
+      "Soul",
+      "Mind",
+      "Hair"
+    ],
+    "answer": "Heart",
+    "reference": "Joel 2:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 534,
+    "book": "Joel",
+    "question": "Joel prophesies that the sun shall be turned into...",
+    "options": [
+      "Darkness",
+      "Blood",
+      "Fire",
+      "Ice"
+    ],
+    "answer": "Darkness",
+    "reference": "Joel 2:31",
+    "difficulty": "medium"
+  },
+  {
+    "id": 639,
+    "book": "Joel",
+    "question": "Joel calls for a fast and a solemn assembly in the House of...",
+    "options": [
+      "The Lord",
+      "The King",
+      "David",
+      "Israel"
+    ],
+    "answer": "The Lord",
+    "reference": "Joel 1:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 689,
+    "book": "Joel",
+    "question": "Joel 2 describes an army of locusts like...",
+    "options": [
+      "A mighty army / Men of war",
+      "A swarm of bees",
+      "A plague of frogs",
+      "A storm"
+    ],
+    "answer": "A mighty army / Men of war",
+    "reference": "Joel 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 745,
+    "book": "Joel",
+    "question": "Which agricultural pests does Joel mention besides the swarming locust?",
+    "options": [
+      "Crawling, Consuming, and Chewing locusts",
+      "Ants and Bees",
+      "Worms and Flies",
+      "Beetles"
+    ],
+    "answer": "Crawling, Consuming, and Chewing locusts",
+    "reference": "Joel 1:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 784,
+    "book": "Joel",
+    "question": "In which valley will the multitudes be gathered for judgment?",
+    "options": [
+      "Valley of Decision",
+      "Valley of Achor",
+      "Valley of Elah",
+      "Valley of Salt"
+    ],
+    "answer": "Valley of Decision",
+    "reference": "Joel 3:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 844,
+    "book": "Joel",
+    "question": "Joel 2:25 promises: 'I will restore to you the years that the...'",
+    "options": [
+      "Locust has eaten",
+      "Enemy has stolen",
+      "Famine has taken",
+      "Fire has burned"
+    ],
+    "answer": "Locust has eaten",
+    "reference": "Joel 2:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": 883,
+    "book": "Joel",
+    "question": "Joel 3:10 says: 'Let the weak say...'",
+    "options": [
+      "'I am strong'",
+      "'I am rich'",
+      "'Lord help me'",
+      "'I am saved'"
+    ],
+    "answer": "'I am strong'",
+    "reference": "Joel 3:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 944,
+    "book": "Joel",
+    "question": "Joel 2:28 says, 'I will pour out My Spirit on all...'",
+    "options": [
+      "Flesh",
+      "Nations",
+      "Believers",
+      "Kings"
+    ],
+    "answer": "Flesh",
+    "reference": "Joel 2:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 983,
+    "book": "Joel",
+    "question": "Joel 2:1 says to blow the ______ in Zion.",
+    "options": [
+      "Trumpet",
+      "Horn",
+      "Whistle",
+      "Flute"
+    ],
+    "answer": "Trumpet",
+    "reference": "Joel 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1562,
+    "book": "Joel",
+    "question": "What plague does Joel describe in Chapter 1?",
+    "options": [
+      "Locusts",
+      "Frogs",
+      "Hail",
+      "Darkness"
+    ],
+    "answer": "Locusts",
+    "reference": "Joel 1:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1563,
+    "book": "Joel",
+    "question": "To whom does Joel say 'Awake, you drunkards, and weep'?",
+    "options": [
+      "Because of the new wine, for it has been cut off",
+      "Because the king is dead",
+      "Because war is coming",
+      "Because they are foolish"
+    ],
+    "answer": "Because of the new wine, for it has been cut off",
+    "reference": "Joel 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1564,
+    "book": "Joel",
+    "question": "Blow the trumpet in...",
+    "options": [
+      "Zion",
+      "Jerusalem",
+      "Bethel",
+      "Judah"
+    ],
+    "answer": "Zion",
+    "reference": "Joel 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1565,
+    "book": "Joel",
+    "question": "The day of the Lord is described as a day of...",
+    "options": [
+      "Darkness and gloominess",
+      "Light and joy",
+      "Feasting",
+      "Rest"
+    ],
+    "answer": "Darkness and gloominess",
+    "reference": "Joel 2:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1566,
+    "book": "Joel",
+    "question": "So rend your heart, and not your...",
+    "options": [
+      "Garments",
+      "Hair",
+      "Houses",
+      "Money"
+    ],
+    "answer": "Garments",
+    "reference": "Joel 2:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1567,
+    "book": "Joel",
+    "question": "Who knows if He will turn and relent, and leave a ______ behind Him?",
+    "options": [
+      "Blessing",
+      "Curse",
+      "Sign",
+      "Prophet"
+    ],
+    "answer": "Blessing",
+    "reference": "Joel 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1568,
+    "book": "Joel",
+    "question": "I will restore to you the years that the swarming ______ has eaten.",
+    "options": [
+      "Locust",
+      "Worm",
+      "Army",
+      "Lion"
+    ],
+    "answer": "Locust",
+    "reference": "Joel 2:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1569,
+    "book": "Joel",
+    "question": "And it shall come to pass afterward that I will pour out My Spirit on...",
+    "options": [
+      "All flesh",
+      "The prophets only",
+      "Israel only",
+      "The priests"
+    ],
+    "answer": "All flesh",
+    "reference": "Joel 2:28",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1570,
+    "book": "Joel",
+    "question": "The sun shall be turned into darkness, and the moon into...",
+    "options": [
+      "Blood",
+      "Fire",
+      "Dust",
+      "Ice"
+    ],
+    "answer": "Blood",
+    "reference": "Joel 2:31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1571,
+    "book": "Joel",
+    "question": "Whoever calls on the name of the Lord shall be...",
+    "options": [
+      "Saved",
+      "Heard",
+      "Rich",
+      "Wise"
+    ],
+    "answer": "Saved",
+    "reference": "Joel 2:32",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1572,
+    "book": "Joel",
+    "question": "I will gather all nations and bring them down to the Valley of...",
+    "options": [
+      "Jehoshaphat",
+      "Hinnom",
+      "Elah",
+      "Decision"
+    ],
+    "answer": "Jehoshaphat",
+    "reference": "Joel 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1573,
+    "book": "Joel",
+    "question": "Beat your plowshares into...",
+    "options": [
+      "Swords",
+      "Hooks",
+      "Spears",
+      "Shields"
+    ],
+    "answer": "Swords",
+    "reference": "Joel 3:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1574,
+    "book": "Joel",
+    "question": "Let the weak say...",
+    "options": [
+      "'I am strong'",
+      "'I am rich'",
+      "'God help me'",
+      "'I am safe'"
+    ],
+    "answer": "'I am strong'",
+    "reference": "Joel 3:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1575,
+    "book": "Joel",
+    "question": "Multitudes, multitudes in the valley of...",
+    "options": [
+      "Decision",
+      "Death",
+      "Bones",
+      "Kings"
+    ],
+    "answer": "Decision",
+    "reference": "Joel 3:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1576,
+    "book": "Joel",
+    "question": "The Lord will roar from...",
+    "options": [
+      "Zion",
+      "Heaven",
+      "Sinai",
+      "The sea"
+    ],
+    "answer": "Zion",
+    "reference": "Joel 3:16",
+    "difficulty": "medium"
+  }
+]

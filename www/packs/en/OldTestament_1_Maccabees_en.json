@@ -1,0 +1,478 @@
+[
+  {
+    "id": 1167,
+    "book": "1 Maccabees",
+    "question": "Who was the Greek king who invaded Egypt and then the sanctuary in Jerusalem?",
+    "options": [
+      "Antiochus IV Epiphanes",
+      "Alexander the Great",
+      "Ptolemy",
+      "Seleucus"
+    ],
+    "answer": "Antiochus IV Epiphanes",
+    "reference": "1 Maccabees 1:16-20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1168,
+    "book": "1 Maccabees",
+    "question": "What 'abomination of desolation' did the king erect on the altar?",
+    "options": [
+      "A pagan altar/idol",
+      "A pig",
+      "A statue of himself",
+      "A Roman eagle"
+    ],
+    "answer": "A pagan altar/idol",
+    "reference": "1 Maccabees 1:54",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1169,
+    "book": "1 Maccabees",
+    "question": "Who was the father of the Maccabee brothers who started the revolt?",
+    "options": [
+      "Mattathias",
+      "Simon",
+      "John",
+      "Eleazar"
+    ],
+    "answer": "Mattathias",
+    "reference": "1 Maccabees 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1170,
+    "book": "1 Maccabees",
+    "question": "Where did the revolt begin?",
+    "options": [
+      "Modin",
+      "Jerusalem",
+      "Bethlehem",
+      "Galilee"
+    ],
+    "answer": "Modin",
+    "reference": "1 Maccabees 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1171,
+    "book": "1 Maccabees",
+    "question": "What was the nickname of Judas?",
+    "options": [
+      "Maccabeus (The Hammer)",
+      "The Zealot",
+      "The Great",
+      "The Just"
+    ],
+    "answer": "Maccabeus (The Hammer)",
+    "reference": "1 Maccabees 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1172,
+    "book": "1 Maccabees",
+    "question": "Why did many Jews die in the wilderness caves at the start of the persecution?",
+    "options": [
+      "They refused to fight on the Sabbath",
+      "They had no weapons",
+      "They starved",
+      "They surrendered"
+    ],
+    "answer": "They refused to fight on the Sabbath",
+    "reference": "1 Maccabees 2:32-38",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1173,
+    "book": "1 Maccabees",
+    "question": "What decision did Mattathias make regarding the Sabbath?",
+    "options": [
+      "They would fight if attacked",
+      "They would never fight",
+      "They would run away",
+      "They would pray only"
+    ],
+    "answer": "They would fight if attacked",
+    "reference": "1 Maccabees 2:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1174,
+    "book": "1 Maccabees",
+    "question": "Which festival was established to celebrate the cleansing of the temple?",
+    "options": [
+      "Hanukkah (Dedication)",
+      "Purim",
+      "Passover",
+      "Pentecost"
+    ],
+    "answer": "Hanukkah (Dedication)",
+    "reference": "1 Maccabees 4:59",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1175,
+    "book": "1 Maccabees",
+    "question": "Who died by stabbing an elephant from underneath?",
+    "options": [
+      "Eleazar Avaran",
+      "Judas",
+      "John",
+      "Simon"
+    ],
+    "answer": "Eleazar Avaran",
+    "reference": "1 Maccabees 6:43-46",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1176,
+    "book": "1 Maccabees",
+    "question": "With which nation did Judas Maccabeus make an alliance?",
+    "options": [
+      "Rome",
+      "Egypt",
+      "Persia",
+      "Babylon"
+    ],
+    "answer": "Rome",
+    "reference": "1 Maccabees 8:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1177,
+    "book": "1 Maccabees",
+    "question": "Who succeeded Judas as leader after he died in battle?",
+    "options": [
+      "Jonathan",
+      "Simon",
+      "John",
+      "Eleazar"
+    ],
+    "answer": "Jonathan",
+    "reference": "1 Maccabees 9:31",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1178,
+    "book": "1 Maccabees",
+    "question": "The citadel in Jerusalem occupied by the enemy was called...",
+    "options": [
+      "The Akra",
+      "The Antonia",
+      "The Tower of David",
+      "The Temple Fortress"
+    ],
+    "answer": "The Akra",
+    "reference": "1 Maccabees 1:33",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1179,
+    "book": "1 Maccabees",
+    "question": "Who finally captured the Akra and cleansed it?",
+    "options": [
+      "Simon",
+      "Judas",
+      "Jonathan",
+      "John Hyrcanus"
+    ],
+    "answer": "Simon",
+    "reference": "1 Maccabees 13:49-51",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1180,
+    "book": "1 Maccabees",
+    "question": "How did Antiochus IV Epiphanes die according to 1 Maccabees?",
+    "options": [
+      "He fell sick with grief after hearing of defeats",
+      "He was killed in battle",
+      "He was assassinated",
+      "He fell from a chariot"
+    ],
+    "answer": "He fell sick with grief after hearing of defeats",
+    "reference": "1 Maccabees 6:8-16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1181,
+    "book": "1 Maccabees",
+    "question": "What title was Simon given by the people?",
+    "options": [
+      "High Priest and Prince",
+      "King",
+      "Prophet",
+      "Emperor"
+    ],
+    "answer": "High Priest and Prince",
+    "reference": "1 Maccabees 14:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1182,
+    "book": "1 Maccabees",
+    "question": "Who treacherously captured and killed Jonathan?",
+    "options": [
+      "Trypho",
+      "Demetrius",
+      "Alexander Balas",
+      "Lysias"
+    ],
+    "answer": "Trypho",
+    "reference": "1 Maccabees 12:48",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1183,
+    "book": "1 Maccabees",
+    "question": "What did the Romans write on to confirm the alliance?",
+    "options": [
+      "Bronze tablets",
+      "Papyrus",
+      "Gold plates",
+      "Stone pillars"
+    ],
+    "answer": "Bronze tablets",
+    "reference": "1 Maccabees 8:22",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1184,
+    "book": "1 Maccabees",
+    "question": "Who was the son of Simon who succeeded him?",
+    "options": [
+      "John Hyrcanus",
+      "Judas",
+      "Mattathias",
+      "Alexander"
+    ],
+    "answer": "John Hyrcanus",
+    "reference": "1 Maccabees 16:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1185,
+    "book": "1 Maccabees",
+    "question": "What did Mattathias say before he died?",
+    "options": [
+      "'Pay back the Gentiles what they deserve'",
+      "'Surrender for peace'",
+      "'Build a new temple'",
+      "'Flee to Egypt'"
+    ],
+    "answer": "'Pay back the Gentiles what they deserve'",
+    "reference": "1 Maccabees 2:68",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1186,
+    "book": "1 Maccabees",
+    "question": "Which Greek king granted the Jews the right to live by their own laws?",
+    "options": [
+      "Demetrius II",
+      "Antiochus IV",
+      "Alexander the Great",
+      "Ptolemy"
+    ],
+    "answer": "Demetrius II",
+    "reference": "1 Maccabees 13:36-40",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1187,
+    "book": "1 Maccabees",
+    "question": "Where was the family tomb of the Maccabees?",
+    "options": [
+      "Modin",
+      "Jerusalem",
+      "Hebron",
+      "Bethel"
+    ],
+    "answer": "Modin",
+    "reference": "1 Maccabees 13:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1188,
+    "book": "1 Maccabees",
+    "question": "Who was Alexander Balas?",
+    "options": [
+      "A pretender to the Seleucid throne",
+      "A Roman general",
+      "A Jewish priest",
+      "An Egyptian Pharaoh"
+    ],
+    "answer": "A pretender to the Seleucid throne",
+    "reference": "1 Maccabees 10:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1189,
+    "book": "1 Maccabees",
+    "question": "How did Simon die?",
+    "options": [
+      "He was murdered by his son-in-law Ptolemy at a banquet",
+      "He died in battle",
+      "He died of old age",
+      "He was poisoned by the Romans"
+    ],
+    "answer": "He was murdered by his son-in-law Ptolemy at a banquet",
+    "reference": "1 Maccabees 16:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1190,
+    "book": "1 Maccabees",
+    "question": "What did the Gentiles do to the Torah scrolls they found?",
+    "options": [
+      "Tore them to pieces and burned them",
+      "Read them",
+      "Stole them",
+      "Hid them"
+    ],
+    "answer": "Tore them to pieces and burned them",
+    "reference": "1 Maccabees 1:56",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1191,
+    "book": "1 Maccabees",
+    "question": "What did Judas do with the stones of the defiled altar?",
+    "options": [
+      "Stored them until a prophet should arise",
+      "Used them for the wall",
+      "Threw them in the valley",
+      "Crushed them to dust"
+    ],
+    "answer": "Stored them until a prophet should arise",
+    "reference": "1 Maccabees 4:46",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1192,
+    "book": "1 Maccabees",
+    "question": "Who commanded the elephants in battle?",
+    "options": [
+      "Indians",
+      "Greeks",
+      "Egyptians",
+      "Persians"
+    ],
+    "answer": "Indians",
+    "reference": "1 Maccabees 6:37",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1193,
+    "book": "1 Maccabees",
+    "question": "The Jews sent letters to which other nation besides Rome?",
+    "options": [
+      "The Spartans",
+      "The Athenians",
+      "The Persians",
+      "The Carthaginians"
+    ],
+    "answer": "The Spartans",
+    "reference": "1 Maccabees 12:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1194,
+    "book": "1 Maccabees",
+    "question": "What happened to Nicanor?",
+    "options": [
+      "He was killed and his head cut off",
+      "He became a Jew",
+      "He fled to Antioch",
+      "He became High Priest"
+    ],
+    "answer": "He was killed and his head cut off",
+    "reference": "1 Maccabees 7:47",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1195,
+    "book": "1 Maccabees",
+    "question": "Why did the Jews destroy the altar at Modin initially?",
+    "options": [
+      "Mattathias killed the Jew offering sacrifice there",
+      "It was struck by lightning",
+      "The Romans destroyed it",
+      "It fell down"
+    ],
+    "answer": "Mattathias killed the Jew offering sacrifice there",
+    "reference": "1 Maccabees 2:24-25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1196,
+    "book": "1 Maccabees",
+    "question": "How many sons did Mattathias have?",
+    "options": [
+      "Five",
+      "Three",
+      "Seven",
+      "Twelve"
+    ],
+    "answer": "Five",
+    "reference": "1 Maccabees 2:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1197,
+    "book": "1 Maccabees",
+    "question": "What did the King command regarding circumcision?",
+    "options": [
+      "It was forbidden and punishable by death",
+      "It was encouraged",
+      "It was taxed",
+      "It was ignored"
+    ],
+    "answer": "It was forbidden and punishable by death",
+    "reference": "1 Maccabees 1:60",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1198,
+    "book": "1 Maccabees",
+    "question": "Who was Lysias?",
+    "options": [
+      "A nobleman left in charge by the King",
+      "A Jewish traitor",
+      "A Roman consul",
+      "A priest"
+    ],
+    "answer": "A nobleman left in charge by the King",
+    "reference": "1 Maccabees 3:32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1199,
+    "book": "1 Maccabees",
+    "question": "What did the people do when Simon conquered the Akra?",
+    "options": [
+      "Entered with praise and palm branches",
+      "Burned it to the ground",
+      "Wept for the dead",
+      "Refused to enter"
+    ],
+    "answer": "Entered with praise and palm branches",
+    "reference": "1 Maccabees 13:51",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1200,
+    "book": "1 Maccabees",
+    "question": "What is the approximate time period of 1 Maccabees?",
+    "options": [
+      "175–134 BC",
+      "586–539 BC",
+      "30–70 AD",
+      "1000–960 BC"
+    ],
+    "answer": "175–134 BC",
+    "reference": "Historical Context",
+    "difficulty": "medium"
+  }
+]

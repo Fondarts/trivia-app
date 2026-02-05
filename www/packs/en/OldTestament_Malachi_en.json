@@ -1,0 +1,562 @@
+[
+  {
+    "id": 66,
+    "book": "Malachi",
+    "question": "In what way did Malachi say the people were robbing God?",
+    "options": [
+      "In tithes and offerings",
+      "In time and prayer",
+      "In sacrifices",
+      "In keeping the Sabbath"
+    ],
+    "answer": "In tithes and offerings",
+    "reference": "Malachi 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 98,
+    "book": "Malachi",
+    "question": "Who did Malachi prophesy would come before the great day of the Lord?",
+    "options": [
+      "Moses",
+      "Abraham",
+      "Elijah",
+      "David"
+    ],
+    "answer": "Elijah",
+    "reference": "Malachi 4:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 192,
+    "book": "Malachi",
+    "question": "God says, 'I have loved Jacob, but Esau I have...'",
+    "options": [
+      "Hated",
+      "Ignored",
+      "Blessed",
+      "Judged"
+    ],
+    "answer": "Hated",
+    "reference": "Malachi 1:2-3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 239,
+    "book": "Malachi",
+    "question": "Malachi prophesied that the 'Sun of Righteousness' shall rise with...",
+    "options": [
+      "Healing in His wings",
+      "Fire in His eyes",
+      "A sword in His hand",
+      "Glory on His head"
+    ],
+    "answer": "Healing in His wings",
+    "reference": "Malachi 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 296,
+    "book": "Malachi",
+    "question": "God says He will send 'My messenger' to prepare the way. Who is this prophetic reference to?",
+    "options": [
+      "John the Baptist",
+      "Peter",
+      "Paul",
+      "Stephen"
+    ],
+    "answer": "John the Baptist",
+    "reference": "Malachi 3:1 (Confirmed in Mark 1:2)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 297,
+    "book": "Malachi",
+    "question": "What does God say He hates in Malachi 2:16?",
+    "options": [
+      "Divorce",
+      "Idolatry",
+      "Lying",
+      "Murder"
+    ],
+    "answer": "Divorce",
+    "reference": "Malachi 2:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 399,
+    "book": "Malachi",
+    "question": "What was written in God's presence for those who feared the Lord?",
+    "options": [
+      "A book of remembrance",
+      "A scroll of life",
+      "A tablet of stone",
+      "A golden letter"
+    ],
+    "answer": "A book of remembrance",
+    "reference": "Malachi 3:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 445,
+    "book": "Malachi",
+    "question": "In Malachi, God complains that the priests are offering what kind of animals?",
+    "options": [
+      "Blind and lame",
+      "Young",
+      "Wild",
+      "Pigs"
+    ],
+    "answer": "Blind and lame",
+    "reference": "Malachi 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 492,
+    "book": "Malachi",
+    "question": "Malachi describes God as a 'refiner's...'",
+    "options": [
+      "Fire",
+      "Soap",
+      "Hammer",
+      "Furnace"
+    ],
+    "answer": "Fire",
+    "reference": "Malachi 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 544,
+    "book": "Malachi",
+    "question": "How will God turn the hearts of the fathers to the children?",
+    "options": [
+      "Through the prophet Elijah",
+      "Through the Law",
+      "Through judgment",
+      "Through a famine"
+    ],
+    "answer": "Through the prophet Elijah",
+    "reference": "Malachi 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 592,
+    "book": "Malachi",
+    "question": "Malachi prophesies that the 'Sun of Righteousness' will arise with what in His wings?",
+    "options": [
+      "Healing",
+      "Power",
+      "Glory",
+      "Fire"
+    ],
+    "answer": "Healing",
+    "reference": "Malachi 4:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 648,
+    "book": "Malachi",
+    "question": "In Malachi 1:6, God asks: 'If I am a father, where is my...?'",
+    "options": [
+      "Honor",
+      "Love",
+      "Fear",
+      "Offering"
+    ],
+    "answer": "Honor",
+    "reference": "Malachi 1:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 698,
+    "book": "Malachi",
+    "question": "Malachi 2:10 asks, 'Have we not all one...?'",
+    "options": [
+      "Father",
+      "King",
+      "Law",
+      "Temple"
+    ],
+    "answer": "Father",
+    "reference": "Malachi 2:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 755,
+    "book": "Malachi",
+    "question": "Who does Malachi say offered polluted food on God's altar?",
+    "options": [
+      "The priests",
+      "The foreigners",
+      "The merchants",
+      "The kings"
+    ],
+    "answer": "The priests",
+    "reference": "Malachi 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 794,
+    "book": "Malachi",
+    "question": "Malachi 3:10 promises God will open the...",
+    "options": [
+      "Windows of heaven",
+      "Doors of the temple",
+      "Gates of the city",
+      "Eyes of the blind"
+    ],
+    "answer": "Windows of heaven",
+    "reference": "Malachi 3:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 854,
+    "book": "Malachi",
+    "question": "Malachi 2:7 says the lips of a priest should keep...",
+    "options": [
+      "Knowledge",
+      "Silence",
+      "Peace",
+      "Secrets"
+    ],
+    "answer": "Knowledge",
+    "reference": "Malachi 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 893,
+    "book": "Malachi",
+    "question": "Malachi 3:8 asks: 'Will a man...?'",
+    "options": [
+      "Rob God",
+      "See God",
+      "Fight God",
+      "Know God"
+    ],
+    "answer": "Rob God",
+    "reference": "Malachi 3:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 954,
+    "book": "Malachi",
+    "question": "Malachi 4:2 says you shall go out and grow fat like...",
+    "options": [
+      "Stall-fed calves",
+      "Lions",
+      "Lambs",
+      "Trees"
+    ],
+    "answer": "Stall-fed calves",
+    "reference": "Malachi 4:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 993,
+    "book": "Malachi",
+    "question": "Malachi 3:1 says God will send His...",
+    "options": [
+      "Messenger",
+      "Angel",
+      "Son",
+      "Spirit"
+    ],
+    "answer": "Messenger",
+    "reference": "Malachi 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1334,
+    "book": "Malachi",
+    "question": "Malachi 1:2-3 says God loved Jacob but hated...",
+    "options": [
+      "Esau",
+      "Ishmael",
+      "Moab",
+      "Cain"
+    ],
+    "answer": "Esau",
+    "reference": "Malachi 1:2-3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1335,
+    "book": "Malachi",
+    "question": "What did the priests despise according to Malachi 1:6?",
+    "options": [
+      "God's name",
+      "The Temple",
+      "The poor",
+      "The King"
+    ],
+    "answer": "God's name",
+    "reference": "Malachi 1:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1336,
+    "book": "Malachi",
+    "question": "God says He would rather someone do what, than offer vain sacrifices?",
+    "options": [
+      "Shut the doors",
+      "Burn the temple",
+      "Leave the city",
+      "Fast"
+    ],
+    "answer": "Shut the doors",
+    "reference": "Malachi 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1337,
+    "book": "Malachi",
+    "question": "Malachi 1:11 says God's name shall be great among the...",
+    "options": [
+      "Gentiles/Nations",
+      "Angels",
+      "Priests",
+      "Kings"
+    ],
+    "answer": "Gentiles/Nations",
+    "reference": "Malachi 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1338,
+    "book": "Malachi",
+    "question": "With whom was God's covenant of life and peace made?",
+    "options": [
+      "Levi",
+      "David",
+      "Abraham",
+      "Aaron"
+    ],
+    "answer": "Levi",
+    "reference": "Malachi 2:4-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1339,
+    "book": "Malachi",
+    "question": "According to Malachi 2:7, the priest is the...",
+    "options": [
+      "Messenger of the Lord of hosts",
+      "King of the sanctuary",
+      "Servant of the people",
+      "Keeper of the keys"
+    ],
+    "answer": "Messenger of the Lord of hosts",
+    "reference": "Malachi 2:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1340,
+    "book": "Malachi",
+    "question": "Judah has profaned the Lord's holy institution by marrying...",
+    "options": [
+      "The daughter of a foreign god",
+      "His sister",
+      "A widow",
+      "A servant"
+    ],
+    "answer": "The daughter of a foreign god",
+    "reference": "Malachi 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1341,
+    "book": "Malachi",
+    "question": "Why does God no longer regard the offering (Malachi 2:13-14)?",
+    "options": [
+      "Because the Lord is witness between you and the wife of your youth",
+      "Because it is too small",
+      "Because the temple is dirty",
+      "Because of the Sabbath"
+    ],
+    "answer": "Because the Lord is witness between you and the wife of your youth",
+    "reference": "Malachi 2:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1342,
+    "book": "Malachi",
+    "question": "Malachi 2:16 famously says that God hates...",
+    "options": [
+      "Divorce",
+      "Idolatry",
+      "Pride",
+      "Lying"
+    ],
+    "answer": "Divorce",
+    "reference": "Malachi 2:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1343,
+    "book": "Malachi",
+    "question": "How have the people wearied the Lord with their words?",
+    "options": [
+      "By saying 'Where is the God of justice?'",
+      "By praying too loud",
+      "By swearing falsely",
+      "By singing songs"
+    ],
+    "answer": "By saying 'Where is the God of justice?'",
+    "reference": "Malachi 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1344,
+    "book": "Malachi",
+    "question": "Who will prepare the way before the Lord?",
+    "options": [
+      "My messenger",
+      "The King",
+      "The armies",
+      "The angels"
+    ],
+    "answer": "My messenger",
+    "reference": "Malachi 3:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1345,
+    "book": "Malachi",
+    "question": "The Lord will sit as a...",
+    "options": [
+      "Refiner and purifier of silver",
+      "Judge on a throne",
+      "Lion in the grass",
+      "King in battle"
+    ],
+    "answer": "Refiner and purifier of silver",
+    "reference": "Malachi 3:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1346,
+    "book": "Malachi",
+    "question": "God will be a swift witness against sorcerers, adulterers, and...",
+    "options": [
+      "Perjurers (those who swear falsely)",
+      "Thieves",
+      "Murderers",
+      "Tax collectors"
+    ],
+    "answer": "Perjurers (those who swear falsely)",
+    "reference": "Malachi 3:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1347,
+    "book": "Malachi",
+    "question": "Complete the verse: 'For I am the Lord, I do not...'",
+    "options": [
+      "Change",
+      "Sleep",
+      "Lie",
+      "Fail"
+    ],
+    "answer": "Change",
+    "reference": "Malachi 3:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1348,
+    "book": "Malachi",
+    "question": "What happens to the sons of Jacob because God does not change?",
+    "options": [
+      "They are not consumed",
+      "They are punished",
+      "They are scattered",
+      "They are rich"
+    ],
+    "answer": "They are not consumed",
+    "reference": "Malachi 3:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1349,
+    "book": "Malachi",
+    "question": "God promises to rebuke the ______ for your sakes.",
+    "options": [
+      "Devourer",
+      "Enemy",
+      "Wind",
+      "Heat"
+    ],
+    "answer": "Devourer",
+    "reference": "Malachi 3:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1350,
+    "book": "Malachi",
+    "question": "What did those who feared the Lord do in Malachi 3:16?",
+    "options": [
+      "Spoke to one another",
+      "Built an altar",
+      "Hid in caves",
+      "Wept"
+    ],
+    "answer": "Spoke to one another",
+    "reference": "Malachi 3:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1351,
+    "book": "Malachi",
+    "question": "The wicked shall be what under the soles of your feet?",
+    "options": [
+      "Ashes",
+      "Dust",
+      "Stones",
+      "Mud"
+    ],
+    "answer": "Ashes",
+    "reference": "Malachi 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1352,
+    "book": "Malachi",
+    "question": "God says He will send Elijah before the coming of...",
+    "options": [
+      "The great and dreadful day of the Lord",
+      "The Messiah",
+      "The famine",
+      "The war"
+    ],
+    "answer": "The great and dreadful day of the Lord",
+    "reference": "Malachi 4:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1353,
+    "book": "Malachi",
+    "question": "What will Elijah turn?",
+    "options": [
+      "The hearts of the fathers to the children",
+      "The water into wine",
+      "The sun into darkness",
+      "The hearts of kings"
+    ],
+    "answer": "The hearts of the fathers to the children",
+    "reference": "Malachi 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1354,
+    "book": "Malachi",
+    "question": "What did God threaten to spread on the faces of the priests?",
+    "options": [
+      "Refuse/Dung of their solemn feasts",
+      "Blood",
+      "Ashes",
+      "Mud"
+    ],
+    "answer": "Refuse/Dung of their solemn feasts",
+    "reference": "Malachi 2:3",
+    "difficulty": "hard"
+  }
+]

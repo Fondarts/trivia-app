@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1031,
+    "book": "Judith",
+    "question": "Who was the general of the Assyrian army?",
+    "options": [
+      "Holofernes",
+      "Bagoas",
+      "Achior",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Holofernes",
+    "reference": "Judith 2:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1032,
+    "book": "Judith",
+    "question": "What city did the Assyrians besiege?",
+    "options": [
+      "Bethulia",
+      "Jerusalem",
+      "Samaria",
+      "Jericho"
+    ],
+    "answer": "Bethulia",
+    "reference": "Judith 6:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1033,
+    "book": "Judith",
+    "question": "Who was the King of the Assyrians in the story?",
+    "options": [
+      "Nebuchadnezzar",
+      "Sennacherib",
+      "Cyrus",
+      "Darius"
+    ],
+    "answer": "Nebuchadnezzar",
+    "reference": "Judith 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1034,
+    "book": "Judith",
+    "question": "Who was the leader of the Ammonites who warned Holofernes about Israel's God?",
+    "options": [
+      "Achior",
+      "Ozias",
+      "Chabris",
+      "Charmis"
+    ],
+    "answer": "Achior",
+    "reference": "Judith 5:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1035,
+    "book": "Judith",
+    "question": "What did the Assyrians cut off to force Bethulia to surrender?",
+    "options": [
+      "The water supply",
+      "Food convoys",
+      "The escape routes",
+      "The electricity"
+    ],
+    "answer": "The water supply",
+    "reference": "Judith 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1036,
+    "book": "Judith",
+    "question": "Who was Judith?",
+    "options": [
+      "A pious widow",
+      "A queen",
+      "A prophetess",
+      "A soldier"
+    ],
+    "answer": "A pious widow",
+    "reference": "Judith 8:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1037,
+    "book": "Judith",
+    "question": "What was the name of Judith's deceased husband?",
+    "options": [
+      "Manasseh",
+      "Joseph",
+      "Joakim",
+      "Simeon"
+    ],
+    "answer": "Manasseh",
+    "reference": "Judith 8:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1038,
+    "book": "Judith",
+    "question": "How many days did the leaders promise to wait for God's help before surrendering?",
+    "options": [
+      "5 days",
+      "3 days",
+      "7 days",
+      "40 days"
+    ],
+    "answer": "5 days",
+    "reference": "Judith 7:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1039,
+    "book": "Judith",
+    "question": "Why did Judith scold the city elders?",
+    "options": [
+      "For testing God by setting a time limit",
+      "For not fighting",
+      "For sinning",
+      "For hiding food"
+    ],
+    "answer": "For testing God by setting a time limit",
+    "reference": "Judith 8:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1040,
+    "book": "Judith",
+    "question": "What did Judith put in her bag to take to the enemy camp?",
+    "options": [
+      "Clean (kosher) food and wine",
+      "Weapons",
+      "Gold",
+      "A scroll"
+    ],
+    "answer": "Clean (kosher) food and wine",
+    "reference": "Judith 10:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1041,
+    "book": "Judith",
+    "question": "What did Judith do every night in the camp?",
+    "options": [
+      "Went out to the valley to pray and wash",
+      "Slept in the king's tent",
+      "Ate with the soldiers",
+      "Sang songs"
+    ],
+    "answer": "Went out to the valley to pray and wash",
+    "reference": "Judith 12:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1042,
+    "book": "Judith",
+    "question": "How many days was Judith in the camp before she killed Holofernes?",
+    "options": [
+      "3 days (killed on the 4th)",
+      "7 days",
+      "1 day",
+      "10 days"
+    ],
+    "answer": "3 days (killed on the 4th)",
+    "reference": "Judith 12:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1043,
+    "book": "Judith",
+    "question": "What weapon did Judith use to kill Holofernes?",
+    "options": [
+      "His own sword/scimitar",
+      "A dagger",
+      "A tent peg",
+      "Poison"
+    ],
+    "answer": "His own sword/scimitar",
+    "reference": "Judith 13:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1044,
+    "book": "Judith",
+    "question": "Where did she hide Holofernes' head?",
+    "options": [
+      "In her food bag",
+      "Under her cloak",
+      "In a box",
+      "She left it there"
+    ],
+    "answer": "In her food bag",
+    "reference": "Judith 13:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1045,
+    "book": "Judith",
+    "question": "Who was Judith's maidservant?",
+    "options": [
+      "Unnamed",
+      "Deborah",
+      "Hagar",
+      "Ruth"
+    ],
+    "answer": "Unnamed",
+    "reference": "Judith 8:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1046,
+    "book": "Judith",
+    "question": "What happened to Achior when he saw the head of Holofernes?",
+    "options": [
+      "He fainted, then believed and was circumcised",
+      "He ran away",
+      "He cried",
+      "He attacked Judith"
+    ],
+    "answer": "He fainted, then believed and was circumcised",
+    "reference": "Judith 14:6-10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1047,
+    "book": "Judith",
+    "question": "Who discovered Holofernes' dead body?",
+    "options": [
+      "Bagoas the eunuch",
+      "Achior",
+      "The King",
+      "A guard"
+    ],
+    "answer": "Bagoas the eunuch",
+    "reference": "Judith 14:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1048,
+    "book": "Judith",
+    "question": "From which tribe was Judith?",
+    "options": [
+      "Simeon",
+      "Judah",
+      "Levi",
+      "Ephraim"
+    ],
+    "answer": "Simeon",
+    "reference": "Judith 9:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1049,
+    "book": "Judith",
+    "question": "How old was Judith when she died?",
+    "options": [
+      "105",
+      "90",
+      "120",
+      "80"
+    ],
+    "answer": "105",
+    "reference": "Judith 16:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1050,
+    "book": "Judith",
+    "question": "Did Judith remarry?",
+    "options": [
+      "No, she remained a widow",
+      "Yes, to Ozias",
+      "Yes, to Achior",
+      "Yes, to a priest"
+    ],
+    "answer": "No, she remained a widow",
+    "reference": "Judith 16:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1051,
+    "book": "Judith",
+    "question": "What did Judith do with the plunder given to her?",
+    "options": [
+      "Dedicated it to the Lord / Gave it away",
+      "Kept it",
+      "Sold it",
+      "Burned it"
+    ],
+    "answer": "Dedicated it to the Lord / Gave it away",
+    "reference": "Judith 16:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1052,
+    "book": "Judith",
+    "question": "Why did Holofernes invite Judith to the banquet?",
+    "options": [
+      "To seduce/lie with her",
+      "To hear her wisdom",
+      "To kill her",
+      "To negotiate"
+    ],
+    "answer": "To seduce/lie with her",
+    "reference": "Judith 12:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1053,
+    "book": "Judith",
+    "question": "What state was Holofernes in when Judith killed him?",
+    "options": [
+      "He was drunk and asleep",
+      "He was fighting",
+      "He was eating",
+      "He was praying"
+    ],
+    "answer": "He was drunk and asleep",
+    "reference": "Judith 13:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1054,
+    "book": "Judith",
+    "question": "Where did Judith usually live?",
+    "options": [
+      "In a tent on the roof of her house",
+      "In a palace",
+      "In a cave",
+      "In the temple"
+    ],
+    "answer": "In a tent on the roof of her house",
+    "reference": "Judith 8:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1055,
+    "book": "Judith",
+    "question": "Who was the high priest in Jerusalem mentioned in Judith?",
+    "options": [
+      "Joakim",
+      "Eli",
+      "Zadok",
+      "Aaron"
+    ],
+    "answer": "Joakim",
+    "reference": "Judith 4:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1056,
+    "book": "Judith",
+    "question": "What did Judith do before she went to the camp (spiritual preparation)?",
+    "options": [
+      "Put ashes on her head and cried to the Lord",
+      "Fasted for 40 days",
+      "Sacrificed a lamb",
+      "Read the law"
+    ],
+    "answer": "Put ashes on her head and cried to the Lord",
+    "reference": "Judith 9:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1057,
+    "book": "Judith",
+    "question": "What excuse did Judith give the guards to enter the camp?",
+    "options": [
+      "She was fleeing from the Hebrews to tell Holofernes how to win",
+      "She was a spy",
+      "She was lost",
+      "She wanted to marry the king"
+    ],
+    "answer": "She was fleeing from the Hebrews to tell Holofernes how to win",
+    "reference": "Judith 10:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1058,
+    "book": "Judith",
+    "question": "What did Judith say would cause the Hebrews to fall?",
+    "options": [
+      "If they sinned by eating consecrated food",
+      "If they ran out of arrows",
+      "If they slept",
+      "If they lost their leader"
+    ],
+    "answer": "If they sinned by eating consecrated food",
+    "reference": "Judith 11:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1059,
+    "book": "Judith",
+    "question": "Who was Ozias?",
+    "options": [
+      "The chief ruler of Bethulia",
+      "A priest",
+      "A prophet",
+      "Judith's father"
+    ],
+    "answer": "The chief ruler of Bethulia",
+    "reference": "Judith 6:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1060,
+    "book": "Judith",
+    "question": "What is the primary message of the book of Judith?",
+    "options": [
+      "God saves His people through the weak and pious",
+      "War is necessary",
+      "Wealth is a blessing",
+      "The history of Assyria"
+    ],
+    "answer": "God saves His people through the weak and pious",
+    "reference": "Theme",
+    "difficulty": "easy"
+  }
+]

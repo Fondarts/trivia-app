@@ -1,0 +1,422 @@
+[
+  {
+    "id": 24,
+    "book": "Proverbs",
+    "question": "According to Proverbs, what is the beginning of knowledge?",
+    "options": [
+      "The fear of the Lord",
+      "Reading the law",
+      "Obeying parents",
+      "Listening to kings"
+    ],
+    "answer": "The fear of the Lord",
+    "reference": "Proverbs 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 59,
+    "book": "Proverbs",
+    "question": "Which insect does Solomon tell the sluggard (lazy person) to consider?",
+    "options": [
+      "The Spider",
+      "The Ant",
+      "The Bee",
+      "The Locust"
+    ],
+    "answer": "The Ant",
+    "reference": "Proverbs 6:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 83,
+    "book": "Proverbs",
+    "question": "Complete the proverb: 'Iron sharpens...'",
+    "options": [
+      "Sword",
+      "Iron",
+      "Stone",
+      "Mind"
+    ],
+    "answer": "Iron",
+    "reference": "Proverbs 27:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 132,
+    "book": "Proverbs",
+    "question": "Proverbs 31 describes the virtues of what kind of person?",
+    "options": [
+      "A mighty king",
+      "A godly woman/wife",
+      "A wise son",
+      "A brave soldier"
+    ],
+    "answer": "A godly woman/wife",
+    "reference": "Proverbs 31",
+    "difficulty": "easy"
+  },
+  {
+    "id": 133,
+    "book": "Proverbs",
+    "question": "According to Proverbs, what is more valuable than rubies?",
+    "options": [
+      "Gold",
+      "Wisdom",
+      "Power",
+      "Land"
+    ],
+    "answer": "Wisdom",
+    "reference": "Proverbs 8:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 178,
+    "book": "Proverbs",
+    "question": "According to Proverbs, what happens to 'pride' before destruction?",
+    "options": [
+      "It goes before a fall",
+      "It grows stronger",
+      "It turns to anger",
+      "It turns to fear"
+    ],
+    "answer": "It goes before a fall",
+    "reference": "Proverbs 16:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 220,
+    "book": "Proverbs",
+    "question": "According to Proverbs 22:6, if you train up a child in the way he should go, what will happen?",
+    "options": [
+      "He will not depart from it when old",
+      "He will be wealthy",
+      "He will become a king",
+      "He will have many friends"
+    ],
+    "answer": "He will not depart from it when old",
+    "reference": "Proverbs 22:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 278,
+    "book": "Proverbs",
+    "question": "Besides Solomon, who is another author mentioned in Proverbs?",
+    "options": [
+      "Lemuel",
+      "David",
+      "Moses",
+      "Isaiah"
+    ],
+    "answer": "Lemuel",
+    "reference": "Proverbs 31:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 331,
+    "book": "Proverbs",
+    "question": "Who wrote Proverbs chapter 30?",
+    "options": [
+      "Agur",
+      "Solomon",
+      "Lemuel",
+      "David"
+    ],
+    "answer": "Agur",
+    "reference": "Proverbs 30:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 380,
+    "book": "Proverbs",
+    "question": "Complete the verse: 'A soft answer turns away...'",
+    "options": [
+      "Wrath",
+      "Sin",
+      "Fear",
+      "Enemies"
+    ],
+    "answer": "Wrath",
+    "reference": "Proverbs 15:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 428,
+    "book": "Proverbs",
+    "question": "Complete the verse: 'A merry heart does good like...'",
+    "options": [
+      "Medicine",
+      "Water",
+      "Sunshine",
+      "Gold"
+    ],
+    "answer": "Medicine",
+    "reference": "Proverbs 17:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 477,
+    "book": "Proverbs",
+    "question": "Complete the verse: 'Trust in the Lord with all your heart and lean not on your own...'",
+    "options": [
+      "Understanding",
+      "Strength",
+      "Wisdom",
+      "Wealth"
+    ],
+    "answer": "Understanding",
+    "reference": "Proverbs 3:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 525,
+    "book": "Proverbs",
+    "question": "How many things does the Lord hate according to Proverbs 6?",
+    "options": [
+      "Six, yea seven",
+      "Three, yea four",
+      "Ten",
+      "Twelve"
+    ],
+    "answer": "Six, yea seven",
+    "reference": "Proverbs 6:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 575,
+    "book": "Proverbs",
+    "question": "Proverbs 17:17 says, 'A friend loves at all times, and a brother is born for...'",
+    "options": [
+      "Adversity",
+      "Joy",
+      "Wealth",
+      "Peace"
+    ],
+    "answer": "Adversity",
+    "reference": "Proverbs 17:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 631,
+    "book": "Proverbs",
+    "question": "According to Proverbs 27:6, faithful are the wounds of a...",
+    "options": [
+      "Friend",
+      "Enemy",
+      "Brother",
+      "King"
+    ],
+    "answer": "Friend",
+    "reference": "Proverbs 27:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 681,
+    "book": "Proverbs",
+    "question": "Proverbs 25:21 says, 'If your enemy is hungry...'",
+    "options": [
+      "Give him bread to eat",
+      "Leave him alone",
+      "Mock him",
+      "Fight him"
+    ],
+    "answer": "Give him bread to eat",
+    "reference": "Proverbs 25:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 734,
+    "book": "Proverbs",
+    "question": "Proverbs 22:1 says what is rather to be chosen than great riches?",
+    "options": [
+      "A good name",
+      "Wisdom",
+      "Long life",
+      "Health"
+    ],
+    "answer": "A good name",
+    "reference": "Proverbs 22:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 735,
+    "book": "Proverbs",
+    "question": "Complete the verse: 'The rich rules over the poor, and the borrower is...'",
+    "options": [
+      "Servant to the lender",
+      "Slave to the king",
+      "Wise in his own eyes",
+      "Destined to fail"
+    ],
+    "answer": "Servant to the lender",
+    "reference": "Proverbs 22:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 775,
+    "book": "Proverbs",
+    "question": "Proverbs 28:1 says: 'The wicked flee when no one pursues, but the righteous are bold as a...'",
+    "options": [
+      "Lion",
+      "Bear",
+      "Eagle",
+      "Rock"
+    ],
+    "answer": "Lion",
+    "reference": "Proverbs 28:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 833,
+    "book": "Proverbs",
+    "question": "Proverbs 6:6 says to go to the ant, consider her ways and be...",
+    "options": [
+      "Wise",
+      "Rich",
+      "Strong",
+      "Fast"
+    ],
+    "answer": "Wise",
+    "reference": "Proverbs 6:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 834,
+    "book": "Proverbs",
+    "question": "According to Proverbs 16:31, the gray head is a crown of...",
+    "options": [
+      "Glory",
+      "Wisdom",
+      "Age",
+      "Sorrow"
+    ],
+    "answer": "Glory",
+    "reference": "Proverbs 16:31",
+    "difficulty": "medium"
+  },
+  {
+    "id": 874,
+    "book": "Proverbs",
+    "question": "Proverbs 4:23 says to keep your heart with all diligence, for out of it spring...",
+    "options": [
+      "The issues of life",
+      "The words of truth",
+      "The joys of heaven",
+      "The fears of man"
+    ],
+    "answer": "The issues of life",
+    "reference": "Proverbs 4:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 933,
+    "book": "Proverbs",
+    "question": "Proverbs 15:3 says the eyes of the Lord are...",
+    "options": [
+      "In every place",
+      "On the righteous",
+      "Blind to sin",
+      "Closed to the wicked"
+    ],
+    "answer": "In every place",
+    "reference": "Proverbs 15:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 934,
+    "book": "Proverbs",
+    "question": "Proverbs 11:1 says a false balance is an abomination to the Lord, but a just weight is His...",
+    "options": [
+      "Delight",
+      "Law",
+      "Command",
+      "Will"
+    ],
+    "answer": "Delight",
+    "reference": "Proverbs 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 974,
+    "book": "Proverbs",
+    "question": "Proverbs 1:7 says the fear of the Lord is the beginning of...",
+    "options": [
+      "Knowledge",
+      "Wealth",
+      "Power",
+      "Love"
+    ],
+    "answer": "Knowledge",
+    "reference": "Proverbs 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1411,
+    "book": "Proverbs",
+    "question": "Go to the ____, you sluggard; consider her ways and be wise.",
+    "options": [
+      "Ant",
+      "Bee",
+      "Lion",
+      "Eagle"
+    ],
+    "answer": "Ant",
+    "reference": "Proverbs 6:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1412,
+    "book": "Proverbs",
+    "question": "Proverbs 27:17 says, 'As iron sharpens iron, so a man sharpens the...'",
+    "options": [
+      "Countenance of his friend",
+      "Sword of his enemy",
+      "Mind of his son",
+      "Wit of the king"
+    ],
+    "answer": "Countenance of his friend",
+    "reference": "Proverbs 27:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1413,
+    "book": "Proverbs",
+    "question": "What is the 'beginning of wisdom' according to Proverbs 9:10?",
+    "options": [
+      "The fear of the Lord",
+      "Knowledge of the law",
+      "Respect for elders",
+      "Silence"
+    ],
+    "answer": "The fear of the Lord",
+    "reference": "Proverbs 9:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1414,
+    "book": "Proverbs",
+    "question": "Proverbs 31 describes the characteristics of...",
+    "options": [
+      "A virtuous/capable wife",
+      "A mighty king",
+      "A wise son",
+      "A foolish sluggard"
+    ],
+    "answer": "A virtuous/capable wife",
+    "reference": "Proverbs 31:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1415,
+    "book": "Proverbs",
+    "question": "Pride goes before destruction, and a haughty spirit before...",
+    "options": [
+      "A fall",
+      "A battle",
+      "Honor",
+      "Death"
+    ],
+    "answer": "A fall",
+    "reference": "Proverbs 16:18",
+    "difficulty": "medium"
+  }
+]

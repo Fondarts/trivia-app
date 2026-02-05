@@ -1,0 +1,422 @@
+[
+  {
+    "id": 88,
+    "book": "Lamentations",
+    "question": "What attribute of God is highlighted in Lamentations 3:23 ('Great is Your...')?",
+    "options": [
+      "Power",
+      "Anger",
+      "Faithfulness",
+      "Wisdom"
+    ],
+    "answer": "Faithfulness",
+    "reference": "Lamentations 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 137,
+    "book": "Lamentations",
+    "question": "Which city's destruction is mourned in the book of Lamentations?",
+    "options": [
+      "Babylon",
+      "Nineveh",
+      "Jerusalem",
+      "Samaria"
+    ],
+    "answer": "Jerusalem",
+    "reference": "Lamentations 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 225,
+    "book": "Lamentations",
+    "question": "What does Lamentations say is 'new every morning'?",
+    "options": [
+      "God's mercies",
+      "The sun",
+      "Our troubles",
+      "The manna"
+    ],
+    "answer": "God's mercies",
+    "reference": "Lamentations 3:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 385,
+    "book": "Lamentations",
+    "question": "The book of Lamentations is traditionally attributed to whom?",
+    "options": [
+      "Jeremiah",
+      "Isaiah",
+      "Baruch",
+      "Ezekiel"
+    ],
+    "answer": "Jeremiah",
+    "reference": "Tradition",
+    "difficulty": "easy"
+  },
+  {
+    "id": 433,
+    "book": "Lamentations",
+    "question": "Complete the verse: 'It is good for a man that he bear the ______ in his youth.'",
+    "options": [
+      "Yoke",
+      "Burden",
+      "Cross",
+      "Rod"
+    ],
+    "answer": "Yoke",
+    "reference": "Lamentations 3:27",
+    "difficulty": "medium"
+  },
+  {
+    "id": 530,
+    "book": "Lamentations",
+    "question": "How are the first four chapters of Lamentations structured?",
+    "options": [
+      "Acrostic (Alphabetical)",
+      "Rhyming",
+      "Prose",
+      "Dialogue"
+    ],
+    "answer": "Acrostic (Alphabetical)",
+    "reference": "Lamentations Structure",
+    "difficulty": "hard"
+  },
+  {
+    "id": 741,
+    "book": "Lamentations",
+    "question": "Lamentations 3:25 says the Lord is good to those who...",
+    "options": [
+      "Wait for Him",
+      "Fight for Him",
+      "Praise Him",
+      "Fear Him"
+    ],
+    "answer": "Wait for Him",
+    "reference": "Lamentations 3:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 780,
+    "book": "Lamentations",
+    "question": "Lamentations 1:1 asks: 'How lonely sits the city that was full of...'",
+    "options": [
+      "People",
+      "Gold",
+      "Kings",
+      "Joy"
+    ],
+    "answer": "People",
+    "reference": "Lamentations 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 840,
+    "book": "Lamentations",
+    "question": "Lamentations 4:1 says: 'How the gold has become...'",
+    "options": [
+      "Dim",
+      "Lost",
+      "Black",
+      "Dust"
+    ],
+    "answer": "Dim",
+    "reference": "Lamentations 4:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 879,
+    "book": "Lamentations",
+    "question": "Lamentations 3:22 says the Lord's mercies...",
+    "options": [
+      "Are new every morning",
+      "Never cease",
+      "Both of these",
+      "Are everlasting"
+    ],
+    "answer": "Both of these",
+    "reference": "Lamentations 3:22-23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 940,
+    "book": "Lamentations",
+    "question": "Lamentations 3:24 says, 'The Lord is my portion,' says my...",
+    "options": [
+      "Soul",
+      "Heart",
+      "Spirit",
+      "Mind"
+    ],
+    "answer": "Soul",
+    "reference": "Lamentations 3:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 979,
+    "book": "Lamentations",
+    "question": "Lamentations 3:23 says God's mercies are...",
+    "options": [
+      "New every morning",
+      "Gone forever",
+      "Hard to find",
+      "Only for the righteous"
+    ],
+    "answer": "New every morning",
+    "reference": "Lamentations 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1624,
+    "book": "Lamentations",
+    "question": "Who is traditionally considered the author of Lamentations?",
+    "options": [
+      "Jeremiah",
+      "Isaiah",
+      "Ezekiel",
+      "Ezra"
+    ],
+    "answer": "Jeremiah",
+    "reference": "Tradition (LXX Prologue)",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1625,
+    "book": "Lamentations",
+    "question": "How many chapters are in the book of Lamentations?",
+    "options": [
+      "Five",
+      "Three",
+      "Seven",
+      "Ten"
+    ],
+    "answer": "Five",
+    "reference": "Structure",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1626,
+    "book": "Lamentations",
+    "question": "Which poetic structure is used in the first four chapters?",
+    "options": [
+      "Acrostic (following the Hebrew alphabet)",
+      "Rhyming couplets",
+      "Chiasmus",
+      "Free verse"
+    ],
+    "answer": "Acrostic (following the Hebrew alphabet)",
+    "reference": "Structure",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1627,
+    "book": "Lamentations",
+    "question": "How is the city of Jerusalem described in the first verse of the book?",
+    "options": [
+      "As a widow",
+      "As a queen",
+      "As a ruins",
+      "As a desert"
+    ],
+    "answer": "As a widow",
+    "reference": "Lamentations 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1628,
+    "book": "Lamentations",
+    "question": "Is there any among her lovers to comfort her?",
+    "options": [
+      "None",
+      "The King of Egypt",
+      "Her children",
+      "The priests"
+    ],
+    "answer": "None",
+    "reference": "Lamentations 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1629,
+    "book": "Lamentations",
+    "question": "What is the reason given for Jerusalem's suffering?",
+    "options": [
+      "The multitude of her transgressions",
+      "Bad luck",
+      "Weakness of her walls",
+      "Strength of Babylon"
+    ],
+    "answer": "The multitude of her transgressions",
+    "reference": "Lamentations 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1630,
+    "book": "Lamentations",
+    "question": "Jerusalem has sinned greatly, therefore she has become...",
+    "options": [
+      "Vile / Unclean",
+      "Rich",
+      "Famous",
+      "Strong"
+    ],
+    "answer": "Vile / Unclean",
+    "reference": "Lamentations 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1631,
+    "book": "Lamentations",
+    "question": "What happened to the children and infants in the streets of the city?",
+    "options": [
+      "They fainted from hunger",
+      "They were taken away",
+      "They played in the ruins",
+      "They were hidden"
+    ],
+    "answer": "They fainted from hunger",
+    "reference": "Lamentations 2:11-12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1632,
+    "book": "Lamentations",
+    "question": "Through the Lord's mercies we are not consumed, because His compassions...",
+    "options": [
+      "Fail not",
+      "Are many",
+      "Are hidden",
+      "Are eternal"
+    ],
+    "answer": "Fail not",
+    "reference": "Lamentations 3:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1633,
+    "book": "Lamentations",
+    "question": "They are new every ______; great is Your faithfulness.",
+    "options": [
+      "Morning",
+      "Evening",
+      "Day",
+      "Year"
+    ],
+    "answer": "Morning",
+    "reference": "Lamentations 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1634,
+    "book": "Lamentations",
+    "question": "The Lord is my ______, therefore I hope in Him!",
+    "options": [
+      "Portion",
+      "King",
+      "Shield",
+      "Rock"
+    ],
+    "answer": "Portion",
+    "reference": "Lamentations 3:24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1635,
+    "book": "Lamentations",
+    "question": "It is good that one should hope and wait ______ for the salvation of the Lord.",
+    "options": [
+      "Quietly",
+      "Loudly",
+      "Daily",
+      "Happily"
+    ],
+    "answer": "Quietly",
+    "reference": "Lamentations 3:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1636,
+    "book": "Lamentations",
+    "question": "What is the Lord compared to in chapter 3:10 when He 'waits' for the prophet?",
+    "options": [
+      "A bear lying in wait / A lion in secret places",
+      "An eagle",
+      "A shepherd",
+      "A king"
+    ],
+    "answer": "A bear lying in wait / A lion in secret places",
+    "reference": "Lamentations 3:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1637,
+    "book": "Lamentations",
+    "question": "How has the gold become ______! How the fine gold has changed!",
+    "options": [
+      "Dim",
+      "Lost",
+      "Black",
+      "Dust"
+    ],
+    "answer": "Dim",
+    "reference": "Lamentations 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1638,
+    "book": "Lamentations",
+    "question": "The tongue of the infant clings to the roof of its mouth because of...",
+    "options": [
+      "Thirst",
+      "Fear",
+      "Cold",
+      "Sleep"
+    ],
+    "answer": "Thirst",
+    "reference": "Lamentations 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1639,
+    "book": "Lamentations",
+    "question": "The hands of the compassionate women have ______ their own children.",
+    "options": [
+      "Cooked",
+      "Abandoned",
+      "Sold",
+      "Hidden"
+    ],
+    "answer": "Cooked",
+    "reference": "Lamentations 4:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1640,
+    "book": "Lamentations",
+    "question": "What is the final plea of the book?",
+    "options": [
+      "Turn us back to You, O Lord... renew our days as of old",
+      "Destroy Babylon",
+      "Give us food",
+      "Let us go home"
+    ],
+    "answer": "Turn us back to You, O Lord... renew our days as of old",
+    "reference": "Lamentations 5:21",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1641,
+    "book": "Lamentations",
+    "question": "Chapter 5 is the only chapter that is NOT an acrostic. How many verses does it have?",
+    "options": [
+      "22",
+      "12",
+      "40",
+      "50"
+    ],
+    "answer": "22",
+    "reference": "Structure",
+    "difficulty": "hard"
+  }
+]

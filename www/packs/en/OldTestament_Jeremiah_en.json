@@ -1,0 +1,422 @@
+[
+  {
+    "id": 27,
+    "book": "Jeremiah",
+    "question": "Why is Jeremiah known as the 'Weeping Prophet'?",
+    "options": [
+      "He was depressed",
+      "He wept for the sins and destruction of Jerusalem",
+      "He was physically in pain",
+      "He lost his family"
+    ],
+    "answer": "He wept for the sins and destruction of Jerusalem",
+    "reference": "Jeremiah 9:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 61,
+    "book": "Jeremiah",
+    "question": "To whose house did God send Jeremiah to illustrate His sovereignty?",
+    "options": [
+      "The King's house",
+      "The Priest's house",
+      "The Potter's house",
+      "The Shepherd's house"
+    ],
+    "answer": "The Potter's house",
+    "reference": "Jeremiah 18:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 87,
+    "book": "Jeremiah",
+    "question": "What did God say He would write on the hearts of His people in the New Covenant?",
+    "options": [
+      "His Name",
+      "His Law",
+      "Their sins",
+      "The date of judgment"
+    ],
+    "answer": "His Law",
+    "reference": "Jeremiah 31:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 136,
+    "book": "Jeremiah",
+    "question": "What object did God tell Jeremiah to hide in a rock by the river Euphrates?",
+    "options": [
+      "A scroll",
+      "A linen belt/loincloth",
+      "A clay jar",
+      "A gold coin"
+    ],
+    "answer": "A linen belt/loincloth",
+    "reference": "Jeremiah 13:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 182,
+    "book": "Jeremiah",
+    "question": "Who cut up Jeremiah's scroll and burned it in the fire?",
+    "options": [
+      "King Jehoiakim",
+      "King Zedekiah",
+      "Pashhur",
+      "Baruch"
+    ],
+    "answer": "King Jehoiakim",
+    "reference": "Jeremiah 36:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 183,
+    "book": "Jeremiah",
+    "question": "Where was Jeremiah when the city of Jerusalem fell?",
+    "options": [
+      "In the court of the guard/prison",
+      "In Egypt",
+      "In Babylon",
+      "In the Temple"
+    ],
+    "answer": "In the court of the guard/prison",
+    "reference": "Jeremiah 38:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 224,
+    "book": "Jeremiah",
+    "question": "Which famous verse speaks of plans to 'prosper you and not to harm you'?",
+    "options": [
+      "Jeremiah 29:11",
+      "Isaiah 40:31",
+      "Proverbs 3:5",
+      "Psalm 23:1"
+    ],
+    "answer": "Jeremiah 29:11",
+    "reference": "Jeremiah 29:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 250,
+    "book": "Jeremiah",
+    "question": "What did Jeremiah buy to show his faith that Israel would return to the land?",
+    "options": [
+      "A field in Anathoth",
+      "A vineyard",
+      "A house in Jerusalem",
+      "A flock of sheep"
+    ],
+    "answer": "A field in Anathoth",
+    "reference": "Jeremiah 32:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 282,
+    "book": "Jeremiah",
+    "question": "Who rescued Jeremiah from the muddy cistern?",
+    "options": [
+      "Ebed-Melech the Ethiopian",
+      "Baruch the Scribe",
+      "King Zedekiah",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Ebed-Melech the Ethiopian",
+    "reference": "Jeremiah 38:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 283,
+    "book": "Jeremiah",
+    "question": "Who was Jeremiah's scribe?",
+    "options": [
+      "Baruch",
+      "Ezra",
+      "Nathan",
+      "Gehazi"
+    ],
+    "answer": "Baruch",
+    "reference": "Jeremiah 36:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 335,
+    "book": "Jeremiah",
+    "question": "What happened to the army of Sennacherib that besieged Jerusalem?",
+    "options": [
+      "The Angel of the Lord killed 185,000",
+      "They fought amongst themselves",
+      "They were blinded",
+      "They surrendered"
+    ],
+    "answer": "The Angel of the Lord killed 185,000",
+    "reference": "Isaiah 37:36 / 2 Kings 19:35",
+    "difficulty": "medium"
+  },
+  {
+    "id": 349,
+    "book": "Jeremiah",
+    "question": "Jeremiah compares the Word of God to what two things?",
+    "options": [
+      "Fire and a Hammer",
+      "Bread and Water",
+      "Sword and Shield",
+      "Lamp and Light"
+    ],
+    "answer": "Fire and a Hammer",
+    "reference": "Jeremiah 23:29",
+    "difficulty": "medium"
+  },
+  {
+    "id": 384,
+    "book": "Jeremiah",
+    "question": "What did God show Jeremiah to illustrate that He is watching to perform His word?",
+    "options": [
+      "An almond branch",
+      "A boiling pot",
+      "A basket of figs",
+      "A flying scroll"
+    ],
+    "answer": "An almond branch",
+    "reference": "Jeremiah 1:11-12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 432,
+    "book": "Jeremiah",
+    "question": "Which family group did God use as an example of obedience because they refused to drink wine?",
+    "options": [
+      "The Rechabites",
+      "The Levites",
+      "The Kenites",
+      "The Nazarites"
+    ],
+    "answer": "The Rechabites",
+    "reference": "Jeremiah 35:5-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 480,
+    "book": "Jeremiah",
+    "question": "How many years did Jeremiah prophesy the Babylonian captivity would last?",
+    "options": [
+      "70 years",
+      "40 years",
+      "400 years",
+      "120 years"
+    ],
+    "answer": "70 years",
+    "reference": "Jeremiah 25:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 529,
+    "book": "Jeremiah",
+    "question": "Who was the false prophet who broke the yoke from Jeremiah's neck?",
+    "options": [
+      "Hananiah",
+      "Pashhur",
+      "Shemaiah",
+      "Zedekiah"
+    ],
+    "answer": "Hananiah",
+    "reference": "Jeremiah 28:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 579,
+    "book": "Jeremiah",
+    "question": "God told Jeremiah not to pray for this people because He would not...",
+    "options": [
+      "Listen",
+      "Save them",
+      "Forgive them",
+      "See them"
+    ],
+    "answer": "Listen",
+    "reference": "Jeremiah 7:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 635,
+    "book": "Jeremiah",
+    "question": "Jeremiah 17:9 says, 'The heart is deceitful above all things, and desperately...'",
+    "options": [
+      "Wicked",
+      "Sick",
+      "Weak",
+      "Foolish"
+    ],
+    "answer": "Wicked",
+    "reference": "Jeremiah 17:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 685,
+    "book": "Jeremiah",
+    "question": "Jeremiah purchased a field in Anathoth from his cousin...",
+    "options": [
+      "Hanamel",
+      "Baruch",
+      "Pashhur",
+      "Gedaliah"
+    ],
+    "answer": "Hanamel",
+    "reference": "Jeremiah 32:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 740,
+    "book": "Jeremiah",
+    "question": "Jeremiah prophesied that Zedekiah would see the King of Babylon eye to eye and go to...",
+    "options": [
+      "Babylon",
+      "Egypt",
+      "Nineveh",
+      "Damascus"
+    ],
+    "answer": "Babylon",
+    "reference": "Jeremiah 34:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 779,
+    "book": "Jeremiah",
+    "question": "What king cut Jeremiah's scroll with a penknife and burned it?",
+    "options": [
+      "Jehoiakim",
+      "Zedekiah",
+      "Josiah",
+      "Jeconiah"
+    ],
+    "answer": "Jehoiakim",
+    "reference": "Jeremiah 36:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 839,
+    "book": "Jeremiah",
+    "question": "Jeremiah compares the people of Israel to a wild donkey...",
+    "options": [
+      "Sniffing the wind in her passion",
+      "Stumbling on the mountains",
+      "Running from the wolf",
+      "Sleeping in the stall"
+    ],
+    "answer": "Sniffing the wind in her passion",
+    "reference": "Jeremiah 2:24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 878,
+    "book": "Jeremiah",
+    "question": "Jeremiah 1:5 says God knew Jeremiah before he was...",
+    "options": [
+      "Formed in the womb",
+      "Born",
+      "Called",
+      "Named"
+    ],
+    "answer": "Formed in the womb",
+    "reference": "Jeremiah 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 939,
+    "book": "Jeremiah",
+    "question": "Jeremiah 31:15 speaks of a voice heard in Ramah, lamentation and bitter weeping; who is weeping?",
+    "options": [
+      "Rachel weeping for her children",
+      "Sarah weeping for Isaac",
+      "Leah weeping for Jacob",
+      "Hannah weeping for Samuel"
+    ],
+    "answer": "Rachel weeping for her children",
+    "reference": "Jeremiah 31:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 978,
+    "book": "Jeremiah",
+    "question": "Jeremiah 29:11 says God knows the thoughts He thinks toward us, thoughts of...",
+    "options": [
+      "Peace and not of evil",
+      "Judgment",
+      "Anger",
+      "Indifference"
+    ],
+    "answer": "Peace and not of evil",
+    "reference": "Jeremiah 29:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1416,
+    "book": "Jeremiah",
+    "question": "God told Jeremiah, 'Before I formed you in the womb I ____ you.'",
+    "options": [
+      "Knew",
+      "Loved",
+      "Saw",
+      "Called"
+    ],
+    "answer": "Knew",
+    "reference": "Jeremiah 1:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1417,
+    "book": "Jeremiah",
+    "question": "Where did God send Jeremiah to watch a craftsman work as a lesson for Israel?",
+    "options": [
+      "The potter's house",
+      "The blacksmith's shop",
+      "The weaver's loom",
+      "The carpenter's shed"
+    ],
+    "answer": "The potter's house",
+    "reference": "Jeremiah 18:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1418,
+    "book": "Jeremiah",
+    "question": "In Jeremiah 31:31, what new thing does God promise to make with the house of Israel?",
+    "options": [
+      "A New Covenant",
+      "A New Temple",
+      "A New Kingdom",
+      "A New Land"
+    ],
+    "answer": "A New Covenant",
+    "reference": "Jeremiah 31:31",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1419,
+    "book": "Jeremiah",
+    "question": "Which king cut Jeremiah's scroll with a knife and burned it?",
+    "options": [
+      "Jehoiakim",
+      "Zedekiah",
+      "Josiah",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Jehoiakim",
+    "reference": "Jeremiah 36:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1420,
+    "book": "Jeremiah",
+    "question": "Where was Jeremiah cast into by the princes?",
+    "options": [
+      "A muddy cistern/dungeon",
+      "A lion's den",
+      "A fiery furnace",
+      "The river Jordan"
+    ],
+    "answer": "A muddy cistern/dungeon",
+    "reference": "Jeremiah 38:6",
+    "difficulty": "medium"
+  }
+]

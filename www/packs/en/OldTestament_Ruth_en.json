@@ -1,0 +1,422 @@
+[
+  {
+    "id": 39,
+    "book": "Ruth",
+    "question": "Who was Ruth's mother-in-law?",
+    "options": [
+      "Orpah",
+      "Naomi",
+      "Rahab",
+      "Hannah"
+    ],
+    "answer": "Naomi",
+    "reference": "Ruth 1:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 47,
+    "book": "Ruth",
+    "question": "What was the name of the wealthy man who married Ruth?",
+    "options": [
+      "Boaz",
+      "Elimelech",
+      "Mahlon",
+      "Jesse"
+    ],
+    "answer": "Boaz",
+    "reference": "Ruth 4:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": 162,
+    "book": "Ruth",
+    "question": "What was the name of the child born to Ruth and Boaz?",
+    "options": [
+      "Obed",
+      "Jesse",
+      "David",
+      "Perez"
+    ],
+    "answer": "Obed",
+    "reference": "Ruth 4:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 209,
+    "book": "Ruth",
+    "question": "What object was exchanged to confirm a transaction or redemption in Ruth's time?",
+    "options": [
+      "A sandal/shoe",
+      "A ring",
+      "A cloak",
+      "A staff"
+    ],
+    "answer": "A sandal/shoe",
+    "reference": "Ruth 4:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 364,
+    "book": "Ruth",
+    "question": "From which country did Naomi and her family return?",
+    "options": [
+      "Moab",
+      "Edom",
+      "Egypt",
+      "Syria"
+    ],
+    "answer": "Moab",
+    "reference": "Ruth 1:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 413,
+    "book": "Ruth",
+    "question": "Who was Ruth's sister-in-law who chose to stay in Moab?",
+    "options": [
+      "Orpah",
+      "Naomi",
+      "Mara",
+      "Vashti"
+    ],
+    "answer": "Orpah",
+    "reference": "Ruth 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 614,
+    "book": "Ruth",
+    "question": "Who was the father of Boaz?",
+    "options": [
+      "Salmon",
+      "Nahshon",
+      "Amminadab",
+      "Ram"
+    ],
+    "answer": "Salmon",
+    "reference": "Ruth 4:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 664,
+    "book": "Ruth",
+    "question": "What relation was Boaz to Elimelech (Naomi's husband)?",
+    "options": [
+      "A kinsman/relative",
+      "Brother",
+      "Son",
+      "Stranger"
+    ],
+    "answer": "A kinsman/relative",
+    "reference": "Ruth 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 716,
+    "book": "Ruth",
+    "question": "Why did the nearest kinsman refuse to redeem Elimelech's land?",
+    "options": [
+      "It would endanger his own inheritance",
+      "He was too poor",
+      "He disliked Naomi",
+      "He was already married"
+    ],
+    "answer": "It would endanger his own inheritance",
+    "reference": "Ruth 4:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 763,
+    "book": "Ruth",
+    "question": "How much barley did Boaz give Ruth to take home to Naomi?",
+    "options": [
+      "Six measures",
+      "One ephah",
+      "A sack full",
+      "Two sheaves"
+    ],
+    "answer": "Six measures",
+    "reference": "Ruth 3:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 816,
+    "book": "Ruth",
+    "question": "At what time of day did Boaz discover Ruth at his feet?",
+    "options": [
+      "Midnight",
+      "Morning",
+      "Evening",
+      "Noon"
+    ],
+    "answer": "Midnight",
+    "reference": "Ruth 3:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 862,
+    "book": "Ruth",
+    "question": "What city is called the City of David?",
+    "options": [
+      "Bethlehem (originally), then Jerusalem",
+      "Hebron",
+      "Jericho",
+      "Nazareth"
+    ],
+    "answer": "Bethlehem (originally), then Jerusalem",
+    "reference": "Luke 2:4 / 2 Samuel 5:7 (Trick: Bethlehem is his birth city, Zion/Jerusalem his capital)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 916,
+    "book": "Ruth",
+    "question": "Naomi asked to be called 'Mara' because...",
+    "options": [
+      "The Almighty had dealt very bitterly with her",
+      "She was a widow",
+      "She was hungry",
+      "She was from Moab"
+    ],
+    "answer": "The Almighty had dealt very bitterly with her",
+    "reference": "Ruth 1:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 962,
+    "book": "Ruth",
+    "question": "What was the name of the son born to Boaz and Ruth?",
+    "options": [
+      "Obed",
+      "Jesse",
+      "David",
+      "Elimelech"
+    ],
+    "answer": "Obed",
+    "reference": "Ruth 4:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1592,
+    "book": "Ruth",
+    "question": "In the days when the judges ruled, there was a ______ in the land.",
+    "options": [
+      "Famine",
+      "War",
+      "Plague",
+      "Flood"
+    ],
+    "answer": "Famine",
+    "reference": "Ruth 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1593,
+    "book": "Ruth",
+    "question": "What was the name of Naomi's husband?",
+    "options": [
+      "Elimelech",
+      "Mahlon",
+      "Chilion",
+      "Boaz"
+    ],
+    "answer": "Elimelech",
+    "reference": "Ruth 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1594,
+    "book": "Ruth",
+    "question": "Which daughter-in-law went back to her people?",
+    "options": [
+      "Orpah",
+      "Ruth",
+      "Mara",
+      "Vashti"
+    ],
+    "answer": "Orpah",
+    "reference": "Ruth 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1595,
+    "book": "Ruth",
+    "question": "Ruth said, 'Your people shall be my people, and your God...'",
+    "options": [
+      "My God",
+      "My King",
+      "My Judge",
+      "My Father"
+    ],
+    "answer": "My God",
+    "reference": "Ruth 1:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1596,
+    "book": "Ruth",
+    "question": "Call me not Naomi, call me...",
+    "options": [
+      "Mara",
+      "Sarah",
+      "Rachel",
+      "Esther"
+    ],
+    "answer": "Mara",
+    "reference": "Ruth 1:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1597,
+    "book": "Ruth",
+    "question": "What time of year did they return to Bethlehem?",
+    "options": [
+      "Beginning of barley harvest",
+      "Sheep shearing",
+      "Passover",
+      "Winter"
+    ],
+    "answer": "Beginning of barley harvest",
+    "reference": "Ruth 1:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1598,
+    "book": "Ruth",
+    "question": "Whose field did Ruth happen to glean in?",
+    "options": [
+      "Boaz",
+      "Elimelech",
+      "Jesse",
+      "Saul"
+    ],
+    "answer": "Boaz",
+    "reference": "Ruth 2:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1599,
+    "book": "Ruth",
+    "question": "Boaz told his young men to let Ruth glean even among the...",
+    "options": [
+      "Sheaves",
+      "Barns",
+      "Threshing floor",
+      "Roads"
+    ],
+    "answer": "Sheaves",
+    "reference": "Ruth 2:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1600,
+    "book": "Ruth",
+    "question": "What did Boaz invite Ruth to dip her bread in?",
+    "options": [
+      "Vinegar/Wine",
+      "Honey",
+      "Oil",
+      "Water"
+    ],
+    "answer": "Vinegar/Wine",
+    "reference": "Ruth 2:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1601,
+    "book": "Ruth",
+    "question": "Where did Naomi tell Ruth to go and lie down at the feet of Boaz?",
+    "options": [
+      "The threshing floor",
+      "The city gate",
+      "The vineyard",
+      "The well"
+    ],
+    "answer": "The threshing floor",
+    "reference": "Ruth 3:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1602,
+    "book": "Ruth",
+    "question": "What did Boaz have to do before he could marry Ruth?",
+    "options": [
+      "Consult a closer relative (kinsman-redeemer)",
+      "Pay a tax to the king",
+      "Wait seven years",
+      "Sacrifice a bull"
+    ],
+    "answer": "Consult a closer relative (kinsman-redeemer)",
+    "reference": "Ruth 3:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1603,
+    "book": "Ruth",
+    "question": "What was the custom in Israel for confirming a transfer of property or redemption?",
+    "options": [
+      "One man took off his sandal and gave it to the other",
+      "They shook hands",
+      "They signed a scroll",
+      "They broke a piece of bread"
+    ],
+    "answer": "One man took off his sandal and gave it to the other",
+    "reference": "Ruth 4:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1604,
+    "book": "Ruth",
+    "question": "How many witnesses did Boaz call to the city gate?",
+    "options": [
+      "Ten elders",
+      "Twelve priests",
+      "Three judges",
+      "Seven neighbors"
+    ],
+    "answer": "Ten elders",
+    "reference": "Ruth 4:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1605,
+    "book": "Ruth",
+    "question": "What was the name of the son born to Ruth and Boaz?",
+    "options": [
+      "Obed",
+      "Jesse",
+      "David",
+      "Solomon"
+    ],
+    "answer": "Obed",
+    "reference": "Ruth 4:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1606,
+    "book": "Ruth",
+    "question": "Who was Ruth's great-grandson?",
+    "options": [
+      "King David",
+      "King Saul",
+      "King Solomon",
+      "Samuel"
+    ],
+    "answer": "King David",
+    "reference": "Ruth 4:22",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1607,
+    "book": "Ruth",
+    "question": "What did the neighborhood women say about Ruth to Naomi?",
+    "options": [
+      "She is better to you than seven sons",
+      "She is a hard worker",
+      "She is a daughter of Moab",
+      "She is blessed"
+    ],
+    "answer": "She is better to you than seven sons",
+    "reference": "Ruth 4:15",
+    "difficulty": "medium"
+  }
+]

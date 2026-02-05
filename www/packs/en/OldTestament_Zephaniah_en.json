@@ -1,0 +1,534 @@
+[
+  {
+    "id": 96,
+    "book": "Zephaniah",
+    "question": "What 'Day' does Zephaniah warn is near?",
+    "options": [
+      "The Day of the Lord",
+      "The Day of Atonement",
+      "The Sabbath",
+      "The New Year"
+    ],
+    "answer": "The Day of the Lord",
+    "reference": "Zephaniah 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 236,
+    "book": "Zephaniah",
+    "question": "God said He would search Jerusalem with what?",
+    "options": [
+      "Lamps",
+      "Swords",
+      "Fire",
+      "Dogs"
+    ],
+    "answer": "Lamps",
+    "reference": "Zephaniah 1:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 292,
+    "book": "Zephaniah",
+    "question": "Zephaniah was the great-great-grandson of which King?",
+    "options": [
+      "Hezekiah",
+      "David",
+      "Josiah",
+      "Solomon"
+    ],
+    "answer": "Hezekiah",
+    "reference": "Zephaniah 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 396,
+    "book": "Zephaniah",
+    "question": "Zephaniah 3:17 says God will rejoice over you with...",
+    "options": [
+      "Singing",
+      "Thunder",
+      "Gifts",
+      "Rain"
+    ],
+    "answer": "Singing",
+    "reference": "Zephaniah 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 489,
+    "book": "Zephaniah",
+    "question": "Zephaniah 3:9 says God will restore to the peoples a pure...",
+    "options": [
+      "Lip/Language/Speech",
+      "Heart",
+      "Offering",
+      "Water"
+    ],
+    "answer": "Lip/Language/Speech",
+    "reference": "Zephaniah 3:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 541,
+    "book": "Zephaniah",
+    "question": "Zephaniah describes the 'Day of the Lord' as a day of...",
+    "options": [
+      "Wrath and distress",
+      "Peace and safety",
+      "Light and joy",
+      "Feasting"
+    ],
+    "answer": "Wrath and distress",
+    "reference": "Zephaniah 1:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 589,
+    "book": "Zephaniah",
+    "question": "Zephaniah says God will search Jerusalem with...",
+    "options": [
+      "Lamps/Candles",
+      "Fire",
+      "Sword",
+      "Spirits"
+    ],
+    "answer": "Lamps/Candles",
+    "reference": "Zephaniah 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 645,
+    "book": "Zephaniah",
+    "question": "Zephaniah 3:17 says God is 'Mighty to...'",
+    "options": [
+      "Save",
+      "Destroy",
+      "Rule",
+      "Judge"
+    ],
+    "answer": "Save",
+    "reference": "Zephaniah 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 695,
+    "book": "Zephaniah",
+    "question": "Zephaniah prophesies against the people of Canaan, the land of the...",
+    "options": [
+      "Philistines",
+      "Moabites",
+      "Edomites",
+      "Ammonites"
+    ],
+    "answer": "Philistines",
+    "reference": "Zephaniah 2:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 752,
+    "book": "Zephaniah",
+    "question": "Which city does Zephaniah call 'the rejoicing city that dwelt securely'?",
+    "options": [
+      "Nineveh",
+      "Babylon",
+      "Tyre",
+      "Sidon"
+    ],
+    "answer": "Nineveh",
+    "reference": "Zephaniah 2:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 791,
+    "book": "Zephaniah",
+    "question": "Zephaniah 3:8 says God will gather the nations to pour out His...",
+    "options": [
+      "Indignation",
+      "Blessing",
+      "Spirit",
+      "Wealth"
+    ],
+    "answer": "Indignation",
+    "reference": "Zephaniah 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 851,
+    "book": "Zephaniah",
+    "question": "Zephaniah 1:7 commands to be ______ in the presence of the Lord God.",
+    "options": [
+      "Silent",
+      "Holy",
+      "Humble",
+      "Joyful"
+    ],
+    "answer": "Silent",
+    "reference": "Zephaniah 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 890,
+    "book": "Zephaniah",
+    "question": "Zephaniah 3:13 says the remnant of Israel shall do no...",
+    "options": [
+      "Iniquity/Unrighteousness",
+      "Work",
+      "War",
+      "Idolatry"
+    ],
+    "answer": "Iniquity/Unrighteousness",
+    "reference": "Zephaniah 3:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 951,
+    "book": "Zephaniah",
+    "question": "Zephaniah 1:14 says the great day of the Lord is...",
+    "options": [
+      "Near and hastens quickly",
+      "Far off",
+      "A mystery",
+      "A day of joy"
+    ],
+    "answer": "Near and hastens quickly",
+    "reference": "Zephaniah 1:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": 990,
+    "book": "Zephaniah",
+    "question": "Zephaniah 3:17 says the Lord your God in your midst is...",
+    "options": [
+      "Mighty",
+      "Silent",
+      "Angry",
+      "Distant"
+    ],
+    "answer": "Mighty",
+    "reference": "Zephaniah 3:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1378,
+    "book": "Zephaniah",
+    "question": "Who was the great-great-grandfather of Zephaniah?",
+    "options": [
+      "Hezekiah",
+      "David",
+      "Josiah",
+      "Isaiah"
+    ],
+    "answer": "Hezekiah",
+    "reference": "Zephaniah 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1379,
+    "book": "Zephaniah",
+    "question": "During the reign of which king did Zephaniah prophesy?",
+    "options": [
+      "Josiah",
+      "Manasseh",
+      "Hezekiah",
+      "Uzziah"
+    ],
+    "answer": "Josiah",
+    "reference": "Zephaniah 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1380,
+    "book": "Zephaniah",
+    "question": "God says He will consume man, beast, birds, and...",
+    "options": [
+      "Fish of the sea",
+      "Trees of the field",
+      "Creeping things",
+      "Stars of heaven"
+    ],
+    "answer": "Fish of the sea",
+    "reference": "Zephaniah 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1381,
+    "book": "Zephaniah",
+    "question": "I will cut off the idolatrous priests known as...",
+    "options": [
+      "Chemarim",
+      "Baalim",
+      "Nicolaitans",
+      "Levites"
+    ],
+    "answer": "Chemarim",
+    "reference": "Zephaniah 1:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1382,
+    "book": "Zephaniah",
+    "question": "Zephaniah condemns those who worship the host of heaven on their...",
+    "options": [
+      "Housetops/Roofs",
+      "Altars",
+      "Hills",
+      "Fields"
+    ],
+    "answer": "Housetops/Roofs",
+    "reference": "Zephaniah 1:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1383,
+    "book": "Zephaniah",
+    "question": "Woe to those who swear by the Lord and also by...",
+    "options": [
+      "Milcom (or Malcham)",
+      "Baal",
+      "Asherah",
+      "Molech"
+    ],
+    "answer": "Milcom (or Malcham)",
+    "reference": "Zephaniah 1:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1384,
+    "book": "Zephaniah",
+    "question": "Be silent in the presence of the Lord God, for the Lord has prepared a...",
+    "options": [
+      "Sacrifice",
+      "Feast",
+      "Judgment",
+      "Fire"
+    ],
+    "answer": "Sacrifice",
+    "reference": "Zephaniah 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1385,
+    "book": "Zephaniah",
+    "question": "God will punish the king's children who are clothed with...",
+    "options": [
+      "Foreign apparel",
+      "Purple",
+      "Gold",
+      "Rags"
+    ],
+    "answer": "Foreign apparel",
+    "reference": "Zephaniah 1:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1386,
+    "book": "Zephaniah",
+    "question": "God will punish those who leap over the...",
+    "options": [
+      "Threshold",
+      "Altar",
+      "Wall",
+      "Gate"
+    ],
+    "answer": "Threshold",
+    "reference": "Zephaniah 1:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1387,
+    "book": "Zephaniah",
+    "question": "A cry shall come from the Fish Gate and wailing from the...",
+    "options": [
+      "Second Quarter",
+      "Temple",
+      "King's House",
+      "Valley"
+    ],
+    "answer": "Second Quarter",
+    "reference": "Zephaniah 1:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1388,
+    "book": "Zephaniah",
+    "question": "Wail, you inhabitants of...",
+    "options": [
+      "Maktesh",
+      "Zion",
+      "Bethel",
+      "Samaria"
+    ],
+    "answer": "Maktesh",
+    "reference": "Zephaniah 1:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1389,
+    "book": "Zephaniah",
+    "question": "God will search Jerusalem with...",
+    "options": [
+      "Lamps",
+      "Fire",
+      "Swords",
+      "Angels"
+    ],
+    "answer": "Lamps",
+    "reference": "Zephaniah 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1390,
+    "book": "Zephaniah",
+    "question": "God will punish men who are settled on their...",
+    "options": [
+      "Lees / Dregs",
+      "Wealth",
+      "Thrones",
+      "Land"
+    ],
+    "answer": "Lees / Dregs",
+    "reference": "Zephaniah 1:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1391,
+    "book": "Zephaniah",
+    "question": "What do the complacent men say in their hearts?",
+    "options": [
+      "The Lord will not do good, nor will He do evil",
+      "There is no God",
+      "We are safe",
+      "Peace and safety"
+    ],
+    "answer": "The Lord will not do good, nor will He do evil",
+    "reference": "Zephaniah 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1392,
+    "book": "Zephaniah",
+    "question": "Neither their silver nor their gold shall be able to...",
+    "options": [
+      "Deliver them",
+      "Buy food",
+      "Save their souls",
+      "Satisfy them"
+    ],
+    "answer": "Deliver them",
+    "reference": "Zephaniah 1:18",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1393,
+    "book": "Zephaniah",
+    "question": "Zephaniah 2:3 says to seek righteousness and...",
+    "options": [
+      "Humility",
+      "Wisdom",
+      "Strength",
+      "Wealth"
+    ],
+    "answer": "Humility",
+    "reference": "Zephaniah 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1394,
+    "book": "Zephaniah",
+    "question": "Gaza shall be forsaken and Ashkelon...",
+    "options": [
+      "Desolate",
+      "Burned",
+      "Flooded",
+      "Rebuilt"
+    ],
+    "answer": "Desolate",
+    "reference": "Zephaniah 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1395,
+    "book": "Zephaniah",
+    "question": "Woe to the inhabitants of the seacoast, the nation of the...",
+    "options": [
+      "Cherethites",
+      "Philistines",
+      "Canaanites",
+      "Phoenicians"
+    ],
+    "answer": "Cherethites",
+    "reference": "Zephaniah 2:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1396,
+    "book": "Zephaniah",
+    "question": "Moab shall be like Sodom and Ammon like...",
+    "options": [
+      "Gomorrah",
+      "Egypt",
+      "Babylon",
+      "Nineveh"
+    ],
+    "answer": "Gomorrah",
+    "reference": "Zephaniah 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1397,
+    "book": "Zephaniah",
+    "question": "You Ethiopians also shall be slain with...",
+    "options": [
+      "My sword",
+      "Fire",
+      "Plague",
+      "Hail"
+    ],
+    "answer": "My sword",
+    "reference": "Zephaniah 2:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1398,
+    "book": "Zephaniah",
+    "question": "What will lie down in the midst of desolate Nineveh?",
+    "options": [
+      "Herds and beasts / Porcupine and Bittern",
+      "Lions",
+      "Soldiers",
+      "Shepherds"
+    ],
+    "answer": "Herds and beasts / Porcupine and Bittern",
+    "reference": "Zephaniah 2:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1399,
+    "book": "Zephaniah",
+    "question": "God will restore to the peoples a pure...",
+    "options": [
+      "Language / Lip",
+      "Heart",
+      "Water",
+      "Faith"
+    ],
+    "answer": "Language / Lip",
+    "reference": "Zephaniah 3:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1400,
+    "book": "Zephaniah",
+    "question": "Who is the King of Israel in their midst?",
+    "options": [
+      "The Lord",
+      "David",
+      "The Branch",
+      "The Messiah"
+    ],
+    "answer": "The Lord",
+    "reference": "Zephaniah 3:15",
+    "difficulty": "easy"
+  }
+]

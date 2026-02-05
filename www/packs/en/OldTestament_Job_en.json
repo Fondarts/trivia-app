@@ -1,0 +1,422 @@
+[
+  {
+    "id": 22,
+    "book": "Job",
+    "question": "What did Job's wife tell him to do during his suffering?",
+    "options": [
+      "Pray to God",
+      "Curse God and die",
+      "Offer a sacrifice",
+      "Flee the city"
+    ],
+    "answer": "Curse God and die",
+    "reference": "Job 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 57,
+    "book": "Job",
+    "question": "From where did God answer Job?",
+    "options": [
+      "A burning bush",
+      "A whirlwind",
+      "A gentle whisper",
+      "A dream"
+    ],
+    "answer": "A whirlwind",
+    "reference": "Job 38:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 128,
+    "book": "Job",
+    "question": "Who were Job's three friends?",
+    "options": [
+      "Eliphaz, Bildad, Zophar",
+      "Shadrach, Meshach, Abednego",
+      "Peter, James, John",
+      "Shem, Ham, Japheth"
+    ],
+    "answer": "Eliphaz, Bildad, Zophar",
+    "reference": "Job 2:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 175,
+    "book": "Job",
+    "question": "Which animal is described in Job as having 'bones like tubes of bronze'?",
+    "options": [
+      "Behemoth",
+      "Leviathan",
+      "Lion",
+      "Eagle"
+    ],
+    "answer": "Behemoth",
+    "reference": "Job 40:15-18",
+    "difficulty": "hard"
+  },
+  {
+    "id": 218,
+    "book": "Job",
+    "question": "Complete the verse: 'For I know that my ______ lives.'",
+    "options": [
+      "Redeemer",
+      "Creator",
+      "Judge",
+      "King"
+    ],
+    "answer": "Redeemer",
+    "reference": "Job 19:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": 275,
+    "book": "Job",
+    "question": "Who was the fourth man who spoke to Job after his three friends?",
+    "options": [
+      "Elihu",
+      "Eliphaz",
+      "Bildad",
+      "Zophar"
+    ],
+    "answer": "Elihu",
+    "reference": "Job 32:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 329,
+    "book": "Job",
+    "question": "What were the names of Job's three daughters born after his restoration?",
+    "options": [
+      "Jemimah, Keziah, Keren-Happuch",
+      "Rachel, Leah, Dinah",
+      "Mary, Martha, Anna",
+      "Tamar, Rahab, Ruth"
+    ],
+    "answer": "Jemimah, Keziah, Keren-Happuch",
+    "reference": "Job 42:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 378,
+    "book": "Job",
+    "question": "Satan told God that Job only served Him because...",
+    "options": [
+      "God had put a hedge of protection around him",
+      "Job was rich",
+      "Job wanted to be King",
+      "Job was afraid of death"
+    ],
+    "answer": "God had put a hedge of protection around him",
+    "reference": "Job 1:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 424,
+    "book": "Job",
+    "question": "In which land did Job live?",
+    "options": [
+      "Land of Uz",
+      "Land of Ur",
+      "Land of Nod",
+      "Land of Canaan"
+    ],
+    "answer": "Land of Uz",
+    "reference": "Job 1:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 475,
+    "book": "Job",
+    "question": "With what affliction did Satan strike Job's body?",
+    "options": [
+      "Painful boils/sores",
+      "Blindness",
+      "Leprosy",
+      "Paralysis"
+    ],
+    "answer": "Painful boils/sores",
+    "reference": "Job 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 523,
+    "book": "Job",
+    "question": "How old was Job when he died?",
+    "options": [
+      "140 years old",
+      "120 years old",
+      "70 years old",
+      "100 years old"
+    ],
+    "answer": "140 years old",
+    "reference": "Job 42:16",
+    "difficulty": "hard"
+  },
+  {
+    "id": 573,
+    "book": "Job",
+    "question": "Where were Job's friends from (Eliphaz)?",
+    "options": [
+      "Teman",
+      "Shuah",
+      "Naamah",
+      "Uz"
+    ],
+    "answer": "Teman",
+    "reference": "Job 2:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 628,
+    "book": "Job",
+    "question": "Complete the verse: 'Naked I came from my mother's womb, and naked shall I...'",
+    "options": [
+      "Return",
+      "Depart",
+      "Die",
+      "Sleep"
+    ],
+    "answer": "Return",
+    "reference": "Job 1:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 678,
+    "book": "Job",
+    "question": "God asks Job, 'Can you bind the chains of the...?'",
+    "options": [
+      "Pleiades",
+      "Orion",
+      "Great Bear",
+      "Sun"
+    ],
+    "answer": "Pleiades",
+    "reference": "Job 38:31",
+    "difficulty": "hard"
+  },
+  {
+    "id": 731,
+    "book": "Job",
+    "question": "Who is the young man who gets angry at Job and his three friends?",
+    "options": [
+      "Elihu",
+      "Eliphaz",
+      "Bildad",
+      "Zophar"
+    ],
+    "answer": "Elihu",
+    "reference": "Job 32:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 773,
+    "book": "Job",
+    "question": "In Job 41, God describes Leviathan. What comes out of its mouth?",
+    "options": [
+      "Burning lamps and sparks of fire",
+      "Water",
+      "Poison",
+      "Wind"
+    ],
+    "answer": "Burning lamps and sparks of fire",
+    "reference": "Job 41:19",
+    "difficulty": "hard"
+  },
+  {
+    "id": 830,
+    "book": "Job",
+    "question": "In Job 28, where is wisdom found? 'The depth says, It is not in me...'",
+    "options": [
+      "God understands its way",
+      "In books",
+      "In the stars",
+      "In the heart of man"
+    ],
+    "answer": "God understands its way",
+    "reference": "Job 28:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 872,
+    "book": "Job",
+    "question": "Who was the Temanite who spoke to Job?",
+    "options": [
+      "Eliphaz",
+      "Bildad",
+      "Zophar",
+      "Elihu"
+    ],
+    "answer": "Eliphaz",
+    "reference": "Job 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 930,
+    "book": "Job",
+    "question": "Job 19:20 says, 'I have escaped by the skin of my...'",
+    "options": [
+      "Teeth",
+      "Hands",
+      "Back",
+      "Feet"
+    ],
+    "answer": "Teeth",
+    "reference": "Job 19:20",
+    "difficulty": "medium"
+  },
+  {
+    "id": 972,
+    "book": "Job",
+    "question": "What did Job's wife say to him in his suffering?",
+    "options": [
+      "Curse God and die",
+      "Praise God anyway",
+      "Repent of your sins",
+      "Let us flee"
+    ],
+    "answer": "Curse God and die",
+    "reference": "Job 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1447,
+    "book": "Job",
+    "question": "Where did Job live?",
+    "options": [
+      "The land of Uz",
+      "The land of Ur",
+      "Canaan",
+      "Egypt"
+    ],
+    "answer": "The land of Uz",
+    "reference": "Job 1:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1448,
+    "book": "Job",
+    "question": "What did Job's wife tell him to do after he lost everything?",
+    "options": [
+      "Curse God and die",
+      "Pray harder",
+      "Sacrifice a lamb",
+      "Run away"
+    ],
+    "answer": "Curse God and die",
+    "reference": "Job 2:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1449,
+    "book": "Job",
+    "question": "Which of these was NOT one of Job's three friends?",
+    "options": [
+      "Elihu",
+      "Eliphaz",
+      "Bildad",
+      "Zophar"
+    ],
+    "answer": "Elihu",
+    "reference": "Job 2:11 (Elihu appears later)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1450,
+    "book": "Job",
+    "question": "Job said, 'The Lord gave, and the Lord has taken away; ______.'",
+    "options": [
+      "Blessed be the name of the Lord",
+      "Cursed be the day I was born",
+      "Why me?",
+      "He is unjust"
+    ],
+    "answer": "Blessed be the name of the Lord",
+    "reference": "Job 1:21",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1451,
+    "book": "Job",
+    "question": "From where did God answer Job?",
+    "options": [
+      "Out of the whirlwind",
+      "From a burning bush",
+      "In a dream",
+      "Through a prophet"
+    ],
+    "answer": "Out of the whirlwind",
+    "reference": "Job 38:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1452,
+    "book": "Job",
+    "question": "What large land animal does God describe to Job to show His power?",
+    "options": [
+      "Behemoth",
+      "Elephant",
+      "Lion",
+      "Bear"
+    ],
+    "answer": "Behemoth",
+    "reference": "Job 40:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1453,
+    "book": "Job",
+    "question": "What sea creature does God describe that cannot be pulled out with a hook?",
+    "options": [
+      "Leviathan",
+      "Whale",
+      "Shark",
+      "Kraken"
+    ],
+    "answer": "Leviathan",
+    "reference": "Job 41:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1454,
+    "book": "Job",
+    "question": "How much did God restore to Job at the end?",
+    "options": [
+      "Double what he had before",
+      "The exact same amount",
+      "Half",
+      "Ten times as much"
+    ],
+    "answer": "Double what he had before",
+    "reference": "Job 42:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1455,
+    "book": "Job",
+    "question": "What were the names of Job's three daughters born after his restoration?",
+    "options": [
+      "Jemimah, Keziah, Keren-Happuch",
+      "Rachel, Leah, Dinah",
+      "Sarah, Rebekah, Mary",
+      "Miriam, Deborah, Ruth"
+    ],
+    "answer": "Jemimah, Keziah, Keren-Happuch",
+    "reference": "Job 42:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1456,
+    "book": "Job",
+    "question": "Job said, 'I know that my ______ lives.'",
+    "options": [
+      "Redeemer",
+      "Savior",
+      "God",
+      "Judge"
+    ],
+    "answer": "Redeemer",
+    "reference": "Job 19:25",
+    "difficulty": "medium"
+  }
+]

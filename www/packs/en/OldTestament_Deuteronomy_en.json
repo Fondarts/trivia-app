@@ -1,0 +1,422 @@
+[
+  {
+    "id": 38,
+    "book": "Deuteronomy",
+    "question": "Where did Moses die?",
+    "options": [
+      "Mount Sinai",
+      "Mount Nebo",
+      "Mount Zion",
+      "Mount Carmel"
+    ],
+    "answer": "Mount Nebo",
+    "reference": "Deuteronomy 34:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 109,
+    "book": "Deuteronomy",
+    "question": "Complete the verse: 'Man shall not live by bread alone, but by...'",
+    "options": [
+      "Water from the rock",
+      "Every word that proceeds from the mouth of God",
+      "The meat of the sacrifice",
+      "The fruit of the spirit"
+    ],
+    "answer": "Every word that proceeds from the mouth of God",
+    "reference": "Deuteronomy 8:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 157,
+    "book": "Deuteronomy",
+    "question": "Moses commanded that the Law be read to all the people every...",
+    "options": [
+      "Year",
+      "Month",
+      "Seven years",
+      "Sabbath"
+    ],
+    "answer": "Seven years",
+    "reference": "Deuteronomy 31:10-11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 197,
+    "book": "Deuteronomy",
+    "question": "How old was Moses when he died?",
+    "options": [
+      "120",
+      "100",
+      "80",
+      "40"
+    ],
+    "answer": "120",
+    "reference": "Deuteronomy 34:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 206,
+    "book": "Deuteronomy",
+    "question": "What is the great commandment given in Deuteronomy 6:4-5 called?",
+    "options": [
+      "The Shema",
+      "The Hallel",
+      "The Torah",
+      "The Mitzvah"
+    ],
+    "answer": "The Shema",
+    "reference": "Deuteronomy 6:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 256,
+    "book": "Deuteronomy",
+    "question": "King Og of Bashan had a bed made of what material?",
+    "options": [
+      "Iron",
+      "Gold",
+      "Cedar",
+      "Stone"
+    ],
+    "answer": "Iron",
+    "reference": "Deuteronomy 3:11",
+    "difficulty": "hard"
+  },
+  {
+    "id": 309,
+    "book": "Deuteronomy",
+    "question": "According to the Law, how many witnesses were needed to establish a charge?",
+    "options": [
+      "Two or three",
+      "At least one",
+      "Five",
+      "Twelve"
+    ],
+    "answer": "Two or three",
+    "reference": "Deuteronomy 19:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 359,
+    "book": "Deuteronomy",
+    "question": "Moses said the Lord would raise up a Prophet like him from among their...",
+    "options": [
+      "Brothers/Brethren",
+      "Enemies",
+      "Priests",
+      "Kings"
+    ],
+    "answer": "Brothers/Brethren",
+    "reference": "Deuteronomy 18:15",
+    "difficulty": "medium"
+  },
+  {
+    "id": 409,
+    "book": "Deuteronomy",
+    "question": "Complete the verse: 'Cursed is everyone who hangs on a...'",
+    "options": [
+      "Tree",
+      "Cross",
+      "Wall",
+      "Mountain"
+    ],
+    "answer": "Tree",
+    "reference": "Deuteronomy 21:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 459,
+    "book": "Deuteronomy",
+    "question": "What is the 'City of Palms' mentioned in the Bible?",
+    "options": [
+      "Jericho",
+      "Jerusalem",
+      "Hebron",
+      "Bethel"
+    ],
+    "answer": "Jericho",
+    "reference": "Deuteronomy 34:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 500,
+    "book": "Deuteronomy",
+    "question": "Who buried Moses?",
+    "options": [
+      "The Lord",
+      "Joshua",
+      "Eleazar",
+      "The Israelites"
+    ],
+    "answer": "The Lord",
+    "reference": "Deuteronomy 34:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 507,
+    "book": "Deuteronomy",
+    "question": "On which two mountains were the blessings and curses pronounced?",
+    "options": [
+      "Gerizim and Ebal",
+      "Sinai and Horeb",
+      "Zion and Olives",
+      "Carmel and Tabor"
+    ],
+    "answer": "Gerizim and Ebal",
+    "reference": "Deuteronomy 11:29",
+    "difficulty": "hard"
+  },
+  {
+    "id": 549,
+    "book": "Deuteronomy",
+    "question": "Which tribe was not counted in the census for war?",
+    "options": [
+      "Levi",
+      "Judah",
+      "Ephraim",
+      "Benjamin"
+    ],
+    "answer": "Levi",
+    "reference": "Numbers 1:47",
+    "difficulty": "medium"
+  },
+  {
+    "id": 557,
+    "book": "Deuteronomy",
+    "question": "God told Israel He did not choose them because they were numerous, but because...",
+    "options": [
+      "He loved them",
+      "They were wealthy",
+      "They were strong",
+      "They were wise"
+    ],
+    "answer": "He loved them",
+    "reference": "Deuteronomy 7:7-8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 598,
+    "book": "Deuteronomy",
+    "question": "Who was appointed as Moses' successor?",
+    "options": [
+      "Joshua",
+      "Caleb",
+      "Eleazar",
+      "Phinehas"
+    ],
+    "answer": "Joshua",
+    "reference": "Deuteronomy 31:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 609,
+    "book": "Deuteronomy",
+    "question": "Complete the verse: 'The secret things belong to the Lord our God, but those things which are...'",
+    "options": [
+      "Revealed belong to us",
+      "Hidden are for the angels",
+      "Written are for the kings",
+      "Spoken are for the prophets"
+    ],
+    "answer": "Revealed belong to us",
+    "reference": "Deuteronomy 29:29",
+    "difficulty": "medium"
+  },
+  {
+    "id": 659,
+    "book": "Deuteronomy",
+    "question": "For what reason did God say the Israelites' clothes did not wear out in the wilderness?",
+    "options": [
+      "So they would know He is God",
+      "Because they had no wool",
+      "Because they were holy",
+      "Because of the climate"
+    ],
+    "answer": "So they would know He is God",
+    "reference": "Deuteronomy 29:5-6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 710,
+    "book": "Deuteronomy",
+    "question": "In the song of Moses, he describes the Lord as the '______'.",
+    "options": [
+      "Rock",
+      "Eagle",
+      "Lion",
+      "River"
+    ],
+    "answer": "Rock",
+    "reference": "Deuteronomy 32:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 711,
+    "book": "Deuteronomy",
+    "question": "God describes the Promised Land as a land of...",
+    "options": [
+      "Wheat and barley, vines and fig trees",
+      "Gold and silver",
+      "Snow and ice",
+      "Sand and sea"
+    ],
+    "answer": "Wheat and barley, vines and fig trees",
+    "reference": "Deuteronomy 8:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 760,
+    "book": "Deuteronomy",
+    "question": "How many cities of refuge were to be set aside east of the Jordan?",
+    "options": [
+      "Three",
+      "Two",
+      "Six",
+      "One"
+    ],
+    "answer": "Three",
+    "reference": "Deuteronomy 4:41",
+    "difficulty": "medium"
+  },
+  {
+    "id": 799,
+    "book": "Deuteronomy",
+    "question": "What mountain was opposite Jericho where Moses viewed the land?",
+    "options": [
+      "Mount Nebo",
+      "Mount Pisgah (Part of Nebo)",
+      "Both are correct",
+      "Mount Sinai"
+    ],
+    "answer": "Both are correct",
+    "reference": "Deuteronomy 34:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 810,
+    "book": "Deuteronomy",
+    "question": "According to Deuteronomy 24, how often should tithes be gathered for the poor/Levite?",
+    "options": [
+      "Every three years",
+      "Every year",
+      "Every seven years",
+      "Every month"
+    ],
+    "answer": "Every three years",
+    "reference": "Deuteronomy 14:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 811,
+    "book": "Deuteronomy",
+    "question": "What metal were the shoes/bolts of Asher to be made of?",
+    "options": [
+      "Iron and bronze",
+      "Gold and silver",
+      "Copper",
+      "Wood"
+    ],
+    "answer": "Iron and bronze",
+    "reference": "Deuteronomy 33:25",
+    "difficulty": "hard"
+  },
+  {
+    "id": 859,
+    "book": "Deuteronomy",
+    "question": "Deuteronomy 6:5 commands to love the Lord with all your...",
+    "options": [
+      "Heart, soul, and strength",
+      "Mind and body",
+      "Might and power",
+      "Wisdom and wealth"
+    ],
+    "answer": "Heart, soul, and strength",
+    "reference": "Deuteronomy 6:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": 898,
+    "book": "Deuteronomy",
+    "question": "Deuteronomy 18:10-11 forbids what practice?",
+    "options": [
+      "Witchcraft/Sorcery",
+      "Eating pork",
+      "Cutting hair",
+      "Wearing linen"
+    ],
+    "answer": "Witchcraft/Sorcery",
+    "reference": "Deuteronomy 18:10-11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 910,
+    "book": "Deuteronomy",
+    "question": "Deuteronomy 8:3 says man lives by...",
+    "options": [
+      "Every word that proceeds from the mouth of the Lord",
+      "Bread alone",
+      "Water and Spirit",
+      "Faith and works"
+    ],
+    "answer": "Every word that proceeds from the mouth of the Lord",
+    "reference": "Deuteronomy 8:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": 911,
+    "book": "Deuteronomy",
+    "question": "What did God show Moses from Mount Nebo?",
+    "options": [
+      "All the land of Gilead as far as Dan",
+      "The Temple",
+      "The future of Israel",
+      "The Garden of Eden"
+    ],
+    "answer": "All the land of Gilead as far as Dan",
+    "reference": "Deuteronomy 34:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 959,
+    "book": "Deuteronomy",
+    "question": "Deuteronomy 30:19 says, 'I have set before you life and death, blessing and cursing; therefore choose...'",
+    "options": [
+      "Life",
+      "Death",
+      "Wisdom",
+      "Righteousness"
+    ],
+    "answer": "Life",
+    "reference": "Deuteronomy 30:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 998,
+    "book": "Deuteronomy",
+    "question": "Who succeeded Moses?",
+    "options": [
+      "Joshua",
+      "Caleb",
+      "Aaron",
+      "Eleazar"
+    ],
+    "answer": "Joshua",
+    "reference": "Deuteronomy 34:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1401,
+    "book": "Deuteronomy",
+    "question": "What is the 'Great Commandment' found in Deuteronomy 6:5?",
+    "options": [
+      "Love the Lord your God with all your heart, soul, and strength",
+      "Love your neighbor as yourself",
+      "Do not steal",
+      "Keep the Sabbath holy"
+    ],
+    "answer": "Love the Lord your God with all your heart, soul, and strength",
+    "reference": "Deuteronomy 6:5",
+    "difficulty": "easy"
+  }
+]

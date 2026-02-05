@@ -1,0 +1,422 @@
+[
+  {
+    "id": 9,
+    "book": "Esther",
+    "question": "Who was the queen that saved her people from destruction?",
+    "options": [
+      "Ruth",
+      "Naomi",
+      "Esther",
+      "Sarah"
+    ],
+    "answer": "Esther",
+    "reference": "Esther 7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 56,
+    "book": "Esther",
+    "question": "Who was Esther's cousin/guardian who refused to bow to Haman?",
+    "options": [
+      "Mordecai",
+      "Xerxes",
+      "Haman",
+      "Cyrus"
+    ],
+    "answer": "Mordecai",
+    "reference": "Esther 3:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 127,
+    "book": "Esther",
+    "question": "On what structure was Haman executed?",
+    "options": [
+      "A cross",
+      "A gallows he built for Mordecai",
+      "A cliff",
+      "The city wall"
+    ],
+    "answer": "A gallows he built for Mordecai",
+    "reference": "Esther 7:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 174,
+    "book": "Esther",
+    "question": "What was Queen Esther's Hebrew name?",
+    "options": [
+      "Hadassah",
+      "Mara",
+      "Naomi",
+      "Orpah"
+    ],
+    "answer": "Hadassah",
+    "reference": "Esther 2:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 217,
+    "book": "Esther",
+    "question": "Who was the queen deposed before Esther?",
+    "options": [
+      "Vashti",
+      "Zeresh",
+      "Athaliah",
+      "Jezebel"
+    ],
+    "answer": "Vashti",
+    "reference": "Esther 1:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 249,
+    "book": "Esther",
+    "question": "Who was Haman's wife who advised him to build the gallows?",
+    "options": [
+      "Zeresh",
+      "Vashti",
+      "Esther",
+      "Gomer"
+    ],
+    "answer": "Zeresh",
+    "reference": "Esther 5:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 273,
+    "book": "Esther",
+    "question": "How many days did Esther ask the Jews to fast for her?",
+    "options": [
+      "3 days",
+      "7 days",
+      "40 days",
+      "1 day"
+    ],
+    "answer": "3 days",
+    "reference": "Esther 4:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": 274,
+    "book": "Esther",
+    "question": "What feast was established to celebrate the Jews' deliverance in Esther?",
+    "options": [
+      "Purim",
+      "Passover",
+      "Hanukkah",
+      "Pentecost"
+    ],
+    "answer": "Purim",
+    "reference": "Esther 9:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": 328,
+    "book": "Esther",
+    "question": "Why did Queen Vashti refuse to come to the King's banquet?",
+    "options": [
+      "To show off her beauty/crown to drunk men",
+      "She was sick",
+      "She was with her children",
+      "She was plotting against him"
+    ],
+    "answer": "To show off her beauty/crown to drunk men",
+    "reference": "Esther 1:11 (Implied context of refusal)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 377,
+    "book": "Esther",
+    "question": "What happened to the King that led him to read the chronicles and find Mordecai's deed?",
+    "options": [
+      "He could not sleep",
+      "He had a nightmare",
+      "He was drunk",
+      "Esther told him"
+    ],
+    "answer": "He could not sleep",
+    "reference": "Esther 6:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 423,
+    "book": "Esther",
+    "question": "Who was the king's eunuch in charge of the harem who favored Esther?",
+    "options": [
+      "Hegai",
+      "Bigthan",
+      "Teresh",
+      "Harbona"
+    ],
+    "answer": "Hegai",
+    "reference": "Esther 2:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 474,
+    "book": "Esther",
+    "question": "Haman was an Agagite, meaning he was likely a descendant of which enemy nation?",
+    "options": [
+      "Amalekites",
+      "Philistines",
+      "Assyrians",
+      "Babylonians"
+    ],
+    "answer": "Amalekites",
+    "reference": "Esther 3:1 (Context of Agag king of Amalek)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 522,
+    "book": "Esther",
+    "question": "How long did the feast of King Ahasuerus last?",
+    "options": [
+      "180 days",
+      "7 days",
+      "40 days",
+      "12 days"
+    ],
+    "answer": "180 days",
+    "reference": "Esther 1:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 572,
+    "book": "Esther",
+    "question": "From which tribe was Mordecai?",
+    "options": [
+      "Benjamin",
+      "Judah",
+      "Levi",
+      "Ephraim"
+    ],
+    "answer": "Benjamin",
+    "reference": "Esther 2:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 627,
+    "book": "Esther",
+    "question": "What was the name of Esther's father?",
+    "options": [
+      "Abihail",
+      "Mordecai",
+      "Kish",
+      "Shimei"
+    ],
+    "answer": "Abihail",
+    "reference": "Esther 2:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 677,
+    "book": "Esther",
+    "question": "What did Haman want to be done to the man the King delights to honor?",
+    "options": [
+      "Wear royal robes and ride the king's horse",
+      "Be given half the kingdom",
+      "Marry the king's daughter",
+      "Be made a general"
+    ],
+    "answer": "Wear royal robes and ride the king's horse",
+    "reference": "Esther 6:8-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 730,
+    "book": "Esther",
+    "question": "In which month is the feast of Purim celebrated?",
+    "options": [
+      "Adar",
+      "Nisan",
+      "Tishri",
+      "Sivan"
+    ],
+    "answer": "Adar",
+    "reference": "Esther 9:17",
+    "difficulty": "hard"
+  },
+  {
+    "id": 772,
+    "book": "Esther",
+    "question": "Who plotted to kill King Ahasuerus but was discovered by Mordecai?",
+    "options": [
+      "Bigthan and Teresh",
+      "Haman and Zeresh",
+      "Hegai and Shaashgaz",
+      "Memucan and Carshena"
+    ],
+    "answer": "Bigthan and Teresh",
+    "reference": "Esther 2:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 829,
+    "book": "Esther",
+    "question": "What was the name of the chamberlain who guarded the women?",
+    "options": [
+      "Hegai",
+      "Shaashgaz",
+      "Bigthan",
+      "Hatach"
+    ],
+    "answer": "Hegai",
+    "reference": "Esther 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 871,
+    "book": "Esther",
+    "question": "What was the name of the Jew who sat at the king's gate?",
+    "options": [
+      "Mordecai",
+      "Daniel",
+      "Ezra",
+      "Nehemiah"
+    ],
+    "answer": "Mordecai",
+    "reference": "Esther 2:19",
+    "difficulty": "easy"
+  },
+  {
+    "id": 929,
+    "book": "Esther",
+    "question": "How many provinces were in the kingdom of Ahasuerus?",
+    "options": [
+      "127",
+      "120",
+      "50",
+      "100"
+    ],
+    "answer": "127",
+    "reference": "Esther 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 971,
+    "book": "Esther",
+    "question": "Who was the villain who plotted to destroy the Jews?",
+    "options": [
+      "Haman",
+      "Mordecai",
+      "Ahasuerus",
+      "Bigthan"
+    ],
+    "answer": "Haman",
+    "reference": "Esther 3:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1421,
+    "book": "Esther",
+    "question": "Who was the king who held the golden scepter out to Esther?",
+    "options": [
+      "Ahasuerus (Xerxes)",
+      "Cyrus",
+      "Darius",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Ahasuerus (Xerxes)",
+    "reference": "Esther 5:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1422,
+    "book": "Esther",
+    "question": "What relation was Mordecai to Esther?",
+    "options": [
+      "Cousin",
+      "Uncle",
+      "Brother",
+      "Father"
+    ],
+    "answer": "Cousin",
+    "reference": "Esther 2:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1423,
+    "book": "Esther",
+    "question": "How high was the gallows Haman built for Mordecai?",
+    "options": [
+      "50 cubits",
+      "10 cubits",
+      "100 cubits",
+      "75 cubits"
+    ],
+    "answer": "50 cubits",
+    "reference": "Esther 5:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1424,
+    "book": "Esther",
+    "question": "What secret did Esther keep from the King initially?",
+    "options": [
+      "Her Jewish heritage",
+      "Her marriage to Mordecai",
+      "Her wealth",
+      "Her age"
+    ],
+    "answer": "Her Jewish heritage",
+    "reference": "Esther 2:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1425,
+    "book": "Esther",
+    "question": "What phrase did Mordecai use to encourage Esther to act?",
+    "options": [
+      "For such a time as this",
+      "Be strong and courageous",
+      "The Lord is with you",
+      "Let my people go"
+    ],
+    "answer": "For such a time as this",
+    "reference": "Esther 4:14",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1426,
+    "book": "Esther",
+    "question": "Who were the two eunuchs who plotted to kill the king, discovered by Mordecai?",
+    "options": [
+      "Bigthan and Teresh",
+      "Haman and Zeresh",
+      "Hegai and Shaashgaz",
+      "Memucan and Carshena"
+    ],
+    "answer": "Bigthan and Teresh",
+    "reference": "Esther 2:21",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1427,
+    "book": "Esther",
+    "question": "What was the name of Haman's wife?",
+    "options": [
+      "Zeresh",
+      "Vashti",
+      "Esther",
+      "Haggeth"
+    ],
+    "answer": "Zeresh",
+    "reference": "Esther 5:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1428,
+    "book": "Esther",
+    "question": "Why could the King not sleep on the night the tide turned for Mordecai?",
+    "options": [
+      "God kept him awake / It just happened",
+      "He was sick",
+      "He was drunk",
+      "The noise of the city"
+    ],
+    "answer": "God kept him awake / It just happened",
+    "reference": "Esther 6:1",
+    "difficulty": "medium"
+  }
+]

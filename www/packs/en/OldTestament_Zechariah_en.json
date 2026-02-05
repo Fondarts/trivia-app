@@ -1,0 +1,422 @@
+[
+  {
+    "id": 65,
+    "book": "Zechariah",
+    "question": "How did Zechariah say the King would come to Jerusalem?",
+    "options": [
+      "On a war horse",
+      "On a cloud",
+      "Riding on a donkey",
+      "In a chariot of fire"
+    ],
+    "answer": "Riding on a donkey",
+    "reference": "Zechariah 9:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 147,
+    "book": "Zechariah",
+    "question": "Complete the verse: 'Not by might nor by power, but by my...'",
+    "options": [
+      "Sword",
+      "Spirit",
+      "Hand",
+      "Word"
+    ],
+    "answer": "Spirit",
+    "reference": "Zechariah 4:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 191,
+    "book": "Zechariah",
+    "question": "In Zechariah's vision, who was standing before the Angel of the Lord in filthy clothes?",
+    "options": [
+      "Joshua the High Priest",
+      "Zerubbabel",
+      "Zechariah",
+      "David"
+    ],
+    "answer": "Joshua the High Priest",
+    "reference": "Zechariah 3:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": 238,
+    "book": "Zechariah",
+    "question": "What prophecy did Zechariah give about the shepherd?",
+    "options": [
+      "Strike the shepherd, and the sheep will be scattered",
+      "The shepherd will become a king",
+      "The shepherd will feed the wolves",
+      "The shepherd will sleep"
+    ],
+    "answer": "Strike the shepherd, and the sheep will be scattered",
+    "reference": "Zechariah 13:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 294,
+    "book": "Zechariah",
+    "question": "What flying object did Zechariah see in a vision?",
+    "options": [
+      "A flying scroll",
+      "A flying chariot",
+      "A flying eagle",
+      "A flying sword"
+    ],
+    "answer": "A flying scroll",
+    "reference": "Zechariah 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 295,
+    "book": "Zechariah",
+    "question": "Zechariah prophesied the Messiah would be betrayed for how much?",
+    "options": [
+      "30 pieces of silver",
+      "100 gold coins",
+      "A bag of wheat",
+      "A linen tunic"
+    ],
+    "answer": "30 pieces of silver",
+    "reference": "Zechariah 11:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 342,
+    "book": "Zechariah",
+    "question": "What did the angel tell Zechariah to put on Joshua the High Priest?",
+    "options": [
+      "A clean turban",
+      "A gold ring",
+      "A purple robe",
+      "Silver sandals"
+    ],
+    "answer": "A clean turban",
+    "reference": "Zechariah 3:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 398,
+    "book": "Zechariah",
+    "question": "Zechariah 12:10 says they will look on Him whom they have...",
+    "options": [
+      "Pierced",
+      "Rejected",
+      "Loved",
+      "Feared"
+    ],
+    "answer": "Pierced",
+    "reference": "Zechariah 12:10",
+    "difficulty": "hard"
+  },
+  {
+    "id": 444,
+    "book": "Zechariah",
+    "question": "What two trees stood by the lampstand in Zechariah's vision?",
+    "options": [
+      "Olive trees",
+      "Fig trees",
+      "Cedar trees",
+      "Palm trees"
+    ],
+    "answer": "Olive trees",
+    "reference": "Zechariah 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 491,
+    "book": "Zechariah",
+    "question": "What is the prophetic name for the Messiah found in Zechariah 3:8 and 6:12?",
+    "options": [
+      "The Branch",
+      "The Root",
+      "The Vine",
+      "The Seed"
+    ],
+    "answer": "The Branch",
+    "reference": "Zechariah 3:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 543,
+    "book": "Zechariah",
+    "question": "Zechariah prophesies that His feet will stand on which mountain, splitting it in two?",
+    "options": [
+      "Mount of Olives",
+      "Mount Zion",
+      "Mount Sinai",
+      "Mount Carmel"
+    ],
+    "answer": "Mount of Olives",
+    "reference": "Zechariah 14:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": 591,
+    "book": "Zechariah",
+    "question": "What did the four chariots in Zechariah's vision represent?",
+    "options": [
+      "The four spirits of heaven",
+      "The four winds",
+      "The four empires",
+      "The four seasons"
+    ],
+    "answer": "The four spirits of heaven",
+    "reference": "Zechariah 6:5",
+    "difficulty": "hard"
+  },
+  {
+    "id": 647,
+    "book": "Zechariah",
+    "question": "What colors were the horses in Zechariah's first vision?",
+    "options": [
+      "Red, Sorrel (Speckled), and White",
+      "Black, Red, Pale, White",
+      "Gold and Silver",
+      "Blue and Purple"
+    ],
+    "answer": "Red, Sorrel (Speckled), and White",
+    "reference": "Zechariah 1:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 697,
+    "book": "Zechariah",
+    "question": "In Zechariah 8:5, the streets of the city shall be full of...",
+    "options": [
+      "Boys and girls playing",
+      "Gold and silver",
+      "Soldiers",
+      "Merchants"
+    ],
+    "answer": "Boys and girls playing",
+    "reference": "Zechariah 8:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 754,
+    "book": "Zechariah",
+    "question": "In Zechariah 11, the prophet takes two staffs named...",
+    "options": [
+      "Beauty and Bonds (Grace and Union)",
+      "Rod and Staff",
+      "Law and Order",
+      "Shepherd and King"
+    ],
+    "answer": "Beauty and Bonds (Grace and Union)",
+    "reference": "Zechariah 11:7",
+    "difficulty": "hard"
+  },
+  {
+    "id": 793,
+    "book": "Zechariah",
+    "question": "In Zechariah 4:10, who has despised the day of...",
+    "options": [
+      "Small things",
+      "Great things",
+      "New beginnings",
+      "Judgment"
+    ],
+    "answer": "Small things",
+    "reference": "Zechariah 4:10",
+    "difficulty": "easy"
+  },
+  {
+    "id": 853,
+    "book": "Zechariah",
+    "question": "In Zechariah 5, what did the woman sitting in the basket represent?",
+    "options": [
+      "Wickedness",
+      "Israel",
+      "Babylon",
+      "Wisdom"
+    ],
+    "answer": "Wickedness",
+    "reference": "Zechariah 5:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 892,
+    "book": "Zechariah",
+    "question": "Zechariah 9:9 says the King is coming having...",
+    "options": [
+      "Salvation",
+      "Great wealth",
+      "A large army",
+      "A sword"
+    ],
+    "answer": "Salvation",
+    "reference": "Zechariah 9:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 953,
+    "book": "Zechariah",
+    "question": "Zechariah 4:6 says, 'Not by might nor by power, but by...'",
+    "options": [
+      "My Spirit",
+      "My Sword",
+      "My Word",
+      "My Love"
+    ],
+    "answer": "My Spirit",
+    "reference": "Zechariah 4:6",
+    "difficulty": "easy"
+  },
+  {
+    "id": 992,
+    "book": "Zechariah",
+    "question": "Zechariah 9:9 says the King is coming riding on a...",
+    "options": [
+      "Donkey",
+      "Horse",
+      "Chariot",
+      "Camel"
+    ],
+    "answer": "Donkey",
+    "reference": "Zechariah 9:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1091,
+    "book": "Zechariah",
+    "question": "What did Zechariah see measuring Jerusalem?",
+    "options": [
+      "A man with a measuring line",
+      "An angel with a rod",
+      "A carpenter",
+      "A priest"
+    ],
+    "answer": "A man with a measuring line",
+    "reference": "Zechariah 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1092,
+    "book": "Zechariah",
+    "question": "In Zechariah 2:8, he who touches you touches the...",
+    "options": [
+      "Apple of His eye",
+      "Hem of His garment",
+      "Heart of God",
+      "Throne of Grace"
+    ],
+    "answer": "Apple of His eye",
+    "reference": "Zechariah 2:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1093,
+    "book": "Zechariah",
+    "question": "What was carved on the stone set before Joshua the high priest?",
+    "options": [
+      "Seven eyes",
+      "Ten commandments",
+      "The name of God",
+      "A lion"
+    ],
+    "answer": "Seven eyes",
+    "reference": "Zechariah 3:9",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1094,
+    "book": "Zechariah",
+    "question": "What did Zechariah see flying that represented a curse?",
+    "options": [
+      "A flying scroll",
+      "A flying sword",
+      "A flying chariot",
+      "A flying eagle"
+    ],
+    "answer": "A flying scroll",
+    "reference": "Zechariah 5:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1095,
+    "book": "Zechariah",
+    "question": "Zechariah 8:23 says ten men from every language will grasp the...",
+    "options": [
+      "Sleeve/Robe of a Jew",
+      "Gates of Jerusalem",
+      "Altar",
+      "Sword of the Lord"
+    ],
+    "answer": "Sleeve/Robe of a Jew",
+    "reference": "Zechariah 8:23",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1096,
+    "book": "Zechariah",
+    "question": "Zechariah 11:13 mentions 30 pieces of silver thrown to the...",
+    "options": [
+      "Potter",
+      "Priest",
+      "Poor",
+      "Merchant"
+    ],
+    "answer": "Potter",
+    "reference": "Zechariah 11:13",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1097,
+    "book": "Zechariah",
+    "question": "In Zechariah 12:10, they will look on Me whom they...",
+    "options": [
+      "Pierced",
+      "Rejected",
+      "Loved",
+      "Denied"
+    ],
+    "answer": "Pierced",
+    "reference": "Zechariah 12:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1098,
+    "book": "Zechariah",
+    "question": "Zechariah 13:1 speaks of a fountain opened for...",
+    "options": [
+      "Sin and uncleanness",
+      "The thirsty",
+      "Healing",
+      "Baptism"
+    ],
+    "answer": "Sin and uncleanness",
+    "reference": "Zechariah 13:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1099,
+    "book": "Zechariah",
+    "question": "Zechariah 14:4 says the Mount of Olives shall...",
+    "options": [
+      "Split in two",
+      "Burn with fire",
+      "Rise up",
+      "Sink"
+    ],
+    "answer": "Split in two",
+    "reference": "Zechariah 14:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1100,
+    "book": "Zechariah",
+    "question": "What will be inscribed on the bells of the horses in that day?",
+    "options": [
+      "Holiness to the Lord",
+      "Victory to God",
+      "Peace on Earth",
+      "The Lord Reigns"
+    ],
+    "answer": "Holiness to the Lord",
+    "reference": "Zechariah 14:20",
+    "difficulty": "hard"
+  }
+]

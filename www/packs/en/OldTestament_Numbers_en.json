@@ -1,0 +1,548 @@
+[
+  {
+    "id": 5,
+    "book": "Numbers",
+    "question": "Whose donkey spoke to him?",
+    "options": [
+      "Balaam",
+      "Moses",
+      "Aaron",
+      "Joshua"
+    ],
+    "answer": "Balaam",
+    "reference": "Numbers 22:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": 37,
+    "book": "Numbers",
+    "question": "How many spies were sent to explore Canaan?",
+    "options": [
+      "2",
+      "10",
+      "12",
+      "70"
+    ],
+    "answer": "12",
+    "reference": "Numbers 13:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 44,
+    "book": "Numbers",
+    "question": "What did God instruct Moses to make to heal the people from snake bites?",
+    "options": [
+      "A Bronze Serpent",
+      "A Holy Anointing Oil",
+      "A Golden Shield",
+      "A Special Herb"
+    ],
+    "answer": "A Bronze Serpent",
+    "reference": "Numbers 21:8-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": 107,
+    "book": "Numbers",
+    "question": "Who led a rebellion against Moses and was swallowed by the earth?",
+    "options": [
+      "Korah",
+      "Dathan",
+      "Abiram",
+      "Zimri"
+    ],
+    "answer": "Korah",
+    "reference": "Numbers 16:32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 108,
+    "book": "Numbers",
+    "question": "What happened to Aaron's rod to show God had chosen him?",
+    "options": [
+      "It turned into a snake",
+      "It budded and produced almonds",
+      "It glowed with fire",
+      "It turned to gold"
+    ],
+    "answer": "It budded and produced almonds",
+    "reference": "Numbers 17:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 155,
+    "book": "Numbers",
+    "question": "Why did Miriam become leprous for seven days?",
+    "options": [
+      "She touched a dead body",
+      "She criticized Moses",
+      "She stole from the offering",
+      "She refused to march"
+    ],
+    "answer": "She criticized Moses",
+    "reference": "Numbers 12:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": 156,
+    "book": "Numbers",
+    "question": "What animal spoke to the prophet Balaam?",
+    "options": [
+      "A lion",
+      "A donkey",
+      "A sheep",
+      "A camel"
+    ],
+    "answer": "A donkey",
+    "reference": "Numbers 22:28",
+    "difficulty": "easy"
+  },
+  {
+    "id": 196,
+    "book": "Numbers",
+    "question": "Who was the king of Moab who hired Balaam to curse Israel?",
+    "options": [
+      "Balak",
+      "Sihon",
+      "Og",
+      "Eglon"
+    ],
+    "answer": "Balak",
+    "reference": "Numbers 22:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 205,
+    "book": "Numbers",
+    "question": "Who were the five sisters that asked for their father's inheritance?",
+    "options": [
+      "The daughters of Zelophehad",
+      "The daughters of Job",
+      "The daughters of Lot",
+      "The daughters of Laban"
+    ],
+    "answer": "The daughters of Zelophehad",
+    "reference": "Numbers 27:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 242,
+    "book": "Numbers",
+    "question": "What did the spies carry back from the Valley of Eshcol?",
+    "options": [
+      "A single cluster of grapes",
+      "Gold",
+      "Weapons",
+      "Nothing"
+    ],
+    "answer": "A single cluster of grapes",
+    "reference": "Numbers 13:23",
+    "difficulty": "medium"
+  },
+  {
+    "id": 255,
+    "book": "Numbers",
+    "question": "Why was Moses barred from entering the Promised Land?",
+    "options": [
+      "He struck the rock twice instead of speaking to it",
+      "He made a golden calf",
+      "He was too old",
+      "He refused to fight"
+    ],
+    "answer": "He struck the rock twice instead of speaking to it",
+    "reference": "Numbers 20:11-12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 307,
+    "book": "Numbers",
+    "question": "How many times did Balaam beat his donkey before it spoke?",
+    "options": [
+      "Three times",
+      "Seven times",
+      "Once",
+      "Five times"
+    ],
+    "answer": "Three times",
+    "reference": "Numbers 22:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": 308,
+    "book": "Numbers",
+    "question": "Who was the King of the Amorites defeated by Israel?",
+    "options": [
+      "Sihon",
+      "Og",
+      "Balak",
+      "Agag"
+    ],
+    "answer": "Sihon",
+    "reference": "Numbers 21:21-24",
+    "difficulty": "hard"
+  },
+  {
+    "id": 357,
+    "book": "Numbers",
+    "question": "What was the minimum age for a man to be counted in the census for the army?",
+    "options": [
+      "20 years old",
+      "18 years old",
+      "25 years old",
+      "30 years old"
+    ],
+    "answer": "20 years old",
+    "reference": "Numbers 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 358,
+    "book": "Numbers",
+    "question": "What special vow involved not cutting hair, not drinking wine, and not touching dead bodies?",
+    "options": [
+      "Nazirite Vow",
+      "Levitical Vow",
+      "Priestly Vow",
+      "Rechabite Vow"
+    ],
+    "answer": "Nazirite Vow",
+    "reference": "Numbers 6:2-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": 407,
+    "book": "Numbers",
+    "question": "What happened to the man who was found gathering sticks on the Sabbath?",
+    "options": [
+      "He was stoned to death",
+      "He was exiled",
+      "He was fined",
+      "He was forgiven"
+    ],
+    "answer": "He was stoned to death",
+    "reference": "Numbers 15:32-36",
+    "difficulty": "hard"
+  },
+  {
+    "id": 408,
+    "book": "Numbers",
+    "question": "Who were the two men who prophesied in the camp when the Spirit rested on them?",
+    "options": [
+      "Eldad and Medad",
+      "Nadab and Abihu",
+      "Joshua and Caleb",
+      "Dathan and Abiram"
+    ],
+    "answer": "Eldad and Medad",
+    "reference": "Numbers 11:26",
+    "difficulty": "hard"
+  },
+  {
+    "id": 457,
+    "book": "Numbers",
+    "question": "What specific animal's ashes were used for the water of cleansing?",
+    "options": [
+      "A red heifer",
+      "A white lamb",
+      "A scapegoat",
+      "A turtledove"
+    ],
+    "answer": "A red heifer",
+    "reference": "Numbers 19:2",
+    "difficulty": "hard"
+  },
+  {
+    "id": 458,
+    "book": "Numbers",
+    "question": "To what did the ten fearful spies compare themselves when they saw the giants in Canaan?",
+    "options": [
+      "Grasshoppers",
+      "Ants",
+      "Dogs",
+      "Worms"
+    ],
+    "answer": "Grasshoppers",
+    "reference": "Numbers 13:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 506,
+    "book": "Numbers",
+    "question": "What did the Israelites complain about that caused God to send 'fire from the Lord' at Taberah?",
+    "options": [
+      "Their hardships",
+      "Lack of water",
+      "Leadership of Moses",
+      "Fear of giants"
+    ],
+    "answer": "Their hardships",
+    "reference": "Numbers 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 548,
+    "book": "Numbers",
+    "question": "Who was the King of Bashan defeated by the Israelites?",
+    "options": [
+      "Og",
+      "Sihon",
+      "Balak",
+      "Agag"
+    ],
+    "answer": "Og",
+    "reference": "Numbers 21:33",
+    "difficulty": "medium"
+  },
+  {
+    "id": 556,
+    "book": "Numbers",
+    "question": "How was the prophet Balaam eventually killed?",
+    "options": [
+      "By the sword of Israel",
+      "By a donkey kicking him",
+      "By old age",
+      "By lightning"
+    ],
+    "answer": "By the sword of Israel",
+    "reference": "Numbers 31:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 597,
+    "book": "Numbers",
+    "question": "What report did the ten spies bring back about the land?",
+    "options": [
+      "A bad report (devours its inhabitants)",
+      "A good report",
+      "No report",
+      "A mixed report"
+    ],
+    "answer": "A bad report (devours its inhabitants)",
+    "reference": "Numbers 13:32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 607,
+    "book": "Numbers",
+    "question": "Which two tribes asked Moses for the land on the east side of the Jordan?",
+    "options": [
+      "Reuben and Gad",
+      "Judah and Simeon",
+      "Ephraim and Manasseh",
+      "Dan and Naphtali"
+    ],
+    "answer": "Reuben and Gad",
+    "reference": "Numbers 32:1-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": 608,
+    "book": "Numbers",
+    "question": "Who succeeded Eleazar as the High Priest?",
+    "options": [
+      "Phinehas",
+      "Ithamar",
+      "Zadok",
+      "Eli"
+    ],
+    "answer": "Phinehas",
+    "reference": "Numbers 25:11-13 (Context)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 657,
+    "book": "Numbers",
+    "question": "Why did Miriam and Aaron speak against Moses in Numbers 12?",
+    "options": [
+      "Because he married a Cushite/Ethiopian woman",
+      "Because he struck the rock",
+      "Because he took too much money",
+      "Because he refused to eat"
+    ],
+    "answer": "Because he married a Cushite/Ethiopian woman",
+    "reference": "Numbers 12:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 658,
+    "book": "Numbers",
+    "question": "What did Moses make the people drink after destroying the Golden Calf?",
+    "options": [
+      "Water mixed with the gold powder",
+      "Bitter water",
+      "Wine",
+      "Blood"
+    ],
+    "answer": "Water mixed with the gold powder",
+    "reference": "Exodus 32:20 (and Deut 9:21)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 708,
+    "book": "Numbers",
+    "question": "What was the name of the mountain where Aaron died?",
+    "options": [
+      "Mount Hor",
+      "Mount Sinai",
+      "Mount Nebo",
+      "Mount Zion"
+    ],
+    "answer": "Mount Hor",
+    "reference": "Numbers 20:22-24",
+    "difficulty": "medium"
+  },
+  {
+    "id": 709,
+    "book": "Numbers",
+    "question": "Who was the King of Arad who fought against Israel?",
+    "options": [
+      "The Canaanite",
+      "The Amorite",
+      "The Moabite",
+      "The Philistine"
+    ],
+    "answer": "The Canaanite",
+    "reference": "Numbers 21:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 759,
+    "book": "Numbers",
+    "question": "Who was the father of Zelophehad?",
+    "options": [
+      "Hepher",
+      "Gilead",
+      "Machir",
+      "Manasseh"
+    ],
+    "answer": "Hepher",
+    "reference": "Numbers 27:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 798,
+    "book": "Numbers",
+    "question": "Which tribe was assigned the position on the East side of the Tabernacle (the front)?",
+    "options": [
+      "Judah",
+      "Ephraim",
+      "Dan",
+      "Reuben"
+    ],
+    "answer": "Judah",
+    "reference": "Numbers 2:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 808,
+    "book": "Numbers",
+    "question": "How many altars did Balak build for Balaam?",
+    "options": [
+      "Seven",
+      "Three",
+      "Twelve",
+      "One"
+    ],
+    "answer": "Seven",
+    "reference": "Numbers 23:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 809,
+    "book": "Numbers",
+    "question": "Who was the father of Cozbi, the Midianite woman killed by Phinehas?",
+    "options": [
+      "Zur",
+      "Balak",
+      "Sihon",
+      "Reuel"
+    ],
+    "answer": "Zur",
+    "reference": "Numbers 25:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": 858,
+    "book": "Numbers",
+    "question": "What did the Israelites use to signal the camp to move?",
+    "options": [
+      "Two silver trumpets",
+      "A ram's horn",
+      "A drum",
+      "A fire signal"
+    ],
+    "answer": "Two silver trumpets",
+    "reference": "Numbers 10:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 897,
+    "book": "Numbers",
+    "question": "Who was the High Priest when the Israelites entered Canaan?",
+    "options": [
+      "Eleazar",
+      "Aaron",
+      "Phinehas",
+      "Joshua"
+    ],
+    "answer": "Eleazar",
+    "reference": "Joshua 14:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 908,
+    "book": "Numbers",
+    "question": "What was the name of the place where the earth opened up to swallow Korah?",
+    "options": [
+      "It happened in the camp (no specific name given)",
+      "Kibroth Hattaavah",
+      "Taberah",
+      "Hormah"
+    ],
+    "answer": "It happened in the camp (no specific name given)",
+    "reference": "Numbers 16:27-32",
+    "difficulty": "medium"
+  },
+  {
+    "id": 909,
+    "book": "Numbers",
+    "question": "Who was the father of Joshua?",
+    "options": [
+      "Nun",
+      "Caleb",
+      "Jephunneh",
+      "Amram"
+    ],
+    "answer": "Nun",
+    "reference": "Numbers 13:16",
+    "difficulty": "easy"
+  },
+  {
+    "id": 958,
+    "book": "Numbers",
+    "question": "What happened to Aaron's rod in Numbers 17?",
+    "options": [
+      "It budded, blossomed, and yielded almonds",
+      "It turned into a snake",
+      "It broke",
+      "It caught fire"
+    ],
+    "answer": "It budded, blossomed, and yielded almonds",
+    "reference": "Numbers 17:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 997,
+    "book": "Numbers",
+    "question": "Who was the prophet who had a talking donkey?",
+    "options": [
+      "Balaam",
+      "Balak",
+      "Moses",
+      "Aaron"
+    ],
+    "answer": "Balaam",
+    "reference": "Numbers 22:28",
+    "difficulty": "easy"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "id": 64,
+    "book": "Micah",
+    "question": "Which town did Micah prophesy would be the birthplace of the Messiah?",
+    "options": [
+      "Nazareth",
+      "Jerusalem",
+      "Bethlehem",
+      "Hebron"
+    ],
+    "answer": "Bethlehem",
+    "reference": "Micah 5:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 93,
+    "book": "Micah",
+    "question": "What does the Lord require of man according to Micah 6:8?",
+    "options": [
+      "Sacrifice and fasting",
+      "To act justly, love mercy, and walk humbly",
+      "To build a temple",
+      "To conquer nations"
+    ],
+    "answer": "To act justly, love mercy, and walk humbly",
+    "reference": "Micah 6:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 145,
+    "book": "Micah",
+    "question": "Micah prophesied that nations would beat their swords into...",
+    "options": [
+      "Shields",
+      "Plowshares",
+      "Spears",
+      "Crowns"
+    ],
+    "answer": "Plowshares",
+    "reference": "Micah 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 233,
+    "book": "Micah",
+    "question": "Micah asks, 'Who is a God like you, who...?'",
+    "options": [
+      "Pardons iniquity/sin",
+      "Controls the thunder",
+      "Created the stars",
+      "Destroys the wicked"
+    ],
+    "answer": "Pardons iniquity/sin",
+    "reference": "Micah 7:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": 290,
+    "book": "Micah",
+    "question": "Which other prophet was a contemporary of Micah?",
+    "options": [
+      "Isaiah",
+      "Elijah",
+      "Samuel",
+      "Daniel"
+    ],
+    "answer": "Isaiah",
+    "reference": "Micah 1:1 (Contextual history)",
+    "difficulty": "hard"
+  },
+  {
+    "id": 341,
+    "book": "Micah",
+    "question": "Micah prophesied that Zion would be plowed like a...",
+    "options": [
+      "Field",
+      "Garden",
+      "Vineyard",
+      "Road"
+    ],
+    "answer": "Field",
+    "reference": "Micah 3:12",
+    "difficulty": "hard"
+  },
+  {
+    "id": 393,
+    "book": "Micah",
+    "question": "Micah says God will cast all our sins into...",
+    "options": [
+      "The depths of the sea",
+      "A bottomless pit",
+      "The fire",
+      "The wilderness"
+    ],
+    "answer": "The depths of the sea",
+    "reference": "Micah 7:19",
+    "difficulty": "medium"
+  },
+  {
+    "id": 486,
+    "book": "Micah",
+    "question": "Micah 4:1 says the 'mountain of the house of the Lord' shall be...",
+    "options": [
+      "Established as the highest of the mountains",
+      "Cast into the sea",
+      "Burned with fire",
+      "Hidden in the clouds"
+    ],
+    "answer": "Established as the highest of the mountains",
+    "reference": "Micah 4:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 538,
+    "book": "Micah",
+    "question": "Which animal represents God's forgiveness in Micah 7 (trampling sins)?",
+    "options": [
+      "It is not an animal, but God himself",
+      "A lion",
+      "A scapegoat",
+      "A lamb"
+    ],
+    "answer": "It is not an animal, but God himself",
+    "reference": "Micah 7:19 (He will trample our iniquities)",
+    "difficulty": "medium"
+  },
+  {
+    "id": 586,
+    "book": "Micah",
+    "question": "Micah prophesied that the 'Remnant of Jacob' would be in the midst of many peoples like...",
+    "options": [
+      "Dew from the Lord",
+      "A lion among beasts",
+      "Both of these",
+      "Neither of these"
+    ],
+    "answer": "Both of these",
+    "reference": "Micah 5:7-8",
+    "difficulty": "hard"
+  },
+  {
+    "id": 642,
+    "book": "Micah",
+    "question": "From where did Micah say the Ruler in Israel would come?",
+    "options": [
+      "Bethlehem Ephrathah",
+      "Jerusalem",
+      "Nazareth",
+      "Galilee"
+    ],
+    "answer": "Bethlehem Ephrathah",
+    "reference": "Micah 5:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 692,
+    "book": "Micah",
+    "question": "What will happen to the idols of Samaria according to Micah 1:7?",
+    "options": [
+      "They will be smashed to pieces",
+      "They will be burned",
+      "They will be buried",
+      "They will be stolen"
+    ],
+    "answer": "They will be smashed to pieces",
+    "reference": "Micah 1:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 749,
+    "book": "Micah",
+    "question": "In Micah 6:6, the prophet asks if he should come before the Lord with...",
+    "options": [
+      "Burnt offerings and calves",
+      "Gold and silver",
+      "Thousands of rams",
+      "Rivers of oil"
+    ],
+    "answer": "Burnt offerings and calves",
+    "reference": "Micah 6:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 788,
+    "book": "Micah",
+    "question": "Micah 3:8 says he is full of power by the...",
+    "options": [
+      "Spirit of the Lord",
+      "Word of God",
+      "Strength of his hand",
+      "Wisdom of ages"
+    ],
+    "answer": "Spirit of the Lord",
+    "reference": "Micah 3:8",
+    "difficulty": "medium"
+  },
+  {
+    "id": 848,
+    "book": "Micah",
+    "question": "Micah 7:7 says: 'Therefore I will look to the Lord; I will wait for the God of my...'",
+    "options": [
+      "Salvation",
+      "Strength",
+      "Hope",
+      "Peace"
+    ],
+    "answer": "Salvation",
+    "reference": "Micah 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": 887,
+    "book": "Micah",
+    "question": "Micah 6:8 says to walk ______ with your God.",
+    "options": [
+      "Humbly",
+      "Boldly",
+      "Wisely",
+      "Softly"
+    ],
+    "answer": "Humbly",
+    "reference": "Micah 6:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 948,
+    "book": "Micah",
+    "question": "Micah 4:3 says nation shall not lift up sword against nation, neither shall they learn...",
+    "options": [
+      "War anymore",
+      "Hate anymore",
+      "Sin anymore",
+      "Fear anymore"
+    ],
+    "answer": "War anymore",
+    "reference": "Micah 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 987,
+    "book": "Micah",
+    "question": "Micah 5:2 prophesies the birth of the Ruler in...",
+    "options": [
+      "Bethlehem",
+      "Jerusalem",
+      "Nazareth",
+      "Hebron"
+    ],
+    "answer": "Bethlehem",
+    "reference": "Micah 5:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1522,
+    "book": "Micah",
+    "question": "Micah prophesied during the reigns of which kings?",
+    "options": [
+      "Jotham, Ahaz, and Hezekiah",
+      "Uzziah, Jotham, Ahaz",
+      "Hezekiah, Manasseh, Amon",
+      "David, Solomon, Rehoboam"
+    ],
+    "answer": "Jotham, Ahaz, and Hezekiah",
+    "reference": "Micah 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": 1523,
+    "book": "Micah",
+    "question": "Micah 1:3 says the Lord is coming out of His place and will tread on the...",
+    "options": [
+      "High places of the earth",
+      "Clouds",
+      "Enemies",
+      "Sea"
+    ],
+    "answer": "High places of the earth",
+    "reference": "Micah 1:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1524,
+    "book": "Micah",
+    "question": "Woe to those who devise iniquity on their...",
+    "options": [
+      "Beds",
+      "Thrones",
+      "Altars",
+      "Roofs"
+    ],
+    "answer": "Beds",
+    "reference": "Micah 2:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1525,
+    "book": "Micah",
+    "question": "Micah 3:11 says the priests teach for...",
+    "options": [
+      "Pay",
+      "Truth",
+      "Nothing",
+      "The King"
+    ],
+    "answer": "Pay",
+    "reference": "Micah 3:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1526,
+    "book": "Micah",
+    "question": "Therefore because of you Zion shall be plowed like a...",
+    "options": [
+      "Field",
+      "Garden",
+      "Vineyard",
+      "Road"
+    ],
+    "answer": "Field",
+    "reference": "Micah 3:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1527,
+    "book": "Micah",
+    "question": "They shall beat their swords into plowshares, and their spears into...",
+    "options": [
+      "Pruning hooks",
+      "Scythes",
+      "Shields",
+      "Axes"
+    ],
+    "answer": "Pruning hooks",
+    "reference": "Micah 4:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1528,
+    "book": "Micah",
+    "question": "Everyone shall sit under his vine and under his...",
+    "options": [
+      "Fig tree",
+      "Olive tree",
+      "Roof",
+      "Tent"
+    ],
+    "answer": "Fig tree",
+    "reference": "Micah 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1529,
+    "book": "Micah",
+    "question": "But you, Bethlehem Ephrathah, out of you shall come forth...",
+    "options": [
+      "The Ruler in Israel",
+      "A mighty warrior",
+      "A great prophet",
+      "The riches of nations"
+    ],
+    "answer": "The Ruler in Israel",
+    "reference": "Micah 5:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1530,
+    "book": "Micah",
+    "question": "What does the Lord require of you? To do justly, to love mercy, and to...",
+    "options": [
+      "Walk humbly with your God",
+      "Sacrifice daily",
+      "Pray without ceasing",
+      "Build His temple"
+    ],
+    "answer": "Walk humbly with your God",
+    "reference": "Micah 6:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1531,
+    "book": "Micah",
+    "question": "A man's enemies are the men of his own...",
+    "options": [
+      "House/Household",
+      "City",
+      "Tribe",
+      "Army"
+    ],
+    "answer": "House/Household",
+    "reference": "Micah 7:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": 1532,
+    "book": "Micah",
+    "question": "Do not rejoice over me, my enemy; when I fall, I will...",
+    "options": [
+      "Arise",
+      "Fight",
+      "Cry",
+      "Sleep"
+    ],
+    "answer": "Arise",
+    "reference": "Micah 7:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1533,
+    "book": "Micah",
+    "question": "You will cast all our sins into the...",
+    "options": [
+      "Depths of the sea",
+      "Fire",
+      "Wilderness",
+      "Clouds"
+    ],
+    "answer": "Depths of the sea",
+    "reference": "Micah 7:19",
+    "difficulty": "medium"
+  }
+]

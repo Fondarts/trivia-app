@@ -14,21 +14,13 @@ const defaultStats = {
   questionsCorrect: 0,
   totalGamesPlayed: 0,
   soloGamesPlayed: 0,
-  timedGamesPlayed: 0,
-  winStreak: 0,
-  bestWinStreak: 0,
   currentCorrectStreak: 0,
   longestCorrectStreak: 0,
   perfectGames: 0,
   lastPlayDate: null,
   consecutiveDaysPlayed: 1,
   correctByCategory: {
-    movies: 0,
-    geography: 0,
-    history: 0,
-    science: 0,
-    sports: 0,
-    culture: 0,
+    bible: 0,
   }
 };
 
@@ -137,13 +129,6 @@ export async function trackEvent(eventName, data = {}) {
             stats.perfectGames++;
         }
         if (data.mode === 'solo') stats.soloGamesPlayed++;
-        if (data.mode === 'timed') stats.timedGamesPlayed++;
-        if (data.won) {
-            stats.winStreak++;
-            if (stats.winStreak > stats.bestWinStreak) stats.bestWinStreak = stats.winStreak;
-        } else {
-            stats.winStreak = 0;
-        }
         break;
   }
   
@@ -152,16 +137,6 @@ export async function trackEvent(eventName, data = {}) {
   const leveledUp = stats.level > oldLevel;
   
   saveStats(stats);
-
-  // Intentar sincronizar con el servidor
-  try {
-    if (window.syncProfileToCloud && typeof window.syncProfileToCloud === 'function') {
-      window.syncProfileToCloud();
-    }
-  } catch (err) {
-    // Si falla, solo guardar localmente (ya está hecho arriba)
-
-  }
 
   const newAchievements = await checkForNewAchievements(stats);
   return { newAchievements, leveledUp, bonusToast };
@@ -181,24 +156,6 @@ async function checkForNewAchievements(currentStats) {
         newlyUnlocked.push(achievement);
         saveUnlockedAchievement(achievement.id);
         
-        // Guardar en Supabase si está disponible
-        if (window.supabaseClient && window.getCurrentUser) {
-          try {
-            const user = window.getCurrentUser();
-            if (user && !user.isGuest) {
-              await window.supabaseClient
-                .from('user_achievements')
-                .insert({
-                  user_id: user.id,
-                  achievement_id: achievement.id
-                })
-                .select();
-
-            }
-          } catch (error) {
-
-          }
-        }
       }
     }
   }

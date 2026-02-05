@@ -1,15 +1,11 @@
 import { SETTINGS, persistSettings } from '../core/store.js';
-import { getBank, getBankCount, warmLocalBank, PACKS_BASE, SUPPORTED_LANGS, getBooksInFilePack } from './bank.js';
+import { getBank, warmLocalBank, PACKS_BASE, SUPPORTED_LANGS, getBooksInFilePack } from './bank.js';
 import { getStats, getUnlockedAchievements } from '../player/stats.js';
 import { getLevelProgress } from '../player/experience.js';
 import { ACHIEVEMENTS_LIST } from '../player/achievements.js';
 import { t, setLanguage, getLanguage, initI18n, updateUI as updateI18nUI } from '../core/i18n.js';
 import { populateBibleBookSelector } from './bible-study.js';
 
-export function updateBankCount(){
-  // Esta función ya no se usa para mostrar el badge en la página principal
-  // Se mantiene por compatibilidad pero no hace nada visible
-}
 
 export function toast(msg){
   const el = document.getElementById('toast') || (()=> {
@@ -39,31 +35,20 @@ export function updatePlayerXPBar() {
     if (profileXpBar) profileXpBar.style.width = `${progressPercent}%`;
     if (profileXpText) profileXpText.textContent = `${currentLevelXP} / ${xpForNextLevel} XP`;
     
-    // Actualizar info del banco en el perfil con formato Base: X + Y packs
+    // Actualizar info del banco en el perfil
     if (profileBankInfo) {
         const bankObj = getBank();
-        let baseCount = 0;
-        let packCount = 0;
+        let totalCount = 0;
         
-        // Contar preguntas base y de packs
+        // Contar todas las preguntas
         Object.entries(bankObj).forEach(([category, questions]) => {
             if (questions && Array.isArray(questions)) {
-                questions.forEach(q => {
-                    if (q && q.packId) {
-                        packCount++;
-                    } else {
-                        baseCount++;
-                    }
-                });
+                totalCount += questions.length;
             }
         });
         
         // Formatear texto
-        if (packCount > 0) {
-            profileBankInfo.textContent = `${t('base')}: ${baseCount} + ${packCount}`;
-        } else {
-            profileBankInfo.textContent = `${t('base')}: ${baseCount}`;
-        }
+        profileBankInfo.textContent = `${totalCount} ${t('questions') || 'preguntas'}`;
     }
 }
 
@@ -424,44 +409,6 @@ export async function refreshCategorySelect(){
 
     }
 
-    // Grupo packs instalados (si hay)
-    try {
-      const meta = JSON.parse(localStorage.getItem('trivia_owned_packs_meta') || '{}');
-      const bankObj = getBank();
-      const ids = new Set();
-      Object.values(bankObj).forEach(arr => (arr||[]).forEach(q => { if (q && q.packId) ids.add(q.packId); }));
-      const packs = Array.from(ids).map(id => ({ id, title: (meta[id] && meta[id].title) ? meta[id].title : id }));
-      if (packs.length){
-        const g = document.createElement('optgroup'); g.label = 'Packs instalados';
-        packs.forEach(p=>{
-          const o = document.createElement('option');
-          o.value = `pack:${p.id}`;
-          o.textContent = p.title;
-          g.appendChild(o);
-        });
-        sel.appendChild(g);
-      }
-    } catch(e) {
-
-    }
-
-    // Grupo packs creados por el usuario (si hay)
-    try {
-      const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
-      if (userPacks.length > 0) {
-        const g = document.createElement('optgroup');
-        g.label = 'Packs Personalizados';
-        userPacks.forEach((pack, index) => {
-          const o = document.createElement('option');
-          o.value = `userpack:${index}`;
-          o.textContent = pack.name || `Pack ${index + 1}`;
-          g.appendChild(o);
-        });
-        sel.appendChild(g);
-      }
-    } catch(e) {
-
-    }
   } catch (e) {
 
     // Fallback absoluto si algo explota (solo opción todas)
@@ -534,73 +481,18 @@ export function updateRoundsSelectorForCategory() {
   const roundsSel = document.getElementById('rounds');
   if (!categorySel || !roundsSel) return;
   
-  const selectedCategory = categorySel.value;
-  
-  // Si es un pack personalizado, leer la cantidad de preguntas
-  if (selectedCategory && selectedCategory.startsWith('userpack:')) {
-    try {
-      const packIndex = parseInt(selectedCategory.slice(9), 10);
-      const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
-      const pack = userPacks[packIndex];
-      
-      if (pack && pack.questions && Array.isArray(pack.questions)) {
-        const maxQuestions = pack.questions.length;
-        
-        // Guardar el valor actual si es válido
-        const currentValue = parseInt(roundsSel.value, 10);
-        
-        // Limpiar opciones existentes
-        roundsSel.innerHTML = '';
-        
-        // Agregar opciones hasta el máximo disponible
-        const availableOptions = [5, 15, 30].filter(n => n <= maxQuestions);
-        
-        // Si no hay opciones estándar que funcionen, agregar la cantidad exacta
-        if (availableOptions.length === 0 && maxQuestions > 0) {
-          const option = document.createElement('option');
-          option.value = maxQuestions.toString();
-          option.textContent = maxQuestions.toString();
-          option.selected = true;
-          roundsSel.appendChild(option);
-        } else {
-          availableOptions.forEach(n => {
-            const option = document.createElement('option');
-            option.value = n.toString();
-            option.textContent = n.toString();
-            // Seleccionar el valor actual si está disponible, o el más cercano
-            if (n === currentValue || (n === availableOptions[availableOptions.length - 1] && currentValue > n)) {
-              option.selected = true;
-            }
-            roundsSel.appendChild(option);
-          });
-          
-          // Si el valor actual es mayor que el máximo, seleccionar el máximo
-          if (currentValue > maxQuestions && availableOptions.length > 0) {
-            roundsSel.value = availableOptions[availableOptions.length - 1].toString();
-          }
-        }
-        
-        return maxQuestions;
-      }
-    } catch(e) {
-
+  // Restaurar opciones por defecto
+  const currentValue = parseInt(roundsSel.value, 10);
+  roundsSel.innerHTML = '';
+  [5, 15, 30].forEach(n => {
+    const option = document.createElement('option');
+    option.value = n.toString();
+    option.textContent = n.toString();
+    if (n === currentValue || (n === 15 && !currentValue)) {
+      option.selected = true;
     }
-  } else {
-    // Para categorías normales, restaurar opciones por defecto
-    const currentValue = parseInt(roundsSel.value, 10);
-    roundsSel.innerHTML = '';
-    [5, 15, 30].forEach(n => {
-      const option = document.createElement('option');
-      option.value = n.toString();
-      option.textContent = n.toString();
-      if (n === currentValue || (n === 15 && !currentValue)) {
-        option.selected = true;
-      }
-      roundsSel.appendChild(option);
-    });
-  }
-  
-  return null;
+    roundsSel.appendChild(option);
+  });
 }
 
 export async function applyInitialUI(){
@@ -618,14 +510,12 @@ export async function applyInitialUI(){
   // Enlazar segmentos con tolerancia a errores
   try { bindModeSegment(); } catch(e){  }
   await refreshCategorySelect();
-  updateBankCount();
   updatePlayerXPBar();
 
   const currentLang = getLanguage();
   
   try {
     await warmLocalBank(currentLang);
-    updateBankCount();
     await refreshCategorySelect();
   } catch (e) {
 
@@ -713,7 +603,7 @@ export function renderStatsPage() {
                 <div class="stat-info">
                     <div class="stat-value">${totalGames}</div>
                     <div class="stat-label">Partidas Totales</div>
-                    <div class="stat-detail">${stats.soloGamesPlayed || 0} solo, ${stats.vsGamesWon || 0} VS ganadas</div>
+                    <div class="stat-detail">${stats.soloGamesPlayed || 0} partidas jugadas</div>
                 </div>
             </div>
             
@@ -773,7 +663,7 @@ export function renderStatsPage() {
     `;
 }
 
-export function bindStatsOpen(renderLB) {
+export function bindStatsOpen() {
     const fsStats = document.getElementById('fsStats');
     const openBtn = document.getElementById('btnOpenStats');
     const backBtn = document.getElementById('backStats');
@@ -797,8 +687,3 @@ export function bindStatsOpen(renderLB) {
     }
 }
 
-// Mantener bindLeaderboardsOpen para compatibilidad, pero ahora está integrado en bindStatsOpen
-export function bindLeaderboardsOpen(renderLB){
-  // Ahora esto está integrado en bindStatsOpen, pero mantenemos la función por compatibilidad
-
-}

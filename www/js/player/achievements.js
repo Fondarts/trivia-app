@@ -5,12 +5,6 @@ export const ACHIEVEMENT_ICONS = {
   'ACCURACY_STREAK_10': 'francotirador.png',
   'ACCURACY_STREAK_25': 'eagle eye.png',
   'PERFECT_GAME': 'wizard.png',
-  'KNOWLEDGE_MOVIES': 'movie.png',          // Actualizado
-  'KNOWLEDGE_GEOGRAPHY': 'world.png',       // Actualizado
-  'KNOWLEDGE_HISTORY': 'hieroglyph.png',    // Actualizado
-  'KNOWLEDGE_SCIENCE': 'science.png',       // Actualizado
-  'KNOWLEDGE_SPORTS': 'sports.png',         // Actualizado
-  'KNOWLEDGE_SAGE': 'wizard.png',
   'DEDICATION_FIRST_GAME': 'newbie.png',
   'SURI_7_DAYS': 'Suri logro.webp',
   'DEDICATION_30_DAYS': 'sword.png',
@@ -48,46 +42,11 @@ export const ACHIEVEMENTS_LIST = [
   
   // --- Conocimiento ---
   {
-    id: 'KNOWLEDGE_MOVIES',
-    title: 'Cinéfilo',
-    description: '50 respuestas correctas en Películas.',
-    icon: 'movie.png',  // Actualizado
-    condition: (stats) => stats.correctByCategory.movies >= 50,
-  },
-  {
-    id: 'KNOWLEDGE_GEOGRAPHY',
-    title: 'Geógrafo',
-    description: '50 respuestas correctas en Geografía.',
-    icon: 'world.png',  // Actualizado
-    condition: (stats) => stats.correctByCategory.geography >= 50,
-  },
-  {
-    id: 'KNOWLEDGE_HISTORY',
-    title: 'Historiador',
-    description: '50 respuestas correctas en Historia.',
-    icon: 'hieroglyph.png',  // Actualizado
-    condition: (stats) => stats.correctByCategory.history >= 50,
-  },
-  {
-    id: 'KNOWLEDGE_SCIENCE',
-    title: 'Científico',
-    description: '50 respuestas correctas en Ciencia.',
-    icon: 'science.png',  // Actualizado
-    condition: (stats) => stats.correctByCategory.science >= 50,
-  },
-  {
-    id: 'KNOWLEDGE_SPORTS',
-    title: 'Deportista',
-    description: '50 respuestas correctas en Deportes.',
-    icon: 'sports.png',  // Actualizado
-    condition: (stats) => stats.correctByCategory.sports >= 50,
-  },
-  {
-    id: 'KNOWLEDGE_SAGE',
-    title: 'Sabio',
-    description: '100 respuestas correctas en CADA categoría.',
+    id: 'KNOWLEDGE_BIBLE',
+    title: 'Estudiante de la Biblia',
+    description: '100 respuestas correctas en Biblia.',
     icon: 'wizard.png',
-    condition: (stats) => Object.values(stats.correctByCategory).every(count => count >= 100),
+    condition: (stats) => stats.correctByCategory.bible >= 100,
   },
 
   // --- Dedicación ---
@@ -181,39 +140,9 @@ export const ACHIEVEMENTS_LIST = [
     icon: 'god.png', // Usamos god como phoenix
     condition: (stats) => stats.longestCorrectStreak >= 100,
   },
-  {
-    id: 'COMEBACK_STREAK',
-    title: 'Comeback Kid',
-    description: 'Consigue 10 correctas seguidas después de 3 fallos.',
-    icon: 'wizard.png', // Temporal
-    condition: (stats) => false, // Requiere lógica especial
-  },
-
-  // === LOGROS DE VELOCIDAD ===
-  {
-    id: 'SPEED_DEMON',
-    title: 'Rayo Veloz',
-    description: 'Responde correctamente en menos de 3 segundos (10 veces).',
-    icon: 'eagle eye.png', // Temporal para lightning
-    condition: (stats) => false, // Requiere tracking de tiempo
-  },
-  {
-    id: 'TIMED_HIGH_SCORE',
-    title: 'Reflexos Ninja',
-    description: 'Completa una partida contrarreloj con 30+ puntos.',
-    icon: 'sword.png', // Temporal para ninja
-    condition: (stats) => false, // Modo timed eliminado
-  },
-  {
-    id: 'TIMED_WINS_5',
-    title: 'Máquina del Tiempo',
-    description: 'Gana 5 partidas contrarreloj.',
-    icon: 'morning.png', // Temporal para hourglass
-    condition: (stats) => false, // Modo timed eliminado
-  },
 
   // === LOGROS COMPETITIVOS ===
-  // Logros VS removidos
+  // Logros VS/timed/adventure removidos
 
   // === LOGROS DE EXPERIENCIA ===
   {
@@ -245,64 +174,7 @@ export const ACHIEVEMENTS_LIST = [
     condition: (stats) => stats.level >= 100,
   },
 
-  // === LOGROS DE ESPECIALIZACIÓN ===
-  {
-    id: 'POLYGLOT',
-    title: 'Políglota',
-    description: 'Juega en 2 idiomas diferentes.',
-    icon: 'world.png',
-    condition: (stats) => false, // Requiere tracking de idiomas
-  },
-  {
-    id: 'COLLECTOR_5_PACKS',
-    title: 'Coleccionista',
-    description: 'Desbloquea 5 packs de preguntas.',
-    icon: 'anniversary.png', // Temporal para chest
-    condition: (stats) => false, // Requiere datos de packs
-  },
-  {
-    id: 'EXPLORER_ALL_CATEGORIES',
-    title: 'Explorador',
-    description: 'Juega todas las categorías base.',
-    icon: 'world.png',
-    condition: (stats) => {
-      const cats = stats.correctByCategory || {};
-      return cats.movies > 0 && cats.geography > 0 && cats.history > 0 && 
-             cats.science > 0 && cats.sports > 0;
-    },
-  },
 
-  // === LOGROS SOCIALES ===
-  {
-    id: 'FIRST_FRIEND',
-    title: 'Sociable',
-    description: 'Agrega tu primer amigo.',
-    icon: 'anniversary.png', // Temporal
-    condition: (stats) => false, // Requiere sistema de amigos
-  },
-  {
-    id: 'FRIENDS_10',
-    title: 'Popular',
-    description: 'Ten 10 amigos en tu lista.',
-    icon: 'wizard.png', // Temporal
-    condition: (stats) => false, // Requiere sistema de amigos
-  },
-
-  // === LOGROS ESPECIALES ===
-  {
-    id: 'NIGHT_PLAYER',
-    title: 'Búho Sabio',
-    description: 'Juega 10 partidas entre las 10 PM y 2 AM.',
-    icon: 'night.png',
-    condition: (stats) => false, // Requiere tracking especial
-  },
-  {
-    id: 'WEEKEND_WARRIOR',
-    title: 'Guerrero de Fin de Semana',
-    description: 'Juega 20 partidas en fin de semana.',
-    icon: 'sword.png',
-    condition: (stats) => false, // Requiere tracking de días
-  },
   {
     id: 'DAILY_PLAYER_14',
     title: 'Adicto Saludable',

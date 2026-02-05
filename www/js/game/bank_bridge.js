@@ -13,8 +13,6 @@
     window.ensureInitial60 = module.ensureInitial60;
     window.warmLocalBank = module.warmLocalBank;
     window.ensureBankReady = module.ensureBankReady;
-    window.BASE_LABELS = module.BASE_LABELS;
-    window.BASE_KEYS = module.BASE_KEYS;
     
     // Inicializar el banco automáticamente
 
@@ -27,27 +25,10 @@
       
     } catch (error) {
 
-      // Crear banco de fallback con preguntas de prueba
+      // Crear banco de fallback vacío (solo categoría bible)
       const fallbackBank = {
-        movies: [],
-        geography: [],
-        history: [],
-        science: [],
-        sports: []
+        bible: []
       };
-      
-      // Agregar preguntas de prueba para cada categoría
-      Object.keys(fallbackBank).forEach(category => {
-        for (let i = 0; i < 30; i++) {
-          fallbackBank[category].push({
-            q: `Pregunta ${i + 1} de ${category}`,
-            options: ['Opción A', 'Opción B', 'Opción C', 'Opción D'],
-            answer: Math.floor(Math.random() * 4),
-            category: category,
-            difficulty: i < 10 ? 'easy' : i < 20 ? 'medium' : 'hard'
-          });
-        }
-      });
       
       // Guardar banco de fallback
       localStorage.setItem('trivia_bank', JSON.stringify(fallbackBank));
@@ -60,27 +41,10 @@
 
     // Fallback completo: crear funciones básicas
 
-    // Crear banco de fallback
+    // Crear banco de fallback vacío (solo categoría bible)
     const fallbackBank = {
-      movies: [],
-      geography: [],
-      history: [],
-      science: [],
-      sports: []
+      bible: []
     };
-    
-    // Agregar preguntas de prueba
-    Object.keys(fallbackBank).forEach(category => {
-      for (let i = 0; i < 30; i++) {
-        fallbackBank[category].push({
-          q: `Pregunta fallback ${i + 1} de ${category}`,
-          options: ['Respuesta A', 'Respuesta B', 'Respuesta C', 'Respuesta D'],
-          answer: Math.floor(Math.random() * 4),
-          category: category,
-          difficulty: i < 10 ? 'easy' : i < 20 ? 'medium' : 'hard'
-        });
-      }
-    });
     
     window.getBank = function() {
       try {
@@ -133,8 +97,6 @@
     
     // Guardar banco de fallback
     window.setBank(fallbackBank);
-
-    console.log('Total de preguntas:', window.getBankCount());
     
     // Disparar evento
     window.dispatchEvent(new Event('bankReady'));

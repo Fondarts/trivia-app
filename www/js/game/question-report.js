@@ -84,14 +84,6 @@ function getCategoryFromContext() {
     }
   }
   
-        'cine': 'Cine',
-        'anime': 'Anime',
-        'testcine': 'Test cine'
-      };
-      return categoryMap[regionKey] || regionKey;
-    }
-  }
-  
   return null;
 }
 

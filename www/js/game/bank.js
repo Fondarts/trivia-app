@@ -261,29 +261,6 @@ export async function buildDeckSingle(categoryKey, count, diff = 'any', customPo
     } catch(e) {
       pool = [];
     }
-  } else if (String(categoryKey||'').startsWith('userpack:')) {
-    // Cargar pack creado por el usuario desde localStorage
-    try {
-      const packIndex = parseInt(String(categoryKey).slice(9), 10);
-      const userPacks = JSON.parse(localStorage.getItem('userCreatedPacks') || '[]');
-      const pack = userPacks[packIndex];
-      if (pack && pack.questions && Array.isArray(pack.questions)) {
-        pool = pack.questions.map(q => ({
-          q: q.q || '',
-          options: q.options || [],
-          answer: q.answer || 0,
-          difficulty: q.difficulty || 'medium',
-          category: 'userpack',
-          img: q.img || null
-        }));
-      }
-    } catch(e) {
-
-      pool = [];
-    }
-  } else if (String(categoryKey||'').startsWith('pack:')) {
-    const pid = String(categoryKey).slice(5);
-    pool = Object.values(bank).flatMap(arr => arr || []).filter(q => q && q.packId === pid);
   } else if (bank[categoryKey]) {
     pool = [...bank[categoryKey]];
   } else {
@@ -350,12 +327,6 @@ export function listAvailableCategories() {
   return Object.keys(bank).filter(k => (bank[k]?.length || 0) > 0);
 }
 
-export function categoryCounts() {
-  const bank = getBank();
-  const out = {};
-  for (const [k, arr] of Object.entries(bank)) out[k] = arr?.length || 0;
-  return out;
-}
 
 export async function ensureBankReady(lang = 'en', { force = false } = {}) {
   const existing = getBankCount();

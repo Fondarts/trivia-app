@@ -4,30 +4,8 @@ const translations = {
   es: {
     // Header
     appTitle: 'Bible Trivia',
-    friends: 'Amigos',
     store: 'Tienda',
     
-    // Auth
-    login: 'Iniciar Sesión',
-    loginRegister: 'Iniciar Sesión / Registrarse',
-    logout: 'Cerrar Sesión',
-    welcomeMessage: '🎮 crea tu cuenta para llevar tu progreso a todos lados',
-    welcomeToQuizle: '🎮 ¡Bienvenido a Bible Trivia!',
-    configureNickname: 'Configura tu nickname en tu perfil para empezar a jugar',
-    loginWithGoogle: 'Continuar con Google',
-    loginToSaveProgress: 'Inicia sesión con Google para guardar tu progreso, competir con amigos y desbloquear logros.',
-    loggingIn: 'Iniciando sesión...',
-    loginError: 'Error al iniciar sesión. Por favor, intenta de nuevo.',
-    
-    // Nickname Modal
-    chooseNickname: 'Elige tu Nickname',
-    nicknameDescription: 'Este será tu nombre único en el juego. No podrás cambiarlo después.',
-    nicknameRules: 'Entre 3 y 20 caracteres, solo letras, números y guiones bajos',
-    nicknameAvailable: '✓ Disponible',
-    nicknameTaken: '✗ Ya está en uso',
-    checking: 'Verificando...',
-    confirmNickname: 'Confirmar Nickname',
-    saving: 'Guardando...',
     
     // Mode indicators
     modeSoloFull: 'Pon a prueba tus conocimientos',
@@ -36,18 +14,6 @@ const translations = {
     selectMode: 'Selecciona un modo',
     
     // Friends System
-    friendsSystem: 'Sistema de Amigos',
-    comingSoon: '¡Próximamente!',
-    friendsInDevelopment: 'El sistema de amigos está en desarrollo.',
-    soonYouCan: 'Pronto podrás:',
-    addFriendsByNickname: '✨ Agregar amigos por nickname',
-    challengeLive: '⚔️ Desafiar a partidas en vivo',
-    viewRankings: '🏆 Ver rankings entre amigos',
-    compareStats: '📊 Comparar estadísticas',
-    send24hChallenges: '🎯 Enviar desafíos de 24 horas',
-    joinCommunity: '¡Únete a la comunidad!',
-    loginToUnlock: 'Inicia sesión para desbloquear el sistema de amigos y competir con otros jugadores.',
-    loginForFriends: 'Inicia sesión para acceder al sistema de amigos',
     
     // Config Card
     yourName: 'Tu nombre',
@@ -55,7 +21,6 @@ const translations = {
     mode: 'Modo',
     modeSolo: 'TEST',
     modeSopa: 'SOPA',
-    modeVS: 'VS',
     questionsCount: 'Cantidad de preguntas',
     time: 'Tiempo',
     difficulty: 'Dificultad',
@@ -71,16 +36,7 @@ const translations = {
     create: 'CREAR',
     join: 'UNIRSE',
     
-    // Leaderboards
-    global: 'Global',
-    friends: 'Amigos',
-    local: 'Local',
-    player: 'Jugador',
-    level: 'Nivel',
-    totalXP: 'XP Total',
-    
     // Navigation
-    leaderboards: 'Leaderboards',
     statistics: 'Estadísticas',
     statisticsAndAchievements: 'Estadísticas y Logros',
     
@@ -187,13 +143,6 @@ const translations = {
     withoutErrorsDesc: 'Completa 3 partidas perfectas.',
     unstoppableDesc: 'Consigue una racha de 50 respuestas correctas.',
     mvpDesc: 'Consigue una racha de 100 respuestas correctas.',
-    comebackKidDesc: 'Consigue 10 correctas seguidas después de fallar 3.',
-    speedsterDesc: 'Responde correctamente en menos de 3s (10 veces).',
-    reflexNinjaDesc: 'Completa una partida contrarreloj con 30+ puntos.',
-    timeRunnerDesc: 'Gana 5 partidas contrarreloj.',
-    firstVictoryDesc: 'Gana tu primera partida.',
-    championDesc: 'Gana 10 partidas.',
-    invincibleDesc: 'Gana 5 partidas seguidas.',
     promiseDesc: 'Alcanza el nivel 5.',
     veteranLevelDesc: 'Alcanza el nivel 25.',
     eliteDesc: 'Alcanza el nivel 50.',
@@ -201,8 +150,6 @@ const translations = {
     polyglotDesc: 'Juega en 2 idiomas diferentes.',
     collectorDesc: 'Desbloquea 5 packs de preguntas.',
     explorerDesc: 'Juega todas las categorías base.',
-    sociableDesc: 'Agrega tu primer amigo.',
-    popularDesc: 'Ten 10 amigos en tu lista.',
     wiseOwlDesc: 'Juega 10 partidas entre las 10 PM y 2 AM.',
     weekendWarriorDesc: 'Juega 20 partidas en fin de semana.',
     healthyAddictDesc: 'Juega al menos una vez al día por 14 días.',
@@ -233,11 +180,6 @@ const translations = {
     withoutErrors: 'Sin Errores',
     unstoppable: 'Imparable',
     mvp: 'Leyenda Viviente',
-    comebackKid: 'Comeback Kid',
-    speedster: 'Rayo Veloz',
-    reflexNinja: 'Reflejos Ninja',
-    timeRunner: 'Máquina del Tiempo',
-    firstVictory: 'Primera Victoria',
     novice: 'Novato',
     promising: 'Prometedor',
     elite: 'Elite',
@@ -259,47 +201,17 @@ const translations = {
     greatGame: '¡Gran partida!',
     dontGiveUp: '¡No te rindas!',
     nextBetter: 'La próxima será mejor.',
-    timeUp: '¡Se acabó el tiempo!',
-    goodTry: '¡Buen intento!',
     congratulations: '¡Felicitaciones!',
-    youWon: 'Le ganaste a',
-    youLost: 'Perdiste',
-    against: 'Contra',
-    betterNext: 'Te irá mejor la próxima.',
-    maybe: '(quizás)',
-    tie: '¡Empate!',
-    goodDuel: 'Buen duelo con',
     playAgain: 'Jugar de nuevo',
-    rematch: 'Revancha',
     home: 'Inicio',
-    shareResult: 'Compartir',
     
-    // Categories
-    movies: 'Películas y series',
-    geography: 'Geografía',
-    history: 'Historia',
-    science: 'Ciencia',
-    sports: 'Deporte',
-    culture: 'Cultura',
-    anime: 'Anime y Manga',
     
     // Alerts & Toasts
     selectCategory: 'Elegí una categoría',
     confirmExit: '¿Seguro que querés salir de la partida?',
-    opponentLeft: 'Tu rival abandonó la partida.',
-    enterCode: 'Ingresá un código',
     levelUp: '🎉 ¡Subiste de Nivel! 🎉',
     achievementUnlocked: '🏆 ¡Logro desbloqueado:',
     
-    // Store
-    packStore: 'Tienda de packs',
-    available: 'Disponibles',
-    installed: 'Instalado',
-    get: 'Obtener',
-    free: 'Gratis (dev)',
-    packInstalled: 'Pack instalado',
-    errorInstalling: 'Error instalando pack',
-    packsHint: 'Los packs instalados se suman al banco.',
     
     // Base
     base: 'Base'
@@ -308,30 +220,8 @@ const translations = {
   en: {
     // Header
     appTitle: 'Bible Trivia',
-    friends: 'Friends',
     store: 'Store',
     
-    // Auth
-    login: 'Sign In',
-    loginRegister: 'Sign In / Sign Up',
-    logout: 'Log Out',
-    welcomeMessage: '🎮 Create an account to take your progress everywhere',
-    welcomeToQuizle: '🎮 Welcome to Quizle!',
-    configureNickname: 'Set up your nickname in your profile to start playing',
-    loginWithGoogle: 'Continue with Google',
-    loginToSaveProgress: 'Sign in with Google to save your progress, compete with friends and unlock achievements.',
-    loggingIn: 'Signing in...',
-    loginError: 'Login error. Please try again.',
-    
-    // Nickname Modal
-    chooseNickname: 'Choose your Nickname',
-    nicknameDescription: 'This will be your unique name in the game. You cannot change it later.',
-    nicknameRules: 'Between 3 and 20 characters, only letters, numbers and underscores',
-    nicknameAvailable: '✓ Available',
-    nicknameTaken: '✗ Already taken',
-    checking: 'Checking...',
-    confirmNickname: 'Confirm Nickname',
-    saving: 'Saving...',
     
     // Mode indicators
     modeSoloFull: 'Test your knowledge',
@@ -340,18 +230,6 @@ const translations = {
     selectMode: 'Select a mode',
     
     // Friends System
-    friendsSystem: 'Friends System',
-    comingSoon: 'Coming Soon!',
-    friendsInDevelopment: 'The friends system is in development.',
-    soonYouCan: 'Soon you will be able to:',
-    addFriendsByNickname: '✨ Add friends by nickname',
-    challengeLive: '⚔️ Challenge to live matches',
-    viewRankings: '🏆 View friend rankings',
-    compareStats: '📊 Compare statistics',
-    send24hChallenges: '🎯 Send 24-hour challenges',
-    joinCommunity: 'Join the community!',
-    loginToUnlock: 'Sign in to unlock the friends system and compete with other players.',
-    loginForFriends: 'Sign in to access the friends system',
     
     // Config Card
     yourName: 'Your name',
@@ -359,7 +237,6 @@ const translations = {
     mode: 'Mode',
     modeSolo: 'TEST',
     modeSopa: 'WORD',
-    modeVS: 'VS',
     questionsCount: 'Number of questions',
     time: 'Time',
     difficulty: 'Difficulty',
@@ -379,22 +256,11 @@ const translations = {
     cancelSearch: 'Cancel Search',
     backToManual: 'Manual Code',
     waitingFor: 'Waiting for',
-    configureGameAgainst: 'Configure game against',
-    createGameAgainst: 'Create game against',
     opponentRandom: 'Random',
     opponentRandomAsync: 'Random Offline',
     opponentFriend: 'Friend',
     
-    // Leaderboards
-    global: 'Global',
-    friends: 'Friends',
-    local: 'Local',
-    player: 'Player',
-    level: 'Level',
-    totalXP: 'Total XP',
-    
     // Navigation
-    leaderboards: 'Leaderboards',
     statistics: 'Statistics',
     statisticsAndAchievements: 'Statistics & Achievements',
     
@@ -501,24 +367,10 @@ const translations = {
     withoutErrorsDesc: 'Finish 3 perfect games.',
     unstoppableDesc: 'Get a 50 correct answers streak.',
     mvpDesc: 'Get a 100 correct answers streak.',
-    comebackKidDesc: 'Get 10 in a row after 3 mistakes.',
-    speedsterDesc: 'Answer correctly under 3s (10 times).',
-    reflexNinjaDesc: 'Finish a timed game with 30+ points.',
-    timeRunnerDesc: 'Win 5 timed games.',
-    firstVictoryDesc: 'Win your first match.',
-    championDesc: 'Win 10 matches.',
-    invincibleDesc: 'Win 5 matches in a row.',
     promiseDesc: 'Reach level 5.',
     veteranLevelDesc: 'Reach level 25.',
     eliteDesc: 'Reach level 50.',
     legendaryLevelDesc: 'Reach level 100.',
-    polyglotDesc: 'Play in 2 different languages.',
-    collectorDesc: 'Unlock 5 question packs.',
-    explorerDesc: 'Play all base categories.',
-    sociableDesc: 'Add your first friend.',
-    popularDesc: 'Have 10 friends in your list.',
-    wiseOwlDesc: 'Play 10 games between 10 PM and 2 AM.',
-    weekendWarriorDesc: 'Play 20 games on weekends.',
     healthyAddictDesc: 'Play at least once a day for 14 days.',
     monthlyMasterDesc: 'Play every day in a month.',
     millenaryDesc: 'Answer 1000 questions in total.',
@@ -547,22 +399,10 @@ const translations = {
     withoutErrors: 'Flawless',
     unstoppable: 'Unstoppable',
     mvp: 'Living Legend',
-    comebackKid: 'Comeback Kid',
-    speedster: 'Speed Demon',
-    reflexNinja: 'Reflex Ninja',
-    timeRunner: 'Time Machine',
-    firstVictory: 'First Victory',
     novice: 'Novice',
     promising: 'Promising',
     elite: 'Elite',
     legendary: 'Legendary',
-    polyglot: 'Polyglot',
-    collector: 'Collector',
-    explorer: 'Explorer',
-    sociable: 'Sociable',
-    popular: 'Popular',
-    wiseSage: 'Wise Owl',
-    fireWarrior: 'Weekend Warrior',
     addict: 'Addicted',
     
     // Results
@@ -573,8 +413,6 @@ const translations = {
     greatGame: 'Great game!',
     dontGiveUp: "Don't give up!",
     nextBetter: 'Next one will be better.',
-    timeUp: "Time's up!",
-    goodTry: 'Good try!',
     congratulations: 'Congratulations!',
     youWon: 'You beat',
     youLost: 'You lost',
@@ -588,32 +426,14 @@ const translations = {
     home: 'Home',
     shareResult: 'Share',
     
-    // Categories
-    movies: 'Movies & TV Shows',
-    geography: 'Geography',
-    history: 'History',
-    science: 'Science',
-    sports: 'Sports',
-    culture: 'Culture',
-    anime: 'Anime & Manga',
     
     // Alerts & Toasts
     selectCategory: 'Please select a category',
     confirmExit: 'Are you sure you want to exit the game?',
-    opponentLeft: 'Your opponent left the game.',
-    enterCode: 'Please enter a code',
     levelUp: '🎉 Level Up! 🎉',
     achievementUnlocked: '🏆 Achievement unlocked:',
     
     // Store
-    packStore: 'Pack Store',
-    available: 'Available',
-    installed: 'Installed',
-    get: 'Get',
-    free: 'Free (dev)',
-    packInstalled: 'Pack installed',
-    errorInstalling: 'Error installing pack',
-    packsHint: 'Installed packs are added to the bank.',
     
     // Base
     base: 'Base'

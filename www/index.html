@@ -154,6 +154,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   
+  <!-- Pico CSS - framework base (nuestro main.css lo sobrescribe y complementa) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" crossorigin="anonymous">
+  
   <!-- CSS Optimizado y Consolidado v4.0 -->
   <link rel="stylesheet" href="./css/main.css?v=4.0">
   <!-- animations.css and logo-animations.css merged into main.css -->
@@ -323,15 +326,19 @@
         </div>
       </div>
 
-      <div class="section" id="catSection">
+      <div class="section" id="catSection" style="display:none">
         <label data-i18n="category">Categoría</label>
         <select id="categorySel" class="input"></select>
       </div>
-      <div class="section" id="bookSection">
+      <div class="section" id="bookSection" style="display:none">
         <label data-i18n="book">Libro</label>
         <select id="bookSel" class="input">
           <option value="" data-i18n="bookAll">Todos los libros</option>
         </select>
+      </div>
+      <div class="section" id="categoryBookSection">
+        <label data-i18n="category">Categoría</label>
+        <select id="categoryBookSel" class="input"></select>
       </div>
 
       <div class="section" id="spStartWrap">

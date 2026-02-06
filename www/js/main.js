@@ -17,7 +17,7 @@ import { showGameUI, showConfigUI, updateGameModeDescription } from './ui/game-u
 import { bindAllEventListeners } from './init/event-bindings.js';
 
 // Game modules  
-import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, refreshCategorySelect } from './game/ui.js';
+import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, refreshCategorySelect, ensureCustomDropdown } from './game/ui.js';
 import { startSolo, nextQuestion, endGame, renderQuestion, openSingleResult, showGame, showVerseModal } from './game/solo.js';
 import { bindWordSearchButtons } from './game/wordsearch-ui.js';
 import { initBibleStudy } from './game/bible-study.js';
@@ -205,6 +205,7 @@ window.addEventListener('load', async ()=>{
 
   bindWordSearchButtons();
   initBibleStudy();
+  ensureCustomDropdown(document.getElementById('bibleBookSel'));
   } catch (error) {
     console.error('Error durante la inicialización:', error);
     // Asegurar que el loader se oculte incluso si hay errores

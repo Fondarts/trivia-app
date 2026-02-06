@@ -162,7 +162,9 @@ export function bindProfileModal(){
           // Recargar el banco de preguntas en el nuevo idioma
           warmLocalBank(lang).then(async () => {
             await refreshCategorySelect();
+            await refreshCombinedCategoryBook();
             populateBibleBookSelector();
+            ensureCustomDropdown(document.getElementById('bibleBookSel'));
             // Actualizar toda la UI sin recargar la página
             updateI18nUI();
             // Actualizar el badge del nivel con el nuevo idioma
@@ -247,9 +249,10 @@ export function bindModeSegment(){
   const wrapRounds     = document.getElementById('roundsWrap');
   const wordsearchWrap = document.getElementById('wordsearchWrap');
   const bibleStudyWrap = document.getElementById('bibleStudyWrap');
-  const catSection     = document.getElementById('catSection');
-  const spStartWrap    = document.getElementById('spStartWrap');
-  const spStartWrapWS  = document.getElementById('spStartWrapWS');
+  const catSection         = document.getElementById('catSection');
+  const categoryBookSection = document.getElementById('categoryBookSection');
+  const spStartWrap        = document.getElementById('spStartWrap');
+  const spStartWrapWS      = document.getElementById('spStartWrapWS');
 
   const show = (el,on)=>{ if (el) el.style.display = on ? 'block' : 'none'; };
 
@@ -258,7 +261,8 @@ export function bindModeSegment(){
       show(wrapRounds, true);
       show(wordsearchWrap, false);
       show(bibleStudyWrap, false);
-      show(catSection, true);
+      show(catSection, false);
+      show(categoryBookSection, true);
       show(spStartWrap, true);
       show(spStartWrapWS, false);
     } else if (val === 'wordsearch') {
@@ -266,6 +270,7 @@ export function bindModeSegment(){
       show(wordsearchWrap, true);
       show(bibleStudyWrap, false);
       show(catSection, false);
+      show(categoryBookSection, false);
       show(spStartWrap, false);
       show(spStartWrapWS, true);
     } else if (val === 'bible') {
@@ -273,6 +278,7 @@ export function bindModeSegment(){
       show(wordsearchWrap, false);
       show(bibleStudyWrap, true);
       show(catSection, false);
+      show(categoryBookSection, false);
       show(spStartWrap, false);
       show(spStartWrapWS, false);
     }
@@ -288,6 +294,121 @@ export function bindModeSegment(){
   apply('rounds');
 }
 
+
+/** Crea el wrapper del custom dropdown para cualquier select si no existe y sincroniza el panel. */
+export function ensureCustomDropdown(selectEl) {
+  if (!selectEl || !selectEl.matches?.('select')) return;
+  if (selectEl.parentElement?.classList?.contains('custom-select-wrap')) {
+    syncCustomDropdown(selectEl.parentElement);
+    return;
+  }
+  const wrap = document.createElement('div');
+  wrap.className = 'custom-select-wrap';
+  wrap.setAttribute('aria-expanded', 'false');
+  selectEl.parentNode.insertBefore(wrap, selectEl);
+  wrap.appendChild(selectEl);
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'custom-select-trigger';
+  trigger.setAttribute('aria-haspopup', 'listbox');
+  trigger.setAttribute('aria-expanded', 'false');
+  wrap.appendChild(trigger);
+
+  const panel = document.createElement('div');
+  panel.className = 'custom-select-panel';
+  panel.setAttribute('role', 'listbox');
+  wrap.appendChild(panel);
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = wrap.getAttribute('aria-expanded') === 'true';
+    if (!open) {
+      document.querySelectorAll('.custom-select-wrap[aria-expanded="true"]').forEach(other => {
+        if (other !== wrap) {
+          other.setAttribute('aria-expanded', 'false');
+          other.querySelector('.custom-select-trigger')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    wrap.setAttribute('aria-expanded', !open);
+    trigger.setAttribute('aria-expanded', !open);
+  });
+
+  document.addEventListener('click', () => {
+    wrap.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  wrap.addEventListener('click', (e) => e.stopPropagation());
+  syncCustomDropdown(wrap);
+}
+
+/** Rellena el panel del custom dropdown desde el select del wrap y enlaza clics. */
+function syncCustomDropdown(wrap) {
+  if (!wrap) return;
+  const sel = wrap.querySelector('select');
+  const trigger = wrap.querySelector('.custom-select-trigger');
+  const panel = wrap.querySelector('.custom-select-panel');
+  if (!sel || !trigger || !panel) return;
+
+  panel.innerHTML = '';
+  const currentValue = sel.value ?? '';
+
+  function addOption(value, text, isSelected) {
+    const opt = document.createElement('div');
+    opt.className = 'custom-select-option';
+    opt.setAttribute('role', 'option');
+    opt.dataset.value = value;
+    opt.textContent = text;
+    opt.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+    opt.addEventListener('click', () => {
+      sel.value = value;
+      sel.dispatchEvent(new Event('change', { bubbles: true }));
+      trigger.textContent = text;
+      panel.querySelectorAll('.custom-select-option').forEach(o => o.setAttribute('aria-selected', 'false'));
+      opt.setAttribute('aria-selected', 'true');
+      wrap.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+    panel.appendChild(opt);
+  }
+
+  for (const node of sel.children) {
+    if (node.tagName === 'OPTION') {
+      addOption(node.value, node.textContent.trim(), node.value === currentValue);
+    } else if (node.tagName === 'OPTGROUP') {
+      const group = document.createElement('div');
+      group.className = 'custom-select-group';
+      const label = document.createElement('div');
+      label.className = 'custom-select-group-label';
+      label.textContent = node.label || '';
+      group.appendChild(label);
+      for (const opt of node.querySelectorAll('option')) {
+        const div = document.createElement('div');
+        div.className = 'custom-select-option';
+        div.setAttribute('role', 'option');
+        div.dataset.value = opt.value;
+        div.textContent = opt.textContent.trim();
+        div.setAttribute('aria-selected', opt.value === currentValue ? 'true' : 'false');
+        div.addEventListener('click', () => {
+          sel.value = opt.value;
+          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          trigger.textContent = opt.textContent.trim();
+          panel.querySelectorAll('.custom-select-option').forEach(o => o.setAttribute('aria-selected', 'false'));
+          div.setAttribute('aria-selected', 'true');
+          wrap.setAttribute('aria-expanded', 'false');
+          trigger.setAttribute('aria-expanded', 'false');
+        });
+        group.appendChild(div);
+      }
+      panel.appendChild(group);
+    }
+  }
+
+  const selectedOpt = [...sel.options].find(o => o.value === currentValue);
+  trigger.textContent = selectedOpt ? selectedOpt.textContent.trim() : '';
+}
 
 export async function refreshCategorySelect(){
   const sel = document.getElementById('categorySel');
@@ -428,6 +549,93 @@ export async function refreshCategorySelect(){
   // Actualizar selector de cantidad y de libro inicialmente
   updateRoundsSelectorForCategory();
   refreshBookSelect();
+
+  ensureCustomDropdown(document.getElementById('rounds'));
+  ensureCustomDropdown(document.getElementById('difficulty'));
+  ensureCustomDropdown(document.getElementById('wsDifficulty'));
+  await refreshCombinedCategoryBook();
+}
+
+const COMBINED_VALUE_SEP = '||';
+
+/** Menú unificado Categoría + Libro: All categories → Old Testament (libros) → New Testament (libros). */
+export async function refreshCombinedCategoryBook() {
+  const combinedSel = document.getElementById('categoryBookSel');
+  const categorySel = document.getElementById('categorySel');
+  const bookSel = document.getElementById('bookSel');
+  if (!combinedSel || !categorySel || !bookSel) return;
+
+  const currentCat = categorySel.value || 'all';
+  const currentBook = bookSel.value || '';
+  const currentCombined = currentCat.startsWith('filepack:')
+    ? `${currentCat}${COMBINED_VALUE_SEP}${currentBook}`
+    : 'all';
+
+  combinedSel.innerHTML = '';
+  const optAll = document.createElement('option');
+  optAll.value = 'all';
+  optAll.textContent = typeof t === 'function' ? t('categoryAll') : 'Todas las categorías';
+  combinedSel.appendChild(optAll);
+
+  try {
+    const currentLang = getLanguage();
+    const lang = SUPPORTED_LANGS.includes(currentLang) ? currentLang : 'en';
+    const manifestUrl = `${PACKS_BASE}/${lang}/manifest.json`;
+    const res = await fetch(manifestUrl);
+    if (!res.ok) return finishCombined();
+    const manifest = await res.json();
+    if (!manifest.packs || !Array.isArray(manifest.packs)) return finishCombined();
+
+    for (const pack of manifest.packs) {
+      const files = pack.files || [];
+      if (files.length === 0) continue;
+      let firstFile = files[0];
+      if (firstFile && !firstFile.endsWith('.json')) firstFile = firstFile + '.json';
+      const packName = pack.id || pack.title || firstFile?.replace('.json', '').replace(/_/g, ' ') || 'Pack';
+      const books = await getBooksInFilePack(lang, firstFile);
+      if (!books || !books.length) continue;
+
+      const g = document.createElement('optgroup');
+      g.label = packName;
+      const optAllBooks = document.createElement('option');
+      optAllBooks.value = `filepack:${lang}:${firstFile}${COMBINED_VALUE_SEP}`;
+      optAllBooks.textContent = typeof t === 'function' ? t('bookAll') : 'Todos los libros';
+      g.appendChild(optAllBooks);
+      for (const book of books) {
+        const o = document.createElement('option');
+        o.value = `filepack:${lang}:${firstFile}${COMBINED_VALUE_SEP}${book}`;
+        o.textContent = book;
+        g.appendChild(o);
+      }
+      combinedSel.appendChild(g);
+    }
+  } catch (e) {
+    // fallback: solo "All categories"
+  }
+
+  function finishCombined() {
+    if ([...combinedSel.options].some(o => o.value === currentCombined)) combinedSel.value = currentCombined;
+    else combinedSel.value = 'all';
+    if (!combinedSel._hasCombinedListener) {
+      combinedSel.addEventListener('change', () => {
+        const val = combinedSel.value || 'all';
+        if (val === 'all') {
+          categorySel.value = 'all';
+          bookSel.value = '';
+        } else {
+          const idx = val.indexOf(COMBINED_VALUE_SEP);
+          if (idx !== -1) {
+            categorySel.value = val.slice(0, idx);
+            bookSel.value = val.slice(idx + COMBINED_VALUE_SEP.length);
+          }
+        }
+        categorySel.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+      combinedSel._hasCombinedListener = true;
+    }
+    ensureCustomDropdown(combinedSel);
+  }
+  finishCombined();
 }
 
 /** Rellena el selector de libro; siempre visible. Con filepack muestra libros del pack; si no, solo "Todos los libros". */
@@ -456,6 +664,7 @@ export async function refreshBookSelect() {
       });
       if (prev && books.includes(prev)) bookSel.value = prev;
       else bookSel.value = '';
+      ensureCustomDropdown(bookSel);
       return;
     }
   }
@@ -466,6 +675,7 @@ export async function refreshBookSelect() {
   optAll.textContent = typeof t === 'function' ? t('bookAll') : 'Todos los libros';
   bookSel.appendChild(optAll);
   bookSel.value = '';
+  ensureCustomDropdown(bookSel);
 }
 
 // Exponer globalmente para que pueda ser llamada desde otros módulos
@@ -491,6 +701,7 @@ export function updateRoundsSelectorForCategory() {
     }
     roundsSel.appendChild(option);
   });
+  ensureCustomDropdown(roundsSel);
 }
 
 export async function applyInitialUI(){
@@ -531,16 +742,13 @@ export async function applyInitialUI(){
 
         // Forzar la aplicación del modo inicial
         const wrapRounds = document.getElementById('roundsWrap');
-        // La dificultad está ahora integrada en roundsWrap
-        const catSection = document.getElementById('catSection');
+        const categoryBookSection = document.getElementById('categoryBookSection');
         const spStartWrap = document.getElementById('spStartWrap');
         
         if (mode === 'rounds') {
           if (wrapRounds) wrapRounds.style.display = 'block';
-          // La dificultad está integrada en roundsWrap
-          if (catSection) catSection.style.display = 'block';
+          if (categoryBookSection) categoryBookSection.style.display = 'block';
           if (spStartWrap) spStartWrap.style.display = 'block';
-
         }
       }
     }

@@ -286,6 +286,14 @@ function bindSelection(grid, words) {
     clearSelection();
   };
 
+  const prev = el._wsPointerHandlers;
+  if (prev) {
+    el.removeEventListener('pointerdown', prev.down);
+    el.removeEventListener('pointermove', prev.move);
+    el.removeEventListener('pointerup', prev.up);
+    el.removeEventListener('pointercancel', prev.up);
+  }
+  el._wsPointerHandlers = { down: onPointerDown, move: onPointerMove, up: onPointerUp };
   el.addEventListener('pointerdown', onPointerDown, { passive: false });
   el.addEventListener('pointermove', onPointerMove);
   el.addEventListener('pointerup', onPointerUp);

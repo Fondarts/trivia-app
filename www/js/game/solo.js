@@ -7,6 +7,7 @@ import { t } from '../core/i18n.js';
 
 let audioCtx = null;
 let audioInitialized = false;
+let gameStartTime = 0;
 
 function ensureAC() {
   if (!SETTINGS.sounds) return null;
@@ -709,7 +710,10 @@ export function nextQuestion(){
   const bCat = document.getElementById('bCat');
   const bDiff= document.getElementById('bDiff');
   
-  if (bCat)  bCat.textContent  = q.category || 'Solo';
+  if (bCat) {
+    const cat = (q.category || 'Solo').trim();
+    bCat.textContent = cat ? cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase() : 'Solo';
+  }
   if (bDiff) bDiff.textContent = q.difficulty || '—';
 
   renderQuestion(q);
@@ -730,7 +734,8 @@ export async function endGame(){
 
   const isPerfect = (currentState.score === currentState.total && currentState.total >= 15);
   const won = currentState.score >= currentState.total / 2;
-  results = await trackEvent('game_finish', { mode: 'solo', won, isPerfect });
+  const elapsedSeconds = gameStartTime ? Math.floor((Date.now() - gameStartTime) / 1000) : 0;
+  results = await trackEvent('game_finish', { mode: 'solo', won, isPerfect, elapsedSeconds });
   
   let title, sub;
   if (isPerfect) { title='Perfect!'; sub='No mistakes!'; }
@@ -777,6 +782,7 @@ export async function startSolo(){
     const selectedCat = selEl.value;
 
     const { newAchievements, leveledUp } = await trackEvent('game_start');
+    gameStartTime = Date.now();
     updatePlayerXPBar();
     if(leveledUp) toast("🎉 Level Up! 🎉");
     newAchievements.forEach(ach => toast(`🏆 Achievement unlocked: ${ach.title}!`));

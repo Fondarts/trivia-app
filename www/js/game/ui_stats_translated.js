@@ -12,57 +12,12 @@ export function renderStatsPageTranslated() {
     if (!statsContainer || !achievementsContainer) return;
     
     const accuracy = stats.questionsAnswered > 0 ? ((stats.questionsCorrect / stats.questionsAnswered) * 100).toFixed(1) : 0;
-    
-    // Calcular estadísticas adicionales
     const totalGames = stats.totalGamesPlayed || 0;
-    
+    const totalSec = stats.totalTimePlayedSeconds || 0;
+    const totalTimeStr = totalSec >= 3600 ? `${Math.floor(totalSec / 3600)} h ${Math.floor((totalSec % 3600) / 60)} min` : `${Math.floor(totalSec / 60)} min`;
+
     statsContainer.innerHTML = `
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">🎯</div>
-                <div class="stat-info">
-                    <div class="stat-value">${accuracy}%</div>
-                    <div class="stat-label">${t('precision')}</div>
-                    <div class="stat-detail">${stats.questionsCorrect}/${stats.questionsAnswered} ${t('correctAnswers')}</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">🔥</div>
-                <div class="stat-info">
-                    <div class="stat-value">${stats.longestCorrectStreak || 0}</div>
-                    <div class="stat-label">${t('bestStreak')}</div>
-                    <div class="stat-detail">${t('consecutiveAnswers')}</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">🏆</div>
-                <div class="stat-info">
-                    <div class="stat-value">${stats.level || 1}</div>
-                    <div class="stat-label">${t('currentLevel')}</div>
-                    <div class="stat-detail">${stats.totalXP || 0} ${t('totalXP')}</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">📊</div>
-                <div class="stat-info">
-                    <div class="stat-value">${totalGames}</div>
-                    <div class="stat-label">${t('totalGames')}</div>
-                    <div class="stat-detail">${stats.soloGamesPlayed || 0} ${t('soloGames')}</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">⭐</div>
-                <div class="stat-info">
-                    <div class="stat-value">${stats.perfectGames || 0}</div>
-                    <div class="stat-label">${t('perfectGames')}</div>
-                    <div class="stat-detail">${t('withoutErrors')}</div>
-                </div>
-            </div>
-            
             <div class="stat-card">
                 <div class="stat-icon">📅</div>
                 <div class="stat-info">
@@ -71,19 +26,54 @@ export function renderStatsPageTranslated() {
                     <div class="stat-detail">${t('playingDaily')}</div>
                 </div>
             </div>
-        </div>
-        
-        <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 800;">${t('statsByCategory')}</h4>
-        <div class="category-stats">
-            ${Object.entries(stats.correctByCategory || {}).map(([category, count]) => `
-                <div class="category-stat-item">
-                    <div class="category-stat-name">${t(category) || (category.charAt(0).toUpperCase() + category.slice(1))}</div>
-                    <div class="category-stat-bar">
-                        <div class="category-stat-fill" style="width: ${Math.min((count / 100) * 100, 100)}%"></div>
-                    </div>
-                    <div class="category-stat-count">${count}</div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-info">
+                    <div class="stat-value">${accuracy}%</div>
+                    <div class="stat-label">${t('precision')}</div>
+                    <div class="stat-detail">${stats.questionsCorrect}/${stats.questionsAnswered} ${t('correctAnswers')}</div>
                 </div>
-            `).join('')}
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱</div>
+                <div class="stat-info">
+                    <div class="stat-value">${totalTimeStr}</div>
+                    <div class="stat-label">${t('totalTime')}</div>
+                    <div class="stat-detail">${t('totalTimeDetail')}</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <div class="stat-value">${stats.longestCorrectStreak || 0}</div>
+                    <div class="stat-label">${t('bestStreak')}</div>
+                    <div class="stat-detail">${t('consecutiveAnswers')}</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <div class="stat-value">${stats.level || 1}</div>
+                    <div class="stat-label">${t('currentLevel')}</div>
+                    <div class="stat-detail">${stats.totalXP || 0} ${t('totalXP')}</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <div class="stat-value">${totalGames}</div>
+                    <div class="stat-label">${t('totalGames')}</div>
+                    <div class="stat-detail">${stats.soloGamesPlayed || 0} ${t('soloGames')}</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <div class="stat-value">${stats.perfectGames || 0}</div>
+                    <div class="stat-label">${t('perfectGames')}</div>
+                    <div class="stat-detail">${t('withoutErrors')}</div>
+                </div>
+            </div>
         </div>
     `;
     

@@ -45,6 +45,8 @@ const translations = {
     next: 'Siguiente',
     exit: 'Salir',
     pts: 'pts',
+    reportQuestion: 'Reportar',
+    reportQuestionTooltip: '¿Hay algún problema con esta pregunta?',
     
     // Sopa de letras
     wsDescription: 'Encuentra palabras bíblicas ocultas en la sopa de letras. Arrastra el cursor o toca las letras para seleccionar palabras en cualquier dirección: horizontal, vertical o diagonal.',
@@ -118,6 +120,8 @@ const translations = {
     withoutErrors: 'Sin fallar ninguna',
     daysInRow: 'Días Seguidos',
     playingDaily: 'Jugando diariamente',
+    totalTime: 'Tiempo Total',
+    totalTimeDetail: 'Tiempo jugando',
     statsByCategory: 'Estadísticas por Categoría',
     achievements: 'Logros',
     
@@ -269,6 +273,8 @@ const translations = {
     next: 'Next',
     exit: 'Exit',
     pts: 'pts',
+    reportQuestion: 'Report',
+    reportQuestionTooltip: 'Is there a problem with this question?',
     
     // Word search
     wsDescription: 'Find hidden biblical words in the word search. Drag the cursor or tap letters to select words in any direction: horizontal, vertical, or diagonal.',
@@ -342,6 +348,8 @@ const translations = {
     withoutErrors: 'Without any errors',
     daysInRow: 'Days in a Row',
     playingDaily: 'Playing daily',
+    totalTime: 'Total Time',
+    totalTimeDetail: 'Time playing',
     statsByCategory: 'Stats by Category',
     achievements: 'Achievements',
 
@@ -482,6 +490,11 @@ export function updateUI() {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
     const key = element.getAttribute('data-i18n-placeholder');
     element.placeholder = t(key);
+  });
+  // Actualizar elementos con atributo data-i18n-title (para tooltips)
+  document.querySelectorAll('[data-i18n-title]').forEach(element => {
+    const key = element.getAttribute('data-i18n-title');
+    if (key) element.setAttribute('title', t(key));
   });
 }
 

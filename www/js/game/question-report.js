@@ -56,9 +56,9 @@ export function setCurrentQuestionData(q) {
     // Asegurar que tenemos la respuesta correcta
     answer: q.answer !== undefined ? q.answer : (q.correct !== undefined ? q.correct : 0),
     // Intentar obtener categoría del contexto si no está en el objeto
-    category: q.category || getCategoryFromContext() || 'No disponible',
+    category: q.category || getCategoryFromContext() || 'Not available',
     // Intentar obtener dificultad del contexto si no está en el objeto
-    difficulty: q.difficulty || getDifficultyFromContext() || 'No disponible',
+    difficulty: q.difficulty || getDifficultyFromContext() || 'Not available',
     // Asegurar que tenemos la imagen
     img: q.img || (q.media && q.media.src) || null
   };
@@ -159,7 +159,7 @@ export function initQuestionReport() {
       const otherDescription = reason === 'other' && otherText ? otherText.value.trim() : '';
       
       if (reason === 'other' && !otherDescription) {
-        alert('Por favor describe el problema');
+        alert('Please describe the problem');
         return;
       }
       
@@ -173,14 +173,14 @@ export function initQuestionReport() {
 async function sendReport(reason, otherDescription) {
   if (!emailjsReady) {
 
-    alert('Error: El sistema de reportes no está disponible. Por favor intenta más tarde.');
+    alert('Error: The report system is not available. Please try again later.');
     return;
   }
   
   // Verificar que el Service ID esté configurado
   if (!EMAILJS_CONFIG.SERVICE_ID || EMAILJS_CONFIG.SERVICE_ID === '') {
 
-    alert('Error: El sistema de reportes no está configurado correctamente. Por favor contacta al administrador.');
+    alert('Error: The report system is not configured correctly. Please contact the administrator.');
     return;
   }
   
@@ -191,25 +191,24 @@ async function sendReport(reason, otherDescription) {
   }
   
   const reasonText = {
-    'incorrect_image': 'Imagen incorrecta',
-    'incorrect_answer': 'Respuesta incorrecta',
-    'incorrect_translation': 'Traducción incorrecta',
-    'other': 'Otro'
+    'incorrect_image': 'Incorrect image',
+    'incorrect_answer': 'Incorrect answer',
+    'incorrect_translation': 'Incorrect translation',
+    'other': 'Other'
   }[reason] || reason;
   
   // Preparar información detallada de la pregunta
-  const questionText = currentQuestionData?.q || currentQuestionData?.question || 'No disponible';
+  const questionText = currentQuestionData?.q || currentQuestionData?.question || 'Not available';
   const options = currentQuestionData?.options || [];
   const correctAnswerIndex = currentQuestionData?.answer !== undefined ? currentQuestionData.answer : (currentQuestionData?.correct || 0);
-  const correctAnswer = options[correctAnswerIndex] || 'No disponible';
-  const category = currentQuestionData?.category || 'No disponible';
-  const difficulty = currentQuestionData?.difficulty || 'No disponible';
-  const imageUrl = currentQuestionData?.img || currentQuestionData?.media?.src || 'No disponible';
+  const correctAnswer = options[correctAnswerIndex] || 'Not available';
+  const category = currentQuestionData?.category || 'Not available';
+  const difficulty = currentQuestionData?.difficulty || 'Not available';
+  const imageUrl = currentQuestionData?.img || currentQuestionData?.media?.src || 'Not available';
   
-  // Formatear opciones con letras
   const formattedOptions = options.map((opt, i) => 
-    `${String.fromCharCode(65 + i)}. ${opt || '(vacía)'}`
-  ).join('\n') || 'No disponible';
+    `${String.fromCharCode(65 + i)}. ${opt || '(empty)'}`
+  ).join('\n') || 'Not available';
   
   // Preparar variables según el template de EmailJS
   const templateParams = {
@@ -231,7 +230,7 @@ async function sendReport(reason, otherDescription) {
   
   try {
     btnSend.disabled = true;
-    btnSend.textContent = 'Enviando...';
+    btnSend.textContent = 'Sending...';
     
     const response = await emailjs.send(
       EMAILJS_CONFIG.SERVICE_ID,
@@ -240,26 +239,25 @@ async function sendReport(reason, otherDescription) {
     );
 
     if (window.toast) {
-      window.toast('✅ Reporte enviado correctamente. ¡Gracias!');
+      window.toast('✅ Report sent successfully. Thank you!');
     } else {
-      alert('✅ Reporte enviado correctamente. ¡Gracias!');
+      alert('✅ Report sent successfully. Thank you!');
     }
     
     btnSend.disabled = false;
-    btnSend.textContent = 'Enviar reporte';
+    btnSend.textContent = 'Send report';
   } catch (error) {
 
-    // Mensaje de error más específico
-    let errorMessage = '❌ Error al enviar el reporte. Por favor intenta de nuevo.';
+    let errorMessage = '❌ Error sending the report. Please try again.';
     if (error.text && error.text.includes('service ID not found')) {
-      errorMessage = '❌ Error: Service ID de EmailJS no encontrado. Por favor contacta al administrador.';
+      errorMessage = '❌ Error: EmailJS Service ID not found. Please contact the administrator.';
     } else if (error.text && error.text.includes('template')) {
-      errorMessage = '❌ Error: Template ID de EmailJS no encontrado. Por favor contacta al administrador.';
+      errorMessage = '❌ Error: EmailJS Template ID not found. Please contact the administrator.';
     }
     
     alert(errorMessage);
     btnSend.disabled = false;
-    btnSend.textContent = 'Enviar reporte';
+    btnSend.textContent = 'Send report';
   }
 }
 

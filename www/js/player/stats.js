@@ -19,6 +19,7 @@ const defaultStats = {
   perfectGames: 0,
   lastPlayDate: null,
   consecutiveDaysPlayed: 1,
+  totalTimePlayedSeconds: 0,
   correctByCategory: {
     bible: 0,
   }
@@ -129,6 +130,7 @@ export async function trackEvent(eventName, data = {}) {
             stats.perfectGames++;
         }
         if (data.mode === 'solo') stats.soloGamesPlayed++;
+        if (data.elapsedSeconds) stats.totalTimePlayedSeconds = (stats.totalTimePlayedSeconds || 0) + data.elapsedSeconds;
         break;
   }
   

@@ -239,7 +239,7 @@
         <img src="./assets/logo/logo.webp" alt="Bible Trivia - Logo del juego de trivia bíblica" class="app-logo" role="img"/>
       </div>
       <div class="row">
-        <button class="iconbtn hover-float" id="btnOpenStats" title="Estadísticas" data-i18n-title="statistics">
+        <button class="iconbtn hover-float" id="btnOpenStats">
             <svg viewBox="0 0 24 24" width="22" height="22">
               <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
             </svg>
@@ -351,7 +351,6 @@
     <div class="card" id="gameArea" style="display:none">
       <div class="row" style="justify-content:space-between">
         <div class="row">
-          <div class="badge" id="bMeta" data-i18n="question">Pregunta</div>
           <div class="badge" id="bCat">—</div>
           <div class="badge" id="bDiff">—</div>
         </div>
@@ -360,13 +359,13 @@
       <div id="qText" style="font-size:20px;font-weight:800; margin-top: 8px;">—</div>
       <div id="options" class="options" style="margin-top: 8px;"></div>
       <div class="progress" style="margin-top: 8px;"><div id="progressBar"></div></div>
-      <div class="row" style="justify-content:space-between;margin-top:6px; align-items:center; gap:8px;">
-        <div class="row" style="gap:8px; align-items:center;">
-          <div class="badge" id="kHUD">0/0 · 0 <span data-i18n="pts">pts</span></div>
-          <button class="btn secondary small" id="btnReportQuestion" type="button" style="padding: 6px 10px; font-size: 11px; width:auto; white-space:nowrap;" title="Reportar pregunta">⚠️ Reportar</button>
-        </div>
+      <div class="row game-hud-row">
+        <div class="badge" id="kHUD">0/0 · 0 <span data-i18n="pts">pts</span></div>
+        <button class="btn secondary small" id="btnReportQuestion" type="button" data-i18n="reportQuestion" data-i18n-title="reportQuestionTooltip">⚠️ Report</button>
       </div>
-      <button class="btn secondary danger" id="btnExitGame" type="button" style="margin-top: 10px;" data-i18n="exit">Salir</button>
+      <div class="game-exit-wrap">
+        <button class="btn secondary danger" id="btnExitGame" type="button" data-i18n="exit">Salir</button>
+      </div>
     </div>
 
     <div class="card" id="wordsearchGameArea" style="display:none">
@@ -455,8 +454,7 @@
 
   <div class="fs" id="fsStats" style="display:none;">
     <div class="wrap">
-      <div class="titlebar">
-        <div class="fs-titlebar-title" data-i18n="statistics">Estadísticas</div>
+      <div class="titlebar" style="justify-content: flex-end;">
         <button class="back" id="backStats">✖</button>
       </div>
       <div class="card">
@@ -594,44 +592,44 @@
   
   <!-- Sistema de amigos se carga desde los módulos ES6 -->
 
-  <!-- Modal de Reporte de Pregunta -->
+  <!-- Report Question Modal -->
   <div class="modal" id="reportQuestionModal">
     <div class="panel" style="max-width: 500px;">
       <div class="row" style="justify-content:space-between; margin-bottom: 20px;">
-        <div style="font-weight:800; font-size: 18px;">⚠️ Reportar Pregunta</div>
+        <div style="font-weight:800; font-size: 18px;">⚠️ Report Question</div>
         <button class="iconbtn" id="btnCloseReportModal" type="button">✖</button>
       </div>
       
       <div style="margin-bottom: 20px;">
-        <label style="display:block; margin-bottom: 12px; font-weight:600;">Motivo del reporte:</label>
+        <label style="display:block; margin-bottom: 12px; font-weight:600;">Reason for report:</label>
         <div style="display:flex; flex-direction:column; gap:10px;">
           <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
             <input type="radio" name="reportReason" value="incorrect_image" style="cursor:pointer;">
-            <span>Imagen incorrecta</span>
+            <span>Incorrect image</span>
           </label>
           <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
             <input type="radio" name="reportReason" value="incorrect_answer" style="cursor:pointer;">
-            <span>Respuesta incorrecta</span>
+            <span>Incorrect answer</span>
           </label>
           <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
             <input type="radio" name="reportReason" value="incorrect_translation" style="cursor:pointer;">
-            <span>Traducción incorrecta</span>
+            <span>Incorrect translation</span>
           </label>
           <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
             <input type="radio" name="reportReason" value="other" style="cursor:pointer;">
-            <span>Otro</span>
+            <span>Other</span>
           </label>
         </div>
       </div>
       
       <div id="reportOtherTextContainer" style="display:none; margin-bottom: 16px;">
-        <label style="display:block; margin-bottom: 8px; font-weight:600; color: var(--text);">Describe el problema:</label>
-        <textarea id="reportOtherText" placeholder="Escribe aquí el motivo del reporte..." style="width:100%; min-height:100px; padding:12px; border:1px solid var(--cardBorder); border-radius:8px; background:var(--bg1); color:var(--text); font-family:inherit; resize:vertical;"></textarea>
+        <label style="display:block; margin-bottom: 8px; font-weight:600; color: var(--text);">Describe the problem:</label>
+        <textarea id="reportOtherText" placeholder="Describe the issue here..." style="width:100%; min-height:100px; padding:12px; border:1px solid var(--cardBorder); border-radius:8px; background:var(--bg1); color:var(--text); font-family:inherit; resize:vertical;"></textarea>
       </div>
       
       <div style="display:flex; gap:10px; justify-content:flex-end;">
-        <button class="btn secondary" id="btnCancelReport" type="button">Cancelar</button>
-        <button class="btn" id="btnSendReport" type="button">Enviar reporte</button>
+        <button class="btn secondary" id="btnCancelReport" type="button">Cancel</button>
+        <button class="btn" id="btnSendReport" type="button">Send report</button>
       </div>
     </div>
   </div>

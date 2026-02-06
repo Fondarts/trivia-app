@@ -189,7 +189,7 @@ export function initVisualEffects() {
   
   // Agregar tooltips (excluir elementos que ya tienen tooltips CSS como .mode-btn)
   document.querySelectorAll('[title]').forEach(el => {
-    // No agregar tooltip dinámico si el elemento ya tiene un tooltip CSS
+    if (el.id === 'btnOpenStats') return;
     if (!el.querySelector('.mode-tooltip') && !el.classList.contains('mode-btn')) {
       addTooltip(el, el.getAttribute('title'));
       el.removeAttribute('title');

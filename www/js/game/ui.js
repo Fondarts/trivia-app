@@ -807,54 +807,11 @@ export function renderStatsPage() {
     
     const accuracy = stats.questionsAnswered > 0 ? ((stats.questionsCorrect / stats.questionsAnswered) * 100).toFixed(1) : 0;
     const totalGames = stats.totalGamesPlayed || 0;
-    
+    const totalSec = stats.totalTimePlayedSeconds || 0;
+    const totalTimeStr = totalSec >= 3600 ? `${Math.floor(totalSec / 3600)} h ${Math.floor((totalSec % 3600) / 60)} min` : `${Math.floor(totalSec / 60)} min`;
+
     statsContainer.innerHTML = `
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">🎯</div>
-                <div class="stat-info">
-                    <div class="stat-value">${accuracy}%</div>
-                    <div class="stat-label">Precisión</div>
-                    <div class="stat-detail">${stats.questionsCorrect}/${stats.questionsAnswered} correctas</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">🔥</div>
-                <div class="stat-info">
-                    <div class="stat-value">${stats.longestCorrectStreak || 0}</div>
-                    <div class="stat-label">Mejor Racha</div>
-                    <div class="stat-detail">Respuestas seguidas</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">🏆</div>
-                <div class="stat-info">
-                    <div class="stat-value">${stats.level || 1}</div>
-                    <div class="stat-label">Nivel Actual</div>
-                    <div class="stat-detail">${stats.totalXP || 0} XP total</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">📊</div>
-                <div class="stat-info">
-                    <div class="stat-value">${totalGames}</div>
-                    <div class="stat-label">Partidas Totales</div>
-                    <div class="stat-detail">${stats.soloGamesPlayed || 0} partidas jugadas</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">⭐</div>
-                <div class="stat-info">
-                    <div class="stat-value">${stats.perfectGames || 0}</div>
-                    <div class="stat-label">Partidas Perfectas</div>
-                    <div class="stat-detail">Sin fallar ninguna</div>
-                </div>
-            </div>
-            
             <div class="stat-card">
                 <div class="stat-icon">📅</div>
                 <div class="stat-info">
@@ -863,19 +820,54 @@ export function renderStatsPage() {
                     <div class="stat-detail">Jugando diariamente</div>
                 </div>
             </div>
-        </div>
-        
-        <h4 style="margin-top: 24px; margin-bottom: 16px; font-weight: 800;">Estadísticas por Categoría</h4>
-        <div class="category-stats">
-            ${Object.entries(stats.correctByCategory || {}).map(([category, count]) => `
-                <div class="category-stat-item">
-                    <div class="category-stat-name">${category.charAt(0).toUpperCase() + category.slice(1)}</div>
-                    <div class="category-stat-bar">
-                        <div class="category-stat-fill" style="width: ${Math.min((count / 100) * 100, 100)}%"></div>
-                    </div>
-                    <div class="category-stat-count">${count}</div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-info">
+                    <div class="stat-value">${accuracy}%</div>
+                    <div class="stat-label">Precisión</div>
+                    <div class="stat-detail">${stats.questionsCorrect}/${stats.questionsAnswered} correctas</div>
                 </div>
-            `).join('')}
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱</div>
+                <div class="stat-info">
+                    <div class="stat-value">${totalTimeStr}</div>
+                    <div class="stat-label">Tiempo Total</div>
+                    <div class="stat-detail">Tiempo jugando</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <div class="stat-value">${stats.longestCorrectStreak || 0}</div>
+                    <div class="stat-label">Mejor Racha</div>
+                    <div class="stat-detail">Respuestas seguidas</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <div class="stat-value">${stats.level || 1}</div>
+                    <div class="stat-label">Nivel Actual</div>
+                    <div class="stat-detail">${stats.totalXP || 0} XP total</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <div class="stat-value">${totalGames}</div>
+                    <div class="stat-label">Partidas Totales</div>
+                    <div class="stat-detail">${stats.soloGamesPlayed || 0} partidas jugadas</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <div class="stat-value">${stats.perfectGames || 0}</div>
+                    <div class="stat-label">Partidas Perfectas</div>
+                    <div class="stat-detail">Sin fallar ninguna</div>
+                </div>
+            </div>
         </div>
     `;
     

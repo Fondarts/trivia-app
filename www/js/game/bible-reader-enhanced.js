@@ -1139,74 +1139,214 @@ export function restoreHighlightsFromStorage() {
   }
   
   // Filtrar highlights del libro y capítulo actual
-  const currentHighlights = highlights.filter(h => 
-    h.bookId === bookId && h.chapter === chapter
-  );
+  // Asegurar comparación correcta de chapter (puede ser string o número)
+  const currentHighlights = highlights.filter(h => {
+    const hBookId = String(h.bookId || '');
+    const hChapter = String(h.chapter || '');
+    const currentBookId = String(bookId || '');
+    const currentChapter = String(chapter || '');
+    return hBookId === currentBookId && hChapter === currentChapter;
+  });
   
-  if (currentHighlights.length === 0) return;
+  console.log('[restoreHighlightsFromStorage] Current highlights to restore:', {
+    bookId,
+    chapter,
+    count: currentHighlights.length,
+    highlights: currentHighlights
+  });
+  
+  if (currentHighlights.length === 0) {
+    console.log('[restoreHighlightsFromStorage] No highlights to restore for this chapter');
+    return;
+  }
   
   const contentEl = document.getElementById('bibleReaderContent');
   if (!contentEl) return;
   
   // Para cada highlight, buscar el texto y aplicar el subrayado
-  currentHighlights.forEach(highlight => {
-    if (!highlight.selectedText || !highlight.color) return;
+  currentHighlights.forEach((highlight, idx) => {
+    if (!highlight.selectedText || !highlight.color) {
+      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: missing text or color`);
+      return;
+    }
     
-    const textToFind = highlight.selectedText.trim();
-    if (textToFind.length === 0) return;
+    // Limpiar el texto para buscar (remover números de versículo, normalizar espacios y hacer case-insensitive)
+    const normalizeText = (text) => {
+      return text.toLowerCase()
+        .replace(/\d+/g, '') // Remover números
+        .replace(/[^\w\s]/g, ' ') // Reemplazar puntuación con espacios
+        .replace(/\s+/g, ' ') // Normalizar espacios
+        .trim();
+    };
     
-    // Verificar si el texto ya está subrayado
-    const allText = contentEl.textContent || '';
-    if (!allText.includes(textToFind)) return;
+    const textToFind = normalizeText(highlight.selectedText);
     
-    // Buscar el texto en el contenido, evitando nodos que ya están dentro de spans con subrayado
-    const walker = document.createTreeWalker(
-      contentEl,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode: (node) => {
-          // Evitar nodos que ya están dentro de un span con subrayado
-          const parent = node.parentElement;
-          if (parent && parent.classList.contains('bible-text-underline')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          return NodeFilter.FILTER_ACCEPT;
+    if (textToFind.length === 0) {
+      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: text too short after cleaning`);
+      return;
+    }
+    
+    // Extraer palabras clave (palabras de más de 2 caracteres)
+    const keywords = textToFind.split(' ').filter(w => w.length > 2);
+    if (keywords.length === 0) {
+      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: no valid keywords`);
+      return;
+    }
+    
+    console.log(`[restoreHighlightsFromStorage] Attempting to restore highlight ${idx}:`, {
+      color: highlight.color,
+      textPreview: highlight.selectedText.substring(0, 50),
+      keywords: keywords.slice(0, 5),
+      verseRange: highlight.verseRange
+    });
+    
+    // Si tenemos verseRange, limitar la búsqueda a esos versículos
+    let searchElements = [];
+    if (highlight.verseRange) {
+      const verseNumbers = highlight.verseRange.split(',').flatMap(r => {
+        if (r.includes('-')) {
+          const [a, b] = r.split('-').map(Number);
+          return Array.from({length: b - a + 1}, (_, i) => a + i);
         }
-      },
-      false
-    );
-    
-    let node;
-    while (node = walker.nextNode()) {
-      const text = node.textContent;
-      const index = text.indexOf(textToFind);
+        return [Number(r)];
+      });
       
-      if (index !== -1) {
-        // Crear un rango para el texto encontrado
-        const range = document.createRange();
-        range.setStart(node, index);
-        range.setEnd(node, index + textToFind.length);
-        
-        // Verificar que el rango no esté dentro de un span con subrayado
-        const container = range.commonAncestorContainer;
-        const parent = container.nodeType === Node.TEXT_NODE 
-          ? container.parentElement 
-          : container;
-        
-        if (parent && parent.classList.contains('bible-text-underline')) {
-          continue; // Ya está subrayado, saltar
+      verseNumbers.forEach(verseNum => {
+        const verseEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${verseNum}"]`);
+        if (verseEl) {
+          searchElements.push(verseEl);
         }
+      });
+    }
+    
+    // Si no encontramos versículos específicos o no hay verseRange, buscar en todo el contenido
+    if (searchElements.length === 0) {
+      searchElements = [contentEl];
+    }
+    
+    let found = false;
+    
+    // Buscar en cada elemento
+    for (const searchEl of searchElements) {
+      // Buscar el texto en el contenido, evitando nodos que ya están dentro de spans con subrayado
+      const walker = document.createTreeWalker(
+        searchEl,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode: (node) => {
+            // Evitar nodos que ya están dentro de un span con subrayado
+            const parent = node.parentElement;
+            if (parent && parent.classList.contains('bible-text-underline')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        },
+        false
+      );
+      
+      let node;
+      while (node = walker.nextNode()) {
+        const text = node.textContent || '';
+        const normalizedText = normalizeText(text);
         
-        // Aplicar el subrayado
-        try {
-          applyTextUnderline(range, highlight.color);
-        } catch (e) {
-          console.warn('Could not restore highlight:', e);
+        // Buscar usando las palabras clave - verificar si todas las palabras clave están presentes
+        const allKeywordsFound = keywords.every(keyword => normalizedText.includes(keyword));
+        
+        if (allKeywordsFound) {
+          // Encontrar la posición donde comienzan las palabras clave
+          let bestStart = -1;
+          let bestEnd = -1;
+          
+          // Buscar la primera palabra clave
+          const firstKeyword = keywords[0];
+          const firstIndex = normalizedText.indexOf(firstKeyword);
+          
+          if (firstIndex !== -1) {
+            // Encontrar la posición real en el texto original
+            let realStart = 0;
+            let normalizedIndex = 0;
+            for (let i = 0; i < text.length && normalizedIndex < firstIndex; i++) {
+              const char = text[i].toLowerCase();
+              if (/[a-z]/.test(char)) {
+                normalizedIndex++;
+              }
+              realStart++;
+            }
+            
+            // Calcular el final basado en la longitud del texto original
+            let realEnd = realStart;
+            let normalizedEnd = firstIndex + firstKeyword.length;
+            normalizedIndex = firstIndex;
+            
+            for (let i = realStart; i < text.length && normalizedIndex < normalizedEnd; i++) {
+              const char = text[i].toLowerCase();
+              if (/[a-z]/.test(char)) {
+                normalizedIndex++;
+              }
+              realEnd++;
+            }
+            
+            // Ajustar para incluir todas las palabras clave
+            const lastKeyword = keywords[keywords.length - 1];
+            const lastIndex = normalizedText.lastIndexOf(lastKeyword);
+            if (lastIndex !== -1 && lastIndex > firstIndex) {
+              normalizedIndex = firstIndex;
+              realEnd = realStart;
+              for (let i = realStart; i < text.length && normalizedIndex < lastIndex + lastKeyword.length; i++) {
+                const char = text[i].toLowerCase();
+                if (/[a-z]/.test(char)) {
+                  normalizedIndex++;
+                }
+                realEnd++;
+              }
+            }
+            
+            // Crear un rango para el texto encontrado
+            const range = document.createRange();
+            try {
+              range.setStart(node, realStart);
+              range.setEnd(node, Math.min(realEnd, text.length));
+              
+              // Verificar que el rango no esté dentro de un span con subrayado
+              const container = range.commonAncestorContainer;
+              const parent = container.nodeType === Node.TEXT_NODE 
+                ? container.parentElement 
+                : container;
+              
+              if (parent && parent.classList.contains('bible-text-underline')) {
+                console.log(`[restoreHighlightsFromStorage] Highlight ${idx} already underlined, skipping`);
+                continue; // Ya está subrayado, saltar
+              }
+              
+              // Aplicar el subrayado
+              try {
+                applyTextUnderline(range, highlight.color);
+                console.log(`[restoreHighlightsFromStorage] ✅ Successfully restored highlight ${idx}`);
+                found = true;
+                break; // Salir del loop de elementos de búsqueda
+              } catch (e) {
+                console.warn(`[restoreHighlightsFromStorage] ❌ Could not restore highlight ${idx}:`, e);
+              }
+            } catch (rangeError) {
+              console.warn(`[restoreHighlightsFromStorage] ❌ Error creating range for highlight ${idx}:`, rangeError);
+              continue;
+            }
+          }
         }
-        
-        // Solo restaurar el primer match para evitar duplicados
-        break;
       }
+      
+      if (found) break; // Si encontramos el highlight, salir del loop
+    }
+    
+    if (!found) {
+      console.warn(`[restoreHighlightsFromStorage] ⚠️ Could not find text for highlight ${idx} in DOM`, {
+        keywords: keywords.slice(0, 5),
+        verseRange: highlight.verseRange,
+        searchElementsCount: searchElements.length
+      });
     }
   });
+  
+  console.log('[restoreHighlightsFromStorage] ✅ Finished restoring highlights');
 }

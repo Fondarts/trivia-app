@@ -603,11 +603,22 @@ function renderReaderChapter(chapterNum) {
   if (window.applyBibleReaderSettings) {
     setTimeout(() => {
       window.applyBibleReaderSettings();
-      // Restaurar highlights visuales después de renderizar
+      // Restaurar highlights visuales después de renderizar (con delay adicional)
       if (window.restoreHighlightsFromStorage) {
-        window.restoreHighlightsFromStorage();
+        setTimeout(() => {
+          console.log('[renderReaderChapter] Restoring highlights after render');
+          window.restoreHighlightsFromStorage();
+        }, 100);
       }
     }, 50);
+  } else {
+    // Si no hay applyBibleReaderSettings, restaurar highlights de todas formas
+    setTimeout(() => {
+      if (window.restoreHighlightsFromStorage) {
+        console.log('[renderReaderChapter] Restoring highlights (no settings)');
+        window.restoreHighlightsFromStorage();
+      }
+    }, 150);
   }
 
   // Configurar selección de texto por letra/palabra
@@ -1157,14 +1168,14 @@ function renderVersesList() {
     
     return `<div class="bible-reader-list-item" data-highlight-index="${index}" data-book-id="${escapeHtml(h.bookId)}" data-chapter="${escapeHtml(h.chapter)}" data-verse-range="${escapeHtml(h.verseRange || '')}">
         <div class="bible-reader-list-item-body">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-            <span class="bible-reader-list-ref">${escapeHtml(ref)}</span>
-            <span style="width: 20px; height: 20px; border-radius: 50%; background: ${colorHex}; border: 2px solid rgba(0,0,0,0.1); flex-shrink: 0;" title="${escapeHtml(h.color)}"></span>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 8px; flex: 1;">
+              <span class="bible-reader-list-ref">${escapeHtml(ref)}</span>
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: ${colorHex}; border: 2px solid rgba(0,0,0,0.1); flex-shrink: 0;" title="${escapeHtml(h.color)}"></span>
+            </div>
+            <button type="button" class="bible-reader-list-del" id="${delId}" aria-label="${escapeHtml(delLabel)}" style="background: transparent; border: none; color: #ef4444; font-size: 1.2rem; cursor: pointer; padding: 4px 8px; line-height: 1; transition: all 0.2s; flex-shrink: 0;">✖</button>
           </div>
           ${textPreview ? `<span class="bible-reader-list-preview">${escapeHtml(textPreview)}</span>` : ''}
-        </div>
-        <div class="bible-reader-list-item-actions">
-          <button type="button" class="bible-reader-list-del" id="${delId}" aria-label="${escapeHtml(delLabel)}">✖</button>
         </div>
       </div>`;
   }).join('');
@@ -1182,6 +1193,7 @@ function renderVersesList() {
           const bookName = getBookNameFromId(bookId);
           openReaderWindow(bookName, bookId, data, chapter);
           // Scroll al primer versículo del rango después de un pequeño delay
+          // También restaurar highlights después de que se renderice el capítulo
           if (verseRange) {
             setTimeout(() => {
               const firstVerse = verseRange.split(',')[0].split('-')[0];
@@ -1189,7 +1201,20 @@ function renderVersesList() {
               if (verseEl) {
                 verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
               }
-            }, 300);
+              // Restaurar highlights después de hacer scroll
+              if (window.restoreHighlightsFromStorage) {
+                setTimeout(() => {
+                  window.restoreHighlightsFromStorage();
+                }, 200);
+              }
+            }, 500);
+          } else {
+            // Si no hay verseRange, restaurar highlights después de un delay
+            setTimeout(() => {
+              if (window.restoreHighlightsFromStorage) {
+                window.restoreHighlightsFromStorage();
+              }
+            }, 500);
           }
         }
       });
@@ -1199,6 +1224,7 @@ function renderVersesList() {
     if (delBtn) {
       delBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        e.preventDefault();
         const index = parseInt(item.getAttribute('data-highlight-index'), 10);
         const highlights = getHighlights();
         if (index >= 0 && index < highlights.length) {

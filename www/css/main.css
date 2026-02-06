@@ -908,28 +908,30 @@ button.btn,
   box-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
-/* Estilos para texto subrayado */
+/* Estilos para texto subrayado: border-bottom para que la línea quede debajo de descendentes (g, y, p) */
 .bible-text-underline {
   display: inline;
+  text-decoration: none !important;
   outline: none !important;
   border: none !important;
+  border-bottom: 2px solid !important;
+  padding-bottom: 2px !important;
   box-shadow: none !important;
   background: transparent !important;
 }
 .bible-text-underline:focus,
 .bible-text-underline:active {
   outline: none !important;
-  border: none !important;
   box-shadow: none !important;
   background: transparent !important;
 }
-.bible-text-underline-yellow { text-decoration-color: #fbbf24 !important; }
-.bible-text-underline-green { text-decoration-color: #22c55e !important; }
-.bible-text-underline-blue { text-decoration-color: #3b82f6 !important; }
-.bible-text-underline-pink { text-decoration-color: #ec4899 !important; }
-.bible-text-underline-orange { text-decoration-color: #f97316 !important; }
-.bible-text-underline-purple { text-decoration-color: #a855f7 !important; }
-.bible-text-underline-red { text-decoration-color: #ef4444 !important; }
+.bible-text-underline-yellow { border-bottom-color: #fbbf24 !important; }
+.bible-text-underline-green { border-bottom-color: #22c55e !important; }
+.bible-text-underline-blue { border-bottom-color: #3b82f6 !important; }
+.bible-text-underline-pink { border-bottom-color: #ec4899 !important; }
+.bible-text-underline-orange { border-bottom-color: #f97316 !important; }
+.bible-text-underline-purple { border-bottom-color: #a855f7 !important; }
+.bible-text-underline-red { border-bottom-color: #ef4444 !important; }
 
 /* Popup de Wikipedia */
 .bible-wikipedia-popup {

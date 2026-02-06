@@ -701,19 +701,29 @@ function renderReaderChapter(chapterNum) {
   const paragraphs = [];
   for (let i = 0; i < ch.verses.length; i += PARAGRAPH_SIZE) {
     const chunk = ch.verses.slice(i, i + PARAGRAPH_SIZE);
-    const verseSpans = chunk
-      .map(v => {
-        const num = String(v.verse);
-        const highlightColor = getHighlightForVerse(num);
-        const highlightClass = highlightColor ? ` bible-reader-verse-highlight-${highlightColor}` : '';
-        const noteSource = getNoteSourceForVerse(num);
-        const noteIcon = noteSource
-          ? ` <button type="button" class="bible-reader-verse-note-icon" data-key="${escapeHtml(noteSource.key || '')}" data-note-id="${escapeHtml(noteSource.id || '')}" data-ref="${escapeHtml(noteSource.ref || '')}" aria-label="${escapeHtml(LANG() === 'en' ? 'View note' : 'Ver nota')}">📓</button>`
-          : '';
-        return `<span class="bible-reader-verse${highlightClass}" data-verse="${escapeHtml(num)}"><sup class="bible-reader-verse-num">${escapeHtml(num)}</sup> ${escapeHtml(v.text || '')}${noteIcon}</span>`;
-      })
-      .join(' ');
-    paragraphs.push(`<p class="bible-reader-paragraph">${verseSpans}</p>`);
+    const verseSpans = chunk.map(v => {
+      const num = String(v.verse);
+      const highlightColor = getHighlightForVerse(num);
+      const highlightClass = highlightColor ? ` bible-reader-verse-highlight-${highlightColor}` : '';
+      const noteSource = getNoteSourceForVerse(num);
+      const noteIcon = noteSource
+        ? ` <button type="button" class="bible-reader-verse-note-icon" data-key="${escapeHtml(noteSource.key || '')}" data-note-id="${escapeHtml(noteSource.id || '')}" data-ref="${escapeHtml(noteSource.ref || '')}" aria-label="${escapeHtml(LANG() === 'en' ? 'View note' : 'Ver nota')}">📓</button>`
+        : '';
+      return `<span class="bible-reader-verse${highlightClass}" data-verse="${escapeHtml(num)}"><sup class="bible-reader-verse-num">${escapeHtml(num)}</sup> ${escapeHtml(v.text || '')}${noteIcon}</span>`;
+    });
+    // No insertar espacio entre versos cuando formaría parte de una misma palabra (ej. "mor" + "ning" -> "morning")
+    let paragraphHtml = '';
+    for (let j = 0; j < verseSpans.length; j++) {
+      if (j > 0) {
+        const prevText = (chunk[j - 1].text || '').trim();
+        const currText = (chunk[j].text || '').trim();
+        const prevEndsWord = /[a-zA-Z0-9]$/.test(prevText);
+        const currStartsWord = /^[a-zA-Z0-9]/.test(currText);
+        if (!(prevEndsWord && currStartsWord)) paragraphHtml += ' ';
+      }
+      paragraphHtml += verseSpans[j];
+    }
+    paragraphs.push(`<p class="bible-reader-paragraph">${paragraphHtml}</p>`);
   }
   contentEl.innerHTML = `<div class="bible-reader-verses">${paragraphs.join('')}</div>`;
   

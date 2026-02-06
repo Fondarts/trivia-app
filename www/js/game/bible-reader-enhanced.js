@@ -565,9 +565,77 @@ function hideEnhancedContextMenu() {
   }
 }
 
+/** Expande un rango a límites de palabra, incluso si la palabra cruza varios nodos de texto (evita "dee" + "p" -> "deep"). */
+function expandRangeToWordBoundaries(range) {
+  if (!range || range.collapsed) return;
+  const isWordChar = (c) => typeof c === 'string' && /[a-zA-Z0-9]/.test(c);
+  const anc = range.commonAncestorContainer;
+  const root = anc.nodeType === Node.ELEMENT_NODE ? anc : (anc.parentElement || anc.ownerDocument.body);
+  let startContainer = range.startContainer;
+  let startOffset = range.startOffset;
+  let endContainer = range.endContainer;
+  let endOffset = range.endOffset;
+
+  // Expandir inicio hacia atrás (mismo nodo y nodos anteriores dentro del mismo contenedor)
+  if (startContainer.nodeType === Node.TEXT_NODE) {
+    const text = startContainer.textContent || '';
+    while (startOffset > 0 && isWordChar(text[startOffset - 1])) startOffset--;
+    if (startOffset === 0 && root.contains(startContainer)) {
+      const prev = getPreviousTextNodeInRoot(startContainer, root);
+      if (prev) {
+        const prevText = prev.textContent || '';
+        let p = prevText.length;
+        while (p > 0 && isWordChar(prevText[p - 1])) p--;
+        if (p < prevText.length) {
+          startContainer = prev;
+          startOffset = p;
+        }
+      }
+    }
+  }
+
+  // Expandir final hacia delante (mismo nodo y nodos siguientes dentro del mismo contenedor)
+  if (endContainer.nodeType === Node.TEXT_NODE) {
+    const text = endContainer.textContent || '';
+    while (endOffset < text.length && isWordChar(text[endOffset])) endOffset++;
+    if (endOffset === text.length && root.contains(endContainer)) {
+      const next = getNextTextNodeInRoot(endContainer, root);
+      if (next) {
+        const nextText = next.textContent || '';
+        let n = 0;
+        while (n < nextText.length && isWordChar(nextText[n])) n++;
+        if (n > 0) {
+          endContainer = next;
+          endOffset = n;
+        }
+      }
+    }
+  }
+
+  try {
+    range.setStart(startContainer, startOffset);
+    range.setEnd(endContainer, endOffset);
+  } catch (_) {}
+}
+
+function getPreviousTextNodeInRoot(node, root) {
+  if (!root || !root.contains(node)) return null;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+  walker.currentNode = node;
+  return walker.previousNode();
+}
+
+function getNextTextNodeInRoot(node, root) {
+  if (!root || !root.contains(node)) return null;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+  walker.currentNode = node;
+  return walker.nextNode();
+}
+
 /** Aplica subrayado de color al texto seleccionado */
 function applyTextUnderline(range, color) {
   if (!range || !color) return;
+  expandRangeToWordBoundaries(range);
   
   // Colores para los subrayados
   const colorMap = {
@@ -583,13 +651,9 @@ function applyTextUnderline(range, color) {
   const underlineColor = colorMap[color] || colorMap.yellow;
   
   try {
-    // Crear un span con el subrayado
+    // Crear un span con el subrayado (el color se aplica por clase en CSS; border-bottom queda debajo de descendentes)
     const underlineSpan = document.createElement('span');
     underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
-    underlineSpan.style.textDecoration = 'underline';
-    underlineSpan.style.textDecorationColor = underlineColor;
-    underlineSpan.style.textDecorationThickness = '2px';
-    underlineSpan.style.textUnderlineOffset = '2px';
     
     // Envolver el contenido seleccionado
     range.surroundContents(underlineSpan);
@@ -599,10 +663,6 @@ function applyTextUnderline(range, color) {
       const contents = range.extractContents();
       const underlineSpan = document.createElement('span');
       underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
-      underlineSpan.style.textDecoration = 'underline';
-      underlineSpan.style.textDecorationColor = underlineColor;
-      underlineSpan.style.textDecorationThickness = '2px';
-      underlineSpan.style.textUnderlineOffset = '2px';
       underlineSpan.appendChild(contents);
       range.insertNode(underlineSpan);
     } catch (e2) {
@@ -1302,11 +1362,17 @@ export function restoreHighlightsFromStorage() {
               }
             }
             
+            // Expandir a límites de palabra para no cortar palabras (evitar "c" + "alled" -> "called")
+            const isWordChar = (c) => /[a-zA-Z0-9]/.test(c);
+            while (realStart > 0 && isWordChar(text[realStart - 1])) realStart--;
+            let realEndClamped = Math.min(realEnd, text.length);
+            while (realEndClamped < text.length && isWordChar(text[realEndClamped])) realEndClamped++;
+            
             // Crear un rango para el texto encontrado
             const range = document.createRange();
             try {
               range.setStart(node, realStart);
-              range.setEnd(node, Math.min(realEnd, text.length));
+              range.setEnd(node, realEndClamped);
               
               // Verificar que el rango no esté dentro de un span con subrayado
               const container = range.commonAncestorContainer;

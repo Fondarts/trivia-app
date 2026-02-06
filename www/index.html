@@ -392,16 +392,8 @@
     <div class="bible-reader-wrap">
       <div class="bible-reader-titlebar">
         <h1 class="bible-reader-title" id="bibleReaderTitle">
-          <button type="button" class="bible-reader-title-book" id="bibleReaderTitleBook">—</button>
-          <span class="bible-reader-title-separator"> — </span>
-          <button type="button" class="bible-reader-title-chapter" id="bibleReaderTitleChapter">—</button>
+          <button type="button" class="bible-reader-title-book-chapter" id="bibleReaderTitleBookChapter">—</button>
         </h1>
-        <div class="bible-reader-dropdown" id="bibleReaderBookDropdown" aria-hidden="true">
-          <div class="bible-reader-dropdown-content" id="bibleReaderBookDropdownContent"></div>
-        </div>
-        <div class="bible-reader-dropdown" id="bibleReaderChapterDropdown" aria-hidden="true">
-          <div class="bible-reader-dropdown-content" id="bibleReaderChapterDropdownContent"></div>
-        </div>
         <button type="button" class="bible-reader-menu-btn" id="bibleReaderMenuBtn" aria-label="Menu">☰</button>
         <button type="button" class="bible-reader-menu-btn" id="bibleReaderSettingsBtn" aria-label="Settings">⚙️</button>
       </div>
@@ -409,6 +401,17 @@
         <!-- Botón removido - ahora se abre con el menú de hamburguesa -->
       </div>
       <div class="bible-reader-content" id="bibleReaderContent"></div>
+    </div>
+    
+    <!-- Panel izquierdo: libro y capítulo -->
+    <div class="bible-reader-book-chapter-panel" id="bibleReaderBookChapterPanel" aria-hidden="true">
+      <div class="bible-reader-book-chapter-panel-header">
+        <h2 class="bible-reader-book-chapter-panel-title" id="bibleReaderBookChapterPanelTitle">Book & Chapter</h2>
+        <button type="button" class="bible-reader-book-chapter-panel-close" id="bibleReaderBookChapterPanelClose" aria-label="Close">✖</button>
+      </div>
+      <div class="bible-reader-book-chapter-panel-content">
+        <div class="bible-reader-book-chapter-list" id="bibleReaderBooksList"></div>
+      </div>
     </div>
     
     <!-- Menú contextual mejorado para texto seleccionado -->

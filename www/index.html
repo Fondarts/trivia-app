@@ -402,13 +402,41 @@
         <div class="bible-reader-dropdown" id="bibleReaderChapterDropdown" aria-hidden="true">
           <div class="bible-reader-dropdown-content" id="bibleReaderChapterDropdownContent"></div>
         </div>
-        <button type="button" class="bible-reader-close" id="bibleReaderClose" aria-label="Cerrar">✖</button>
+        <button type="button" class="bible-reader-menu-btn" id="bibleReaderMenuBtn" aria-label="Menu">☰</button>
       </div>
       <div class="bible-reader-toolbar">
-        <button type="button" class="bible-reader-btn" id="bibleReaderMyPassagesNotes" data-i18n="bibleMyPassagesNotes">Mis versículos y notas</button>
+        <!-- Botón removido - ahora se abre con el menú de hamburguesa -->
       </div>
       <div class="bible-reader-content" id="bibleReaderContent"></div>
     </div>
+    
+    <!-- Menú contextual mejorado para texto seleccionado -->
+    <div class="bible-reader-enhanced-context-menu" id="bibleEnhancedContextMenu" style="display:none;">
+      <button type="button" class="bible-enhanced-menu-item" id="bibleContextCopy">
+        <span>📋</span> Copy
+      </button>
+      <button type="button" class="bible-enhanced-menu-item" id="bibleContextWiki">
+        <span>🔍</span> Wikipedia
+      </button>
+      <button type="button" class="bible-enhanced-menu-item" id="bibleContextNote">
+        <span>📝</span> Add Note
+      </button>
+      <button type="button" class="bible-enhanced-menu-item" id="bibleContextHighlight">
+        <span>🖍️</span> Highlight
+      </button>
+    </div>
+    
+    <!-- Popup de Wikipedia -->
+    <div class="bible-wikipedia-popup" id="bibleWikipediaPopup" style="display:none;">
+      <div class="bible-wiki-header">
+        <h3 class="bible-wiki-title"></h3>
+        <button type="button" class="bible-wiki-close">✖</button>
+      </div>
+      <div class="bible-wiki-content"></div>
+      <a href="#" target="_blank" class="bible-wiki-link">Read more on Wikipedia</a>
+    </div>
+    
+    
     <div class="bible-reader-context-menu" id="bibleContextMenu" aria-hidden="true" role="menu">
       <button type="button" class="bible-context-menu-item" id="bibleContextSave" data-i18n="bibleSaveVerses" role="menuitem">Guardar versículo(s)</button>
       <button type="button" class="bible-context-menu-item" id="bibleContextNote" data-i18n="bibleAddNote" role="menuitem">Añadir nota</button>
@@ -429,6 +457,50 @@
         <h2 class="bible-reader-sidepanel-title" id="bibleReaderSidepanelTitle" data-i18n="bibleMyPassagesNotes">Mis pasajes y notas</h2>
         <button type="button" class="bible-reader-sidepanel-close" id="bibleReaderSidepanelClose" aria-label="Cerrar">✖</button>
       </div>
+      
+      <!-- Sección de búsqueda -->
+      <div class="bible-reader-sidepanel-search-section">
+        <div class="bible-reader-search-wrap">
+          <input type="text" id="bibleReaderSearch" class="bible-reader-search" placeholder="🔍 Search verses..." autocomplete="off">
+          <button type="button" class="bible-reader-search-clear" id="bibleReaderSearchClear" aria-label="Clear search" style="display:none;">✖</button>
+        </div>
+        <div class="bible-reader-search-results" id="bibleReaderSearchResults"></div>
+      </div>
+      
+      <!-- Sección de configuración -->
+      <div class="bible-reader-sidepanel-settings-section">
+        <h3 class="bible-reader-sidepanel-settings-title">Reader Settings</h3>
+        <div class="bible-settings-group">
+          <label>Font Size</label>
+          <div class="bible-settings-control">
+            <input type="range" id="bibleReaderFontSize" min="0.5" max="2.0" step="0.1" value="1.1">
+            <span id="bibleReaderFontSizeValue">1.1rem</span>
+          </div>
+        </div>
+        <div class="bible-settings-group">
+          <label>Font Family</label>
+          <select id="bibleReaderFontFamily">
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans-serif</option>
+          </select>
+        </div>
+        <div class="bible-settings-group">
+          <label>Line Height</label>
+          <div class="bible-settings-control">
+            <input type="range" id="bibleReaderLineHeight" min="1.4" max="2.4" step="0.1" value="1.8">
+            <span id="bibleReaderLineHeightValue">1.8</span>
+          </div>
+        </div>
+        <div class="bible-settings-group">
+          <label>Theme</label>
+          <select id="bibleReaderTheme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Tabs de Pasajes y Notas -->
       <div class="bible-reader-sidepanel-tabs">
         <button type="button" class="bible-reader-tab active" id="bibleTabPassages" data-i18n="bibleTabPassages">Pasajes</button>
         <button type="button" class="bible-reader-tab" id="bibleTabNotes" data-i18n="bibleTabNotes">Notas</button>
@@ -636,6 +708,9 @@
 
 
   <!-- Módulos ES6 -->
+  
+  <!-- External libraries for Bible Reader -->
+  <script src="https://cdn.jsdelivr.net/npm/mark.js@11/dist/mark.min.js"></script>
   
   <!-- Banco de preguntas (debe cargarse primero) -->
   <script type="module" src="./js/game/bank_bridge.js"></script>

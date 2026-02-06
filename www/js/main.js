@@ -21,6 +21,7 @@ import { applyInitialUI, updatePlayerXPBar, bindStatsOpen, refreshCategorySelect
 import { startSolo, nextQuestion, endGame, renderQuestion, openSingleResult, showGame, showVerseModal } from './game/solo.js';
 import { bindWordSearchButtons } from './game/wordsearch-ui.js';
 import { initBibleStudy } from './game/bible-study.js';
+import { initBibleReaderEnhanced } from './game/bible-reader-enhanced.js';
 import { STATE } from './core/store.js';
 
 // Player modules
@@ -121,6 +122,13 @@ window.addEventListener('load', async ()=>{
   // Exponer funciones de progreso
   window.getLevelProgress = getLevelProgress;
   window.ACHIEVEMENTS_LIST = [];
+  
+  // Exponer funcionalidades mejoradas del lector de la Biblia
+  window.initBibleReaderEnhanced = initBibleReaderEnhanced;
+  import('./game/bible-reader-enhanced.js').then(module => {
+    window.setupSliders = module.setupSliders;
+    // applyBibleReaderSettings ya se expone dentro del módulo
+  }).catch(() => {});
   
   // Cargar lista de logros
   import('./player/achievements.js').then(module => {

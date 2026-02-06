@@ -460,6 +460,27 @@ function hideChapterDropdown() {
  * Renderiza el contenido del capítulo en el overlay.
  */
 function renderReaderChapter(chapterNum) {
+  // Limpiar búsqueda al cambiar de capítulo
+  const searchInput = document.getElementById('bibleReaderSearch');
+  const searchResults = document.getElementById('bibleReaderSearchResults');
+  if (searchInput) {
+    searchInput.value = '';
+    const searchClear = document.getElementById('bibleReaderSearchClear');
+    if (searchClear) searchClear.style.display = 'none';
+  }
+  if (searchResults) {
+    searchResults.innerHTML = '';
+  }
+  // Limpiar resaltados usando la función del módulo enhanced
+  if (window.clearBibleSearch) {
+    window.clearBibleSearch();
+  } else if (window.Mark) {
+    const contentEl = document.getElementById('bibleReaderContent');
+    if (contentEl) {
+      const markInstance = new Mark(contentEl);
+      markInstance.unmark();
+    }
+  }
   const contentEl = document.getElementById('bibleReaderContent');
   const bookBtn = document.getElementById('bibleReaderTitleBook');
   const chapterBtn = document.getElementById('bibleReaderTitleChapter');
@@ -498,6 +519,11 @@ function renderReaderChapter(chapterNum) {
     paragraphs.push(`<p class="bible-reader-paragraph">${verseSpans}</p>`);
   }
   contentEl.innerHTML = `<div class="bible-reader-verses">${paragraphs.join('')}</div>`;
+  
+  // Re-aplicar configuración del lector después de renderizar
+  if (window.applyBibleReaderSettings) {
+    setTimeout(() => window.applyBibleReaderSettings(), 50);
+  }
 
   contentEl.querySelectorAll('.bible-reader-verse').forEach(p => {
     p.addEventListener('click', (e) => {
@@ -639,8 +665,15 @@ function openReaderWindow(bookName, bookId, data, chapterNum, verseNum) {
   overlay.style.display = 'block';
   document.body.classList.add('bible-reader-open');
 
-  const closeBtn = document.getElementById('bibleReaderClose');
-  if (closeBtn) closeBtn.focus();
+  const menuBtn = document.getElementById('bibleReaderMenuBtn');
+  if (menuBtn) menuBtn.focus();
+  
+  // Inicializar funcionalidades mejoradas cuando se abre el lector
+  if (window.initBibleReaderEnhanced) {
+    setTimeout(() => {
+      window.initBibleReaderEnhanced();
+    }, 100);
+  }
 
   if (verseNum != null && verseNum !== '') {
     const verseStr = String(verseNum);
@@ -932,7 +965,6 @@ function openSidepanel() {
   const panel = document.getElementById('bibleReaderSidepanel');
   if (!panel) return;
   panel.setAttribute('aria-hidden', 'false');
-  panel.classList.add('bible-reader-sidepanel-visible');
   renderVersesList();
   renderNotesList();
   const tabPassages = document.getElementById('bibleTabPassages');
@@ -1174,12 +1206,32 @@ export function initBibleStudy() {
     }
   });
 
-  const closeBtn = document.getElementById('bibleReaderClose');
-  if (closeBtn) closeBtn.addEventListener('click', closeReaderWindow);
+  // Conectar botón de hamburguesa al panel existente
+  const menuBtn = document.getElementById('bibleReaderMenuBtn');
+  const sidepanel = document.getElementById('bibleReaderSidepanel');
+  
+  if (menuBtn && sidepanel) {
+    menuBtn.addEventListener('click', () => {
+      openSidepanel();
+      // Inicializar sliders cuando se abre el panel (con delay para asegurar que el DOM esté listo)
+      if (window.setupSliders) {
+        setTimeout(() => {
+          window.setupSliders();
+        }, 150);
+      }
+    });
+  }
+  
+  // Cerrar panel al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (sidepanel && sidepanel.getAttribute('aria-hidden') === 'false' &&
+        !sidepanel.contains(e.target) && 
+        !menuBtn?.contains(e.target)) {
+      closeSidepanel();
+    }
+  });
 
   migratePassagesToVerses();
-  const myPassagesBtn = document.getElementById('bibleReaderMyPassagesNotes');
-  if (myPassagesBtn) myPassagesBtn.addEventListener('click', openSidepanel);
 
   const sidepanelClose = document.getElementById('bibleReaderSidepanelClose');
   if (sidepanelClose) sidepanelClose.addEventListener('click', closeSidepanel);

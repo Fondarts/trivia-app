@@ -208,20 +208,32 @@ export async function getBooksInFilePack(lang, fileName) {
   const packFiles = await getPackFiles(lang, fileName);
   
   if (packFiles && packFiles.length > 1) {
-    // Cargar todos los archivos del pack y combinar libros
-    const allBooks = new Set();
+    // Cargar todos los archivos del pack y combinar libros (orden canónico = orden del manifest)
+    const allBooks = [];
+    const seen = new Set();
     for (const file of packFiles) {
       const pool = await loadAndNormalizeFile(lang, file);
       pool.forEach(q => {
-        if (q.book && q.book !== 'General OT') allBooks.add(q.book);
+        if (q.book && q.book !== 'General OT' && !seen.has(q.book)) {
+          seen.add(q.book);
+          allBooks.push(q.book);
+        }
       });
     }
-    return Array.from(allBooks).sort();
+    return allBooks;
   }
   
-  // Si es un archivo único, cargar solo ese
+  // Si es un archivo único, orden de primera aparición en el archivo
   const pool = await loadAndNormalizeFile(lang, fileName);
-  return [...new Set(pool.map(q => q.book).filter(b => b && b !== 'General OT'))].sort();
+  const books = [];
+  const seen = new Set();
+  pool.forEach(q => {
+    if (q.book && q.book !== 'General OT' && !seen.has(q.book)) {
+      seen.add(q.book);
+      books.push(q.book);
+    }
+  });
+  return books;
 }
 
 export async function buildDeckSingle(categoryKey, count, diff = 'any', customPool = null, bookFilter = null) {

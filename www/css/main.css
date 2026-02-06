@@ -221,7 +221,40 @@ label {
   letter-spacing: 0.05em;
   color: var(--accent);
 }
-.custom-select-group .custom-select-option { padding-left: 1.75rem; }
+.custom-select-option-bible {
+  font-weight: 700;
+  font-size: calc(0.95rem + 2px);
+}
+.custom-select-option-pack {
+  font-weight: 700;
+  color: var(--accent);
+  flex: 1;
+}
+.custom-select-group .custom-select-option:not(.custom-select-option-pack) { padding-left: 2.25rem; }
+
+.custom-select-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+}
+.custom-select-group-toggle {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.05rem 0.25rem 0.35rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  user-select: none;
+  flex-shrink: 0;
+}
+.custom-select-group-toggle:hover {
+  opacity: 0.85;
+}
+.custom-select-group-books {
+  display: block;
+}
+.custom-select-group-collapsed .custom-select-group-books {
+  display: none;
+}
 
 .card .section select,
 .card .section input.input {
@@ -242,7 +275,7 @@ select optgroup option { padding-left: 1.5rem; }
 /* --- 6. BOTONES --- */
 .btn,
 button.btn,
-#btnStart, #btnNext, #btnBackHome, #btnExitGame, #btnReportQuestion,
+#btnStart, #btnBackHome, #btnExitGame, #btnReportQuestion,
 .card .section #btnStart {
   border-radius: 999px !important;
   padding: 0.75rem 1.5rem !important;
@@ -388,12 +421,15 @@ button.btn,
   width: 100%; padding: 1rem 1.25rem; border-radius: 1rem;
   border: 2px solid var(--cardBorder);
   background: var(--card);
+  color: var(--text);
   font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;
   transition: all var(--transition-base);
 }
-.option:hover { border-color: var(--accent); background: rgba(99, 102, 241, 0.08); }
-.option.correct-answer-effect { border-color: var(--good); background: rgba(22, 163, 74, 0.15); }
-.option.wrong-answer-effect { border-color: var(--bad); background: rgba(220, 38, 38, 0.1); }
+.option:hover { border-color: var(--accent); background: rgba(99, 102, 241, 0.08); color: var(--text); }
+.option.correct,
+.option.correct-answer-effect { border-color: var(--good); background: rgba(22, 163, 74, 0.25); color: var(--text); }
+.option.wrong,
+.option.wrong-answer-effect { border-color: var(--bad); background: rgba(220, 38, 38, 0.15); color: var(--text); }
 
 .progress { margin-top: 8px; height: 8px; background: var(--cardBorder); border-radius: 999px; overflow: hidden; }
 #progressBar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 999px; transition: width 0.3s ease; width: 0%; }
@@ -440,6 +476,9 @@ button.btn,
 .ws-word-blank.ws-word-revealed .ws-word-invisible,
 .ws-word-blank.ws-word-found .ws-word-invisible,
 .ws-word-blank.ws-word-hint .ws-word-invisible { position: static; visibility: visible; }
+.ws-word-blank.ws-word-revealed .ws-word-placeholder,
+.ws-word-blank.ws-word-found .ws-word-placeholder,
+.ws-word-blank.ws-word-hint .ws-word-placeholder { display: none; }
 .ws-word-revealed, .ws-word-found { color: var(--good); font-weight: 700; }
 .ws-word-hint { color: #f59e0b; font-weight: 700; background: rgba(251, 191, 36, 0.2); padding: 2px 4px; border-radius: 4px; }
 

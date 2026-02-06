@@ -4,7 +4,6 @@
 import { DOMUtils } from '../core/dom-utils.js';
 import { showConfigUI } from '../ui/game-ui.js';
 // VS handlers removido
-import { nextQuestion } from '../game/solo.js';
 /**
  * Vincular todos los event listeners
  * @param {Object} options - Opciones con funciones y dependencias
@@ -17,7 +16,6 @@ export function bindAllEventListeners(options = {}) {
   
   // Botones de juego
   DOMUtils.getElement('btnStart')?.addEventListener('click', onStartGame);
-  DOMUtils.getElement('btnNext')?.addEventListener('click', nextQuestion);
   
   // Botones de resultados
   DOMUtils.getElement('btnBackHome')?.addEventListener('click', () => {

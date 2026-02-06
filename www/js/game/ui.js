@@ -357,7 +357,7 @@ function syncCustomDropdown(wrap) {
 
   function addOption(value, text, isSelected) {
     const opt = document.createElement('div');
-    opt.className = 'custom-select-option';
+    opt.className = 'custom-select-option' + (value === 'all' ? ' custom-select-option-bible' : '');
     opt.setAttribute('role', 'option');
     opt.dataset.value = value;
     opt.textContent = text;
@@ -380,11 +380,46 @@ function syncCustomDropdown(wrap) {
     } else if (node.tagName === 'OPTGROUP') {
       const group = document.createElement('div');
       group.className = 'custom-select-group';
-      const label = document.createElement('div');
-      label.className = 'custom-select-group-label';
-      label.textContent = node.label || '';
-      group.appendChild(label);
-      for (const opt of node.querySelectorAll('option')) {
+      const opts = node.querySelectorAll('option');
+      const groupLabel = (node.label || '').trim();
+      const firstOpt = opts[0];
+      const isPackFirst = firstOpt && groupLabel && firstOpt.textContent.trim().toLowerCase() === groupLabel.toLowerCase();
+
+      const header = document.createElement('div');
+      header.className = 'custom-select-group-header';
+      const toggle = document.createElement('span');
+      toggle.className = 'custom-select-group-toggle';
+      toggle.setAttribute('aria-label', 'Expandir o contraer');
+      toggle.innerHTML = '▼';
+      const packDiv = document.createElement('div');
+      packDiv.className = 'custom-select-option custom-select-option-pack';
+      packDiv.setAttribute('role', 'option');
+      packDiv.dataset.value = firstOpt.value;
+      packDiv.textContent = firstOpt.textContent.trim();
+      packDiv.setAttribute('aria-selected', firstOpt.value === currentValue ? 'true' : 'false');
+      packDiv.addEventListener('click', (e) => {
+        if (e.target === toggle) return;
+        sel.value = firstOpt.value;
+        sel.dispatchEvent(new Event('change', { bubbles: true }));
+        trigger.textContent = firstOpt.textContent.trim();
+        panel.querySelectorAll('.custom-select-option').forEach(o => o.setAttribute('aria-selected', 'false'));
+        packDiv.setAttribute('aria-selected', 'true');
+        wrap.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-expanded', 'false');
+      });
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        group.classList.toggle('custom-select-group-collapsed');
+        toggle.textContent = group.classList.contains('custom-select-group-collapsed') ? '▶' : '▼';
+      });
+      header.appendChild(toggle);
+      header.appendChild(packDiv);
+      group.appendChild(header);
+
+      const booksWrap = document.createElement('div');
+      booksWrap.className = 'custom-select-group-books';
+      for (let i = isPackFirst ? 1 : 0; i < opts.length; i++) {
+        const opt = opts[i];
         const div = document.createElement('div');
         div.className = 'custom-select-option';
         div.setAttribute('role', 'option');
@@ -400,8 +435,9 @@ function syncCustomDropdown(wrap) {
           wrap.setAttribute('aria-expanded', 'false');
           trigger.setAttribute('aria-expanded', 'false');
         });
-        group.appendChild(div);
+        booksWrap.appendChild(div);
       }
+      group.appendChild(booksWrap);
       panel.appendChild(group);
     }
   }
@@ -574,7 +610,7 @@ export async function refreshCombinedCategoryBook() {
   combinedSel.innerHTML = '';
   const optAll = document.createElement('option');
   optAll.value = 'all';
-  optAll.textContent = typeof t === 'function' ? t('categoryAll') : 'Todas las categorías';
+  optAll.textContent = 'Bible';
   combinedSel.appendChild(optAll);
 
   try {
@@ -597,10 +633,10 @@ export async function refreshCombinedCategoryBook() {
 
       const g = document.createElement('optgroup');
       g.label = packName;
-      const optAllBooks = document.createElement('option');
-      optAllBooks.value = `filepack:${lang}:${firstFile}${COMBINED_VALUE_SEP}`;
-      optAllBooks.textContent = typeof t === 'function' ? t('bookAll') : 'Todos los libros';
-      g.appendChild(optAllBooks);
+      const optPack = document.createElement('option');
+      optPack.value = `filepack:${lang}:${firstFile}${COMBINED_VALUE_SEP}`;
+      optPack.textContent = packName;
+      g.appendChild(optPack);
       for (const book of books) {
         const o = document.createElement('option');
         o.value = `filepack:${lang}:${firstFile}${COMBINED_VALUE_SEP}${book}`;

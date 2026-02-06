@@ -116,30 +116,30 @@ let hintWordElement = null;
 function showHint() {
   if (!wsState || !wsState.verse) return;
   
+  hideHint();
+  
   const verseTextEl = document.getElementById('wsVerseText');
   if (!verseTextEl) return;
   
   const currentFound = Array.from(wsState.foundWords).map(w => normalize(w));
   const hiddenWords = wsState.verse.hiddenWords || [];
   
-  // Encontrar una palabra que aún no ha sido encontrada
   const notFoundWords = hiddenWords.filter(w => !currentFound.includes(normalize(w)));
   if (notFoundWords.length === 0) return;
   
-  // Seleccionar una palabra aleatoria de las no encontradas
   const hintWordNorm = notFoundWords[Math.floor(Math.random() * notFoundWords.length)];
   
-  // Buscar el span correspondiente y mostrar el hint
   const blankSpans = verseTextEl.querySelectorAll('.ws-word-blank');
-  blankSpans.forEach(span => {
+  for (const span of blankSpans) {
     const spanWordNorm = span.getAttribute('data-word-norm');
     if (spanWordNorm === hintWordNorm && !currentFound.includes(hintWordNorm) &&
-        !span.classList.contains('ws-word-found') && 
+        !span.classList.contains('ws-word-found') &&
         !span.classList.contains('ws-word-revealed')) {
       span.className = 'ws-word-blank ws-word-hint';
       hintWordElement = span;
+      break;
     }
-  });
+  }
 }
 
 function hideHint() {

@@ -685,12 +685,7 @@ export function renderQuestion(q){
       if(results.bonusToast) toast(results.bonusToast);
       results.newAchievements.forEach(ach => toast(`🏆 Achievement unlocked: ${ach.title}!`));
 
-      if (SETTINGS.autoNextRounds) {
-        setTimeout(()=> nextQuestion(), 800);
-      } else {
-        const btnNext = document.getElementById('btnNext');
-        if (btnNext) btnNext.style.display = 'inline-block';
-      }
+      setTimeout(() => nextQuestion(), 800);
       
       hud();
     };
@@ -710,9 +705,6 @@ export function nextQuestion(){
   } else {
     q = currentState.deck[currentState.index % currentState.deck.length];
   }
-
-  const btnNext = document.getElementById('btnNext');
-  if(btnNext) btnNext.style.display = 'none';
 
   const bCat = document.getElementById('bCat');
   const bDiff= document.getElementById('bDiff');

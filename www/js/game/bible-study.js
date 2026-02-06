@@ -128,14 +128,9 @@ const STORAGE_VERSES = 'bible_trivia_verses';
 const STORAGE_NOTES = 'bible_trivia_notes';
 const STORAGE_HIGHLIGHTS = 'bible_trivia_highlights';
 
-/** Versículos actualmente seleccionados en el lector (números de versículo) */
-let selectedVerseNumbers = new Set();
-
-/** Timer para long-press (mantener apretado) */
-let longPressTimer = null;
-let longPressVerseEl = null;
-/** Si true, el próximo click en un versículo no alterna selección (evita que el release del long-press cuente como click). */
-let suppressNextVerseClick = false;
+/** Texto actualmente seleccionado en el lector */
+let currentTextSelection = null;
+let selectionTimeout = null;
 
 function getSavedVerses() {
   try {
@@ -191,10 +186,17 @@ function setNotes(list) {
 }
 
 function getHighlights() {
+  // Exponer globalmente para acceso desde otros módulos
+  window.getHighlights = getHighlights;
   try {
     const raw = localStorage.getItem(STORAGE_HIGHLIGHTS);
-    return raw ? JSON.parse(raw) : [];
-  } catch {
+    console.log('getHighlights() - reading from key:', STORAGE_HIGHLIGHTS);
+    console.log('getHighlights() - raw data:', raw ? raw.substring(0, 200) : 'null');
+    const result = raw ? JSON.parse(raw) : [];
+    console.log('getHighlights() - parsed result:', result.length, result);
+    return result;
+  } catch (e) {
+    console.error('getHighlights() - error:', e);
     return [];
   }
 }
@@ -285,17 +287,92 @@ function getHighlightForVerse(verseNum) {
   return '';
 }
 
-/** Aplica o quita highlight a los versículos seleccionados. */
+/** Aplica o quita highlight al texto seleccionado. */
 function applyHighlightToSelection(color) {
-  if (!readerBookId || !readerCurrentChapter || !selectedVerseNumbers.size) return;
-  const verseRange = formatVerseRange([...selectedVerseNumbers]);
-  const highlights = getHighlights().filter(h => !(h.bookId === readerBookId && h.chapter === readerCurrentChapter && h.verseRange === verseRange));
+  if (!readerBookId || !readerCurrentChapter || !currentTextSelection || !currentTextSelection.text) return;
+  
+  const selection = currentTextSelection.selection;
+  const range = currentTextSelection.range;
+  if (!range) return;
+  
+  // Obtener información del texto seleccionado
+  const selectedText = currentTextSelection.text;
+  
+  // Encontrar los versículos que contienen el texto seleccionado
+  const verseElements = document.querySelectorAll('.bible-reader-verse');
+  const affectedVerses = new Set();
+  
+  verseElements.forEach(verseEl => {
+    const verseText = verseEl.textContent;
+    if (verseText.includes(selectedText)) {
+      const verseNum = verseEl.getAttribute('data-verse');
+      if (verseNum) affectedVerses.add(verseNum);
+    }
+  });
+  
+  if (affectedVerses.size === 0) return;
+  
+  // Guardar el highlight con información del texto seleccionado
+  const verseRange = formatVerseRange([...affectedVerses]);
+  const highlights = getHighlights();
+  
+  // Eliminar highlights existentes que se solapen
+  const filteredHighlights = highlights.filter(h => {
+    if (h.bookId !== readerBookId || h.chapter !== readerCurrentChapter) return true;
+    // Si hay solapamiento, eliminarlo
+    const hVerses = h.verseRange ? h.verseRange.split(',').flatMap(r => {
+      if (r.includes('-')) {
+        const [a, b] = r.split('-').map(Number);
+        return Array.from({length: b - a + 1}, (_, i) => a + i);
+      }
+      return [Number(r)];
+    }) : [];
+    const currentVerses = verseRange.split(',').flatMap(r => {
+      if (r.includes('-')) {
+        const [a, b] = r.split('-').map(Number);
+        return Array.from({length: b - a + 1}, (_, i) => a + i);
+      }
+      return [Number(r)];
+    });
+    return !hVerses.some(v => currentVerses.includes(v));
+  });
+  
   if (color) {
-    highlights.unshift({ bookId: readerBookId, chapter: readerCurrentChapter, verseRange, color, savedAt: Date.now() });
+    // Aplicar highlight visualmente usando Mark.js o similar
+    applyTextHighlight(range, color);
+    
+    // Guardar en localStorage
+    filteredHighlights.unshift({ 
+      bookId: readerBookId, 
+      chapter: readerCurrentChapter, 
+      verseRange, 
+      color, 
+      selectedText,
+      savedAt: Date.now() 
+    });
   }
-  setHighlights(highlights);
-  renderReaderChapter(readerCurrentChapter);
+  
+  setHighlights(filteredHighlights);
   hideContextMenu();
+  currentTextSelection = null;
+}
+
+/** Aplica highlight visual al texto seleccionado */
+function applyTextHighlight(range, color) {
+  if (!range) return;
+  
+  // Crear un span con la clase de highlight
+  const highlightSpan = document.createElement('span');
+  highlightSpan.className = `bible-reader-text-highlight bible-reader-text-highlight-${color}`;
+  
+  try {
+    range.surroundContents(highlightSpan);
+  } catch (e) {
+    // Si surroundContents falla, usar un enfoque alternativo
+    const contents = range.extractContents();
+    highlightSpan.appendChild(contents);
+    range.insertNode(highlightSpan);
+  }
 }
 
 /**
@@ -487,6 +564,8 @@ function renderReaderChapter(chapterNum) {
   if (!contentEl || !readerBookData || !readerBookData.chapters) return;
 
   readerCurrentChapter = String(chapterNum);
+  // Exponer globalmente para acceso desde otros módulos
+  window.readerCurrentChapter = String(chapterNum);
   const ch = readerBookData.chapters.find(c => String(c.chapter) === String(chapterNum));
   const displayName = readerBookData.book || readerBookName;
   const chapterLabel = LANG() === 'en' ? 'Chapter' : 'Capítulo';
@@ -499,7 +578,7 @@ function renderReaderChapter(chapterNum) {
     return;
   }
 
-  selectedVerseNumbers.clear();
+  currentTextSelection = null;
   const PARAGRAPH_SIZE = 4;
   const paragraphs = [];
   for (let i = 0; i < ch.verses.length; i += PARAGRAPH_SIZE) {
@@ -513,7 +592,7 @@ function renderReaderChapter(chapterNum) {
         const noteIcon = noteSource
           ? ` <button type="button" class="bible-reader-verse-note-icon" data-key="${escapeHtml(noteSource.key || '')}" data-note-id="${escapeHtml(noteSource.id || '')}" data-ref="${escapeHtml(noteSource.ref || '')}" aria-label="${escapeHtml(LANG() === 'en' ? 'View note' : 'Ver nota')}">📓</button>`
           : '';
-        return `<span class="bible-reader-verse${highlightClass}" data-verse="${escapeHtml(num)}" role="button" tabindex="0"><sup class="bible-reader-verse-num">${escapeHtml(num)}</sup> ${escapeHtml(v.text || '')}${noteIcon}</span>`;
+        return `<span class="bible-reader-verse${highlightClass}" data-verse="${escapeHtml(num)}"><sup class="bible-reader-verse-num">${escapeHtml(num)}</sup> ${escapeHtml(v.text || '')}${noteIcon}</span>`;
       })
       .join(' ');
     paragraphs.push(`<p class="bible-reader-paragraph">${verseSpans}</p>`);
@@ -522,20 +601,18 @@ function renderReaderChapter(chapterNum) {
   
   // Re-aplicar configuración del lector después de renderizar
   if (window.applyBibleReaderSettings) {
-    setTimeout(() => window.applyBibleReaderSettings(), 50);
+    setTimeout(() => {
+      window.applyBibleReaderSettings();
+      // Restaurar highlights visuales después de renderizar
+      if (window.restoreHighlightsFromStorage) {
+        window.restoreHighlightsFromStorage();
+      }
+    }, 50);
   }
 
-  contentEl.querySelectorAll('.bible-reader-verse').forEach(p => {
-    p.addEventListener('click', (e) => {
-      if (contextMenuVisible()) return;
-      if (e.target.closest('.bible-reader-verse-note-icon')) return;
-      if (suppressNextVerseClick) { suppressNextVerseClick = false; return; }
-      toggleVerseSelection(p);
-    });
-    p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleVerseSelection(p); } });
-    setupVerseContextMenu(p, contentEl);
-  });
-
+  // Configurar selección de texto por letra/palabra
+  setupTextSelection(contentEl);
+  
   contentEl.querySelectorAll('.bible-reader-verse-note-icon').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -554,16 +631,43 @@ function renderReaderChapter(chapterNum) {
   });
 }
 
-function toggleVerseSelection(verseEl) {
-  const num = verseEl.getAttribute('data-verse');
-  if (!num) return;
-  if (selectedVerseNumbers.has(num)) {
-    selectedVerseNumbers.delete(num);
-    verseEl.classList.remove('bible-reader-verse-selected');
-  } else {
-    selectedVerseNumbers.add(num);
-    verseEl.classList.add('bible-reader-verse-selected');
-  }
+/** Configura la selección de texto por letra/palabra */
+function setupTextSelection(contentEl) {
+  if (!contentEl) return;
+  
+  // Prevenir eventos de click en versículos que interfieran con la selección
+  contentEl.querySelectorAll('.bible-reader-verse').forEach(verseEl => {
+    // Eliminar cualquier listener previo y prevenir selección de versículo completo
+    verseEl.addEventListener('mousedown', (e) => {
+      // Permitir selección de texto normal - no hacer nada especial
+      // Solo prevenir si es click en el icono de nota
+      if (e.target.closest('.bible-reader-verse-note-icon')) {
+        e.stopPropagation();
+      }
+    }, { passive: true });
+  });
+  
+  // Detectar cuando se selecciona texto (solo para guardar la selección, no para mostrar menú)
+  // El menú se maneja en initEnhancedContextMenu
+  contentEl.addEventListener('mouseup', (e) => {
+    // No procesar si es click en el icono de nota
+    if (e.target.closest('.bible-reader-verse-note-icon')) {
+      return;
+    }
+    
+    // Permitir que la selección de texto funcione normalmente
+    // El menú mejorado se encargará de mostrar el menú contextual
+  });
+  
+  // Ocultar menú al hacer click fuera
+  document.addEventListener('mousedown', (e) => {
+    if (contextMenuVisible() && !document.getElementById('bibleContextMenu')?.contains(e.target)) {
+      hideContextMenu();
+      currentTextSelection = null;
+    }
+  });
+  
+  // Permitir selección de texto normal - no prevenir eventos de doble click
 }
 
 /** Menú contextual: mostrar/ocultar */
@@ -574,7 +678,7 @@ function contextMenuVisible() {
 
 function showContextMenu(clientX, clientY) {
   if (!readerBookId || !readerCurrentChapter) return;
-  if (!selectedVerseNumbers.size) return;
+  if (!currentTextSelection || !currentTextSelection.text) return;
   const menu = document.getElementById('bibleContextMenu');
   if (!menu) return;
   menu.setAttribute('aria-hidden', 'false');
@@ -598,49 +702,7 @@ function hideContextMenu() {
   menu.classList.remove('bible-context-menu-visible');
 }
 
-function clearLongPress() {
-  if (longPressTimer) {
-    clearTimeout(longPressTimer);
-    longPressTimer = null;
-  }
-  longPressVerseEl = null;
-}
-
-/** Configura long-press y clic derecho en un versículo para abrir el menú contextual. */
-function setupVerseContextMenu(verseEl, contentEl) {
-  const num = verseEl.getAttribute('data-verse');
-  if (!num) return;
-
-  verseEl.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-    if (!selectedVerseNumbers.has(num)) {
-      selectedVerseNumbers.add(num);
-      verseEl.classList.add('bible-reader-verse-selected');
-    }
-    showContextMenu(e.clientX, e.clientY);
-  });
-
-  verseEl.addEventListener('pointerdown', (e) => {
-    if (e.button !== 0) return;
-    clearLongPress();
-    longPressVerseEl = verseEl;
-    longPressTimer = setTimeout(() => {
-      longPressTimer = null;
-      if (!selectedVerseNumbers.has(num)) {
-        selectedVerseNumbers.add(num);
-        verseEl.classList.add('bible-reader-verse-selected');
-      }
-      suppressNextVerseClick = true;
-      const rect = verseEl.getBoundingClientRect();
-      showContextMenu(rect.left + rect.width / 2, rect.top + rect.height / 2);
-      longPressVerseEl = null;
-    }, 500);
-  });
-
-  verseEl.addEventListener('pointerup', clearLongPress);
-  verseEl.addEventListener('pointerleave', clearLongPress);
-  verseEl.addEventListener('pointercancel', clearLongPress);
-}
+// Funciones de long-press eliminadas - ya no se necesitan con selección de texto
 
 /**
  * Abre la ventana de lectura con el libro cargado y el capítulo indicado (por defecto el primero).
@@ -652,6 +714,9 @@ function openReaderWindow(bookName, bookId, data, chapterNum, verseNum) {
   readerBookData = data;
   readerBookName = bookName;
   readerBookId = bookId;
+  // Exponer globalmente para acceso desde otros módulos
+  window.readerBookId = bookId;
+  window.readerCurrentChapter = chapterNum;
 
   const overlay = document.getElementById('bibleReaderOverlay');
   if (!overlay) return;
@@ -697,11 +762,14 @@ function closeReaderWindow() {
   hideContextMenu();
   hideBookDropdown();
   hideChapterDropdown();
-  clearLongPress();
+  currentTextSelection = null;
   readerBookData = null;
   readerBookName = '';
   readerBookId = '';
   readerCurrentChapter = '';
+  // Limpiar variables globales
+  window.readerBookId = '';
+  window.readerCurrentChapter = '';
 }
 
 /** Referencia actual en formato corto (ej. "Génesis 1" o "Génesis 1:1") */
@@ -770,46 +838,70 @@ function getVersesTextWithNumbers(nums) {
 /** Guarda los versículos actualmente seleccionados como una sola entrada (ej. 1-4). */
 function saveSelectedVerses() {
   if (!readerBookId || !readerCurrentChapter) return;
-  if (!selectedVerseNumbers.size) {
-    showToast(t('bibleSelectAtLeastOne') || 'Selecciona al menos un versículo.');
+  if (!currentTextSelection || !currentTextSelection.text) {
+    showToast(t('bibleSelectText') || 'Selecciona texto para guardar.');
     return;
   }
-  const nums = [...selectedVerseNumbers];
-  const verseRange = formatVerseRange(nums);
-  const key = `${readerBookId}:${readerCurrentChapter}:${verseRange}`;
+  
+  const selectedText = currentTextSelection.text;
+  const key = `${readerBookId}:${readerCurrentChapter}:${selectedText.substring(0, 50)}`;
   const saved = getSavedVerses();
+  
   if (saved.some(v => v.key === key)) {
-    showToast(t('bibleVersesSaved') || 'Versículo(s) guardado(s).');
+    showToast(t('bibleVersesSaved') || 'Texto guardado.');
     return;
   }
-  const ref = getRefForVerseRange(nums);
-  const text = getVersesText(nums);
+  
+  const verseElements = document.querySelectorAll('.bible-reader-verse');
+  const affectedVerses = [];
+  verseElements.forEach(verseEl => {
+    if (verseEl.textContent.includes(selectedText)) {
+      const verseNum = verseEl.getAttribute('data-verse');
+      if (verseNum) affectedVerses.push(verseNum);
+    }
+  });
+  
+  const verseRange = formatVerseRange(affectedVerses);
+  const ref = getRefForVerseRange(affectedVerses) || getCurrentRef();
+  
   saved.unshift({
     key,
     ref,
     bookId: readerBookId,
     chapter: readerCurrentChapter,
-    verses: nums.map(String).sort((a, b) => Number(a) - Number(b)),
+    verses: affectedVerses.map(String).sort((a, b) => Number(a) - Number(b)),
     verseRange,
-    text,
+    text: selectedText,
     note: '',
     savedAt: Date.now()
   });
   setSavedVerses(saved);
-  showToast(t('bibleVersesSaved') || 'Versículo(s) guardado(s).');
+  showToast(t('bibleVersesSaved') || 'Texto guardado.');
+  hideContextMenu();
+  updatePassagesList();
+  currentTextSelection = null;
 }
 
-/** Comparte los versículos seleccionados: Web Share API si está disponible, si no copia al portapapeles. */
+/** Comparte el texto seleccionado: Web Share API si está disponible, si no copia al portapapeles. */
 function shareSelectedVerses() {
   if (!readerBookId || !readerCurrentChapter) return;
-  if (!selectedVerseNumbers.size) {
-    showToast(t('bibleSelectAtLeastOne') || 'Selecciona al menos un versículo.');
+  if (!currentTextSelection || !currentTextSelection.text) {
+    showToast(t('bibleSelectText') || 'Selecciona texto para compartir.');
     return;
   }
-  const nums = [...selectedVerseNumbers];
-  const ref = getRefForVerseRange(nums);
-  const text = getVersesTextWithNumbers(nums);
-  const shareText = `${ref}\n\n${text}`;
+  
+  const selectedText = currentTextSelection.text;
+  const verseElements = document.querySelectorAll('.bible-reader-verse');
+  const affectedVerses = [];
+  verseElements.forEach(verseEl => {
+    if (verseEl.textContent.includes(selectedText)) {
+      const verseNum = verseEl.getAttribute('data-verse');
+      if (verseNum) affectedVerses.push(verseNum);
+    }
+  });
+  
+  const ref = getRefForVerseRange(affectedVerses) || getCurrentRef();
+  const shareText = `${ref}\n\n${selectedText}`;
 
   if (typeof navigator !== 'undefined' && navigator.share) {
     navigator.share({
@@ -857,12 +949,22 @@ let noteEditingVerseKey = null;
 
 /** Abre el modal de nota para la selección actual (solo ref, sin guardar nota en entrada). Se usa desde el toolbar. */
 function openNoteModalForSelection() {
-  if (!selectedVerseNumbers.size) {
-    showToast(t('bibleSelectAtLeastOne') || 'Selecciona al menos un versículo.');
+  if (!currentTextSelection || !currentTextSelection.text) {
+    showToast(t('bibleSelectText') || 'Selecciona texto para añadir nota.');
     return;
   }
+  
   noteEditingVerseKey = null;
-  const ref = getRefForVerseRange([...selectedVerseNumbers]);
+  const verseElements = document.querySelectorAll('.bible-reader-verse');
+  const affectedVerses = [];
+  verseElements.forEach(verseEl => {
+    if (verseEl.textContent.includes(currentTextSelection.text)) {
+      const verseNum = verseEl.getAttribute('data-verse');
+      if (verseNum) affectedVerses.push(verseNum);
+    }
+  });
+  
+  const ref = getRefForVerseRange(affectedVerses) || getCurrentRef();
   openNoteModalWithRef(ref, '', '', '');
 }
 
@@ -988,31 +1090,80 @@ function closeSidepanel() {
 const LABEL_ADD_NOTE = () => (LANG() === 'en' ? 'Add note' : 'Añadir nota');
 const LABEL_EDIT_NOTE = () => (LANG() === 'en' ? 'Edit note' : 'Editar nota');
 
+/** Obtiene el nombre del libro desde bookId */
+function getBookNameFromId(bookId) {
+  const isEn = LANG() === 'en';
+  const allBooks = [...BIBLE_BOOKS_OT, ...BIBLE_BOOKS_NT];
+  const entry = allBooks.find(([id]) => id === bookId);
+  return entry ? (isEn ? entry[2] : entry[1]) : bookId;
+}
+
+/** Genera la referencia para un highlight */
+function getRefForHighlight(highlight) {
+  const bookName = getBookNameFromId(highlight.bookId);
+  if (!bookName || !highlight.chapter || !highlight.verseRange) return '';
+  return `${bookName} ${highlight.chapter}:${highlight.verseRange}`;
+}
+
 function renderVersesList() {
+  // Exponer globalmente para acceso desde otros módulos
+  window.renderVersesList = renderVersesList;
   const listEl = document.getElementById('biblePassagesList');
-  if (!listEl) return;
-  const verses = getSavedVerses();
-  const noMsg = t('bibleNoVerses') || 'Aún no has guardado ningún versículo.';
+  if (!listEl) {
+    console.warn('biblePassagesList element not found');
+    return;
+  }
+  
+  // Leer highlights usando la función getHighlights()
+  const highlights = getHighlights();
+  console.log('Raw localStorage data:', localStorage.getItem(STORAGE_HIGHLIGHTS));
+  console.log('Parsed highlights from getHighlights():', highlights);
+  
+  const noMsg = LANG() === 'en' ? 'You have not made any highlights yet.' : 'Aún no has hecho ningún subrayado.';
   const delLabel = t('bibleDelete') || 'Eliminar';
-  if (!verses.length) {
+  
+  console.log('Rendering highlights list. Total highlights:', highlights.length, highlights);
+  
+  if (!highlights.length) {
     listEl.innerHTML = `<p class="bible-reader-list-empty">${escapeHtml(noMsg)}</p>`;
     return;
   }
-  listEl.innerHTML = verses.map(v => {
-    const delId = `del-verse-${v.key.replace(/:/g, '-')}`;
-    const noteBtnId = `note-verse-${v.key.replace(/:/g, '-')}`;
-    const textPreview = (v.text || '').slice(0, 80) + ((v.text || '').length > 80 ? '…' : '');
-    const hasNote = !!(v.note && v.note.trim());
-    const noteLabel = hasNote ? LABEL_EDIT_NOTE() : LABEL_ADD_NOTE();
-    const notePreview = hasNote ? (v.note.slice(0, 50) + (v.note.length > 50 ? '…' : '')) : '';
-    return `<div class="bible-reader-list-item" data-key="${escapeHtml(v.key)}" data-book-id="${escapeHtml(v.bookId)}" data-chapter="${escapeHtml(v.chapter)}">
+  
+  // Mapeo de colores para mostrar visualmente
+  const colorMap = {
+    yellow: '#fbbf24',
+    green: '#22c55e',
+    blue: '#3b82f6',
+    pink: '#ec4899',
+    orange: '#f97316',
+    purple: '#a855f7',
+    red: '#ef4444'
+  };
+  
+  listEl.innerHTML = highlights.map((h, index) => {
+    const highlightId = `highlight-${h.bookId}-${h.chapter}-${index}`;
+    const delId = `del-highlight-${index}`;
+    const ref = getRefForHighlight(h);
+    // Asegurar que selectedText existe, si no usar texto por defecto
+    const selectedText = h.selectedText || (h.text || '') || '';
+    const textPreview = selectedText.slice(0, 80) + (selectedText.length > 80 ? '…' : '');
+    const colorHex = colorMap[h.color] || colorMap.yellow;
+    
+    // Si no hay texto seleccionado ni referencia, saltar este highlight
+    if (!selectedText && !ref) {
+      console.warn('Skipping highlight without text or ref:', h);
+      return '';
+    }
+    
+    return `<div class="bible-reader-list-item" data-highlight-index="${index}" data-book-id="${escapeHtml(h.bookId)}" data-chapter="${escapeHtml(h.chapter)}" data-verse-range="${escapeHtml(h.verseRange || '')}">
         <div class="bible-reader-list-item-body">
-          <span class="bible-reader-list-ref">${escapeHtml(v.ref)}</span>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span class="bible-reader-list-ref">${escapeHtml(ref)}</span>
+            <span style="width: 20px; height: 20px; border-radius: 50%; background: ${colorHex}; border: 2px solid rgba(0,0,0,0.1); flex-shrink: 0;" title="${escapeHtml(h.color)}"></span>
+          </div>
           ${textPreview ? `<span class="bible-reader-list-preview">${escapeHtml(textPreview)}</span>` : ''}
-          ${notePreview ? `<span class="bible-reader-list-note-preview">${escapeHtml(notePreview)}</span>` : ''}
         </div>
         <div class="bible-reader-list-item-actions">
-          <button type="button" class="bible-reader-btn-note" id="${noteBtnId}" data-key="${escapeHtml(v.key)}" data-ref="${escapeHtml(v.ref)}" aria-label="${escapeHtml(noteLabel)}">${hasNote ? '✎' : '+'}</button>
           <button type="button" class="bible-reader-list-del" id="${delId}" aria-label="${escapeHtml(delLabel)}">✖</button>
         </div>
       </div>`;
@@ -1021,35 +1172,46 @@ function renderVersesList() {
   listEl.querySelectorAll('.bible-reader-list-item').forEach(item => {
     const bookId = item.getAttribute('data-book-id');
     const chapter = item.getAttribute('data-chapter');
+    const verseRange = item.getAttribute('data-verse-range');
     const body = item.querySelector('.bible-reader-list-item-body');
+    
     body?.addEventListener('click', () => {
       closeSidepanel();
       loadBookData(bookId).then(data => {
         if (data?.chapters?.length) {
-          const opt = document.querySelector(`#bibleBookSel option[value="${bookId}"]`);
-          const bookName = (opt && opt.textContent) || data.book || bookId;
+          const bookName = getBookNameFromId(bookId);
           openReaderWindow(bookName, bookId, data, chapter);
+          // Scroll al primer versículo del rango después de un pequeño delay
+          if (verseRange) {
+            setTimeout(() => {
+              const firstVerse = verseRange.split(',')[0].split('-')[0];
+              const verseEl = document.querySelector(`.bible-reader-verse[data-verse="${firstVerse}"]`);
+              if (verseEl) {
+                verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }, 300);
+          }
         }
       });
     });
-    const noteBtn = item.querySelector('.bible-reader-btn-note');
-    if (noteBtn) {
-      noteBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const key = noteBtn.getAttribute('data-key');
-        const ref = noteBtn.getAttribute('data-ref') || '';
-        const entry = getSavedVerses().find(x => x.key === key);
-        openNoteModalForSavedEntry(key, ref, entry?.note);
-      });
-    }
+    
     const delBtn = item.querySelector('.bible-reader-list-del');
     if (delBtn) {
       delBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const key = item.getAttribute('data-key');
-        const next = getSavedVerses().filter(x => x.key !== key);
-        setSavedVerses(next);
-        renderVersesList();
+        const index = parseInt(item.getAttribute('data-highlight-index'), 10);
+        const highlights = getHighlights();
+        if (index >= 0 && index < highlights.length) {
+          const deletedHighlight = highlights[index];
+          highlights.splice(index, 1);
+          setHighlights(highlights);
+          renderVersesList();
+          // Re-renderizar el capítulo si está abierto y es el mismo libro/capítulo
+          if (readerBookData && readerBookId === deletedHighlight.bookId && 
+              readerCurrentChapter === deletedHighlight.chapter) {
+            renderReaderChapter(readerCurrentChapter);
+          }
+        }
       });
     }
   });

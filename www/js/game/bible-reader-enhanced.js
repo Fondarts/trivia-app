@@ -56,7 +56,6 @@ function applyReaderSettings() {
     return;
   }
   
-  console.log('Applying settings:', readerSettings);
   
   // Aplicar estilos directamente a los elementos que contienen el texto
   const versesEl = contentEl.querySelector('.bible-reader-verses');
@@ -72,6 +71,15 @@ function applyReaderSettings() {
     const verseSpans = versesEl.querySelectorAll('.bible-reader-verse');
     verseSpans.forEach(span => {
       span.style.setProperty('font-size', readerSettings.fontSize, 'important');
+      // Asegurar color oscuro en los versos (tema claro por defecto)
+      const textColor = readerSettings.theme === 'dark' ? '#f1f5f9' : '#1e293b';
+      span.style.setProperty('color', textColor, 'important');
+    });
+    
+    // Asegurar color oscuro también en los párrafos
+    paragraphs.forEach(p => {
+      const textColor = readerSettings.theme === 'dark' ? '#f1f5f9' : '#1e293b';
+      p.style.setProperty('color', textColor, 'important');
     });
     
     // Aplicar fontFamily
@@ -82,15 +90,10 @@ function applyReaderSettings() {
     // Aplicar lineHeight solo al contenedor (los hijos lo heredarán)
     versesEl.style.setProperty('line-height', String(readerSettings.lineHeight), 'important');
     
-    console.log('Settings applied to .bible-reader-verses:', {
-      fontSize: readerSettings.fontSize,
-      fontSizeComputed: window.getComputedStyle(versesEl).fontSize,
-      paragraphsCount: paragraphs.length,
-      versesCount: verseSpans.length,
-      lineHeight: readerSettings.lineHeight,
-      lineHeightComputed: window.getComputedStyle(versesEl).lineHeight,
-      fontFamily: versesEl.style.fontFamily
-    });
+    // Asegurar color en el contenedor de versos
+    const textColor = readerSettings.theme === 'dark' ? '#f1f5f9' : '#1e293b';
+    versesEl.style.setProperty('color', textColor, 'important');
+    
   } else {
     // Fallback: aplicar al contenedor si no existe .bible-reader-verses
     contentEl.style.setProperty('font-size', readerSettings.fontSize, 'important');
@@ -98,11 +101,11 @@ function applyReaderSettings() {
                                   readerSettings.fontFamily === 'sans-serif' ? 'system-ui, sans-serif' : 
                                   readerSettings.fontFamily;
     contentEl.style.setProperty('line-height', String(readerSettings.lineHeight), 'important');
-    console.log('Settings applied to contentEl (fallback)');
   }
   
   // Aplicar tema
   const wrap = document.querySelector('.bible-reader-wrap');
+  
   if (wrap) {
     if (readerSettings.theme === 'dark') {
       wrap.style.background = '#1e293b';
@@ -111,6 +114,22 @@ function applyReaderSettings() {
       wrap.style.background = '#fefcf5';
       wrap.style.color = '#1e293b';
     }
+  }
+  
+  // Asegurar que los versos siempre tengan el color correcto según el tema
+  // Reutilizar versesEl si ya existe, o buscarlo de nuevo
+  const versesElForColor = contentEl.querySelector('.bible-reader-verses');
+  if (versesElForColor) {
+    const textColor = readerSettings.theme === 'dark' ? '#f1f5f9' : '#1e293b';
+    versesElForColor.style.setProperty('color', textColor, 'important');
+    
+    // Aplicar color a todos los versos y párrafos
+    versesElForColor.querySelectorAll('.bible-reader-verse').forEach(span => {
+      span.style.setProperty('color', textColor, 'important');
+    });
+    versesElForColor.querySelectorAll('.bible-reader-paragraph').forEach(p => {
+      p.style.setProperty('color', textColor, 'important');
+    });
   }
 }
 
@@ -144,15 +163,6 @@ function applyFontSizeOnly() {
     if (currentLineHeight && currentLineHeight !== 'normal') {
       versesEl.style.setProperty('line-height', currentLineHeight, 'important');
     }
-    
-    console.log('Font size only applied:', {
-      fontSize: readerSettings.fontSize,
-      fontSizeComputed: window.getComputedStyle(versesEl).fontSize,
-      paragraphsCount: paragraphs.length,
-      versesCount: verseSpans.length,
-      lineHeightPreserved: currentLineHeight,
-      lineHeightComputed: window.getComputedStyle(versesEl).lineHeight
-    });
   }
 }
 
@@ -196,12 +206,30 @@ export function initBibleReaderSearch() {
     console.warn('bibleReaderSearchResults not found');
     return;
   }
-  if (!window.Mark) {
-    console.warn('Mark.js not loaded');
-    return;
+  
+  // Esperar a que Mark.js esté disponible (puede cargarse después)
+  function waitForMark(callback, maxAttempts = 20) {
+    if (window.Mark) {
+      callback();
+      return;
+    }
+    if (maxAttempts <= 0) {
+      // Continuar sin Mark.js - usaremos método alternativo
+      callback(false);
+      return;
+    }
+    setTimeout(() => waitForMark(callback, maxAttempts - 1), 100);
   }
   
-  function performSearch(term) {
+  waitForMark((hasMark) => {
+    initSearchWithMark(hasMark);
+  });
+  
+  function initSearchWithMark(hasMark = true) {
+    const contentEl = document.getElementById('bibleReaderContent');
+    if (!contentEl) return;
+    
+    function performSearch(term) {
     const contentEl = document.getElementById('bibleReaderContent');
     if (!contentEl || !term.trim()) {
       clearSearch();
@@ -253,22 +281,29 @@ export function initBibleReaderSearch() {
         </div>
       `;
       
-      // Resaltar en el contenido
-      if (!markInstance) {
-        markInstance = new Mark(contentEl);
-      }
-      markInstance.unmark({
-        done: () => {
-          markInstance.mark(currentSearchTerm, {
-            element: 'mark',
-            className: 'bible-reader-search-mark',
-            separateWordSearch: false,
-            diacritics: true,
-            accuracy: 'exactly',
-            acrossElements: true
+      // Resaltar en el contenido (solo si Mark.js está disponible)
+      if (hasMark && window.Mark) {
+        try {
+          if (!markInstance) {
+            markInstance = new Mark(contentEl);
+          }
+          markInstance.unmark({
+            done: () => {
+              markInstance.mark(currentSearchTerm, {
+                element: 'mark',
+                className: 'bible-reader-search-mark',
+                separateWordSearch: false,
+                diacritics: true,
+                accuracy: 'exactly',
+                acrossElements: true
+              });
+            }
           });
+        } catch (e) {
+          // Si Mark.js falla, continuar sin resaltar
+          console.warn('Mark.js error:', e);
         }
-      });
+      }
       
       // Event listeners para los resultados
       searchResults.querySelectorAll('.bible-search-result-item').forEach(item => {
@@ -297,22 +332,64 @@ export function initBibleReaderSearch() {
     return text.replace(regex, '<mark class="bible-search-highlight">$1</mark>');
   }
   
-  function clearSearch() {
-    if (markInstance) {
-      const contentEl = document.getElementById('bibleReaderContent');
-      if (contentEl) {
-        markInstance.unmark();
+    function clearSearch() {
+      if (markInstance && window.Mark) {
+        const contentEl = document.getElementById('bibleReaderContent');
+        if (contentEl) {
+          markInstance.unmark();
+        }
+      } else {
+        // Fallback: remover highlights manualmente
+        const contentEl = document.getElementById('bibleReaderContent');
+        if (contentEl) {
+          contentEl.querySelectorAll('.bible-reader-search-mark').forEach(el => {
+            const parent = el.parentNode;
+            parent.replaceChild(document.createTextNode(el.textContent), el);
+            parent.normalize();
+          });
+        }
       }
+      currentSearchTerm = '';
+      if (searchInput) searchInput.value = '';
+      if (searchResults) searchResults.innerHTML = '';
+      if (searchClear) searchClear.style.display = 'none';
     }
-    currentSearchTerm = '';
-    if (searchInput) searchInput.value = '';
-    if (searchResults) searchResults.innerHTML = '';
-    if (searchClear) searchClear.style.display = 'none';
+    
+    // Exponer función para limpiar desde otros módulos
+    window.clearBibleSearch = clearSearch;
+    
+    if (searchInput) {
+      let searchTimeout = null;
+      searchInput.addEventListener('input', (e) => {
+        const term = e.target.value;
+        clearTimeout(searchTimeout);
+        
+        if (term.length >= 2) {
+          searchTimeout = setTimeout(() => {
+            performSearch(term);
+          }, 300);
+        } else {
+          clearSearch();
+        }
+      });
+      
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          clearSearch();
+          searchInput.blur();
+        }
+      });
+    }
+    
+    if (searchClear) {
+      searchClear.addEventListener('click', () => {
+        clearSearch();
+        searchInput.focus();
+      });
+    }
   }
   
-  // Exponer función para limpiar desde otros módulos
-  window.clearBibleSearch = clearSearch;
-  
+  // Inicializar búsqueda básica incluso sin Mark.js
   if (searchInput) {
     let searchTimeout = null;
     searchInput.addEventListener('input', (e) => {
@@ -321,25 +398,13 @@ export function initBibleReaderSearch() {
       
       if (term.length >= 2) {
         searchTimeout = setTimeout(() => {
+          // Búsqueda básica sin Mark.js
           performSearch(term);
         }, 300);
       } else {
-        clearSearch();
+        if (searchResults) searchResults.innerHTML = '';
+        if (searchClear) searchClear.style.display = 'none';
       }
-    });
-    
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        clearSearch();
-        searchInput.blur();
-      }
-    });
-  }
-  
-  if (searchClear) {
-    searchClear.addEventListener('click', () => {
-      clearSearch();
-      searchInput.focus();
     });
   }
 }
@@ -353,28 +418,45 @@ export function initEnhancedContextMenu() {
   let currentSelection = null;
   
   contentEl.addEventListener('mouseup', (e) => {
-    // No mostrar menú mejorado si se está haciendo click en un versículo completo
-    if (e.target.closest('.bible-reader-verse')) {
-      const verseEl = e.target.closest('.bible-reader-verse');
-      const selection = window.getSelection();
-      const selectedText = selection.toString().trim();
-      
-      // Solo mostrar menú mejorado si hay texto seleccionado Y no es todo el versículo
-      if (selectedText.length > 0 && selectedText.length < 200) {
-        const verseText = verseEl.textContent.trim();
-        if (selectedText !== verseText) {
-          clearTimeout(selectionTimeout);
-          selectionTimeout = setTimeout(() => {
-            currentSelection = selection;
-            showEnhancedContextMenu(selection, selectedText);
-          }, 200);
-          return;
-        }
-      }
+    // No procesar si es click en el icono de nota
+    if (e.target.closest('.bible-reader-verse-note-icon')) {
+      return;
     }
     
     clearTimeout(selectionTimeout);
-    hideEnhancedContextMenu();
+    selectionTimeout = setTimeout(() => {
+      const selection = window.getSelection();
+      const selectedText = selection.toString().trim();
+      
+      // Verificar que hay texto seleccionado y que hay un rango válido
+      if (selectedText.length > 0 && selection.rangeCount > 0) {
+        try {
+          const range = selection.getRangeAt(0);
+          if (range && range.toString().trim().length > 0) {
+            // Verificar que la selección no incluya el icono de nota
+            const container = range.commonAncestorContainer;
+            const clickedEl = container.nodeType === Node.TEXT_NODE 
+              ? container.parentElement 
+              : container;
+            
+            if (clickedEl && clickedEl.closest('.bible-reader-verse-note-icon')) {
+              hideEnhancedContextMenu();
+              return;
+            }
+            
+            currentSelection = selection;
+            showEnhancedContextMenu(selection, selectedText);
+            return;
+          }
+        } catch (e) {
+          console.warn('Error processing selection:', e);
+        }
+      }
+      
+      // Si no hay selección válida, ocultar el menú
+      hideEnhancedContextMenu();
+      currentSelection = null;
+    }, 200);
   });
   
   document.addEventListener('mousedown', (e) => {
@@ -387,7 +469,6 @@ export function initEnhancedContextMenu() {
   // Event listeners para acciones del menú
   const copyBtn = document.getElementById('bibleContextCopy');
   const noteBtn = document.getElementById('bibleContextNote');
-  const highlightBtn = document.getElementById('bibleContextHighlight');
   
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
@@ -414,48 +495,66 @@ export function initEnhancedContextMenu() {
     });
   }
   
-  if (highlightBtn) {
-    highlightBtn.addEventListener('click', () => {
-      hideEnhancedContextMenu();
-      const contextMenu = document.getElementById('bibleContextMenu');
-      if (contextMenu) {
-        const rect = currentSelection?.getRangeAt(0)?.getBoundingClientRect();
-        if (rect) {
-          contextMenu.style.top = `${rect.bottom + window.scrollY + 10}px`;
-          contextMenu.style.left = `${rect.left + window.scrollX}px`;
-          contextMenu.classList.add('bible-context-menu-visible');
+  // Event listeners para los círculos de colores (usar delegación de eventos)
+  document.addEventListener('click', (e) => {
+    const colorCircle = e.target.closest('.bible-enhanced-color-circle');
+    if (colorCircle) {
+      e.stopPropagation();
+      const color = colorCircle.getAttribute('data-color');
+      if (currentSelection && currentSelection.rangeCount > 0) {
+        try {
+          const range = currentSelection.getRangeAt(0);
+          const selectedText = currentSelection.toString().trim();
+          
+          if (range && selectedText) {
+            // Aplicar subrayado visual
+            applyTextUnderline(range, color);
+            
+            // Guardar el highlight en localStorage
+            saveHighlightToStorage(range, selectedText, color);
+          }
+        } catch (e) {
+          console.warn('Error applying underline:', e);
         }
       }
-    });
-  }
+      hideEnhancedContextMenu();
+      window.getSelection().removeAllRanges();
+      currentSelection = null;
+    }
+  });
 }
 
 function showEnhancedContextMenu(selection, selectedText) {
   const contextMenu = document.getElementById('bibleEnhancedContextMenu');
   if (!contextMenu) return;
   
-  const range = selection.getRangeAt(0);
-  const rect = range.getBoundingClientRect();
-  
-  let top = rect.bottom + window.scrollY + 10;
-  let left = rect.left + window.scrollX;
-  
-  if (top + 200 > window.innerHeight + window.scrollY) {
-    top = rect.top + window.scrollY - 200;
-  }
-  if (left + 200 > window.innerWidth) {
-    left = window.innerWidth - 220;
+  // Verificar que hay una selección válida con rangos
+  if (!selection || selection.rangeCount === 0) {
+    return;
   }
   
-  contextMenu.style.top = `${top}px`;
-  contextMenu.style.left = `${left}px`;
-  contextMenu.style.display = 'block';
-  contextMenu.setAttribute('data-selected-text', selectedText);
-  
-  const wikiBtn = document.getElementById('bibleContextWiki');
-  if (wikiBtn) {
-    const shortText = selectedText.length > 20 ? selectedText.substring(0, 20) + '...' : selectedText;
-    wikiBtn.innerHTML = `<span>🔍</span> ${shortText}`;
+  try {
+    const range = selection.getRangeAt(0);
+    if (!range) return;
+    
+    const rect = range.getBoundingClientRect();
+    
+    let top = rect.bottom + window.scrollY + 10;
+    let left = rect.left + window.scrollX;
+    
+    if (top + 200 > window.innerHeight + window.scrollY) {
+      top = rect.top + window.scrollY - 200;
+    }
+    if (left + 200 > window.innerWidth) {
+      left = window.innerWidth - 220;
+    }
+    
+    contextMenu.style.top = `${top}px`;
+    contextMenu.style.left = `${left}px`;
+    contextMenu.style.display = 'block';
+    contextMenu.setAttribute('data-selected-text', selectedText);
+  } catch (e) {
+    console.warn('Error showing enhanced context menu:', e);
   }
 }
 
@@ -463,6 +562,300 @@ function hideEnhancedContextMenu() {
   const contextMenu = document.getElementById('bibleEnhancedContextMenu');
   if (contextMenu) {
     contextMenu.style.display = 'none';
+  }
+}
+
+/** Aplica subrayado de color al texto seleccionado */
+function applyTextUnderline(range, color) {
+  if (!range || !color) return;
+  
+  // Colores para los subrayados
+  const colorMap = {
+    yellow: '#fbbf24',
+    green: '#22c55e',
+    blue: '#3b82f6',
+    pink: '#ec4899',
+    orange: '#f97316',
+    purple: '#a855f7',
+    red: '#ef4444'
+  };
+  
+  const underlineColor = colorMap[color] || colorMap.yellow;
+  
+  try {
+    // Crear un span con el subrayado
+    const underlineSpan = document.createElement('span');
+    underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
+    underlineSpan.style.textDecoration = 'underline';
+    underlineSpan.style.textDecorationColor = underlineColor;
+    underlineSpan.style.textDecorationThickness = '2px';
+    underlineSpan.style.textUnderlineOffset = '2px';
+    
+    // Envolver el contenido seleccionado
+    range.surroundContents(underlineSpan);
+  } catch (e) {
+    // Si surroundContents falla, usar método alternativo
+    try {
+      const contents = range.extractContents();
+      const underlineSpan = document.createElement('span');
+      underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
+      underlineSpan.style.textDecoration = 'underline';
+      underlineSpan.style.textDecorationColor = underlineColor;
+      underlineSpan.style.textDecorationThickness = '2px';
+      underlineSpan.style.textUnderlineOffset = '2px';
+      underlineSpan.appendChild(contents);
+      range.insertNode(underlineSpan);
+    } catch (e2) {
+      console.warn('Could not apply underline:', e2);
+    }
+  }
+}
+
+/** Guarda un highlight en localStorage */
+function saveHighlightToStorage(range, selectedText, color) {
+  console.log('[saveHighlightToStorage] 🚀 Function called with:', { 
+    hasRange: !!range, 
+    selectedText: selectedText ? selectedText.substring(0, 50) : 'none',
+    color 
+  });
+  
+  // Obtener información del libro y capítulo actual desde el DOM o variables globales
+  const bookId = window.readerBookId;
+  const chapter = String(window.readerCurrentChapter || '');
+  
+  console.log('[saveHighlightToStorage] 📖 Book/Chapter info:', { bookId, chapter, readerBookId: window.readerBookId, readerCurrentChapter: window.readerCurrentChapter });
+  
+  if (!bookId || !chapter) {
+    console.error('[saveHighlightToStorage] ❌ Missing book or chapter - ABORTING', { bookId, chapter });
+    return;
+  }
+  
+  console.log('[saveHighlightToStorage] ✅ Proceeding to save highlight:', { bookId, chapter, color, selectedText: selectedText.substring(0, 50) });
+  
+  // Encontrar los versículos que están dentro del rango seleccionado
+  const verseElements = document.querySelectorAll('.bible-reader-verse');
+  const affectedVerses = new Set();
+  
+  // Obtener el contenedor común del rango
+  const rangeContainer = range.commonAncestorContainer;
+  const containerElement = rangeContainer.nodeType === Node.TEXT_NODE 
+    ? rangeContainer.parentElement 
+    : rangeContainer;
+  
+  // Encontrar todos los versículos que están dentro del rango seleccionado
+  verseElements.forEach(verseEl => {
+    // Verificar si el versículo está dentro del rango seleccionado
+    const verseRange = document.createRange();
+    try {
+      verseRange.selectNodeContents(verseEl);
+      
+      // Verificar si hay intersección entre el rango del versículo y el rango seleccionado
+      if (range.intersectsNode(verseEl) || 
+          (range.startContainer.contains(verseEl) || verseEl.contains(range.startContainer)) ||
+          (range.endContainer.contains(verseEl) || verseEl.contains(range.endContainer))) {
+        const verseNum = verseEl.getAttribute('data-verse');
+        if (verseNum) {
+          affectedVerses.add(verseNum);
+          console.log('[saveHighlightToStorage] ✅ Verse found in range:', verseNum);
+        }
+      }
+    } catch (e) {
+      // Si falla la verificación de intersección, usar método alternativo
+      // Verificar si el versículo contiene el inicio o fin del rango
+      if (verseEl.contains(range.startContainer) || 
+          verseEl.contains(range.endContainer) ||
+          verseEl === range.startContainer.parentElement ||
+          verseEl === range.endContainer.parentElement) {
+        const verseNum = verseEl.getAttribute('data-verse');
+        if (verseNum) {
+          affectedVerses.add(verseNum);
+          console.log('[saveHighlightToStorage] ✅ Verse found (fallback method):', verseNum);
+        }
+      }
+    }
+  });
+  
+  // Si aún no encontramos versículos, buscar por texto (método alternativo)
+  if (affectedVerses.size === 0) {
+    console.log('[saveHighlightToStorage] 🔍 No verses found by range, trying text search...');
+    const cleanSelectedText = selectedText.replace(/\d+/g, '').trim(); // Remover números de versículo
+    
+    verseElements.forEach(verseEl => {
+      const verseText = verseEl.textContent || '';
+      // Buscar si el texto del versículo contiene parte del texto seleccionado
+      const verseWords = verseText.toLowerCase().split(/\s+/);
+      const selectedWords = cleanSelectedText.toLowerCase().split(/\s+/);
+      
+      // Si al menos 3 palabras coinciden, considerar el versículo
+      const matchingWords = selectedWords.filter(word => 
+        word.length > 2 && verseWords.includes(word)
+      );
+      
+      if (matchingWords.length >= Math.min(3, selectedWords.length / 2)) {
+        const verseNum = verseEl.getAttribute('data-verse');
+        if (verseNum) {
+          affectedVerses.add(verseNum);
+          console.log('[saveHighlightToStorage] ✅ Verse found by text match:', verseNum);
+        }
+      }
+    });
+  }
+  
+  if (affectedVerses.size === 0) {
+    console.error('[saveHighlightToStorage] ❌ No affected verses found - ABORTING');
+    console.error('[saveHighlightToStorage] Debug info:', {
+      selectedText: selectedText.substring(0, 100),
+      rangeStart: range.startContainer.textContent?.substring(0, 50),
+      rangeEnd: range.endContainer.textContent?.substring(0, 50),
+      totalVerses: verseElements.length
+    });
+    return;
+  }
+  
+  console.log('[saveHighlightToStorage] ✅ Found affected verses:', [...affectedVerses]);
+  
+  // Formatear el rango de versículos
+  const formatVerseRange = (nums) => {
+    if (!nums.length) return '';
+    const sorted = [...nums].map(n => parseInt(n, 10)).filter(n => !Number.isNaN(n)).sort((a, b) => a - b);
+    if (sorted.length === 1) return String(sorted[0]);
+    const parts = [];
+    let start = sorted[0];
+    let end = start;
+    for (let i = 1; i < sorted.length; i++) {
+      const n = sorted[i];
+      if (n === end + 1) {
+        end = n;
+      } else {
+        parts.push(start === end ? String(start) : `${start}-${end}`);
+        start = end = n;
+      }
+    }
+    parts.push(start === end ? String(start) : `${start}-${end}`);
+    return parts.join(',');
+  };
+  
+  const verseRange = formatVerseRange([...affectedVerses]);
+  
+  // Obtener highlights existentes - usar exactamente la misma clave que bible-study.js
+  const STORAGE_KEY_HIGHLIGHTS = 'bible_trivia_highlights';
+  let highlights = [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+    console.log('[saveHighlightToStorage] Reading existing highlights from localStorage:', raw ? 'found' : 'not found');
+    if (raw) {
+      highlights = JSON.parse(raw);
+      console.log('[saveHighlightToStorage] Existing highlights count:', highlights.length);
+    } else {
+      console.log('[saveHighlightToStorage] No existing highlights found');
+    }
+  } catch (e) {
+    console.error('[saveHighlightToStorage] Error reading highlights:', e);
+    highlights = [];
+  }
+  
+  // Eliminar highlights existentes que se solapen
+  // Asegurar comparación correcta de chapter (puede ser string o número)
+  const filteredHighlights = highlights.filter(h => {
+    const hChapter = String(h.chapter || '');
+    const currentChapter = String(chapter || '');
+    if (h.bookId !== bookId || hChapter !== currentChapter) return true;
+    const hVerses = h.verseRange ? h.verseRange.split(',').flatMap(r => {
+      if (r.includes('-')) {
+        const [a, b] = r.split('-').map(Number);
+        return Array.from({length: b - a + 1}, (_, i) => a + i);
+      }
+      return [Number(r)];
+    }) : [];
+    const currentVerses = verseRange.split(',').flatMap(r => {
+      if (r.includes('-')) {
+        const [a, b] = r.split('-').map(Number);
+        return Array.from({length: b - a + 1}, (_, i) => a + i);
+      }
+      return [Number(r)];
+    });
+    return !hVerses.some(v => currentVerses.includes(v));
+  });
+  
+  // Agregar el nuevo highlight
+  const newHighlight = { 
+    bookId, 
+    chapter: String(chapter), // Asegurar que sea string
+    verseRange, 
+    color, 
+    selectedText,
+    savedAt: Date.now() 
+  };
+  
+  filteredHighlights.unshift(newHighlight);
+  
+  // Guardar en localStorage - usar EXACTAMENTE la misma clave que bible-study.js
+  const STORAGE_KEY = 'bible_trivia_highlights';
+  
+  // Verificar que localStorage esté disponible
+  if (typeof localStorage === 'undefined') {
+    console.error('[saveHighlightToStorage] ❌ localStorage is not available!');
+    return;
+  }
+  
+  try {
+    const jsonData = JSON.stringify(filteredHighlights);
+    console.log('[saveHighlightToStorage] 📝 About to save:', {
+      key: STORAGE_KEY,
+      count: filteredHighlights.length,
+      jsonLength: jsonData.length,
+      firstItem: filteredHighlights[0]
+    });
+    
+    // Intentar guardar con manejo de errores explícito
+    try {
+      localStorage.setItem(STORAGE_KEY, jsonData);
+      console.log('[saveHighlightToStorage] ✅ localStorage.setItem() called successfully');
+    } catch (setItemError) {
+      console.error('[saveHighlightToStorage] ❌ localStorage.setItem() FAILED:', setItemError);
+      console.error('[saveHighlightToStorage] Error name:', setItemError.name);
+      console.error('[saveHighlightToStorage] Error message:', setItemError.message);
+      // Puede ser que localStorage esté lleno
+      if (setItemError.name === 'QuotaExceededError') {
+        console.error('[saveHighlightToStorage] localStorage is full!');
+      }
+      return; // Salir si no se pudo guardar
+    }
+    
+    // Verificar INMEDIATAMENTE después de guardar
+    let verifyRaw;
+    try {
+      verifyRaw = localStorage.getItem(STORAGE_KEY);
+      console.log('[saveHighlightToStorage] ✅ Immediate read - exists:', verifyRaw !== null);
+      console.log('[saveHighlightToStorage] ✅ Immediate read - length:', verifyRaw ? verifyRaw.length : 0);
+      
+      if (verifyRaw) {
+        const verifyParsed = JSON.parse(verifyRaw);
+        console.log('[saveHighlightToStorage] ✅ Immediate read - parsed count:', verifyParsed.length);
+        if (verifyParsed.length > 0) {
+          console.log('[saveHighlightToStorage] ✅ Immediate read - first item:', verifyParsed[0]);
+        }
+      } else {
+        console.error('[saveHighlightToStorage] ❌ CRITICAL: Data is NULL immediately after saving!');
+        console.error('[saveHighlightToStorage] This means localStorage.setItem() did not work!');
+      }
+    } catch (getItemError) {
+      console.error('[saveHighlightToStorage] ❌ Error reading back:', getItemError);
+    }
+    
+    // Actualizar el panel lateral si está abierto
+    setTimeout(() => {
+      const sidepanel = document.getElementById('bibleReaderSidepanel');
+      if (sidepanel && sidepanel.getAttribute('aria-hidden') === 'false') {
+        if (window.renderVersesList) {
+          console.log('[saveHighlightToStorage] 🔄 Refreshing highlights list');
+          window.renderVersesList();
+        }
+      }
+    }, 100);
+  } catch (e) {
+    console.error('[saveHighlightToStorage] ❌ EXCEPTION:', e);
+    console.error('[saveHighlightToStorage] Stack:', e.stack);
   }
 }
 
@@ -626,7 +1019,6 @@ export function setupSliders() {
   // Añadir listeners directamente con funciones inline
   fontSizeInputClean.addEventListener('input', (e) => {
     const value = parseFloat(e.target.value);
-    console.log('Font size changed:', value);
     // Guardar solo el fontSize, no modificar lineHeight
     readerSettings.fontSize = `${value}rem`;
     const fontSizeValueEl = document.getElementById('bibleReaderFontSizeValue');
@@ -638,7 +1030,6 @@ export function setupSliders() {
   
   lineHeightInputClean.addEventListener('input', (e) => {
     const value = parseFloat(e.target.value);
-    console.log('Line height changed:', value);
     // Guardar solo el lineHeight, no modificar fontSize
     readerSettings.lineHeight = value;
     const lineHeightValueEl = document.getElementById('bibleReaderLineHeightValue');
@@ -663,7 +1054,6 @@ export function setupSliders() {
     const themeSelectClean = removeAllListeners(themeSelect);
     themeSelectClean.value = readerSettings.theme || 'light';
     themeSelectClean.addEventListener('change', (e) => {
-      console.log('Theme changed:', e.target.value);
       readerSettings.theme = e.target.value;
       applyReaderSettings();
       saveReaderSettings();
@@ -721,9 +1111,102 @@ export function initBibleReaderEnhanced() {
   
   initBibleReaderSearch();
   initEnhancedContextMenu();
-  initWikipediaLookup();
   initReaderSettings();
   
   loadReaderSettings();
   applyReaderSettings();
+  
+  // Restaurar highlights visuales desde localStorage
+  restoreHighlightsFromStorage();
+}
+
+/** Restaura los highlights visuales desde localStorage */
+export function restoreHighlightsFromStorage() {
+  // Exponer globalmente
+  window.restoreHighlightsFromStorage = restoreHighlightsFromStorage;
+  const STORAGE_HIGHLIGHTS = 'bible_trivia_highlights';
+  const bookId = window.readerBookId;
+  const chapter = window.readerCurrentChapter;
+  
+  if (!bookId || !chapter) return;
+  
+  let highlights = [];
+  try {
+    const raw = localStorage.getItem(STORAGE_HIGHLIGHTS);
+    highlights = raw ? JSON.parse(raw) : [];
+  } catch {
+    return;
+  }
+  
+  // Filtrar highlights del libro y capítulo actual
+  const currentHighlights = highlights.filter(h => 
+    h.bookId === bookId && h.chapter === chapter
+  );
+  
+  if (currentHighlights.length === 0) return;
+  
+  const contentEl = document.getElementById('bibleReaderContent');
+  if (!contentEl) return;
+  
+  // Para cada highlight, buscar el texto y aplicar el subrayado
+  currentHighlights.forEach(highlight => {
+    if (!highlight.selectedText || !highlight.color) return;
+    
+    const textToFind = highlight.selectedText.trim();
+    if (textToFind.length === 0) return;
+    
+    // Verificar si el texto ya está subrayado
+    const allText = contentEl.textContent || '';
+    if (!allText.includes(textToFind)) return;
+    
+    // Buscar el texto en el contenido, evitando nodos que ya están dentro de spans con subrayado
+    const walker = document.createTreeWalker(
+      contentEl,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) => {
+          // Evitar nodos que ya están dentro de un span con subrayado
+          const parent = node.parentElement;
+          if (parent && parent.classList.contains('bible-text-underline')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      },
+      false
+    );
+    
+    let node;
+    while (node = walker.nextNode()) {
+      const text = node.textContent;
+      const index = text.indexOf(textToFind);
+      
+      if (index !== -1) {
+        // Crear un rango para el texto encontrado
+        const range = document.createRange();
+        range.setStart(node, index);
+        range.setEnd(node, index + textToFind.length);
+        
+        // Verificar que el rango no esté dentro de un span con subrayado
+        const container = range.commonAncestorContainer;
+        const parent = container.nodeType === Node.TEXT_NODE 
+          ? container.parentElement 
+          : container;
+        
+        if (parent && parent.classList.contains('bible-text-underline')) {
+          continue; // Ya está subrayado, saltar
+        }
+        
+        // Aplicar el subrayado
+        try {
+          applyTextUnderline(range, highlight.color);
+        } catch (e) {
+          console.warn('Could not restore highlight:', e);
+        }
+        
+        // Solo restaurar el primer match para evitar duplicados
+        break;
+      }
+    }
+  });
 }

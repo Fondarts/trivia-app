@@ -416,15 +416,18 @@
       <button type="button" class="bible-enhanced-menu-item" id="bibleContextCopy">
         <span>📋</span> Copy
       </button>
-      <button type="button" class="bible-enhanced-menu-item" id="bibleContextWiki">
-        <span>🔍</span> Wikipedia
-      </button>
       <button type="button" class="bible-enhanced-menu-item" id="bibleContextNote">
         <span>📝</span> Add Note
       </button>
-      <button type="button" class="bible-enhanced-menu-item" id="bibleContextHighlight">
-        <span>🖍️</span> Highlight
-      </button>
+      <div class="bible-enhanced-menu-colors">
+        <button type="button" class="bible-enhanced-color-circle" data-color="yellow" title="Amarillo" aria-label="Amarillo" style="background: #fbbf24;"></button>
+        <button type="button" class="bible-enhanced-color-circle" data-color="green" title="Verde" aria-label="Verde" style="background: #22c55e;"></button>
+        <button type="button" class="bible-enhanced-color-circle" data-color="blue" title="Azul" aria-label="Azul" style="background: #3b82f6;"></button>
+        <button type="button" class="bible-enhanced-color-circle" data-color="pink" title="Rosa" aria-label="Rosa" style="background: #ec4899;"></button>
+        <button type="button" class="bible-enhanced-color-circle" data-color="orange" title="Naranja" aria-label="Naranja" style="background: #f97316;"></button>
+        <button type="button" class="bible-enhanced-color-circle" data-color="purple" title="Morado" aria-label="Morado" style="background: #a855f7;"></button>
+        <button type="button" class="bible-enhanced-color-circle" data-color="red" title="Rojo" aria-label="Rojo" style="background: #ef4444;"></button>
+      </div>
     </div>
     
     <!-- Popup de Wikipedia -->
@@ -438,7 +441,7 @@
     </div>
     
     
-    <div class="bible-reader-context-menu" id="bibleContextMenu" aria-hidden="true" role="menu">
+    <div class="bible-reader-context-menu" id="bibleContextMenu" aria-hidden="true" role="menu" style="display: none !important;">
       <button type="button" class="bible-context-menu-item" id="bibleContextSave" data-i18n="bibleSaveVerses" role="menuitem">Guardar versículo(s)</button>
       <button type="button" class="bible-context-menu-item" id="bibleContextNote" data-i18n="bibleAddNote" role="menuitem">Añadir nota</button>
       <button type="button" class="bible-context-menu-item" id="bibleContextShare" data-i18n="bibleShareVerses" role="menuitem">Compartir versículo(s)</button>

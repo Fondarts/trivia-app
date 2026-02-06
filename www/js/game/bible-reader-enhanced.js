@@ -525,17 +525,56 @@ function showWikipediaPopup(data, term) {
   }
 }
 
-// Panel de configuración en el sidebar
+// Panel de configuración en el modal
 export function initReaderSettings() {
   loadReaderSettings();
   applyReaderSettings();
   
-  // Cerrar sidebar
-  const menuClose = document.getElementById('bibleReaderMenuClose');
-  if (menuClose) {
-    menuClose.addEventListener('click', () => {
-      closeMenuSidebar();
+  // Abrir modal de settings
+  const settingsBtn = document.getElementById('bibleReaderSettingsBtn');
+  const settingsModal = document.getElementById('bibleReaderSettingsModal');
+  const settingsModalClose = document.getElementById('bibleReaderSettingsModalClose');
+  
+  if (settingsBtn && settingsModal) {
+    settingsBtn.addEventListener('click', () => {
+      settingsModal.setAttribute('aria-hidden', 'false');
+      settingsModal.classList.add('bible-reader-settings-modal-visible');
+      // Inicializar sliders cuando se abre el modal
+      if (window.setupSliders) {
+        setTimeout(() => window.setupSliders(), 50);
+      }
     });
+  }
+  
+  if (settingsModalClose && settingsModal) {
+    settingsModalClose.addEventListener('click', () => {
+      closeSettingsModal();
+    });
+  }
+  
+  // Cerrar modal al hacer click fuera o en el overlay
+  if (settingsModal) {
+    const overlay = settingsModal.querySelector('.bible-reader-settings-modal-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        closeSettingsModal();
+      });
+    }
+    
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && settingsModal.classList.contains('bible-reader-settings-modal-visible')) {
+        closeSettingsModal();
+      }
+    });
+  }
+}
+
+function closeSettingsModal() {
+  const settingsModal = document.getElementById('bibleReaderSettingsModal');
+  if (settingsModal) {
+    settingsModal.setAttribute('aria-hidden', 'true');
+    settingsModal.classList.remove('bible-reader-settings-modal-visible');
   }
 }
 

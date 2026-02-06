@@ -403,6 +403,7 @@
           <div class="bible-reader-dropdown-content" id="bibleReaderChapterDropdownContent"></div>
         </div>
         <button type="button" class="bible-reader-menu-btn" id="bibleReaderMenuBtn" aria-label="Menu">☰</button>
+        <button type="button" class="bible-reader-menu-btn" id="bibleReaderSettingsBtn" aria-label="Settings">⚙️</button>
       </div>
       <div class="bible-reader-toolbar">
         <!-- Botón removido - ahora se abre con el menú de hamburguesa -->
@@ -467,39 +468,6 @@
         <div class="bible-reader-search-results" id="bibleReaderSearchResults"></div>
       </div>
       
-      <!-- Sección de configuración -->
-      <div class="bible-reader-sidepanel-settings-section">
-        <h3 class="bible-reader-sidepanel-settings-title">Reader Settings</h3>
-        <div class="bible-settings-group">
-          <label>Font Size</label>
-          <div class="bible-settings-control">
-            <input type="range" id="bibleReaderFontSize" min="0.5" max="2.0" step="0.1" value="1.1">
-            <span id="bibleReaderFontSizeValue">1.1rem</span>
-          </div>
-        </div>
-        <div class="bible-settings-group">
-          <label>Font Family</label>
-          <select id="bibleReaderFontFamily">
-            <option value="serif">Serif</option>
-            <option value="sans-serif">Sans-serif</option>
-          </select>
-        </div>
-        <div class="bible-settings-group">
-          <label>Line Height</label>
-          <div class="bible-settings-control">
-            <input type="range" id="bibleReaderLineHeight" min="1.4" max="2.4" step="0.1" value="1.8">
-            <span id="bibleReaderLineHeightValue">1.8</span>
-          </div>
-        </div>
-        <div class="bible-settings-group">
-          <label>Theme</label>
-          <select id="bibleReaderTheme">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-          </select>
-        </div>
-      </div>
-      
       <!-- Tabs de Pasajes y Notas -->
       <div class="bible-reader-sidepanel-tabs">
         <button type="button" class="bible-reader-tab active" id="bibleTabPassages" data-i18n="bibleTabPassages">Pasajes</button>
@@ -510,6 +478,47 @@
         <div class="bible-reader-list" id="bibleNotesList" style="display:none"></div>
       </div>
     </div>
+    <!-- Modal de configuración del lector -->
+    <div class="bible-reader-settings-modal" id="bibleReaderSettingsModal" aria-hidden="true">
+      <div class="bible-reader-settings-modal-overlay"></div>
+      <div class="bible-reader-settings-modal-content">
+        <div class="bible-reader-settings-modal-header">
+          <h2>Reader Settings</h2>
+          <button type="button" class="bible-reader-settings-modal-close" id="bibleReaderSettingsModalClose" aria-label="Close">✖</button>
+        </div>
+        <div class="bible-reader-settings-modal-body">
+          <div class="bible-settings-group">
+            <label>Font Size</label>
+            <div class="bible-settings-control">
+              <input type="range" id="bibleReaderFontSize" min="0.5" max="2.0" step="0.1" value="1.1">
+              <span id="bibleReaderFontSizeValue">1.1rem</span>
+            </div>
+          </div>
+          <div class="bible-settings-group">
+            <label>Font Family</label>
+            <select id="bibleReaderFontFamily">
+              <option value="serif">Serif</option>
+              <option value="sans-serif">Sans-serif</option>
+            </select>
+          </div>
+          <div class="bible-settings-group">
+            <label>Line Height</label>
+            <div class="bible-settings-control">
+              <input type="range" id="bibleReaderLineHeight" min="1.4" max="2.4" step="0.1" value="1.8">
+              <span id="bibleReaderLineHeightValue">1.8</span>
+            </div>
+          </div>
+          <div class="bible-settings-group">
+            <label>Theme</label>
+            <select id="bibleReaderTheme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="bible-reader-note-modal" id="bibleNoteModal" aria-hidden="true">
       <div class="bible-reader-note-modal-inner">
         <h3 class="bible-reader-note-modal-title" id="bibleNoteModalTitle" data-i18n="bibleAddNote">Añadir nota</h3>

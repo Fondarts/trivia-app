@@ -565,7 +565,16 @@ function hideEnhancedContextMenu() {
   }
 }
 
-/** Expande un rango a límites de palabra, incluso si la palabra cruza varios nodos de texto (evita "dee" + "p" -> "deep"). */
+/** Carácter de puntuación que suele ir pegada a una palabra (no expandir sobre espacios). */
+function isAttachedPunctuation(c) {
+  return typeof c === 'string' && /[.,;:?!'")\]\u2019\u201d]/.test(c);
+}
+/** Puntuación que puede ir antes de una palabra (abre comillas, paréntesis). */
+function isLeadingPunctuation(c) {
+  return typeof c === 'string' && /[\u201c\u2018\(\[\"]/.test(c);
+}
+
+/** Expande un rango a límites de palabra (+ puntuación adyacente), incluso si la palabra cruza varios nodos de texto. */
 function expandRangeToWordBoundaries(range) {
   if (!range || range.collapsed) return;
   const isWordChar = (c) => typeof c === 'string' && /[a-zA-Z0-9]/.test(c);
@@ -576,16 +585,18 @@ function expandRangeToWordBoundaries(range) {
   let endContainer = range.endContainer;
   let endOffset = range.endOffset;
 
-  // Expandir inicio hacia atrás (mismo nodo y nodos anteriores dentro del mismo contenedor)
+  // Expandir inicio hacia atrás: primero palabras, luego puntuación inicial
   if (startContainer.nodeType === Node.TEXT_NODE) {
     const text = startContainer.textContent || '';
     while (startOffset > 0 && isWordChar(text[startOffset - 1])) startOffset--;
+    while (startOffset > 0 && isLeadingPunctuation(text[startOffset - 1])) startOffset--;
     if (startOffset === 0 && root.contains(startContainer)) {
       const prev = getPreviousTextNodeInRoot(startContainer, root);
       if (prev) {
         const prevText = prev.textContent || '';
         let p = prevText.length;
         while (p > 0 && isWordChar(prevText[p - 1])) p--;
+        while (p > 0 && isLeadingPunctuation(prevText[p - 1])) p--;
         if (p < prevText.length) {
           startContainer = prev;
           startOffset = p;
@@ -594,16 +605,18 @@ function expandRangeToWordBoundaries(range) {
     }
   }
 
-  // Expandir final hacia delante (mismo nodo y nodos siguientes dentro del mismo contenedor)
+  // Expandir final hacia delante: primero palabras, luego puntuación final (p. ej. "LORD.")
   if (endContainer.nodeType === Node.TEXT_NODE) {
     const text = endContainer.textContent || '';
     while (endOffset < text.length && isWordChar(text[endOffset])) endOffset++;
+    while (endOffset < text.length && isAttachedPunctuation(text[endOffset])) endOffset++;
     if (endOffset === text.length && root.contains(endContainer)) {
       const next = getNextTextNodeInRoot(endContainer, root);
       if (next) {
         const nextText = next.textContent || '';
         let n = 0;
         while (n < nextText.length && isWordChar(nextText[n])) n++;
+        while (n < nextText.length && isAttachedPunctuation(nextText[n])) n++;
         if (n > 0) {
           endContainer = next;
           endOffset = n;
@@ -632,33 +645,94 @@ function getNextTextNodeInRoot(node, root) {
   return walker.nextNode();
 }
 
+/** Helper: obtiene el primer nodo de texto dentro de un elemento */
+function getFirstTextNode(element) {
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+  return walker.nextNode();
+}
+
+/** Helper: obtiene el último nodo de texto dentro de un elemento */
+function getLastTextNode(element) {
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+  let last = null;
+  while (walker.nextNode()) last = walker.currentNode;
+  return last;
+}
+
 /** Aplica subrayado de color al texto seleccionado */
 function applyTextUnderline(range, color) {
   if (!range || !color) return;
   expandRangeToWordBoundaries(range);
   
-  // Colores para los subrayados
-  const colorMap = {
-    yellow: '#fbbf24',
-    green: '#22c55e',
-    blue: '#3b82f6',
-    pink: '#ec4899',
-    orange: '#f97316',
-    purple: '#a855f7',
-    red: '#ef4444'
-  };
+  // Detectar si el rango cruza múltiples párrafos - si es así, aplicar por separado para no afectar espaciado
+  const startPara = range.startContainer.nodeType === Node.TEXT_NODE 
+    ? range.startContainer.parentElement.closest('.bible-reader-paragraph')
+    : range.startContainer.closest('.bible-reader-paragraph');
+  const endPara = range.endContainer.nodeType === Node.TEXT_NODE
+    ? range.endContainer.parentElement.closest('.bible-reader-paragraph')
+    : range.endContainer.closest('.bible-reader-paragraph');
   
-  const underlineColor = colorMap[color] || colorMap.yellow;
+  if (startPara && endPara && startPara !== endPara) {
+    // Cruza múltiples párrafos: aplicar subrayado por separado en cada párrafo para no afectar espaciado
+    const paras = [];
+    let current = startPara;
+    while (current) {
+      if (current.classList && current.classList.contains('bible-reader-paragraph')) {
+        paras.push(current);
+        if (current === endPara) break;
+      }
+      current = current.nextElementSibling;
+    }
+    
+    paras.forEach((para, idx) => {
+      const paraRange = document.createRange();
+      if (idx === 0) {
+        // Primer párrafo: desde start hasta el final del contenido del párrafo
+        paraRange.setStart(range.startContainer, range.startOffset);
+        const lastTextNode = getLastTextNode(para);
+        if (lastTextNode) {
+          paraRange.setEnd(lastTextNode, lastTextNode.textContent.length);
+        } else {
+          paraRange.setEndAfter(para.lastChild || para);
+        }
+      } else if (idx === paras.length - 1) {
+        // Último párrafo: desde el primer nodo de texto hasta end
+        const firstTextNode = getFirstTextNode(para);
+        if (firstTextNode) {
+          paraRange.setStart(firstTextNode, 0);
+        } else {
+          paraRange.setStartBefore(para.firstChild || para);
+        }
+        paraRange.setEnd(range.endContainer, range.endOffset);
+      } else {
+        // Párrafos intermedios: todo el contenido del párrafo
+        paraRange.selectNodeContents(para);
+      }
+      try {
+        const span = document.createElement('span');
+        span.className = `bible-text-underline bible-text-underline-${color}`;
+        paraRange.surroundContents(span);
+      } catch (e) {
+        try {
+          const contents = paraRange.extractContents();
+          const span = document.createElement('span');
+          span.className = `bible-text-underline bible-text-underline-${color}`;
+          span.appendChild(contents);
+          paraRange.insertNode(span);
+        } catch (e2) {
+          console.warn('Could not apply underline to paragraph:', e2);
+        }
+      }
+    });
+    return;
+  }
   
+  // Rango dentro de un solo párrafo: aplicar normalmente
   try {
-    // Crear un span con el subrayado (el color se aplica por clase en CSS; border-bottom queda debajo de descendentes)
     const underlineSpan = document.createElement('span');
     underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
-    
-    // Envolver el contenido seleccionado
     range.surroundContents(underlineSpan);
   } catch (e) {
-    // Si surroundContents falla, usar método alternativo
     try {
       const contents = range.extractContents();
       const underlineSpan = document.createElement('span');
@@ -1315,26 +1389,43 @@ export function restoreHighlightsFromStorage() {
       return;
     }
     
-    // Restaurar por posición (verseOffsets) — más fiable que buscar texto en el DOM
+    // Restaurar por posición (verseOffsets) — un solo rango para toda la selección (línea continua, sin separación)
     if (highlight.verseOffsets && Array.isArray(highlight.verseOffsets) && highlight.verseOffsets.length > 0) {
-      let applied = false;
-      for (const seg of highlight.verseOffsets) {
+      const segs = highlight.verseOffsets;
+      const first = segs[0];
+      const last = segs[segs.length - 1];
+      const verseElFirst = contentEl.querySelector(`.bible-reader-verse[data-verse="${first.verse}"]`);
+      const verseElLast = contentEl.querySelector(`.bible-reader-verse[data-verse="${last.verse}"]`);
+      if (verseElFirst && verseElLast) {
+        const rangeFirst = createRangeFromVerseOffsets(verseElFirst, first.start, first.end);
+        const rangeLast = createRangeFromVerseOffsets(verseElLast, last.start, last.end);
+        if (rangeFirst && rangeLast) {
+          const fullRange = document.createRange();
+          fullRange.setStart(rangeFirst.startContainer, rangeFirst.startOffset);
+          fullRange.setEnd(rangeLast.endContainer, rangeLast.endOffset);
+          try {
+            applyTextUnderline(fullRange, highlight.color);
+            console.log(`[restoreHighlightsFromStorage] ✅ Restored highlight ${idx} by verseOffsets (single range)`);
+            return;
+          } catch (e) {
+            console.warn(`[restoreHighlightsFromStorage] Single range failed, trying per-segment:`, e);
+          }
+        }
+      }
+      // Fallback: aplicar por segmento si el rango único falla (p. ej. range inválido)
+      for (const seg of segs) {
         const verseEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${seg.verse}"]`);
         if (!verseEl) continue;
         const range = createRangeFromVerseOffsets(verseEl, seg.start, seg.end);
         if (range) {
           try {
             applyTextUnderline(range, highlight.color);
-            applied = true;
-          } catch (e) {
-            console.warn(`[restoreHighlightsFromStorage] Could not apply highlight ${idx} segment verse ${seg.verse}:`, e);
+          } catch (e2) {
+            console.warn(`[restoreHighlightsFromStorage] Could not apply highlight ${idx} segment verse ${seg.verse}:`, e2);
           }
         }
       }
-      if (applied) {
-        console.log(`[restoreHighlightsFromStorage] ✅ Restored highlight ${idx} by verseOffsets`);
-        return;
-      }
+      return;
     }
     
     // Fallback: buscar por texto (highlights antiguos sin verseOffsets)

@@ -6,6 +6,48 @@ import { ACHIEVEMENTS_LIST } from '../player/achievements.js';
 import { t, setLanguage, getLanguage, initI18n, updateUI as updateI18nUI } from '../core/i18n.js';
 import { populateBibleBookSelector } from './bible-study.js';
 
+const PROFILE_NAME_KEY = 'trivia_profile_name';
+const PROFILE_PHOTO_KEY = 'trivia_profile_photo';
+const PLACEHOLDER_AVATAR = 'assets/icons/avatar_placeholder.svg';
+
+function getProfileName() {
+  try { return localStorage.getItem(PROFILE_NAME_KEY) || ''; } catch { return ''; }
+}
+function setProfileName(name) {
+  try { localStorage.setItem(PROFILE_NAME_KEY, String(name).trim().slice(0, 32)); } catch {}
+}
+function getProfilePhoto() {
+  try { return localStorage.getItem(PROFILE_PHOTO_KEY) || ''; } catch { return ''; }
+}
+function setProfilePhoto(dataUrl) {
+  try {
+    if (dataUrl) localStorage.setItem(PROFILE_PHOTO_KEY, dataUrl);
+    else localStorage.removeItem(PROFILE_PHOTO_KEY);
+  } catch {}
+}
+
+function applyProfileToUI() {
+  const name = getProfileName();
+  const photo = getProfilePhoto();
+  const nicknameEl = document.getElementById('profileNicknameText');
+  const avatarEl = document.getElementById('profileAvatar');
+  const headerImg = document.getElementById('headerProfileImg');
+  const headerFallback = document.querySelector('.header-avatar-fallback');
+  if (nicknameEl) nicknameEl.textContent = name || '—';
+  if (avatarEl) avatarEl.src = photo || PLACEHOLDER_AVATAR;
+  if (headerImg) {
+    if (photo) {
+      headerImg.src = photo;
+      headerImg.style.display = 'block';
+      if (headerFallback) headerFallback.style.display = 'none';
+    } else {
+      headerImg.src = '';
+      headerImg.style.display = 'none';
+      if (headerFallback) headerFallback.style.display = '';
+    }
+  }
+}
+
 
 export function toast(msg){
   const el = document.getElementById('toast') || (()=> {
@@ -62,6 +104,7 @@ export function bindProfileModal(){
 
   const open = () => {
     updatePlayerXPBar();
+    applyProfileToUI();
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
@@ -115,6 +158,59 @@ export function bindProfileModal(){
       if (e.key === 'Escape' && modal.classList.contains('open')) close();
     });
   }
+
+  // Foto de perfil: clic en avatar abre selector de archivo
+  const avatarWrap = document.getElementById('profileAvatarWrap');
+  const photoInput = document.getElementById('profilePhotoInput');
+  if (avatarWrap && photoInput) {
+    avatarWrap.style.cursor = 'pointer';
+    avatarWrap.addEventListener('click', () => photoInput.click());
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+      const r = new FileReader();
+      r.onload = () => {
+        setProfilePhoto(r.result);
+        applyProfileToUI();
+      };
+      r.readAsDataURL(file);
+      e.target.value = '';
+    });
+  }
+
+  // Nombre: botón editar muestra input, guardar en blur/enter
+  const nicknameText = document.getElementById('profileNicknameText');
+  const nicknameInput = document.getElementById('profileNicknameInput');
+  const editNameBtn = document.getElementById('profileEditNameBtn');
+  if (nicknameText && nicknameInput && editNameBtn) {
+    const namePlaceholder = typeof t === 'function' ? t('yourNamePlaceholder') : 'Tu nombre';
+    nicknameInput.placeholder = namePlaceholder;
+    editNameBtn.setAttribute('aria-label', namePlaceholder);
+    const showEdit = () => {
+      nicknameText.style.display = 'none';
+      editNameBtn.style.display = 'none';
+      nicknameInput.style.display = 'block';
+      nicknameInput.value = getProfileName();
+      nicknameInput.focus();
+    };
+    const hideEdit = () => {
+      const val = nicknameInput.value.trim().slice(0, 32);
+      setProfileName(val);
+      nicknameText.textContent = val || '—';
+      nicknameText.style.display = '';
+      editNameBtn.style.display = '';
+      nicknameInput.style.display = 'none';
+      applyProfileToUI();
+    };
+    editNameBtn.addEventListener('click', showEdit);
+    nicknameInput.addEventListener('blur', hideEdit);
+    nicknameInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); nicknameInput.blur(); }
+    });
+  }
+
+  // Aplicar perfil al cargar (header con foto si existe)
+  applyProfileToUI();
 
   // Stats button - needs to be re-queried after potential DOM changes
   statsBtn = document.getElementById('profileBtnStats');
@@ -201,23 +297,6 @@ export function bindProfileModal(){
         e.stopPropagation();
         SETTINGS.autoNextRounds = e.target.checked;
         persistSettings();
-      });
-    }
-
-    // Group by category checkbox
-    let chkGroupByCategory = document.getElementById('optGroupByCategory');
-    if (chkGroupByCategory) {
-      const newChk = chkGroupByCategory.cloneNode(true);
-      newChk.checked = !!SETTINGS.groupByCategory;
-      chkGroupByCategory.parentNode.replaceChild(newChk, chkGroupByCategory);
-      chkGroupByCategory = newChk;
-      
-      chkGroupByCategory.addEventListener('change', (e) => {
-        e.stopPropagation();
-        SETTINGS.groupByCategory = e.target.checked;
-        persistSettings();
-        // Refrescar el selector de categorías para aplicar el cambio
-        refreshCategorySelect();
       });
     }
 
@@ -521,42 +600,20 @@ export async function refreshCategorySelect(){
             }
           });
           
-          // Crear grupos por categoría o lista plana según configuración
+          // Crear grupos por categoría
           if (packsMap.size > 0) {
-            const groupByCategory = SETTINGS.groupByCategory !== false; // Por defecto true
-            
-            if (groupByCategory) {
-              // Agrupar por categoría
-              packsMap.forEach((packs, category) => {
-                const categoryLabel = labels[category] || category;
-                const g = document.createElement('optgroup');
-                g.label = categoryLabel;
-                
-                packs.forEach(pack => {
-                  const o = document.createElement('option');
-                  o.value = `filepack:${lang}:${pack.fileName}`;
-                  o.textContent = pack.name;
-                  g.appendChild(o);
-                });
-                
-                sel.appendChild(g);
-              });
-            } else {
-              // Mostrar todos sin agrupar
+            packsMap.forEach((packs, category) => {
+              const categoryLabel = labels[category] || category;
               const g = document.createElement('optgroup');
-              g.label = typeof t === 'function' ? t('categoryAll') : 'Todos los packs';
-              
-              packsMap.forEach((packs, category) => {
-                packs.forEach(pack => {
-                  const o = document.createElement('option');
-                  o.value = `filepack:${lang}:${pack.fileName}`;
-                  o.textContent = pack.name;
-                  g.appendChild(o);
-                });
+              g.label = categoryLabel;
+              packs.forEach(pack => {
+                const o = document.createElement('option');
+                o.value = `filepack:${lang}:${pack.fileName}`;
+                o.textContent = pack.name;
+                g.appendChild(o);
               });
-              
               sel.appendChild(g);
-            }
+            });
           }
         }
       }

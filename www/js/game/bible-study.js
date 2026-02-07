@@ -865,8 +865,11 @@ function openReaderWindow(bookName, bookId, data, chapterNum, verseNum) {
 
   renderReaderChapter(openChapter);
 
-  overlay.style.display = 'block';
+  overlay.style.display = 'flex';
   document.body.classList.add('bible-reader-open');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => overlay.classList.add('bible-reader-fs-visible'));
+  });
 
   const menuBtn = document.getElementById('bibleReaderMenuBtn');
   if (menuBtn) menuBtn.focus();
@@ -889,11 +892,20 @@ function openReaderWindow(bookName, bookId, data, chapterNum, verseNum) {
 }
 
 /**
- * Cierra la ventana de lectura.
+ * Cierra la ventana de lectura (con transición hacia abajo).
  */
 function closeReaderWindow() {
   const overlay = document.getElementById('bibleReaderOverlay');
-  if (overlay) overlay.style.display = 'none';
+  if (!overlay) {
+    document.body.classList.remove('bible-reader-open');
+    return;
+  }
+  overlay.classList.remove('bible-reader-fs-visible');
+  const onTransitionEnd = () => {
+    overlay.removeEventListener('transitionend', onTransitionEnd);
+    overlay.style.display = 'none';
+  };
+  overlay.addEventListener('transitionend', onTransitionEnd);
   document.body.classList.remove('bible-reader-open');
   closeSidepanel();
   closeNoteModal();
@@ -905,7 +917,6 @@ function closeReaderWindow() {
   readerBookName = '';
   readerBookId = '';
   readerCurrentChapter = '';
-  // Limpiar variables globales
   window.readerBookId = '';
   window.readerCurrentChapter = '';
 }
@@ -1543,6 +1554,9 @@ export function initBibleStudy() {
 
   const sidepanelClose = document.getElementById('bibleReaderSidepanelClose');
   if (sidepanelClose) sidepanelClose.addEventListener('click', closeSidepanel);
+
+  const closeReaderBtn = document.getElementById('bibleReaderCloseBtn');
+  if (closeReaderBtn) closeReaderBtn.addEventListener('click', closeReaderWindow);
 
   const tabPassages = document.getElementById('bibleTabPassages');
   const tabNotes = document.getElementById('bibleTabNotes');

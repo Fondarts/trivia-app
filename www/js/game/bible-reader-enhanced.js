@@ -671,6 +671,87 @@ function applyTextUnderline(range, color) {
   }
 }
 
+/** Devuelve el offset de carácter dentro del texto del versículo donde está (targetNode, targetOffset), o -1 si no está en el versículo. */
+function getCharacterOffsetInVerse(verseEl, targetNode, targetOffset) {
+  const walker = document.createTreeWalker(verseEl, NodeFilter.SHOW_TEXT, null, false);
+  let count = 0;
+  let node;
+  while ((node = walker.nextNode())) {
+    const len = (node.textContent || '').length;
+    if (node === targetNode) return count + Math.min(targetOffset, len);
+    count += len;
+  }
+  return -1;
+}
+
+/** Dado un rango y un versículo, devuelve { start, end } en offsets de carácter dentro del versículo (para guardar y restaurar por posición). */
+function getVerseOffsetsForRange(verseEl, range) {
+  const verseNum = verseEl.getAttribute('data-verse');
+  if (!verseNum) return null;
+  const fullLength = (verseEl.textContent || '').length;
+  const startInVerse = verseEl.contains(range.startContainer)
+    ? getCharacterOffsetInVerse(verseEl, range.startContainer, range.startOffset)
+    : 0;
+  const endInVerse = verseEl.contains(range.endContainer)
+    ? getCharacterOffsetInVerse(verseEl, range.endContainer, range.endOffset)
+    : fullLength;
+  if (startInVerse < 0 && endInVerse < 0) return null;
+  const start = startInVerse >= 0 ? startInVerse : 0;
+  const end = endInVerse >= 0 ? endInVerse : fullLength;
+  if (start >= end) return null;
+  return { verse: parseInt(verseNum, 10), start, end };
+}
+
+/** Dado un rango, devuelve array de { verse, start, end } para cada versículo que toca (para guardar). */
+function computeVerseOffsets(range) {
+  const verseEls = document.querySelectorAll('.bible-reader-verse');
+  const segments = [];
+  verseEls.forEach((verseEl) => {
+    const seg = getVerseOffsetsForRange(verseEl, range);
+    if (seg) segments.push(seg);
+  });
+  return segments.sort((a, b) => a.verse - b.verse);
+}
+
+/** Dado un elemento versículo y offsets de carácter, crea un Range (node, offset) -> (node, offset). */
+function createRangeFromVerseOffsets(verseEl, startChar, endChar) {
+  const range = document.createRange();
+  const walker = document.createTreeWalker(verseEl, NodeFilter.SHOW_TEXT, null, false);
+  let count = 0;
+  let node;
+  let startNode = null;
+  let startOffset = 0;
+  let endNode = null;
+  let endOffset = 0;
+  let lastNode = null;
+  let lastLen = 0;
+  while ((node = walker.nextNode())) {
+    const len = (node.textContent || '').length;
+    lastNode = node;
+    lastLen = len;
+    const nextCount = count + len;
+    if (startNode === null && startChar <= nextCount) {
+      startNode = node;
+      startOffset = Math.min(Math.max(0, startChar - count), len);
+    }
+    if (endNode === null && endChar <= nextCount) {
+      endNode = node;
+      endOffset = Math.min(Math.max(0, endChar - count), len);
+    }
+    count = nextCount;
+  }
+  if (!endNode && lastNode) {
+    endNode = lastNode;
+    endOffset = lastLen;
+  }
+  if (startNode && endNode) {
+    range.setStart(startNode, startOffset);
+    range.setEnd(endNode, endOffset);
+    return range;
+  }
+  return null;
+}
+
 /** Guarda un highlight en localStorage */
 function saveHighlightToStorage(range, selectedText, color) {
   console.log('[saveHighlightToStorage] 🚀 Function called with:', { 
@@ -797,6 +878,9 @@ function saveHighlightToStorage(range, selectedText, color) {
   
   const verseRange = formatVerseRange([...affectedVerses]);
   
+  // Guardar posición por versículo+offset para restaurar sin depender del texto en el DOM
+  const verseOffsets = computeVerseOffsets(range);
+  
   // Obtener highlights existentes - usar exactamente la misma clave que bible-study.js
   const STORAGE_KEY_HIGHLIGHTS = 'bible_trivia_highlights';
   let highlights = [];
@@ -837,13 +921,14 @@ function saveHighlightToStorage(range, selectedText, color) {
     return !hVerses.some(v => currentVerses.includes(v));
   });
   
-  // Agregar el nuevo highlight
+  // Agregar el nuevo highlight (verseOffsets permite restaurar por posición, sin buscar texto)
   const newHighlight = { 
     bookId, 
-    chapter: String(chapter), // Asegurar que sea string
+    chapter: String(chapter),
     verseRange, 
     color, 
     selectedText,
+    verseOffsets: verseOffsets.length ? verseOffsets : undefined,
     savedAt: Date.now() 
   };
   
@@ -1223,10 +1308,38 @@ export function restoreHighlightsFromStorage() {
   const contentEl = document.getElementById('bibleReaderContent');
   if (!contentEl) return;
   
-  // Para cada highlight, buscar el texto y aplicar el subrayado
+  // Para cada highlight, restaurar por posición (verseOffsets) si existe; si no, buscar por texto
   currentHighlights.forEach((highlight, idx) => {
-    if (!highlight.selectedText || !highlight.color) {
-      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: missing text or color`);
+    if (!highlight.color) {
+      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: missing color`);
+      return;
+    }
+    
+    // Restaurar por posición (verseOffsets) — más fiable que buscar texto en el DOM
+    if (highlight.verseOffsets && Array.isArray(highlight.verseOffsets) && highlight.verseOffsets.length > 0) {
+      let applied = false;
+      for (const seg of highlight.verseOffsets) {
+        const verseEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${seg.verse}"]`);
+        if (!verseEl) continue;
+        const range = createRangeFromVerseOffsets(verseEl, seg.start, seg.end);
+        if (range) {
+          try {
+            applyTextUnderline(range, highlight.color);
+            applied = true;
+          } catch (e) {
+            console.warn(`[restoreHighlightsFromStorage] Could not apply highlight ${idx} segment verse ${seg.verse}:`, e);
+          }
+        }
+      }
+      if (applied) {
+        console.log(`[restoreHighlightsFromStorage] ✅ Restored highlight ${idx} by verseOffsets`);
+        return;
+      }
+    }
+    
+    // Fallback: buscar por texto (highlights antiguos sin verseOffsets)
+    if (!highlight.selectedText) {
+      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: no selectedText and no verseOffsets`);
       return;
     }
     

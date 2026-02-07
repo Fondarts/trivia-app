@@ -5,10 +5,9 @@ export const SETTINGS = (() => {
     return {
       sounds: saved.sounds !== undefined ? !!saved.sounds : true,
       autoNextRounds: saved.autoNextRounds !== undefined ? !!saved.autoNextRounds : false,
-      groupByCategory: saved.groupByCategory !== undefined ? !!saved.groupByCategory : true,
     };
   } catch {
-    return { sounds: true, autoNextRounds: false, groupByCategory: true };
+    return { sounds: true, autoNextRounds: false };
   }
 })();
 

@@ -239,6 +239,7 @@ function placeWord(grid, word, r, c, dr, dc) {
 export async function generateWordSearch(difficultyKey = 'easy') {
   const config = DIFFICULTY[difficultyKey] || DIFFICULTY.easy;
   const { rows, cols, numWords } = config;
+  const minWords = difficultyKey === 'easy' ? 4 : numWords; // Mínimo 4 para beginners
 
   // Obtener versículo aleatorio
   const verse = await getRandomVerse();
@@ -247,15 +248,15 @@ export async function generateWordSearch(difficultyKey = 'easy') {
     return generateWordSearchFallback(difficultyKey);
   }
 
-  // Extraer palabras clave del versículo
-  const keyWords = extractKeyWords(verse.text, 3, numWords);
+  // Extraer más palabras para asegurar que tengamos suficientes (extraer hasta numWords * 2 para tener opciones)
+  const keyWords = extractKeyWords(verse.text, 3, numWords * 2);
   if (keyWords.length === 0) {
     return generateWordSearchFallback(difficultyKey);
   }
 
   // Filtrar palabras que caben en la grilla
   const maxLen = Math.max(rows, cols);
-  const wordsToPlace = keyWords.filter(w => w.length <= maxLen).slice(0, numWords);
+  const wordsToPlace = keyWords.filter(w => w.length <= maxLen);
   
   if (wordsToPlace.length === 0) {
     return generateWordSearchFallback(difficultyKey);
@@ -264,34 +265,85 @@ export async function generateWordSearch(difficultyKey = 'easy') {
   const grid = Array(rows).fill(null).map(() => Array(cols).fill(''));
   const placed = [];
   const allPlacedPositions = []; // Todas las celdas ya usadas para separar palabras
+  const usedDirections = new Set(); // Track de direcciones usadas para asegurar variedad
+  const directionKeys = new Map(); // Mapa para identificar direcciones únicas
 
-  for (const word of wordsToPlace) {
+  // Crear claves únicas para cada dirección
+  DIRECTIONS.forEach((dir, idx) => {
+    directionKeys.set(`${dir.dr},${dir.dc}`, idx);
+  });
+
+  // Intentar colocar palabras hasta alcanzar el mínimo requerido
+  let attempts = 0;
+  const maxAttempts = 500;
+  const shuffledWords = shuffle([...wordsToPlace]);
+
+  for (const word of shuffledWords) {
     if (placed.length >= numWords) break;
+    if (attempts >= maxAttempts) break;
+    
+    // Mezclar direcciones para aleatoriedad
     const dirs = shuffle([...DIRECTIONS]);
-    const candidates = [];
+    
+    // Si ya tenemos palabras colocadas, priorizar direcciones no usadas
+    const prioritizedDirs = [];
+    const otherDirs = [];
+    for (const dir of dirs) {
+      const key = `${dir.dr},${dir.dc}`;
+      if (usedDirections.has(key)) {
+        otherDirs.push(dir);
+      } else {
+        prioritizedDirs.push(dir);
+      }
+    }
+    const finalDirs = [...prioritizedDirs, ...otherDirs];
+    
+    // Generar posiciones de inicio aleatorias
+    const starts = [];
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
-        for (const { dr, dc } of dirs) {
-          if (canPlace(grid, word, r, c, dr, dc)) {
-            const dist = minDistanceToPlaced(allPlacedPositions, r, c, dr, dc, word.length);
-            candidates.push({ r, c, dr, dc, dist });
-          }
+        starts.push({ r, c });
+      }
+    }
+    shuffle(starts);
+    
+    const candidates = [];
+    for (const { r, c } of starts) {
+      for (const { dr, dc } of finalDirs) {
+        if (canPlace(grid, word, r, c, dr, dc)) {
+          const dist = minDistanceToPlaced(allPlacedPositions, r, c, dr, dc, word.length);
+          const dirKey = `${dr},${dc}`;
+          const isNewDirection = !usedDirections.has(dirKey);
+          // Priorizar nuevas direcciones y posiciones aleatorias
+          const score = dist * 10 + (isNewDirection ? 100 : 0) + Math.random() * 50;
+          candidates.push({ r, c, dr, dc, dist, score });
         }
       }
     }
-    // Ordenar por distancia descendente: preferir posiciones más alejadas de palabras ya colocadas
-    candidates.sort((a, b) => b.dist - a.dist);
+    
+    // Ordenar por score (nuevas direcciones primero, luego distancia y aleatoriedad)
+    candidates.sort((a, b) => b.score - a.score);
+    
     let placedThis = false;
     for (const { r, c, dr, dc } of candidates) {
       if (placedThis) break;
       // Revisar que siga siendo válido (por si hay solapamiento con intentos previos)
       if (canPlace(grid, word, r, c, dr, dc)) {
         const positions = placeWord(grid, word, r, c, dr, dc);
-        placed.push({ word, positions });
+        const dirKey = `${dr},${dc}`;
+        usedDirections.add(dirKey);
+        placed.push({ word, positions, direction: { dr, dc } });
         allPlacedPositions.push(...positions);
         placedThis = true;
       }
     }
+    attempts++;
+  }
+
+  // Validar que tenemos al menos el mínimo de palabras requerido
+  if (placed.length < minWords) {
+    // Si no alcanzamos el mínimo, intentar con fallback
+    return generateWordSearchFallback(difficultyKey);
   }
 
   // Rellenar espacios vacíos con letras aleatorias
@@ -328,12 +380,14 @@ export async function generateWordSearch(difficultyKey = 'easy') {
 function generateWordSearchFallback(difficultyKey) {
   const config = DIFFICULTY[difficultyKey] || DIFFICULTY.easy;
   const { rows, cols, numWords } = config;
+  const minWords = difficultyKey === 'easy' ? 4 : numWords; // Mínimo 4 para beginners
   const grid = Array(rows).fill(null).map(() => Array(cols).fill(''));
 
   // Usar palabras predefinidas como fallback
   const WS_WORDS_FALLBACK = [
     'DIOS', 'JESUS', 'BIBLIA', 'FE', 'AMOR', 'GRACIA', 'PACTO', 'LEY', 'REINO',
-    'PALABRA', 'ORACION', 'PERDON', 'JUSTICIA', 'VERDAD', 'VIDA', 'LUZ', 'CAMINO'
+    'PALABRA', 'ORACION', 'PERDON', 'JUSTICIA', 'VERDAD', 'VIDA', 'LUZ', 'CAMINO',
+    'CRISTO', 'SALVACION', 'IGLESIA', 'ESPIRITU', 'SANTIDAD', 'BENDICION', 'ALABANZA'
   ].map(w => normalize(w));
 
   const wordsByLen = {};
@@ -346,25 +400,45 @@ function generateWordSearchFallback(difficultyKey) {
   const flat = [];
   Object.values(wordsByLen).forEach(arr => flat.push(...arr));
   const shuffled = shuffle(flat);
-  const toPlace = shuffled.slice(0, Math.min(numWords * 2, shuffled.length));
+  const toPlace = shuffled.slice(0, Math.min(numWords * 3, shuffled.length)); // Más palabras para tener opciones
   const placed = [];
-  const maxAttempts = 200;
+  const allPlacedPositions = [];
+  const usedDirections = new Set(); // Track de direcciones usadas
+  const maxAttempts = 500;
   let attempts = 0;
 
   for (const word of toPlace) {
     if (placed.length >= numWords) break;
     if (attempts >= maxAttempts) break;
+    
+    // Mezclar direcciones y priorizar nuevas direcciones
     const dirs = shuffle([...DIRECTIONS]);
+    const prioritizedDirs = [];
+    const otherDirs = [];
+    for (const dir of dirs) {
+      const key = `${dir.dr},${dir.dc}`;
+      if (usedDirections.has(key)) {
+        otherDirs.push(dir);
+      } else {
+        prioritizedDirs.push(dir);
+      }
+    }
+    const finalDirs = [...prioritizedDirs, ...otherDirs];
+    
     let placedThis = false;
     const starts = [];
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) starts.push({ r, c });
     shuffle(starts);
+    
     for (const { r, c } of starts) {
       if (placedThis) break;
-      for (const { dr, dc } of dirs) {
+      for (const { dr, dc } of finalDirs) {
         if (canPlace(grid, word, r, c, dr, dc)) {
           const positions = placeWord(grid, word, r, c, dr, dc);
-          placed.push({ word, positions });
+          const dirKey = `${dr},${dc}`;
+          usedDirections.add(dirKey);
+          placed.push({ word, positions, direction: { dr, dc } });
+          allPlacedPositions.push(...positions);
           placedThis = true;
           break;
         }
@@ -373,11 +447,57 @@ function generateWordSearchFallback(difficultyKey) {
     }
   }
 
+  // Validar mínimo de palabras
+  if (placed.length < minWords) {
+    // Si aún no tenemos suficientes, intentar colocar más palabras con más intentos
+    const remainingWords = shuffled.filter(w => !placed.some(p => p.word === w));
+    for (const word of remainingWords.slice(0, 10)) {
+      if (placed.length >= minWords) break;
+      const dirs = shuffle([...DIRECTIONS]);
+      const starts = [];
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) starts.push({ r, c });
+      shuffle(starts);
+      for (const { r, c } of starts) {
+        for (const { dr, dc } of dirs) {
+          if (canPlace(grid, word, r, c, dr, dc)) {
+            const positions = placeWord(grid, word, r, c, dr, dc);
+            placed.push({ word, positions, direction: { dr, dc } });
+            break;
+          }
+        }
+        if (placed.length >= minWords) break;
+      }
+    }
+  }
+
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
       if (grid[r][c] === '') {
         grid[r][c] = ABC[Math.floor(Math.random() * ABC.length)];
       }
+    }
+  }
+
+  // Asegurar que nunca haya solo 1 palabra
+  if (placed.length < 2) {
+    // Si solo hay 1 palabra, intentar agregar más
+    const extraWords = shuffled.filter(w => !placed.some(p => p.word === w));
+    for (const word of extraWords.slice(0, 5)) {
+      const dirs = shuffle([...DIRECTIONS]);
+      const starts = [];
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) starts.push({ r, c });
+      shuffle(starts);
+      for (const { r, c } of starts) {
+        for (const { dr, dc } of dirs) {
+          if (canPlace(grid, word, r, c, dr, dc)) {
+            const positions = placeWord(grid, word, r, c, dr, dc);
+            placed.push({ word, positions, direction: { dr, dc } });
+            break;
+          }
+        }
+        if (placed.length >= 2) break;
+      }
+      if (placed.length >= 2) break;
     }
   }
 

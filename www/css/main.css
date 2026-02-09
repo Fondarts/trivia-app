@@ -919,29 +919,31 @@ button.btn,
 /* Menú contextual mejorado */
 .bible-reader-enhanced-context-menu {
   position: fixed; z-index: 10004; display: none;
-  background: rgba(30, 41, 59, 0.95); border-radius: 14px; padding: 6px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  background: rgba(255, 255, 255, 0.98); border-radius: 14px; padding: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   pointer-events: auto;
   transform: translateZ(0);
 }
 .bible-enhanced-menu-actions {
-  display: flex; gap: 4px; margin-bottom: 4px;
+  display: flex; gap: 4px; margin-bottom: 0;
 }
 .bible-enhanced-menu-item {
   display: flex; align-items: center; gap: 5px; flex: 1;
-  padding: 7px 10px; background: rgba(255,255,255,0.08); border: none;
-  color: #e2e8f0; font-weight: 500; cursor: pointer;
+  padding: 7px 10px; background: rgba(0,0,0,0.05); border: none;
+  color: #1e293b; font-weight: 500; cursor: pointer;
   border-radius: 8px; transition: background 0.15s; font-size: 0.8rem;
   justify-content: center; white-space: nowrap;
+  margin: 0 !important;
 }
 .bible-enhanced-menu-item:active {
-  background: rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.1);
 }
 .bible-enhanced-menu-item span { font-size: 0.9rem; }
 .bible-enhanced-menu-colors {
-  display: flex; gap: 0; padding: 2px 0; justify-content: space-evenly;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; gap: 0; padding: 2px 0 0 0; justify-content: space-evenly;
+  border-top: none;
+  margin-top: 0;
 }
 .bible-enhanced-color-circle {
   width: 26px; height: 26px; border-radius: 50%; border: 2px solid transparent;

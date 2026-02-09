@@ -130,6 +130,11 @@ function applyReaderSettings() {
     versesElForColor.querySelectorAll('.bible-reader-paragraph').forEach(p => {
       p.style.setProperty('color', textColor, 'important');
     });
+    // Color de los números de versículo según tema
+    const verseNumColor = readerSettings.theme === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
+    versesElForColor.querySelectorAll('.bible-reader-verse-num').forEach(num => {
+      num.style.setProperty('color', verseNumColor, 'important');
+    });
   }
 }
 
@@ -538,11 +543,14 @@ export function initEnhancedContextMenu() {
           const selectedText = currentSelection.toString().trim();
           
           if (range && selectedText) {
-            // Aplicar subrayado visual
+            // 1. Computar offsets ANTES de modificar el DOM
+            const verseOffsets = computeVerseOffsets(range);
+            
+            // 2. Aplicar subrayado visual (modifica DOM)
             applyTextUnderline(range, color);
             
-            // Guardar el highlight en localStorage
-            saveHighlightToStorage(range, selectedText, color);
+            // 3. Guardar con offsets pre-computados
+            saveHighlightToStorage(selectedText, color, verseOffsets);
           }
         } catch (e) {
           console.warn('Error applying underline:', e);
@@ -638,173 +646,96 @@ function isLeadingPunctuation(c) {
   return typeof c === 'string' && /[\u201c\u2018\(\[\"]/.test(c);
 }
 
-/** Expande un rango a límites de palabra (+ puntuación adyacente), incluso si la palabra cruza varios nodos de texto. */
+/** Expande un rango a límites de palabra dentro de cada nodo de texto. */
 function expandRangeToWordBoundaries(range) {
   if (!range || range.collapsed) return;
-  const isWordChar = (c) => typeof c === 'string' && /[a-zA-Z0-9]/.test(c);
-  const anc = range.commonAncestorContainer;
-  const root = anc.nodeType === Node.ELEMENT_NODE ? anc : (anc.parentElement || anc.ownerDocument.body);
-  let startContainer = range.startContainer;
-  let startOffset = range.startOffset;
-  let endContainer = range.endContainer;
-  let endOffset = range.endOffset;
+  const isW = (c) => typeof c === 'string' && /[a-zA-Z0-9]/.test(c);
+  let sc = range.startContainer, so = range.startOffset;
+  let ec = range.endContainer, eo = range.endOffset;
+  if (sc.nodeType === Node.TEXT_NODE) {
+    const t = sc.textContent || '';
+    while (so > 0 && isW(t[so - 1])) so--;
+    while (so > 0 && isLeadingPunctuation(t[so - 1])) so--;
+  }
+  if (ec.nodeType === Node.TEXT_NODE) {
+    const t = ec.textContent || '';
+    while (eo < t.length && isW(t[eo])) eo++;
+    while (eo < t.length && isAttachedPunctuation(t[eo])) eo++;
+  }
+  try { range.setStart(sc, so); range.setEnd(ec, eo); } catch (_) {}
+}
 
-  // Expandir inicio hacia atrás: primero palabras, luego puntuación inicial
-  if (startContainer.nodeType === Node.TEXT_NODE) {
-    const text = startContainer.textContent || '';
-    while (startOffset > 0 && isWordChar(text[startOffset - 1])) startOffset--;
-    while (startOffset > 0 && isLeadingPunctuation(text[startOffset - 1])) startOffset--;
-    if (startOffset === 0 && root.contains(startContainer)) {
-      const prev = getPreviousTextNodeInRoot(startContainer, root);
-      if (prev) {
-        const prevText = prev.textContent || '';
-        let p = prevText.length;
-        while (p > 0 && isWordChar(prevText[p - 1])) p--;
-        while (p > 0 && isLeadingPunctuation(prevText[p - 1])) p--;
-        if (p < prevText.length) {
-          startContainer = prev;
-          startOffset = p;
-        }
-      }
+/** Recolecta todos los nodos de texto dentro de un rango con sus offsets parciales. */
+function getTextNodesInRange(range) {
+  const result = [];
+  const ancestor = range.commonAncestorContainer;
+  const root = ancestor.nodeType === Node.ELEMENT_NODE ? ancestor : ancestor.parentElement;
+  if (!root) return result;
+  
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+  let node, inRange = false;
+  while ((node = walker.nextNode())) {
+    if (node === range.startContainer) {
+      inRange = true;
+      const start = range.startOffset;
+      const end = node === range.endContainer ? range.endOffset : node.textContent.length;
+      if (start < end) result.push({ node, start, end });
+      if (node === range.endContainer) break;
+      continue;
+    }
+    if (node === range.endContainer) {
+      if (range.endOffset > 0) result.push({ node, start: 0, end: range.endOffset });
+      break;
+    }
+    if (inRange) {
+      result.push({ node, start: 0, end: node.textContent.length });
     }
   }
-
-  // Expandir final hacia delante: primero palabras, luego puntuación final (p. ej. "LORD.")
-  if (endContainer.nodeType === Node.TEXT_NODE) {
-    const text = endContainer.textContent || '';
-    while (endOffset < text.length && isWordChar(text[endOffset])) endOffset++;
-    while (endOffset < text.length && isAttachedPunctuation(text[endOffset])) endOffset++;
-    if (endOffset === text.length && root.contains(endContainer)) {
-      const next = getNextTextNodeInRoot(endContainer, root);
-      if (next) {
-        const nextText = next.textContent || '';
-        let n = 0;
-        while (n < nextText.length && isWordChar(nextText[n])) n++;
-        while (n < nextText.length && isAttachedPunctuation(nextText[n])) n++;
-        if (n > 0) {
-          endContainer = next;
-          endOffset = n;
-        }
-      }
-    }
-  }
-
-  try {
-    range.setStart(startContainer, startOffset);
-    range.setEnd(endContainer, endOffset);
-  } catch (_) {}
+  return result;
 }
 
-function getPreviousTextNodeInRoot(node, root) {
-  if (!root || !root.contains(node)) return null;
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-  walker.currentNode = node;
-  return walker.previousNode();
-}
-
-function getNextTextNodeInRoot(node, root) {
-  if (!root || !root.contains(node)) return null;
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-  walker.currentNode = node;
-  return walker.nextNode();
-}
-
-/** Helper: obtiene el primer nodo de texto dentro de un elemento */
-function getFirstTextNode(element) {
-  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-  return walker.nextNode();
-}
-
-/** Helper: obtiene el último nodo de texto dentro de un elemento */
-function getLastTextNode(element) {
-  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-  let last = null;
-  while (walker.nextNode()) last = walker.currentNode;
-  return last;
-}
-
-/** Aplica subrayado de color al texto seleccionado */
-function applyTextUnderline(range, color) {
+/** Aplica subrayado envolviendo cada nodo de texto individual.
+ *  NO usa extractContents — preserva la estructura DOM perfectamente.
+ *  @param {Range} range
+ *  @param {string} color
+ *  @param {boolean} [exact=false] - Si true, no expande a límites de palabra. */
+function applyTextUnderline(range, color, exact) {
   if (!range || !color) return;
-  expandRangeToWordBoundaries(range);
+  if (!exact) expandRangeToWordBoundaries(range);
   
-  // Detectar si el rango cruza múltiples párrafos - si es así, aplicar por separado para no afectar espaciado
-  const startPara = range.startContainer.nodeType === Node.TEXT_NODE 
-    ? range.startContainer.parentElement.closest('.bible-reader-paragraph')
-    : range.startContainer.closest('.bible-reader-paragraph');
-  const endPara = range.endContainer.nodeType === Node.TEXT_NODE
-    ? range.endContainer.parentElement.closest('.bible-reader-paragraph')
-    : range.endContainer.closest('.bible-reader-paragraph');
+  const cls = `bible-text-underline bible-text-underline-${color}`;
+  const textNodes = getTextNodesInRange(range);
   
-  if (startPara && endPara && startPara !== endPara) {
-    // Cruza múltiples párrafos: aplicar subrayado por separado en cada párrafo para no afectar espaciado
-    const paras = [];
-    let current = startPara;
-    while (current) {
-      if (current.classList && current.classList.contains('bible-reader-paragraph')) {
-        paras.push(current);
-        if (current === endPara) break;
-      }
-      current = current.nextElementSibling;
-    }
+  // Procesar en reversa para no invalidar offsets
+  for (let i = textNodes.length - 1; i >= 0; i--) {
+    const { node, start, end } = textNodes[i];
+    // Saltar si ya está subrayado
+    if (node.parentElement?.classList?.contains('bible-text-underline')) continue;
+    // Saltar nodos vacíos o solo whitespace
+    const text = node.textContent;
+    if (!text || text.substring(start, end).trim().length === 0 && text.substring(start, end) !== ' ') continue;
     
-    paras.forEach((para, idx) => {
-      const paraRange = document.createRange();
-      if (idx === 0) {
-        // Primer párrafo: desde start hasta el final del contenido del párrafo
-        paraRange.setStart(range.startContainer, range.startOffset);
-        const lastTextNode = getLastTextNode(para);
-        if (lastTextNode) {
-          paraRange.setEnd(lastTextNode, lastTextNode.textContent.length);
-        } else {
-          paraRange.setEndAfter(para.lastChild || para);
-        }
-      } else if (idx === paras.length - 1) {
-        // Último párrafo: desde el primer nodo de texto hasta end
-        const firstTextNode = getFirstTextNode(para);
-        if (firstTextNode) {
-          paraRange.setStart(firstTextNode, 0);
-        } else {
-          paraRange.setStartBefore(para.firstChild || para);
-        }
-        paraRange.setEnd(range.endContainer, range.endOffset);
-      } else {
-        // Párrafos intermedios: todo el contenido del párrafo
-        paraRange.selectNodeContents(para);
-      }
-      try {
-        const span = document.createElement('span');
-        span.className = `bible-text-underline bible-text-underline-${color}`;
-        paraRange.surroundContents(span);
-      } catch (e) {
-        try {
-          const contents = paraRange.extractContents();
-          const span = document.createElement('span');
-          span.className = `bible-text-underline bible-text-underline-${color}`;
-          span.appendChild(contents);
-          paraRange.insertNode(span);
-        } catch (e2) {
-          console.warn('Could not apply underline to paragraph:', e2);
-        }
-      }
-    });
-    return;
-  }
-  
-  // Rango dentro de un solo párrafo: aplicar normalmente
-  try {
-    const underlineSpan = document.createElement('span');
-    underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
-    range.surroundContents(underlineSpan);
-  } catch (e) {
-    try {
-      const contents = range.extractContents();
-      const underlineSpan = document.createElement('span');
-      underlineSpan.className = `bible-text-underline bible-text-underline-${color}`;
-      underlineSpan.appendChild(contents);
-      range.insertNode(underlineSpan);
-    } catch (e2) {
-      console.warn('Could not apply underline:', e2);
+    const span = document.createElement('span');
+    span.className = cls;
+    
+    if (start === 0 && end >= text.length) {
+      // Envolver el nodo completo
+      node.parentNode.insertBefore(span, node);
+      span.appendChild(node);
+    } else {
+      // Dividir y envolver la porción seleccionada
+      const before = text.substring(0, start);
+      const selected = text.substring(start, end);
+      const after = text.substring(end);
+      
+      const parent = node.parentNode;
+      const ref = node.nextSibling;
+      parent.removeChild(node);
+      
+      if (before) parent.insertBefore(document.createTextNode(before), ref);
+      span.textContent = selected;
+      parent.insertBefore(span, ref);
+      if (after) parent.insertBefore(document.createTextNode(after), ref);
     }
   }
 }
@@ -851,294 +782,46 @@ function computeVerseOffsets(range) {
   return segments.sort((a, b) => a.verse - b.verse);
 }
 
-/** Dado un elemento versículo y offsets de carácter, crea un Range (node, offset) -> (node, offset). */
-function createRangeFromVerseOffsets(verseEl, startChar, endChar) {
-  const range = document.createRange();
-  const walker = document.createTreeWalker(verseEl, NodeFilter.SHOW_TEXT, null, false);
-  let count = 0;
-  let node;
-  let startNode = null;
-  let startOffset = 0;
-  let endNode = null;
-  let endOffset = 0;
-  let lastNode = null;
-  let lastLen = 0;
-  while ((node = walker.nextNode())) {
-    const len = (node.textContent || '').length;
-    lastNode = node;
-    lastLen = len;
-    const nextCount = count + len;
-    if (startNode === null && startChar <= nextCount) {
-      startNode = node;
-      startOffset = Math.min(Math.max(0, startChar - count), len);
-    }
-    if (endNode === null && endChar <= nextCount) {
-      endNode = node;
-      endOffset = Math.min(Math.max(0, endChar - count), len);
-    }
-    count = nextCount;
-  }
-  if (!endNode && lastNode) {
-    endNode = lastNode;
-    endOffset = lastLen;
-  }
-  if (startNode && endNode) {
-    range.setStart(startNode, startOffset);
-    range.setEnd(endNode, endOffset);
-    return range;
-  }
-  return null;
-}
-
-/** Guarda un highlight en localStorage */
-function saveHighlightToStorage(range, selectedText, color) {
-  console.log('[saveHighlightToStorage] 🚀 Function called with:', { 
-    hasRange: !!range, 
-    selectedText: selectedText ? selectedText.substring(0, 50) : 'none',
-    color 
-  });
-  
-  // Obtener información del libro y capítulo actual desde el DOM o variables globales
+/** Guarda un highlight en localStorage.
+ *  @param {string} selectedText - Texto seleccionado
+ *  @param {string} color - Color del highlight
+ *  @param {Array} verseOffsets - Offsets pre-computados [{verse, start, end}] */
+function saveHighlightToStorage(selectedText, color, verseOffsets) {
   const bookId = window.readerBookId;
   const chapter = String(window.readerCurrentChapter || '');
+  if (!bookId || !chapter || !verseOffsets || !verseOffsets.length) return;
   
-  console.log('[saveHighlightToStorage] 📖 Book/Chapter info:', { bookId, chapter, readerBookId: window.readerBookId, readerCurrentChapter: window.readerCurrentChapter });
-  
-  if (!bookId || !chapter) {
-    console.error('[saveHighlightToStorage] ❌ Missing book or chapter - ABORTING', { bookId, chapter });
-    return;
+  // Formatear rango de versículos desde offsets (ej: "3-5,7")
+  const verseNums = [...new Set(verseOffsets.map(v => v.verse))].sort((a, b) => a - b);
+  const parts = [];
+  let s = verseNums[0], e = s;
+  for (let i = 1; i < verseNums.length; i++) {
+    if (verseNums[i] === e + 1) { e = verseNums[i]; }
+    else { parts.push(s === e ? String(s) : `${s}-${e}`); s = e = verseNums[i]; }
   }
+  parts.push(s === e ? String(s) : `${s}-${e}`);
+  const verseRange = parts.join(',');
   
-  console.log('[saveHighlightToStorage] ✅ Proceeding to save highlight:', { bookId, chapter, color, selectedText: selectedText.substring(0, 50) });
+  const id = `hl_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
   
-  // Encontrar los versículos que están dentro del rango seleccionado
-  const verseElements = document.querySelectorAll('.bible-reader-verse');
-  const affectedVerses = new Set();
-  
-  // Obtener el contenedor común del rango
-  const rangeContainer = range.commonAncestorContainer;
-  const containerElement = rangeContainer.nodeType === Node.TEXT_NODE 
-    ? rangeContainer.parentElement 
-    : rangeContainer;
-  
-  // Encontrar todos los versículos que están dentro del rango seleccionado
-  verseElements.forEach(verseEl => {
-    // Verificar si el versículo está dentro del rango seleccionado
-    const verseRange = document.createRange();
-    try {
-      verseRange.selectNodeContents(verseEl);
-      
-      // Verificar si hay intersección entre el rango del versículo y el rango seleccionado
-      if (range.intersectsNode(verseEl) || 
-          (range.startContainer.contains(verseEl) || verseEl.contains(range.startContainer)) ||
-          (range.endContainer.contains(verseEl) || verseEl.contains(range.endContainer))) {
-        const verseNum = verseEl.getAttribute('data-verse');
-        if (verseNum) {
-          affectedVerses.add(verseNum);
-          console.log('[saveHighlightToStorage] ✅ Verse found in range:', verseNum);
-        }
-      }
-    } catch (e) {
-      // Si falla la verificación de intersección, usar método alternativo
-      // Verificar si el versículo contiene el inicio o fin del rango
-      if (verseEl.contains(range.startContainer) || 
-          verseEl.contains(range.endContainer) ||
-          verseEl === range.startContainer.parentElement ||
-          verseEl === range.endContainer.parentElement) {
-        const verseNum = verseEl.getAttribute('data-verse');
-        if (verseNum) {
-          affectedVerses.add(verseNum);
-          console.log('[saveHighlightToStorage] ✅ Verse found (fallback method):', verseNum);
-        }
-      }
-    }
-  });
-  
-  // Si aún no encontramos versículos, buscar por texto (método alternativo)
-  if (affectedVerses.size === 0) {
-    console.log('[saveHighlightToStorage] 🔍 No verses found by range, trying text search...');
-    const cleanSelectedText = selectedText.replace(/\d+/g, '').trim(); // Remover números de versículo
-    
-    verseElements.forEach(verseEl => {
-      const verseText = verseEl.textContent || '';
-      // Buscar si el texto del versículo contiene parte del texto seleccionado
-      const verseWords = verseText.toLowerCase().split(/\s+/);
-      const selectedWords = cleanSelectedText.toLowerCase().split(/\s+/);
-      
-      // Si al menos 3 palabras coinciden, considerar el versículo
-      const matchingWords = selectedWords.filter(word => 
-        word.length > 2 && verseWords.includes(word)
-      );
-      
-      if (matchingWords.length >= Math.min(3, selectedWords.length / 2)) {
-        const verseNum = verseEl.getAttribute('data-verse');
-        if (verseNum) {
-          affectedVerses.add(verseNum);
-          console.log('[saveHighlightToStorage] ✅ Verse found by text match:', verseNum);
-        }
-      }
-    });
-  }
-  
-  if (affectedVerses.size === 0) {
-    console.error('[saveHighlightToStorage] ❌ No affected verses found - ABORTING');
-    console.error('[saveHighlightToStorage] Debug info:', {
-      selectedText: selectedText.substring(0, 100),
-      rangeStart: range.startContainer.textContent?.substring(0, 50),
-      rangeEnd: range.endContainer.textContent?.substring(0, 50),
-      totalVerses: verseElements.length
-    });
-    return;
-  }
-  
-  console.log('[saveHighlightToStorage] ✅ Found affected verses:', [...affectedVerses]);
-  
-  // Formatear el rango de versículos
-  const formatVerseRange = (nums) => {
-    if (!nums.length) return '';
-    const sorted = [...nums].map(n => parseInt(n, 10)).filter(n => !Number.isNaN(n)).sort((a, b) => a - b);
-    if (sorted.length === 1) return String(sorted[0]);
-    const parts = [];
-    let start = sorted[0];
-    let end = start;
-    for (let i = 1; i < sorted.length; i++) {
-      const n = sorted[i];
-      if (n === end + 1) {
-        end = n;
-      } else {
-        parts.push(start === end ? String(start) : `${start}-${end}`);
-        start = end = n;
-      }
-    }
-    parts.push(start === end ? String(start) : `${start}-${end}`);
-    return parts.join(',');
-  };
-  
-  const verseRange = formatVerseRange([...affectedVerses]);
-  
-  // Guardar posición por versículo+offset para restaurar sin depender del texto en el DOM
-  const verseOffsets = computeVerseOffsets(range);
-  
-  // Obtener highlights existentes - usar exactamente la misma clave que bible-study.js
-  const STORAGE_KEY_HIGHLIGHTS = 'bible_trivia_highlights';
+  const KEY = 'bible_trivia_highlights';
   let highlights = [];
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
-    console.log('[saveHighlightToStorage] Reading existing highlights from localStorage:', raw ? 'found' : 'not found');
-    if (raw) {
-      highlights = JSON.parse(raw);
-      console.log('[saveHighlightToStorage] Existing highlights count:', highlights.length);
-    } else {
-      console.log('[saveHighlightToStorage] No existing highlights found');
-    }
-  } catch (e) {
-    console.error('[saveHighlightToStorage] Error reading highlights:', e);
-    highlights = [];
-  }
+  try { highlights = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
   
-  // Eliminar highlights existentes que se solapen
-  // Asegurar comparación correcta de chapter (puede ser string o número)
-  const filteredHighlights = highlights.filter(h => {
-    const hChapter = String(h.chapter || '');
-    const currentChapter = String(chapter || '');
-    if (h.bookId !== bookId || hChapter !== currentChapter) return true;
-    const hVerses = h.verseRange ? h.verseRange.split(',').flatMap(r => {
-      if (r.includes('-')) {
-        const [a, b] = r.split('-').map(Number);
-        return Array.from({length: b - a + 1}, (_, i) => a + i);
-      }
-      return [Number(r)];
-    }) : [];
-    const currentVerses = verseRange.split(',').flatMap(r => {
-      if (r.includes('-')) {
-        const [a, b] = r.split('-').map(Number);
-        return Array.from({length: b - a + 1}, (_, i) => a + i);
-      }
-      return [Number(r)];
-    });
-    return !hVerses.some(v => currentVerses.includes(v));
+  highlights.unshift({
+    id, bookId, chapter, verseRange, color, selectedText,
+    verseOffsets,
+    savedAt: Date.now()
   });
   
-  // Agregar el nuevo highlight (verseOffsets permite restaurar por posición, sin buscar texto)
-  const newHighlight = { 
-    bookId, 
-    chapter: String(chapter),
-    verseRange, 
-    color, 
-    selectedText,
-    verseOffsets: verseOffsets.length ? verseOffsets : undefined,
-    savedAt: Date.now() 
-  };
-  
-  filteredHighlights.unshift(newHighlight);
-  
-  // Guardar en localStorage - usar EXACTAMENTE la misma clave que bible-study.js
-  const STORAGE_KEY = 'bible_trivia_highlights';
-  
-  // Verificar que localStorage esté disponible
-  if (typeof localStorage === 'undefined') {
-    console.error('[saveHighlightToStorage] ❌ localStorage is not available!');
-    return;
+  try {
+    localStorage.setItem(KEY, JSON.stringify(highlights));
+  } catch (e) {
+    console.warn('Could not save highlight:', e);
   }
   
-  try {
-    const jsonData = JSON.stringify(filteredHighlights);
-    console.log('[saveHighlightToStorage] 📝 About to save:', {
-      key: STORAGE_KEY,
-      count: filteredHighlights.length,
-      jsonLength: jsonData.length,
-      firstItem: filteredHighlights[0]
-    });
-    
-    // Intentar guardar con manejo de errores explícito
-    try {
-      localStorage.setItem(STORAGE_KEY, jsonData);
-      console.log('[saveHighlightToStorage] ✅ localStorage.setItem() called successfully');
-    } catch (setItemError) {
-      console.error('[saveHighlightToStorage] ❌ localStorage.setItem() FAILED:', setItemError);
-      console.error('[saveHighlightToStorage] Error name:', setItemError.name);
-      console.error('[saveHighlightToStorage] Error message:', setItemError.message);
-      // Puede ser que localStorage esté lleno
-      if (setItemError.name === 'QuotaExceededError') {
-        console.error('[saveHighlightToStorage] localStorage is full!');
-      }
-      return; // Salir si no se pudo guardar
-    }
-    
-    // Verificar INMEDIATAMENTE después de guardar
-    let verifyRaw;
-    try {
-      verifyRaw = localStorage.getItem(STORAGE_KEY);
-      console.log('[saveHighlightToStorage] ✅ Immediate read - exists:', verifyRaw !== null);
-      console.log('[saveHighlightToStorage] ✅ Immediate read - length:', verifyRaw ? verifyRaw.length : 0);
-      
-      if (verifyRaw) {
-        const verifyParsed = JSON.parse(verifyRaw);
-        console.log('[saveHighlightToStorage] ✅ Immediate read - parsed count:', verifyParsed.length);
-        if (verifyParsed.length > 0) {
-          console.log('[saveHighlightToStorage] ✅ Immediate read - first item:', verifyParsed[0]);
-        }
-      } else {
-        console.error('[saveHighlightToStorage] ❌ CRITICAL: Data is NULL immediately after saving!');
-        console.error('[saveHighlightToStorage] This means localStorage.setItem() did not work!');
-      }
-    } catch (getItemError) {
-      console.error('[saveHighlightToStorage] ❌ Error reading back:', getItemError);
-    }
-    
-    // Actualizar el panel lateral si está abierto
-    setTimeout(() => {
-      const sidepanel = document.getElementById('bibleReaderSidepanel');
-      if (sidepanel && sidepanel.getAttribute('aria-hidden') === 'false') {
-        if (window.renderVersesList) {
-          console.log('[saveHighlightToStorage] 🔄 Refreshing highlights list');
-          window.renderVersesList();
-        }
-      }
-    }, 100);
-  } catch (e) {
-    console.error('[saveHighlightToStorage] ❌ EXCEPTION:', e);
-    console.error('[saveHighlightToStorage] Stack:', e.stack);
+  if (window.renderVersesList) {
+    setTimeout(() => window.renderVersesList(), 50);
   }
 }
 
@@ -1403,284 +1086,126 @@ export function initBibleReaderEnhanced() {
   restoreHighlightsFromStorage();
 }
 
-/** Restaura los highlights visuales desde localStorage */
+/** Encuentra el nodo de texto y offset dentro de un elemento para un offset de carácter dado. */
+function findNodeAtCharOffset(element, charOffset) {
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+  let count = 0, node, lastNode = null;
+  while ((node = walker.nextNode())) {
+    lastNode = node;
+    const len = node.textContent.length;
+    if (count + len >= charOffset) {
+      return { node, offset: Math.min(charOffset - count, len) };
+    }
+    count += len;
+  }
+  if (lastNode) return { node: lastNode, offset: lastNode.textContent.length };
+  return null;
+}
+
+/** Crea un rango que cruza múltiples versículos, incluyendo los espacios entre ellos.
+ *  Esto produce un underline continuo sin gaps entre versículos. */
+function createCrossVerseRange(contentEl, verseOffsets) {
+  if (!verseOffsets.length) return null;
+  
+  const first = verseOffsets[0];
+  const last = verseOffsets[verseOffsets.length - 1];
+  
+  const firstEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${first.verse}"]`);
+  const lastEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${last.verse}"]`);
+  if (!firstEl || !lastEl) return null;
+  
+  const startInfo = findNodeAtCharOffset(firstEl, first.start);
+  const endInfo = findNodeAtCharOffset(lastEl, last.end);
+  if (!startInfo || !endInfo) return null;
+  
+  try {
+    const range = document.createRange();
+    range.setStart(startInfo.node, startInfo.offset);
+    range.setEnd(endInfo.node, endInfo.offset);
+    // Validar que el rango no sea absurdamente grande
+    if (range.toString().length > 3000) return null;
+    return range;
+  } catch (_) {
+    return null;
+  }
+}
+
+/** Restaura todos los highlights guardados para el libro/capítulo actual.
+ *  Se llama solo desde renderReaderChapter (HTML siempre fresco). */
 export function restoreHighlightsFromStorage() {
-  // Exponer globalmente
   window.restoreHighlightsFromStorage = restoreHighlightsFromStorage;
-  const STORAGE_HIGHLIGHTS = 'bible_trivia_highlights';
+  
   const bookId = window.readerBookId;
   const chapter = window.readerCurrentChapter;
-  
   if (!bookId || !chapter) return;
-  
-  let highlights = [];
-  try {
-    const raw = localStorage.getItem(STORAGE_HIGHLIGHTS);
-    highlights = raw ? JSON.parse(raw) : [];
-  } catch {
-    return;
-  }
-  
-  // Filtrar highlights del libro y capítulo actual
-  // Asegurar comparación correcta de chapter (puede ser string o número)
-  const currentHighlights = highlights.filter(h => {
-    const hBookId = String(h.bookId || '');
-    const hChapter = String(h.chapter || '');
-    const currentBookId = String(bookId || '');
-    const currentChapter = String(chapter || '');
-    return hBookId === currentBookId && hChapter === currentChapter;
-  });
-  
-  console.log('[restoreHighlightsFromStorage] Current highlights to restore:', {
-    bookId,
-    chapter,
-    count: currentHighlights.length,
-    highlights: currentHighlights
-  });
-  
-  if (currentHighlights.length === 0) {
-    console.log('[restoreHighlightsFromStorage] No highlights to restore for this chapter');
-    return;
-  }
   
   const contentEl = document.getElementById('bibleReaderContent');
   if (!contentEl) return;
   
-  // Para cada highlight, restaurar por posición (verseOffsets) si existe; si no, buscar por texto
-  currentHighlights.forEach((highlight, idx) => {
-    if (!highlight.color) {
-      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: missing color`);
-      return;
-    }
+  let highlights = [];
+  try { highlights = JSON.parse(localStorage.getItem('bible_trivia_highlights') || '[]'); } catch (_) { return; }
+  
+  const current = highlights.filter(h =>
+    String(h.bookId) === String(bookId) && String(h.chapter) === String(chapter)
+  );
+  if (!current.length) return;
+  
+  current.forEach(hl => {
+    if (!hl.color) return;
     
-    // Restaurar por posición (verseOffsets) — un solo rango para toda la selección (línea continua, sin separación)
-    if (highlight.verseOffsets && Array.isArray(highlight.verseOffsets) && highlight.verseOffsets.length > 0) {
-      const segs = highlight.verseOffsets;
-      const first = segs[0];
-      const last = segs[segs.length - 1];
-      const verseElFirst = contentEl.querySelector(`.bible-reader-verse[data-verse="${first.verse}"]`);
-      const verseElLast = contentEl.querySelector(`.bible-reader-verse[data-verse="${last.verse}"]`);
-      if (verseElFirst && verseElLast) {
-        const rangeFirst = createRangeFromVerseOffsets(verseElFirst, first.start, first.end);
-        const rangeLast = createRangeFromVerseOffsets(verseElLast, last.start, last.end);
-        if (rangeFirst && rangeLast) {
-          const fullRange = document.createRange();
-          fullRange.setStart(rangeFirst.startContainer, rangeFirst.startOffset);
-          fullRange.setEnd(rangeLast.endContainer, rangeLast.endOffset);
-          try {
-            applyTextUnderline(fullRange, highlight.color);
-            console.log(`[restoreHighlightsFromStorage] ✅ Restored highlight ${idx} by verseOffsets (single range)`);
-            return;
-          } catch (e) {
-            console.warn(`[restoreHighlightsFromStorage] Single range failed, trying per-segment:`, e);
-          }
-        }
-      }
-      // Fallback: aplicar por segmento si el rango único falla (p. ej. range inválido)
-      for (const seg of segs) {
-        const verseEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${seg.verse}"]`);
-        if (!verseEl) continue;
-        const range = createRangeFromVerseOffsets(verseEl, seg.start, seg.end);
-        if (range) {
-          try {
-            applyTextUnderline(range, highlight.color);
-          } catch (e2) {
-            console.warn(`[restoreHighlightsFromStorage] Could not apply highlight ${idx} segment verse ${seg.verse}:`, e2);
-          }
-        }
+    // Método 1: verseOffsets (preciso) - crear un rango cruzando versículos
+    if (hl.verseOffsets && hl.verseOffsets.length) {
+      const range = createCrossVerseRange(contentEl, hl.verseOffsets);
+      if (range) {
+        try { applyTextUnderline(range, hl.color, true); } catch (_) {}
       }
       return;
     }
     
-    // Fallback: buscar por texto (highlights antiguos sin verseOffsets)
-    if (!highlight.selectedText) {
-      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: no selectedText and no verseOffsets`);
-      return;
-    }
+    // Método 2: fallback por texto (highlights antiguos sin verseOffsets)
+    if (!hl.selectedText) return;
+    const searchText = hl.selectedText.replace(/\s+/g, ' ').trim();
+    if (searchText.length < 3) return;
     
-    // Limpiar el texto para buscar (remover números de versículo, normalizar espacios y hacer case-insensitive)
-    const normalizeText = (text) => {
-      return text.toLowerCase()
-        .replace(/\d+/g, '') // Remover números
-        .replace(/[^\w\s]/g, ' ') // Reemplazar puntuación con espacios
-        .replace(/\s+/g, ' ') // Normalizar espacios
-        .trim();
-    };
+    const verseNums = hl.verseRange ? hl.verseRange.split(',').flatMap(r => {
+      if (r.includes('-')) { const [a, b] = r.split('-').map(Number); return Array.from({length: b-a+1}, (_, i) => a+i); }
+      return [Number(r)];
+    }) : [];
     
-    const textToFind = normalizeText(highlight.selectedText);
+    const searchEls = verseNums.length 
+      ? verseNums.map(n => contentEl.querySelector(`.bible-reader-verse[data-verse="${n}"]`)).filter(Boolean)
+      : [contentEl];
     
-    if (textToFind.length === 0) {
-      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: text too short after cleaning`);
-      return;
-    }
-    
-    // Extraer palabras clave (palabras de más de 2 caracteres)
-    const keywords = textToFind.split(' ').filter(w => w.length > 2);
-    if (keywords.length === 0) {
-      console.log(`[restoreHighlightsFromStorage] Skipping highlight ${idx}: no valid keywords`);
-      return;
-    }
-    
-    console.log(`[restoreHighlightsFromStorage] Attempting to restore highlight ${idx}:`, {
-      color: highlight.color,
-      textPreview: highlight.selectedText.substring(0, 50),
-      keywords: keywords.slice(0, 5),
-      verseRange: highlight.verseRange
-    });
-    
-    // Si tenemos verseRange, limitar la búsqueda a esos versículos
-    let searchElements = [];
-    if (highlight.verseRange) {
-      const verseNumbers = highlight.verseRange.split(',').flatMap(r => {
-        if (r.includes('-')) {
-          const [a, b] = r.split('-').map(Number);
-          return Array.from({length: b - a + 1}, (_, i) => a + i);
-        }
-        return [Number(r)];
-      });
+    for (const el of searchEls) {
+      const fullText = el.textContent || '';
+      const idx = fullText.indexOf(searchText);
+      if (idx === -1) continue;
       
-      verseNumbers.forEach(verseNum => {
-        const verseEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${verseNum}"]`);
-        if (verseEl) {
-          searchElements.push(verseEl);
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+      let node, charCount = 0, startNode = null, startOff = 0, endNode = null, endOff = 0;
+      while ((node = walker.nextNode())) {
+        const len = node.textContent.length;
+        if (!startNode && charCount + len > idx) {
+          startNode = node;
+          startOff = idx - charCount;
         }
-      });
-    }
-    
-    // Si no encontramos versículos específicos o no hay verseRange, buscar en todo el contenido
-    if (searchElements.length === 0) {
-      searchElements = [contentEl];
-    }
-    
-    let found = false;
-    
-    // Buscar en cada elemento
-    for (const searchEl of searchElements) {
-      // Buscar el texto en el contenido, evitando nodos que ya están dentro de spans con subrayado
-      const walker = document.createTreeWalker(
-        searchEl,
-        NodeFilter.SHOW_TEXT,
-        {
-          acceptNode: (node) => {
-            // Evitar nodos que ya están dentro de un span con subrayado
-            const parent = node.parentElement;
-            if (parent && parent.classList.contains('bible-text-underline')) {
-              return NodeFilter.FILTER_REJECT;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        },
-        false
-      );
-      
-      let node;
-      while (node = walker.nextNode()) {
-        const text = node.textContent || '';
-        const normalizedText = normalizeText(text);
-        
-        // Buscar usando las palabras clave - verificar si todas las palabras clave están presentes
-        const allKeywordsFound = keywords.every(keyword => normalizedText.includes(keyword));
-        
-        if (allKeywordsFound) {
-          // Encontrar la posición donde comienzan las palabras clave
-          let bestStart = -1;
-          let bestEnd = -1;
-          
-          // Buscar la primera palabra clave
-          const firstKeyword = keywords[0];
-          const firstIndex = normalizedText.indexOf(firstKeyword);
-          
-          if (firstIndex !== -1) {
-            // Encontrar la posición real en el texto original
-            let realStart = 0;
-            let normalizedIndex = 0;
-            for (let i = 0; i < text.length && normalizedIndex < firstIndex; i++) {
-              const char = text[i].toLowerCase();
-              if (/[a-z]/.test(char)) {
-                normalizedIndex++;
-              }
-              realStart++;
-            }
-            
-            // Calcular el final basado en la longitud del texto original
-            let realEnd = realStart;
-            let normalizedEnd = firstIndex + firstKeyword.length;
-            normalizedIndex = firstIndex;
-            
-            for (let i = realStart; i < text.length && normalizedIndex < normalizedEnd; i++) {
-              const char = text[i].toLowerCase();
-              if (/[a-z]/.test(char)) {
-                normalizedIndex++;
-              }
-              realEnd++;
-            }
-            
-            // Ajustar para incluir todas las palabras clave
-            const lastKeyword = keywords[keywords.length - 1];
-            const lastIndex = normalizedText.lastIndexOf(lastKeyword);
-            if (lastIndex !== -1 && lastIndex > firstIndex) {
-              normalizedIndex = firstIndex;
-              realEnd = realStart;
-              for (let i = realStart; i < text.length && normalizedIndex < lastIndex + lastKeyword.length; i++) {
-                const char = text[i].toLowerCase();
-                if (/[a-z]/.test(char)) {
-                  normalizedIndex++;
-                }
-                realEnd++;
-              }
-            }
-            
-            // Expandir a límites de palabra para no cortar palabras (evitar "c" + "alled" -> "called")
-            const isWordChar = (c) => /[a-zA-Z0-9]/.test(c);
-            while (realStart > 0 && isWordChar(text[realStart - 1])) realStart--;
-            let realEndClamped = Math.min(realEnd, text.length);
-            while (realEndClamped < text.length && isWordChar(text[realEndClamped])) realEndClamped++;
-            
-            // Crear un rango para el texto encontrado
-            const range = document.createRange();
-            try {
-              range.setStart(node, realStart);
-              range.setEnd(node, realEndClamped);
-              
-              // Verificar que el rango no esté dentro de un span con subrayado
-              const container = range.commonAncestorContainer;
-              const parent = container.nodeType === Node.TEXT_NODE 
-                ? container.parentElement 
-                : container;
-              
-              if (parent && parent.classList.contains('bible-text-underline')) {
-                console.log(`[restoreHighlightsFromStorage] Highlight ${idx} already underlined, skipping`);
-                continue; // Ya está subrayado, saltar
-              }
-              
-              // Aplicar el subrayado
-              try {
-                applyTextUnderline(range, highlight.color);
-                console.log(`[restoreHighlightsFromStorage] ✅ Successfully restored highlight ${idx}`);
-                found = true;
-                break; // Salir del loop de elementos de búsqueda
-              } catch (e) {
-                console.warn(`[restoreHighlightsFromStorage] ❌ Could not restore highlight ${idx}:`, e);
-              }
-            } catch (rangeError) {
-              console.warn(`[restoreHighlightsFromStorage] ❌ Error creating range for highlight ${idx}:`, rangeError);
-              continue;
-            }
-          }
+        if (!endNode && charCount + len >= idx + searchText.length) {
+          endNode = node;
+          endOff = idx + searchText.length - charCount;
+          break;
         }
+        charCount += len;
       }
       
-      if (found) break; // Si encontramos el highlight, salir del loop
-    }
-    
-    if (!found) {
-      console.warn(`[restoreHighlightsFromStorage] ⚠️ Could not find text for highlight ${idx} in DOM`, {
-        keywords: keywords.slice(0, 5),
-        verseRange: highlight.verseRange,
-        searchElementsCount: searchElements.length
-      });
+      if (startNode && endNode) {
+        try {
+          const range = document.createRange();
+          range.setStart(startNode, startOff);
+          range.setEnd(endNode, endOff);
+          applyTextUnderline(range, hl.color, true);
+          break;
+        } catch (_) {}
+      }
     }
   });
-  
-  console.log('[restoreHighlightsFromStorage] ✅ Finished restoring highlights');
 }

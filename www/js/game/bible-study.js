@@ -186,17 +186,11 @@ function setNotes(list) {
 }
 
 function getHighlights() {
-  // Exponer globalmente para acceso desde otros módulos
   window.getHighlights = getHighlights;
   try {
     const raw = localStorage.getItem(STORAGE_HIGHLIGHTS);
-    console.log('getHighlights() - reading from key:', STORAGE_HIGHLIGHTS);
-    console.log('getHighlights() - raw data:', raw ? raw.substring(0, 200) : 'null');
-    const result = raw ? JSON.parse(raw) : [];
-    console.log('getHighlights() - parsed result:', result.length, result);
-    return result;
-  } catch (e) {
-    console.error('getHighlights() - error:', e);
+    return raw ? JSON.parse(raw) : [];
+  } catch (_) {
     return [];
   }
 }
@@ -709,7 +703,7 @@ function renderReaderChapter(chapterNum) {
       const noteIcon = noteSource
         ? ` <button type="button" class="bible-reader-verse-note-icon" data-key="${escapeHtml(noteSource.key || '')}" data-note-id="${escapeHtml(noteSource.id || '')}" data-ref="${escapeHtml(noteSource.ref || '')}" aria-label="${escapeHtml(LANG() === 'en' ? 'View note' : 'Ver nota')}">📓</button>`
         : '';
-      return `<span class="bible-reader-verse${highlightClass}" data-verse="${escapeHtml(num)}"><sup class="bible-reader-verse-num">${escapeHtml(num)}</sup> ${escapeHtml(v.text || '')}${noteIcon}</span>`;
+      return `<span class="bible-reader-verse${highlightClass}" data-verse="${escapeHtml(num)}"><span class="bible-reader-verse-num">${escapeHtml(num)}</span> ${escapeHtml(v.text || '')}${noteIcon}</span>`;
     });
     // No insertar espacio entre versos cuando formaría parte de una misma palabra (ej. "mor" + "ning" -> "morning")
     let paragraphHtml = '';
@@ -734,7 +728,6 @@ function renderReaderChapter(chapterNum) {
       // Restaurar highlights visuales después de renderizar (con delay adicional)
       if (window.restoreHighlightsFromStorage) {
         setTimeout(() => {
-          console.log('[renderReaderChapter] Restoring highlights after render');
           window.restoreHighlightsFromStorage();
         }, 100);
       }
@@ -743,7 +736,6 @@ function renderReaderChapter(chapterNum) {
     // Si no hay applyBibleReaderSettings, restaurar highlights de todas formas
     setTimeout(() => {
       if (window.restoreHighlightsFromStorage) {
-        console.log('[renderReaderChapter] Restoring highlights (no settings)');
         window.restoreHighlightsFromStorage();
       }
     }, 150);
@@ -1272,13 +1264,9 @@ function renderVersesList() {
   
   // Leer highlights usando la función getHighlights()
   const highlights = getHighlights();
-  console.log('Raw localStorage data:', localStorage.getItem(STORAGE_HIGHLIGHTS));
-  console.log('Parsed highlights from getHighlights():', highlights);
   
   const noMsg = LANG() === 'en' ? 'You have not made any highlights yet.' : 'Aún no has hecho ningún subrayado.';
   const delLabel = t('bibleDelete') || 'Eliminar';
-  
-  console.log('Rendering highlights list. Total highlights:', highlights.length, highlights);
   
   if (!highlights.length) {
     listEl.innerHTML = `<p class="bible-reader-list-empty">${escapeHtml(noMsg)}</p>`;
@@ -1333,36 +1321,44 @@ function renderVersesList() {
     
     body?.addEventListener('click', () => {
       closeSidepanel();
-      loadBookData(bookId).then(data => {
-        if (data?.chapters?.length) {
-          const bookName = getBookNameFromId(bookId);
-          openReaderWindow(bookName, bookId, data, chapter);
-          // Scroll al primer versículo del rango después de un pequeño delay
-          // También restaurar highlights después de que se renderice el capítulo
-          if (verseRange) {
-            setTimeout(() => {
-              const firstVerse = verseRange.split(',')[0].split('-')[0];
-              const verseEl = document.querySelector(`.bible-reader-verse[data-verse="${firstVerse}"]`);
-              if (verseEl) {
-                verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }
-              // Restaurar highlights después de hacer scroll
-              if (window.restoreHighlightsFromStorage) {
-                setTimeout(() => {
-                  window.restoreHighlightsFromStorage();
-                }, 200);
-              }
-            }, 500);
-          } else {
-            // Si no hay verseRange, restaurar highlights después de un delay
-            setTimeout(() => {
-              if (window.restoreHighlightsFromStorage) {
-                window.restoreHighlightsFromStorage();
-              }
-            }, 500);
+      
+      // Si ya estamos viendo el mismo libro/capítulo, solo hacer scroll (no re-renderizar)
+      const alreadyViewing = String(readerBookId) === String(bookId) && 
+                             String(readerCurrentChapter) === String(chapter);
+      
+      const scrollToVerse = (verseNum) => {
+        // Delay para asegurar que el sidepanel se cerró y el DOM estabilizó
+        setTimeout(() => {
+          const contentEl = document.getElementById('bibleReaderContent');
+          if (!contentEl) return;
+          const verseEl = contentEl.querySelector(`.bible-reader-verse[data-verse="${verseNum}"]`);
+          if (verseEl) {
+            verseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
+        }, 250);
+      };
+      
+      if (alreadyViewing) {
+        // Solo scroll al versículo, sin tocar los highlights existentes
+        if (verseRange) {
+          const firstVerse = verseRange.split(',')[0].split('-')[0];
+          scrollToVerse(firstVerse);
         }
-      });
+      } else {
+        // Diferente libro/capítulo: navegar (renderReaderChapter restaurará highlights)
+        loadBookData(bookId).then(data => {
+          if (data?.chapters?.length) {
+            const bookName = getBookNameFromId(bookId);
+            openReaderWindow(bookName, bookId, data, chapter);
+            if (verseRange) {
+              setTimeout(() => {
+                const firstVerse = verseRange.split(',')[0].split('-')[0];
+                scrollToVerse(firstVerse);
+              }, 500);
+            }
+          }
+        });
+      }
     });
     
     const delBtn = item.querySelector('.bible-reader-list-del');

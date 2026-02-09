@@ -55,6 +55,24 @@ function renderVerse(verse) {
   `;
 }
 
+function renderWordList(words) {
+  const wrap = document.getElementById('wsWordList');
+  if (!wrap) return;
+  
+  if (!words || words.length === 0) {
+    wrap.innerHTML = '';
+    return;
+  }
+
+  // Crear lista de palabras para encontrar
+  const wordsHtml = words.map(({ word }) => {
+    const wordNorm = normalize(word);
+    return `<span class="ws-word-item" data-word="${escapeHtml(wordNorm)}">${escapeHtml(word)}</span>`;
+  }).join(' ');
+  
+  wrap.innerHTML = `<div class="ws-word-items">${wordsHtml}</div>`;
+}
+
 function escapeHtml(text) {
   if (text == null) return '';
   const div = document.createElement('div');

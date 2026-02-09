@@ -198,13 +198,66 @@ window.addEventListener('load', async ()=>{
     // Silenciar errores de carga
   }
 
+  // Función para mostrar modal de confirmación personalizado
+  function showConfirmModal(message) {
+    return new Promise((resolve) => {
+      const modal = document.getElementById('exitGameConfirmModal');
+      const messageEl = modal?.querySelector('[data-i18n="confirmExit"]');
+      const btnCancel = document.getElementById('btnCancelExit');
+      const btnConfirm = document.getElementById('btnConfirmExit');
+      
+      if (!modal || !btnCancel || !btnConfirm) {
+        // Fallback a confirm nativo si el modal no existe
+        resolve(confirm(message || t('confirmExit')));
+        return;
+      }
+      
+      // Actualizar mensaje si se proporciona
+      if (message && messageEl) {
+        messageEl.textContent = message;
+      } else if (messageEl) {
+        // Usar traducción si no se proporciona mensaje
+        messageEl.textContent = t('confirmExit');
+      }
+      
+      // Función para cerrar el modal
+      let resolved = false;
+      const closeModal = (result) => {
+        if (resolved) return;
+        resolved = true;
+        modal.classList.remove('open');
+        // Limpiar listeners
+        btnCancel.removeEventListener('click', cancelHandler);
+        btnConfirm.removeEventListener('click', confirmHandler);
+        modal.removeEventListener('click', overlayHandler);
+        resolve(result);
+      };
+      
+      // Handlers
+      const cancelHandler = () => closeModal(false);
+      const confirmHandler = () => closeModal(true);
+      const overlayHandler = (e) => {
+        if (e.target === modal) closeModal(false);
+      };
+      
+      // Agregar listeners
+      btnCancel.addEventListener('click', cancelHandler);
+      btnConfirm.addEventListener('click', confirmHandler);
+      modal.addEventListener('click', overlayHandler);
+      
+      // Mostrar modal
+      modal.classList.add('open');
+    });
+  }
+
   // Vincular todos los event listeners centralizados
   bindAllEventListeners({
     onStartGame: () => {
       startSolo();
     },
     onExitGame: async () => {
-      if (!confirm('¿Seguro que querés salir de la partida?')) return;
+      const confirmed = await showConfirmModal(t('confirmExit'));
+      if (!confirmed) return;
       endGame();
       showConfigUI();
       setStatus('Listo', false);

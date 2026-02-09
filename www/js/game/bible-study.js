@@ -5,7 +5,7 @@ import { t, getLanguage } from '../core/i18n.js';
 /** Libros del Antiguo Testamento (id, nombre ES, nombre EN) */
 const BIBLE_BOOKS_OT = [
   ['gen', 'Génesis', 'Genesis'],
-  ['ex', 'Éxodo', 'Exodus'],
+  ['exod', 'Éxodo', 'Exodus'],
   ['lev', 'Levítico', 'Leviticus'],
   ['num', 'Números', 'Numbers'],
   ['deut', 'Deuteronomio', 'Deuteronomy'],

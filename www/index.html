@@ -418,12 +418,14 @@
     
     <!-- Menú contextual mejorado para texto seleccionado -->
     <div class="bible-reader-enhanced-context-menu" id="bibleEnhancedContextMenu" style="display:none;">
-      <button type="button" class="bible-enhanced-menu-item" id="bibleContextCopy">
-        <span>📋</span> Copy
-      </button>
-      <button type="button" class="bible-enhanced-menu-item" id="bibleContextNote">
-        <span>📝</span> Add Note
-      </button>
+      <div class="bible-enhanced-menu-actions">
+        <button type="button" class="bible-enhanced-menu-item" id="bibleContextCopy">
+          <span>📋</span> Copy
+        </button>
+        <button type="button" class="bible-enhanced-menu-item" id="bibleContextNote">
+          <span>📝</span> Add Note
+        </button>
+      </div>
       <div class="bible-enhanced-menu-colors">
         <button type="button" class="bible-enhanced-color-circle" data-color="yellow" title="Amarillo" aria-label="Amarillo" style="background: #fbbf24;"></button>
         <button type="button" class="bible-enhanced-color-circle" data-color="green" title="Verde" aria-label="Verde" style="background: #22c55e;"></button>

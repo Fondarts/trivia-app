@@ -417,54 +417,85 @@ export function initEnhancedContextMenu() {
   let selectionTimeout = null;
   let currentSelection = null;
   
-  contentEl.addEventListener('mouseup', (e) => {
-    // No procesar si es click en el icono de nota
-    if (e.target.closest('.bible-reader-verse-note-icon')) {
-      return;
-    }
+  // Track última selección para no re-mostrar el menú innecesariamente
+  let lastSelectedText = '';
+  let menuVisible = false;
+  
+  // Prevenir scroll horizontal en TODOS los niveles - esta es la clave
+  const lockHorizontalScroll = () => {
+    contentEl.scrollLeft = 0;
+    document.documentElement.scrollLeft = 0;
+    document.body.scrollLeft = 0;
+  };
+  
+  // Listener permanente: si algo causa scroll horizontal, lo revertimos
+  const onScroll = () => { lockHorizontalScroll(); };
+  contentEl.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  
+  // Detectar selección de texto usando selectionchange (funciona en Android)
+  let selectionDebounce = null;
+  document.addEventListener('selectionchange', () => {
+    // Solo procesar si el lector está visible
+    const overlay = document.getElementById('bibleReaderOverlay');
+    if (!overlay || overlay.style.display === 'none') return;
     
-    clearTimeout(selectionTimeout);
-    selectionTimeout = setTimeout(() => {
+    clearTimeout(selectionDebounce);
+    selectionDebounce = setTimeout(() => {
       const selection = window.getSelection();
       const selectedText = selection.toString().trim();
       
-      // Verificar que hay texto seleccionado y que hay un rango válido
       if (selectedText.length > 0 && selection.rangeCount > 0) {
+        // Verificar que la selección está dentro del contenido del lector
         try {
           const range = selection.getRangeAt(0);
-          if (range && range.toString().trim().length > 0) {
-            // Verificar que la selección no incluya el icono de nota
-            const container = range.commonAncestorContainer;
-            const clickedEl = container.nodeType === Node.TEXT_NODE 
-              ? container.parentElement 
-              : container;
-            
-            if (clickedEl && clickedEl.closest('.bible-reader-verse-note-icon')) {
-              hideEnhancedContextMenu();
-              return;
-            }
-            
+          const container = range.commonAncestorContainer;
+          const el = container.nodeType === Node.TEXT_NODE ? container.parentElement : container;
+          if (!el || !el.closest('#bibleReaderContent')) return;
+          if (el.closest('.bible-reader-verse-note-icon')) return;
+          
+          // Solo mostrar si el texto cambió (evitar re-renders innecesarios)
+          if (selectedText !== lastSelectedText || !menuVisible) {
+            lastSelectedText = selectedText;
             currentSelection = selection;
             showEnhancedContextMenu(selection, selectedText);
-            return;
+            menuVisible = true;
           }
+          lockHorizontalScroll();
         } catch (e) {
-          console.warn('Error processing selection:', e);
+          // Ignorar errores de selección
+        }
+      } else {
+        // No hay selección - ocultar menú
+        if (menuVisible) {
+          hideEnhancedContextMenu();
+          menuVisible = false;
+          lastSelectedText = '';
+          currentSelection = null;
         }
       }
-      
-      // Si no hay selección válida, ocultar el menú
-      hideEnhancedContextMenu();
-      currentSelection = null;
-    }, 200);
+    }, 400); // Debounce generoso para que Android termine la selección
   });
   
-  document.addEventListener('mousedown', (e) => {
+  // Cerrar menú al tocar/clickear fuera
+  const closeOnOutsideTouch = (e) => {
     const contextMenu = document.getElementById('bibleEnhancedContextMenu');
-    if (contextMenu && !contextMenu.contains(e.target)) {
-      hideEnhancedContextMenu();
+    if (menuVisible && contextMenu && !contextMenu.contains(e.target)) {
+      // Solo cerrar si no está dentro del contenido seleccionado
+      const selection = window.getSelection();
+      if (!selection || selection.toString().trim().length === 0) {
+        hideEnhancedContextMenu();
+        menuVisible = false;
+        lastSelectedText = '';
+        currentSelection = null;
+      }
     }
-  });
+    lockHorizontalScroll();
+  };
+  
+  document.addEventListener('mousedown', closeOnOutsideTouch);
+  document.addEventListener('touchstart', closeOnOutsideTouch, { passive: true });
   
   // Event listeners para acciones del menú
   const copyBtn = document.getElementById('bibleContextCopy');
@@ -528,31 +559,64 @@ function showEnhancedContextMenu(selection, selectedText) {
   const contextMenu = document.getElementById('bibleEnhancedContextMenu');
   if (!contextMenu) return;
   
-  // Verificar que hay una selección válida con rangos
-  if (!selection || selection.rangeCount === 0) {
-    return;
-  }
+  if (!selection || selection.rangeCount === 0) return;
   
   try {
     const range = selection.getRangeAt(0);
     if (!range) return;
     
+    const contentEl = document.getElementById('bibleReaderContent');
+    
+    // Guardar posición de scroll antes de cualquier cambio
+    const savedScrollTop = contentEl ? contentEl.scrollTop : 0;
+    
+    // Posicionar menú centrado horizontalmente en la pantalla, debajo de la selección
     const rect = range.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
     
-    let top = rect.bottom + window.scrollY + 10;
-    let left = rect.left + window.scrollX;
-    
-    if (top + 200 > window.innerHeight + window.scrollY) {
-      top = rect.top + window.scrollY - 200;
-    }
-    if (left + 200 > window.innerWidth) {
-      left = window.innerWidth - 220;
-    }
-    
-    contextMenu.style.top = `${top}px`;
-    contextMenu.style.left = `${left}px`;
+    // Mostrar temporalmente para medir
+    contextMenu.style.visibility = 'hidden';
     contextMenu.style.display = 'block';
+    contextMenu.style.left = '0px';
+    contextMenu.style.top = '0px';
+    const menuW = contextMenu.offsetWidth;
+    const menuH = contextMenu.offsetHeight;
+    
+    // Posición: centrado horizontalmente en pantalla, debajo de selección
+    let left = Math.round((vw - menuW) / 2);
+    let top = Math.round(rect.bottom + 8);
+    
+    // Si no cabe debajo, poner encima
+    if (top + menuH > vh - 12) {
+      top = Math.round(rect.top - menuH - 8);
+    }
+    // Si tampoco cabe arriba, centrar verticalmente
+    if (top < 12) {
+      top = Math.round((vh - menuH) / 2);
+    }
+    
+    // Clamp horizontal
+    if (left < 12) left = 12;
+    if (left + menuW > vw - 12) left = vw - menuW - 12;
+    
+    contextMenu.style.top = top + 'px';
+    contextMenu.style.left = left + 'px';
+    contextMenu.style.visibility = 'visible';
     contextMenu.setAttribute('data-selected-text', selectedText);
+    
+    // Forzar que no haya desplazamiento horizontal
+    requestAnimationFrame(() => {
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+      if (contentEl) {
+        contentEl.scrollLeft = 0;
+        contentEl.scrollTop = savedScrollTop; // Restaurar scroll vertical
+      }
+      const wrap = document.querySelector('.bible-reader-wrap');
+      if (wrap) wrap.scrollLeft = 0;
+    });
+    
   } catch (e) {
     console.warn('Error showing enhanced context menu:', e);
   }

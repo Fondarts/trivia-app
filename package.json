@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "echo 'Build completado. Los archivos están en la carpeta www/'",
-    "serve": "npx http-server www -p 8080 -c-1"
+    "serve": "npx http-server www -p 8080 -c-1",
+    "sync:android": "npx cap sync android"
   },
   "keywords": [
     "trivia",
@@ -15,7 +16,9 @@
   ],
   "author": "Quizlo!",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "@capacitor/android": "^8.0.2",
+    "@capacitor/cli": "^8.0.2",
+    "@capacitor/core": "^8.0.2"
+  }
 }
-
-

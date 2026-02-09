@@ -904,6 +904,13 @@ function closeReaderWindow() {
   const onTransitionEnd = () => {
     overlay.removeEventListener('transitionend', onTransitionEnd);
     overlay.style.display = 'none';
+    
+    // Restaurar ventana de resultados si está marcada para restaurar
+    const resultsWindow = document.getElementById('fsSingleResult');
+    if (resultsWindow && resultsWindow.getAttribute('data-restore-on-close') === 'true') {
+      resultsWindow.style.display = 'block';
+      resultsWindow.removeAttribute('data-restore-on-close');
+    }
   };
   overlay.addEventListener('transitionend', onTransitionEnd);
   document.body.classList.remove('bible-reader-open');
@@ -1429,16 +1436,33 @@ function openBookOnline(bookId, bookName) {
 /**
  * Abre el lector de la Biblia con un libro y capítulo (para uso desde sopa de letras u otros).
  * verseNum opcional: si se pasa, el lector hace scroll hasta ese versículo.
+ * Retorna true si se abrió correctamente, false si no hay datos disponibles.
  */
 export async function openReaderWithBook(bookId, chapterNum, verseNum) {
-  const data = await loadBookData(bookId);
-  if (!data || !data.chapters || !data.chapters.length) return;
-  const isEn = LANG() === 'en';
-  const allBooks = [...BIBLE_BOOKS_OT, ...BIBLE_BOOKS_NT];
-  const entry = allBooks.find(([id]) => id === bookId);
-  const bookName = entry ? (isEn ? entry[2] : entry[1]) : (data.book || bookId);
-  const chapter = chapterNum != null ? String(chapterNum) : (data.chapters[0] && data.chapters[0].chapter);
-  openReaderWindow(bookName, bookId, data, chapter, verseNum);
+  try {
+    const data = await loadBookData(bookId);
+    if (!data || !data.chapters || !data.chapters.length) {
+      // Si no hay datos, intentar abrir online como fallback
+      const isEn = LANG() === 'en';
+      const allBooks = [...BIBLE_BOOKS_OT, ...BIBLE_BOOKS_NT];
+      const entry = allBooks.find(([id]) => id === bookId);
+      if (entry) {
+        const bookName = isEn ? entry[2] : entry[1];
+        openBookOnline(bookId, bookName);
+      }
+      return false;
+    }
+    const isEn = LANG() === 'en';
+    const allBooks = [...BIBLE_BOOKS_OT, ...BIBLE_BOOKS_NT];
+    const entry = allBooks.find(([id]) => id === bookId);
+    const bookName = entry ? (isEn ? entry[2] : entry[1]) : (data.book || bookId);
+    const chapter = chapterNum != null ? String(chapterNum) : (data.chapters[0] && data.chapters[0].chapter);
+    openReaderWindow(bookName, bookId, data, chapter, verseNum);
+    return true;
+  } catch (err) {
+    console.error('Error opening reader with book:', err);
+    return false;
+  }
 }
 
 /**

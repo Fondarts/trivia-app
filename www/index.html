@@ -565,16 +565,16 @@
         <div class="fs-titlebar-title">Results</div>
         <button class="back" id="backSingleResult">✖</button>
       </div>
-      <div class="card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
-        <div class="hero">
-          <div class="big-title" id="srTitle">—</div>
-          <div class="big-title" id="srSubtitle" style="margin-top: 0.5em;">—</div>
+      <div class="card" style="background: transparent; border: none; box-shadow: none; padding: 0; display: flex; flex-direction: column; height: 100%;">
+        <div class="hero" style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+          <div class="big-title" id="srTitle" style="text-align: center;">—</div>
+          <div class="big-title" id="srSubtitle" style="margin-top: 0.5em; text-align: center;">—</div>
           <div class="subtitle" id="srDetails" style="margin-top: 1em; font-size: 1em;">—</div>
           <div class="bigscore" id="srScore">—</div>
-          <div id="srWrongAnswers" style="display: none; margin-top: 8px;"></div>
-          <div class="actions" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px;">
+          <div id="srWrongAnswers" style="display: none; margin-top: 8px; flex: 1; min-height: 0;"></div>
+          <div class="actions" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; flex-shrink: 0;">
             <button class="btn secondary small" id="srShare" type="button" style="flex: 1; min-width: 100px;">Share</button>
-            <button class="btn secondary small" id="srHome" type="button" style="flex: 1; min-width: 100px;">Exit</button>
+            <button class="btn secondary small" id="srHome" type="button" style="flex: 1; min-width: 100px;">Retry</button>
           </div>
         </div>
       </div>
@@ -679,6 +679,17 @@
   <!-- Core (configuración global) -->
   
   <!-- Sistema de amigos se carga desde los módulos ES6 -->
+
+  <!-- Exit Game Confirmation Modal -->
+  <div class="modal" id="exitGameConfirmModal">
+    <div class="panel" style="max-width: 400px;">
+      <div style="font-weight:800; font-size: 18px; margin-bottom: 16px;" data-i18n="confirmExit">¿Seguro que querés salir de la partida?</div>
+      <div class="row" style="gap: 12px; justify-content: flex-end; margin-top: 24px;">
+        <button class="btn secondary" id="btnCancelExit" type="button" data-i18n="cancel">Cancelar</button>
+        <button class="btn secondary danger" id="btnConfirmExit" type="button" data-i18n="exit">Salir</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Report Question Modal -->
   <div class="modal" id="reportQuestionModal">

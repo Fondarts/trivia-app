@@ -134,6 +134,90 @@ function setQuestionMedia(u){
 }
 
 
+// Función helper para convertir nombre de libro a bookId
+function getBookIdFromName(bookName) {
+  if (!bookName) return null;
+  
+  const bookNameNorm = bookName.trim();
+  const allBooks = [
+    ['gen', 'Génesis', 'Genesis'],
+    ['exod', 'Éxodo', 'Exodus'],
+    ['lev', 'Levítico', 'Leviticus'],
+    ['num', 'Números', 'Numbers'],
+    ['deut', 'Deuteronomio', 'Deuteronomy'],
+    ['josh', 'Josué', 'Joshua'],
+    ['judg', 'Jueces', 'Judges'],
+    ['ruth', 'Rut', 'Ruth'],
+    ['1sam', '1 Samuel', '1 Samuel'],
+    ['2sam', '2 Samuel', '2 Samuel'],
+    ['1kgs', '1 Reyes', '1 Kings'],
+    ['2kgs', '2 Reyes', '2 Kings'],
+    ['1chr', '1 Crónicas', '1 Chronicles'],
+    ['2chr', '2 Crónicas', '2 Chronicles'],
+    ['ezra', 'Esdras', 'Ezra'],
+    ['neh', 'Nehemías', 'Nehemiah'],
+    ['esth', 'Ester', 'Esther'],
+    ['job', 'Job', 'Job'],
+    ['ps', 'Salmos', 'Psalms'],
+    ['prov', 'Proverbios', 'Proverbs'],
+    ['eccl', 'Eclesiastés', 'Ecclesiastes'],
+    ['song', 'Cantares', 'Song of Solomon'],
+    ['isa', 'Isaías', 'Isaiah'],
+    ['jer', 'Jeremías', 'Jeremiah'],
+    ['lam', 'Lamentaciones', 'Lamentations'],
+    ['ezek', 'Ezequiel', 'Ezekiel'],
+    ['dan', 'Daniel', 'Daniel'],
+    ['hos', 'Oseas', 'Hosea'],
+    ['joel', 'Joel', 'Joel'],
+    ['amos', 'Amós', 'Amos'],
+    ['obad', 'Abdías', 'Obadiah'],
+    ['jonah', 'Jonás', 'Jonah'],
+    ['mic', 'Miqueas', 'Micah'],
+    ['nah', 'Nahum', 'Nahum'],
+    ['hab', 'Habacuc', 'Habakkuk'],
+    ['zeph', 'Sofonías', 'Zephaniah'],
+    ['hag', 'Hageo', 'Haggai'],
+    ['zech', 'Zacarías', 'Zechariah'],
+    ['mal', 'Malaquías', 'Malachi'],
+    ['matt', 'Mateo', 'Matthew'],
+    ['mark', 'Marcos', 'Mark'],
+    ['luke', 'Lucas', 'Luke'],
+    ['john', 'Juan', 'John'],
+    ['acts', 'Hechos', 'Acts'],
+    ['rom', 'Romanos', 'Romans'],
+    ['1cor', '1 Corintios', '1 Corinthians'],
+    ['2cor', '2 Corintios', '2 Corinthians'],
+    ['gal', 'Gálatas', 'Galatians'],
+    ['eph', 'Efesios', 'Ephesians'],
+    ['phil', 'Filipenses', 'Philippians'],
+    ['col', 'Colosenses', 'Colossians'],
+    ['1thess', '1 Tesalonicenses', '1 Thessalonians'],
+    ['2thess', '2 Tesalonicenses', '2 Thessalonians'],
+    ['1tim', '1 Timoteo', '1 Timothy'],
+    ['2tim', '2 Timoteo', '2 Timothy'],
+    ['titus', 'Tito', 'Titus'],
+    ['phlm', 'Filemón', 'Philemon'],
+    ['heb', 'Hebreos', 'Hebrews'],
+    ['jas', 'Santiago', 'James'],
+    ['1pet', '1 Pedro', '1 Peter'],
+    ['2pet', '2 Pedro', '2 Peter'],
+    ['1jn', '1 Juan', '1 John'],
+    ['2jn', '2 Juan', '2 John'],
+    ['3jn', '3 Juan', '3 John'],
+    ['jude', 'Judas', 'Jude'],
+    ['rev', 'Apocalipsis', 'Revelation']
+  ];
+  
+  for (const [id, nameEs, nameEn] of allBooks) {
+    if (bookNameNorm === nameEs || bookNameNorm === nameEn || 
+        bookNameNorm.toLowerCase() === nameEs.toLowerCase() || 
+        bookNameNorm.toLowerCase() === nameEn.toLowerCase()) {
+      return id;
+    }
+  }
+  return null;
+}
+
 export function openSingleResult({title, subtitle, scoreText, details, wrongAnswers = []}){
   const fs = document.getElementById('fsSingleResult');
   const titleEl = document.getElementById('srTitle');
@@ -147,7 +231,17 @@ export function openSingleResult({title, subtitle, scoreText, details, wrongAnsw
     subtitleEl.textContent = subtitle;
     subtitleEl.style.cssText = 'font-size: 0.9em; font-weight: 400; margin-bottom: 1em; opacity: 0.7; line-height: 1.2; margin-top: 0.1em;';
   }
-  document.getElementById('srScore').textContent   = scoreText;
+  document.getElementById('srScore').textContent = scoreText;
+  
+  // Obtener categoría desde la primera pregunta del deck si está disponible
+  const currentState = STATE;
+  let category = 'Bible';
+  if (currentState.deck && currentState.deck.length > 0) {
+    const firstQuestion = currentState.deck[0];
+    if (firstQuestion && firstQuestion.category) {
+      category = firstQuestion.category;
+    }
+  }
   
   // Mostrar detalles si están disponibles
   const detailsEl = document.getElementById('srDetails');
@@ -160,69 +254,102 @@ export function openSingleResult({title, subtitle, scoreText, details, wrongAnsw
     }
   }
   
+  // Eliminar botón de usuario si existe
+  const titlebar = fs.querySelector('.titlebar');
+  if (titlebar) {
+    const btnProfile = titlebar.querySelector('#btnProfileResults');
+    if (btnProfile) {
+      btnProfile.remove();
+    }
+    // Limpiar contenedor de botones si está vacío
+    const buttonsContainer = titlebar.querySelector('.titlebar-buttons');
+    if (buttonsContainer && buttonsContainer.children.length === 0) {
+      buttonsContainer.remove();
+    }
+  }
+  
   // Mostrar listado de preguntas incorrectas
   const wrongAnswersEl = document.getElementById('srWrongAnswers');
   if (wrongAnswersEl) {
     if (wrongAnswers && wrongAnswers.length > 0) {
       wrongAnswersEl.innerHTML = '';
-      wrongAnswersEl.style.display = 'block';
+      wrongAnswersEl.style.display = 'flex';
+      wrongAnswersEl.style.flexDirection = 'column';
+      wrongAnswersEl.style.flex = '1';
+      wrongAnswersEl.style.minHeight = '0';
       
       const titleEl = document.createElement('h3');
       titleEl.textContent = 'Incorrect Answers:';
-      titleEl.style.cssText = 'margin-top: 0; margin-bottom: 12px; font-size: 1.2em; font-weight: 600;';
+      titleEl.style.cssText = 'margin-top: 0; margin-bottom: 12px; font-size: 1.2em; font-weight: 600; flex-shrink: 0;';
       wrongAnswersEl.appendChild(titleEl);
       
       const listEl = document.createElement('div');
-      listEl.style.cssText = 'margin-top: 12px; max-height: 400px; overflow-y: auto;';
+      listEl.style.cssText = 'flex: 1; overflow-y: auto; min-height: 0;';
       
       wrongAnswers.forEach((item, index) => {
         const itemEl = document.createElement('div');
-        itemEl.style.cssText = 'margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; cursor: pointer;';
-        
-        // Hacer clickeable para mostrar el versículo
-        if (item.book && item.reference) {
-          itemEl.addEventListener('click', function(e) {
-            e.stopPropagation();
-            e.preventDefault();
-            const showModal = window.showVerseModal || showVerseModal;
-            if (showModal) {
-              showModal(item.book, item.reference);
-            }
-          });
-        }
+        itemEl.style.cssText = 'margin-bottom: 8px; padding: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;';
         
         const questionEl = document.createElement('div');
         questionEl.textContent = `${index + 1}. ${item.question}`;
-        questionEl.style.cssText = 'margin-bottom: 4px; font-weight: 500; line-height: 1.3; pointer-events: none;';
+        questionEl.style.cssText = 'margin-bottom: 4px; font-weight: 500; line-height: 1.3;';
         itemEl.appendChild(questionEl);
         
         const answerEl = document.createElement('div');
         answerEl.innerHTML = `<strong>Correct answer:</strong> ${item.correctAnswer || 'N/A'}`;
-        answerEl.style.cssText = 'margin-bottom: 4px; color: #4ade80; line-height: 1.3; pointer-events: none;';
+        answerEl.style.cssText = 'margin-bottom: 4px; color: #4ade80; line-height: 1.3;';
         itemEl.appendChild(answerEl);
         
         if (item.book && item.reference) {
           const bookLinkEl = document.createElement('div');
-          bookLinkEl.style.cssText = 'margin-top: 4px; pointer-events: none;';
+          bookLinkEl.style.cssText = 'margin-top: 4px;';
           
-          const link = document.createElement('a');
-          // Crear enlace a Bible Gateway
-          const bookName = item.book.replace(/\s+/g, '+');
-          const refParts = item.reference.match(/(\d+):(\d+)/);
-          if (refParts) {
-            const chapter = refParts[1];
-            const verse = refParts[2];
-            link.href = `https://www.biblegateway.com/passage/?search=${bookName}+${chapter}:${verse}&version=NIV`;
-          } else {
-            link.href = `https://www.biblegateway.com/passage/?search=${bookName}&version=NIV`;
-          }
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
+          const link = document.createElement('button');
+          link.type = 'button';
           link.textContent = `📖 Read ${item.book} ${item.reference}`;
-          link.style.cssText = 'color: #60a5fa; text-decoration: none; font-weight: 500; line-height: 1.3; pointer-events: auto;';
-          link.addEventListener('click', (e) => {
+          link.style.cssText = 'color: #60a5fa; text-decoration: none; font-weight: 500; line-height: 1.3; background: none; border: none; padding: 0; cursor: pointer; text-align: left; font-size: inherit;';
+          link.addEventListener('click', async (e) => {
             e.stopPropagation();
-            // Permitir que el enlace funcione normalmente
+            e.preventDefault();
+            
+            // Parsear referencia (ej: "4:2" -> chapter: 4, verse: 2)
+            const refParts = item.reference.match(/(\d+):(\d+)/);
+            if (refParts) {
+              const chapter = parseInt(refParts[1], 10);
+              const verse = parseInt(refParts[2], 10);
+              const bookId = getBookIdFromName(item.book);
+              
+              if (bookId) {
+                // Marcar que debemos restaurar resultados al cerrar el lector
+                fs.setAttribute('data-restore-on-close', 'true');
+                
+                // Ocultar resultados temporalmente (no cerrar completamente)
+                fs.style.display = 'none';
+                
+                // Importar y usar openReaderWithBook
+                try {
+                  const { openReaderWithBook } = await import('./bible-study.js');
+                  const opened = await openReaderWithBook(bookId, chapter, verse);
+                  // Si no se pudo abrir (archivo no encontrado), restaurar resultados
+                  if (!opened) {
+                    fs.style.display = 'block';
+                    fs.removeAttribute('data-restore-on-close');
+                    // Mostrar mensaje de que el libro no está disponible offline
+                    if (window.toast) {
+                      window.toast(`The book ${item.book} is not available offline. Please check your connection.`);
+                    }
+                  }
+                } catch (err) {
+                  console.error('Error opening reader:', err);
+                  // Si hay error, restaurar resultados
+                  fs.style.display = 'block';
+                  fs.removeAttribute('data-restore-on-close');
+                  if (window.toast) {
+                    window.toast(`Unable to open ${item.book} ${item.reference}. The book data may not be available.`);
+                  }
+                }
+              }
+            }
           });
           
           bookLinkEl.appendChild(link);
@@ -238,42 +365,8 @@ export function openSingleResult({title, subtitle, scoreText, details, wrongAnsw
     }
   }
   
-  // Agregar el header completo si no existe
-  if (!fs.querySelector('.results-header')) {
-    const wrap = fs.querySelector('.wrap');
-    if (wrap) {
-      const appHeader = document.createElement('div');
-      appHeader.className = 'results-header';
-      appHeader.innerHTML = `
-        <div class="app-title">
-          <img src="./assets/logo/logo.webp" alt="Bible Trivia" class="app-logo"/>
-        </div>
-        <div class="row">
-          <button class="iconbtn avatar-btn" id="btnProfileResults" aria-label="Perfil de Usuario">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-          </button>
-        </div>
-      `;
-      wrap.insertBefore(appHeader, wrap.firstChild);
-      
-      // Vincular eventos de los botones
-      setTimeout(() => {
-        const btnProfile = document.getElementById('btnProfileResults');
-        if (btnProfile) {
-          btnProfile.addEventListener('click', () => {
-            fs.style.display = 'none';
-            showGame(false);
-            const mainProfileBtn = document.getElementById('btnProfile');
-            if (mainProfileBtn) mainProfileBtn.click();
-          });
-        }
-      }, 100);
-    }
-  }
-  
   fs.style.display='block';
   window.scrollTo(0,0);
-
 
   // Botón de Compartir
   const srShare = document.getElementById('srShare');
@@ -285,22 +378,26 @@ export function openSingleResult({title, subtitle, scoreText, details, wrongAnsw
       const currentScore = document.getElementById('srScore')?.textContent || scoreText;
       const currentDetails = document.getElementById('srDetails')?.textContent || details || '';
       
-      // Construir mensaje para WhatsApp
-      const shareText = `${currentTitle}\n${currentSubtitle}\n${currentScore}${currentDetails ? '\n' + currentDetails : ''}\n\n¡Jugá Bible Trivia! 🎮`;
+      // Construir mensaje mejorado con categoría y links placeholder
+      const appStoreLink = 'https://apps.apple.com/app/bible-trivia'; // Placeholder
+      const playStoreLink = 'https://play.google.com/store/apps/details?id=com.bibletrivia'; // Placeholder
+      
+      const shareText = `${currentTitle}\n${currentSubtitle}\n${currentScore}${currentDetails ? '\n' + currentDetails : ''}\n\nCategory: ${category}\n\n📱 Download Bible Trivia:\n🍎 App Store: ${appStoreLink}\n🤖 Play Store: ${playStoreLink}\n\n¡Jugá Bible Trivia! 🎮`;
       const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
       window.open(whatsappUrl, '_blank');
     };
   }
 
-  // Botón de Salir (antes "Inicio")
+  // Botón de Reintentar (reemplaza Exit)
   const srHome = document.getElementById('srHome');
   if (srHome) {
+    srHome.textContent = 'Retry';
     srHome.onclick = () => {
       fs.style.display = 'none';
       showGame(false);
-      // Ir a pantalla principal
-      if (window.showConfigUI) {
-        window.showConfigUI();
+      // Reiniciar el juego
+      if (window.startSolo) {
+        window.startSolo();
       }
     };
   }

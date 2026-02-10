@@ -1096,8 +1096,22 @@ function showToast(msg) {
 let noteEditingVerseKey = null;
 
 /** Abre el modal de nota para la selección actual (solo ref, sin guardar nota en entrada). Se usa desde el toolbar. */
-function openNoteModalForSelection() {
-  if (!currentTextSelection || !currentTextSelection.text) {
+function openNoteModalForSelection(selectionOverride) {
+  // Usar selección pasada como parámetro o la selección actual guardada
+  let selectedText = '';
+  if (selectionOverride) {
+    selectedText = selectionOverride.toString().trim();
+  } else if (currentTextSelection && currentTextSelection.text) {
+    selectedText = currentTextSelection.text;
+  } else {
+    // Intentar obtener la selección actual del navegador
+    const sel = window.getSelection();
+    if (sel && sel.rangeCount > 0) {
+      selectedText = sel.toString().trim();
+    }
+  }
+  
+  if (!selectedText) {
     showToast(t('bibleSelectText') || 'Selecciona texto para añadir nota.');
     return;
   }
@@ -1106,7 +1120,7 @@ function openNoteModalForSelection() {
   const verseElements = document.querySelectorAll('.bible-reader-verse');
   const affectedVerses = [];
   verseElements.forEach(verseEl => {
-    if (verseEl.textContent.includes(currentTextSelection.text)) {
+    if (verseEl.textContent.includes(selectedText)) {
       const verseNum = verseEl.getAttribute('data-verse');
       if (verseNum) affectedVerses.push(verseNum);
     }
@@ -1115,6 +1129,9 @@ function openNoteModalForSelection() {
   const ref = getRefForVerseRange(affectedVerses) || getCurrentRef();
   openNoteModalWithRef(ref, '', '', '');
 }
+
+// Exponer función globalmente
+window.openNoteModalForSelection = openNoteModalForSelection;
 
 /** Abre el modal para añadir/editar nota de una entrada guardada (desde el panel). */
 function openNoteModalForSavedEntry(verseKey, ref, currentNote) {
@@ -1397,23 +1414,42 @@ function renderNotesList() {
   listEl.innerHTML = notes.map(n => {
     const delId = `del-note-${n.id}`;
     return `
-      <div class="bible-reader-note-item" data-id="${escapeHtml(n.id)}">
-        <div class="bible-reader-note-item-ref">${escapeHtml(n.ref)}</div>
-        <div class="bible-reader-note-item-text">${escapeHtml(n.text)}</div>
-        <button type="button" class="bible-reader-list-del" id="${delId}" aria-label="${escapeHtml(delLabel)}">✖</button>
+      <div class="bible-reader-list-item" data-id="${escapeHtml(n.id)}">
+        <div class="bible-reader-list-item-body">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 8px; flex: 1;">
+              <span class="bible-reader-list-ref">${escapeHtml(n.ref)}</span>
+            </div>
+            <button type="button" class="bible-reader-list-del" id="${delId}" aria-label="${escapeHtml(delLabel)}" style="background: transparent; border: none; color: #ef4444; font-size: 1.2rem; cursor: pointer; padding: 4px 8px; line-height: 1; transition: all 0.2s; flex-shrink: 0;">✖</button>
+          </div>
+          <span class="bible-reader-list-preview">${escapeHtml(n.text)}</span>
+        </div>
       </div>`;
   }).join('');
 
-  listEl.querySelectorAll('.bible-reader-note-item .bible-reader-list-del').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const item = e.target.closest('.bible-reader-note-item');
-      const id = item?.getAttribute('data-id');
-      if (!id) return;
-      const next = getNotes().filter(x => x.id !== id);
-      setNotes(next);
-      renderNotesList();
+  listEl.querySelectorAll('.bible-reader-list-item[data-id]').forEach(item => {
+    const id = item.getAttribute('data-id');
+    const body = item.querySelector('.bible-reader-list-item-body');
+    
+    // Click en el body para editar la nota
+    body?.addEventListener('click', () => {
+      const note = getNotes().find(n => n.id === id);
+      if (note) {
+        openNoteModalForNoteId(id, note.ref, note.text);
+      }
     });
+    
+    // Click en el botón X para eliminar
+    const delBtn = item.querySelector('.bible-reader-list-del');
+    if (delBtn) {
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const next = getNotes().filter(x => x.id !== id);
+        setNotes(next);
+        renderNotesList();
+      });
+    }
   });
 }
 

@@ -419,40 +419,52 @@ export function initEnhancedContextMenu() {
   const contentEl = document.getElementById('bibleReaderContent');
   if (!contentEl) return;
   
-  let selectionTimeout = null;
   let currentSelection = null;
-  
-  // Track última selección para no re-mostrar el menú innecesariamente
-  let lastSelectedText = '';
   let menuVisible = false;
+  let lastSelectedText = '';
   
-  // Prevenir scroll horizontal en TODOS los niveles - esta es la clave
+  // Estado del último highlight aplicado (para cambiar color y para Add Note)
+  let highlightState = null; // { text, verseOffsets, highlightId }
+  
+  // Flag para suprimir selectionchange durante modificación del DOM
+  let suppressSelectionChange = false;
+  
+  // Prevenir scroll horizontal
   const lockHorizontalScroll = () => {
     contentEl.scrollLeft = 0;
     document.documentElement.scrollLeft = 0;
     document.body.scrollLeft = 0;
   };
-  
-  // Listener permanente: si algo causa scroll horizontal, lo revertimos
   const onScroll = () => { lockHorizontalScroll(); };
   contentEl.addEventListener('scroll', onScroll, { passive: true });
   document.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('scroll', onScroll, { passive: true });
   
+  // Función para cerrar el menú y resetear estado
+  const closeMenu = () => {
+    hideEnhancedContextMenu();
+    menuVisible = false;
+    lastSelectedText = '';
+    currentSelection = null;
+    highlightState = null;
+  };
+  
   // Detectar selección de texto usando selectionchange (funciona en Android)
   let selectionDebounce = null;
   document.addEventListener('selectionchange', () => {
-    // Solo procesar si el lector está visible
+    if (suppressSelectionChange) return;
+    
     const overlay = document.getElementById('bibleReaderOverlay');
     if (!overlay || overlay.style.display === 'none') return;
     
     clearTimeout(selectionDebounce);
     selectionDebounce = setTimeout(() => {
+      if (suppressSelectionChange) return;
+      
       const selection = window.getSelection();
       const selectedText = selection.toString().trim();
       
       if (selectedText.length > 0 && selection.rangeCount > 0) {
-        // Verificar que la selección está dentro del contenido del lector
         try {
           const range = selection.getRangeAt(0);
           const container = range.commonAncestorContainer;
@@ -460,41 +472,37 @@ export function initEnhancedContextMenu() {
           if (!el || !el.closest('#bibleReaderContent')) return;
           if (el.closest('.bible-reader-verse-note-icon')) return;
           
-          // Solo mostrar si el texto cambió (evitar re-renders innecesarios)
           if (selectedText !== lastSelectedText || !menuVisible) {
             lastSelectedText = selectedText;
             currentSelection = selection;
+            highlightState = null; // Nueva selección, resetear highlight state
             showEnhancedContextMenu(selection, selectedText);
             menuVisible = true;
           }
           lockHorizontalScroll();
-        } catch (e) {
-          // Ignorar errores de selección
-        }
-      } else {
-        // No hay selección - ocultar menú
-        if (menuVisible) {
-          hideEnhancedContextMenu();
-          menuVisible = false;
-          lastSelectedText = '';
-          currentSelection = null;
-        }
+        } catch (e) {}
+      } else if (!highlightState) {
+        // Solo cerrar si no hay un highlight reciente (el menú debe permanecer)
+        if (menuVisible) closeMenu();
       }
-    }, 400); // Debounce generoso para que Android termine la selección
+    }, 400);
   });
   
   // Cerrar menú al tocar/clickear fuera
   const closeOnOutsideTouch = (e) => {
     const contextMenu = document.getElementById('bibleEnhancedContextMenu');
-    if (menuVisible && contextMenu && !contextMenu.contains(e.target)) {
-      // Solo cerrar si no está dentro del contenido seleccionado
-      const selection = window.getSelection();
-      if (!selection || selection.toString().trim().length === 0) {
-        hideEnhancedContextMenu();
-        menuVisible = false;
-        lastSelectedText = '';
-        currentSelection = null;
-      }
+    if (!menuVisible || !contextMenu) return;
+    if (contextMenu.contains(e.target)) return;
+    
+    // Si hay un highlight activo y se toca fuera del menú, cerrar
+    if (highlightState) {
+      closeMenu();
+      return;
+    }
+    // Si no hay selección activa, cerrar
+    const selection = window.getSelection();
+    if (!selection || selection.toString().trim().length === 0) {
+      closeMenu();
     }
     lockHorizontalScroll();
   };
@@ -502,63 +510,131 @@ export function initEnhancedContextMenu() {
   document.addEventListener('mousedown', closeOnOutsideTouch);
   document.addEventListener('touchstart', closeOnOutsideTouch, { passive: true });
   
-  // Event listeners para acciones del menú
+  // --- COPY ---
   const copyBtn = document.getElementById('bibleContextCopy');
-  const noteBtn = document.getElementById('bibleContextNote');
-  
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      if (currentSelection) {
-        const text = currentSelection.toString();
+      const text = highlightState?.text || currentSelection?.toString()?.trim() || '';
+      if (text) {
         navigator.clipboard.writeText(text).then(() => {
           if (window.toast) window.toast('Copied to clipboard');
         });
       }
-      hideEnhancedContextMenu();
+      closeMenu();
       window.getSelection().removeAllRanges();
     });
   }
   
+  // --- ADD NOTE ---
+  const noteBtn = document.getElementById('bibleContextNote');
   if (noteBtn) {
     noteBtn.addEventListener('click', () => {
-      if (currentSelection) {
-        const text = currentSelection.toString();
-        if (window.openNoteModalForSelection) {
-          window.openNoteModalForSelection();
-        }
+      const text = highlightState?.text || currentSelection?.toString()?.trim() || '';
+      if (text && window.openNoteModalForSelection) {
+        window.openNoteModalForSelection(text);
+      } else {
+        if (window.toast) window.toast('Please select text first');
       }
-      hideEnhancedContextMenu();
+      closeMenu();
+      window.getSelection().removeAllRanges();
     });
   }
   
-  // Event listeners para los círculos de colores (usar delegación de eventos)
+  // --- SEARCH ---
+  const searchBtn = document.getElementById('bibleContextSearch');
+  if (searchBtn) {
+    searchBtn.addEventListener('click', () => {
+      const text = highlightState?.text || currentSelection?.toString()?.trim() || '';
+      if (text) {
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(text)}`;
+        window.open(searchUrl, '_blank', 'noopener,noreferrer');
+      }
+      closeMenu();
+      window.getSelection().removeAllRanges();
+    });
+  }
+  
+  // --- COLOR CIRCLES ---
   document.addEventListener('click', (e) => {
     const colorCircle = e.target.closest('.bible-enhanced-color-circle');
-    if (colorCircle) {
-      e.stopPropagation();
-      const color = colorCircle.getAttribute('data-color');
-      if (currentSelection && currentSelection.rangeCount > 0) {
-        try {
-          const range = currentSelection.getRangeAt(0);
-          const selectedText = currentSelection.toString().trim();
-          
-          if (range && selectedText) {
-            // 1. Computar offsets ANTES de modificar el DOM
-            const verseOffsets = computeVerseOffsets(range);
-            
-            // 2. Aplicar subrayado visual (modifica DOM)
-            applyTextUnderline(range, color);
-            
-            // 3. Guardar con offsets pre-computados
-            saveHighlightToStorage(selectedText, color, verseOffsets);
-          }
-        } catch (e) {
-          console.warn('Error applying underline:', e);
+    if (!colorCircle) return;
+    e.stopPropagation();
+    e.preventDefault();
+    
+    const color = colorCircle.getAttribute('data-color');
+    
+    // Suprimir selectionchange mientras modificamos el DOM
+    suppressSelectionChange = true;
+    
+    try {
+      // CASO 1: Ya tenemos un highlight aplicado, solo cambiar el color
+      if (highlightState && highlightState.highlightId) {
+        // Cambiar color de los spans existentes en el DOM
+        const contentEl = document.getElementById('bibleReaderContent');
+        if (contentEl) {
+          contentEl.querySelectorAll('.bible-text-underline').forEach(span => {
+            // Verificar que el span pertenece a nuestro highlight
+            if (highlightState._spans && highlightState._spans.has(span)) {
+              span.className = `bible-text-underline bible-text-underline-${color}`;
+            }
+          });
         }
+        // Actualizar en storage
+        updateHighlightColor(highlightState.highlightId, color, highlightState.text, highlightState.verseOffsets);
+        highlightState.color = color;
+        return;
       }
-      hideEnhancedContextMenu();
-      window.getSelection().removeAllRanges();
-      currentSelection = null;
+      
+      // CASO 2: Primera aplicación de color con selección activa
+      if (currentSelection && currentSelection.rangeCount > 0) {
+        const range = currentSelection.getRangeAt(0);
+        const selectedText = currentSelection.toString().trim();
+        if (!range || !selectedText) return;
+        
+        // 1. Computar offsets ANTES de modificar el DOM
+        const verseOffsets = computeVerseOffsets(range);
+        
+        // 2. Limpiar la selección del navegador ANTES de modificar DOM
+        window.getSelection().removeAllRanges();
+        currentSelection = null;
+        
+        // 3. Aplicar subrayado visual (elimina highlights existentes en el rango)
+        applyTextUnderline(range, color, false, true);
+        
+        // 4. Guardar en storage
+        saveHighlightToStorage(selectedText, color, verseOffsets);
+        
+        // 5. Guardar referencia a los spans recién creados para poder cambiar su color
+        const spans = new Set();
+        const contentEl = document.getElementById('bibleReaderContent');
+        if (contentEl) {
+          contentEl.querySelectorAll(`.bible-text-underline-${color}`).forEach(span => {
+            // Verificar que el span contiene texto que estaba en la selección
+            const t = span.textContent;
+            if (selectedText.includes(t) || t.length < 200) {
+              spans.add(span);
+            }
+          });
+        }
+        
+        // 6. Obtener el ID del highlight recién guardado
+        let highlightId = null;
+        try {
+          const KEY = 'bible_trivia_highlights';
+          const highlights = JSON.parse(localStorage.getItem(KEY) || '[]');
+          if (highlights.length > 0) highlightId = highlights[0].id;
+        } catch (_) {}
+        
+        // 7. Guardar estado para cambio de color y Add Note
+        highlightState = { text: selectedText, verseOffsets, highlightId, color, _spans: spans };
+        
+        // 8. El menú sigue visible
+      }
+    } catch (err) {
+      console.warn('Error applying highlight:', err);
+    } finally {
+      // Restaurar selectionchange después de un delay mayor que el debounce
+      setTimeout(() => { suppressSelectionChange = false; }, 600);
     }
   });
 }
@@ -694,14 +770,48 @@ function getTextNodesInRange(range) {
   return result;
 }
 
+/** Elimina todos los highlights dentro de un rango específico. */
+function removeHighlightsInRange(range) {
+  if (!range) return;
+  const textNodes = getTextNodesInRange(range);
+  const spansToRemove = new Set();
+  
+  textNodes.forEach(({ node }) => {
+    // Buscar spans de highlight que contengan este nodo
+    let parent = node.parentElement;
+    while (parent && parent !== document.body) {
+      if (parent.classList.contains('bible-text-underline')) {
+        spansToRemove.add(parent);
+        break;
+      }
+      parent = parent.parentElement;
+    }
+  });
+  
+  // Eliminar los spans encontrados
+  spansToRemove.forEach(span => {
+    const parent = span.parentNode;
+    if (parent) {
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    }
+  });
+}
+
 /** Aplica subrayado envolviendo cada nodo de texto individual.
  *  NO usa extractContents — preserva la estructura DOM perfectamente.
  *  @param {Range} range
  *  @param {string} color
- *  @param {boolean} [exact=false] - Si true, no expande a límites de palabra. */
-function applyTextUnderline(range, color, exact) {
+ *  @param {boolean} [exact=false] - Si true, no expande a límites de palabra.
+ *  @param {boolean} [removeExisting=false] - Si true, elimina highlights existentes en el rango primero. */
+function applyTextUnderline(range, color, exact, removeExisting) {
   if (!range || !color) return;
   if (!exact) expandRangeToWordBoundaries(range);
+  
+  // Eliminar highlights existentes en el rango si se solicita
+  if (removeExisting) {
+    removeHighlightsInRange(range);
+  }
   
   const cls = `bible-text-underline bible-text-underline-${color}`;
   const textNodes = getTextNodesInRange(range);
@@ -709,8 +819,8 @@ function applyTextUnderline(range, color, exact) {
   // Procesar en reversa para no invalidar offsets
   for (let i = textNodes.length - 1; i >= 0; i--) {
     const { node, start, end } = textNodes[i];
-    // Saltar si ya está subrayado
-    if (node.parentElement?.classList?.contains('bible-text-underline')) continue;
+    // Saltar si ya está subrayado (a menos que removeExisting sea true)
+    if (!removeExisting && node.parentElement?.classList?.contains('bible-text-underline')) continue;
     // Saltar nodos vacíos o solo whitespace
     const text = node.textContent;
     if (!text || text.substring(start, end).trim().length === 0 && text.substring(start, end) !== ' ') continue;
@@ -780,6 +890,77 @@ function computeVerseOffsets(range) {
     if (seg) segments.push(seg);
   });
   return segments.sort((a, b) => a.verse - b.verse);
+}
+
+/** Compara dos arrays de verseOffsets para ver si son iguales. */
+function verseOffsetsEqual(offsets1, offsets2) {
+  if (!offsets1 || !offsets2 || offsets1.length !== offsets2.length) return false;
+  return offsets1.every((o1, i) => {
+    const o2 = offsets2[i];
+    return o1.verse === o2.verse && o1.start === o2.start && o1.end === o2.end;
+  });
+}
+
+/** Encuentra un highlight existente con los mismos offsets. */
+function findExistingHighlightByOffsets(verseOffsets) {
+  const bookId = window.readerBookId;
+  const chapter = String(window.readerCurrentChapter || '');
+  if (!bookId || !chapter || !verseOffsets || !verseOffsets.length) return null;
+  
+  const KEY = 'bible_trivia_highlights';
+  let highlights = [];
+  try { highlights = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) { return null; }
+  
+  const current = highlights.find(h =>
+    String(h.bookId) === String(bookId) &&
+    String(h.chapter) === String(chapter) &&
+    h.verseOffsets &&
+    verseOffsetsEqual(h.verseOffsets, verseOffsets)
+  );
+  
+  return current ? current.id : null;
+}
+
+/** Elimina un highlight por ID del storage (el visual se elimina con removeHighlightsInRange). */
+function removeHighlightById(highlightId) {
+  const KEY = 'bible_trivia_highlights';
+  let highlights = [];
+  try { highlights = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) { return; }
+  
+  const index = highlights.findIndex(h => h.id === highlightId);
+  if (index >= 0) {
+    highlights.splice(index, 1);
+    try {
+      localStorage.setItem(KEY, JSON.stringify(highlights));
+    } catch (e) {
+      console.warn('Could not remove highlight:', e);
+    }
+  }
+}
+
+/** Actualiza el color de un highlight existente. */
+function updateHighlightColor(highlightId, newColor, selectedText, verseOffsets) {
+  const KEY = 'bible_trivia_highlights';
+  let highlights = [];
+  try { highlights = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) { return; }
+  
+  const index = highlights.findIndex(h => h.id === highlightId);
+  if (index >= 0) {
+    highlights[index].color = newColor;
+    highlights[index].selectedText = selectedText;
+    highlights[index].verseOffsets = verseOffsets;
+    highlights[index].savedAt = Date.now();
+    
+    try {
+      localStorage.setItem(KEY, JSON.stringify(highlights));
+    } catch (e) {
+      console.warn('Could not update highlight:', e);
+    }
+    
+    if (window.renderVersesList) {
+      setTimeout(() => window.renderVersesList(), 50);
+    }
+  }
 }
 
 /** Guarda un highlight en localStorage.

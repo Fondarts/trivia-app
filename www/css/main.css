@@ -410,12 +410,8 @@ button.btn,
 
 .mode-btn .mode-icon { width: 26px; height: 26px; display: block; object-fit: contain; }
 .mode-tooltip {
-  position: absolute; top: -28px; left: 50%; transform: translateX(-50%);
-  background: rgba(0,0,0,0.9); color: #fff; padding: 4px 10px; border-radius: 6px;
-  font-size: 0.7rem; font-weight: 600; white-space: nowrap; opacity: 0; pointer-events: none;
-  transition: opacity 0.2s; z-index: 10;
+  display: none !important;
 }
-.mode-btn:hover .mode-tooltip { opacity: 1; top: -32px; }
 
 /* --- 8. ÁREA DE JUEGO --- */
 #gameArea .row { justify-content: space-between; margin-top: 0.5rem; }
@@ -567,7 +563,9 @@ button.btn,
   padding-top: calc(36px + env(safe-area-inset-top, 0px)); 
   padding-bottom: 40px;
 }
-#fsSingleResult .card { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+#fsSingleResult .card { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: visible; }
+#fsSingleResult .hero { overflow: visible; }
+#fsSingleResult #srTitle { overflow: visible !important; }
 .results-header .row { display: flex; gap: 10px; align-items: center; }
 .results-header .row .iconbtn {
   width: 38px !important; height: 38px !important; padding: 0 !important; border-radius: 50% !important;
@@ -926,16 +924,18 @@ button.btn,
   transform: translateZ(0);
 }
 .bible-enhanced-menu-actions {
-  display: flex; gap: 4px; margin-bottom: 0;
+  display: flex; gap: 3px; margin-bottom: 0; flex-wrap: wrap;
 }
 .bible-enhanced-menu-item {
-  display: flex; align-items: center; gap: 5px; flex: 1;
-  padding: 7px 10px; background: rgba(0,0,0,0.05); border: none;
+  display: flex; align-items: center; gap: 4px; flex: 1;
+  padding: 6px 8px; background: rgba(0,0,0,0.05); border: none;
   color: #1e293b; font-weight: 500; cursor: pointer;
-  border-radius: 8px; transition: background 0.15s; font-size: 0.8rem;
+  border-radius: 8px; transition: background 0.15s; font-size: 0.75rem;
   justify-content: center; white-space: nowrap;
   margin: 0 !important;
+  min-width: 0;
 }
+.bible-enhanced-menu-item span { font-size: 0.85rem; }
 .bible-enhanced-menu-item:active {
   background: rgba(0,0,0,0.1);
 }
@@ -1077,6 +1077,8 @@ button.btn,
   border: 2px solid rgba(45, 80, 22, 0.15); border-radius: 12px;
   font-family: inherit; font-size: 1rem; resize: vertical;
   background: #ffffff; color: #1e293b;
+  box-sizing: border-box; width: calc(100% - 56px); max-width: calc(100% - 56px);
+  overflow-x: hidden; overflow-wrap: break-word;
 }
 .bible-reader-note-textarea:focus {
   outline: none; border-color: #2d5016; box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);

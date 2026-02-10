@@ -225,7 +225,7 @@ export function openSingleResult({title, subtitle, scoreText, details, wrongAnsw
   
   if (titleEl) {
     titleEl.textContent = title;
-    titleEl.style.cssText = 'font-size: 1.1em; font-weight: 600; margin-bottom: 0.1em; line-height: 1.2;';
+    titleEl.style.cssText = 'font-size: 1.1em; font-weight: 600; margin-bottom: 0.1em; line-height: 1.6; padding-top: 6px; padding-bottom: 2px; overflow: visible; display: block;';
   }
   if (subtitleEl) {
     subtitleEl.textContent = subtitle;
